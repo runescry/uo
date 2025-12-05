@@ -1,0 +1,251 @@
+"""
+MUL File Writer
+Writes generated city data directly to UO map/statics MUL files
+"""
+
+import struct
+from pathlib import Path
+from typing import List, Dict, Tuple
+import json
+import shutil
+from datetime import datetime
+import collections
+from uo_tile_classifier import TileClassifier, TileCategory
+
+# Initialize classifier once
+CLASSIFIER = TileClassifier()
+MANUAL_ALLOW = set([
+    0x0EE7, # lamp post
+    0x0BD2, # sign
+    0x0A29, # wall lamp
+])
+
+
+class MULWriter:
+    """Writes statics to UO MUL files"""
+
+    def __init__(self, mul_directory: str, map_num: int = 0):
+        self.mul_dir = Path(mul_directory)
+        self.map_num = map_num
+
+        self.statics_path = self.mul_dir / f"statics{map_num}.mul"
+        self.staidx_path = self.mul_dir / f"staidx{map_num}.mul"
+
+        print(f"MUL Writer initialized:")
+        print(f"  Directory: {self.mul_dir}")
+        print(f"  Statics: {self.statics_path}")
+        print(f"  Index: {self.staidx_path}")
+
+    def backup_files(self):
+        """Create backup of existing MUL files"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+        if self.statics_path.exists():
+            backup_path = self.mul_dir / f"statics{self.map_num}_{timestamp}.bak"
+            shutil.copy2(self.statics_path, backup_path)
+            print(f"Backed up statics to {backup_path.name}")
+
+        if self.staidx_path.exists():
+            backup_path = self.mul_dir / f"staidx{self.map_num}_{timestamp}.bak"
+            shutil.copy2(self.staidx_path, backup_path)
+            print(f"Backed up staidx to {backup_path.name}")
+
+    def load_existing_statics(self) -> Dict:
+        """Load existing statics from MUL files"""
+        print("Loading existing statics...")
+
+        statics_by_block = {}
+
+        if not self.staidx_path.exists() or not self.statics_path.exists():
+            print("  No existing files found, will create new ones")
+            return statics_by_block
+
+        with open(self.staidx_path, 'rb') as idx, open(self.statics_path, 'rb') as sta:
+            block_id = 0
+            while True:
+                idx_data = idx.read(12)
+                if len(idx_data) < 12:
+                    break
+
+                offset = struct.unpack('<I', idx_data[0:4])[0]
+                length = struct.unpack('<I', idx_data[4:8])[0]
+
+                if offset != 0xFFFFFFFF and length > 0:
+                    sta.seek(offset)
+                    count = length // 7
+
+                    block_statics = []
+                    for _ in range(count):
+                        tile_id = struct.unpack('<H', sta.read(2))[0]
+                        x = struct.unpack('B', sta.read(1))[0]
+                        y = struct.unpack('B', sta.read(1))[0]
+                        z = struct.unpack('b', sta.read(1))[0]
+                        hue = struct.unpack('<H', sta.read(2))[0]
+
+                        block_statics.append({
+                            'tile_id': tile_id,
+                            'x': x, 'y': y, 'z': z,
+                            'hue': hue
+                        })
+
+                    statics_by_block[block_id] = block_statics
+
+                block_id += 1
+
+        print(f"  Loaded {len(statics_by_block)} blocks with statics")
+        return statics_by_block
+
+    def merge_generated_statics(self, existing: Dict, generated: List[Dict]) -> Dict:
+        """Merge generated statics into existing blocks"""
+        print(f"Merging {len(generated)} generated statics...")
+
+        # Group generated statics by block
+        generated_by_block = {}
+
+        for static in generated:
+            # Calculate block ID (7168 tiles wide for map0)
+            block_x = static['x'] // 8
+            block_y = static['y'] // 8
+            block_id = block_x + (block_y * 896)  # 7168 tiles / 8 = 896 blocks wide
+
+            # Convert to block-relative coordinates
+            block_static = {
+                'tile_id': static['tile_id'],
+                'x': static['x'] % 8,
+                'y': static['y'] % 8,
+                'z': static.get('z', 0),
+                'hue': static.get('hue', 0)
+            }
+
+            if block_id not in generated_by_block:
+                generated_by_block[block_id] = []
+            generated_by_block[block_id].append(block_static)
+
+        print(f"  Generated statics span {len(generated_by_block)} blocks")
+
+        # Merge with existing
+        merged = existing.copy()
+        for block_id, statics in generated_by_block.items():
+            if block_id in merged:
+                merged[block_id].extend(statics)
+            else:
+                merged[block_id] = statics
+
+        print(f"  Total blocks after merge: {len(merged)}")
+        return merged
+
+    def write_statics(self, statics_by_block: Dict, max_blocks: int = 896 * 512):
+        """Write statics back to MUL files"""
+        print(f"Writing statics to MUL files (7168x4096 = {max_blocks} blocks)...")
+
+        with open(self.statics_path, 'wb') as sta, open(self.staidx_path, 'wb') as idx:
+            current_offset = 0
+
+            for block_id in range(max_blocks):
+                if block_id in statics_by_block:
+                    statics = statics_by_block[block_id]
+
+                    # Write statics data
+                    sta.seek(current_offset)
+                    for static in statics:
+                        sta.write(struct.pack('<H', static['tile_id']))
+                        sta.write(struct.pack('B', static['x']))
+                        sta.write(struct.pack('B', static['y']))
+                        sta.write(struct.pack('b', static['z']))
+                        sta.write(struct.pack('<H', static['hue']))
+
+                    # Write index entry
+                    length = len(statics) * 7
+                    idx.write(struct.pack('<I', current_offset))
+                    idx.write(struct.pack('<I', length))
+                    idx.write(struct.pack('<I', 0))  # Extra field
+
+                    current_offset += length
+                else:
+                    # Empty block entry – 0xFFFFFFFF offset and zero length (per UO format)
+                    idx.write(struct.pack('<I', 0xFFFFFFFF))
+                    idx.write(struct.pack('<I', 0))
+                    idx.write(struct.pack('<I', 0))
+
+                if block_id % 10000 == 0 and block_id > 0:
+                    print(f"  Processed {block_id}/{max_blocks} blocks...")
+
+        print(f"[OK] Successfully wrote statics to MUL files")
+
+    def add_city_to_map(self, city_json_file: str, backup: bool = True):
+        """Add a generated city to the map"""
+        print(f"\n=== Adding City to Map ===")
+        print(f"Source: {city_json_file}")
+
+        # Load city data
+        with open(city_json_file, 'r') as f:
+            city_data = json.load(f)
+
+        print(f"City: {city_data['name']}")
+        statics = city_data['statics']
+
+        allow_roads = False  # Toggle when you intentionally want road tiles
+        z_override = 0       # Raise/snap all statics to this Z (None to keep original)
+
+        def is_allowed(tile_id: int) -> bool:
+            if tile_id in MANUAL_ALLOW:
+                return True
+            if CLASSIFIER.is_building_component(tile_id):
+                return True
+            if allow_roads and CLASSIFIER.get_category(tile_id) == TileCategory.ROAD:
+                return True
+            return False
+
+        raw_count = len(statics)
+        filtered_statics = [s for s in statics if is_allowed(s['tile_id'])]
+        filtered_count = len(filtered_statics)
+        print(f"  Filtering statics for buildings (allow_roads={allow_roads}): {raw_count} -> {filtered_count} safe")
+
+        if z_override is not None:
+            for s in filtered_statics:
+                s['z'] = z_override
+
+        if filtered_count < raw_count:
+            id_counts = collections.Counter([s['tile_id'] for s in statics if not is_allowed(s['tile_id'])])
+            common = id_counts.most_common(10)
+            print(f"  Skipped (top): {[f'{hex(i)}({c})' for i,c in common]}")
+        city_data['statics'] = filtered_statics
+
+        if 'statistics' in city_data:
+            print(f"Statics: {city_data['statistics']['total_statics']}")
+            print(f"Buildings: {city_data['statistics']['total_buildings']}")
+        else:
+            print(f"Statics: {len(city_data['statics'])}")
+
+        # Backup existing files
+        if backup:
+            self.backup_files()
+
+        # Load existing statics
+        existing = self.load_existing_statics()
+
+        # Merge generated statics
+        merged = self.merge_generated_statics(existing, city_data['statics'])
+
+        # Write back to MUL files
+        self.write_statics(merged)
+
+        print(f"\n[OK] City '{city_data['name']}' added to map successfully!")
+        print(f"Location: ({city_data['bounds']['x1']}, {city_data['bounds']['y1']}) to "
+              f"({city_data['bounds']['x2']}, {city_data['bounds']['y2']})")
+
+
+if __name__ == "__main__":
+    # Deploy Britain to Vystia map in fresh ServUO
+
+    # Path to fresh ServUO map files
+    servuo_map_path = r"C:\DevEnv\GIT\UO\ServUO-fresh\Data\Maps"
+
+    writer = MULWriter(servuo_map_path, map_num=0)
+    writer.add_city_to_map('britain_shifted.json', backup=True)
+
+    print("\n=== Next Steps ===")
+    print("1. Update CentrED config to point to ServUO-fresh")
+    print("2. Open CentrED# and connect to the server")
+    print("3. Navigate to Britain coordinates")
+    print("4. Verify Britain appears in-game and in CentrED")

@@ -1,0 +1,974 @@
+{
+  "total_areas": 84,
+  "areas": [
+    {
+      "center_x": 6528,
+      "center_y": 372,
+      "radius": 20,
+      "static_count": 829,
+      "indicator_count": 47,
+      "indicators": {
+        "moongates": 1,
+        "bones": 56
+      },
+      "confidence": 1.0
+    },
+    {
+      "center_x": 5150,
+      "center_y": 745,
+      "radius": 20,
+      "static_count": 247,
+      "indicator_count": 52,
+      "indicators": {
+        "bones": 72
+      },
+      "confidence": 1.0
+    },
+    {
+      "center_x": 5149,
+      "center_y": 737,
+      "radius": 20,
+      "static_count": 284,
+      "indicator_count": 20,
+      "indicators": {
+        "bones": 72
+      },
+      "confidence": 1.0
+    },
+    {
+      "center_x": 5323,
+      "center_y": 951,
+      "radius": 20,
+      "static_count": 95,
+      "indicator_count": 21,
+      "indicators": {
+        "bones": 21,
+        "shrines": 2
+      },
+      "confidence": 1.0
+    },
+    {
+      "center_x": 5345,
+      "center_y": 1546,
+      "radius": 20,
+      "static_count": 502,
+      "indicator_count": 21,
+      "indicators": {
+        "bones": 42
+      },
+      "confidence": 1.0
+    },
+    {
+      "center_x": 6165,
+      "center_y": 148,
+      "radius": 20,
+      "static_count": 452,
+      "indicator_count": 18,
+      "indicators": {
+        "barrels": 8,
+        "crates": 13,
+        "bones": 6,
+        "chests": 1
+      },
+      "confidence": 0.9
+    },
+    {
+      "center_x": 6196,
+      "center_y": 173,
+      "radius": 20,
+      "static_count": 320,
+      "indicator_count": 17,
+      "indicators": {
+        "crates": 22,
+        "barrels": 5
+      },
+      "confidence": 0.85
+    },
+    {
+      "center_x": 3507,
+      "center_y": 1145,
+      "radius": 20,
+      "static_count": 982,
+      "indicator_count": 14,
+      "indicators": {
+        "bones": 14,
+        "graves": 1
+      },
+      "confidence": 0.7
+    },
+    {
+      "center_x": 2431,
+      "center_y": 1104,
+      "radius": 20,
+      "static_count": 631,
+      "indicator_count": 13,
+      "indicators": {
+        "bones": 1,
+        "graves": 22
+      },
+      "confidence": 0.65
+    },
+    {
+      "center_x": 5570,
+      "center_y": 113,
+      "radius": 20,
+      "static_count": 75,
+      "indicator_count": 12,
+      "indicators": {
+        "bones": 16,
+        "shrines": 4
+      },
+      "confidence": 0.6
+    },
+    {
+      "center_x": 5226,
+      "center_y": 535,
+      "radius": 20,
+      "static_count": 307,
+      "indicator_count": 12,
+      "indicators": {
+        "bones": 12
+      },
+      "confidence": 0.6
+    },
+    {
+      "center_x": 5810,
+      "center_y": 11,
+      "radius": 20,
+      "static_count": 112,
+      "indicator_count": 11,
+      "indicators": {
+        "bones": 13,
+        "shrines": 9
+      },
+      "confidence": 0.55
+    },
+    {
+      "center_x": 5530,
+      "center_y": 73,
+      "radius": 20,
+      "static_count": 744,
+      "indicator_count": 11,
+      "indicators": {
+        "bones": 17,
+        "shrines": 5
+      },
+      "confidence": 0.55
+    },
+    {
+      "center_x": 5147,
+      "center_y": 608,
+      "radius": 20,
+      "static_count": 354,
+      "indicator_count": 11,
+      "indicators": {
+        "bones": 26,
+        "shrines": 4
+      },
+      "confidence": 0.55
+    },
+    {
+      "center_x": 714,
+      "center_y": 1105,
+      "radius": 20,
+      "static_count": 760,
+      "indicator_count": 11,
+      "indicators": {
+        "bones": 17,
+        "graves": 3
+      },
+      "confidence": 0.55
+    },
+    {
+      "center_x": 5529,
+      "center_y": 1809,
+      "radius": 20,
+      "static_count": 353,
+      "indicator_count": 11,
+      "indicators": {
+        "bones": 16,
+        "shrines": 6
+      },
+      "confidence": 0.55
+    },
+    {
+      "center_x": 5409,
+      "center_y": 11,
+      "radius": 20,
+      "static_count": 104,
+      "indicator_count": 10,
+      "indicators": {
+        "bones": 15,
+        "shrines": 23
+      },
+      "confidence": 0.5
+    },
+    {
+      "center_x": 5610,
+      "center_y": 12,
+      "radius": 20,
+      "static_count": 150,
+      "indicator_count": 10,
+      "indicators": {
+        "bones": 17,
+        "shrines": 12
+      },
+      "confidence": 0.5
+    },
+    {
+      "center_x": 6322,
+      "center_y": 95,
+      "radius": 20,
+      "static_count": 93,
+      "indicator_count": 10,
+      "indicators": {
+        "crates": 10
+      },
+      "confidence": 0.5
+    },
+    {
+      "center_x": 2774,
+      "center_y": 883,
+      "radius": 20,
+      "static_count": 888,
+      "indicator_count": 10,
+      "indicators": {
+        "bones": 14,
+        "shrines": 5,
+        "graves": 2
+      },
+      "confidence": 0.5
+    },
+    {
+      "center_x": 5149,
+      "center_y": 593,
+      "radius": 20,
+      "static_count": 369,
+      "indicator_count": 9,
+      "indicators": {
+        "bones": 24,
+        "shrines": 3
+      },
+      "confidence": 0.45
+    },
+    {
+      "center_x": 5154,
+      "center_y": 872,
+      "radius": 20,
+      "static_count": 72,
+      "indicator_count": 9,
+      "indicators": {
+        "bones": 9
+      },
+      "confidence": 0.45
+    },
+    {
+      "center_x": 731,
+      "center_y": 1105,
+      "radius": 20,
+      "static_count": 793,
+      "indicator_count": 9,
+      "indicators": {
+        "bones": 17,
+        "graves": 3
+      },
+      "confidence": 0.45
+    },
+    {
+      "center_x": 2164,
+      "center_y": 1373,
+      "radius": 20,
+      "static_count": 1198,
+      "indicator_count": 9,
+      "indicators": {
+        "bones": 15,
+        "shrines": 18
+      },
+      "confidence": 0.45
+    },
+    {
+      "center_x": 5332,
+      "center_y": 1549,
+      "radius": 20,
+      "static_count": 435,
+      "indicator_count": 9,
+      "indicators": {
+        "bones": 37
+      },
+      "confidence": 0.45
+    },
+    {
+      "center_x": 6170,
+      "center_y": 95,
+      "radius": 20,
+      "static_count": 389,
+      "indicator_count": 8,
+      "indicators": {
+        "bones": 6,
+        "crates": 3
+      },
+      "confidence": 0.4
+    },
+    {
+      "center_x": 2444,
+      "center_y": 1104,
+      "radius": 20,
+      "static_count": 594,
+      "indicator_count": 8,
+      "indicators": {
+        "bones": 1,
+        "graves": 22
+      },
+      "confidence": 0.4
+    },
+    {
+      "center_x": 3535,
+      "center_y": 1133,
+      "radius": 20,
+      "static_count": 945,
+      "indicator_count": 8,
+      "indicators": {
+        "bones": 14,
+        "graves": 1
+      },
+      "confidence": 0.4
+    },
+    {
+      "center_x": 1444,
+      "center_y": 3795,
+      "radius": 20,
+      "static_count": 1310,
+      "indicator_count": 8,
+      "indicators": {
+        "crates": 8,
+        "signs": 1
+      },
+      "confidence": 0.4
+    },
+    {
+      "center_x": 5402,
+      "center_y": 61,
+      "radius": 20,
+      "static_count": 127,
+      "indicator_count": 7,
+      "indicators": {
+        "bones": 9,
+        "shrines": 7
+      },
+      "confidence": 0.35
+    },
+    {
+      "center_x": 5749,
+      "center_y": 145,
+      "radius": 20,
+      "static_count": 126,
+      "indicator_count": 7,
+      "indicators": {
+        "bones": 7
+      },
+      "confidence": 0.35
+    },
+    {
+      "center_x": 6202,
+      "center_y": 174,
+      "radius": 20,
+      "static_count": 292,
+      "indicator_count": 7,
+      "indicators": {
+        "crates": 22,
+        "barrels": 5
+      },
+      "confidence": 0.35
+    },
+    {
+      "center_x": 6514,
+      "center_y": 371,
+      "radius": 20,
+      "static_count": 970,
+      "indicator_count": 7,
+      "indicators": {
+        "moongates": 1,
+        "bones": 56
+      },
+      "confidence": 0.35
+    },
+    {
+      "center_x": 2165,
+      "center_y": 1347,
+      "radius": 20,
+      "static_count": 860,
+      "indicator_count": 7,
+      "indicators": {
+        "bones": 12
+      },
+      "confidence": 0.35
+    },
+    {
+      "center_x": 2189,
+      "center_y": 1374,
+      "radius": 20,
+      "static_count": 698,
+      "indicator_count": 7,
+      "indicators": {
+        "bones": 15,
+        "shrines": 12
+      },
+      "confidence": 0.35
+    },
+    {
+      "center_x": 5493,
+      "center_y": 1888,
+      "radius": 20,
+      "static_count": 132,
+      "indicator_count": 7,
+      "indicators": {
+        "bones": 9
+      },
+      "confidence": 0.35
+    },
+    {
+      "center_x": 6169,
+      "center_y": 138,
+      "radius": 20,
+      "static_count": 512,
+      "indicator_count": 6,
+      "indicators": {
+        "barrels": 8,
+        "crates": 16,
+        "bones": 2,
+        "chests": 1
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5670,
+      "center_y": 324,
+      "radius": 20,
+      "static_count": 393,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 7
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5955,
+      "center_y": 337,
+      "radius": 20,
+      "static_count": 363,
+      "indicator_count": 6,
+      "indicators": {
+        "chests": 7
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 6122,
+      "center_y": 352,
+      "radius": 20,
+      "static_count": 166,
+      "indicator_count": 6,
+      "indicators": {
+        "chests": 6
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5485,
+      "center_y": 567,
+      "radius": 20,
+      "static_count": 291,
+      "indicator_count": 6,
+      "indicators": {
+        "shrines": 10,
+        "bones": 6
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5286,
+      "center_y": 806,
+      "radius": 20,
+      "static_count": 302,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 15
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 2765,
+      "center_y": 850,
+      "radius": 20,
+      "static_count": 847,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 7,
+        "graves": 1
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5511,
+      "center_y": 847,
+      "radius": 20,
+      "static_count": 218,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 10
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 2763,
+      "center_y": 874,
+      "radius": 20,
+      "static_count": 1222,
+      "indicator_count": 6,
+      "indicators": {
+        "graves": 3,
+        "bones": 14,
+        "shrines": 5
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5551,
+      "center_y": 893,
+      "radius": 20,
+      "static_count": 281,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 22
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5203,
+      "center_y": 912,
+      "radius": 20,
+      "static_count": 121,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 7
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 3546,
+      "center_y": 1145,
+      "radius": 20,
+      "static_count": 824,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 14
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 4533,
+      "center_y": 1317,
+      "radius": 20,
+      "static_count": 786,
+      "indicator_count": 6,
+      "indicators": {
+        "graves": 21
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5568,
+      "center_y": 1827,
+      "radius": 20,
+      "static_count": 463,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 10
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5385,
+      "center_y": 1908,
+      "radius": 20,
+      "static_count": 56,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 10
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 1985,
+      "center_y": 3206,
+      "radius": 20,
+      "static_count": 799,
+      "indicator_count": 6,
+      "indicators": {
+        "bones": 4,
+        "graves": 3
+      },
+      "confidence": 0.3
+    },
+    {
+      "center_x": 5450,
+      "center_y": 55,
+      "radius": 20,
+      "static_count": 149,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 10,
+        "shrines": 14
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 6189,
+      "center_y": 145,
+      "radius": 20,
+      "static_count": 473,
+      "indicator_count": 5,
+      "indicators": {
+        "crates": 8,
+        "graves": 1,
+        "chests": 1
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5589,
+      "center_y": 152,
+      "radius": 20,
+      "static_count": 89,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 10,
+        "shrines": 1
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5573,
+      "center_y": 190,
+      "radius": 20,
+      "static_count": 2130,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 10,
+        "shrines": 9
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 6116,
+      "center_y": 272,
+      "radius": 20,
+      "static_count": 118,
+      "indicator_count": 5,
+      "indicators": {
+        "chests": 5
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5950,
+      "center_y": 288,
+      "radius": 20,
+      "static_count": 256,
+      "indicator_count": 5,
+      "indicators": {
+        "chests": 5
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5974,
+      "center_y": 312,
+      "radius": 20,
+      "static_count": 327,
+      "indicator_count": 5,
+      "indicators": {
+        "chests": 7
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5987,
+      "center_y": 400,
+      "radius": 20,
+      "static_count": 95,
+      "indicator_count": 5,
+      "indicators": {
+        "chests": 5
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 6304,
+      "center_y": 472,
+      "radius": 20,
+      "static_count": 544,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 13
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5172,
+      "center_y": 692,
+      "radius": 20,
+      "static_count": 324,
+      "indicator_count": 5,
+      "indicators": {
+        "shrines": 2,
+        "bones": 7
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5330,
+      "center_y": 689,
+      "radius": 20,
+      "static_count": 243,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 13
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5328,
+      "center_y": 704,
+      "radius": 20,
+      "static_count": 198,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 13
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5610,
+      "center_y": 788,
+      "radius": 20,
+      "static_count": 158,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 9
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5534,
+      "center_y": 788,
+      "radius": 20,
+      "static_count": 261,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 11
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5568,
+      "center_y": 790,
+      "radius": 20,
+      "static_count": 450,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 13
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5430,
+      "center_y": 807,
+      "radius": 20,
+      "static_count": 195,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 11
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5589,
+      "center_y": 828,
+      "radius": 20,
+      "static_count": 771,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 13
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5525,
+      "center_y": 868,
+      "radius": 20,
+      "static_count": 261,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 14
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5531,
+      "center_y": 889,
+      "radius": 20,
+      "static_count": 296,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 20
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5568,
+      "center_y": 890,
+      "radius": 20,
+      "static_count": 255,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 16
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5549,
+      "center_y": 907,
+      "radius": 20,
+      "static_count": 260,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 21
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5510,
+      "center_y": 927,
+      "radius": 20,
+      "static_count": 196,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 9
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5184,
+      "center_y": 945,
+      "radius": 20,
+      "static_count": 88,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 12
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 4547,
+      "center_y": 1318,
+      "radius": 20,
+      "static_count": 823,
+      "indicator_count": 5,
+      "indicators": {
+        "graves": 21
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 2167,
+      "center_y": 1329,
+      "radius": 20,
+      "static_count": 953,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 12
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 4534,
+      "center_y": 1325,
+      "radius": 20,
+      "static_count": 557,
+      "indicator_count": 5,
+      "indicators": {
+        "graves": 21
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 4547,
+      "center_y": 1325,
+      "radius": 20,
+      "static_count": 564,
+      "indicator_count": 5,
+      "indicators": {
+        "graves": 21
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5352,
+      "center_y": 1565,
+      "radius": 20,
+      "static_count": 450,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 28
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5586,
+      "center_y": 1852,
+      "radius": 20,
+      "static_count": 548,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 12
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5587,
+      "center_y": 1871,
+      "radius": 20,
+      "static_count": 496,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 15,
+        "shrines": 2
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5450,
+      "center_y": 1890,
+      "radius": 20,
+      "static_count": 147,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 12,
+        "graves": 1
+      },
+      "confidence": 0.25
+    },
+    {
+      "center_x": 5487,
+      "center_y": 1994,
+      "radius": 20,
+      "static_count": 208,
+      "indicator_count": 5,
+      "indicators": {
+        "bones": 9
+      },
+      "confidence": 0.25
+    }
+  ]
+}

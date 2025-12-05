@@ -1,0 +1,640 @@
+{
+  "patterns": {
+    "britain": {
+      "name": "britain",
+      "total_area": 105000,
+      "building_count": 4,
+      "density": 0.38095238095238093,
+      "road_network": {
+        "exists": false
+      },
+      "building_clusters": [
+        {
+          "buildings": 4,
+          "center": {
+            "x": 1530,
+            "y": 1660
+          },
+          "radius": 4.47213595499958
+        }
+      ],
+      "district_zones": [
+        {
+          "type": "residential",
+          "center": {
+            "x": 1530,
+            "y": 1660
+          },
+          "building_count": 4
+        }
+      ],
+      "building_distances": {
+        "unknown": {
+          "unknown": 6.98142396999972
+        }
+      },
+      "building_colocation": {
+        "unknown": [
+          "unknown"
+        ]
+      },
+      "center_point": [
+        1530,
+        1660
+      ],
+      "density_gradient": [
+        12.732395447351626,
+        3.1830988618379066,
+        1.414710605261292,
+        0.5092958178940651,
+        0.2263536968418067,
+        0.12732395447351627
+      ],
+      "road_grid_type": "none",
+      "placement_rules": [
+        {
+          "type": "minimum_spacing",
+          "value": 4.0,
+          "description": "Minimum distance between buildings"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 1530,
+            "y": 1660
+          },
+          "target_count": 4,
+          "description": "residential district density"
+        }
+      ]
+    },
+    "cove": {
+      "name": "cove",
+      "total_area": 22500,
+      "building_count": 0,
+      "density": 0.0,
+      "road_network": {
+        "exists": false
+      },
+      "building_clusters": [],
+      "district_zones": [],
+      "building_distances": {},
+      "building_colocation": {},
+      "center_point": [
+        0,
+        0
+      ],
+      "density_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "road_grid_type": "none",
+      "placement_rules": []
+    },
+    "minoc": {
+      "name": "minoc",
+      "total_area": 40000,
+      "building_count": 0,
+      "density": 0.0,
+      "road_network": {
+        "exists": false
+      },
+      "building_clusters": [],
+      "district_zones": [],
+      "building_distances": {},
+      "building_colocation": {},
+      "center_point": [
+        0,
+        0
+      ],
+      "density_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "road_grid_type": "none",
+      "placement_rules": []
+    },
+    "moonglow": {
+      "name": "moonglow",
+      "total_area": 22500,
+      "building_count": 8,
+      "density": 3.5555555555555554,
+      "road_network": {
+        "exists": false
+      },
+      "building_clusters": [
+        {
+          "buildings": 4,
+          "center": {
+            "x": 4519,
+            "y": 1111
+          },
+          "radius": 10.198039027185569
+        },
+        {
+          "buildings": 2,
+          "center": {
+            "x": 4453,
+            "y": 1212
+          },
+          "radius": 5.0990195135927845
+        },
+        {
+          "buildings": 2,
+          "center": {
+            "x": 4473,
+            "y": 1210
+          },
+          "radius": 4.123105625617661
+        }
+      ],
+      "district_zones": [
+        {
+          "type": "residential",
+          "center": {
+            "x": 4519,
+            "y": 1111
+          },
+          "building_count": 4
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 4453,
+            "y": 1212
+          },
+          "building_count": 2
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 4473,
+            "y": 1210
+          },
+          "building_count": 2
+        }
+      ],
+      "building_distances": {
+        "unknown": {
+          "unknown": 71.49449716537383
+        }
+      },
+      "building_colocation": {
+        "unknown": []
+      },
+      "center_point": [
+        4491,
+        1161
+      ],
+      "density_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.25464790894703254,
+        0.4527073936836134,
+        0.25464790894703254
+      ],
+      "road_grid_type": "none",
+      "placement_rules": [
+        {
+          "type": "minimum_spacing",
+          "value": 6.377444151158153,
+          "description": "Minimum distance between buildings"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 4519,
+            "y": 1111
+          },
+          "target_count": 4,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 4453,
+            "y": 1212
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 4473,
+            "y": 1210
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        }
+      ]
+    },
+    "skara_brae": {
+      "name": "skara_brae",
+      "total_area": 22500,
+      "building_count": 7,
+      "density": 3.111111111111111,
+      "road_network": {
+        "exists": true,
+        "total_tiles": 63,
+        "coverage": 0.0028,
+        "main_horizontal": 0,
+        "main_vertical": 0,
+        "has_grid": false
+      },
+      "building_clusters": [
+        {
+          "buildings": 3,
+          "center": {
+            "x": 566,
+            "y": 2226
+          },
+          "radius": 9.219544457292887
+        },
+        {
+          "buildings": 3,
+          "center": {
+            "x": 590,
+            "y": 2225
+          },
+          "radius": 7.0
+        }
+      ],
+      "district_zones": [
+        {
+          "type": "residential",
+          "center": {
+            "x": 566,
+            "y": 2226
+          },
+          "building_count": 3
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 590,
+            "y": 2225
+          },
+          "building_count": 3
+        }
+      ],
+      "building_distances": {
+        "unknown": {
+          "unknown": 35.939763849926464
+        }
+      },
+      "building_colocation": {
+        "unknown": []
+      },
+      "center_point": [
+        589,
+        2226
+      ],
+      "density_gradient": [
+        9.54929658551372,
+        3.1830988618379066,
+        1.768388256576615,
+        0.7639437268410976,
+        0.3961189694731617,
+        0.2228169203286535
+      ],
+      "road_grid_type": "organic",
+      "placement_rules": [
+        {
+          "type": "minimum_spacing",
+          "value": 7.0,
+          "description": "Minimum distance between buildings"
+        },
+        {
+          "type": "road_proximity",
+          "value": 5,
+          "description": "Buildings should be within N tiles of roads"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 566,
+            "y": 2226
+          },
+          "target_count": 3,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 590,
+            "y": 2225
+          },
+          "target_count": 3,
+          "description": "residential district density"
+        }
+      ]
+    },
+    "trinsic": {
+      "name": "trinsic",
+      "total_area": 40000,
+      "building_count": 0,
+      "density": 0.0,
+      "road_network": {
+        "exists": false
+      },
+      "building_clusters": [],
+      "district_zones": [],
+      "building_distances": {},
+      "building_colocation": {},
+      "center_point": [
+        0,
+        0
+      ],
+      "density_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "road_grid_type": "none",
+      "placement_rules": []
+    },
+    "vesper": {
+      "name": "vesper",
+      "total_area": 62500,
+      "building_count": 22,
+      "density": 3.52,
+      "road_network": {
+        "exists": false
+      },
+      "building_clusters": [
+        {
+          "buildings": 2,
+          "center": {
+            "x": 2933,
+            "y": 906
+          },
+          "radius": 4.123105625617661
+        },
+        {
+          "buildings": 4,
+          "center": {
+            "x": 2717,
+            "y": 914
+          },
+          "radius": 8.246211251235321
+        },
+        {
+          "buildings": 5,
+          "center": {
+            "x": 2890,
+            "y": 947
+          },
+          "radius": 9.486832980505138
+        },
+        {
+          "buildings": 5,
+          "center": {
+            "x": 2829,
+            "y": 994
+          },
+          "radius": 11.180339887498949
+        },
+        {
+          "buildings": 3,
+          "center": {
+            "x": 2849,
+            "y": 994
+          },
+          "radius": 4.47213595499958
+        },
+        {
+          "buildings": 3,
+          "center": {
+            "x": 2935,
+            "y": 1106
+          },
+          "radius": 6.324555320336759
+        }
+      ],
+      "district_zones": [
+        {
+          "type": "residential",
+          "center": {
+            "x": 2933,
+            "y": 906
+          },
+          "building_count": 2
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 2717,
+            "y": 914
+          },
+          "building_count": 4
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 2890,
+            "y": 947
+          },
+          "building_count": 5
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 2829,
+            "y": 994
+          },
+          "building_count": 5
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 2849,
+            "y": 994
+          },
+          "building_count": 3
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 2935,
+            "y": 1106
+          },
+          "building_count": 3
+        }
+      ],
+      "building_distances": {
+        "unknown": {
+          "unknown": 115.86295036665807
+        }
+      },
+      "building_colocation": {
+        "unknown": []
+      },
+      "center_point": [
+        2849,
+        976
+      ],
+      "density_gradient": [
+        0.0,
+        1.5915494309189533,
+        2.475743559207261,
+        1.2732395447351628,
+        0.7356495147358718,
+        0.41380285203892786
+      ],
+      "road_grid_type": "none",
+      "placement_rules": [
+        {
+          "type": "minimum_spacing",
+          "value": 4.0,
+          "description": "Minimum distance between buildings"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 2933,
+            "y": 906
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 2717,
+            "y": 914
+          },
+          "target_count": 4,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 2890,
+            "y": 947
+          },
+          "target_count": 5,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 2829,
+            "y": 994
+          },
+          "target_count": 5,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 2849,
+            "y": 994
+          },
+          "target_count": 3,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 2935,
+            "y": 1106
+          },
+          "target_count": 3,
+          "description": "residential district density"
+        }
+      ]
+    },
+    "yew": {
+      "name": "yew",
+      "total_area": 40000,
+      "building_count": 4,
+      "density": 1.0,
+      "road_network": {
+        "exists": false
+      },
+      "building_clusters": [
+        {
+          "buildings": 3,
+          "center": {
+            "x": 460,
+            "y": 986
+          },
+          "radius": 10.198039027185569
+        }
+      ],
+      "district_zones": [
+        {
+          "type": "residential",
+          "center": {
+            "x": 460,
+            "y": 986
+          },
+          "building_count": 3
+        }
+      ],
+      "building_distances": {
+        "unknown": {
+          "unknown": 77.19484429175408
+        }
+      },
+      "building_colocation": {
+        "unknown": []
+      },
+      "center_point": [
+        457,
+        1022
+      ],
+      "density_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.3819718634205488,
+        0.16976527263135502,
+        0.0954929658551372
+      ],
+      "road_grid_type": "none",
+      "placement_rules": [
+        {
+          "type": "minimum_spacing",
+          "value": 4.47213595499958,
+          "description": "Minimum distance between buildings"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 460,
+            "y": 986
+          },
+          "target_count": 3,
+          "description": "residential district density"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+Town: demo_block
+Anchor: 3500,1700
+Base: 3484,1688
+Templates:
+  Small Stone Workshop: 1
+  Small Wood House A: 2
+  Two Story Stone and Plaster House: 1

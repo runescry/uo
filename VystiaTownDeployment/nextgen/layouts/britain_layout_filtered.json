@@ -1,0 +1,426 @@
+{
+  "source": "britain",
+  "source_bounds": {
+    "x1": 1400,
+    "y1": 1512,
+    "x2": 1750,
+    "y2": 1800
+  },
+  "placements": [
+    {
+      "id": 0,
+      "center": [
+        1436.5,
+        1587.5
+      ],
+      "bounds": {
+        "x1": 1402,
+        "y1": 1584,
+        "x2": 1471,
+        "y2": 1591
+      },
+      "span": [
+        70,
+        8
+      ],
+      "area": 560,
+      "aspect_ratio": 8.75,
+      "statics_count": 364,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 0.65,
+      "avg_z": -3.478021978021978,
+      "z_range": [
+        -5,
+        4
+      ],
+      "dominant_tiles": [
+        [
+          6043,
+          46
+        ],
+        [
+          6044,
+          44
+        ],
+        [
+          6041,
+          42
+        ],
+        [
+          6042,
+          40
+        ],
+        [
+          6039,
+          37
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "center": [
+        1435.5,
+        1651.5
+      ],
+      "bounds": {
+        "x1": 1400,
+        "y1": 1648,
+        "x2": 1471,
+        "y2": 1655
+      },
+      "span": [
+        72,
+        8
+      ],
+      "area": 576,
+      "aspect_ratio": 9.0,
+      "statics_count": 535,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 0.929,
+      "avg_z": 23.338317757009346,
+      "z_range": [
+        -5,
+        54
+      ],
+      "dominant_tiles": [
+        [
+          1488,
+          64
+        ],
+        [
+          194,
+          64
+        ],
+        [
+          1487,
+          64
+        ],
+        [
+          222,
+          42
+        ],
+        [
+          200,
+          31
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "center": [
+        1429.0,
+        1747.5
+      ],
+      "bounds": {
+        "x1": 1403,
+        "y1": 1744,
+        "x2": 1455,
+        "y2": 1751
+      },
+      "span": [
+        53,
+        8
+      ],
+      "area": 424,
+      "aspect_ratio": 6.62,
+      "statics_count": 381,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 0.899,
+      "avg_z": 0.03412073490813648,
+      "z_range": [
+        -5,
+        38
+      ],
+      "dominant_tiles": [
+        [
+          6043,
+          69
+        ],
+        [
+          6039,
+          55
+        ],
+        [
+          6041,
+          46
+        ],
+        [
+          6044,
+          45
+        ],
+        [
+          6040,
+          37
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "center": [
+        1435.5,
+        1779.5
+      ],
+      "bounds": {
+        "x1": 1400,
+        "y1": 1776,
+        "x2": 1471,
+        "y2": 1783
+      },
+      "span": [
+        72,
+        8
+      ],
+      "area": 576,
+      "aspect_ratio": 9.0,
+      "statics_count": 561,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 0.974,
+      "avg_z": -5.0,
+      "z_range": [
+        -5,
+        -5
+      ],
+      "dominant_tiles": [
+        [
+          6039,
+          108
+        ],
+        [
+          6040,
+          96
+        ],
+        [
+          6044,
+          93
+        ],
+        [
+          6043,
+          90
+        ],
+        [
+          6041,
+          83
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "center": [
+        1567.5,
+        1579.5
+      ],
+      "bounds": {
+        "x1": 1536,
+        "y1": 1576,
+        "x2": 1599,
+        "y2": 1583
+      },
+      "span": [
+        64,
+        8
+      ],
+      "area": 512,
+      "aspect_ratio": 8.0,
+      "statics_count": 682,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 1.332,
+      "avg_z": -5.0,
+      "z_range": [
+        -5,
+        -5
+      ],
+      "dominant_tiles": [
+        [
+          6038,
+          304
+        ],
+        [
+          6042,
+          68
+        ],
+        [
+          6043,
+          65
+        ],
+        [
+          6040,
+          61
+        ],
+        [
+          6039,
+          58
+        ]
+      ]
+    },
+    {
+      "id": 11,
+      "center": [
+        1611.5,
+        1611.5
+      ],
+      "bounds": {
+        "x1": 1584,
+        "y1": 1608,
+        "x2": 1639,
+        "y2": 1615
+      },
+      "span": [
+        56,
+        8
+      ],
+      "area": 448,
+      "aspect_ratio": 7.0,
+      "statics_count": 390,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 0.871,
+      "avg_z": -5.0,
+      "z_range": [
+        -5,
+        -5
+      ],
+      "dominant_tiles": [
+        [
+          6038,
+          209
+        ],
+        [
+          6041,
+          34
+        ],
+        [
+          6042,
+          30
+        ],
+        [
+          6039,
+          24
+        ],
+        [
+          6044,
+          24
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "center": [
+        1647.5,
+        1643.5
+      ],
+      "bounds": {
+        "x1": 1616,
+        "y1": 1640,
+        "x2": 1679,
+        "y2": 1647
+      },
+      "span": [
+        64,
+        8
+      ],
+      "area": 512,
+      "aspect_ratio": 8.0,
+      "statics_count": 395,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 0.771,
+      "avg_z": -4.886075949367089,
+      "z_range": [
+        -5,
+        0
+      ],
+      "dominant_tiles": [
+        [
+          6038,
+          152
+        ],
+        [
+          6041,
+          43
+        ],
+        [
+          6043,
+          39
+        ],
+        [
+          6039,
+          37
+        ],
+        [
+          6042,
+          35
+        ]
+      ]
+    },
+    {
+      "id": 18,
+      "center": [
+        1723.0,
+        1643.5
+      ],
+      "bounds": {
+        "x1": 1696,
+        "y1": 1640,
+        "x2": 1750,
+        "y2": 1647
+      },
+      "span": [
+        55,
+        8
+      ],
+      "area": 440,
+      "aspect_ratio": 6.88,
+      "statics_count": 490,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 1.114,
+      "avg_z": 21.59591836734694,
+      "z_range": [
+        0,
+        41
+      ],
+      "dominant_tiles": [
+        [
+          1431,
+          200
+        ],
+        [
+          1476,
+          64
+        ],
+        [
+          85,
+          36
+        ],
+        [
+          1475,
+          32
+        ],
+        [
+          52,
+          16
+        ]
+      ]
+    }
+  ],
+  "metadata": {
+    "total_statics": 16252,
+    "cluster_count": 20,
+    "parameters": {
+      "chunk_size": 16,
+      "min_chunk_statics": 40,
+      "min_cluster_statics": 120,
+      "max_chunks": 12,
+      "reject_vegetation": true,
+      "require_door": false,
+      "min_area": 400,
+      "max_aspect": 10.0,
+      "min_density": 0.3
+    }
+  }
+}

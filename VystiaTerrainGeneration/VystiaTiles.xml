@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    VYSTIA TILE MAPPING FOR UO LANDSCAPER
+    Place this file in your UO Landscaper/Data folder as VystiaTiles.xml
+    This maps biome colors to specific UO terrain and static tiles
+-->
+
+<LandscaperTileConfig>
+    <!-- Color to Tile Mappings -->
+    <!-- Each color in the terrain.bmp corresponds to specific tile sets -->
+    
+    <!-- OCEAN/WATER (Dark Blue: RGB 0,0,139) -->
+    <TerrainType Name="Ocean" Color="00008B">
+        <LandTiles>
+            <Tile ID="168" Weight="60" /> <!-- Deep Water -->
+            <Tile ID="169" Weight="20" /> <!-- Deep Water -->
+            <Tile ID="170" Weight="10" /> <!-- Deep Water -->
+            <Tile ID="171" Weight="10" /> <!-- Deep Water -->
+        </LandTiles>
+        <Transitions>
+            <Edge Type="Land" TileSet="WaterEdge" />
+        </Transitions>
+    </TerrainType>
+    
+    <!-- SHALLOW WATER (Blue: RGB 100,149,237) -->
+    <TerrainType Name="ShallowWater" Color="6495ED">
+        <LandTiles>
+            <Tile ID="164" Weight="40" /> <!-- Shallow Water -->
+            <Tile ID="165" Weight="30" /> <!-- Shallow Water -->
+            <Tile ID="166" Weight="20" /> <!-- Shallow Water -->
+            <Tile ID="167" Weight="10" /> <!-- Shallow Water -->
+        </LandTiles>
+    </TerrainType>
+    
+    <!-- FROSTHOLD/SNOW (White: RGB 255,255,255) -->
+    <TerrainType Name="Snow" Color="FFFFFF">
+        <LandTiles>
+            <Tile ID="268" Weight="30" /> <!-- Snow -->
+            <Tile ID="269" Weight="30" /> <!-- Snow -->
+            <Tile ID="270" Weight="20" /> <!-- Snow -->
+            <Tile ID="271" Weight="10" /> <!-- Snow -->
+            <Tile ID="272" Weight="5" />  <!-- Snow -->
+            <Tile ID="273" Weight="3" />  <!-- Snow -->
+            <Tile ID="274" Weight="1" />  <!-- Snow -->
+            <Tile ID="275" Weight="1" />  <!-- Snow -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="3286" Density="5" />  <!-- Snow covered tree 1 -->
+            <Static ID="3287" Density="5" />  <!-- Snow covered tree 2 -->
+            <Static ID="3288" Density="3" />  <!-- Snow covered tree 3 -->
+            <Static ID="3289" Density="3" />  <!-- Snow covered tree 4 -->
+            <Static ID="4973" Density="2" />  <!-- Ice formation 1 -->
+            <Static ID="4974" Density="2" />  <!-- Ice formation 2 -->
+            <Static ID="6571" Density="1" />  <!-- Ice crystals -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- ICE (Light Blue: RGB 200,200,255) -->
+    <TerrainType Name="Ice" Color="C8C8FF">
+        <LandTiles>
+            <Tile ID="276" Weight="30" /> <!-- Ice -->
+            <Tile ID="277" Weight="30" /> <!-- Ice -->
+            <Tile ID="278" Weight="20" /> <!-- Ice -->
+            <Tile ID="279" Weight="20" /> <!-- Ice -->
+        </LandTiles>
+    </TerrainType>
+    
+    <!-- DESERT (Sandy Brown: RGB 244,164,96) -->
+    <TerrainType Name="Desert" Color="F4A460">
+        <LandTiles>
+            <Tile ID="22" Weight="25" />  <!-- Sand -->
+            <Tile ID="23" Weight="25" />  <!-- Sand -->
+            <Tile ID="24" Weight="20" />  <!-- Sand -->
+            <Tile ID="25" Weight="15" />  <!-- Sand -->
+            <Tile ID="26" Weight="8" />   <!-- Sand -->
+            <Tile ID="27" Weight="4" />   <!-- Sand -->
+            <Tile ID="28" Weight="2" />   <!-- Sand -->
+            <Tile ID="29" Weight="1" />   <!-- Sand -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="3274" Density="2" />  <!-- Cactus 1 -->
+            <Static ID="3275" Density="2" />  <!-- Cactus 2 -->
+            <Static ID="3276" Density="2" />  <!-- Cactus 3 -->
+            <Static ID="6001" Density="3" />  <!-- Desert rock 1 -->
+            <Static ID="6002" Density="3" />  <!-- Desert rock 2 -->
+            <Static ID="6003" Density="2" />  <!-- Desert rock 3 -->
+            <Static ID="3319" Density="1" />  <!-- Tumbleweed -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- VOLCANIC (Dark Red: RGB 139,0,0) -->
+    <TerrainType Name="Volcanic" Color="8B0000">
+        <LandTiles>
+            <Tile ID="500" Weight="30" />  <!-- Lava -->
+            <Tile ID="501" Weight="30" />  <!-- Lava -->
+            <Tile ID="502" Weight="20" />  <!-- Lava -->
+            <Tile ID="503" Weight="20" />  <!-- Lava -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="6571" Density="5" />  <!-- Lava bubble -->
+            <Static ID="4967" Density="3" />  <!-- Volcanic vent -->
+            <Static ID="6001" Density="4" />  <!-- Burnt rock -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- ASH (Dim Gray: RGB 105,105,105) -->
+    <TerrainType Name="Ash" Color="696969">
+        <LandTiles>
+            <Tile ID="441" Weight="30" />  <!-- Burnt ground -->
+            <Tile ID="442" Weight="30" />  <!-- Burnt ground -->
+            <Tile ID="443" Weight="20" />  <!-- Burnt ground -->
+            <Tile ID="444" Weight="20" />  <!-- Burnt ground -->
+        </LandTiles>
+    </TerrainType>
+    
+    <!-- FOREST (Dark Green: RGB 0,100,0) -->
+    <TerrainType Name="Forest" Color="006400">
+        <LandTiles>
+            <Tile ID="324" Weight="30" /> <!-- Forest floor -->
+            <Tile ID="325" Weight="30" /> <!-- Forest floor -->
+            <Tile ID="326" Weight="20" /> <!-- Forest floor -->
+            <Tile ID="327" Weight="20" /> <!-- Forest floor -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="3274" Density="8" />  <!-- Oak tree 1 -->
+            <Static ID="3275" Density="8" />  <!-- Oak tree 2 -->
+            <Static ID="3276" Density="6" />  <!-- Walnut tree -->
+            <Static ID="3277" Density="6" />  <!-- Willow tree -->
+            <Static ID="3280" Density="4" />  <!-- Cedar tree -->
+            <Static ID="3283" Density="4" />  <!-- Yew tree -->
+            <Static ID="3290" Density="3" />  <!-- Sapling -->
+            <Static ID="3293" Density="3" />  <!-- Fallen log -->
+            <Static ID="3239" Density="2" />  <!-- Fern 1 -->
+            <Static ID="3240" Density="2" />  <!-- Fern 2 -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- GRASS PLAINS (Yellow Green: RGB 154,205,50) -->
+    <TerrainType Name="Plains" Color="9ACD32">
+        <LandTiles>
+            <Tile ID="2" Weight="30" />   <!-- Grass -->
+            <Tile ID="3" Weight="30" />   <!-- Grass -->
+            <Tile ID="4" Weight="20" />   <!-- Grass -->
+            <Tile ID="5" Weight="20" />   <!-- Grass -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="3277" Density="2" />  <!-- Lone tree -->
+            <Static ID="3237" Density="3" />  <!-- Tall grass 1 -->
+            <Static ID="3238" Density="3" />  <!-- Tall grass 2 -->
+            <Static ID="3253" Density="2" />  <!-- Bush 1 -->
+            <Static ID="3254" Density="2" />  <!-- Bush 2 -->
+            <Static ID="3377" Density="1" />  <!-- Flowers 1 -->
+            <Static ID="3378" Density="1" />  <!-- Flowers 2 -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- SWAMP (Dark Olive Green: RGB 85,107,47) -->
+    <TerrainType Name="Swamp" Color="556B2F">
+        <LandTiles>
+            <Tile ID="643" Weight="30" /> <!-- Swamp -->
+            <Tile ID="644" Weight="30" /> <!-- Swamp -->
+            <Tile ID="645" Weight="20" /> <!-- Swamp -->
+            <Tile ID="646" Weight="20" /> <!-- Swamp -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="3240" Density="4" />  <!-- Dead tree 1 -->
+            <Static ID="3241" Density="4" />  <!-- Dead tree 2 -->
+            <Static ID="3242" Density="3" />  <!-- Dead tree 3 -->
+            <Static ID="3320" Density="5" />  <!-- Mushroom 1 -->
+            <Static ID="3321" Density="5" />  <!-- Mushroom 2 -->
+            <Static ID="4650" Density="2" />  <!-- Bog bubble -->
+            <Static ID="3239" Density="3" />  <!-- Swamp fern -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- CRYSTAL (Cyan: RGB 0,255,255) -->
+    <TerrainType Name="Crystal" Color="00FFFF">
+        <LandTiles>
+            <Tile ID="121" Weight="30" />  <!-- Cave floor -->
+            <Tile ID="122" Weight="30" />  <!-- Cave floor -->
+            <Tile ID="123" Weight="20" />  <!-- Cave floor -->
+            <Tile ID="124" Weight="20" />  <!-- Cave floor -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="2223" Hue="1154" Density="10" />  <!-- Crystal formation 1 -->
+            <Static ID="2224" Hue="1154" Density="10" />  <!-- Crystal formation 2 -->
+            <Static ID="2225" Hue="1154" Density="8" />   <!-- Crystal formation 3 -->
+            <Static ID="2226" Hue="1154" Density="6" />   <!-- Crystal formation 4 -->
+            <Static ID="2229" Hue="1154" Density="5" />   <!-- Crystal stalagmite -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- SHADOW (Purple: RGB 128,0,128) -->
+    <TerrainType Name="Shadow" Color="800080">
+        <LandTiles>
+            <Tile ID="580" Weight="30" />  <!-- Dark cave -->
+            <Tile ID="581" Weight="30" />  <!-- Dark cave -->
+            <Tile ID="582" Weight="20" />  <!-- Dark cave -->
+            <Tile ID="583" Weight="20" />  <!-- Dark cave -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="8429" Density="3" />  <!-- Shadow wisp -->
+            <Static ID="8430" Density="3" />  <!-- Shadow wisp -->
+            <Static ID="6571" Hue="1" Density="2" />  <!-- Black crystal -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- INDUSTRIAL/CITY (Dark Gray: RGB 169,169,169) -->
+    <TerrainType Name="Industrial" Color="A9A9A9">
+        <LandTiles>
+            <Tile ID="402" Weight="30" />  <!-- Cobblestone -->
+            <Tile ID="403" Weight="30" />  <!-- Cobblestone -->
+            <Tile ID="404" Weight="20" />  <!-- Cobblestone -->
+            <Tile ID="405" Weight="20" />  <!-- Cobblestone -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="2842" Density="2" />  <!-- Lamp post -->
+            <Static ID="4011" Density="1" />  <!-- Gear (Ironclad) -->
+            <Static ID="4012" Density="1" />  <!-- Gear (Ironclad) -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- MOUNTAIN (Gray: RGB 128,128,128) -->
+    <TerrainType Name="Mountain" Color="808080">
+        <LandTiles>
+            <Tile ID="220" Weight="20" />  <!-- Rock -->
+            <Tile ID="221" Weight="20" />  <!-- Rock -->
+            <Tile ID="222" Weight="15" />  <!-- Rock -->
+            <Tile ID="223" Weight="15" />  <!-- Rock -->
+            <Tile ID="224" Weight="10" />  <!-- Rock -->
+            <Tile ID="225" Weight="10" />  <!-- Rock -->
+            <Tile ID="226" Weight="5" />   <!-- Rock -->
+            <Tile ID="227" Weight="5" />   <!-- Rock -->
+        </LandTiles>
+        <StaticDecoration>
+            <Static ID="6001" Density="5" />  <!-- Boulder 1 -->
+            <Static ID="6002" Density="5" />  <!-- Boulder 2 -->
+            <Static ID="6003" Density="4" />  <!-- Boulder 3 -->
+            <Static ID="6004" Density="3" />  <!-- Boulder 4 -->
+        </StaticDecoration>
+    </TerrainType>
+    
+    <!-- ROAD (Brown: RGB 139,69,19) -->
+    <TerrainType Name="Road" Color="8B4513">
+        <LandTiles>
+            <Tile ID="67" Weight="30" />  <!-- Dirt road -->
+            <Tile ID="68" Weight="30" />  <!-- Dirt road -->
+            <Tile ID="69" Weight="20" />  <!-- Dirt road -->
+            <Tile ID="70" Weight="20" />  <!-- Dirt road -->
+        </LandTiles>
+    </TerrainType>
+    
+    <!-- FARMLAND (Wheat: RGB 245,222,179) -->
+    <TerrainType Name="Farmland" Color="F5DEB3">
+        <LandTiles>
+            <Tile ID="9" Weight="30" />   <!-- Dirt -->
+            <Tile ID="10" Weight="30" />  <!-- Dirt -->
+            <Tile ID="11" Weight="20" />  <!-- Dirt -->
+            <Tile ID="12" Weight="20" />  <!-- Dirt -->
+        </LandTiles>
+    </TerrainType>
+    
+    <!-- TRANSITION TILES -->
+    <!-- UO Landscaper uses these for smooth edges between terrain types -->
+    
+    <Transitions>
+        <!-- Water to Land transitions -->
+        <Transition From="Ocean" To="Plains">
+            <Tiles>176,177,178,179,180,181,182,183</Tiles>
+        </Transition>
+        <Transition From="Ocean" To="Desert">
+            <Tiles>184,185,186,187,188,189,190,191</Tiles>
+        </Transition>
+        <Transition From="Ocean" To="Snow">
+            <Tiles>192,193,194,195,196,197,198,199</Tiles>
+        </Transition>
+        
+        <!-- Land to Land transitions -->
+        <Transition From="Plains" To="Desert">
+            <Tiles>30,31,32,33,34,35,36,37</Tiles>
+        </Transition>
+        <Transition From="Plains" To="Forest">
+            <Tiles>328,329,330,331,332,333,334,335</Tiles>
+        </Transition>
+        <Transition From="Plains" To="Snow">
+            <Tiles>280,281,282,283,284,285,286,287</Tiles>
+        </Transition>
+        <Transition From="Plains" To="Mountain">
+            <Tiles>228,229,230,231,232,233,234,235</Tiles>
+        </Transition>
+        <Transition From="Desert" To="Mountain">
+            <Tiles>236,237,238,239,240,241,242,243</Tiles>
+        </Transition>
+        <Transition From="Forest" To="Mountain">
+            <Tiles>336,337,338,339,340,341,342,343</Tiles>
+        </Transition>
+    </Transitions>
+    
+    <!-- SPECIAL FEATURES -->
+    <!-- Unique landmarks and special tiles -->
+    
+    <SpecialFeatures>
+        <!-- Volcanoes -->
+        <Feature Type="Volcano" TerrainType="Volcanic">
+            <CenterTile ID="500" /> <!-- Lava -->
+            <Radius1 TileID="501" />
+            <Radius2 TileID="502" />
+            <Radius3 TileID="441" /> <!-- Burnt ground -->
+            <Static ID="6571" />     <!-- Volcanic vent -->
+        </Feature>
+        
+        <!-- Crystal Formations -->
+        <Feature Type="CrystalField" TerrainType="Crystal">
+            <Static ID="2223" Hue="1154" Density="10" />
+            <Static ID="2224" Hue="1154" Density="10" />
+            <Static ID="2225" Hue="1154" Density="8" />
+        </Feature>
+        
+        <!-- Cities -->
+        <Feature Type="City" TerrainType="Industrial">
+            <FlattenRadius Value="50" />
+            <ForceTile ID="402" /> <!-- Cobblestone -->
+        </Feature>
+    </SpecialFeatures>
+    
+</LandscaperTileConfig>

@@ -1,0 +1,122 @@
+"""
+Generate all Vystia cities at their proper locations
+Coordinates scaled from 7168x4096 to 896x512 (divide by 8)
+"""
+
+from production_town_generator import ProductionTownGenerator, GenerationConfig
+
+# City definitions from VYSTIA_WORLD_CONFIG.json
+# Original coords are for 7168x4096, scaled down to 896x512 (divide by 8)
+VYSTIA_CITIES = [
+    {
+        'name': 'Ironheart_Capital',
+        'original_coords': (800, 600),
+        'scaled_coords': (100, 75),  # 800/8, 600/8
+        'size': 'large',
+        'style': 'grid',
+        'density': 4.5,
+        'description': 'Industrial capital with castle, factories, docks'
+    },
+    {
+        'name': 'Frostholm',
+        'original_coords': (1200, 200),
+        'scaled_coords': (150, 25),
+        'size': 'large',
+        'style': 'organic',
+        'density': 3.5,
+        'description': 'Frozen city with great hall and ice shrine'
+    },
+    {
+        'name': 'Winterguard_Citadel',
+        'original_coords': (800, 100),
+        'scaled_coords': (100, 12),
+        'size': 'medium',
+        'style': 'grid',
+        'density': 3.0,
+        'description': 'Fortress with hot springs and armory'
+    },
+    {
+        'name': 'Verdant_Grove',
+        'original_coords': (1800, 400),
+        'scaled_coords': (225, 50),
+        'size': 'large',
+        'style': 'organic',
+        'density': 3.0,
+        'description': 'Forest city with tree houses and grove shrine'
+    },
+    {
+        'name': 'Deepforge_City',
+        'original_coords': (2400, 1400),
+        'scaled_coords': (300, 175),
+        'size': 'large',
+        'style': 'dense',
+        'density': 5.0,
+        'description': 'Underground dwarven city with great forge'
+    },
+    {
+        'name': 'Whispering_Sands_City',
+        'original_coords': (4200, 2600),
+        'scaled_coords': (525, 325),
+        'size': 'large',
+        'style': 'sparse',
+        'density': 3.5,
+        'description': 'Desert city with pyramid and bazaar'
+    },
+]
+
+def generate_all_cities():
+    """Generate all Vystia cities"""
+    generator = ProductionTownGenerator()
+
+    print("="*60)
+    print("VYSTIA CITY GENERATION")
+    print("="*60)
+    print(f"Map: 896x512 (scaled from 7168x4096)")
+    print(f"Cities to generate: {len(VYSTIA_CITIES)}")
+    print("="*60)
+
+    generated = []
+
+    for city_def in VYSTIA_CITIES:
+        print(f"\n{'='*60}")
+        print(f"Generating: {city_def['name']}")
+        print(f"Original coords: {city_def['original_coords']}")
+        print(f"Scaled coords: {city_def['scaled_coords']}")
+        print(f"Description: {city_def['description']}")
+        print(f"{'='*60}")
+
+        config = GenerationConfig(
+            name=city_def['name'],
+            target_coordinates=city_def['scaled_coords'],
+            target_size=city_def['size'],
+            style=city_def['style'],
+            building_density=city_def['density'],
+            min_building_spacing=4,
+        )
+
+        town = generator.generate_town(config)
+        output_file = f"{city_def['name'].lower()}.json"
+        generator.export_to_json(town, output_file)
+
+        generated.append({
+            'name': city_def['name'],
+            'file': output_file,
+            'coords': city_def['scaled_coords'],
+            'buildings': town['statistics']['total_buildings'],
+            'statics': town['statistics']['total_statics'],
+        })
+
+    # Print summary
+    print(f"\n{'='*60}")
+    print("GENERATION COMPLETE")
+    print(f"{'='*60}")
+    for city in generated:
+        print(f"{city['name']:25} @ ({city['coords'][0]:3},{city['coords'][1]:3}): "
+              f"{city['buildings']:3} buildings, {city['statics']:5} statics")
+
+    print(f"\n{'='*60}")
+    print("Next: Use mul_writer_batch.py to add all cities to map")
+    print(f"{'='*60}")
+
+if __name__ == "__main__":
+    generate_all_cities()

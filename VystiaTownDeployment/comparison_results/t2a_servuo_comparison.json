@@ -1,0 +1,44 @@
+{
+  "osi_map_info": {
+    "path": "D:\\client\\map0.mul",
+    "width": 7168,
+    "height": 4096,
+    "file_size": 77070336,
+    "exists": true
+  },
+  "servuo_map_info": {
+    "path": "C:\\DevEnv\\GIT\\UO\\ServUO\\Data\\Maps\\map0.mul",
+    "width": 7168,
+    "height": 4096,
+    "file_size": 0,
+    "exists": false
+  },
+  "osi_total_statics": 3138822,
+  "servuo_total_statics": 0,
+  "osi_total_terrain": 29360128,
+  "servuo_total_terrain": 0,
+  "osi_categories": {
+    "rocks": 1431486,
+    "trees": 874418,
+    "other": 816102,
+    "bones": 1352,
+    "shrines": 1176,
+    "floors": 10730,
+    "chests": 69,
+    "walls": 3305,
+    "signs": 93,
+    "forges_anvils": 3,
+    "graves": 75,
+    "moongates": 1,
+    "roofs": 1,
+    "crates": 8,
+    "barrels": 3
+  },
+  "servuo_categories": {},
+  "differences": {},
+  "unique_to_osi": 3138822,
+  "unique_to_servuo": 0,
+  "common_locations": 0,
+  "terrain_differences": 0,
+  "dimension_match": false
+}

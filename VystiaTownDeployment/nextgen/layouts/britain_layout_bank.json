@@ -1,0 +1,76 @@
+{
+  "source": "britain",
+  "source_bounds": {
+    "x1": 1400,
+    "y1": 1512,
+    "x2": 1750,
+    "y2": 1800
+  },
+  "placements": [
+    {
+      "id": 19,
+      "center": [
+        1725.0,
+        1707.5
+      ],
+      "bounds": {
+        "x1": 1712,
+        "y1": 1704,
+        "x2": 1738,
+        "y2": 1711
+      },
+      "span": [
+        27,
+        8
+      ],
+      "area": 216,
+      "aspect_ratio": 3.38,
+      "statics_count": 528,
+      "door_detected": false,
+      "door_count": 0,
+      "density": 2.444,
+      "avg_z": -5.0,
+      "z_range": [
+        -5,
+        -5
+      ],
+      "dominant_tiles": [
+        [
+          6038,
+          456
+        ],
+        [
+          6041,
+          20
+        ],
+        [
+          6043,
+          15
+        ],
+        [
+          6042,
+          12
+        ],
+        [
+          6039,
+          9
+        ]
+      ]
+    }
+  ],
+  "metadata": {
+    "total_statics": 16252,
+    "cluster_count": 20,
+    "parameters": {
+      "chunk_size": 16,
+      "min_chunk_statics": 40,
+      "min_cluster_statics": 120,
+      "max_chunks": 12,
+      "reject_vegetation": true,
+      "require_door": false,
+      "min_area": 200,
+      "max_aspect": 4.0,
+      "min_density": 1.5
+    }
+  }
+}

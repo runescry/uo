@@ -1,0 +1,22 @@
+{
+  "source": "cove",
+  "source_bounds": {
+    "x1": 2200,
+    "y1": 1150,
+    "x2": 2350,
+    "y2": 1295
+  },
+  "placements": [],
+  "metadata": {
+    "total_statics": 6812,
+    "cluster_count": 8,
+    "parameters": {
+      "chunk_size": 16,
+      "min_chunk_statics": 40,
+      "min_cluster_statics": 120,
+      "max_chunks": 12,
+      "reject_vegetation": true,
+      "require_door": true
+    }
+  }
+}

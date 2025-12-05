@@ -1,0 +1,58 @@
+# Vystia Project - Git Repository
+# Only track: ServUO, Vystia, VystiaTerrainGeneration, VystiaTownDeployment
+
+# Ignore everything by default
+/*
+
+# Explicitly include these four directories
+!/ServUO/
+!/Vystia/
+!/VystiaTerrainGeneration/
+!/VystiaTownDeployment/
+!/.gitignore
+!/README.md
+
+# But ignore build outputs and temporary files within included directories
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+**/.vs/
+**/*.user
+**/*.suo
+**/*.cache
+**/*.dll
+**/*.exe
+**/*.pdb
+**/*.log
+
+# Ignore compiled Python files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Ignore OS files
+**/Thumbs.db
+**/.DS_Store
+**/desktop.ini
+
+# Ignore Windows reserved filenames
+**/nul
+**/NUL
+
+# Ignore IDE files
+**/.vscode/
+**/.idea/
+**/*.swp
+**/*.swo
+
+# Ignore temp and backup files
+**/*~
+**/*.bak
+**/*.tmp
+**/*.temp
+
+# Ignore large binary map files (optional - uncomment if map files get too large)
+# **/*.mul
+# **/*.uop
+# **/*.bmp

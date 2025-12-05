@@ -1,0 +1,438 @@
+"""
+Pattern-Based UO Town Generator
+Generates new towns based on learned patterns from OSI towns
+Uses constraint-based placement with learned rules
+"""
+
+import json
+import random
+import math
+import numpy as np
+from typing import List, Dict, Tuple, Optional
+from dataclasses import dataclass
+from pathlib import Path
+from collections import defaultdict
+
+@dataclass
+class GenerationConfig:
+    """Configuration for town generation"""
+    name: str
+    target_size: str  # 'small', 'medium', 'large'
+    style: str  # 'britain', 'vesper', 'organic', 'grid'
+    terrain_bounds: Tuple[int, int, int, int]  # x1, y1, x2, y2
+    
+    # Optional constraints
+    coastal: bool = False
+    fortified: bool = False
+    has_castle: bool = False
+    
+    # Density targets
+    building_density: float = 3.0  # buildings per 100 tiles
+    road_coverage: float = 0.15
+
+class TownGenerator:
+    """Generates towns using learned patterns"""
+    
+    def __init__(self, patterns_file: str = 'town_patterns.json'):
+        with open(patterns_file, 'r') as f:
+            data = json.load(f)
+            self.patterns = data['patterns']
+        
+        self.building_library = {}
+        self._load_building_library()
+    
+    def _load_building_library(self):
+        """Load building templates from extracted towns"""
+        # Load all town data to extract building templates
+        for town_file in Path('town_data').glob('*.json'):
+            with open(town_file, 'r') as f:
+                town_data = json.load(f)
+                self._extract_building_templates(town_data)
+    
+    def _extract_building_templates(self, town_data: Dict):
+        """Extract reusable building templates"""
+        # Group statics by building (simplified clustering)
+        statics = town_data['statics']
+        
+        # For now, just store raw static groups
+        # In production, you'd cluster these into buildings
+        building_key = f"{town_data['name']}_building"
+        if building_key not in self.building_library:
+            self.building_library[building_key] = []
+        
+        # Store chunks of statics as templates
+        # This is simplified - you'd use proper building detection
+        self.building_library[building_key].extend(statics)
+    
+    def generate_town(self, config: GenerationConfig) -> Dict:
+        """Generate a new town based on configuration"""
+        print(f"Generating {config.name} ({config.target_size}, {config.style} style)...")
+        
+        # Select pattern template
+        template = self._select_template(config.style)
+        
+        # Calculate area and targets
+        bounds = config.terrain_bounds
+        width = bounds[2] - bounds[0]
+        height = bounds[3] - bounds[1]
+        area = width * height
+        
+        target_buildings = int((area / 10000) * config.building_density)
+        
+        # Initialize generation state
+        state = {
+            'config': config,
+            'bounds': bounds,
+            'area': area,
+            'target_buildings': target_buildings,
+            'placed_buildings': [],
+            'road_tiles': [],
+            'occupied_grid': np.zeros((height, width), dtype=bool),
+        }
+        
+        # Generation pipeline
+        self._generate_road_network(state, template)
+        self._identify_buildable_zones(state)
+        self._place_anchor_buildings(state, template)
+        self._fill_districts(state, template)
+        self._add_decoration(state)
+        
+        # Convert to output format
+        return self._state_to_output(state)
+    
+    def _select_template(self, style: str) -> Dict:
+        """Select a pattern template to base generation on"""
+        if style in self.patterns:
+            return self.patterns[style]
+        
+        # Find closest match
+        for name, pattern in self.patterns.items():
+            if style in name.lower():
+                return pattern
+        
+        # Default to first pattern
+        return list(self.patterns.values())[0]
+    
+    def _generate_road_network(self, state: Dict, template: Dict):
+        """Generate road network based on template pattern"""
+        bounds = state['bounds']
+        width = bounds[2] - bounds[0]
+        height = bounds[3] - bounds[1]
+        
+        road_type = template.get('road_grid_type', 'organic')
+        
+        if road_type == 'grid':
+            self._generate_grid_roads(state, spacing=20)
+        elif road_type == 'radial':
+            self._generate_radial_roads(state)
+        else:
+            self._generate_organic_roads(state)
+        
+        print(f"  Generated {len(state['road_tiles'])} road tiles ({road_type} pattern)")
+    
+    def _generate_grid_roads(self, state: Dict, spacing: int = 20):
+        """Generate grid-pattern roads"""
+        bounds = state['bounds']
+        x1, y1, x2, y2 = bounds
+        
+        # Horizontal roads
+        for y in range(y1 + spacing, y2, spacing):
+            for x in range(x1, x2):
+                state['road_tiles'].append({
+                    'tile_id': 0x0071,  # Stone road
+                    'x': x, 'y': y, 'z': 0, 'hue': 0
+                })
+                self._mark_occupied(state, x, y)
+        
+        # Vertical roads
+        for x in range(x1 + spacing, x2, spacing):
+            for y in range(y1, y2):
+                state['road_tiles'].append({
+                    'tile_id': 0x0071,
+                    'x': x, 'y': y, 'z': 0, 'hue': 0
+                })
+                self._mark_occupied(state, x, y)
+    
+    def _generate_radial_roads(self, state: Dict):
+        """Generate radial roads from center"""
+        bounds = state['bounds']
+        center_x = (bounds[0] + bounds[2]) // 2
+        center_y = (bounds[1] + bounds[3]) // 2
+        
+        # Main roads radiating from center
+        num_spokes = 6
+        max_radius = min(bounds[2] - bounds[0], bounds[3] - bounds[1]) // 2
+        
+        for spoke in range(num_spokes):
+            angle = (spoke * 2 * math.pi) / num_spokes
+            
+            for r in range(0, max_radius, 1):
+                x = int(center_x + r * math.cos(angle))
+                y = int(center_y + r * math.sin(angle))
+                
+                if bounds[0] <= x < bounds[2] and bounds[1] <= y < bounds[3]:
+                    state['road_tiles'].append({
+                        'tile_id': 0x0071,
+                        'x': x, 'y': y, 'z': 0, 'hue': 0
+                    })
+                    self._mark_occupied(state, x, y)
+    
+    def _generate_organic_roads(self, state: Dict):
+        """Generate organic, winding roads"""
+        bounds = state['bounds']
+        center_x = (bounds[0] + bounds[2]) // 2
+        center_y = (bounds[1] + bounds[3]) // 2
+        
+        # Create a few main paths with random walks
+        num_paths = random.randint(3, 6)
+        
+        for _ in range(num_paths):
+            x, y = center_x, center_y
+            steps = random.randint(30, 60)
+            
+            for _ in range(steps):
+                # Random walk with bias toward edges
+                dx = random.randint(-1, 1)
+                dy = random.randint(-1, 1)
+                
+                x += dx
+                y += dy
+                
+                if bounds[0] <= x < bounds[2] and bounds[1] <= y < bounds[3]:
+                    state['road_tiles'].append({
+                        'tile_id': 0x009C,  # Dirt path
+                        'x': x, 'y': y, 'z': 0, 'hue': 0
+                    })
+                    self._mark_occupied(state, x, y)
+    
+    def _identify_buildable_zones(self, state: Dict):
+        """Identify zones suitable for building placement"""
+        # Simple approach: anywhere not a road and not too close to edge
+        bounds = state['bounds']
+        margin = 5
+        
+        zones = []
+        for x in range(bounds[0] + margin, bounds[2] - margin, 10):
+            for y in range(bounds[1] + margin, bounds[3] - margin, 10):
+                if not self._is_occupied(state, x, y, 5):
+                    zones.append({'x': x, 'y': y, 'priority': random.random()})
+        
+        state['buildable_zones'] = sorted(zones, key=lambda z: z['priority'], reverse=True)
+        print(f"  Identified {len(zones)} buildable zones")
+    
+    def _place_anchor_buildings(self, state: Dict, template: Dict):
+        """Place major anchor buildings (town hall, bank, etc.)"""
+        config = state['config']
+        
+        # Determine anchor buildings based on size
+        anchors = ['bank', 'town_hall'] if config.target_size != 'small' else ['tavern']
+        
+        if config.has_castle:
+            anchors.insert(0, 'castle')
+        
+        for anchor_type in anchors:
+            building = self._get_building_template(anchor_type, size='large')
+            if building:
+                zone = self._find_best_zone(state, building, prefer_center=True)
+                if zone:
+                    self._place_building(state, building, zone['x'], zone['y'])
+                    print(f"  Placed {anchor_type} at ({zone['x']}, {zone['y']})")
+    
+    def _fill_districts(self, state: Dict, template: Dict):
+        """Fill remaining space with buildings based on district patterns"""
+        target = state['target_buildings']
+        placed = len(state['placed_buildings'])
+        
+        # Building type distribution
+        building_mix = {
+            'residential': 0.5,
+            'shop': 0.25,
+            'crafting': 0.15,
+            'misc': 0.1,
+        }
+        
+        while placed < target and state.get('buildable_zones'):
+            # Select building type based on distribution
+            building_type = random.choices(
+                list(building_mix.keys()),
+                weights=list(building_mix.values())
+            )[0]
+            
+            building = self._get_building_template(building_type)
+            if building:
+                zone = self._find_best_zone(state, building)
+                if zone:
+                    self._place_building(state, building, zone['x'], zone['y'])
+                    placed += 1
+                else:
+                    break  # No more suitable zones
+            
+        print(f"  Placed {placed} buildings (target: {target})")
+    
+    def _add_decoration(self, state: Dict):
+        """Add decorative elements (trees, furniture, etc.)"""
+        # Simplified - add some random vegetation
+        bounds = state['bounds']
+        
+        for _ in range(100):
+            x = random.randint(bounds[0], bounds[2] - 1)
+            y = random.randint(bounds[1], bounds[3] - 1)
+            
+            if not self._is_occupied(state, x, y, 2):
+                # Random tree or plant
+                tile_id = random.choice([0x0CCD, 0x0CCE, 0x0D00, 0x0D10])
+                state.setdefault('decoration', []).append({
+                    'tile_id': tile_id,
+                    'x': x, 'y': y, 'z': 0, 'hue': 0
+                })
+    
+    def _get_building_template(self, building_type: str, size: str = 'medium') -> Optional[Dict]:
+        """Get a building template from library"""
+        # Simplified - return a basic template
+        # In production, select from actual extracted buildings
+        
+        sizes = {'small': 8, 'medium': 15, 'large': 25}
+        building_size = sizes.get(size, 15)
+        
+        return {
+            'type': building_type,
+            'size': building_size,
+            'footprint': building_size,
+            'statics': [],  # Would contain actual tile placements
+        }
+    
+    def _find_best_zone(self, state: Dict, building: Dict, prefer_center: bool = False) -> Optional[Dict]:
+        """Find best zone for building placement"""
+        zones = state.get('buildable_zones', [])
+        
+        if not zones:
+            return None
+        
+        # Filter zones with enough space
+        suitable = []
+        for zone in zones:
+            if self._has_space(state, zone['x'], zone['y'], building['footprint']):
+                score = zone['priority']
+                
+                if prefer_center:
+                    # Boost score for central locations
+                    bounds = state['bounds']
+                    center_x = (bounds[0] + bounds[2]) // 2
+                    center_y = (bounds[1] + bounds[3]) // 2
+                    dist = math.sqrt((zone['x'] - center_x)**2 + (zone['y'] - center_y)**2)
+                    score *= (1.0 / (1.0 + dist / 100))
+                
+                suitable.append((score, zone))
+        
+        if not suitable:
+            return None
+        
+        # Return highest scoring zone
+        suitable.sort(reverse=True)
+        selected = suitable[0][1]
+        
+        # Remove from available zones
+        state['buildable_zones'].remove(selected)
+        
+        return selected
+    
+    def _place_building(self, state: Dict, building: Dict, x: int, y: int):
+        """Place a building at the specified location"""
+        footprint = building['footprint']
+        
+        # Mark area as occupied
+        for dx in range(footprint):
+            for dy in range(footprint):
+                self._mark_occupied(state, x + dx, y + dy)
+        
+        state['placed_buildings'].append({
+            'type': building['type'],
+            'x': x, 'y': y,
+            'size': footprint,
+        })
+    
+    def _has_space(self, state: Dict, x: int, y: int, size: int) -> bool:
+        """Check if area has space for building"""
+        for dx in range(size):
+            for dy in range(size):
+                if self._is_occupied(state, x + dx, y + dy):
+                    return False
+        return True
+    
+    def _is_occupied(self, state: Dict, x: int, y: int, radius: int = 0) -> bool:
+        """Check if position is occupied"""
+        bounds = state['bounds']
+        width = bounds[2] - bounds[0]
+        height = bounds[3] - bounds[1]
+        
+        for dx in range(-radius, radius + 1):
+            for dy in range(-radius, radius + 1):
+                check_x = x + dx - bounds[0]
+                check_y = y + dy - bounds[1]
+                
+                if 0 <= check_x < width and 0 <= check_y < height:
+                    if state['occupied_grid'][check_y, check_x]:
+                        return True
+        
+        return False
+    
+    def _mark_occupied(self, state: Dict, x: int, y: int):
+        """Mark position as occupied"""
+        bounds = state['bounds']
+        grid_x = x - bounds[0]
+        grid_y = y - bounds[1]
+        
+        width = bounds[2] - bounds[0]
+        height = bounds[3] - bounds[1]
+        
+        if 0 <= grid_x < width and 0 <= grid_y < height:
+            state['occupied_grid'][grid_y, grid_x] = True
+    
+    def _state_to_output(self, state: Dict) -> Dict:
+        """Convert generation state to output format"""
+        return {
+            'name': state['config'].name,
+            'bounds': state['bounds'],
+            'buildings': state['placed_buildings'],
+            'roads': state['road_tiles'],
+            'decoration': state.get('decoration', []),
+            'statistics': {
+                'total_buildings': len(state['placed_buildings']),
+                'road_tiles': len(state['road_tiles']),
+                'area': state['area'],
+                'density': len(state['placed_buildings']) / (state['area'] / 10000),
+            }
+        }
+    
+    def export_to_centred(self, town_data: Dict, output_file: str):
+        """Export generated town to CentrED+ compatible format"""
+        # This would export to whatever format CentrED+ imports
+        # For now, just export as JSON
+        with open(output_file, 'w') as f:
+            json.dump(town_data, f, indent=2)
+        
+        print(f"Town exported to {output_file}")
+
+# Usage
+if __name__ == "__main__":
+    generator = TownGenerator()
+    
+    # Generate Frosthold capital
+    config = GenerationConfig(
+        name="Frosthold",
+        target_size="large",
+        style="britain",  # Use Britain-style layout
+        terrain_bounds=(1000, 1000, 1200, 1200),  # Adjust to your Vystia coordinates
+        fortified=True,
+        has_castle=False,
+        building_density=4.0,
+    )
+    
+    town = generator.generate_town(config)
+    
+    print(f"\nGenerated {town['name']}:")
+    print(f"  Buildings: {town['statistics']['total_buildings']}")
+    print(f"  Density: {town['statistics']['density']:.2f}")
+    print(f"  Roads: {town['statistics']['road_tiles']} tiles")
+    
+    generator.export_to_centred(town, 'vystia_frosthold.json')

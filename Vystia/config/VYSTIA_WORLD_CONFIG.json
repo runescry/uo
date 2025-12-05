@@ -1,0 +1,535 @@
+{
+  "world_config": {
+    "version": "1.0",
+    "name": "Vystia",
+    "seed": 777333,
+    "map": "Felucca",
+    "dimensions": {
+      "width": 7168,
+      "height": 4096
+    },
+    "description": "A diverse fantasy realm featuring industrial empires, frozen tundras, volcanic wastelands, mystical forests, and countless islands. Home to humans, elves, dwarves, orcs, and magical creatures across 23 unique regions."
+  },
+  
+  "terrain_generation": {
+    "algorithm": "perlin_noise",
+    "parameters": {
+      "octaves": 7,
+      "persistence": 0.55,
+      "lacunarity": 2.1,
+      "scale": 140.0
+    },
+    "biomes": [
+      {
+        "name": "tundra",
+        "tile_id": 1152,
+        "elevation_range": [0, 15],
+        "moisture_range": [0.6, 1.0],
+        "frequency": 0.08,
+        "description": "Frosthold/Winterguard - Frozen wasteland"
+      },
+      {
+        "name": "snow_mountain",
+        "tile_id": 1153,
+        "elevation_range": [30, 80],
+        "moisture_range": [0.5, 1.0],
+        "frequency": 0.07,
+        "description": "Skyreach Mountains - Snow-capped peaks"
+      },
+      {
+        "name": "forest",
+        "tile_id": 11,
+        "elevation_range": [5, 35],
+        "moisture_range": [0.6, 0.9],
+        "frequency": 0.15,
+        "description": "Verdantpeak, Hollow Forests - Ancient woodlands"
+      },
+      {
+        "name": "grassland",
+        "tile_id": 3,
+        "elevation_range": [0, 20],
+        "moisture_range": [0.3, 0.7],
+        "frequency": 0.18,
+        "description": "Golden Steppe, Radiant Plains"
+      },
+      {
+        "name": "desert",
+        "tile_id": 41,
+        "elevation_range": [0, 18],
+        "moisture_range": [0.0, 0.25],
+        "frequency": 0.12,
+        "description": "Whispering Sands, Blazing Frontier"
+      },
+      {
+        "name": "volcanic",
+        "tile_id": 430,
+        "elevation_range": [15, 45],
+        "moisture_range": [0.0, 0.3],
+        "frequency": 0.06,
+        "description": "Emberlands - Lava and ash"
+      },
+      {
+        "name": "swamp",
+        "tile_id": 351,
+        "elevation_range": [0, 8],
+        "moisture_range": [0.8, 1.0],
+        "frequency": 0.06,
+        "description": "Shadowfen - Murky wetlands"
+      },
+      {
+        "name": "mountain",
+        "tile_id": 220,
+        "elevation_range": [40, 100],
+        "moisture_range": [0.0, 1.0],
+        "frequency": 0.14,
+        "description": "Central mountains, Deepforge entrance"
+      },
+      {
+        "name": "crystal_plains",
+        "tile_id": 1775,
+        "elevation_range": [5, 25],
+        "moisture_range": [0.1, 0.4],
+        "frequency": 0.05,
+        "description": "Crystal Barrens - Glowing formations"
+      },
+      {
+        "name": "twilight_forest",
+        "tile_id": 3280,
+        "elevation_range": [10, 30],
+        "moisture_range": [0.5, 0.8],
+        "frequency": 0.04,
+        "description": "Eternal Twilight - Perpetual dusk"
+      },
+      {
+        "name": "jungle",
+        "tile_id": 3277,
+        "elevation_range": [0, 20],
+        "moisture_range": [0.7, 1.0],
+        "frequency": 0.05,
+        "description": "Verdant Isles - Tropical paradise"
+      }
+    ],
+    "water_level": 0,
+    "smoothing_passes": 4,
+    "special_features": {
+      "inland_seas": true,
+      "archipelagos": true,
+      "straits": true
+    }
+  },
+  
+  "city_generation": {
+    "algorithm": "regional_placement",
+    "parameters": {
+      "min_distance_between_cities": 400,
+      "city_count": 23,
+      "placement_strategy": "biome_specific"
+    },
+    "cities": [
+      {
+        "name": "Ironheart Capital",
+        "type": "major",
+        "min_size": 180,
+        "max_size": 250,
+        "required_biome": "grassland",
+        "coastal": true,
+        "forced_location": [800, 600],
+        "region": "Ironclad Empire",
+        "features": ["castle", "bank", "market", "mage_shop", "docks", "factory", "smithy"]
+      },
+      {
+        "name": "Frostholm",
+        "type": "major",
+        "min_size": 100,
+        "max_size": 150,
+        "required_biome": "tundra",
+        "forced_location": [1200, 200],
+        "region": "Frosthold",
+        "features": ["great_hall", "ice_shrine", "fur_trader", "inn"]
+      },
+      {
+        "name": "Winterguard Citadel",
+        "type": "minor",
+        "min_size": 60,
+        "max_size": 90,
+        "required_biome": "tundra",
+        "forced_location": [800, 100],
+        "region": "Winterguard",
+        "features": ["fortress", "hot_springs", "armory"]
+      },
+      {
+        "name": "Verdant Grove",
+        "type": "major",
+        "min_size": 120,
+        "max_size": 180,
+        "required_biome": "forest",
+        "forced_location": [1800, 400],
+        "region": "Verdantpeak",
+        "features": ["tree_houses", "grove_shrine", "market", "herbalist"]
+      },
+      {
+        "name": "Deepforge City",
+        "type": "major",
+        "min_size": 140,
+        "max_size": 200,
+        "required_biome": "mountain",
+        "forced_location": [2400, 1400],
+        "region": "Deepforge",
+        "features": ["great_forge", "mine", "bank", "armory", "tavern"],
+        "is_underground": true
+      },
+      {
+        "name": "Sandara",
+        "type": "major",
+        "min_size": 110,
+        "max_size": 160,
+        "required_biome": "desert",
+        "forced_location": [4200, 2600],
+        "region": "Whispering Sands",
+        "features": ["pyramid", "bazaar", "oasis", "tomb_entrance"]
+      },
+      {
+        "name": "Emberforge",
+        "type": "major",
+        "min_size": 90,
+        "max_size": 130,
+        "required_biome": "volcanic",
+        "forced_location": [5400, 1800],
+        "region": "Emberlands",
+        "features": ["lava_forge", "fire_shrine", "obsidian_market"]
+      },
+      {
+        "name": "Mistwood",
+        "type": "minor",
+        "min_size": 70,
+        "max_size": 100,
+        "required_biome": "swamp",
+        "forced_location": [1200, 2800],
+        "region": "Shadowfen",
+        "features": ["witch_hut", "alchemist", "bog_shrine"]
+      },
+      {
+        "name": "Skyhold Monastery",
+        "type": "minor",
+        "min_size": 50,
+        "max_size": 80,
+        "required_biome": "snow_mountain",
+        "forced_location": [3200, 800],
+        "region": "Skyreach Mountains",
+        "features": ["monastery", "shrine", "meditation_gardens"]
+      },
+      {
+        "name": "Pearl Harbor",
+        "type": "major",
+        "min_size": 130,
+        "max_size": 190,
+        "required_biome": "grassland",
+        "coastal_required": true,
+        "forced_location": [3600, 3400],
+        "region": "Sunken Isles",
+        "features": ["docks", "shipwright", "market", "diving_guild", "underwater_entrance"]
+      },
+      {
+        "name": "Crystal Spire",
+        "type": "major",
+        "min_size": 100,
+        "max_size": 140,
+        "required_biome": "crystal_plains",
+        "forced_location": [4800, 2200],
+        "region": "Crystal Barrens",
+        "features": ["crystal_market", "mage_guild", "gem_cutters"]
+      },
+      {
+        "name": "Duskhaven",
+        "type": "minor",
+        "min_size": 80,
+        "max_size": 110,
+        "required_biome": "twilight_forest",
+        "forced_location": [2800, 2400],
+        "region": "Eternal Twilight",
+        "features": ["twilight_market", "shadow_shrine", "illusion_academy"]
+      },
+      {
+        "name": "Steppeheart",
+        "type": "minor",
+        "min_size": 70,
+        "max_size": 100,
+        "required_biome": "grassland",
+        "forced_location": [4400, 1200],
+        "region": "Golden Steppe",
+        "features": ["yurt_camp", "horse_market", "nomad_shrine"]
+      },
+      {
+        "name": "Wilderhaven",
+        "type": "minor",
+        "min_size": 65,
+        "max_size": 95,
+        "required_biome": "forest",
+        "forced_location": [3800, 1600],
+        "region": "Wilderlands",
+        "features": ["tribal_hall", "totem_circle", "beast_pens"]
+      },
+      {
+        "name": "Abyssal Gate",
+        "type": "minor",
+        "min_size": 40,
+        "max_size": 70,
+        "required_biome": "grassland",
+        "coastal_required": true,
+        "forced_location": [2200, 3200],
+        "region": "Forgotten Depths",
+        "features": ["underwater_portal", "merfolk_embassy", "diving_station"]
+      },
+      {
+        "name": "Sunfire Outpost",
+        "type": "minor",
+        "min_size": 55,
+        "max_size": 85,
+        "required_biome": "desert",
+        "forced_location": [5200, 2800],
+        "region": "Blazing Frontier",
+        "features": ["sun_temple", "mirage_market", "water_shrine"]
+      },
+      {
+        "name": "Verdant Port",
+        "type": "major",
+        "min_size": 110,
+        "max_size": 150,
+        "required_biome": "jungle",
+        "coastal_required": true,
+        "forced_location": [2600, 3600],
+        "region": "Verdant Isles",
+        "features": ["docks", "jungle_market", "shipwright", "pirate_haven"]
+      },
+      {
+        "name": "Canyon Sanctum",
+        "type": "minor",
+        "min_size": 50,
+        "max_size": 75,
+        "required_biome": "desert",
+        "forced_location": [4600, 2000],
+        "region": "Mystic Canyons",
+        "features": ["observatory", "rune_library", "mystic_shrine"]
+      },
+      {
+        "name": "Hollowshade",
+        "type": "minor",
+        "min_size": 60,
+        "max_size": 90,
+        "required_biome": "forest",
+        "forced_location": [1600, 2000],
+        "region": "Hollow Forests",
+        "features": ["hollow_trees", "fae_circle", "shadow_market"]
+      },
+      {
+        "name": "Radiance",
+        "type": "minor",
+        "min_size": 75,
+        "max_size": 105,
+        "required_biome": "grassland",
+        "forced_location": [5600, 1200],
+        "region": "Radiant Plains",
+        "features": ["sun_farm", "solar_temple", "light_market"]
+      },
+      {
+        "name": "Glimmer Cove",
+        "type": "minor",
+        "min_size": 65,
+        "max_size": 95,
+        "required_biome": "grassland",
+        "coastal_required": true,
+        "forced_location": [4800, 3400],
+        "region": "Glimmering Archipelago",
+        "features": ["docks", "bioluminescent_gardens", "night_market"]
+      },
+      {
+        "name": "Shadowfen Dock",
+        "type": "minor",
+        "min_size": 45,
+        "max_size": 70,
+        "required_biome": "swamp",
+        "coastal": true,
+        "forced_location": [900, 2400],
+        "region": "Shadowfen",
+        "features": ["bog_docks", "potion_shop", "curse_market"]
+      },
+      {
+        "name": "Northwatch",
+        "type": "minor",
+        "min_size": 50,
+        "max_size": 75,
+        "required_biome": "tundra",
+        "coastal": true,
+        "forced_location": [600, 300],
+        "region": "Frosthold",
+        "features": ["watchtower", "shipyard", "ice_market"]
+      }
+    ]
+  },
+  
+  "dungeon_generation": {
+    "algorithm": "themed_generation",
+    "dungeon_count": 18,
+    "parameters": {
+      "min_room_size": 12,
+      "max_room_size": 35,
+      "room_count_range": [6, 18],
+      "corridor_width": 3
+    },
+    "dungeons": [
+      {
+        "name": "Frozen Halls",
+        "difficulty": "hard",
+        "depth_levels": 4,
+        "theme": "ice_frost_giant",
+        "treasure_density": 0.4,
+        "region": "Frosthold",
+        "monsters": ["Frost Giant", "Ice Elemental", "White Dragon"]
+      },
+      {
+        "name": "Deepforge Mines",
+        "difficulty": "medium",
+        "depth_levels": 5,
+        "theme": "underground_mine",
+        "treasure_density": 0.5,
+        "region": "Deepforge",
+        "monsters": ["Cave Troll", "Stone Giant", "Fire Elemental"]
+      },
+      {
+        "name": "Pyramid of Surya",
+        "difficulty": "hard",
+        "depth_levels": 3,
+        "theme": "desert_undead",
+        "treasure_density": 0.6,
+        "region": "Whispering Sands",
+        "monsters": ["Mummy", "Sphinx", "Giant Scorpion"]
+      },
+      {
+        "name": "Emberdeep Caldera",
+        "difficulty": "very_hard",
+        "depth_levels": 3,
+        "theme": "volcanic_dragon",
+        "treasure_density": 0.7,
+        "region": "Emberlands",
+        "monsters": ["Phoenix", "Volcano Wyrm", "Lava Hound"]
+      },
+      {
+        "name": "Shadowfen Crypts",
+        "difficulty": "medium",
+        "depth_levels": 3,
+        "theme": "swamp_undead",
+        "treasure_density": 0.3,
+        "region": "Shadowfen",
+        "monsters": ["Bog Witch", "Swamp Troll", "Lurking Ghoul"]
+      },
+      {
+        "name": "Verdant Depths",
+        "difficulty": "medium",
+        "depth_levels": 2,
+        "theme": "forest_fey",
+        "treasure_density": 0.3,
+        "region": "Verdantpeak",
+        "monsters": ["Treant", "Owlbear", "Green Dragon"]
+      },
+      {
+        "name": "Crystal Caverns",
+        "difficulty": "hard",
+        "depth_levels": 4,
+        "theme": "crystal_elemental",
+        "treasure_density": 0.6,
+        "region": "Crystal Barrens",
+        "monsters": ["Crystal Drake", "Gemstone Golem", "Light Elemental"]
+      },
+      {
+        "name": "Skyreach Summit",
+        "difficulty": "hard",
+        "depth_levels": 3,
+        "theme": "mountain_air",
+        "treasure_density": 0.4,
+        "region": "Skyreach Mountains",
+        "monsters": ["Griffin", "Cloud Giant", "Wind Elemental"]
+      },
+      {
+        "name": "Abyssal Trench",
+        "difficulty": "very_hard",
+        "depth_levels": 5,
+        "theme": "underwater_horror",
+        "treasure_density": 0.5,
+        "region": "Forgotten Depths",
+        "monsters": ["Kraken", "Deep Sea Serpent", "Sea Witch"]
+      },
+      {
+        "name": "Twilight Labyrinth",
+        "difficulty": "hard",
+        "depth_levels": 3,
+        "theme": "illusion_shadow",
+        "treasure_density": 0.4,
+        "region": "Eternal Twilight",
+        "monsters": ["Time Wraith", "Dusk Stalker", "Shadow Fox"]
+      }
+    ]
+  },
+  
+  "road_generation": {
+    "algorithm": "a_star_pathfinding",
+    "connect_all_cities": true,
+    "road_width": 3,
+    "road_tile": 1313,
+    "bridge_tile": 1796,
+    "special_roads": {
+      "trade_routes": true,
+      "mountain_passes": true,
+      "island_ferries": true
+    }
+  },
+  
+  "spawners": {
+    "spawn_density": 0.015,
+    "biome_creatures": {
+      "tundra": [
+        {"creature": "Frost Giant", "weight": 0.15, "pack_size": [1, 2]},
+        {"creature": "Winter Wolf", "weight": 0.25, "pack_size": [2, 5]},
+        {"creature": "Ice Troll", "weight": 0.2, "pack_size": [1, 2]}
+      ],
+      "forest": [
+        {"creature": "Dire Wolf", "weight": 0.25, "pack_size": [3, 6]},
+        {"creature": "Owlbear", "weight": 0.15, "pack_size": [1, 2]},
+        {"creature": "Giant Spider", "weight": 0.2, "pack_size": [1, 3]}
+      ],
+      "desert": [
+        {"creature": "Giant Scorpion", "weight": 0.3, "pack_size": [1, 2]},
+        {"creature": "Mummy", "weight": 0.1, "pack_size": [1, 3]},
+        {"creature": "Harpy", "weight": 0.2, "pack_size": [2, 4]}
+      ],
+      "volcanic": [
+        {"creature": "Fire Elemental", "weight": 0.25, "pack_size": [1, 2]},
+        {"creature": "Lava Hound", "weight": 0.2, "pack_size": [1, 3]},
+        {"creature": "Phoenix", "weight": 0.05, "pack_size": [1, 1]}
+      ],
+      "swamp": [
+        {"creature": "Swamp Troll", "weight": 0.2, "pack_size": [1, 2]},
+        {"creature": "Lurking Ghoul", "weight": 0.25, "pack_size": [2, 4]},
+        {"creature": "Mistwalker", "weight": 0.15, "pack_size": [1, 3]}
+      ]
+    }
+  },
+  
+  "validation_rules": {
+    "min_land_percentage": 0.55,
+    "min_city_count": 20,
+    "cities_must_be_connected": true,
+    "require_coastal_city": true
+  },
+  
+  "generation_order": [
+    "terrain",
+    "water_bodies",
+    "biome_assignment",
+    "city_placement",
+    "road_network",
+    "dungeon_placement",
+    "decoration",
+    "spawners",
+    "validation"
+  ]
+}

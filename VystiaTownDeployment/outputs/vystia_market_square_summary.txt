@@ -1,0 +1,11 @@
+Town: vystia_market_square
+Anchor: 3520,1760
+Base: 3495,1736
+Templates:
+  Log Cabin: 1
+  Sandstone Patio House: 1
+  Small Marble Workshop: 1
+  Small Stone Workshop: 1
+  Small Tower: 1
+  Small Wood House: 2
+  Small Wood and Plaster House: 1

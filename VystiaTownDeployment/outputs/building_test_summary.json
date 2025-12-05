@@ -1,0 +1,1074 @@
+{
+  "export_dir": "UOFiddler_tools\\Multi TXTs\\Buildings",
+  "map_dir": "C:\\DevEnv\\GIT\\UO\\ServUO-fresh\\Data\\Maps\\statics0.mul",
+  "start": [
+    3200,
+    1400
+  ],
+  "spacing": [
+    55,
+    55
+  ],
+  "columns": 10,
+  "total_buildings": 40,
+  "total_statics": 27787,
+  "total_door_tiles": 85,
+  "placements": [
+    {
+      "name": "006A_Small_Wood_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\006A_Small_Wood_House.txt",
+      "base": [
+        3200,
+        1400
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3203,
+          "y": 1406,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "006B_Small_Wood_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\006B_Small_Wood_House.txt",
+      "base": [
+        3255,
+        1400
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3258,
+          "y": 1406,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "006C_Small_Wood_and_Plaster_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\006C_Small_Wood_and_Plaster_House.txt",
+      "base": [
+        3310,
+        1400
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3313,
+          "y": 1406,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "006D_Small_Wood_and_Plaster_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\006D_Small_Wood_and_Plaster_House.txt",
+      "base": [
+        3365,
+        1400
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3368,
+          "y": 1406,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "0072_Tent_green",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0072_Tent_green.txt",
+      "base": [
+        3420,
+        1400
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": []
+    },
+    {
+      "name": "0073_Tent_green",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0073_Tent_green.txt",
+      "base": [
+        3475,
+        1400
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": []
+    },
+    {
+      "name": "0074_Large_Brick_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0074_Large_Brick_House.txt",
+      "base": [
+        3530,
+        1400
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3536,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3537,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3534,
+          "y": 1406,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3540,
+          "y": 1406,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "0075_Large_Brick_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0075_Large_Brick_House.txt",
+      "base": [
+        3585,
+        1400
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3591,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3592,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3589,
+          "y": 1406,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3595,
+          "y": 1406,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "0076_Two_Story_Wood_and_Plaster_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0076_Two_Story_Wood_and_Plaster_House.txt",
+      "base": [
+        3640,
+        1400
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3644,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3645,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3644,
+          "y": 1407,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3645,
+          "y": 1407,
+          "z": 27
+        }
+      ]
+    },
+    {
+      "name": "0077_Two_Story_Wood_and_Plaster_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0077_Two_Story_Wood_and_Plaster_House.txt",
+      "base": [
+        3695,
+        1400
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3699,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3700,
+          "y": 1413,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3699,
+          "y": 1407,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3700,
+          "y": 1407,
+          "z": 27
+        }
+      ]
+    },
+    {
+      "name": "0078_Two_Story_Stone_and_Plaster_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0078_Two_Story_Stone_and_Plaster_House.txt",
+      "base": [
+        3200,
+        1455
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3204,
+          "y": 1468,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3205,
+          "y": 1468,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3204,
+          "y": 1462,
+          "z": 27
+        },
+        {
+          "tile_id": 1705,
+          "x": 3204,
+          "y": 1462,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "0079_Two_Story_Stone_and_Plaster_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0079_Two_Story_Stone_and_Plaster_House.txt",
+      "base": [
+        3255,
+        1455
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3259,
+          "y": 1468,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3260,
+          "y": 1468,
+          "z": 7
+        },
+        {
+          "tile_id": 1705,
+          "x": 3259,
+          "y": 1462,
+          "z": 27
+        },
+        {
+          "tile_id": 1705,
+          "x": 3259,
+          "y": 1462,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "007A_Large_Tower",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\007A_Large_Tower.txt",
+      "base": [
+        3310,
+        1455
+      ],
+      "size": [
+        24,
+        16
+      ],
+      "doors": [
+        {
+          "tile_id": 1653,
+          "x": 3321,
+          "y": 1468,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3322,
+          "y": 1468,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3324,
+          "y": 1460,
+          "z": 6
+        },
+        {
+          "tile_id": 1661,
+          "x": 3322,
+          "y": 1466,
+          "z": 26
+        },
+        {
+          "tile_id": 1661,
+          "x": 3322,
+          "y": 1466,
+          "z": 46
+        }
+      ]
+    },
+    {
+      "name": "007B_Large_Tower",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\007B_Large_Tower.txt",
+      "base": [
+        3365,
+        1455
+      ],
+      "size": [
+        24,
+        16
+      ],
+      "doors": [
+        {
+          "tile_id": 1653,
+          "x": 3376,
+          "y": 1468,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3377,
+          "y": 1468,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3379,
+          "y": 1460,
+          "z": 6
+        },
+        {
+          "tile_id": 1661,
+          "x": 3377,
+          "y": 1466,
+          "z": 26
+        },
+        {
+          "tile_id": 1661,
+          "x": 3377,
+          "y": 1466,
+          "z": 46
+        }
+      ]
+    },
+    {
+      "name": "007C_Stone_Keep",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\007C_Stone_Keep.txt",
+      "base": [
+        3420,
+        1455
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "doors": [
+        {
+          "tile_id": 1653,
+          "x": 3431,
+          "y": 1476,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3432,
+          "y": 1476,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "name": "007D_Stone_Keep",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\007D_Stone_Keep.txt",
+      "base": [
+        3475,
+        1455
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "doors": [
+        {
+          "tile_id": 1653,
+          "x": 3486,
+          "y": 1476,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3487,
+          "y": 1476,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "name": "007E_Castle",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\007E_Castle.txt",
+      "base": [
+        3530,
+        1455
+      ],
+      "size": [
+        31,
+        32
+      ],
+      "doors": [
+        {
+          "tile_id": 1653,
+          "x": 3545,
+          "y": 1475,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3546,
+          "y": 1475,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3545,
+          "y": 1481,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3545,
+          "y": 1459,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3546,
+          "y": 1481,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3544,
+          "y": 1459,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3545,
+          "y": 1485,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3546,
+          "y": 1485,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "name": "007F_Castle",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\007F_Castle.txt",
+      "base": [
+        3585,
+        1455
+      ],
+      "size": [
+        31,
+        32
+      ],
+      "doors": [
+        {
+          "tile_id": 1653,
+          "x": 3600,
+          "y": 1475,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3601,
+          "y": 1475,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3600,
+          "y": 1481,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3600,
+          "y": 1459,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3601,
+          "y": 1481,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3599,
+          "y": 1459,
+          "z": 6
+        },
+        {
+          "tile_id": 1653,
+          "x": 3600,
+          "y": 1485,
+          "z": 6
+        },
+        {
+          "tile_id": 1655,
+          "x": 3601,
+          "y": 1485,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "name": "0087_Large_Patio_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0087_Large_Patio_House.txt",
+      "base": [
+        3640,
+        1455
+      ],
+      "size": [
+        16,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1711,
+          "x": 3648,
+          "y": 1466,
+          "z": 0
+        },
+        {
+          "tile_id": 1711,
+          "x": 3648,
+          "y": 1458,
+          "z": 0
+        },
+        {
+          "tile_id": 1703,
+          "x": 3651,
+          "y": 1461,
+          "z": 0
+        },
+        {
+          "tile_id": 1703,
+          "x": 3644,
+          "y": 1468,
+          "z": 0
+        },
+        {
+          "tile_id": 1701,
+          "x": 3643,
+          "y": 1468,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "name": "008C_Large_Patio_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\008C_Large_Patio_House.txt",
+      "base": [
+        3695,
+        1455
+      ],
+      "size": [
+        16,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1711,
+          "x": 3703,
+          "y": 1458,
+          "z": 7
+        },
+        {
+          "tile_id": 1711,
+          "x": 3703,
+          "y": 1466,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3706,
+          "y": 1461,
+          "z": 7
+        },
+        {
+          "tile_id": 1701,
+          "x": 3698,
+          "y": 1468,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3699,
+          "y": 1468,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "008D_Large_Patio_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\008D_Large_Patio_House.txt",
+      "base": [
+        3200,
+        1510
+      ],
+      "size": [
+        16,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1711,
+          "x": 3208,
+          "y": 1513,
+          "z": 7
+        },
+        {
+          "tile_id": 1711,
+          "x": 3208,
+          "y": 1521,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3211,
+          "y": 1516,
+          "z": 7
+        },
+        {
+          "tile_id": 1701,
+          "x": 3203,
+          "y": 1523,
+          "z": 7
+        },
+        {
+          "tile_id": 1703,
+          "x": 3204,
+          "y": 1523,
+          "z": 7
+        }
+      ]
+    },
+    {
+      "name": "0096_Large_Marble_Patio_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0096_Large_Marble_Patio_House.txt",
+      "base": [
+        3255,
+        1510
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "doors": [
+        {
+          "tile_id": 1655,
+          "x": 3259,
+          "y": 1520,
+          "z": 4
+        },
+        {
+          "tile_id": 1653,
+          "x": 3258,
+          "y": 1520,
+          "z": 4
+        }
+      ]
+    },
+    {
+      "name": "0098_Small_Tower",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0098_Small_Tower.txt",
+      "base": [
+        3310,
+        1510
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": [
+        {
+          "tile_id": 1653,
+          "x": 3316,
+          "y": 1516,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "name": "009A_Log_Cabin",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\009A_Log_Cabin.txt",
+      "base": [
+        3365,
+        1510
+      ],
+      "size": [
+        8,
+        14
+      ],
+      "doors": [
+        {
+          "tile_id": 1717,
+          "x": 3369,
+          "y": 1516,
+          "z": 29
+        },
+        {
+          "tile_id": 1717,
+          "x": 3369,
+          "y": 1520,
+          "z": 8
+        }
+      ]
+    },
+    {
+      "name": "009C_Sandstone_Patio_House",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\009C_Sandstone_Patio_House.txt",
+      "base": [
+        3420,
+        1510
+      ],
+      "size": [
+        12,
+        10
+      ],
+      "doors": [
+        {
+          "tile_id": 1701,
+          "x": 3424,
+          "y": 1517,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "name": "009E_Two-Story_Villa",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\009E_Two-Story_Villa.txt",
+      "base": [
+        3475,
+        1510
+      ],
+      "size": [
+        12,
+        12
+      ],
+      "doors": [
+        {
+          "tile_id": 1709,
+          "x": 3481,
+          "y": 1515,
+          "z": 25
+        },
+        {
+          "tile_id": 1701,
+          "x": 3483,
+          "y": 1516,
+          "z": 5
+        },
+        {
+          "tile_id": 1707,
+          "x": 3477,
+          "y": 1514,
+          "z": 25
+        },
+        {
+          "tile_id": 1703,
+          "x": 3484,
+          "y": 1516,
+          "z": 5
+        }
+      ]
+    },
+    {
+      "name": "00A0_Small_Stone_Workshop",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\00A0_Small_Stone_Workshop.txt",
+      "base": [
+        3530,
+        1510
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doors": [
+        {
+          "tile_id": 1659,
+          "x": 3531,
+          "y": 1513,
+          "z": 27
+        }
+      ]
+    },
+    {
+      "name": "00A2_Small_Marble_Workshop",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\00A2_Small_Marble_Workshop.txt",
+      "base": [
+        3585,
+        1510
+      ],
+      "size": [
+        7,
+        8
+      ],
+      "doors": [
+        {
+          "tile_id": 1659,
+          "x": 3586,
+          "y": 1513,
+          "z": 24
+        }
+      ]
+    },
+    {
+      "name": "01F4_Wandering_Healer_Camp",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\01F4_Wandering_Healer_Camp.txt",
+      "base": [
+        3640,
+        1510
+      ],
+      "size": [
+        13,
+        11
+      ],
+      "doors": []
+    },
+    {
+      "name": "01F5_Wandering_Mage_Camp",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\01F5_Wandering_Mage_Camp.txt",
+      "base": [
+        3695,
+        1510
+      ],
+      "size": [
+        13,
+        11
+      ],
+      "doors": []
+    },
+    {
+      "name": "01F6_Wandering_Bank_Camp",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\01F6_Wandering_Bank_Camp.txt",
+      "base": [
+        3200,
+        1565
+      ],
+      "size": [
+        13,
+        11
+      ],
+      "doors": []
+    },
+    {
+      "name": "0BB8_Farmer_s_Cabin",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0BB8_Farmer_s_Cabin.txt",
+      "base": [
+        3255,
+        1565
+      ],
+      "size": [
+        9,
+        11
+      ],
+      "doors": []
+    },
+    {
+      "name": "0FA3_Nystul_s_Tower_stage_1",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0FA3_Nystul_s_Tower_stage_1.txt",
+      "base": [
+        3310,
+        1565
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "doors": []
+    },
+    {
+      "name": "0FA4_Nystul_s_Tower_stage_2",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0FA4_Nystul_s_Tower_stage_2.txt",
+      "base": [
+        3365,
+        1565
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "doors": []
+    },
+    {
+      "name": "0FA5_Nystul_s_Tower_stage_3",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0FA5_Nystul_s_Tower_stage_3.txt",
+      "base": [
+        3420,
+        1565
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "doors": []
+    },
+    {
+      "name": "0FA6_Nystul_s_Tower_stage_4",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0FA6_Nystul_s_Tower_stage_4.txt",
+      "base": [
+        3475,
+        1565
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "doors": []
+    },
+    {
+      "name": "0FA7_Nystul_s_Tower_stage_5",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0FA7_Nystul_s_Tower_stage_5.txt",
+      "base": [
+        3530,
+        1565
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "doors": []
+    },
+    {
+      "name": "0FA8_Nystul_s_Tower_stage_6",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0FA8_Nystul_s_Tower_stage_6.txt",
+      "base": [
+        3585,
+        1565
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "doors": []
+    },
+    {
+      "name": "0FAA_Exodus_Energy_Tower",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\0FAA_Exodus_Energy_Tower.txt",
+      "base": [
+        3640,
+        1565
+      ],
+      "size": [
+        3,
+        3
+      ],
+      "doors": []
+    },
+    {
+      "name": "1388_Minax_Stronghold",
+      "source": "UOFiddler_tools\\Multi TXTs\\Buildings\\1388_Minax_Stronghold.txt",
+      "base": [
+        3695,
+        1565
+      ],
+      "size": [
+        52,
+        29
+      ],
+      "doors": []
+    }
+  ]
+}
