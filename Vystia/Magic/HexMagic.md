@@ -486,6 +486,26 @@ Hex Magic draws upon the dark swamp energies of Shadowfen, specializing in curse
 
 ---
 
+## Reagents
+
+Hex Magic uses the following Vystia-specific reagents organized by spell circle:
+
+### Primary Reagents (6 types)
+1. **Bog Moss** (Circles 1-3) - Poisonous swamp moss from toxic swamps
+2. **Viper Fang** (Circles 2-4) - Venomous snake tooth from Shadowfen swamps
+3. **Witchweed** (Circles 1-4) - Cursed swamp plant from witch covens
+4. **Toad's Eye** (Circles 3-6) - Preserved toad eye from witch cauldrons
+5. **Hag's Hair** (Circles 6-8) - Witch's enchanted hair from coven lairs
+6. **Swamp Lotus** (Circles 5-7) - Rare toxic flower (existing resource)
+
+### Rare Reagents (2 types)
+7. **Bog Iron Ore** (Circles 7-8) - Cursed swamp metal (existing resource)
+8. **Cursed Pearl** (Circle 8) - Dark magic pearl, ultimate reagent
+
+**Implementation:** All reagents created in `HexMagicReagents.cs`
+
+---
+
 ## ServUO Implementation Notes
 
 This section provides detailed guidance on implementing Hex Magic spells in ServUO, categorizing mechanics by complexity.

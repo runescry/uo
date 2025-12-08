@@ -477,6 +477,26 @@ Nature Magic channels the primal forces of Verdantpeak's ancient forests. Druids
 
 ---
 
+## Reagents
+
+Nature Magic uses the following Vystia-specific reagents organized by spell circle:
+
+### Primary Reagents (6 types)
+1. **Wild Moss** (Circles 1-3) - Luminescent forest moss from ancient forests
+2. **Moonpetal** (Circles 2-4) - Silver forest flower from moonlit groves
+3. **Druid Bark** (Circles 1-4) - Sacred tree bark from sacred groves
+4. **Treant Sap** (Circles 3-6) - Living tree essence from treant groves
+5. **Elderwood Seed** (Circles 5-7) - Ancient tree seed from Verdantpeak heart
+6. **Primal Vine** (Circles 6-8) - Magical living vine from primordial forests
+
+### Rare Reagents (2 types)
+7. **Treant Heart** (Circles 7-8) - Heart of ancient treant (existing resource)
+8. **Living Bark** (Circle 8) - Regenerating bark, ultimate reagent (existing resource)
+
+**Implementation:** All reagents created in `NatureMagicReagents.cs`
+
+---
+
 ## ServUO Implementation Notes
 
 This section provides detailed guidance on implementing Nature Magic spells in ServUO, categorizing mechanics by complexity.

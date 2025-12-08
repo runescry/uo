@@ -99,8 +99,22 @@ Shamanic Magic calls upon ancestral spirits and elemental totems, specializing i
 - **Ascendance:** Air elemental form
 
 ## Reagents
-- **Primary:** SulfurousAsh (20), Bloodmoss (18), MandrakeRoot (16), Ginseng (14)
-- **Special:** StormEssence (4), WindstoneOre (2)
+
+Shamanic Magic uses the following Vystia-specific reagents organized by spell circle:
+
+### Primary Reagents (6 types)
+1. **Thunder Moss** (Circles 1-3) - Storm-touched moss from highlands
+2. **Wind Crystal** (Circles 2-4) - Solidified air from mountain peaks
+3. **Spirit Feather** (Circles 1-4) - Ghost bird feather from totemic sites
+4. **Lightning Root** (Circles 3-6) - Lightning-struck tree root
+5. **Storm Essence** (Circles 5-7) - Bottled storm from storm vortexes
+6. **Totem Carving** (Circles 6-8) - Enchanted wood carving from sacred totems
+
+### Rare Reagents (2 types)
+7. **Windstone Ore** (Circles 7-8) - Wind-carved stone from sky peaks
+8. **Primal Thunder** (Circle 8) - Captured lightning essence, ultimate reagent
+
+**Implementation:** All reagents created in `ShamanicMagicReagents.cs`
 
 ---
 

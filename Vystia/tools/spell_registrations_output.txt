@@ -1,0 +1,473 @@
+// USING STATEMENTS
+using Server.Spells.VystiaSpells.Bardic;
+using Server.Spells.VystiaSpells.Dark;
+using Server.Spells.VystiaSpells.Divination;
+using Server.Spells.VystiaSpells.Elemental;
+using Server.Spells.VystiaSpells.Enchanting;
+using Server.Spells.VystiaSpells.Hex;
+using Server.Spells.VystiaSpells.IceMage;
+using Server.Spells.VystiaSpells.Illusion;
+using Server.Spells.VystiaSpells.Nature;
+using Server.Spells.VystiaSpells.Necromancy;
+using Server.Spells.VystiaSpells.Shamanic;
+using Server.Spells.VystiaSpells.Summoning;
+
+// METHOD CALLS (add to Initialize())
+            RegisterIceMageSpells();
+            RegisterDruidSpells();
+            RegisterWitchSpells();
+            RegisterSorcererSpells();
+            RegisterWarlockSpells();
+            RegisterOracleSpells();
+            RegisterNecromancerSpells();
+            RegisterSummonerSpells();
+            RegisterShamanSpells();
+            RegisterBardSpells();
+            RegisterEnchanterSpells();
+            RegisterIllusionistSpells();
+
+// REGISTRATION METHODS
+        private static void RegisterIceMageSpells()
+        {
+            // Ice Magic Spells (IDs 1000-1031)
+            Register(1000, typeof(AbsoluteZeroSpell));
+            Register(1001, typeof(AvalancheSpell));
+            Register(1002, typeof(BlizzardSpell));
+            Register(1003, typeof(ChillAuraSpell));
+            Register(1004, typeof(CocytusPrisonSpell));
+            Register(1005, typeof(DeepFreezeSpell));
+            Register(1006, typeof(EternalWinterSpell));
+            Register(1007, typeof(FimbulwintersWrathSpell));
+            Register(1008, typeof(FreezingGraspSpell));
+            Register(1009, typeof(FrostArmorSpell));
+            Register(1010, typeof(FrostbiteSpell));
+            Register(1011, typeof(FrostMeteorSpell));
+            Register(1012, typeof(FrostSlickSpell));
+            Register(1013, typeof(FrostTouchSpell));
+            Register(1014, typeof(FrostWardSpell));
+            Register(1015, typeof(FrozenGroundSpell));
+            Register(1016, typeof(FrozenTombSpell));
+            Register(1017, typeof(GlacialFortressSpell));
+            Register(1018, typeof(GlacialMendSpell));
+            Register(1019, typeof(GlacialStrikeSpell));
+            Register(1020, typeof(GlacierSummonSpell));
+            Register(1021, typeof(HypothermiaSpell));
+            Register(1022, typeof(IceAgeSpell));
+            Register(1023, typeof(IceBoltSpell));
+            Register(1024, typeof(IceShardSpell));
+            Register(1025, typeof(IceShieldSpell));
+            Register(1026, typeof(IceSpearSpell));
+            Register(1027, typeof(IceWallSpell));
+            Register(1028, typeof(IcicleBarrageSpell));
+            Register(1029, typeof(PermafrostSpell));
+            Register(1030, typeof(RimeReaperSpell));
+            Register(1031, typeof(ShatterSpell));
+        }
+
+        private static void RegisterDruidSpells()
+        {
+            // Nature Magic Spells (IDs 1032-1063)
+            Register(1032, typeof(NatureAnimalAspectSpeedSpell));
+            Register(1033, typeof(NatureAvataroftheForestSpell));
+            Register(1034, typeof(NatureBarkskinSpell));
+            Register(1035, typeof(NatureBearFormLesserShapeshiftSpell));
+            Register(1036, typeof(NatureDetectLifeSpell));
+            Register(1037, typeof(NatureEarthquakeSpell));
+            Register(1038, typeof(NatureEntangleSpell));
+            Register(1039, typeof(NatureForceofNatureSpell));
+            Register(1040, typeof(NatureGreaterRegenerationSpell));
+            Register(1041, typeof(NatureHawkFormAerialShapeshiftSpell));
+            Register(1042, typeof(NatureHealingGroveSpell));
+            Register(1043, typeof(NatureHydraFormLegendaryShapeshiftSpell));
+            Register(1044, typeof(NatureLivingFortressSpell));
+            Register(1045, typeof(NatureNaturesBlessingSpell));
+            Register(1046, typeof(NatureNaturesTouchSpell));
+            Register(1047, typeof(NatureNaturesWrathSpell));
+            Register(1048, typeof(NaturePlagueSpell));
+            Register(1049, typeof(NaturePoisonSporesSpell));
+            Register(1050, typeof(NaturePrimordialRestorationSpell));
+            Register(1051, typeof(NatureRejuvenationSpell));
+            Register(1052, typeof(NatureSporeCloudSpell));
+            Register(1053, typeof(NatureStranglingVinesSpell));
+            Register(1054, typeof(NatureSummonAncientTreantSpell));
+            Register(1055, typeof(NatureSwarmSpell));
+            Register(1056, typeof(NatureThornApocalypseSpell));
+            Register(1057, typeof(NatureThornDartSpell));
+            Register(1058, typeof(NatureThornVolleySpell));
+            Register(1059, typeof(NatureToxicBloomSpell));
+            Register(1060, typeof(NatureTreantFormGreaterShapeshiftSpell));
+            Register(1061, typeof(NatureWildGrowthSpell));
+            Register(1062, typeof(NatureWolfFormAdvancedShapeshiftSpell));
+            Register(1063, typeof(NatureWorldTreesEmbraceSpell));
+        }
+
+        private static void RegisterWitchSpells()
+        {
+            // Hex Magic Spells (IDs 1064-1095)
+            Register(1064, typeof(HexApocalypticHexSpell));
+            Register(1065, typeof(HexContagiousHexSpell));
+            Register(1066, typeof(HexCripplingCurseSpell));
+            Register(1067, typeof(HexCurseofMortalitySpell));
+            Register(1068, typeof(HexCurseoftheHagSpell));
+            Register(1069, typeof(HexCurseofUndeathSpell));
+            Register(1070, typeof(HexDarkPactSpell));
+            Register(1071, typeof(HexDoomcurseSpell));
+            Register(1072, typeof(HexDrainEssenceSpell));
+            Register(1073, typeof(HexEnfeebleSpell));
+            Register(1074, typeof(HexEvilEyeSpell));
+            Register(1075, typeof(HexHexbladeRitualSpell));
+            Register(1076, typeof(HexHexofAgonySpell));
+            Register(1077, typeof(HexHexofFrailtySpell));
+            Register(1078, typeof(HexHexofSilenceSpell));
+            Register(1079, typeof(HexHexStormSpell));
+            Register(1080, typeof(HexLifeLeechSpell));
+            Register(1081, typeof(HexMassHexSpell));
+            Register(1082, typeof(HexNecroticTouchSpell));
+            Register(1083, typeof(HexPlagueBearerSpell));
+            Register(1084, typeof(HexPlagueofSorrowsSpell));
+            Register(1085, typeof(HexPoisonTouchSpell));
+            Register(1086, typeof(HexSiphonLifeSpell));
+            Register(1087, typeof(HexSoulHarvestSpell));
+            Register(1088, typeof(HexSoulSiphonSpell));
+            Register(1089, typeof(HexVampiricAuraSpell));
+            Register(1090, typeof(HexVoodooDollSpell));
+            Register(1091, typeof(HexVoodooMasterySpell));
+            Register(1092, typeof(HexWastingCurseSpell));
+            Register(1093, typeof(HexWeakCurseSpell));
+            Register(1094, typeof(HexWitchQueensDominionSpell));
+            Register(1095, typeof(HexWitchSightSpell));
+        }
+
+        private static void RegisterSorcererSpells()
+        {
+            // Elemental Magic Spells (IDs 1096-1127)
+            Register(1096, typeof(ElementalApocalypseSpell));
+            Register(1097, typeof(ElementalAvatarofFlameSpell));
+            Register(1098, typeof(ElementalCataclysmSpell));
+            Register(1099, typeof(ElementalCombustionSpell));
+            Register(1100, typeof(ElementalEmberBurstSpell));
+            Register(1101, typeof(ElementalFireballSpell));
+            Register(1102, typeof(ElementalFlameBoltSpell));
+            Register(1103, typeof(ElementalFlamePillarSpell));
+            Register(1104, typeof(ElementalFlameTempestSpell));
+            Register(1105, typeof(ElementalFlameWardSpell));
+            Register(1106, typeof(ElementalHeatShieldSpell));
+            Register(1107, typeof(ElementalHellfireNovaSpell));
+            Register(1108, typeof(ElementalIgniteSpell));
+            Register(1109, typeof(ElementalIncinerateSpell));
+            Register(1110, typeof(ElementalInfernoSpell));
+            Register(1111, typeof(ElementalLavaFlowSpell));
+            Register(1112, typeof(ElementalLavaPuddleSpell));
+            Register(1113, typeof(ElementalMagmaArmorSpell));
+            Register(1114, typeof(ElementalMagmaCoreSpell));
+            Register(1115, typeof(ElementalMeteorStrikeSpell));
+            Register(1116, typeof(ElementalMoltenTitanFormSpell));
+            Register(1117, typeof(ElementalMoltenTouchSpell));
+            Register(1118, typeof(ElementalPhoenixShieldSpell));
+            Register(1119, typeof(ElementalPrimordialInfernoSpell));
+            Register(1120, typeof(ElementalPyroclasmSpell));
+            Register(1121, typeof(ElementalPyroclasticFlowSpell));
+            Register(1122, typeof(ElementalRingofFireSpell));
+            Register(1123, typeof(ElementalSmokeScreenSpell));
+            Register(1124, typeof(ElementalSolarFlareSpell));
+            Register(1125, typeof(ElementalSummonFireElementalLordSpell));
+            Register(1126, typeof(ElementalVolcanicEruptionSpell));
+            Register(1127, typeof(ElementalVolcanicRockSpell));
+        }
+
+        private static void RegisterWarlockSpells()
+        {
+            // Dark Magic Spells (IDs 1128-1159)
+            Register(1128, typeof(DarkApocalypticChaosSpell));
+            Register(1129, typeof(DarkChaosBoltSpell));
+            Register(1130, typeof(DarkChaosIncarnateSpell));
+            Register(1131, typeof(DarkChaosRiftSpell));
+            Register(1132, typeof(DarkChaosStormSpell));
+            Register(1133, typeof(DarkCorruptionSpell));
+            Register(1134, typeof(DarkDarkApotheosisSpell));
+            Register(1135, typeof(DarkDarkPortalSpell));
+            Register(1136, typeof(DarkDemonicAscensionSpell));
+            Register(1137, typeof(DarkDemonicPactSpell));
+            Register(1138, typeof(DarkDemonicSacrificeSpell));
+            Register(1139, typeof(DarkDemonicSightSpell));
+            Register(1140, typeof(DarkDrainSoulSpell));
+            Register(1141, typeof(DarkFearWaveSpell));
+            Register(1142, typeof(DarkFelArmorSpell));
+            Register(1143, typeof(DarkLesserDemonSpell));
+            Register(1144, typeof(DarkLifeTapSpell));
+            Register(1145, typeof(DarkMassFearSpell));
+            Register(1146, typeof(DarkMinorFearSpell));
+            Register(1147, typeof(DarkShadowBoltSpell));
+            Register(1148, typeof(DarkShadowChainsSpell));
+            Register(1149, typeof(DarkShadowformSpell));
+            Register(1150, typeof(DarkShadowNovaSpell));
+            Register(1151, typeof(DarkShadowOrbSpell));
+            Register(1152, typeof(DarkShadowStepSpell));
+            Register(1153, typeof(DarkSoulBurnSpell));
+            Register(1154, typeof(DarkSoulHarvestSpell));
+            Register(1155, typeof(DarkSummonDemonPrinceSpell));
+            Register(1156, typeof(DarkSummonPitLordSpell));
+            Register(1157, typeof(DarkSummonSuccubusSpell));
+            Register(1158, typeof(DarkSummonVoidwalkerSpell));
+            Register(1159, typeof(DarkVoidCollapseSpell));
+        }
+
+        private static void RegisterOracleSpells()
+        {
+            // Divination Magic Spells (IDs 1160-1191)
+            Register(1160, typeof(DivinationBarrierofLightSpell));
+            Register(1161, typeof(DivinationChronoLordSpell));
+            Register(1162, typeof(DivinationClaritySpell));
+            Register(1163, typeof(DivinationCosmicRiftSpell));
+            Register(1164, typeof(DivinationCrystalBarrageSpell));
+            Register(1165, typeof(DivinationCrystalDartSpell));
+            Register(1166, typeof(DivinationCrystalFortressSpell));
+            Register(1167, typeof(DivinationCrystalMazeSpell));
+            Register(1168, typeof(DivinationCrystalShieldSpell));
+            Register(1169, typeof(DivinationEnergyBurstSpell));
+            Register(1170, typeof(DivinationFateShiftSpell));
+            Register(1171, typeof(DivinationFatesThreadSpell));
+            Register(1172, typeof(DivinationForesightSpell));
+            Register(1173, typeof(DivinationGlimpseFutureSpell));
+            Register(1174, typeof(DivinationHasteSelfSpell));
+            Register(1175, typeof(DivinationManaCrystalSpell));
+            Register(1176, typeof(DivinationMassForesightSpell));
+            Register(1177, typeof(DivinationMassHasteSpell));
+            Register(1178, typeof(DivinationMinorWardSpell));
+            Register(1179, typeof(DivinationOracleAscendantSpell));
+            Register(1180, typeof(DivinationOraclesSightSpell));
+            Register(1181, typeof(DivinationPrecognitionSpell));
+            Register(1182, typeof(DivinationPrismaticApocalypseSpell));
+            Register(1183, typeof(DivinationPrismaticBoltSpell));
+            Register(1184, typeof(DivinationPrismaticSpraySpell));
+            Register(1185, typeof(DivinationPrismaticStormSpell));
+            Register(1186, typeof(DivinationProphecyofDoomSpell));
+            Register(1187, typeof(DivinationTemporalShieldSpell));
+            Register(1188, typeof(DivinationTemporalSlowSpell));
+            Register(1189, typeof(DivinationTimelessStateSpell));
+            Register(1190, typeof(DivinationTimeStopSpell));
+            Register(1191, typeof(DivinationTimeWarpSpell));
+        }
+
+        private static void RegisterNecromancerSpells()
+        {
+            // Necromancy Spells (IDs 1192-1223)
+            Register(1192, typeof(NecromancyAnimateBoneSpell));
+            Register(1193, typeof(NecromancyApocalypseofDeathSpell));
+            Register(1194, typeof(NecromancyArchlichAscensionSpell));
+            Register(1195, typeof(NecromancyArmyoftheDeadSpell));
+            Register(1196, typeof(NecromancyBoneArmorSpell));
+            Register(1197, typeof(NecromancyBonePrisonSpell));
+            Register(1198, typeof(NecromancyBoneShardSpell));
+            Register(1199, typeof(NecromancyBoneWallSpell));
+            Register(1200, typeof(NecromancyCorpseExplosionSpell));
+            Register(1201, typeof(NecromancyDeathandDecaySpell));
+            Register(1202, typeof(NecromancyDeathBoltSpell));
+            Register(1203, typeof(NecromancyDeathCoilSpell));
+            Register(1204, typeof(NecromancyDeathGripSpell));
+            Register(1205, typeof(NecromancyDeathKnightsSpell));
+            Register(1206, typeof(NecromancyDeathsDoorSpell));
+            Register(1207, typeof(NecromancyDeathsightSpell));
+            Register(1208, typeof(NecromancyDeathWaveSpell));
+            Register(1209, typeof(NecromancyDecaySpell));
+            Register(1210, typeof(NecromancyDemiLichTransformationSpell));
+            Register(1211, typeof(NecromancyLichFormSpell));
+            Register(1212, typeof(NecromancyLifeSiphonSpell));
+            Register(1213, typeof(NecromancyMassRaiseSpell));
+            Register(1214, typeof(NecromancyPlagueCloudSpell));
+            Register(1215, typeof(NecromancyRaiseBoneGolemSpell));
+            Register(1216, typeof(NecromancyRaiseZombieSpell));
+            Register(1217, typeof(NecromancySkeletalMageSpell));
+            Register(1218, typeof(NecromancySoulHarvestSpell));
+            Register(1219, typeof(NecromancySoulLinkSpell));
+            Register(1220, typeof(NecromancySoulShieldSpell));
+            Register(1221, typeof(NecromancySummonUndeadDragonSpell));
+            Register(1222, typeof(NecromancyUnholyFrenzySpell));
+            Register(1223, typeof(NecromancyVampiricTouchSpell));
+        }
+
+        private static void RegisterSummonerSpells()
+        {
+            // Summoning Magic Spells (IDs 1224-1255)
+            Register(1224, typeof(SummoningArcaneBoltSpell));
+            Register(1225, typeof(SummoningArmyofBeastsSpell));
+            Register(1226, typeof(SummoningAvatarofSummoningSpell));
+            Register(1227, typeof(SummoningBindBeastSpell));
+            Register(1228, typeof(SummoningEmpowerSummonSpell));
+            Register(1229, typeof(SummoningGreaterHealSummonSpell));
+            Register(1230, typeof(SummoningMassEmpowerSpell));
+            Register(1231, typeof(SummoningMassHealSummonsSpell));
+            Register(1232, typeof(SummoningMendSummonSpell));
+            Register(1233, typeof(SummoningPlanarConvergenceSpell));
+            Register(1234, typeof(SummoningSacrificeSummonSpell));
+            Register(1235, typeof(SummoningSummonAirElementalSpell));
+            Register(1236, typeof(SummoningSummonBearSpell));
+            Register(1237, typeof(SummoningSummonDrakeSpell));
+            Register(1238, typeof(SummoningSummonEarthElementalSpell));
+            Register(1239, typeof(SummoningSummonElementalLordSpell));
+            Register(1240, typeof(SummoningSummonersApocalypseSpell));
+            Register(1241, typeof(SummoningSummonFireSpriteSpell));
+            Register(1242, typeof(SummoningSummonFrenzySpell));
+            Register(1243, typeof(SummoningSummonGreaterDragonSpell));
+            Register(1244, typeof(SummoningSummonHydraSpell));
+            Register(1245, typeof(SummoningSummonPhoenixSpell));
+            Register(1246, typeof(SummoningSummonRabbitSpell));
+            Register(1247, typeof(SummoningSummonShieldSpell));
+            Register(1248, typeof(SummoningSummonStormElementalSpell));
+            Register(1249, typeof(SummoningSummonTitanSpell));
+            Register(1250, typeof(SummoningSummonVoidElementalSpell));
+            Register(1251, typeof(SummoningSummonWispSpell));
+            Register(1252, typeof(SummoningSummonWolfSpell));
+            Register(1253, typeof(SummoningSwarmofCreaturesSpell));
+            Register(1254, typeof(SummoningSymbioticLinkSpell));
+            Register(1255, typeof(SummoningUnsummonSpell));
+        }
+
+        private static void RegisterShamanSpells()
+        {
+            // Shamanic Magic Spells (IDs 1256-1287)
+            Register(1256, typeof(ShamanicAncestorsBlessingSpell));
+            Register(1257, typeof(ShamanicAncestralSpiritSpell));
+            Register(1258, typeof(ShamanicApocalypticChainLightningSpell));
+            Register(1259, typeof(ShamanicAscendanceSpell));
+            Register(1260, typeof(ShamanicChainHealSpell));
+            Register(1261, typeof(ShamanicChainLightningSpell));
+            Register(1262, typeof(ShamanicEarthElementalSpell));
+            Register(1263, typeof(ShamanicEarthShieldSpell));
+            Register(1264, typeof(ShamanicElementalFurySpell));
+            Register(1265, typeof(ShamanicFireTotemSpell));
+            Register(1266, typeof(ShamanicFlameShockSpell));
+            Register(1267, typeof(ShamanicFourTotemsSpell));
+            Register(1268, typeof(ShamanicGhostWolfFormSpell));
+            Register(1269, typeof(ShamanicHealingStreamSpell));
+            Register(1270, typeof(ShamanicLavaBurstSpell));
+            Register(1271, typeof(ShamanicLightningBoltSpell));
+            Register(1272, typeof(ShamanicLightningStormSpell));
+            Register(1273, typeof(ShamanicMaelstromSpell));
+            Register(1274, typeof(ShamanicManaSpringTotemSpell));
+            Register(1275, typeof(ShamanicMegaChainLightningSpell));
+            Register(1276, typeof(ShamanicPurificationSpell));
+            Register(1277, typeof(ShamanicShamanLordSpell));
+            Register(1278, typeof(ShamanicSpiritLinkTotemSpell));
+            Register(1279, typeof(ShamanicSpiritoftheWildSpell));
+            Register(1280, typeof(ShamanicSpiritStrikeSpell));
+            Register(1281, typeof(ShamanicStrengthTotemSpell));
+            Register(1282, typeof(ShamanicSummonGreaterEarthElementalSpell));
+            Register(1283, typeof(ShamanicSummonSpiritWolfSpell));
+            Register(1284, typeof(ShamanicThunderstormTotemSpell));
+            Register(1285, typeof(ShamanicTotemArmySpell));
+            Register(1286, typeof(ShamanicTotemicRecallSpell));
+            Register(1287, typeof(ShamanicTotemofWrathSpell));
+        }
+
+        private static void RegisterBardSpells()
+        {
+            // Bardic Magic Spells (IDs 1288-1319)
+            Register(1288, typeof(BardicBalladofHealthSpell));
+            Register(1289, typeof(BardicCacophonySpell));
+            Register(1290, typeof(BardicCrescendoSpell));
+            Register(1291, typeof(BardicDestructiveResonanceSpell));
+            Register(1292, typeof(BardicDirgeofWeaknessSpell));
+            Register(1293, typeof(BardicDiscordantNoteSpell));
+            Register(1294, typeof(BardicEpicBalladSpell));
+            Register(1295, typeof(BardicEternalSymphonySpell));
+            Register(1296, typeof(BardicInspireAccuracySpell));
+            Register(1297, typeof(BardicInspireHeroismSpell));
+            Register(1298, typeof(BardicLegendaryPerformanceSpell));
+            Register(1299, typeof(BardicLullabySpell));
+            Register(1300, typeof(BardicMaestroAscendantSpell));
+            Register(1301, typeof(BardicMassInspireSpell));
+            Register(1302, typeof(BardicMesmerizeSpell));
+            Register(1303, typeof(BardicOdetoDevastationSpell));
+            Register(1304, typeof(BardicRejuvenatingMelodySpell));
+            Register(1305, typeof(BardicRequiemSpell));
+            Register(1306, typeof(BardicShatteringScreamSpell));
+            Register(1307, typeof(BardicSongofCourageSpell));
+            Register(1308, typeof(BardicSongofFearSpell));
+            Register(1309, typeof(BardicSongofResilienceSpell));
+            Register(1310, typeof(BardicSongofSanctuarySpell));
+            Register(1311, typeof(BardicSongofSwiftnessSpell));
+            Register(1312, typeof(BardicSongoftheAncientsSpell));
+            Register(1313, typeof(BardicSonicApocalypseSpell));
+            Register(1314, typeof(BardicSonicBurstSpell));
+            Register(1315, typeof(BardicSonicWaveSpell));
+            Register(1316, typeof(BardicSymphonyofDestructionSpell));
+            Register(1317, typeof(BardicThunderousChordSpell));
+            Register(1318, typeof(BardicVoiceoftheDragonSpell));
+            Register(1319, typeof(BardicWarSongSpell));
+        }
+
+        private static void RegisterEnchanterSpells()
+        {
+            // Enchanting Magic Spells (IDs 1320-1351)
+            Register(1320, typeof(EnchantingAegisofWardingSpell));
+            Register(1321, typeof(EnchantingArcaneShieldSpell));
+            Register(1322, typeof(EnchantingArchmagesBlessingSpell));
+            Register(1323, typeof(EnchantingArtifactEmpowermentSpell));
+            Register(1324, typeof(EnchantingDetectMagicSpell));
+            Register(1325, typeof(EnchantingDisenchantSpell));
+            Register(1326, typeof(EnchantingElementalBarrierSpell));
+            Register(1327, typeof(EnchantingEnchantArmySpell));
+            Register(1328, typeof(EnchantingEnchantArrowsSpell));
+            Register(1329, typeof(EnchantingEnchantPartyWeaponsSpell));
+            Register(1330, typeof(EnchantingFlamingWeaponSpell));
+            Register(1331, typeof(EnchantingFortifyArmorSpell));
+            Register(1332, typeof(EnchantingGodlyWeaponSpell));
+            Register(1333, typeof(EnchantingGreaterDisenchantSpell));
+            Register(1334, typeof(EnchantingHolyWeaponSpell));
+            Register(1335, typeof(EnchantingInvincibleArmorSpell));
+            Register(1336, typeof(EnchantingInvulnerabilitySpell));
+            Register(1337, typeof(EnchantingLegendaryWeaponSpell));
+            Register(1338, typeof(EnchantingLightningWeaponSpell));
+            Register(1339, typeof(EnchantingMagicWeaponSpell));
+            Register(1340, typeof(EnchantingMassDisenchantSpell));
+            Register(1341, typeof(EnchantingMassEnchantWeaponsSpell));
+            Register(1342, typeof(EnchantingPrismaticBarrierSpell));
+            Register(1343, typeof(EnchantingRuneofApocalypseSpell));
+            Register(1344, typeof(EnchantingRuneofHealingSpell));
+            Register(1345, typeof(EnchantingRuneofPowerSpell));
+            Register(1346, typeof(EnchantingRuneofProtectionSpell));
+            Register(1347, typeof(EnchantingRuneofResurrectionSpell));
+            Register(1348, typeof(EnchantingRunicEmpowermentSpell));
+            Register(1349, typeof(EnchantingSharpenSpell));
+            Register(1350, typeof(EnchantingSpellReflectionSpell));
+            Register(1351, typeof(EnchantingVampiricWeaponSpell));
+        }
+
+        private static void RegisterIllusionistSpells()
+        {
+            // Illusion Magic Spells (IDs 1352-1383)
+            Register(1352, typeof(IllusionApocalypticNightmareSpell));
+            Register(1353, typeof(IllusionBlurSpell));
+            Register(1354, typeof(IllusionCharmBeastSpell));
+            Register(1355, typeof(IllusionConfuseSpell));
+            Register(1356, typeof(IllusionDetectThoughtsSpell));
+            Register(1357, typeof(IllusionDominateMindSpell));
+            Register(1358, typeof(IllusionGreaterInvisibilitySpell));
+            Register(1359, typeof(IllusionIllusoryApocalypseSpell));
+            Register(1360, typeof(IllusionIllusoryArmySpell));
+            Register(1361, typeof(IllusionIllusoryDoubleSpell));
+            Register(1362, typeof(IllusionIllusoryTerrainSpell));
+            Register(1363, typeof(IllusionInvisibilitySpell));
+            Register(1364, typeof(IllusionLegionofMirrorsSpell));
+            Register(1365, typeof(IllusionMassCharmSpell));
+            Register(1366, typeof(IllusionMassConfusionSpell));
+            Register(1367, typeof(IllusionMasterofPuppetsSpell));
+            Register(1368, typeof(IllusionMindBlastSpell));
+            Register(1369, typeof(IllusionMindControlSpell));
+            Register(1370, typeof(IllusionMindShatterSpell));
+            Register(1371, typeof(IllusionMindSpikeSpell));
+            Register(1372, typeof(IllusionMinorIllusionSpell));
+            Register(1373, typeof(IllusionMirrorImageSpell));
+            Register(1374, typeof(IllusionPerfectIllusionSpell));
+            Register(1375, typeof(IllusionPerfectInvisibilitySpell));
+            Register(1376, typeof(IllusionPhantasmalDragonSpell));
+            Register(1377, typeof(IllusionPhantasmalKillerSpell));
+            Register(1378, typeof(IllusionPhantomBoltSpell));
+            Register(1379, typeof(IllusionPhaseShiftSpell));
+            Register(1380, typeof(IllusionPsychicScreamSpell));
+            Register(1381, typeof(IllusionPsychicStormSpell));
+            Register(1382, typeof(IllusionRealityWarpSpell));
+            Register(1383, typeof(IllusionTrueInvisibilitySpell));
+        }
+

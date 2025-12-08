@@ -95,6 +95,26 @@ Elemental Magic harnesses the volcanic fury of the Emberlands, specializing in f
 
 ---
 
+## Reagents
+
+Elemental Magic uses the following Vystia-specific reagents organized by spell circle:
+
+### Primary Reagents (6 types)
+1. **Ash Petal** (Circles 1-3) - Volcanic flower from volcanic slopes
+2. **Lava Glass** (Circles 2-4) - Cooled obsidian shard from lava flows
+3. **Flameweed** (Circles 1-4) - Fire-resistant plant from volcanic hot springs
+4. **Magma Essence** (Circles 3-6) - Bottled lava energy from volcanic chambers
+5. **Phoenix Feather** (Circles 6-8) - Rare fire bird feather from phoenix nests
+6. **Molten Ore** (Circles 5-7) - Superheated metal (existing resource)
+
+### Rare Reagents (2 types)
+7. **Everburning Coal** (Circles 7-8) - Eternal flame coal (existing resource)
+8. **Primordial Ember** (Circle 8) - First fire spark, ultimate reagent
+
+**Implementation:** All reagents created in `ElementalMagicReagents.cs`
+
+---
+
 ## ServUO Implementation Notes
 
 ### ✅ Standard Mechanics

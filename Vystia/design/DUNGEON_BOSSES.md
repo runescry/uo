@@ -137,15 +137,16 @@ Boss index, mechanics, key gating, and reward tables for all Vystia dungeons.
 ## GM Spawn Commands
 ```
 [add FrostFather           - Spawn Frost Father
-[add VolcanoWyrm           - Spawn Volcano Wyrm
-[add SphinxOfSurya         - Spawn Sphinx of Surya
-[add CovenMatriarch        - Spawn Coven Matriarch
-[add AncientTreant         - Spawn Ancient Treant
+[add VolcanoWyrm           - Spawn Volcano Wyrm UPDATE BODY ID TO 172 and increase size 150%
+[add SphinxOfSurya         - Spawn Sphinx of Surya UPDATE BODY ID TO 788 and increase size 150%
+[add CovenMatriarch        - Spawn Coven Matriarch UPDATE BODY ID TO 704 and increase size 150%
+[add AncientTreant         - Spawn Ancient Treant UPDATE BODY ID TO 285 and increase size 150%
 [add CrystalDrakeAlpha     - Spawn Crystal Drake Alpha
-[add GriffinLord           - Spawn Griffin Lord
-[add AncientKraken         - Spawn Ancient Kraken
+[add GriffinLord           - Spawn Griffin Lord UPDATE BODY ID TO 123 and increase size 150%
+[add AncientKraken         - Spawn Ancient Kraken 
 [add ForgeMaster           - Spawn Forge Master
 [add TimewornLich          - Spawn Timeworn Lich
+
 ```
 
 ---
