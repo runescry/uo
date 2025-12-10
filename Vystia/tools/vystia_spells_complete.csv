@@ -1,0 +1,385 @@
+school,spell_name,type,circle,mana,description,class_name
+Bardic,Balladof Health,heal,4,16,Ballad of Health - Ballad of Health Circle: 4 (16 mana),BardicBalladofHealthSpell
+Bardic,Cacophony,utility,4,16,Cacophony - Cacophony Circle: 4 (16 mana),BardicCacophonySpell
+Bardic,Crescendo,utility,6,24,Crescendo - Crescendo Circle: 6 (24 mana),BardicCrescendoSpell
+Bardic,Destructive Resonance,utility,6,24,Destructive Resonance - Destructive Resonance Circle: 6 (24 mana),BardicDestructiveResonanceSpell
+Bardic,Dirgeof Weakness,utility,2,8,Dirge of Weakness - Dirge of Weakness Circle: 2 (8 mana),BardicDirgeofWeaknessSpell
+Bardic,Discordant Note,utility,1,4,Discordant Note - Discordant Note Circle: 1 (4 mana),BardicDiscordantNoteSpell
+Bardic,Epic Ballad,utility,6,24,Epic Ballad - Epic Ballad Circle: 6 (24 mana),BardicEpicBalladSpell
+Bardic,Eternal Symphony,utility,8,32,Eternal Symphony - Eternal Symphony Circle: 8 (32 mana),BardicEternalSymphonySpell
+Bardic,Inspire Accuracy,utility,1,4,Inspire Accuracy - Inspire Accuracy Circle: 1 (4 mana),BardicInspireAccuracySpell
+Bardic,Inspire Heroism,utility,4,16,Inspire Heroism - Inspire Heroism Circle: 4 (16 mana),BardicInspireHeroismSpell
+Bardic,Legendary Performance,shapeshift,7,28,Legendary Performance - Legendary Performance Circle: 7 (28 mana),BardicLegendaryPerformanceSpell
+Bardic,Lullaby,utility,1,4,Lullaby - Lullaby Circle: 1 (4 mana),BardicLullabySpell
+Bardic,Maestro Ascendant,utility,8,32,Maestro Ascendant - Maestro Ascendant Circle: 8 (32 mana),BardicMaestroAscendantSpell
+Bardic,Mass Inspire,utility,5,20,Mass Inspire - Mass Inspire Circle: 5 (20 mana),BardicMassInspireSpell
+Bardic,Mesmerize,utility,3,12,Mesmerize - Mesmerize Circle: 3 (12 mana),BardicMesmerizeSpell
+Bardic,Odeto Devastation,utility,8,32,Ode to Devastation - Ode to Devastation Circle: 8 (32 mana),BardicOdetoDevastationSpell
+Bardic,Rejuvenating Melody,utility,2,8,Rejuvenating Melody - Rejuvenating Melody Circle: 2 (8 mana),BardicRejuvenatingMelodySpell
+Bardic,Requiem,utility,5,20,Requiem - Requiem Circle: 5 (20 mana),BardicRequiemSpell
+Bardic,Shattering Scream,utility,5,20,Shattering Scream - Shattering Scream Circle: 5 (20 mana),BardicShatteringScreamSpell
+Bardic,Songof Courage,utility,1,4,Song of Courage - Song of Courage Circle: 1 (4 mana),BardicSongofCourageSpell
+Bardic,Songof Fear,utility,6,24,Song of Fear - Song of Fear Circle: 6 (24 mana),BardicSongofFearSpell
+Bardic,Songof Resilience,utility,2,8,Song of Resilience - Song of Resilience Circle: 2 (8 mana),BardicSongofResilienceSpell
+Bardic,Songof Sanctuary,utility,5,20,Song of Sanctuary - Song of Sanctuary Circle: 5 (20 mana),BardicSongofSanctuarySpell
+Bardic,Songof Swiftness,utility,3,12,Song of Swiftness - Song of Swiftness Circle: 3 (12 mana),BardicSongofSwiftnessSpell
+Bardic,Songofthe Ancients,utility,7,28,Song of the Ancients - Song of the Ancients Circle: 7 (28 mana),BardicSongoftheAncientsSpell
+Bardic,Sonic Apocalypse,utility,7,28,Sonic Apocalypse - Sonic Apocalypse Circle: 7 (28 mana),BardicSonicApocalypseSpell
+Bardic,Sonic Burst,utility,2,8,Sonic Burst - Sonic Burst Circle: 2 (8 mana),BardicSonicBurstSpell
+Bardic,Sonic Wave,utility,4,16,Sonic Wave - Sonic Wave Circle: 4 (16 mana),BardicSonicWaveSpell
+Bardic,Symphonyof Destruction,utility,7,28,Symphony of Destruction - Symphony of Destruction Circle: 7 (28 mana),BardicSymphonyofDestructionSpell
+Bardic,Thunderous Chord,utility,3,12,Thunderous Chord - Thunderous Chord Circle: 3 (12 mana),BardicThunderousChordSpell
+Bardic,Voiceofthe Dragon,utility,8,32,Voice of the Dragon - Voice of the Dragon Circle: 8 (32 mana),BardicVoiceoftheDragonSpell
+Bardic,War Song,utility,3,12,War Song - War Song Circle: 3 (12 mana),BardicWarSongSpell
+Dark Magic,Apocalyptic Chaos,utility,7,28,Apocalyptic Chaos - Apocalyptic Chaos Circle: 7 (28 mana),DarkApocalypticChaosSpell
+Dark Magic,Chaos Bolt,utility,2,8,Chaos Bolt - Chaos Bolt Circle: 2 (8 mana),DarkChaosBoltSpell
+Dark Magic,Chaos Incarnate,utility,8,32,Chaos Incarnate - Chaos Incarnate Circle: 8 (32 mana),DarkChaosIncarnateSpell
+Dark Magic,Chaos Rift,utility,4,16,Chaos Rift - Chaos Rift Circle: 4 (16 mana),DarkChaosRiftSpell
+Dark Magic,Chaos Storm,utility,6,24,Chaos Storm - Chaos Storm Circle: 6 (24 mana),DarkChaosStormSpell
+Dark Magic,Corruption,utility,3,12,Corruption - Corruption Circle: 3 (12 mana),DarkCorruptionSpell
+Dark Magic,Dark Apotheosis,utility,8,32,Dark Apotheosis - Dark Apotheosis Circle: 8 (32 mana),DarkDarkApotheosisSpell
+Dark Magic,Dark Portal,utility,6,24,Dark Portal - Dark Portal Circle: 6 (24 mana),DarkDarkPortalSpell
+Dark Magic,Demonic Ascension,utility,7,28,Demonic Ascension - Demonic Ascension Circle: 7 (28 mana),DarkDemonicAscensionSpell
+Dark Magic,Demonic Pact,utility,3,12,Demonic Pact - Demonic Pact Circle: 3 (12 mana),DarkDemonicPactSpell
+Dark Magic,Demonic Sacrifice,utility,5,20,Demonic Sacrifice - Demonic Sacrifice Circle: 5 (20 mana),DarkDemonicSacrificeSpell
+Dark Magic,Demonic Sight,utility,1,4,Demonic Sight - Demonic Sight Circle: 1 (4 mana),DarkDemonicSightSpell
+Dark Magic,Drain Soul,utility,2,8,Drain Soul - Drain Soul Circle: 2 (8 mana),DarkDrainSoulSpell
+Dark Magic,Fear Wave,utility,3,12,Fear Wave - Fear Wave Circle: 3 (12 mana),DarkFearWaveSpell
+Dark Magic,Fel Armor,buff,5,20,Fel Armor - Fel Armor Circle: 5 (20 mana),DarkFelArmorSpell
+Dark Magic,Lesser Demon,utility,2,8,Lesser Demon - Lesser Demon Circle: 2 (8 mana),DarkLesserDemonSpell
+Dark Magic,Life Tap,utility,1,4,Life Tap - Life Tap Circle: 1 (4 mana),DarkLifeTapSpell
+Dark Magic,Mass Fear,utility,5,20,Mass Fear - Mass Fear Circle: 5 (20 mana),DarkMassFearSpell
+Dark Magic,Minor Fear,utility,1,4,Minor Fear - Minor Fear Circle: 1 (4 mana),DarkMinorFearSpell
+Dark Magic,Shadow Bolt,utility,1,4,Shadow Bolt - Shadow Bolt Circle: 1 (4 mana),DarkShadowBoltSpell
+Dark Magic,Shadow Chains,utility,4,16,Shadow Chains - Shadow Chains Circle: 4 (16 mana),DarkShadowChainsSpell
+Dark Magic,Shadow Nova,utility,3,12,Shadow Nova - Shadow Nova Circle: 3 (12 mana),DarkShadowNovaSpell
+Dark Magic,Shadow Orb,utility,5,20,Shadow Orb - Shadow Orb Circle: 5 (20 mana),DarkShadowOrbSpell
+Dark Magic,Shadow Step,utility,2,8,Shadow Step - Shadow Step Circle: 2 (8 mana),DarkShadowStepSpell
+Dark Magic,Shadowform,shapeshift,6,24,Shadowform - Shadowform Circle: 6 (24 mana),DarkShadowformSpell
+Dark Magic,Soul Burn,dot,4,16,Soul Burn - Soul Burn Circle: 4 (16 mana),DarkSoulBurnSpell
+Dark Magic,Soul Harvest,utility,7,28,Soul Harvest - Soul Harvest Circle: 7 (28 mana),DarkSoulHarvestSpell
+Dark Magic,Summon Demon Prince,summon,8,32,Summon Demon Prince - Summon Demon Prince Circle: 8 (32 mana),DarkSummonDemonPrinceSpell
+Dark Magic,Summon Pit Lord,summon,7,28,Summon Pit Lord - Summon Pit Lord Circle: 7 (28 mana),DarkSummonPitLordSpell
+Dark Magic,Summon Succubus,summon,6,24,Summon Succubus - Summon Succubus Circle: 6 (24 mana),DarkSummonSuccubusSpell
+Dark Magic,Summon Voidwalker,summon,4,16,Summon Voidwalker - Summon Voidwalker Circle: 4 (16 mana),DarkSummonVoidwalkerSpell
+Dark Magic,Void Collapse,utility,8,32,Void Collapse - Void Collapse Circle: 8 (32 mana),DarkVoidCollapseSpell
+Divination,Barrierof Light,utility,4,16,Barrier of Light - Barrier of Light Circle: 4 (16 mana),DivinationBarrierofLightSpell
+Divination,Chrono Lord,utility,7,28,Chrono Lord - Chrono Lord Circle: 7 (28 mana),DivinationChronoLordSpell
+Divination,Clarity,utility,1,4,Clarity - Clarity Circle: 1 (4 mana),DivinationClaritySpell
+Divination,Cosmic Rift,utility,7,28,Cosmic Rift - Cosmic Rift Circle: 7 (28 mana),DivinationCosmicRiftSpell
+Divination,Crystal Barrage,utility,5,20,Crystal Barrage - Crystal Barrage Circle: 5 (20 mana),DivinationCrystalBarrageSpell
+Divination,Crystal Dart,utility,1,4,Crystal Dart - Crystal Dart Circle: 1 (4 mana),DivinationCrystalDartSpell
+Divination,Crystal Fortress,utility,6,24,Crystal Fortress - Crystal Fortress Circle: 6 (24 mana),DivinationCrystalFortressSpell
+Divination,Crystal Maze,utility,8,32,Crystal Maze - Crystal Maze Circle: 8 (32 mana),DivinationCrystalMazeSpell
+Divination,Crystal Shield,utility,2,8,Crystal Shield - Crystal Shield Circle: 2 (8 mana),DivinationCrystalShieldSpell
+Divination,Energy Burst,utility,3,12,Energy Burst - Energy Burst Circle: 3 (12 mana),DivinationEnergyBurstSpell
+Divination,Fate Shift,utility,7,28,Fate Shift - Fate Shift Circle: 7 (28 mana),DivinationFateShiftSpell
+Divination,Fates Thread,utility,5,20,Fate's Thread - Fate's Thread Circle: 5 (20 mana),DivinationFatesThreadSpell
+Divination,Foresight,utility,2,8,Foresight - Foresight Circle: 2 (8 mana),DivinationForesightSpell
+Divination,Glimpse Future,utility,1,4,Glimpse Future - Glimpse Future Circle: 1 (4 mana),DivinationGlimpseFutureSpell
+Divination,Haste Self,utility,2,8,Haste Self - Haste Self Circle: 2 (8 mana),DivinationHasteSelfSpell
+Divination,Mana Crystal,utility,3,12,Mana Crystal - Mana Crystal Circle: 3 (12 mana),DivinationManaCrystalSpell
+Divination,Mass Foresight,utility,7,28,Mass Foresight - Mass Foresight Circle: 7 (28 mana),DivinationMassForesightSpell
+Divination,Mass Haste,utility,5,20,Mass Haste - Mass Haste Circle: 5 (20 mana),DivinationMassHasteSpell
+Divination,Minor Ward,utility,1,4,Minor Ward - Minor Ward Circle: 1 (4 mana),DivinationMinorWardSpell
+Divination,Oracle Ascendant,utility,8,32,Oracle Ascendant - Oracle Ascendant Circle: 8 (32 mana),DivinationOracleAscendantSpell
+Divination,Oracles Sight,utility,4,16,Oracle's Sight - Oracle's Sight Circle: 4 (16 mana),DivinationOraclesSightSpell
+Divination,Precognition,utility,3,12,Precognition - Precognition Circle: 3 (12 mana),DivinationPrecognitionSpell
+Divination,Prismatic Apocalypse,utility,8,32,Prismatic Apocalypse - Prismatic Apocalypse Circle: 8 (32 mana),DivinationPrismaticApocalypseSpell
+Divination,Prismatic Bolt,utility,2,8,Prismatic Bolt - Prismatic Bolt Circle: 2 (8 mana),DivinationPrismaticBoltSpell
+Divination,Prismatic Spray,utility,4,16,Prismatic Spray - Prismatic Spray Circle: 4 (16 mana),DivinationPrismaticSpraySpell
+Divination,Prismatic Storm,utility,6,24,Prismatic Storm - Prismatic Storm Circle: 6 (24 mana),DivinationPrismaticStormSpell
+Divination,Prophecyof Doom,utility,6,24,Prophecy of Doom - Prophecy of Doom Circle: 6 (24 mana),DivinationProphecyofDoomSpell
+Divination,Temporal Shield,utility,5,20,Temporal Shield - Temporal Shield Circle: 5 (20 mana),DivinationTemporalShieldSpell
+Divination,Temporal Slow,slow,3,12,Temporal Slow - Temporal Slow Circle: 3 (12 mana),DivinationTemporalSlowSpell
+Divination,Time Stop,utility,6,24,Time Stop - Time Stop Circle: 6 (24 mana),DivinationTimeStopSpell
+Divination,Time Warp,utility,4,16,Time Warp - Time Warp Circle: 4 (16 mana),DivinationTimeWarpSpell
+Divination,Timeless State,utility,8,32,Timeless State - Timeless State Circle: 8 (32 mana),DivinationTimelessStateSpell
+Elemental Magic,Apocalypse,utility,8,32,Apocalypse - Apocalypse Circle: 8 (32 mana),ElementalApocalypseSpell
+Elemental Magic,Avatarof Flame,utility,7,28,Avatar of Flame - Avatar of Flame Circle: 7 (28 mana),ElementalAvatarofFlameSpell
+Elemental Magic,Cataclysm,utility,7,28,Cataclysm - Cataclysm Circle: 7 (28 mana),ElementalCataclysmSpell
+Elemental Magic,Combustion,utility,5,20,Combustion - Combustion Circle: 5 (20 mana),ElementalCombustionSpell
+Elemental Magic,Ember Burst,utility,2,8,Ember Burst - Ember Burst Circle: 2 (8 mana),ElementalEmberBurstSpell
+Elemental Magic,Fireball,utility,2,8,Fireball - Fireball Circle: 2 (8 mana),ElementalFireballSpell
+Elemental Magic,Flame Bolt,utility,1,4,Flame Bolt - Flame Bolt Circle: 1 (4 mana),ElementalFlameBoltSpell
+Elemental Magic,Flame Pillar,utility,4,16,Flame Pillar - Flame Pillar Circle: 4 (16 mana),ElementalFlamePillarSpell
+Elemental Magic,Flame Tempest,utility,6,24,Flame Tempest - Flame Tempest Circle: 6 (24 mana),ElementalFlameTempestSpell
+Elemental Magic,Flame Ward,utility,2,8,Flame Ward - Flame Ward Circle: 2 (8 mana),ElementalFlameWardSpell
+Elemental Magic,Heat Shield,utility,1,4,Heat Shield - Heat Shield Circle: 1 (4 mana),ElementalHeatShieldSpell
+Elemental Magic,Hellfire Nova,utility,6,24,Hellfire Nova - Hellfire Nova Circle: 6 (24 mana),ElementalHellfireNovaSpell
+Elemental Magic,Ignite,utility,3,12,Ignite - Ignite Circle: 3 (12 mana),ElementalIgniteSpell
+Elemental Magic,Incinerate,utility,3,12,Incinerate - Incinerate Circle: 3 (12 mana),ElementalIncinerateSpell
+Elemental Magic,Inferno,utility,5,20,Inferno - Inferno Circle: 5 (20 mana),ElementalInfernoSpell
+Elemental Magic,Lava Flow,utility,5,20,Lava Flow - Lava Flow Circle: 5 (20 mana),ElementalLavaFlowSpell
+Elemental Magic,Lava Puddle,utility,2,8,Lava Puddle - Lava Puddle Circle: 2 (8 mana),ElementalLavaPuddleSpell
+Elemental Magic,Magma Armor,buff,4,16,Magma Armor - Magma Armor Circle: 4 (16 mana),ElementalMagmaArmorSpell
+Elemental Magic,Magma Core,utility,8,32,Magma Core - Magma Core Circle: 8 (32 mana),ElementalMagmaCoreSpell
+Elemental Magic,Meteor Strike,utility,4,16,Meteor Strike - Meteor Strike Circle: 4 (16 mana),ElementalMeteorStrikeSpell
+Elemental Magic,Molten Titan Form,shapeshift,6,24,Molten Titan Form - Molten Titan Form Circle: 6 (24 mana),ElementalMoltenTitanFormSpell
+Elemental Magic,Molten Touch,utility,1,4,Molten Touch - Molten Touch Circle: 1 (4 mana),ElementalMoltenTouchSpell
+Elemental Magic,Phoenix Shield,utility,5,20,Phoenix Shield - Phoenix Shield Circle: 5 (20 mana),ElementalPhoenixShieldSpell
+Elemental Magic,Primordial Inferno,utility,8,32,Primordial Inferno - Primordial Inferno Circle: 8 (32 mana),ElementalPrimordialInfernoSpell
+Elemental Magic,Pyroclasm,utility,4,16,Pyroclasm - Pyroclasm Circle: 4 (16 mana),ElementalPyroclasmSpell
+Elemental Magic,Pyroclastic Flow,utility,7,28,Pyroclastic Flow - Pyroclastic Flow Circle: 7 (28 mana),ElementalPyroclasticFlowSpell
+Elemental Magic,Ringof Fire,utility,3,12,Ring of Fire - Ring of Fire Circle: 3 (12 mana),ElementalRingofFireSpell
+Elemental Magic,Smoke Screen,utility,1,4,Smoke Screen - Smoke Screen Circle: 1 (4 mana),ElementalSmokeScreenSpell
+Elemental Magic,Solar Flare,utility,8,32,Solar Flare - Solar Flare Circle: 8 (32 mana),ElementalSolarFlareSpell
+Elemental Magic,Summon Fire Elemental Lord,summon,7,28,Summon Fire Elemental Lord - Summon Fire Elemental Lord Circle: 7 (28 mana),ElementalSummonFireElementalLordSpell
+Elemental Magic,Volcanic Eruption,utility,6,24,Volcanic Eruption - Volcanic Eruption Circle: 6 (24 mana),ElementalVolcanicEruptionSpell
+Elemental Magic,Volcanic Rock,utility,3,12,Volcanic Rock - Volcanic Rock Circle: 3 (12 mana),ElementalVolcanicRockSpell
+Enchanting,ing Aegisof Warding,utility,5,20,Aegis of Warding - Aegis of Warding Circle: 5 (20 mana),EnchantingAegisofWardingSpell
+Enchanting,ing Arcane Shield,utility,1,4,Arcane Shield - Arcane Shield Circle: 1 (4 mana),EnchantingArcaneShieldSpell
+Enchanting,ing Archmages Blessing,utility,8,32,Archmage's Blessing - Archmage's Blessing Circle: 8 (32 mana),EnchantingArchmagesBlessingSpell
+Enchanting,ing Artifact Empowerment,utility,8,32,Artifact Empowerment - Artifact Empowerment Circle: 8 (32 mana),EnchantingArtifactEmpowermentSpell
+Enchanting,ing Detect Magic,detection,1,4,Detect Magic - Detect Magic Circle: 1 (4 mana),EnchantingDetectMagicSpell
+Enchanting,ing Disenchant,utility,2,8,Disenchant - Disenchant Circle: 2 (8 mana),EnchantingDisenchantSpell
+Enchanting,ing Elemental Barrier,utility,3,12,Elemental Barrier - Elemental Barrier Circle: 3 (12 mana),EnchantingElementalBarrierSpell
+Enchanting,ing Enchant Army,utility,7,28,Enchant Army - Enchant Army Circle: 7 (28 mana),EnchantingEnchantArmySpell
+Enchanting,ing Enchant Arrows,utility,4,16,Enchant Arrows - Enchant Arrows Circle: 4 (16 mana),EnchantingEnchantArrowsSpell
+Enchanting,ing Enchant Party Weapons,utility,5,20,Enchant Party Weapons - Enchant Party Weapons Circle: 5 (20 mana),EnchantingEnchantPartyWeaponsSpell
+Enchanting,ing Flaming Weapon,utility,2,8,Flaming Weapon - Flaming Weapon Circle: 2 (8 mana),EnchantingFlamingWeaponSpell
+Enchanting,ing Fortify Armor,buff,2,8,Fortify Armor - Fortify Armor Circle: 2 (8 mana),EnchantingFortifyArmorSpell
+Enchanting,ing Godly Weapon,utility,7,28,Godly Weapon - Godly Weapon Circle: 7 (28 mana),EnchantingGodlyWeaponSpell
+Enchanting,ing Greater Disenchant,utility,7,28,Greater Disenchant - Greater Disenchant Circle: 7 (28 mana),EnchantingGreaterDisenchantSpell
+Enchanting,ing Holy Weapon,utility,5,20,Holy Weapon - Holy Weapon Circle: 5 (20 mana),EnchantingHolyWeaponSpell
+Enchanting,ing Invincible Armor,buff,8,32,Invincible Armor - Invincible Armor Circle: 8 (32 mana),EnchantingInvincibleArmorSpell
+Enchanting,ing Invulnerability,utility,6,24,Invulnerability - Invulnerability Circle: 6 (24 mana),EnchantingInvulnerabilitySpell
+Enchanting,ing Legendary Weapon,utility,6,24,Legendary Weapon - Legendary Weapon Circle: 6 (24 mana),EnchantingLegendaryWeaponSpell
+Enchanting,ing Lightning Weapon,utility,3,12,Lightning Weapon - Lightning Weapon Circle: 3 (12 mana),EnchantingLightningWeaponSpell
+Enchanting,ing Magic Weapon,utility,1,4,Magic Weapon - Magic Weapon Circle: 1 (4 mana),EnchantingMagicWeaponSpell
+Enchanting,ing Mass Disenchant,utility,4,16,Mass Disenchant - Mass Disenchant Circle: 4 (16 mana),EnchantingMassDisenchantSpell
+Enchanting,ing Mass Enchant Weapons,utility,6,24,Mass Enchant Weapons - Mass Enchant Weapons Circle: 6 (24 mana),EnchantingMassEnchantWeaponsSpell
+Enchanting,ing Prismatic Barrier,utility,7,28,Prismatic Barrier - Prismatic Barrier Circle: 7 (28 mana),EnchantingPrismaticBarrierSpell
+Enchanting,ing Reflection,utility,4,16,Spell Reflection - Spell Reflection Circle: 4 (16 mana),EnchantingSpellReflectionSpell
+Enchanting,ing Runeof Apocalypse,utility,8,32,Rune of Apocalypse - Rune of Apocalypse Circle: 8 (32 mana),EnchantingRuneofApocalypseSpell
+Enchanting,ing Runeof Healing,heal,3,12,Rune of Healing - Rune of Healing Circle: 3 (12 mana),EnchantingRuneofHealingSpell
+Enchanting,ing Runeof Power,utility,1,4,Rune of Power - Rune of Power Circle: 1 (4 mana),EnchantingRuneofPowerSpell
+Enchanting,ing Runeof Protection,utility,2,8,Rune of Protection - Rune of Protection Circle: 2 (8 mana),EnchantingRuneofProtectionSpell
+Enchanting,ing Runeof Resurrection,resurrect,6,24,Rune of Resurrection - Rune of Resurrection Circle: 6 (24 mana),EnchantingRuneofResurrectionSpell
+Enchanting,ing Runic Empowerment,utility,5,20,Runic Empowerment - Runic Empowerment Circle: 5 (20 mana),EnchantingRunicEmpowermentSpell
+Enchanting,ing Sharpen,utility,3,12,Sharpen - Sharpen Circle: 3 (12 mana),EnchantingSharpenSpell
+Enchanting,ing Vampiric Weapon,utility,4,16,Vampiric Weapon - Vampiric Weapon Circle: 4 (16 mana),EnchantingVampiricWeaponSpell
+Hex Magic,Apocalyptic Hex,heal,8,50,"Apocalyptic Hex - ALL enemies cursed with multiple stacking hexes: -20 all stats, -20 all resists, Deadly Poison, -50% healing, 8-15 damage/tick Circle: 8 (50 mana)",HexApocalypticHexSpell
+Hex Magic,Contagious Hex,dot,3,9,"Contagious Hex - Cursed target spreads hex to allies within 3 tiles (-10% attack speed, 3-5 damage/tick) Circle: 3 (9 mana)",HexContagiousHexSpell
+Hex Magic,Crippling Curse,debuff,4,11,"Crippling Curse - -20 DEX, -30% movement speed, -20% attack speed Circle: 4 (11 mana)",HexCripplingCurseSpell
+Hex Magic,Curseof Mortality,buff,6,20,"Curse of Mortality - Target loses ALL regeneration (HP/Mana/Stam), -20 all resists, -15% max HP Circle: 6 (20 mana)",HexCurseofMortalitySpell
+Hex Magic,Curseof Undeath,heal,8,50,"Curse of Undeath - Target becomes cursed undead: heals become damage, holy spells deal double damage, cannot naturally regenerate, +50% poison/curse damage taken Circle: 8 (50 mana)",HexCurseofUndeathSpell
+Hex Magic,Curseofthe Hag,shapeshift,7,40,"Curse of the Hag - Target polymorphs into weak form (chicken), -90% damage, -50% movement, cannot cast spells Circle: 7 (40 mana)",HexCurseoftheHagSpell
+Hex Magic,Dark Pact,damage,2,6,"Dark Pact - Sacrifice 15% current HP, gain +20% spell damage for duration Circle: 2 (6 mana)",HexDarkPactSpell
+Hex Magic,Doomcurse,cure,6,20,"Doomcurse - After 12 seconds, target takes massive damage (100-150) unless dispelled. Cannot be removed by normal means. Circle: 6 (20 mana)",HexDoomcurseSpell
+Hex Magic,Drain Essence,heal,4,11,"Drain Essence - Drains 25-40 HP AND 10-20 mana, heals caster for HP amount and restores mana Circle: 4 (11 mana)",HexDrainEssenceSpell
+Hex Magic,Enfeeble,damage,2,6,"Enfeeble - -15 STR, -10% physical damage output Circle: 2 (6 mana)",HexEnfeebleSpell
+Hex Magic,Evil Eye,utility,1,4,Evil Eye - -5% accuracy Circle: 1 (4 mana),HexEvilEyeSpell
+Hex Magic,Hex Storm,slow,6,20,"Hex Storm - Zone pulses random hexes every 2s: curses, poisons, slows, silences Circle: 6 (20 mana)",HexHexStormSpell
+Hex Magic,Hexblade Ritual,damage,7,40,"Hexblade Ritual - Caster's spells deal bonus physical damage equal to 50% of spell damage, melee attacks apply hexes Circle: 7 (40 mana)",HexHexbladeRitualSpell
+Hex Magic,Hexof Agony,heal,4,11,"Hex of Agony - Whenever target is healed, they take equal damage instead Circle: 4 (11 mana)",HexHexofAgonySpell
+Hex Magic,Hexof Frailty,buff,3,9,Hex of Frailty - -10 to all resistances Circle: 3 (9 mana),HexHexofFrailtySpell
+Hex Magic,Hexof Silence,utility,5,14,Hex of Silence - Target cannot cast spells (silenced) Circle: 5 (14 mana),HexHexofSilenceSpell
+Hex Magic,Life Leech,heal,3,9,"Life Leech - Drains 15-25 HP from target, heals caster for 150% of amount drained Circle: 3 (9 mana)",HexLifeLeechSpell
+Hex Magic,Mass Hex,damage,5,14,"Mass Hex - All enemies cursed: -10 all stats, -10% damage, -5 all resists Circle: 5 (14 mana)",HexMassHexSpell
+Hex Magic,Necrotic Touch,heal,5,14,"Necrotic Touch - Deals 25-40 damage, reduces healing received by 50% for 20 seconds, applies Deadly Poison Circle: 5 (14 mana)",HexNecroticTouchSpell
+Hex Magic,Plague Bearer,dot,4,11,Plague Bearer - Target takes 6-10 poison damage/tick and spreads poison to enemies within 2 tiles Circle: 4 (11 mana),HexPlagueBearerSpell
+Hex Magic,Plagueof Sorrows,heal,7,40,"Plague of Sorrows - Contagious mega-plague: 10-18 damage/tick, spreads to anyone within 5 tiles, reduces healing 75% Circle: 7 (40 mana)",HexPlagueofSorrowsSpell
+Hex Magic,Poison Touch,dot,2,6,Poison Touch - Applies Greater Poison (5-8 damage/tick) Circle: 2 (6 mana),HexPoisonTouchSpell
+Hex Magic,Siphon Life,heal,1,4,"Siphon Life - Drains 6-12 HP from target, heals caster for same amount Circle: 1 (4 mana)",HexSiphonLifeSpell
+Hex Magic,Soul Harvest,heal,7,40,"Soul Harvest - Drains 40-65 HP from all enemies, heals caster for total amount drained, grants shield equal to healing Circle: 7 (40 mana)",HexSoulHarvestSpell
+Hex Magic,Soul Siphon,heal,5,14,"Soul Siphon - Drains 35-55 HP, heals caster for 200% of amount, grants temporary +10% max HP buff (60s) Circle: 5 (14 mana)",HexSoulSiphonSpell
+Hex Magic,Vampiric Aura,heal,6,20,"Vampiric Aura - All damage dealt by caster heals caster for 40% of damage, +15% spell damage Circle: 6 (20 mana)",HexVampiricAuraSpell
+Hex Magic,Voodoo Doll,damage,3,9,Voodoo Doll - Links to target - 25% of damage caster takes is reflected to linked target Circle: 3 (9 mana),HexVoodooDollSpell
+Hex Magic,Voodoo Mastery,charm,8,50,"Voodoo Mastery - Controls target's actions (charm), can force them to attack allies or cast spells Circle: 8 (50 mana)",HexVoodooMasterySpell
+Hex Magic,Wasting Curse,debuff,2,6,Wasting Curse - Target loses 1% max HP every 3 seconds (max 10% loss) Circle: 2 (6 mana),HexWastingCurseSpell
+Hex Magic,Weak Curse,debuff,1,4,Weak Curse - -5 to all stats (STR/DEX/INT) Circle: 1 (4 mana),HexWeakCurseSpell
+Hex Magic,Witch Queens Dominion,summon,8,50,"Witch Queen's Dominion - Become Witch Queen: All hexes cost 50% less mana, hexes last twice as long, life drain heals 300%, immune to curses/poison, summons 3 hex totems that auto-curse enemies Circle: 8 (50 mana)",HexWitchQueensDominionSpell
+Hex Magic,Witch Sight,detection,1,4,"Witch Sight - Reveals hidden creatures, see in darkness, detect magic auras Circle: 1 (4 mana)",HexWitchSightSpell
+Ice Magic,Absolute Zero,paralyze,7,40,"Absolute Zero - Ultimate AoE nuke Massive cold damage in large area with freeze and frozen ground Circle: 7th (40 mana) Reagents: Arctic Pearl, Frozen Soul, EternalIce (Vystia reagents)",AbsoluteZeroSpell
+Ice Magic,Age,paralyze,8,50,"Ice Age - Screen-wide devastation Everything freezes across massive area Circle: 8th (50 mana) Reagents: Frozen Soul, EternalIce, HeartOfWinter, FrozenOre (Vystia reagents)",IceAgeSpell
+Ice Magic,Avalanche,aoe_damage,6,20,"Avalanche - Cone AoE with knockback Massive ice and snow cascade dealing damage and knocking back enemies Circle: 6th (20 mana) Reagents: Permafrost Essence, Arctic Pearl, Frozen Soul (Vystia reagents)",AvalancheSpell
+Ice Magic,Blizzard,paralyze,6,20,"Blizzard - AoE ice storm that deals damage over time and slows enemies Circle: 6th (20 mana) Area: 5 tile radius Duration: 10 seconds Reagents: MandrakeRoot, SulfurousAsh, Bloodmoss, SpidersSilk",BlizzardSpell
+Ice Magic,Bolt,paralyze,3,9,"Ice Bolt - Basic ice damage spell Deals cold damage and has chance to slow target Circle: 3rd (9 mana) Reagents: MandrakeRoot, SulfurousAsh",IceBoltSpell
+Ice Magic,Chill Aura,utility,1,4,Chill Aura - Creates a chilling aura around caster Enemies within 2 tiles have reduced attack speed Circle: 1st (4 mana) Reagents: Winterleaf (Vystia reagent),ChillAuraSpell
+Ice Magic,Cocytus Prison,utility,8,50,"Cocytus Prison - Ultimate lockdown Imprisons target in unbreakable ice requiring channel Circle: 8th (50 mana) Reagents: Frozen Soul, EternalIce (3), HeartOfWinter (Vystia reagents)",CocytusPrisonSpell
+Ice Magic,Deep Freeze,paralyze,6,20,"Deep Freeze - Hard CC with vulnerability Freezes target solid making them take double damage Circle: 6th (20 mana) Reagents: Permafrost Essence, Arctic Pearl, Frozen Soul (Vystia reagents)",DeepFreezeSpell
+Ice Magic,Eternal Winter,slow,7,40,"Eternal Winter - Zone control ultimate Creates massive frozen wasteland with continuous damage and slowing Circle: 7th (40 mana) Reagents: Arctic Pearl, Frozen Soul, EternalIce (Vystia reagents)",EternalWinterSpell
+Ice Magic,Fimbulwinters Wrath,shapeshift,7,40,"Fimbulwinter's Wrath - Transformation ultimate Caster becomes avatar of winter with massive power boost Circle: 7th (40 mana) Reagents: Arctic Pearl, Frozen Soul, EternalIce, HeartOfWinter (Vystia reagents)",FimbulwintersWrathSpell
+Ice Magic,Freezing Grasp,slow,2,6,"Freezing Grasp - Improved cold damage with slow Deals cold damage and has higher chance to slow target Circle: 2nd (6 mana) Reagents: Frostbloom, Winterleaf (Vystia reagents)",FreezingGraspSpell
+Ice Magic,Frost Armor,paralyze,4,11,"Frost Armor - Defensive buff that grants physical and cold resistance Circle: 4th (11 mana) Duration: 120-240 seconds (scales with Magery) Reagents: Garlic, Ginseng, MandrakeRoot",FrostArmorSpell
+Ice Magic,Frost Meteor,aoe_damage,8,50,"Frost Meteor - Devastating AoE nuke Calls down massive ice meteor with enormous damage and frozen terrain Circle: 8th (50 mana) Reagents: Frozen Soul, EternalIce, HeartOfWinter (Vystia reagents)",FrostMeteorSpell
+Ice Magic,Frost Slick,slow,2,6,"Frost Slick - Creates icy ground that slows enemies Creates a 3x3 tile area of ice that slows enemies passing through Circle: 2nd (6 mana) Reagents: Frostbloom, Winterleaf (Vystia reagents)",FrostSlickSpell
+Ice Magic,Frost Touch,slow,1,4,"Frost Touch - Basic ice touch attack Deals cold damage on touch and has chance to slow target Circle: 1st (4 mana) Reagents: Frostbloom, Winterleaf (Vystia reagents)",FrostTouchSpell
+Ice Magic,Frost Ward,buff,1,4,"Frost Ward - Basic cold protection buff Grants +5 Cold Resistance for 30 seconds Circle: 1st (4 mana) Reagents: Winterleaf, Frostbloom (Vystia reagents)",FrostWardSpell
+Ice Magic,Frostbite,heal,3,9,"Frostbite - Damage over time with anti-healing debuff Deals cold DoT and reduces healing received Circle: 3rd (9 mana) Reagents: Winterleaf, Glacier Crystal (Vystia reagents)",FrostbiteSpell
+Ice Magic,Frozen Ground,slow,3,9,"Frozen Ground - Creates frozen terrain that damages and slows Creates a 4-tile radius area that deals DoT and applies slow Circle: 3rd (9 mana) Reagents: Frostbloom, Winterleaf, Glacier Crystal (Vystia reagents)",FrozenGroundSpell
+Ice Magic,Frozen Tomb,damage,5,14,"Frozen Tomb - Ice prison that protects target Encases target in ice making them immune to damage but unable to act Circle: 5th (14 mana) Reagents: Permafrost Essence, Arctic Pearl (Vystia reagents)",FrozenTombSpell
+Ice Magic,Glacial Fortress,damage,6,20,"Glacial Fortress - Ultimate defense buff Creates ice fortress with massive resistances and damage reflection Circle: 6th (20 mana) Reagents: Permafrost Essence, Arctic Pearl, Frozen Soul (Vystia reagents)",GlacialFortressSpell
+Ice Magic,Glacial Mend,heal,2,6,"Glacial Mend - Ice-themed healing spell Heals target and grants cold resistance buff Circle: 2nd (6 mana) Reagents: Winterleaf, Frostbloom (Vystia reagents)",GlacialMendSpell
+Ice Magic,Glacial Strike,paralyze,5,14,"Glacial Strike - High damage with freeze chance Deals heavy cold damage with 50% chance to stun Circle: 5th (14 mana) Reagents: Permafrost Essence, Arctic Pearl (Vystia reagents)",GlacialStrikeSpell
+Ice Magic,Glacier Summon,summon,7,40,"Glacier Summon - Summons Ice Elemental Summons a powerful ice elemental to fight for the caster Circle: 7th (40 mana) Reagents: Arctic Pearl, Frozen Soul, Permafrost Essence (Vystia reagents)",GlacierSummonSpell
+Ice Magic,Hypothermia,buff,5,14,"Hypothermia - Severe debuff Reduces max HP, movement speed, and attack speed Circle: 5th (14 mana) Reagents: Permafrost Essence, Arctic Pearl (Vystia reagents)",HypothermiaSpell
+Ice Magic,Icicle Barrage,aoe_damage,4,11,"Icicle Barrage - AoE burst damage Rains icicles in an area dealing cold damage Circle: 4th (11 mana) Reagents: Glacier Crystal, Permafrost Essence (Vystia reagents)",IcicleBarrageSpell
+Ice Magic,Permafrost,paralyze,4,11,"Permafrost - Root spell that prevents movement Roots target in place and deals DoT Circle: 4th (11 mana) Reagents: Winterleaf, Glacier Crystal, Permafrost Essence (Vystia reagents)",PermafrostSpell
+Ice Magic,Rime Reaper,utility,8,50,"Rime Reaper - Execute ability Massive ice scythe that shatters low HP targets Circle: 8th (50 mana) Reagents: Frozen Soul, EternalIce, HeartOfWinter (Vystia reagents)",RimeReaperSpell
+Ice Magic,Shard,damage,1,4,Ice Shard - Basic ice projectile attack Deals cold damage at range Circle: 1st (4 mana) Reagents: Frostbloom (Vystia reagent),IceShardSpell
+Ice Magic,Shatter,slow,5,14,"Shatter - Combo spell with bonus vs slowed/frozen Deals cold damage with +50% bonus if target is slowed or frozen Circle: 5th (14 mana) Reagents: Permafrost Essence, Glacier Crystal (Vystia reagents)",ShatterSpell
+Ice Magic,Shield,damage,2,6,"Ice Shield - Defensive buff with damage reflection Grants physical and cold resistance, reflects melee damage Circle: 2nd (6 mana) Reagents: Winterleaf, Glacier Crystal (Vystia reagents)",IceShieldSpell
+Ice Magic,Spear,damage,3,9,"Ice Spear - Piercing ice projectile that hits multiple targets Deals heavy cold damage and can pierce through up to 3 enemies in a line Circle: 3rd (9 mana) Reagents: Frostbloom, Winterleaf, Glacier Crystal (Vystia reagents)",IceSpearSpell
+Ice Magic,Wall,utility,4,11,"Ice Wall - Creates a barrier of ice Creates a 5-tile long wall that blocks movement Circle: 4th (11 mana) Reagents: Glacier Crystal, Permafrost Essence (Vystia reagents)",IceWallSpell
+Illusion,Apocalyptic Nightmare,utility,8,32,Apocalyptic Nightmare - Apocalyptic Nightmare Circle: 8 (32 mana),IllusionApocalypticNightmareSpell
+Illusion,Blur,utility,1,4,Blur - Blur Circle: 1 (4 mana),IllusionBlurSpell
+Illusion,Charm Beast,charm,3,12,Charm Beast - Charm Beast Circle: 3 (12 mana),IllusionCharmBeastSpell
+Illusion,Confuse,utility,2,8,Confuse - Confuse Circle: 2 (8 mana),IllusionConfuseSpell
+Illusion,Detect Thoughts,detection,1,4,Detect Thoughts - Detect Thoughts Circle: 1 (4 mana),IllusionDetectThoughtsSpell
+Illusion,Dominate Mind,charm,6,24,Dominate Mind - Dominate Mind Circle: 6 (24 mana),IllusionDominateMindSpell
+Illusion,Greater Invisibility,illusion,3,12,Greater Invisibility - Greater Invisibility Circle: 3 (12 mana),IllusionGreaterInvisibilitySpell
+Illusion,Illusory Apocalypse,utility,8,32,Illusory Apocalypse - Illusory Apocalypse Circle: 8 (32 mana),IllusionIllusoryApocalypseSpell
+Illusion,Illusory Army,utility,5,20,Illusory Army - Illusory Army Circle: 5 (20 mana),IllusionIllusoryArmySpell
+Illusion,Illusory Double,utility,2,8,Illusory Double - Illusory Double Circle: 2 (8 mana),IllusionIllusoryDoubleSpell
+Illusion,Illusory Terrain,utility,4,16,Illusory Terrain - Illusory Terrain Circle: 4 (16 mana),IllusionIllusoryTerrainSpell
+Illusion,Invisibility,illusion,2,8,Invisibility - Invisibility Circle: 2 (8 mana),IllusionInvisibilitySpell
+Illusion,Legionof Mirrors,utility,6,24,Legion of Mirrors - Legion of Mirrors Circle: 6 (24 mana),IllusionLegionofMirrorsSpell
+Illusion,Mass Charm,charm,6,24,Mass Charm - Mass Charm Circle: 6 (24 mana),IllusionMassCharmSpell
+Illusion,Mass Confusion,utility,4,16,Mass Confusion - Mass Confusion Circle: 4 (16 mana),IllusionMassConfusionSpell
+Illusion,Masterof Puppets,utility,8,32,Master of Puppets - Master of Puppets Circle: 8 (32 mana),IllusionMasterofPuppetsSpell
+Illusion,Mind Blast,utility,4,16,Mind Blast - Mind Blast Circle: 4 (16 mana),IllusionMindBlastSpell
+Illusion,Mind Control,charm,5,20,Mind Control - Mind Control Circle: 5 (20 mana),IllusionMindControlSpell
+Illusion,Mind Shatter,utility,7,28,Mind Shatter - Mind Shatter Circle: 7 (28 mana),IllusionMindShatterSpell
+Illusion,Mind Spike,utility,1,4,Mind Spike - Mind Spike Circle: 1 (4 mana),IllusionMindSpikeSpell
+Illusion,Minor Illusion,illusion,1,4,Minor Illusion - Minor Illusion Circle: 1 (4 mana),IllusionMinorIllusionSpell
+Illusion,Mirror Image,utility,3,12,Mirror Image - Mirror Image Circle: 3 (12 mana),IllusionMirrorImageSpell
+Illusion,Perfect Illusion,illusion,8,32,Perfect Illusion - Perfect Illusion Circle: 8 (32 mana),IllusionPerfectIllusionSpell
+Illusion,Perfect Invisibility,illusion,5,20,Perfect Invisibility - Perfect Invisibility Circle: 5 (20 mana),IllusionPerfectInvisibilitySpell
+Illusion,Phantasmal Dragon,utility,7,28,Phantasmal Dragon - Phantasmal Dragon Circle: 7 (28 mana),IllusionPhantasmalDragonSpell
+Illusion,Phantasmal Killer,utility,4,16,Phantasmal Killer - Phantasmal Killer Circle: 4 (16 mana),IllusionPhantasmalKillerSpell
+Illusion,Phantom Bolt,utility,2,8,Phantom Bolt - Phantom Bolt Circle: 2 (8 mana),IllusionPhantomBoltSpell
+Illusion,Phase Shift,utility,6,24,Phase Shift - Phase Shift Circle: 6 (24 mana),IllusionPhaseShiftSpell
+Illusion,Psychic Scream,utility,3,12,Psychic Scream - Psychic Scream Circle: 3 (12 mana),IllusionPsychicScreamSpell
+Illusion,Psychic Storm,utility,5,20,Psychic Storm - Psychic Storm Circle: 5 (20 mana),IllusionPsychicStormSpell
+Illusion,Reality Warp,utility,7,28,Reality Warp - Reality Warp Circle: 7 (28 mana),IllusionRealityWarpSpell
+Illusion,True Invisibility,illusion,7,28,True Invisibility - True Invisibility Circle: 7 (28 mana),IllusionTrueInvisibilitySpell
+Nature Magic,Animal Aspect Speed,utility,2,6,"Animal Aspect: Speed - +20 DEX, +15% movement speed Circle: 2 (6 mana)",NatureAnimalAspectSpeedSpell
+Nature Magic,Avatarofthe Forest,shapeshift,8,50,"Avatar of the Forest - Become nature incarnate: Can shapeshift instantly and maintain spellcasting, all nature spells cost 50% less mana, immune to poison/fire, +40 all resists, summons 3 treant guardians Circle: 8 (50 mana)",NatureAvataroftheForestSpell
+Nature Magic,Barkskin,buff,1,4,"Barkskin - +5 Physical Resistance, +5 Poison Resistance Circle: 1 (4 mana)",NatureBarkskinSpell
+Nature Magic,Bear Form Lesser Shapeshift,shapeshift,3,9,"Bear Form (Lesser Shapeshift) - Transform into bear: +30 STR, +15 Physical Resist, melee attacks deal bonus damage, CANNOT CAST SPELLS Circle: 3 (9 mana)",NatureBearFormLesserShapeshiftSpell
+Nature Magic,Detect Life,detection,1,4,"Detect Life - Reveals hidden creatures within 12 tiles, shows HP bars Circle: 1 (4 mana)",NatureDetectLifeSpell
+Nature Magic,Earthquake,paralyze,5,14,"Earthquake - Deals 20-35 physical damage, knocks down enemies (stun 2s), destroys ice walls/barriers Circle: 5 (14 mana)",NatureEarthquakeSpell
+Nature Magic,Entangle,paralyze,2,6,"Entangle - Roots target in place (cannot move, can still cast/attack) Circle: 2 (6 mana)",NatureEntangleSpell
+Nature Magic,Forceof Nature,shapeshift,7,40,"Force of Nature - Shapeshifts rapidly between all forms (changes every 5s), gains all benefits simultaneously, can still cast spells Circle: 7 (40 mana)",NatureForceofNatureSpell
+Nature Magic,Greater Regeneration,heal,5,14,Greater Regeneration - Heals 8-12 HP/tick (15 ticks = 120-180 total) Circle: 5 (14 mana),NatureGreaterRegenerationSpell
+Nature Magic,Hawk Form Aerial Shapeshift,shapeshift,5,14,"Hawk Form (Aerial Shapeshift) - Transform into hawk: Can fly over obstacles, +40 DEX, -50% damage taken from ranged, weak melee, CANNOT CAST SPELLS Circle: 5 (14 mana)",NatureHawkFormAerialShapeshiftSpell
+Nature Magic,Healing Grove,heal,4,11,Healing Grove - Allies in area heal 5-8 HP/tick Circle: 4 (11 mana),NatureHealingGroveSpell
+Nature Magic,Hydra Form Legendary Shapeshift,shapeshift,8,50,"Hydra Form (Legendary Shapeshift) - Transform into multi-headed hydra: +70 STR, +30 DEX, triple attack, regenerates 15 HP/tick, immune to poison, CANNOT CAST SPELLS Circle: 8 (50 mana)",NatureHydraFormLegendaryShapeshiftSpell
+Nature Magic,Living Fortress,heal,6,20,"Living Fortress - +20 Physical Resist, +20 Poison Resist, +15% max HP, immune to roots/slows, heals 5 HP/tick Circle: 6 (20 mana)",NatureLivingFortressSpell
+Nature Magic,Natures Blessing,dot,3,9,"Nature's Blessing - +10% max HP, +5 HP regen/tick, +10 Poison Resist Circle: 3 (9 mana)",NatureNaturesBlessingSpell
+Nature Magic,Natures Touch,heal,1,4,Nature's Touch - Heals 8-15 HP Circle: 1 (4 mana),NatureNaturesTouchSpell
+Nature Magic,Natures Wrath,paralyze,6,20,"Nature's Wrath - Deals 35-55 damage (mix of poison/physical), applies poison DoT, roots all targets Circle: 6 (20 mana)",NatureNaturesWrathSpell
+Nature Magic,Plague,dot,7,40,"Plague - Devastating poison DoT (10-15 damage/tick), spreads to nearby enemies within 3 tiles Circle: 7 (40 mana)",NaturePlagueSpell
+Nature Magic,Poison Spores,dot,2,6,Poison Spores - DoT dealing 3-5 poison damage/tick (6 ticks) Circle: 2 (6 mana),NaturePoisonSporesSpell
+Nature Magic,Primordial Restoration,heal,7,40,"Primordial Restoration - Massive AoE heal (80-120 HP), removes all poisons/curses, grants immunity to debuffs for 15s Circle: 7 (40 mana)",NaturePrimordialRestorationSpell
+Nature Magic,Rejuvenation,heal,2,6,Rejuvenation - Heals 3-6 HP/tick (10 ticks = 30-60 total) Circle: 2 (6 mana),NatureRejuvenationSpell
+Nature Magic,Spore Cloud,dot,5,14,"Spore Cloud - Poison cloud dealing 5-9 damage/tick, reduces visibility, -25% accuracy Circle: 5 (14 mana)",NatureSporeCloudSpell
+Nature Magic,Strangling Vines,paralyze,4,11,"Strangling Vines - Target is rooted and takes 6-10 damage/tick, -20% attack speed Circle: 4 (11 mana)",NatureStranglingVinesSpell
+Nature Magic,Summon Ancient Treant,summon,7,40,"Summon Ancient Treant - Summons Ancient Treant (1200 HP, powerful melee, AoE root, high resists) Circle: 7 (40 mana)",NatureSummonAncientTreantSpell
+Nature Magic,Swarm,dot,6,20,"Swarm - Swarm of insects deals 6-10 damage/tick, -40% accuracy, interrupts spellcasting Circle: 6 (20 mana)",NatureSwarmSpell
+Nature Magic,Thorn Apocalypse,paralyze,8,50,"Thorn Apocalypse - Thorns erupt from ground dealing 60-100 damage (50% poison, 50% physical), applies bleed and poison DoTs, roots all enemies for 5s Circle: 8 (50 mana)",NatureThornApocalypseSpell
+Nature Magic,Thorn Dart,damage,1,4,"Thorn Dart - Deals 4-10 damage (50% poison, 50% physical) Circle: 1 (4 mana)",NatureThornDartSpell
+Nature Magic,Thorn Volley,aoe_damage,3,9,"Thorn Volley - Deals 12-22 damage to all enemies in area (50% poison, 50% physical) Circle: 3 (9 mana)",NatureThornVolleySpell
+Nature Magic,Toxic Bloom,dot,4,11,"Toxic Bloom - Explodes for 15-25 poison damage, applies poison DoT (5 damage/tick for 10s) Circle: 4 (11 mana)",NatureToxicBloomSpell
+Nature Magic,Treant Form Greater Shapeshift,shapeshift,6,20,"Treant Form (Greater Shapeshift) - Transform into treant: +50 STR, +30 Physical Resist, +25% max HP, AoE root on attacks, CANNOT CAST SPELLS Circle: 6 (20 mana)",NatureTreantFormGreaterShapeshiftSpell
+Nature Magic,Wild Growth,slow,3,9,Wild Growth - Creates thick vegetation that blocks line of sight and slows enemies 30% Circle: 3 (9 mana),NatureWildGrowthSpell
+Nature Magic,Wolf Form Advanced Shapeshift,shapeshift,4,11,"Wolf Form (Advanced Shapeshift) - Transform into wolf: +25 DEX, +30% movement speed, +15% attack speed, bleed attacks, CANNOT CAST SPELLS Circle: 4 (11 mana)",NatureWolfFormAdvancedShapeshiftSpell
+Nature Magic,World Trees Embrace,slow,8,50,"World Tree's Embrace - Massive tree grows from caster: Allies gain +50% HP, 10 HP/tick regen, all resists +25. Enemies take 8-15 damage/tick and are slowed 75% Circle: 8 (50 mana)",NatureWorldTreesEmbraceSpell
+Necromancy,mancy Animate Bone,summon,1,4,Animate Bone - Animate Bone Circle: 1 (4 mana),NecromancyAnimateBoneSpell
+Necromancy,mancy Apocalypseof Death,utility,8,32,Apocalypse of Death - Apocalypse of Death Circle: 8 (32 mana),NecromancyApocalypseofDeathSpell
+Necromancy,mancy Archlich Ascension,utility,8,32,Archlich Ascension - Archlich Ascension Circle: 8 (32 mana),NecromancyArchlichAscensionSpell
+Necromancy,mancy Armyofthe Dead,utility,7,28,Army of the Dead - Army of the Dead Circle: 7 (28 mana),NecromancyArmyoftheDeadSpell
+Necromancy,mancy Bone Armor,buff,3,12,Bone Armor - Bone Armor Circle: 3 (12 mana),NecromancyBoneArmorSpell
+Necromancy,mancy Bone Prison,utility,7,28,Bone Prison - Bone Prison Circle: 7 (28 mana),NecromancyBonePrisonSpell
+Necromancy,mancy Bone Shard,utility,2,8,Bone Shard - Bone Shard Circle: 2 (8 mana),NecromancyBoneShardSpell
+Necromancy,mancy Bone Wall,utility,5,20,Bone Wall - Bone Wall Circle: 5 (20 mana),NecromancyBoneWallSpell
+Necromancy,mancy Corpse Explosion,utility,4,16,Corpse Explosion - Corpse Explosion Circle: 4 (16 mana),NecromancyCorpseExplosionSpell
+Necromancy,mancy Death Bolt,utility,1,4,Death Bolt - Death Bolt Circle: 1 (4 mana),NecromancyDeathBoltSpell
+Necromancy,mancy Death Coil,utility,3,12,Death Coil - Death Coil Circle: 3 (12 mana),NecromancyDeathCoilSpell
+Necromancy,mancy Death Grip,utility,4,16,Death Grip - Death Grip Circle: 4 (16 mana),NecromancyDeathGripSpell
+Necromancy,mancy Death Knights,utility,6,24,Death Knights - Death Knights Circle: 6 (24 mana),NecromancyDeathKnightsSpell
+Necromancy,mancy Death Wave,utility,7,28,Death Wave - Death Wave Circle: 7 (28 mana),NecromancyDeathWaveSpell
+Necromancy,mancy Deathand Decay,utility,5,20,Death and Decay - Death and Decay Circle: 5 (20 mana),NecromancyDeathandDecaySpell
+Necromancy,mancy Deaths Door,utility,8,32,Death's Door - Death's Door Circle: 8 (32 mana),NecromancyDeathsDoorSpell
+Necromancy,mancy Deathsight,utility,1,4,Deathsight - Deathsight Circle: 1 (4 mana),NecromancyDeathsightSpell
+Necromancy,mancy Decay,utility,2,8,Decay - Decay Circle: 2 (8 mana),NecromancyDecaySpell
+Necromancy,mancy Demi Lich Transformation,shapeshift,7,28,Demi-Lich Transformation - Demi-Lich Transformation Circle: 7 (28 mana),NecromancyDemiLichTransformationSpell
+Necromancy,mancy Lich Form,shapeshift,6,24,Lich Form - Lich Form Circle: 6 (24 mana),NecromancyLichFormSpell
+Necromancy,mancy Life Siphon,utility,1,4,Life Siphon - Life Siphon Circle: 1 (4 mana),NecromancyLifeSiphonSpell
+Necromancy,mancy Mass Raise,utility,3,12,Mass Raise - Mass Raise Circle: 3 (12 mana),NecromancyMassRaiseSpell
+Necromancy,mancy Plague Cloud,utility,6,24,Plague Cloud - Plague Cloud Circle: 6 (24 mana),NecromancyPlagueCloudSpell
+Necromancy,mancy Raise Bone Golem,utility,5,20,Raise Bone Golem - Raise Bone Golem Circle: 5 (20 mana),NecromancyRaiseBoneGolemSpell
+Necromancy,mancy Raise Zombie,utility,2,8,Raise Zombie - Raise Zombie Circle: 2 (8 mana),NecromancyRaiseZombieSpell
+Necromancy,mancy Skeletal Mage,utility,4,16,Skeletal Mage - Skeletal Mage Circle: 4 (16 mana),NecromancySkeletalMageSpell
+Necromancy,mancy Soul Harvest,utility,3,12,Soul Harvest - Soul Harvest Circle: 3 (12 mana),NecromancySoulHarvestSpell
+Necromancy,mancy Soul Link,utility,5,20,Soul Link - Soul Link Circle: 5 (20 mana),NecromancySoulLinkSpell
+Necromancy,mancy Soul Shield,utility,2,8,Soul Shield - Soul Shield Circle: 2 (8 mana),NecromancySoulShieldSpell
+Necromancy,mancy Summon Undead Dragon,summon,8,32,Summon Undead Dragon - Summon Undead Dragon Circle: 8 (32 mana),NecromancySummonUndeadDragonSpell
+Necromancy,mancy Unholy Frenzy,utility,6,24,Unholy Frenzy - Unholy Frenzy Circle: 6 (24 mana),NecromancyUnholyFrenzySpell
+Necromancy,mancy Vampiric Touch,utility,4,16,Vampiric Touch - Vampiric Touch Circle: 4 (16 mana),NecromancyVampiricTouchSpell
+Shamanic,ic Ancestors Blessing,utility,7,28,Ancestor's Blessing - Ancestor's Blessing Circle: 7 (28 mana),ShamanicAncestorsBlessingSpell
+Shamanic,ic Ancestral Spirit,utility,5,20,Ancestral Spirit - Ancestral Spirit Circle: 5 (20 mana),ShamanicAncestralSpiritSpell
+Shamanic,ic Apocalyptic Chain Lightning,utility,8,32,Apocalyptic Chain Lightning - Apocalyptic Chain Lightning Circle: 8 (32 mana),ShamanicApocalypticChainLightningSpell
+Shamanic,ic Ascendance,utility,7,28,Ascendance - Ascendance Circle: 7 (28 mana),ShamanicAscendanceSpell
+Shamanic,ic Chain Heal,heal,4,16,Chain Heal - Chain Heal Circle: 4 (16 mana),ShamanicChainHealSpell
+Shamanic,ic Chain Lightning,utility,2,8,Chain Lightning - Chain Lightning Circle: 2 (8 mana),ShamanicChainLightningSpell
+Shamanic,ic Earth Elemental,utility,5,20,Earth Elemental - Earth Elemental Circle: 5 (20 mana),ShamanicEarthElementalSpell
+Shamanic,ic Earth Shield,utility,3,12,Earth Shield - Earth Shield Circle: 3 (12 mana),ShamanicEarthShieldSpell
+Shamanic,ic Elemental Fury,utility,6,24,Elemental Fury - Elemental Fury Circle: 6 (24 mana),ShamanicElementalFurySpell
+Shamanic,ic Fire Totem,utility,2,8,Fire Totem - Fire Totem Circle: 2 (8 mana),ShamanicFireTotemSpell
+Shamanic,ic Flame Shock,utility,4,16,Flame Shock - Flame Shock Circle: 4 (16 mana),ShamanicFlameShockSpell
+Shamanic,ic Four Totems,utility,7,28,Four Totems - Four Totems Circle: 7 (28 mana),ShamanicFourTotemsSpell
+Shamanic,ic Ghost Wolf Form,shapeshift,1,4,Ghost Wolf Form - Ghost Wolf Form Circle: 1 (4 mana),ShamanicGhostWolfFormSpell
+Shamanic,ic Healing Stream,heal,1,4,Healing Stream - Healing Stream Circle: 1 (4 mana),ShamanicHealingStreamSpell
+Shamanic,ic Lava Burst,utility,4,16,Lava Burst - Lava Burst Circle: 4 (16 mana),ShamanicLavaBurstSpell
+Shamanic,ic Lightning Bolt,utility,1,4,Lightning Bolt - Lightning Bolt Circle: 1 (4 mana),ShamanicLightningBoltSpell
+Shamanic,ic Lightning Storm,utility,3,12,Lightning Storm - Lightning Storm Circle: 3 (12 mana),ShamanicLightningStormSpell
+Shamanic,ic Maelstrom,utility,5,20,Maelstrom - Maelstrom Circle: 5 (20 mana),ShamanicMaelstromSpell
+Shamanic,ic Mana Spring Totem,utility,4,16,Mana Spring Totem - Mana Spring Totem Circle: 4 (16 mana),ShamanicManaSpringTotemSpell
+Shamanic,ic Mega Chain Lightning,utility,6,24,Mega Chain Lightning - Mega Chain Lightning Circle: 6 (24 mana),ShamanicMegaChainLightningSpell
+Shamanic,ic Purification,utility,2,8,Purification - Purification Circle: 2 (8 mana),ShamanicPurificationSpell
+Shamanic,ic Shaman Lord,utility,8,32,Shaman Lord - Shaman Lord Circle: 8 (32 mana),ShamanicShamanLordSpell
+Shamanic,ic Spirit Link Totem,utility,6,24,Spirit Link Totem - Spirit Link Totem Circle: 6 (24 mana),ShamanicSpiritLinkTotemSpell
+Shamanic,ic Spirit Strike,utility,2,8,Spirit Strike - Spirit Strike Circle: 2 (8 mana),ShamanicSpiritStrikeSpell
+Shamanic,ic Spiritofthe Wild,utility,8,32,Spirit of the Wild - Spirit of the Wild Circle: 8 (32 mana),ShamanicSpiritoftheWildSpell
+Shamanic,ic Strength Totem,utility,1,4,Strength Totem - Strength Totem Circle: 1 (4 mana),ShamanicStrengthTotemSpell
+Shamanic,ic Summon Greater Earth Elemental,summon,7,28,Summon Greater Earth Elemental - Summon Greater Earth Elemental Circle: 7 (28 mana),ShamanicSummonGreaterEarthElementalSpell
+Shamanic,ic Summon Spirit Wolf,summon,3,12,Summon Spirit Wolf - Summon Spirit Wolf Circle: 3 (12 mana),ShamanicSummonSpiritWolfSpell
+Shamanic,ic Thunderstorm Totem,utility,5,20,Thunderstorm Totem - Thunderstorm Totem Circle: 5 (20 mana),ShamanicThunderstormTotemSpell
+Shamanic,ic Totem Army,utility,8,32,Totem Army - Totem Army Circle: 8 (32 mana),ShamanicTotemArmySpell
+Shamanic,ic Totemic Recall,teleport,3,12,Totemic Recall - Totemic Recall Circle: 3 (12 mana),ShamanicTotemicRecallSpell
+Shamanic,ic Totemof Wrath,utility,6,24,Totem of Wrath - Totem of Wrath Circle: 6 (24 mana),ShamanicTotemofWrathSpell
+Summoning,ing Arcane Bolt,utility,1,4,Arcane Bolt - Arcane Bolt Circle: 1 (4 mana),SummoningArcaneBoltSpell
+Summoning,ing Armyof Beasts,utility,6,24,Army of Beasts - Army of Beasts Circle: 6 (24 mana),SummoningArmyofBeastsSpell
+Summoning,ing Avatarof Summoning,summon,8,32,Avatar of Summoning - Avatar of Summoning Circle: 8 (32 mana),SummoningAvatarofSummoningSpell
+Summoning,ing Bind Beast,utility,3,12,Bind Beast - Bind Beast Circle: 3 (12 mana),SummoningBindBeastSpell
+Summoning,ing Empower Summon,summon,1,4,Empower Summon - Empower Summon Circle: 1 (4 mana),SummoningEmpowerSummonSpell
+Summoning,ing Greater Heal Summon,summon,5,20,Greater Heal Summon - Greater Heal Summon Circle: 5 (20 mana),SummoningGreaterHealSummonSpell
+Summoning,ing Mass Empower,utility,3,12,Mass Empower - Mass Empower Circle: 3 (12 mana),SummoningMassEmpowerSpell
+Summoning,ing Mass Heal Summons,summon,6,24,Mass Heal Summons - Mass Heal Summons Circle: 6 (24 mana),SummoningMassHealSummonsSpell
+Summoning,ing Mend Summon,summon,2,8,Mend Summon - Mend Summon Circle: 2 (8 mana),SummoningMendSummonSpell
+Summoning,ing Planar Convergence,utility,8,32,Planar Convergence - Planar Convergence Circle: 8 (32 mana),SummoningPlanarConvergenceSpell
+Summoning,ing Sacrifice Summon,summon,7,28,Sacrifice Summon - Sacrifice Summon Circle: 7 (28 mana),SummoningSacrificeSummonSpell
+Summoning,ing Summon Air Elemental,summon,3,12,Summon Air Elemental - Summon Air Elemental Circle: 3 (12 mana),SummoningSummonAirElementalSpell
+Summoning,ing Summon Bear,summon,3,12,Summon Bear - Summon Bear Circle: 3 (12 mana),SummoningSummonBearSpell
+Summoning,ing Summon Drake,summon,4,16,Summon Drake - Summon Drake Circle: 4 (16 mana),SummoningSummonDrakeSpell
+Summoning,ing Summon Earth Elemental,summon,4,16,Summon Earth Elemental - Summon Earth Elemental Circle: 4 (16 mana),SummoningSummonEarthElementalSpell
+Summoning,ing Summon Elemental Lord,summon,7,28,Summon Elemental Lord - Summon Elemental Lord Circle: 7 (28 mana),SummoningSummonElementalLordSpell
+Summoning,ing Summon Fire Sprite,summon,2,8,Summon Fire Sprite - Summon Fire Sprite Circle: 2 (8 mana),SummoningSummonFireSpriteSpell
+Summoning,ing Summon Frenzy,summon,4,16,Summon Frenzy - Summon Frenzy Circle: 4 (16 mana),SummoningSummonFrenzySpell
+Summoning,ing Summon Greater Dragon,summon,7,28,Summon Greater Dragon - Summon Greater Dragon Circle: 7 (28 mana),SummoningSummonGreaterDragonSpell
+Summoning,ing Summon Hydra,summon,5,20,Summon Hydra - Summon Hydra Circle: 5 (20 mana),SummoningSummonHydraSpell
+Summoning,ing Summon Phoenix,summon,6,24,Summon Phoenix - Summon Phoenix Circle: 6 (24 mana),SummoningSummonPhoenixSpell
+Summoning,ing Summon Rabbit,summon,1,4,Summon Rabbit - Summon Rabbit Circle: 1 (4 mana),SummoningSummonRabbitSpell
+Summoning,ing Summon Shield,summon,2,8,Summon Shield - Summon Shield Circle: 2 (8 mana),SummoningSummonShieldSpell
+Summoning,ing Summon Storm Elemental,summon,5,20,Summon Storm Elemental - Summon Storm Elemental Circle: 5 (20 mana),SummoningSummonStormElementalSpell
+Summoning,ing Summon Titan,summon,8,32,Summon Titan - Summon Titan Circle: 8 (32 mana),SummoningSummonTitanSpell
+Summoning,ing Summon Void Elemental,summon,6,24,Summon Void Elemental - Summon Void Elemental Circle: 6 (24 mana),SummoningSummonVoidElementalSpell
+Summoning,ing Summon Wisp,summon,1,4,Summon Wisp - Summon Wisp Circle: 1 (4 mana),SummoningSummonWispSpell
+Summoning,ing Summon Wolf,summon,2,8,Summon Wolf - Summon Wolf Circle: 2 (8 mana),SummoningSummonWolfSpell
+Summoning,ing Summoners Apocalypse,summon,8,32,Summoner's Apocalypse - Summoner's Apocalypse Circle: 8 (32 mana),SummoningSummonersApocalypseSpell
+Summoning,ing Swarmof Creatures,utility,7,28,Swarm of Creatures - Swarm of Creatures Circle: 7 (28 mana),SummoningSwarmofCreaturesSpell
+Summoning,ing Symbiotic Link,utility,5,20,Symbiotic Link - Symbiotic Link Circle: 5 (20 mana),SummoningSymbioticLinkSpell
+Summoning,ing Unsummon,summon,4,16,Unsummon - Unsummon Circle: 4 (16 mana),SummoningUnsummonSpell

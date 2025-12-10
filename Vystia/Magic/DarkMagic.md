@@ -7,6 +7,10 @@
 **Primary Stat:** Intelligence
 **Hue:** 0x455 (Deep Purple/Black)
 
+**Implementation Status:** ✅ **32/32 spells implemented (100% COMPLETE - ready for testing)**
+
+> **📝 Reagent Note:** Individual spell entries below use placeholder UO reagent names for design reference. The actual ServUO implementation uses custom Vystia reagents as documented in the [Reagents](#reagents) section at the end of this file. See `DarkMagicReagents.cs` for implementation.
+
 ---
 
 ## Overview

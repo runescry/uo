@@ -1,0 +1,53 @@
+======================================================================
+EXTRACTION USING BODYCONV.DEF MAPPINGS
+======================================================================
+
+Loaded bodyconv.def with 660 mappings
+Requested bodies: 325
+
+[  1/325] Body    2: SUCCESS
+[  2/325] Body   10 (maps to anim    7): FAILED
+[  3/325] Body   11 (maps to anim    3): FAILED
+[  4/325] Body   19: SUCCESS
+[  5/325] Body   20 (maps to anim    4): FAILED
+[  6/325] Body   23: SUCCESS
+[  7/325] Body   25: SUCCESS
+[  8/325] Body   27: SUCCESS
+[  9/325] Body   33: SUCCESS
+[ 10/325] Body   36: SUCCESS
+[ 11/325] Body   37: SUCCESS
+[ 12/325] Body   38 (maps to anim    8): FAILED
+[ 13/325] Body   40 (maps to anim    9): FAILED
+[ 14/325] Body   43 (maps to anim   11): FAILED
+[ 15/325] Body   44: SUCCESS
+[ 16/325] Body   45: SUCCESS
+[ 17/325] Body   46 (maps to anim   63): FAILED
+[ 18/325] Body   55: SUCCESS
+[ 19/325] Body   63: SUCCESS
+[ 20/325] Body   64: SUCCESS
+[ 21/325] Body   65: SUCCESS
+[ 22/325] Body   66: SUCCESS
+[ 23/325] Body   67 (maps to anim   70): FAILED
+[ 24/325] Body   69: SUCCESS
+[ 25/325] Body   73: SUCCESS
+[ 26/325] Body   74 (maps to anim   18): FAILED
+[ 27/325] Body   78: SUCCESS
+[ 28/325] Body   79: SUCCESS
+[ 29/325] Body   83: SUCCESS
+[ 30/325] Body   84: SUCCESS
+[ 31/325] Body   88: FAILED
+[ 32/325] Body   89: FAILED
+[ 33/325] Body   90: FAILED
+[ 34/325] Body   91: FAILED
+[ 35/325] Body   92: FAILED
+[ 36/325] Body   93: FAILED
+[ 37/325] Body   94: FAILED
+[ 38/325] Body   96: FAILED
+[ 39/325] Body   97: FAILED
+[ 40/325] Body   98: FAILED
+[ 41/325] Body   99: FAILED
+[ 42/325] Body  100: FAILED
+[ 43/325] Body  101 (maps to anim    6): FAILED
+[ 44/325] Body  102 (maps to anim   10): FAILED
+[ 45/325] Body  103 (maps to anim   12): FAILED
+[ 46/325] Body  104 (maps to anim   13): 

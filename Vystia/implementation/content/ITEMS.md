@@ -1,6 +1,6 @@
 # Vystia Items & Artifacts Guide
 
-**Last Updated:** December 2024
+**Last Updated:** 2025-12-08
 
 ---
 
@@ -8,19 +8,32 @@
 
 | Category | Designed | Implemented | Status |
 |----------|----------|-------------|--------|
-| Legendary Artifacts | 4 | 0 | ❌ Not Started |
-| Biome Resources | 8+ | 3 | 🟡 ~35% |
+| **Class Special Items** | 16 | 16 | ✅ 100% |
+| **Magic Spellbooks** | 12 | 12 | ✅ 100% |
+| **Spell Scrolls** | 384 | 384 | ✅ 100% |
+| **Magic Reagents** | 96 | 96 | ✅ 100% |
+| Legendary Artifacts | 4+ | 1 | 🟡 25% |
 | Regional Equipment | 20+ | 1 | 🟡 5% |
 | Consumables | 8+ | 0 | ❌ Not Started |
 | Quest Items | 4+ | 1 | 🟡 25% |
 
-**Implemented Items:**
+**Implemented Items (✅ Complete Categories):**
+
+**Class Special Items (16):**
+- RageTotem, BeastWhistle, AlchemistKit, CrystalOrb, MonkBeads, TemplarCross, SummoningCircle, BountyLedger, KnightBanner, SpiritTotem, MagicLute, EnchantingCrystal, ConstructControlDevice, ClockworkScout, ShapeshiftTotem, HolySymbol, ArtificerBlueprints
+
+**Magic System Items:**
+- 12 Spellbooks (all schools functional)
+- 384 Spell Scrolls (32 per school)
+- 96 Magic Reagents (8 per school)
+
+**Quest/Artifact Items (Partial):**
 - ✅ `FrozenArtifact.cs` - Frosthold crafting material
 - ✅ `FrostSeal.cs` - Frozen Halls dungeon key
-- ✅ `HeartwoodCoreFragment.cs` - Artifact fragment (5 needed for full artifact)
+- ✅ `HeartwoodCoreFragment.cs` - Artifact fragment
 - ✅ `TheEternalWinter.cs` - Legendary Halberd
 
-**Next Phase:** Phase 2 - Reagents & Special Materials
+**Next Phase:** Legendary Artifacts, Regional Equipment Sets
 
 ---
 

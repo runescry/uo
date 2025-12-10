@@ -6,6 +6,9 @@
 **Spellbook:** Druid Spellbook (DruidSpellbook.cs)
 **Primary Stat:** Intelligence / Strength (shapeshifted)
 **Hue:** 0x7D6 (Forest Green)
+**Implementation Status:** ✅ **32/32 spells implemented (100% COMPLETE - tested 2025-12-08)**
+
+> **📝 Reagent Note:** Individual spell entries below use placeholder UO reagent names for design reference. The actual ServUO implementation uses custom Vystia reagents as documented in the [Reagents](#reagents) section at the end of this file. See `NatureMagicReagents.cs` for implementation.
 
 ---
 

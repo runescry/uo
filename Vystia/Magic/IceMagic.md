@@ -6,8 +6,11 @@
 **Spellbook:** Ice Mage Spellbook (IceMageSpellbook.cs)
 **Primary Stat:** Intelligence
 **Hue:** 0x481 (Ice Blue)
-**Status:** ✅ **100% COMPLETE** (32/32 spells implemented)
+**Status:** ✅ **100% COMPLETE** (32/32 spells implemented and tested)
 **Implementation Date:** 2025-12-06
+**Last Updated:** 2025-12-08
+
+> **📝 Reagent Note:** Individual spell entries below use placeholder UO reagent names for design reference. The actual ServUO implementation uses custom Vystia reagents as documented in the [Reagents](#reagents) section at the end of this file. See `IceMagicReagents.cs` for implementation.
 
 ---
 
