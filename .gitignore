@@ -52,7 +52,9 @@
 **/*.tmp
 **/*.temp
 
-# Ignore large binary map files (optional - uncomment if map files get too large)
-# **/*.mul
-# **/*.uop
-# **/*.bmp
+# Ignore large binary map files (UO client files - too large for GitHub)
+**/*.mul
+**/*.uop
+**/backups/
+**/patched_client/
+**/output/maps/
