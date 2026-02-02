@@ -47,7 +47,7 @@ All GM commands for Vystia administration (126+ commands including aliases).
 | `[spawntrainer <class>` | Spawn specific trainer | `[spawntrainer Barbarian` |
 | `[str <class>` | Shortcut for above | `[str IceMage` |
 
-**Classes:** Barbarian, Beastmaster, IceMage, Sorcerer, Ranger, Illusionist, Witch, Warlock, Necromancer, Druid, Alchemist, Wizard, Oracle, Artificer, Fighter, Monk, Templar, Summoner, BountyHunter, Knight, Shaman, Cleric, Paladin, Bard, Enchanter, Rogue
+**Classes:** Barbarian, Beastmaster, IceMage, Sorcerer, Ranger, Illusionist, Witch, Warlock, Necromancer, Druid, Alchemist, Wizard, Oracle, Artificer, Fighter, Monk, Templar, Summoner, BountyHunter, Knight, Shaman, Cleric, Paladin, Bard (Songweaving), Enchanter, Rogue
 
 ---
 
@@ -70,7 +70,7 @@ All GM commands for Vystia administration (126+ commands including aliases).
 | `[GetResources` | Show all resources | |
 | `[ResetResources` | Reset to 0 | |
 
-**Types:** Fury, Chi, Combo, Energy, Focus, Essence, Mana, Nature, Shadow, Soul, Spirit, Rage, Heat, Chill, Harmony
+**Types:** Fury, Chi, Combo, Energy, Focus, Essence, Mana, Nature, Shadow, Soul, Spirit, Rage, Heat, Chill, Crescendo
 
 ---
 
@@ -148,7 +148,7 @@ All GM commands for Vystia administration (126+ commands including aliases).
 |---------|-------------|---------|
 | `[spellbook <type>` / `[sb` | Give spellbook | `[sb ice` |
 
-**Types:** ice, druid/nature, witch/hex, sorcerer/elemental, warlock/dark, oracle/divination, necromancer/necro, summoner/summon, shaman/shamanic, bard/bardic, enchanter/enchant, illusionist/illusion
+**Types:** ice, druid/nature, witch/hex, sorcerer/elemental, warlock/dark, oracle/divination, necromancer/necro, summoner/summon, shaman/shamanic, bard/songweaving, enchanter/enchant, illusionist/illusion
 
 ---
 
@@ -172,6 +172,9 @@ All GM commands for Vystia administration (126+ commands including aliases).
 | `[FindQuestNPC respawn` | Respawn missing quest NPCs | |
 | `[ClearQuests [playerName]` | Clear all quests for player | `[ClearQuests Runescry` |
 | `[GenLLMQuest [poiId]` | Generate LLM quest | `[GenLLMQuest VERDANTPEAK_GROVE` |
+
+**Note:** These commands are for **Vystia Dynamic Quests** (QuestNPC/Chronicler).  
+The **Mondain/BaseQuest** system uses classic quest givers (MondainQuester/LLMQuester).
 
 **Quest Editor Features:**
 - Create quests without coding

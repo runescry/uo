@@ -1,4 +1,8 @@
-# Bardic Magic - Multi-Regional School
+# Bardic Magic - Multi-Regional School (DEPRECATED)
+
+**Deprecated:** 2026-01-23  
+**Replacement:** Songweaving system in `Vystia/design/system_design/VYSTIA_BARD_SYSTEM.md`  
+**Plan:** `Vystia/design/system_design/VYSTIA_BARD_IMPLEMENTATION_PLAN.md`
 
 | Property | Value |
 |----------|-------|

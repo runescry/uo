@@ -9,7 +9,7 @@ Druid - Guardians of Verdantpeak
 Fighter - Ironclad Legionnaires
 Ice Mage - Frostweavers of Winterguard
 Monk - Gearwheel Monastery's Monks
-Paladin - Knights of the Forge Pact
+Paladin - Knights of the Cogsmith Creed
 Ranger - Dune Striders of The Whispering Sands
 Rogue - Shadow Guild Operatives
 Sorcerer - Elemental Savants of The Emberlands
@@ -577,8 +577,8 @@ N/A
 
 
 
-Paladin - Knights of the Forge Pact
-Paladins, as Knights of the Forge Pact, are holy warriors dedicated to upholding justice and righteousness. They wield both the power of their faith and their weapons to defend their lands from evil forces.
+Paladin - Knights of the Cogsmith Creed
+Paladins, as Knights of the Cogsmith Creed, are holy warriors dedicated to upholding justice and righteousness. They wield both the power of their faith and their weapons to defend their lands from evil forces.
 
 
 
@@ -2431,6 +2431,7 @@ The Hollow Forests
 The Radiant Plains
 The Glimmering Archipelago
 Winterguar
+
 
 
 

@@ -13,6 +13,9 @@ The Class Quest System provides structured progression for all 26 Vystia classes
 - Provide lore and world-building
 - Gate certain abilities behind quest completion
 
+**Quest Systems Note:** This design targets **Vystia Dynamic Quests** (VystiaQuestSystem/DynamicQuest).  
+The **Mondain/BaseQuest** system is separate and is used for classic quest chains.
+
 ---
 
 ## Quest Structure

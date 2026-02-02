@@ -264,7 +264,7 @@
 #### Commands
 | Command | Description |
 |---------|-------------|
-| SpawnLLMQuester | Spawn quest NPC |
+| SpawnLLMQuester | Spawn quest NPC (Mondain/BaseQuest) |
 | SpawnPersonalityNPC | Spawn personality NPC |
 | SpawnNPCGroups | Spawn NPC groups |
 | LLMMenuCommand | LLM menu |
@@ -281,9 +281,10 @@
 ### 5.1 Quest Components
 | Component | Status |
 |-----------|--------|
-| Quest Editor Gump | Complete |
-| LLMQuester (quest NPCs) | Complete |
-| Quest waypoints | Via LLM system |
+| Quest Editor Gump (Dynamic) | Complete |
+| QuestNPC (Dynamic) | Complete |
+| DynamicQuest/Waypoints (Dynamic) | Complete |
+| LLMQuester (Mondain/BaseQuest) | Complete |
 
 ---
 

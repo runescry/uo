@@ -11,7 +11,8 @@
 |----------|-------|----------|
 | Faction Leaders | 20 | `NPCs/FactionLeaders/` |
 | Talking Creatures | 12 | `NPCs/TalkingCreatures/` |
-| Quest Givers | 3 | `NPCs/QuestGivers/` |
+| Quest Givers (Mondain/BaseQuest) | 2 | `NPCs/QuestGivers/` |
+| Quest Generator (Dynamic) | 1 | `NPCs/QuestGivers/` |
 | Regional Vendors | 3 | `NPCs/Vendors/` |
 | Class Trainers | 25 | `Trainers/` (separate folder) |
 | Quest NPCs | Dynamic | `VystiaClasses/Quests/QuestNPC.cs` |
@@ -132,13 +133,17 @@ Ancient, sentient creatures with LLM dialogue support. See also: `ANCIENT_BEINGS
 
 ---
 
-## Quest Givers (3)
+## Quest Givers (split)
 
 | NPC | Type | Function |
 |-----|------|----------|
-| Chronicler | Human | Lore quests |
-| QuartermasterGrimwald | Human | Supply/delivery quests |
-| SageTheron | Human | Knowledge quests |
+| Chronicler | Human | **Vystia Dynamic** quest generator (LLM) |
+| QuartermasterGrimwald | Human | **Mondain/BaseQuest** supply/delivery quests |
+| SageTheron | Human | **Mondain/BaseQuest** knowledge quests |
+
+**Note:** Vystia uses two quest systems:
+- **Vystia Dynamic Quests:** Chronicler + QuestNPCs + Quest Wizard
+- **Mondain/BaseQuest:** MondainQuester/LLMQuester (classic chains)
 
 ---
 

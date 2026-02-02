@@ -6,6 +6,10 @@ How to create quests, NPCs, and custom content for Vystia.
 
 ## Quest Creation
 
+**Quest Systems (split):**
+- **Vystia Dynamic Quests:** Quest Wizard + QuestNPC + Chronicler + [GenLLMQuest] (this section)
+- **Mondain/BaseQuest:** Classic ServUO quests via MondainQuester/LLMQuester (separate system)
+
 ### Primary Method: Quest Wizard (Step-by-Step)
 
 **Commands:** `[QuestEditor`, `[QE`, `[QuestWizard`, or `[QW`

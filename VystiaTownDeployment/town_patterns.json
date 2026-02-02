@@ -1,0 +1,185 @@
+{
+  "patterns": {
+    "britain": {
+      "name": "britain",
+      "total_area": 105000,
+      "building_count": 12,
+      "density": 1.1428571428571428,
+      "road_network": {
+        "exists": true,
+        "total_tiles": 46,
+        "coverage": 0.0004380952380952381,
+        "main_horizontal": 0,
+        "main_vertical": 0,
+        "has_grid": false
+      },
+      "building_clusters": [
+        {
+          "buildings": 2,
+          "center": {
+            "x": 1420,
+            "y": 1652
+          },
+          "radius": 10.04987562112089
+        },
+        {
+          "buildings": 2,
+          "center": {
+            "x": 1450,
+            "y": 1653
+          },
+          "radius": 8.246211251235321
+        },
+        {
+          "buildings": 2,
+          "center": {
+            "x": 1451,
+            "y": 1686
+          },
+          "radius": 8.06225774829855
+        },
+        {
+          "buildings": 2,
+          "center": {
+            "x": 1405,
+            "y": 1715
+          },
+          "radius": 4.123105625617661
+        },
+        {
+          "buildings": 2,
+          "center": {
+            "x": 1423,
+            "y": 1747
+          },
+          "radius": 5.656854249492381
+        }
+      ],
+      "district_zones": [
+        {
+          "type": "residential",
+          "center": {
+            "x": 1420,
+            "y": 1652
+          },
+          "building_count": 2
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 1450,
+            "y": 1653
+          },
+          "building_count": 2
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 1451,
+            "y": 1686
+          },
+          "building_count": 2
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 1405,
+            "y": 1715
+          },
+          "building_count": 2
+        },
+        {
+          "type": "residential",
+          "center": {
+            "x": 1423,
+            "y": 1747
+          },
+          "building_count": 2
+        }
+      ],
+      "building_distances": {
+        "unknown": {
+          "unknown": 127.66800338857381
+        }
+      },
+      "building_colocation": {
+        "unknown": []
+      },
+      "center_point": [
+        1478,
+        1685
+      ],
+      "density_gradient": [
+        0.0,
+        0.7957747154594766,
+        0.353677651315323,
+        0.5092958178940651,
+        0.33953054526271004,
+        0.3183098861837907
+      ],
+      "road_grid_type": "organic",
+      "placement_rules": [
+        {
+          "type": "minimum_spacing",
+          "value": 10.63014581273465,
+          "description": "Minimum distance between buildings"
+        },
+        {
+          "type": "road_proximity",
+          "value": 5,
+          "description": "Buildings should be within N tiles of roads"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 1420,
+            "y": 1652
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 1450,
+            "y": 1653
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 1451,
+            "y": 1686
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 1405,
+            "y": 1715
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        },
+        {
+          "type": "district_density",
+          "district": "residential",
+          "center": {
+            "x": 1423,
+            "y": 1747
+          },
+          "target_count": 2,
+          "description": "residential district density"
+        }
+      ]
+    }
+  }
+}

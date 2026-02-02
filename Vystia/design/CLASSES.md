@@ -549,9 +549,9 @@ The Church of Elemental Harmony teaches that all magic stems from six elemental 
 
 ---
 
-#### **Paladin** - Knights of the Forge Pact
+#### **Paladin** - Knights of the Cogsmith Creed
 **Regional Affiliation:** Multi-regional (originated in Ironclad)
-**Guild/Order:** The Forge Pact
+**Guild/Order:** The Cogsmith Creed
 
 **Description:**
 Holy warriors who combine martial prowess with divine magic. Paladins take sacred oaths binding them to codes of conduct, gaining divine powers in exchange for unwavering dedication to their cause.
@@ -569,7 +569,7 @@ Holy warriors who combine martial prowess with divine magic. Paladins take sacre
 - **Smite Evil** - Massive damage against evil creatures
 
 **Lore:**
-The Forge Pact was created when Ironclad's Templars allied with the Church of Elemental Harmony. Paladins swear to uphold justice, protect the weak, and fight corruption wherever it appears. Breaking their oath strips them of divine power, creating "Fallen Paladins" - warriors consumed by guilt and shame.
+The Cogsmith Creed was created when Ironclad's Templars allied with the Church of Elemental Harmony. Paladins swear to uphold justice, protect the weak, and fight corruption wherever it appears. Breaking their oath strips them of divine power, creating "Fallen Paladins" - warriors consumed by guilt and shame.
 
 ---
 
@@ -808,3 +808,4 @@ Scripts/
 *Document Version: 1.0*
 *Last Updated: 2025-12-05*
 *For: Vystia ServUO Implementation*
+

@@ -1,5 +1,10 @@
 # Vystia Production Testing Guide
 
+> Source of Truth: Testing steps validate runtime behavior in ServUO/Scripts/.
+
+Last Updated: 2026-01-23
+
+
 *Focus: Testing actual game mechanics with exact values from code*
 
 ---
@@ -101,7 +106,7 @@
 | | |
 |---|---|
 | **Setup** | `[SetClassV2 Ranger`, `[ResetResources` |
-| **Expected Resource** | Focus (max 100, +10 if Crystalline Ascendancy synergy) |
+| **Expected Resource** | Focus (max 100, +10 if Celestis Arcanum synergy) |
 | **Stationary Regen** | +10 per second while not moving |
 | **Moving Decay** | -5 per second while moving |
 | **Test** | Stand still 5 seconds (+50), walk 5 seconds (-25), final = 25 |
@@ -117,6 +122,20 @@
 | **Action** | Wait 30+ seconds, check A stacks = 0 (expired) |
 | **At 5 stacks** | Target becomes "Frozen" = 50% bonus cold damage + root |
 | **Failure Indicates** | TargetTracker per-target state broken |
+
+---
+
+## TEST 1.3: Songweaving (Bard) Smoke Test
+
+| | |
+|---|---|
+| **Setup** | `[SetClassV2 Bard`, `[svs 100`, `[ResetResources` |
+| **Get Songbook** | Receive on class select or via trainer/vendor |
+| **Open UI** | Double-click Songbook and open Songweaving Hotbar |
+| **Cast Songs** | Use Mending and Courage from the hotbar |
+| **Expected** | Crescendo increases on successful songs |
+| **Cooldown** | Re-cast immediately → blocked, hotbar shows timer |
+| **Decay** | Exit combat, wait 3 seconds → Crescendo decays |
 
 ---
 
@@ -501,7 +520,7 @@
 ### Tier Progression Test
 | | |
 |---|---|
-| **Action** | `[SetReligion FrostfatherCult`, `[SetPiety 0` |
+| **Action** | `[SetReligion FrosthelmFaith`, `[SetPiety 0` |
 | **Verify** | `[Religion` shows Tier: None |
 | **Action** | `[SetPiety 200` |
 | **Verify** | Shows Devoted, Power 1 unlocked |
@@ -529,7 +548,7 @@
 
 ## TEST 8.4: Devotion Powers
 
-### Frostfather Cult Powers
+### Frosthelm Faith Powers
 | Tier | Power | Effect |
 |------|-------|--------|
 | Devoted (200) | Frost Shield | Absorb 50 damage, reflect 15% cold, 15 min |
@@ -548,6 +567,9 @@
 ---
 
 # PHASE 9: LLM NPC QUEST SYSTEM
+
+**Note:** This phase tests **Vystia Dynamic Quests** (QuestNPC/Chronicler).  
+The **Mondain/BaseQuest** system is separate and uses classic quest givers.
 
 ## TEST 9.1: Auto-Greet Trigger
 
@@ -870,3 +892,4 @@
 ---
 
 *Last Updated: 2026-01-06*
+

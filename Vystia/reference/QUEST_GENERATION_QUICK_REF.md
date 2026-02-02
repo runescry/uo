@@ -2,6 +2,9 @@
 
 **Command:** `[GenLLMQuest [poiId]`
 
+**Note:** This is for **Vystia Dynamic Quests** (QuestNPC/Chronicler).  
+The **Mondain/BaseQuest** system uses classic quest givers (MondainQuester/LLMQuester).
+
 ---
 
 ## POI Quick List (20 Total)
@@ -94,7 +97,7 @@
 | `TRAINER_ORACLE` | Crystalseer | Oracle | Crystal Barrens |
 | `TRAINER_NECROMANCER` | Shadowbinder | Necromancer | ShadowVoid |
 
-### Quest Givers (2)
+### Quest Givers (Mondain/BaseQuest, 2)
 | Template ID | NPC Name | Quest Type |
 |-------------|----------|------------|
 | `QUEST_QUARTERMASTER` | Quartermaster Grimwald | Supplies/Military |

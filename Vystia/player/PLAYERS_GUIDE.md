@@ -602,7 +602,7 @@ These classes use abilities instead of spellbooks. Each has 16 abilities across 
 
 ---
 
-#### Paladin - Knights of the Forge Pact
+#### Paladin - Knights of the Cogsmith Creed
 **Region:** Multi-Regional | **Skill:** Holy Devotion | **Resource:** Holy Power (max 5)
 
 *Holy warriors who combine martial prowess with divine magic.*
@@ -1418,3 +1418,4 @@ Arcane Bolt → Arcane Missiles → Arcane Power (+30% damage)
 ---
 
 *Welcome to Vystia. May your adventures be legendary!*
+

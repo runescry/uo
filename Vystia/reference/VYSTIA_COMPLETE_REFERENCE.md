@@ -712,6 +712,10 @@ One trainer per class. Speech commands: "join", "train", "class", "skill", "lear
 
 ## 17. Quest System
 
+**Quest Systems (split):**
+- **Vystia Dynamic Quests:** DynamicQuest + QuestNPC + Quest Wizard + [GenLLMQuest]
+- **Mondain/BaseQuest:** Classic ServUO quest chains (MondainQuester/LLMQuester)
+
 ### Quest Components
 
 | Component | Description |

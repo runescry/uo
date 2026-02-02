@@ -430,7 +430,8 @@ One trainer per class with:
 - Faction Leaders (5): Emperor, Chieftain, Elder, Sultan, Archmage
 - Talking Creatures (3): Ancient Dragon, Treant, Sphinx
 - Essential Vendors (3): Banker, Healer, Guard Captain
-- Quest Givers (2): Quartermaster, Sage
+- Quest Givers (Mondain/BaseQuest, 2): Quartermaster, Sage
+- Quest Giver (Vystia Dynamic): Chronicler
 
 **Location:** `ServUO/Scripts/Mobiles/Vystia/NPCs/`
 
@@ -450,6 +451,10 @@ One trainer per class with:
 ---
 
 ## 11. Quest System (Framework Complete)
+
+**Quest Systems (split):**
+- **Vystia Dynamic Quests (LLM):** QuestNPC + Chronicler + Quest Wizard + [GenLLMQuest]
+- **Mondain/BaseQuest:** Classic quest chain system (this section)
 
 ### Framework
 - **VystiaQuestSystem.cs** - Core quest tracking and management

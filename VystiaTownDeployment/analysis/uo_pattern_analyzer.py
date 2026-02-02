@@ -50,11 +50,16 @@ class PatternAnalyzer:
         bounds = data['bounds']
         area = (bounds['x2'] - bounds['x1']) * (bounds['y2'] - bounds['y1'])
         
-        # Detect buildings first (you'd use BuildingDetector from previous artifact)
-        buildings = self._detect_buildings_simple(data['statics'])
+        analysis = data.get('analysis', {})
+        if analysis.get('building_clusters'):
+            buildings = self._clusters_to_buildings(analysis['building_clusters'])
+        else:
+            buildings = self._detect_buildings_simple(data['statics'])
         
-        # Analyze road network
-        road_network = self._analyze_roads(data['statics'], bounds)
+        if analysis.get('road_network'):
+            road_network = analysis['road_network']
+        else:
+            road_network = self._analyze_roads(data['statics'], bounds)
         
         # Find building clusters and districts
         clusters = self._find_clusters(buildings)
@@ -93,6 +98,20 @@ class PatternAnalyzer:
         )
         
         return pattern
+
+    def _clusters_to_buildings(self, clusters: List[Dict]) -> List[Dict]:
+        """Convert precomputed clusters to building objects"""
+        buildings = []
+        for cluster in clusters:
+            center = cluster.get('center') or {}
+            bounds = cluster.get('bounds') or {}
+            buildings.append({
+                'bounds': bounds,
+                'center': {'x': center.get('x', 0), 'y': center.get('y', 0)},
+                'size': cluster.get('size', 0),
+                'type': 'unknown'
+            })
+        return buildings
     
     def _detect_buildings_simple(self, statics: List[Dict]) -> List[Dict]:
         """Simplified building detection for analysis"""
@@ -435,12 +454,27 @@ class PatternAnalyzer:
 
 # Usage
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Analyze town patterns from extracted JSON")
+    parser.add_argument("--input-dir", default="town_data", help="Directory with extracted town JSON files")
+    parser.add_argument("--output", default="town_patterns.json", help="Output patterns JSON file")
+    parser.add_argument("--towns", nargs="+", help="Town names to analyze (default: all in input dir)")
+
+    args = parser.parse_args()
+
     analyzer = PatternAnalyzer()
-    
-    # Analyze all extracted towns
-    town_files = Path('town_data').glob('*.json')
+    town_files = sorted(Path(args.input_dir).glob('*.json'))
+
+    if args.towns:
+        allowed = set(args.towns)
+        town_files = [p for p in town_files if p.stem in allowed]
+
+    if not town_files:
+        raise SystemExit("No town JSON files found for analysis.")
+
     patterns = []
-    
+
     for town_file in town_files:
         print(f"Analyzing {town_file.stem}...")
         pattern = analyzer.analyze_town(str(town_file))
@@ -451,12 +485,10 @@ if __name__ == "__main__":
         print(f"  Layout: {pattern.road_grid_type}")
         print(f"  Districts: {len(pattern.district_zones)}")
     
-    # Compare all towns
     comparison = analyzer.compare_towns(patterns)
     print(f"\nAnalyzed {comparison['town_count']} towns")
     print(f"Density range: {comparison['density_range']}")
     print(f"Common rules found: {len(comparison['common_rules'])}")
     
-    # Export
-    analyzer.export_patterns('town_patterns.json')
+    analyzer.export_patterns(args.output)
     print("\nPattern analysis complete!")

@@ -1,7 +1,12 @@
 # VYSTIA SHARD - COMPLETE SYSTEM INVENTORY
 
+> Source of Truth: This inventory is the authoritative status index; runtime behavior lives in ServUO/Scripts/.
+
+Last Updated: 2026-01-23
+
+
 **Generated:** 2025-12-07
-**Last Updated:** 2025-12-08 (LLM Lore, NPCs, and Quests Complete)
+**Legacy Updated:** 2025-12-08 (LLM Lore, NPCs, and Quests Complete)
 **Purpose:** Complete catalog of all Vystia systems, classes, spells, items, and resources
 
 **🎉 MAJOR UPDATES (2025-12-08 - LATEST):**
@@ -50,7 +55,7 @@
 
 ## CHARACTER CLASSES
 
-**Total: 25 classes**
+**Total: 26 classes**
 **Implemented: 25 fully implemented**
 **Location:** `ServUO/Scripts/Custom/VystiaClasses/`
 
@@ -124,7 +129,7 @@ ServUO/Scripts/Custom/VystiaClasses/
 | 25 | Enchanter | Multi-Regional | Utility/Buff | 15 | 25 | 40 | 80 | ✅ Full |
 
 **Status Summary:**
-- ✅ **Fully Implemented:** 25/25 (100%)
+- ✅ **Fully Implemented:** 26/26 (100%)
 - ⚪ **Stub Implementation:** 0/25 (0%)
 - **Missing:** 0/25 (0%)
 
@@ -1194,6 +1199,10 @@ The LLM lore system provides a RAG (Retrieval-Augmented Generation) knowledge ba
 - Quest array setup
 - Dialogue system
 
+**Note:** Quest systems are split.
+- **Mondain/BaseQuest:** Quartermaster Grimwald, Sage Theron (this section).
+- **Vystia Dynamic Quests:** Chronicler + QuestNPCs spawned via the Quest Wizard.
+
 ### NPC Generator Features
 
 **Template System:**
@@ -1243,6 +1252,10 @@ For each of 10 capital cities:
 
 ## QUESTS
 
+**Quest Systems (split):**
+- **Vystia Dynamic Quests (LLM):** QuestNPC + Chronicler + Quest Wizard + [GenLLMQuest]
+- **Mondain/BaseQuest:** Classic quest chain system (this section)
+
 **Total Target: 70+ quests**
 **Phase 1: 6 quests implemented**
 **Status:** 🔨 8% Complete - Quest generator ready
@@ -1267,7 +1280,7 @@ For each of 10 capital cities:
 | 5 | **HerbGatheringQuest** | Verdantpeak | Obtain | Gather 20 Ginseng | 500 gold |
 | 6 | **CrystalShardQuest** | Crystal Barrens | Obtain | Collect 15 Crystal Shards | 1800 gold |
 
-### Quest System Architecture
+### Quest System Architecture (Mondain/BaseQuest)
 
 **Quest Types:**
 1. **Slay Quest** - Kill X creatures
@@ -1446,7 +1459,7 @@ Multi-quest story arcs:
 11. ❌ **Unique weapons beyond starting gear**
 
 ### Phase 4: Class Polish ✅ 70% COMPLETE
-12. ✅ ~~**Complete 15 stub class implementations**~~ (COMPLETE - all 25 classes fully implemented)
+12. ✅ ~~**Complete 15 stub class implementations**~~ (COMPLETE - all 26 classes fully implemented)
 13. ✅ ~~**Custom abilities for all classes**~~ (COMPLETE - all 16 special ability items implemented)
 14. ⏳ **Balance testing and adjustment** (in progress - basic functionality complete, needs in-game testing)
 

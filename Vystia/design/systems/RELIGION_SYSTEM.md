@@ -15,12 +15,12 @@ The Religion System provides 6 regional religions with piety progression, passiv
 
 | Religion | Region | Hue | Theme |
 |----------|--------|-----|-------|
-| Frostfather Cult | Frosthold | 1150 (Ice Blue) | Eternal Winter, Frozen Ancestors |
-| Emberheart Order | Emberlands | 1358 (Fire Red) | Eternal Flame, Purifying Fire |
-| Greenward Circle | Verdantpeak | 2010 (Forest Green) | Nature's Balance, Living World |
-| Crystalline Ascendancy | Crystal Barrens | 1154 (Crystal Blue) | Cosmic Knowledge, Arcane Truth |
-| Voidwalker Path | ShadowVoid | 1109 (Dark Purple) | The Void, Shadow Magic |
-| Forge Pact | Ironclad | 2305 (Metallic) | Machine Spirit, Steam Power |
+| Frosthelm Faith | Frosthold | 1150 (Ice Blue) | Eternal Winter, Frozen Ancestors |
+| Surya's Sandscript | Whispering Sands, Blazing Frontier | 1358 (Fire Red) | Sun, sands, survival rites |
+| Lunara's Covenant | Verdantpeak, Shadowfen, Hollow Forests | 2010 (Forest Green) | Nature's Balance, Living World |
+| Celestis Arcanum | Mystic Canyons, Eternal Twilight | 1154 (Crystal Blue) | Cosmic Knowledge, Arcane Truth |
+| Oceana's Covenant | Sunken Isles, Glimmering Archipelago | 1109 (Dark Purple) | Tides, protection, deep mysteries |
+| Cogsmith Creed | Ironclad Empire, Emberlands | 2305 (Metallic) | Industry, innovation, clockwork divinity |
 
 ---
 
@@ -41,27 +41,27 @@ The Religion System provides 6 regional religions with piety progression, passiv
 
 ## Passive Bonuses
 
-### Frostfather Cult
+### Frosthelm Faith
 - Initiate: Cold Resistance +5%
 - Devoted: Cold damage +3%
 
-### Emberheart Order
+### Surya's Sandscript
 - Initiate: Fire Resistance +5%
 - Devoted: Fire damage +3%
 
-### Greenward Circle
+### Lunara's Covenant
 - Initiate: Poison Resistance +5%
 - Devoted: Healing +5%
 
-### Crystalline Ascendancy
+### Celestis Arcanum
 - Initiate: Energy Resistance +5%
 - Devoted: Mana Regen +2
 
-### Voidwalker Path
+### Oceana's Covenant
 - Initiate: Physical Resistance +3%
 - Devoted: Stealth +5
 
-### Forge Pact
+### Cogsmith Creed
 - Initiate: Armor +5
 - Devoted: Crafting +5
 
@@ -71,32 +71,32 @@ The Religion System provides 6 regional religions with piety progression, passiv
 
 Each religion grants 3 devotion powers at higher tiers:
 
-### Frostfather Cult
+### Frosthelm Faith
 1. **Frost Shield** (200 piety) - Temporary cold damage reduction
 2. **Winter's Embrace** (500 piety) - Cold aura effect
 3. **Avatar of Ice** (900 piety) - Transform into ice avatar
 
-### Emberheart Order
+### Surya's Sandscript
 1. **Flame Shield** (200) - Fire damage shield
 2. **Phoenix Blessing** (500) - Fire resurrection effect
 3. **Avatar of Fire** (900) - Fire transformation
 
-### Greenward Circle
+### Lunara's Covenant
 1. **Nature's Grace** (200) - Healing over time
 2. **Regeneration** (500) - Enhanced healing
 3. **Avatar of Nature** (900) - Nature transformation
 
-### Crystalline Ascendancy
+### Celestis Arcanum
 1. **Arcane Insight** (200) - Spell cost reduction
 2. **Mana Shield** (500) - Damage absorption
 3. **Avatar of Crystal** (900) - Crystal transformation
 
-### Voidwalker Path
+### Oceana's Covenant
 1. **Shadow Cloak** (200) - Stealth enhancement
 2. **Void Step** (500) - Short-range teleport
 3. **Avatar of Void** (900) - Void transformation
 
-### Forge Pact
+### Cogsmith Creed
 1. **Iron Skin** (200) - Physical resistance boost
 2. **Mechanical Blessing** (500) - Construct enhancement
 3. **Avatar of Steel** (900) - Mechanical transformation
@@ -150,3 +150,4 @@ Each `PietyData` contains:
 ---
 
 *Last Updated: 2026-01-03*
+

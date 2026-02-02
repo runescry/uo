@@ -259,6 +259,9 @@ This document lists **all currently active Vystia admin commands** that are impl
 | `[GenLLMQuest [poiId]` | Generate quest using LLM | `[GenLLMQuest VERDANTPEAK_GROVE` |
 | `[DeleteQuest <questId>` | Delete a quest by ID | |
 
+**Note:** These commands are for **Vystia Dynamic Quests** (QuestNPC/Chronicler).  
+The **Mondain/BaseQuest** system uses classic ServUO quest givers (MondainQuester/LLMQuester) and does not use the Quest Wizard.
+
 **Quest Editor Features:**
 - Create quests without coding
 - Set title, description, class requirement, tier

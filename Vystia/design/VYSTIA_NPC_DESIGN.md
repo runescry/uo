@@ -69,6 +69,10 @@
 - **Lore NPCs** (30+) - Historians, storytellers
 - **Faction Representatives** (14+)
 
+**Implementation Note:** Quest content is split into two systems.
+- **Vystia Dynamic Quests:** QuestNPC + Chronicler + Quest Wizard (LLM-assisted)
+- **Mondain/BaseQuest:** MondainQuester/LLMQuester (classic quest chains)
+
 ### 5. Special NPCs
 - **Talking Creatures** (20+) - Dragons, treants, spirits
 - **Gods' Avatars** (15+) - Divine representatives
@@ -203,7 +207,7 @@
 3. **Templar Trainer - Justicar Valeria Ironvow**
    - Body: Female Human (0x191)
    - Hue: 2213
-   - Location: Temple of the Forge Pact
+   - Location: Temple of the Cogsmith Creed
    - Personality: Righteous, unwavering, inspiring
    - LLM Context: "Champion of justice, enforces Ironclad law with divine authority, leads Templars in rooting out corruption."
 
@@ -1465,3 +1469,4 @@ Secrets: Knows location of sealed ancient evil, witnessed the Great Sundering, m
 *Design completed: 2025-12-08*
 *Ready for implementation with LLM integration*
 *All NPCs culturally appropriate to Vystia world lore*
+

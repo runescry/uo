@@ -61,7 +61,7 @@ All documentation covers **currently implemented systems**:
 ### Core Systems
 - 25 Character Classes (v2.0)
 - 26 Custom Skills (IDs 58-83)
-- 384 Spells (12 schools x 32 spells)
+- 352 Spells (11 schools x 32 spells) + 15 Songweaving spells/finales (IDs 1384-1398)
 - 15 Secondary Resources
 - Buff/Debuff System
 - Crowd Control (with diminishing returns)
@@ -77,7 +77,9 @@ All documentation covers **currently implemented systems**:
 - Religion System (6 religions, piety)
 
 ### Content Systems
-- Quest System (multi-waypoint, LLM NPCs)
+- Quest Systems (split):
+  - Vystia Dynamic Quests (multi-waypoint, LLM QuestNPCs, Chronicler, Quest Wizard)
+  - Mondain/BaseQuest (classic quest chains, MondainQuester/LLMQuester)
 - 138 Creatures (10 regions)
 - 14 Vendors (12 magic + 2 general)
 - 25 Class Trainers
@@ -90,7 +92,7 @@ All files validated 2026-01-03:
 - No deprecated content
 - All referenced systems are implemented
 - Commands match current implementation
-- Spell IDs verified (1000-1383)
+- Spell IDs verified (1000-1398)
 
 ---
 

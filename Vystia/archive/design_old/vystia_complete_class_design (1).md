@@ -2421,7 +2421,7 @@ Each class ties to Vystia's world:
 | Fighter | Ironclad Legionnaires |
 | Ice Mage | Frostweavers of Winterguard |
 | Monk | Gearwheel Monastery |
-| Paladin | Knights of the Forge Pact |
+| Paladin | Knights of the Cogsmith Creed |
 | Ranger | Dune Striders of The Whispering Sands |
 | Rogue | Shadow Guild Operatives |
 | Sorcerer | Elemental Savants of The Emberlands |
@@ -3276,3 +3276,4 @@ CC stacking follows diminishing returns:
 ---
 
 **End of PvP/PvE Combo Documentation**
+

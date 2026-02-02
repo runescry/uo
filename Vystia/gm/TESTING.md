@@ -118,7 +118,7 @@ How to test Vystia systems in-game.
 [sb necro      # Necromancer
 [sb summon     # Summoner
 [sb shaman     # Shaman
-[sb bard       # Bard
+[sb songweaving # Bard (Songweaving)
 [sb enchant    # Enchanter
 [sb illusion   # Illusionist
 ```

@@ -160,12 +160,12 @@ Analysis covers:
 **6 Religions:**
 | Religion | Region | Passive Bonuses |
 |----------|--------|-----------------|
-| Frostfather Cult | Frosthold | Cold Resist +5%, Cold Dmg +3% |
-| Emberheart Order | Emberlands | Fire Resist +5%, Fire Dmg +3% |
-| Greenward Circle | Verdantpeak | Poison Resist +5%, Healing +5% |
-| Crystalline Ascendancy | Crystal Barrens | Energy Resist +5%, Mana Regen +2 |
-| Voidwalker Path | ShadowVoid | Physical Resist +3%, Stealth +5 |
-| Forge Pact | Ironclad | Armor +5, Crafting +5 |
+| Frosthelm Faith | Frosthold | Cold Resist +5%, Cold Dmg +3% |
+| Surya's Sandscript | Emberlands | Fire Resist +5%, Fire Dmg +3% |
+| Lunara's Covenant | Verdantpeak | Poison Resist +5%, Healing +5% |
+| Celestis Arcanum | Crystal Barrens | Energy Resist +5%, Mana Regen +2 |
+| Oceana's Covenant | ShadowVoid | Physical Resist +3%, Stealth +5 |
+| Cogsmith Creed | Ironclad | Armor +5, Crafting +5 |
 
 **Piety Tiers:**
 | Tier | Threshold | Unlocks |
@@ -304,3 +304,4 @@ Analysis covers:
 ---
 
 *Analysis complete. Proceed to Task 5 for documentation reorganization.*
+

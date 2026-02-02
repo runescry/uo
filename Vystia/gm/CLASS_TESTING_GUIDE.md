@@ -30,7 +30,7 @@ Each class now has differentiated starting stats based on their role:
 | Druid | 20 | 25 | 35 | Healer/Hybrid |
 | Shaman | 23 | 22 | 35 | Healer/Hybrid |
 | Paladin | 35 | 20 | 25 | Tank/Healer |
-| Bard | 18 | 32 | 30 | Support/CC |
+| Bard (Songweaving) | 18 | 32 | 30 | Support/CC |
 | Alchemist | 22 | 28 | 30 | Support Balanced |
 | Enchanter | 20 | 25 | 35 | Utility/Buff |
 
@@ -627,56 +627,29 @@ For each spell/ability, test:
 
 ---
 
-### 10. Bard
-**Resource:** Harmony | **Skill:** BardicLore | **Spell IDs:** 1288-1319
+### 10. Bard (Songweaving)
+**Resource:** Crescendo | **Skill:** Songweaving | **Songbook:** Songbook of Weaving (spellbook) | **Hotbar:** Songweaving Hotbar
 
-#### Circle 1 (4 mana)
-- [ ] **1288 - Discordant Note** - Single target harmful sonic spell, applies STR debuff, visual particle effect
-- [ ] **1289 - Song of Courage** - Beneficial buff, grants +STR to target, courage-themed golden particle effect
-- [ ] **1290 - Lullaby** - Harmful sleep/crowd control spell, calming melody puts target to sleep temporarily
-- [ ] **1291 - Inspire Accuracy** - Beneficial buff, grants +accuracy/DEX to target, inspiring musical notes
+**Notes:**
+- Songweaving replaces legacy bardic spell circles.
+- Songs have a short cooldown (global per caster) and build Crescendo on success.
 
-#### Circle 2 (6 mana)
-- [ ] **1292 - Sonic Burst** - Harmful sonic damage spell, AoE burst of sound waves, location-based particle effect
-- [ ] **1293 - Song of Resilience** - Beneficial buff, grants +physical resist/defense to target, protective harmonies
-- [ ] **1294 - Dirge of Weakness** - Harmful debuff, reduces target's strength and combat effectiveness, mournful dirge
-- [ ] **1295 - Rejuvenating Melody** - Beneficial healing spell, restores HP over time with soothing melody
+#### Song List
+- [ ] **Provocation** - Cause one creature to attack another
+- [ ] **Peacemaking** - Pacify a target for a short duration
+- [ ] **Discordance** - Weaken target defenses
+- [ ] **Requiem** - Sonic harm over time
+- [ ] **Mending** - Party heal over time (within range)
+- [ ] **Courage** - Party stat boost
+- [ ] **Swiftness** - Party speed boost
+- [ ] **Light** - Night sight
+- [ ] **Fortune** - Luck bonus while active
 
-#### Circle 3 (9 mana)
-- [ ] **1296 - Thunderous Chord** - Harmful sonic damage, powerful chord deals sonic/thunder damage to single target
-- [ ] **1297 - War Song** - Beneficial combat buff, grants +STR and combat bonuses to allies, war drums effect
-- [ ] **1298 - Mesmerize** - Harmful crowd control, hypnotic melody confuses/charms target temporarily
-- [ ] **1299 - Song of Swiftness** - Beneficial buff, grants +DEX and movement speed to target, fast-paced melody
-
-#### Circle 4 (11 mana)
-- [ ] **1300 - Sonic Wave** - Harmful sonic damage, wave of sound spreads in line/cone, multiple targets
-- [ ] **1301 - Ballad of Health** - Beneficial healing spell, strong heal with heroic ballad theme
-- [ ] **1302 - Cacophony** - Harmful debuff, chaotic discordant sounds reduce enemy accuracy and morale
-- [ ] **1303 - Inspire Heroism** - Beneficial buff, grants +all stats and heroic courage to target
-
-#### Circle 5 (14 mana)
-- [ ] **1304 - Shattering Scream** - Harmful sonic damage, powerful scream deals heavy sonic damage, armor-piercing
-- [ ] **1305 - Song of Sanctuary** - Beneficial protection spell, creates safe zone/reduces damage taken, sanctuary aura
-- [ ] **1306 - Requiem** - Harmful death/necrotic spell, funeral dirge damages and weakens undead/living targets
-- [ ] **1307 - Mass Inspire** - Beneficial AoE buff, grants inspiration bonuses to all nearby allies
-
-#### Circle 6 (20 mana)
-- [ ] **1308 - Destructive Resonance** - Harmful sonic damage, resonating frequencies shatter armor and deal heavy damage
-- [ ] **1309 - Epic Ballad** - Beneficial epic-tier buff, grants powerful stat bonuses and combat advantages
-- [ ] **1310 - Song of Fear** - Harmful fear/crowd control, terrifying melody causes enemies to flee in fear
-- [ ] **1311 - Crescendo** - Harmful stacking damage spell, sonic damage that builds/crescendos with each cast
-
-#### Circle 7 (40 mana)
-- [ ] **1312 - Symphony of Destruction** - Harmful ultimate AoE damage, orchestrated destruction deals massive sonic damage
-- [ ] **1313 - Song of the Ancients** - Beneficial ultimate buff, ancient powerful melodies grant legendary bonuses
-- [ ] **1314 - Sonic Apocalypse** - Harmful cataclysmic damage, apocalyptic sonic wave devastates all enemies in area
-- [ ] **1315 - Legendary Performance** - Beneficial ultimate buff, legendary bardic performance grants supreme bonuses
-
-#### Circle 8 (50 mana)
-- [ ] **1316 - Ode to Devastation** - Harmful ultimate damage, devastating ode deals catastrophic sonic/physical damage
-- [ ] **1317 - Eternal Symphony** - Beneficial ultimate buff, eternal harmonies grant permanent-duration powerful bonuses
-- [ ] **1318 - Voice of the Dragon** - Harmful ultimate damage, dragon's roar deals massive sonic damage with fear effect
-- [ ] **1319 - Maestro Ascendant** - Beneficial ultimate transformation, ascend to maestro form with supreme bardic powers
+#### Test Procedure
+1. Equip **Songbook of Weaving** and drag song/finale icons to your hotbar as needed.
+2. Cast each song and confirm the expected effect and message.
+3. Verify the global cooldown displays on the hotbar and blocks rapid re-casts.
+4. Confirm Crescendo increases on successful songs.
 
 ---
 

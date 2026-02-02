@@ -143,7 +143,7 @@
 
 **Important: Activation Methods by Class Type**
 
-- **Magic Classes** (Ice Mage, Sorcerer, Warlock, Druid, Witch, Oracle, Summoner, Shaman, Bard, Enchanter, Illusionist):
+- **Magic Classes** (Ice Mage, Sorcerer, Warlock, Druid, Witch, Oracle, Summoner, Shaman, Bard (Songweaving), Enchanter, Illusionist):
   - **Use Spellbooks**: Open spellbook → Double-click spell to cast
   - **Get Spellbook**: Receive spellbook when selecting class, or obtain from trainer/vendor
   - **Spell IDs**: 1000-1383 (32 spells per school)
@@ -374,28 +374,22 @@
 
 #### Crescendo (Bard) - Threshold: 20 (Max)
 **At 20 Crescendo (Maximum):**
-- [ ] **Ultimate Songs Unlocked**: Most powerful song abilities available
-- [ ] **Available Abilities** (Bardic Magic spells, IDs 1288-1319):
-  - [ ] **Symphony of Destruction** (Circle 7-8): Massive AoE damage, costs 10 Crescendo
-  - [ ] **Song of Victory** (Circle 6-7): Party-wide buff, costs 5 Crescendo
-- [ ] **Crescendo Generation**: +1/tick while channeling songs
-- [ ] **Channeling Required**: Must be channeling a song to generate
+- [ ] **Crescendo Cap**: Resource caps at 20 (+synergy bonus if applicable)
+- [ ] **Crescendo Generation**: Increases on successful Songweaving songs
+- [ ] **Decay**: Begins after 3s out of combat, -1 per tick
 
 **Activation Instructions:**
-- **Bard Class**: Uses **BardSpellbook** (spellbook system)
-- **Get Spellbook**: Receive BardSpellbook when selecting Bard class, or obtain from trainer/vendor
-- **Spell Access**: Open spellbook → Double-click bardic spells to cast
-- **Channeling Spells**: Start channeling a song (Circle 1-3) → Generates Crescendo +1/tick
-- **Ultimate Songs**: Available in spellbook when Crescendo = 20 (Circle 7-8 spells)
+- **Bard Class**: Uses **Songbook of Weaving** + **Songweaving Hotbar**
+- **Get Songbook**: Receive Songbook when selecting Bard class, or obtain from trainer/vendor
+- **Song Access**: Use songbook, hotbar, or `[song <name>]` command
+- **Core Songs**: Provocation, Peacemaking, Discordance, Requiem, Mending, Courage, Swiftness, Light, Fortune
 
 **Test Procedure:**
-1. **Get Spellbook**: Receive BardSpellbook when selecting Bard class, or obtain from trainer/vendor
-2. **Open Spellbook**: Double-click BardSpellbook → View 8 circles
-3. **Start Channeling**: Cast a channeling song (Circle 1-3, e.g., "Song of Restoration") → Verify Crescendo generates +1/tick (watch resource bar)
-4. Build to 20 Crescendo maximum (keep channeling, watch resource bar increase to 20)
-5. **Verify spell availability**: Open spellbook → Ultimate songs (Circle 7-8) should be enabled/visible
-6. **Cast Symphony of Destruction**: Double-click Symphony of Destruction spell (Circle 7-8) → Target ground/AoE → Verify AoE damage, 10 Crescendo consumed (20 → 10, watch resource bar)
-7. Stop channeling → Verify Crescendo stops generating (resource bar no longer increases)
+1. **Get Songbook**: Receive Songbook when selecting Bard class, or obtain from trainer/vendor
+2. **Open Songbook**: Double-click Songbook ? View song list
+3. **Cast Songs**: Use songbook/hotbar to cast Mending or Courage ? Verify Crescendo increases on success
+4. **Cooldown**: Attempt to spam a song ? Verify cooldown blocks rapid re-cast (hotbar shows timer)
+5. **Decay**: Exit combat and wait 3 seconds ? Verify Crescendo decays over time
 
 #### Faith (Cleric) - Threshold: 100 (Max)
 **At 100 Faith (Maximum):**
@@ -435,7 +429,7 @@
 - [ ] Zeal: -1/sec out of combat
 - [ ] Soul Shards: No decay (persist until used)
 - [ ] Faith: No decay (persists until used)
-- [ ] Crescendo: Only generates while channeling, no passive decay
+- [ ] Crescendo: Increases on successful songs, decays out of combat after 3s
 
 ### All 25 Classes Test Matrix
 | Class | Resource | Primary Stat | Verified |
@@ -463,7 +457,7 @@
 | Shaman | Spirit | INT 85 | [ ] |
 | Cleric | Spirit | INT 90 | [ ] |
 | Paladin | Spirit | STR 85 | [ ] |
-| Bard | Harmony | DEX 80 | [ ] |
+| Bard (Songweaving) | Crescendo | DEX 80 | [ ] |
 | Enchanter | Essence | INT 95 | [ ] |
 
 ## Phase 3: Buff/Debuff System
@@ -605,8 +599,8 @@
 - [ ] **Healing Stream** (Circle 2, ID 1261): HoT, 4 HP/tick, 12s duration
 - [ ] **Regeneration Totem** (Circle 4, ID 1269): Totem provides HoT to nearby allies
 
-**Bardic Magic (Bard):**
-- [ ] **Song of Restoration** (Circle 3, ID 1296): HoT while channeling, 3 HP/tick
+**Songweaving (Bard):**
+- [ ] **Mending**: Party HoT while song is active
 
 **Cleric Abilities:**
 - [ ] **Regeneration** (Cleric ability): HoT, 8-12/tick, 15s duration
@@ -714,8 +708,8 @@
 - [ ] **Confusion** (Circle 3, ID 1361): Random actions, 6s duration
 - [ ] **Polymorph** (Circle 5, ID 1373): Transform target, 10s duration
 
-**Bardic Magic (Bard):**
-- [ ] **Song of Slumber** (Circle 2, ID 1293): Sleep 5s, breaks on damage
+**Songweaving (Bard):**
+- [ ] **Peacemaking**: Pacify target briefly (breaks on damage)
 
 #### CC from Martial Abilities
 - [ ] **Shield Bash** (Fighter/Knight): Stun 2s, melee range
@@ -840,7 +834,7 @@
 | Necromancy | NecromancerSpellbook | Receive when selecting Necromancer class, or buy from trainer/vendor | 1192-1223 | [ ] |
 | Summoning | SummonerSpellbook | Receive when selecting Summoner class, or buy from trainer/vendor | 1224-1255 | [ ] |
 | Shamanic | ShamanSpellbook | Receive when selecting Shaman class, or buy from trainer/vendor | 1256-1287 | [ ] |
-| Bardic | BardSpellbook | Receive when selecting Bard class, or buy from trainer/vendor | 1288-1319 | [ ] |
+| Songweaving | Songbook of Weaving | Receive when selecting Bard class, or buy from trainer/vendor | songs list | [ ] |
 | Enchanting | EnchanterSpellbook | Receive when selecting Enchanter class, or buy from trainer/vendor | 1320-1351 | [ ] |
 | Illusion | IllusionistSpellbook | Receive when selecting Illusionist class, or buy from trainer/vendor | 1352-1383 | [ ] |
 
@@ -971,10 +965,10 @@
 ### Converting to a Religion
 
 **Shrine Interaction:**
-- [ ] Find or spawn Frostfather Cult shrine (use `[ShrineStones` to spawn all 6)
+- [ ] Find or spawn Frosthelm Faith shrine (use `[ShrineStones` to spawn all 6)
 - [ ] Double-click shrine → Shows conversion menu
-- [ ] Select "Convert to Frostfather Cult" → Joins religion
-- [ ] Message: "You have converted to the Frostfather Cult"
+- [ ] Select "Convert to Frosthelm Faith" → Joins religion
+- [ ] Message: "You have converted to the Frosthelm Faith"
 - [ ] Piety resets to 0 (if converting from another religion)
 - [ ] Can now use shrine functions
 
@@ -990,7 +984,7 @@
 ### Shrine Functions
 
 **Prayer (Daily):**
-- [ ] Double-click Frostfather Cult shrine → Select "Pray"
+- [ ] Double-click Frosthelm Faith shrine → Select "Pray"
 - [ ] Character performs bow animation
 - [ ] Gain +10 piety
 - [ ] Message: "You have prayed at the shrine. (+10 piety)"
@@ -1005,7 +999,7 @@
 - [ ] Message: "You have tithed X gold. (+Y piety)"
 
 **Pilgrimage (Weekly):**
-- [ ] Travel to Frostfather Cult shrine
+- [ ] Travel to Frosthelm Faith shrine
 - [ ] Double-click shrine → Select "Perform Pilgrimage"
 - [ ] Gain +75 piety
 - [ ] Can only perform once per week (7 days)
@@ -1023,14 +1017,17 @@
 - [ ] Can resurrect dead player (if implemented)
 
 ### 6 Religions
-- [ ] FrostfatherCult shrine spawns and functions
-- [ ] EmberheartOrder shrine spawns and functions
-- [ ] GreenwardCircle shrine spawns and functions
-- [ ] CrystallineAscendancy shrine spawns and functions
-- [ ] VoidWalkerPath shrine spawns and functions
-- [ ] ForgePact shrine spawns and functions
+- [ ] FrosthelmFaith shrine spawns and functions
+- [ ] SuryasSandscript shrine spawns and functions
+- [ ] LunarasCovenant shrine spawns and functions
+- [ ] CelestisArcanum shrine spawns and functions
+- [ ] OceanasCovenant shrine spawns and functions
+- [ ] CogsmithCreed shrine spawns and functions
 
 ## Phase 10: LLM NPC Quest System
+
+**Note:** This phase tests **Vystia Dynamic Quests** (QuestNPC/Chronicler).  
+The **Mondain/BaseQuest** system is separate and uses classic quest givers.
 
 ### Auto-Greet
 - [ ] Quest NPC greets player within 10 tiles
@@ -1173,12 +1170,12 @@
 - [ ] Regeneration Totem provides area HoT
 - [ ] Spirit resource for totem powers
 
-**Bard (BardicLore):**
-- [ ] All 32 Bardic spells (IDs 1288-1319) accessible
-- [ ] Song of Restoration: HoT while channeling
-- [ ] Song of Slumber: Sleep CC effect
-- [ ] Crescendo resource: +1/tick while channeling
-- [ ] Songs provide party buffs
+**Bard (Songweaving):**
+- [ ] Core songs accessible (Provocation, Peacemaking, Discordance, Requiem, Mending, Courage, Swiftness, Light, Fortune)
+- [ ] Crescendo increases on successful songs and decays out of combat
+- [ ] Hotbar shows cooldown and blocks rapid re-cast
+- [ ] Mending applies party HoT in range
+- [ ] Fortune applies luck bonus
 
 **Enchanter (Runeweaving):**
 - [ ] All 32 Enchanting spells (IDs 1320-1351) accessible
@@ -1617,3 +1614,4 @@ Before testing secondary resource generation from melee combat:
 
 *Last Updated: 2026-01-06*
 *Enhanced: Added detailed spell lists, resource thresholds, stack behaviors, DoT/HoT/Shield/CC examples, and stance bonuses*
+

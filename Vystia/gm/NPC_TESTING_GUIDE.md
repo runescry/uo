@@ -383,12 +383,12 @@ Expected: +250 reputation (50 per 1000g), gold deducted from bank
 6 religions with piety tracking (0-1000)
 
 **Religions:**
-1. Frostfather Cult (Frosthold)
-2. Emberheart Order (Emberlands)
-3. Greenward Circle (Verdantpeak)
-4. Crystalline Ascendancy (Crystal Barrens)
-5. Voidwalker Path (ShadowVoid)
-6. Forge Pact (Ironclad)
+1. Frosthelm Faith (Frosthold)
+2. Surya's Sandscript (Emberlands)
+3. Lunara's Covenant (Verdantpeak)
+4. Celestis Arcanum (Crystal Barrens)
+5. Oceana's Covenant (ShadowVoid)
+6. Cogsmith Creed (Ironclad)
 
 ### Piety Tiers
 
@@ -418,7 +418,7 @@ Expected: +250 reputation (50 per 1000g), gold deducted from bank
 [SetReligion 1
 [Religion
 ```
-Expected: Shows "Frostfather Cult" membership
+Expected: Shows "Frosthelm Faith" membership
 
 **Test 2: Gain Piety**
 ```
@@ -655,3 +655,4 @@ Expected: 10% skill loss (each skill reduced by 10%)
 ---
 
 *This guide documents the faction leader dialogue fixes, LLM system prompt corrections, service fees, faction reputation, religion systems, pet system, housing system, and zone control. Last updated 2026-01-02.*
+

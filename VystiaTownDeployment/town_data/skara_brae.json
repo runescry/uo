@@ -148598,5 +148598,434 @@
   ],
   "name": "skara_brae",
   "static_count": 1683,
-  "terrain_count": 22801
+  "terrain_count": 22801,
+  "metadata": {
+    "source_bounds": [
+      550,
+      2100,
+      700,
+      2250
+    ],
+    "map_num": null
+  },
+  "analysis": {
+    "road_network": {
+      "exists": false
+    },
+    "building_clusters": [
+      {
+        "bounds": {
+          "min_x": 550,
+          "max_x": 575,
+          "min_y": 2100,
+          "max_y": 2103
+        },
+        "center": {
+          "x": 567,
+          "y": 2102
+        },
+        "size": 64
+      },
+      {
+        "bounds": {
+          "min_x": 584,
+          "max_x": 607,
+          "min_y": 2100,
+          "max_y": 2103
+        },
+        "center": {
+          "x": 595,
+          "y": 2102
+        },
+        "size": 24
+      },
+      {
+        "bounds": {
+          "min_x": 632,
+          "max_x": 632,
+          "min_y": 2100,
+          "max_y": 2100
+        },
+        "center": {
+          "x": 632,
+          "y": 2100
+        },
+        "size": 4
+      },
+      {
+        "bounds": {
+          "min_x": 591,
+          "max_x": 591,
+          "min_y": 2128,
+          "max_y": 2135
+        },
+        "center": {
+          "x": 591,
+          "y": 2131
+        },
+        "size": 8
+      },
+      {
+        "bounds": {
+          "min_x": 576,
+          "max_x": 591,
+          "min_y": 2162,
+          "max_y": 2167
+        },
+        "center": {
+          "x": 583,
+          "y": 2164
+        },
+        "size": 14
+      },
+      {
+        "bounds": {
+          "min_x": 614,
+          "max_x": 615,
+          "min_y": 2160,
+          "max_y": 2166
+        },
+        "center": {
+          "x": 614,
+          "y": 2163
+        },
+        "size": 7
+      },
+      {
+        "bounds": {
+          "min_x": 635,
+          "max_x": 646,
+          "min_y": 2160,
+          "max_y": 2167
+        },
+        "center": {
+          "x": 640,
+          "y": 2163
+        },
+        "size": 15
+      },
+      {
+        "bounds": {
+          "min_x": 673,
+          "max_x": 681,
+          "min_y": 2160,
+          "max_y": 2167
+        },
+        "center": {
+          "x": 676,
+          "y": 2163
+        },
+        "size": 12
+      }
+    ],
+    "tile_classes": {
+      "statics": {
+        "7": [
+          "roof"
+        ],
+        "8": [
+          "wall"
+        ],
+        "12": [
+          "wall",
+          "roof",
+          "bridge",
+          "foliage"
+        ],
+        "13": [
+          "wall",
+          "roof",
+          "bridge",
+          "foliage"
+        ],
+        "26": [
+          "wall"
+        ],
+        "27": [
+          "wall",
+          "roof",
+          "bridge",
+          "surface"
+        ],
+        "30": [
+          "wall"
+        ],
+        "33": [
+          "foliage"
+        ],
+        "34": [
+          "wall"
+        ],
+        "35": [
+          "wall",
+          "roof",
+          "bridge",
+          "surface"
+        ],
+        "1429": [
+          "door",
+          "bridge",
+          "foliage"
+        ],
+        "1437": [
+          "wall",
+          "roof",
+          "bridge",
+          "surface"
+        ],
+        "1441": [
+          "wall",
+          "bridge"
+        ],
+        "1997": [
+          "wall"
+        ],
+        "1999": [
+          "wall"
+        ],
+        "2778": [
+          "wall"
+        ],
+        "2780": [
+          "wall"
+        ],
+        "2783": [
+          "wall",
+          "roof"
+        ],
+        "2785": [
+          "wall"
+        ],
+        "2786": [
+          "wall",
+          "roof",
+          "surface",
+          "foliage"
+        ],
+        "2911": [
+          "bridge",
+          "foliage"
+        ],
+        "2942": [
+          "wall"
+        ],
+        "3211": [
+          "foliage"
+        ],
+        "3230": [
+          "wall"
+        ],
+        "3247": [
+          "wall"
+        ],
+        "3248": [
+          "wall",
+          "roof",
+          "foliage"
+        ],
+        "3252": [
+          "foliage"
+        ],
+        "3277": [
+          "wall",
+          "bridge",
+          "surface"
+        ],
+        "3278": [
+          "wall",
+          "roof",
+          "foliage"
+        ],
+        "3283": [
+          "roof",
+          "door"
+        ],
+        "3287": [
+          "wall"
+        ],
+        "3288": [
+          "roof",
+          "surface",
+          "foliage"
+        ],
+        "3289": [
+          "wall",
+          "bridge",
+          "surface",
+          "foliage"
+        ],
+        "3293": [
+          "bridge"
+        ],
+        "3299": [
+          "wall",
+          "bridge",
+          "surface"
+        ],
+        "3300": [
+          "door",
+          "foliage"
+        ],
+        "3303": [
+          "bridge",
+          "surface"
+        ],
+        "3305": [
+          "foliage"
+        ],
+        "3315": [
+          "surface"
+        ],
+        "3318": [
+          "wall",
+          "bridge",
+          "surface"
+        ],
+        "3319": [
+          "wall",
+          "roof",
+          "foliage"
+        ],
+        "3344": [
+          "bridge",
+          "surface"
+        ],
+        "3369": [
+          "wall",
+          "bridge",
+          "surface"
+        ],
+        "3371": [
+          "wall"
+        ],
+        "3375": [
+          "foliage"
+        ],
+        "3391": [
+          "wall",
+          "roof",
+          "foliage"
+        ],
+        "3392": [
+          "wall",
+          "roof",
+          "foliage"
+        ],
+        "6003": [
+          "wall",
+          "bridge",
+          "foliage"
+        ],
+        "6004": [
+          "wall",
+          "door"
+        ],
+        "6012": [
+          "surface"
+        ],
+        "6039": [
+          "wall"
+        ],
+        "6043": [
+          "wall",
+          "door",
+          "bridge"
+        ],
+        "6044": [
+          "wall",
+          "roof",
+          "bridge"
+        ],
+        "6051": [
+          "roof"
+        ],
+        "6054": [
+          "wall",
+          "door",
+          "bridge"
+        ],
+        "6061": [
+          "wall",
+          "surface"
+        ],
+        "6063": [
+          "surface"
+        ],
+        "6064": [
+          "wall",
+          "bridge",
+          "surface",
+          "foliage"
+        ]
+      },
+      "terrain": {
+        "4": [
+          "impassable"
+        ],
+        "5": [
+          "impassable"
+        ],
+        "36": [
+          "impassable"
+        ],
+        "80": [
+          "impassable"
+        ],
+        "87": [
+          "impassable"
+        ],
+        "88": [
+          "impassable"
+        ],
+        "94": [
+          "impassable"
+        ],
+        "95": [
+          "impassable"
+        ],
+        "96": [
+          "impassable"
+        ],
+        "117": [
+          "impassable"
+        ],
+        "118": [
+          "impassable"
+        ],
+        "133": [
+          "impassable"
+        ],
+        "171": [
+          "impassable"
+        ],
+        "196": [
+          "water",
+          "impassable"
+        ],
+        "200": [
+          "impassable"
+        ],
+        "201": [
+          "impassable"
+        ],
+        "1030": [
+          "impassable"
+        ]
+      }
+    },
+    "class_counts": {
+      "statics": {
+        "wall": 590,
+        "roof": 230,
+        "bridge": 359,
+        "surface": 62,
+        "foliage": 65,
+        "door": 165
+      },
+      "terrain": {
+        "impassable": 5510,
+        "water": 58
+      }
+    }
+  }
 }

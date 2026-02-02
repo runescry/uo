@@ -1,0 +1,49 @@
+{
+  "rules": [
+    {
+      "name": "wall",
+      "target": "static",
+      "flags_any": ["Wall", "Impassable"]
+    },
+    {
+      "name": "roof",
+      "target": "static",
+      "flags_any": ["Roof"]
+    },
+    {
+      "name": "door",
+      "target": "static",
+      "flags_any": ["Door"]
+    },
+    {
+      "name": "bridge",
+      "target": "static",
+      "flags_any": ["Bridge"]
+    },
+    {
+      "name": "surface",
+      "target": "static",
+      "flags_any": ["Surface"]
+    },
+    {
+      "name": "foliage",
+      "target": "static",
+      "flags_any": ["Foliage"]
+    },
+    {
+      "name": "water",
+      "target": "land",
+      "flags_any": ["Wet"]
+    },
+    {
+      "name": "impassable",
+      "target": "land",
+      "flags_any": ["Impassable"]
+    },
+    {
+      "name": "road",
+      "target": "static",
+      "name_contains": ["road", "path"]
+    }
+  ]
+}

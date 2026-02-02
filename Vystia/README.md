@@ -1,4 +1,9 @@
-﻿# Vystia - Custom Ultima Online Shard
+# Vystia - Custom Ultima Online Shard
+
+
+> Source of Truth: Vystia/VYSTIA_MASTER_INVENTORY.md for current status; code in ServUO/Scripts/ for runtime behavior.
+
+Last Updated: 2026-01-23
 
 Complete custom world built on ServUO.
 
@@ -15,16 +20,16 @@ Complete custom world built on ServUO.
 
 | System | Status | Count | Notes |
 |--------|--------|-------|-------|
-| Character Classes | ✅ 100% | 25/25 | All implemented and building |
-| Custom Spells | ✅ 100% | 384/384 | All 12 schools complete |
-| Magic Schools | ✅ 100% | 12/12 | Ice, Nature, Hex, Elemental, Dark, Divination, Necromancy, Summoning, Shamanic, Bardic, Enchanting, Illusion |
-| Spellbooks | ✅ 100% | 12/12 | All tested and functional |
-| Creatures | ✅ 100% | 131/131 | All regions + bosses |
-| Magic Reagents | ✅ 100% | 96/96 | 8 per school |
-| Equipment | ✅ 100% | 172/172 | Weapons, armor, shields, legendary items |
-| **LLM Lore System** | ✅ 100% | 195 entries | RAG knowledge base operational |
-| **NPCs** | 🔨 3% | 13/400+ | Phase 1 complete, ready for expansion |
-| **Quests** | 🔨 8% | 6/70+ | Quest generator ready |
+| Character Classes | ? 100% | 26/26 | All implemented and building |
+| Custom Spells | ? 100% | 384/384 | All 12 schools complete |
+| Magic Schools | ? 100% | 12/12 | Ice, Nature, Hex, Elemental, Dark, Divination, Necromancy, Summoning, Shamanic, Bardic, Enchanting, Illusion |
+| Spellbooks | ? 100% | 12/12 | All tested and functional |
+| Creatures | ? 100% | 131/131 | All regions + bosses |
+| Magic Reagents | ? 100% | 96/96 | 8 per school |
+| Equipment | ? 100% | 172/172 | Weapons, armor, shields, legendary items |
+| **LLM Lore System** | ? 100% | 195 entries | RAG knowledge base operational |
+| **NPCs** | ?? 3% | 13/400+ | Phase 1 complete, ready for expansion |
+| **Quests** | ?? 8% | 6/70+ | Quest generator ready |
 
 **Overall: ~82%** - Core systems complete, content generation active!
 
@@ -32,22 +37,22 @@ Complete custom world built on ServUO.
 
 ```
 Vystia/
-â”œâ”€â”€ README.md (this file)
-â”œâ”€â”€ VYSTIA_MASTER_INVENTORY.md (MASTER FILE)
-â”œâ”€â”€ design/ - WHAT to build
-â”œâ”€â”€ implementation/ - HOW to build
-â”œâ”€â”€ reference/ - Quick lookups
-â”œâ”€â”€ planning/ - Future plans
-â”œâ”€â”€ Magic/ - Magic system
-â”œâ”€â”€ .claude/ - Internal tools
-â”œâ”€â”€ tools/ - Automation scripts
-â””â”€â”€ archive/ - Old documents
+├── README.md (this file)
+├── VYSTIA_MASTER_INVENTORY.md (MASTER FILE)
+├── design/ - WHAT to build
+├── implementation/ - HOW to build
+├── reference/ - Quick lookups
+├── planning/ - Future plans
+├── Magic/ - Magic system
+├── .claude/ - Internal tools
+├── tools/ - Automation scripts
+└── archive/ - Old documents
 ```
 
 ## Key Systems
 
 ### Character Classes (100%)
-- 25 classes across 10 regions
+- 26 classes across 10 regions
 - 12 magic schools
 - 384 spells (all implemented)
 - 96 custom Vystia reagents (8 per school)
@@ -86,12 +91,18 @@ Vystia/
 - **Faction Leaders (5):** Emperor Garrick, Chieftain Bjorn, Elder Seraphina, Sultan Azir, Archmage Pyrus
 - **Talking Creatures (3):** Frosthelm the Eternal Winter, Elder Oakbark, Sphinx of Surya
 - **Essential Vendors (3):** Ironhaven Banker, Frostholm Healer, Ironhaven Guard Captain
-- **Quest Givers (2):** Quartermaster Grimwald, Sage Theron
+- **Quest Givers (Mondain/BaseQuest, 2):** Quartermaster Grimwald, Sage Theron
+- **Quest Giver (Vystia Dynamic):** Chronicler (LLM quest generation)
 - NPC generator tool ready for expansion to 400+ NPCs
 - **See:** `archive/NPC_GENERATION_COMPLETE.md` (historical status)
 - **NPC Implementation Guide:** `../ServUO/Scripts/Services/LLM/Documentation/NPC_IMPLEMENTATION_TEMPLATE.md`
 
 ### Quests (8% - Phase 1 Complete)
+**Quest systems are split:**
+- **Vystia Dynamic Quests (LLM):** QuestNPC + Chronicler + Quest Wizard + [GenLLMQuest]
+- **Mondain/BaseQuest:** MondainQuester/LLMQuester (classic quest chains)
+
+**Mondain/BaseQuest (Phase 1):**
 - 6 quests generated and ready for testing
 - Quest types: Slay, Deliver, Obtain
 - **Active Quests:** Supply Line, Ancient Texts
@@ -140,17 +151,17 @@ See implementation/installation/INSTALLATION.md
 
 ## Recent Updates (2025-12-08)
 
-**Phase 1: LLM Lore System** ✅
+**Phase 1: LLM Lore System** ?
 - Created 195 lore entries across 16 JSON domain files
 - Integrated with ServUO SimpleLoreSystem
 - [LoreSearch] and [LoreStats] commands operational
 
-**Phase 2: NPC Generation** ✅
+**Phase 2: NPC Generation** ?
 - Generated 13 initial NPCs (5 faction leaders, 3 talking creatures, 3 vendors, 2 quest givers)
 - Fixed build errors (missing using statements, invalid overrides, class name typo)
 - Build successful: 0 errors, 0 warnings
 
-**Phase 3: Quest Generation** ✅
+**Phase 3: Quest Generation** ?
 - Generated 6 quests (2 active, 4 regional)
 - Quest types: Slay, Deliver, Obtain
 - Quest givers enabled: Quartermaster Grimwald, Sage Theron

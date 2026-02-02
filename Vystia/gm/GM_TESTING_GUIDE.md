@@ -10,6 +10,8 @@ This guide covers how to use the **VystiaAdminGump** (`[VA`) to test all classes
 2. Type `[VA` or `[VystiaAdmin` to open the Vystia Admin Gump
 3. Navigate tabs to test different systems
 
+**Songweaving Smoke Test:** See `Vystia/TESTING_GUIDE.md` → **TEST 1.3: Songweaving (Bard) Smoke Test** for the fast Bard verification flow.
+
 ---
 
 ## VystiaAdminGump Overview
@@ -28,7 +30,7 @@ The admin gump has **6 tabs**:
 ### Items Tab Sub-Pages
 | Sub-Page | Contents |
 |----------|----------|
-| Spellbooks | All 12 magic school spellbooks |
+| Spellbooks | 12 spellbooks + Songbook of Weaving (custom range) |
 | Reagents | Reagent packs by school |
 | Weapons | Regional + legendary weapons |
 | Armor | Regional + legendary armor |
@@ -85,7 +87,7 @@ The Items tab has **6 sub-pages**:
 
 | Sub-Page | Contents |
 |----------|----------|
-| **Spellbooks** | All 12 magic school spellbooks |
+| **Spellbooks** | 12 spellbooks + Songbook of Weaving (custom range) |
 | **Reagents** | Reagent packs by magic school |
 | **Weapons** | All 40 regional weapons + 5 legendary |
 | **Armor** | All 59 regional armor pieces + shields |
@@ -132,7 +134,7 @@ The Items tab has **6 sub-pages**:
 | Necromancer Spellbook | Necromancer | 32 necromancy spells |
 | Summoner Spellbook | Summoner | 32 summoning spells |
 | Shaman Spellbook | Shaman | 32 shamanic spells |
-| Bard Spellbook | Bard | 32 bardic spells |
+| Songbook of Weaving | Bard | Songweaving spellbook (drag/hotkey) + commands |
 | Enchanter Spellbook | Enchanter | 32 enchanting spells |
 | Illusionist Spellbook | Illusionist | 32 illusion spells |
 
@@ -188,7 +190,7 @@ Vystia adds **26 custom skills** (IDs 58-83):
 | 60 | Necromancy Arts | Necromancer |
 | 61 | Druidism | Druid |
 | 62 | Elementalism | Sorcerer |
-| 63 | Bardic Lore | Bard |
+| 63 | Songweaving | Bard |
 | 64 | Hexcraft | Witch |
 | 65 | Divination | Oracle |
 | 66 | Conjuration | Summoner |
@@ -418,7 +420,7 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 
 ## Complete Magic School Testing Reference (2025-12-30)
 
-**Total:** 384 spells across 12 magic schools (32 per school)
+**Total:** 352 spells across 11 magic schools (32 per school) + Songweaving songs/finales (15)
 **Spell IDs:** 1000-1383
 
 ### Universal Spell Properties
@@ -486,6 +488,14 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 | 8 | Ice Age | 40-60/tick | Ground | 10 | Map-wide slow | HeartOfWinter |
 | 8 | Rime Reaper | 80-120 | Single | - | Execute <20% HP | HeartOfWinter |
 | 8 | Cocytus Prison | - | Ground | 8 | Mass freeze 6s | HeartOfWinter |
+
+#### Finale List (Current Implementation)
+- Sharp Note (5)
+- Mesmerise (5)
+- Cacophony (10)
+- Fortissimo (15)
+- Soothing Chorus (15)
+- Symphony of Destruction (20)
 
 #### Testing Checklist
 - [ ] Ice Bolt deals ~19 damage with 25% slow chance (-15 DEX)
@@ -880,6 +890,14 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 | 8 | Swarm of Creatures | Summon | Ground | 10 min | 5 small creatures |
 | 8 | Planar Convergence | Summon | Ground | 60s | All elementals |
 
+#### Finale List (Current Implementation)
+- Sharp Note (5)
+- Mesmerise (5)
+- Cacophony (10)
+- Fortissimo (15)
+- Soothing Chorus (15)
+- Symphony of Destruction (20)
+
 #### Testing Checklist
 - [ ] Summon Rabbit creates rabbit that follows caster (10 min)
 - [ ] Summoner's Apocalypse deals 80-140 physical damage
@@ -939,6 +957,14 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 | 8 | Ancestor's Blessing | All buffs | Party | 8 | 120s |
 | 8 | Totem Army | 8 totems | Ground | - | All types |
 
+#### Finale List (Current Implementation)
+- Sharp Note (5)
+- Mesmerise (5)
+- Cacophony (10)
+- Fortissimo (15)
+- Soothing Chorus (15)
+- Symphony of Destruction (20)
+
 #### Testing Checklist
 - [ ] Chain Lightning jumps 3 targets correctly
 - [ ] Flame Shock deals 20-25 + skill bonus energy damage
@@ -948,63 +974,50 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 
 ---
 
-### 10. BARDIC MAGIC (Bard)
-**Skill:** BardicLore (ID 63) | **Spell IDs:** 1288-1319 | **Spellbook:** BardSpellbook
+### 10. SONGWEAVING (Bard)
+**Skill:** Songweaving (ID 63) | **Songbook:** Songbook of Weaving (spellbook) | **Command:** `[song <name>]` | **Hotbar:** Songweaving Hotbar | **Finales:** `[finale <name>]` / `[finales]` (Crescendo tracker)
 
-#### Reagents
-| Reagent | Command | Circles |
-|---------|---------|---------|
-| EchoDust | `[add EchoDust 50` | 1-3 |
-| VoiceCrystal | `[add VoiceCrystal 50` | 1-4 |
-| HarmonyShard | `[add HarmonyShard 30` | 3-5 |
-| SongbirdFeather | `[add SongbirdFeather 30` | 4-6 |
-| MasterString | `[add MasterString 20` | 5-7 |
-| LegendaryNote | `[add LegendaryNote 20` | 6-8 |
-| SymphonyShard | `[add SymphonyShard 10` | 7-8 |
-| WorldSongCrystal | `[add WorldSongCrystal 10` | 8 |
+**Full Bard test plan:** See `Vystia/gm/BARD_TESTING_GUIDE.md`.
 
-#### Complete Spell Table
-| Circle | Spell | Effect | Target | Radius | Duration |
-|--------|-------|--------|--------|--------|----------|
-| 1 | Discordant Note | 5-10 dmg | Single | - | Sonic |
-| 1 | Ballad of Health | HoT 3/tick | Single | - | 30s |
-| 1 | Inspire Accuracy | +10 Hit | Party | 8 | 60s |
-| 1 | Lullaby | Sleep 3s | Single | - | Light sleep |
-| 2 | **Sonic Burst** | -2 INT debuff | Single | - | **8-20s duration** |
-| 2 | Song of Courage | +5 STR | Party | 8 | 60s |
-| 2 | Rejuvenating Melody | HoT 5/tick | Party | 8 | 30s |
-| 2 | Sonic Wave | 10-18 | AoE | 4 | Sonic damage |
-| 3 | Song of Swiftness | +10% speed | Party | 8 | 60s |
-| 3 | Mesmerize | Charm 5s | Single | - | Stops attack |
-| 3 | War Song | +10% dmg | Party | 8 | 60s |
-| 3 | Dirge of Weakness | -15 STR | Single | - | 30s debuff |
-| 4 | Crescendo | Stack +5% | Self | - | Build to 10 |
-| 4 | Song of Fear | Fear 5s | AoE | 5 | Flee effect |
-| 4 | Thunderous Chord | 20-30 | AoE | 5 | Stun 1s |
-| 4 | Song of Resilience | +20 AR | Party | 8 | 60s |
-| 5 | Inspire Heroism | +15 all stats | Party | 8 | 60s |
-| 5 | Shattering Scream | 25-40 | AoE | 6 | Armor pierce |
-| 5 | Cacophony | Confuse 6s | AoE | 5 | Random movement |
-| 5 | Song of Sanctuary | Immune 3s | Party | 8 | Brief immunity |
-| 6 | Epic Ballad | +25 all stats | Party | 8 | 90s |
-| 6 | Destructive Resonance | 30-50 | Single | - | +DoT 5/tick |
-| 6 | Mass Inspire | All buffs | Party | 10 | 60s |
-| 6 | Voice of the Dragon | 35-55 | Cone | 6 | Breath attack |
-| 7 | Symphony of Destruction | 45-70 | AoE | 8 | Ultimate AoE |
-| 7 | Legendary Performance | All party buffs | Party | 12 | 120s |
-| 7 | Requiem | 40-60 + Fear | AoE | 6 | Death song |
-| 7 | Song of the Ancients | Transform | Self | - | +50% all |
-| 8 | **Maestro Ascendant** | -8 INT debuff | Single | - | **8-20s ultimate debuff** |
-| 8 | Sonic Apocalypse | 60-100 | AoE | 10 | Massive sonic |
-| 8 | Ode to Devastation | 80-120 | AoE | 8 | Ultimate |
-| 8 | Eternal Symphony | Party immune | Party | 10 | 10s invuln |
+#### Reagents (Songweaving Bag)
+Songweaving songs do **not** consume reagents, but the school reagents are available for vendors/crafting/tests:
+| Reagent | Command |
+|---------|---------|
+| SongPetal | `[add SongPetal 50` |
+| EchoDust | `[add EchoDust 50` |
+| VoiceCrystal | `[add VoiceCrystal 50` |
+| MuseEssence | `[add MuseEssence 50` |
+| HarmonyGem | `[add HarmonyGem 50` |
+| EternalNote | `[add EternalNote 50` |
+| GoldenString | `[add GoldenString 50` |
+| DragonScale | `[add DragonScale 50` |
+
+#### Song List (Current Implementation)
+| Song | Effect |
+|------|--------|
+| Song of Provocation | Force one creature to attack another |
+| Lullaby | Pacify a target for a short duration |
+| Discordant Note | Weaken target defenses |
+| Dirge of Weakness | Sonic harm over time |
+| Song of Healing | Party heal over time |
+| Song of Courage | Party stat boost |
+| Song of Swiftness | Party speed boost |
+| Song of Illumination | Night sight |
+| Inspire Accuracy | Luck bonus |
+
+#### Finale List (Current Implementation)
+- Sharp Note (5)
+- Mesmerise (5)
+- Cacophony (10)
+- Fortissimo (15)
+- Soothing Chorus (15)
+- Symphony of Destruction (20)
 
 #### Testing Checklist
-- [ ] Sonic Burst applies -2 INT debuff for 8-20 seconds
-- [ ] Maestro Ascendant applies -8 INT debuff (ultimate)
-- [ ] Party songs affect all members within radius
-- [ ] Crescendo stacks build up correctly (10 max)
-- [ ] Sonic damage ignores armor
+- [ ] Each song triggers its expected effect and message
+- [ ] Songweaving hotbar displays cooldowns and blocks rapid re-cast
+- [ ] Crescendo increases on successful songs
+- [ ] Fortune applies luck bonus while active
 
 ---
 
@@ -1058,6 +1071,14 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 | 8 | **Rune of Apocalypse** | 150-250 dmg | Single | - | **100% energy** |
 | 8 | Invincible Armor | Immune | Self | 10s | Cannot die |
 | 8 | Mass Enchant Weapons | +30 dmg | All allies | 300s | Ultimate mass |
+
+#### Finale List (Current Implementation)
+- Sharp Note (5)
+- Mesmerise (5)
+- Cacophony (10)
+- Fortissimo (15)
+- Soothing Chorus (15)
+- Symphony of Destruction (20)
 
 #### Testing Checklist
 - [ ] Magic Weapon applies -1 INT debuff for 8-20s
@@ -1119,6 +1140,14 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 | 8 | Illusory Apocalypse | Fake doom | AoE | 10 | Terror effect |
 | 8 | Master of Puppets | Control all | AoE | 6 | Mass control |
 
+#### Finale List (Current Implementation)
+- Sharp Note (5)
+- Mesmerise (5)
+- Cacophony (10)
+- Fortissimo (15)
+- Soothing Chorus (15)
+- Symphony of Destruction (20)
+
 #### Testing Checklist
 - [ ] Minor Illusion applies -1 INT debuff for 8-20s
 - [ ] Apocalyptic Nightmare applies -8 INT debuff (ultimate)
@@ -1158,8 +1187,8 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 # SHAMANIC MAGIC
 [add StormEssence 50 && [add SpiritFeather 50 && [add TotemCarving 30 && [add AncestorBone 30 && [add WindEssence 20 && [add EarthSpirit 20 && [add SkyTotem 10 && [add WorldSpiritShard 10
 
-# BARDIC MAGIC
-[add EchoDust 50 && [add VoiceCrystal 50 && [add HarmonyShard 30 && [add SongbirdFeather 30 && [add MasterString 20 && [add LegendaryNote 20 && [add SymphonyShard 10 && [add WorldSongCrystal 10
+# SONGWEAVING
+[add SongPetal 50 && [add EchoDust 50 && [add VoiceCrystal 50 && [add MuseEssence 50 && [add HarmonyGem 50 && [add EternalNote 50 && [add GoldenString 50 && [add DragonScale 50
 
 # ENCHANTING MAGIC
 [add ArcaneDust 50 && [add EssenceOfMagic 50 && [add RunicPowder 30 && [add GlyphStone 30 && [add EnchantedGem 20 && [add MasterRune 20 && [add AncientGlyph 10 && [add TitanRune 10
@@ -1175,8 +1204,8 @@ Use `[spawnvystia` command to spawn Vystia creatures for testing:
 
 ### Master Testing Checklist
 
-**Per School (12 total):**
-- [ ] Spellbook opens with 32 spells
+**Per School (12 spellbooks + Songweaving):**
+- [ ] Spellbook opens with 32 spells (Songweaving shows 15 song/finale icons)
 - [ ] Circle 1-2 cast at 0 skill
 - [ ] Circle 7-8 require 75+ skill
 - [ ] Damage scales with school skill
@@ -1403,6 +1432,18 @@ Each class has a unique special item. Test these thoroughly.
 | **Monk's Prayer Beads** | Monk | 1. Reduce Mana/Stam to low<br>2. Double-click beads<br>3. Verify Mana/Stam restored<br>4. Amount scales with Martial Arts skill |
 | **Spirit Totem** | Shaman | 1. Take some damage<br>2. Double-click totem<br>3. Verify instant heal<br>4. Verify +5 HP regen ticks (6 times over 30s)<br>5. Amount scales with Spirit Calling skill |
 | **Magic Lute** | Bard | 1. Form a party<br>2. Have party members within 6 tiles<br>3. Double-click lute<br>4. Verify +10 All Skills for 45s<br>5. Check 120s cooldown |
+
+**Songweaving Core Songs (Phase B):**
+- Provocation (2-target)
+- Peacemaking
+- Discordance
+- Requiem
+- Mending (party HoT)
+- Courage (party stats)
+- Swiftness (party dex)
+- Light (Night Sight)
+- Fortune (Luck bonus)
+
 | **Bounty Ledger** | Bounty Hunter | 1. Double-click ledger<br>2. Target a creature<br>3. Verify creature is marked (visual effect)<br>4. Check ledger properties shows marked target<br>5. Mark lasts 5 minutes |
 | **Shapeshift Totem** | Druid | 1. Double-click totem<br>2. Verify form selection gump opens<br>3. Select Bear form<br>4. Verify body changes<br>5. Select Human to revert |
 
@@ -1457,7 +1498,7 @@ Spawn any class special item directly:
 ```
 // In server console, on startup:
 [Vystia] Registering generated abilities...
-[Vystia] Registered abilities from 12 magic schools
+[Vystia] Registered abilities from 11 magic schools + Songweaving (IDs 1384-1398)
 [Vystia] Registering martial class abilities...
 [Vystia] Registered abilities from 14 martial classes
 ```
@@ -1601,12 +1642,12 @@ NPC services now cost gold.
 ### Religions
 | ID | Religion | Region | Passive Bonus |
 |----|----------|--------|---------------|
-| 1 | Frostfather Cult | Frosthold | +5% Cold Resist |
-| 2 | Emberheart Order | Emberlands | +5% Fire Resist |
-| 3 | Greenward Circle | Verdantpeak | +5% Poison Resist, +5% Healing |
-| 4 | Crystalline Ascendancy | Crystal Barrens | +5% Energy Resist, +2 Mana Regen |
-| 5 | Voidwalker Path | ShadowVoid | +3% Physical Resist, +5 Stealth |
-| 6 | Forge Pact | Ironclad | +5 Armor, +5 Crafting |
+| 1 | Frosthelm Faith | Frosthold | +5% Cold Resist |
+| 2 | Surya's Sandscript | Emberlands | +5% Fire Resist |
+| 3 | Lunara's Covenant | Verdantpeak | +5% Poison Resist, +5% Healing |
+| 4 | Celestis Arcanum | Crystal Barrens | +5% Energy Resist, +2 Mana Regen |
+| 5 | Oceana's Covenant | ShadowVoid | +3% Physical Resist, +5 Stealth |
+| 6 | Cogsmith Creed | Ironclad | +5 Armor, +5 Crafting |
 
 ### Piety Tiers
 | Tier | Piety Required | Unlocks |
@@ -1630,7 +1671,7 @@ NPC services now cost gold.
 ### Testing Religion System
 1. **Convert to Religion:**
    ```
-   [SetReligion 1    - Join Frostfather Cult
+   [SetReligion 1    - Join Frosthelm Faith
    [Religion         - Verify status shows religion
    ```
 
@@ -1928,3 +1969,4 @@ Houses have Vystia-specific purchase prices and weekly property taxes.
 *Use this guide to systematically test all Vystia systems before player launch!*
 
 **Last Updated:** 2026-01-02
+

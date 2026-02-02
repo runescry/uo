@@ -243313,5 +243313,86 @@
   ],
   "name": "trinsic",
   "static_count": 128,
-  "terrain_count": 40401
+  "terrain_count": 40401,
+  "metadata": {
+    "source_bounds": [
+      1800,
+      2700,
+      2000,
+      2900
+    ],
+    "map_num": null
+  },
+  "analysis": {
+    "road_network": {
+      "exists": false
+    },
+    "building_clusters": [],
+    "tile_classes": {
+      "statics": {
+        "6012": [
+          "surface"
+        ],
+        "6039": [
+          "wall"
+        ],
+        "6043": [
+          "wall",
+          "door",
+          "bridge"
+        ],
+        "6044": [
+          "wall",
+          "roof",
+          "bridge"
+        ],
+        "6051": [
+          "roof"
+        ],
+        "6054": [
+          "wall",
+          "door",
+          "bridge"
+        ],
+        "6063": [
+          "surface"
+        ]
+      },
+      "terrain": {
+        "4": [
+          "impassable"
+        ],
+        "5": [
+          "impassable"
+        ],
+        "80": [
+          "impassable"
+        ],
+        "88": [
+          "impassable"
+        ],
+        "95": [
+          "impassable"
+        ],
+        "96": [
+          "impassable"
+        ],
+        "171": [
+          "impassable"
+        ]
+      }
+    },
+    "class_counts": {
+      "statics": {
+        "wall": 39,
+        "door": 15,
+        "bridge": 26,
+        "surface": 3,
+        "roof": 15
+      },
+      "terrain": {
+        "impassable": 9984
+      }
+    }
+  }
 }

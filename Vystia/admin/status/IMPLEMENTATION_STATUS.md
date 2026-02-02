@@ -379,12 +379,12 @@ All 96 custom reagents implemented (8 per school × 12 schools)
 
 ### Religions (6)
 
-1. **Frostfather Cult** (Frosthold) - Cold Resist +5%, Cold damage +3%
-2. **Emberheart Order** (Emberlands) - Fire Resist +5%, Fire damage +3%
-3. **Greenward Circle** (Verdantpeak) - Poison Resist +5%, Healing +5%
-4. **Crystalline Ascendancy** (Crystal Barrens) - Energy Resist +5%, Mana Regen +2
-5. **Voidwalker Path** (ShadowVoid) - Physical Resist +3%, Stealth +5
-6. **Forge Pact** (Ironclad) - Armor +5, Crafting +5
+1. **Frosthelm Faith** (Frosthold) - Cold Resist +5%, Cold damage +3%
+2. **Surya's Sandscript** (Emberlands) - Fire Resist +5%, Fire damage +3%
+3. **Lunara's Covenant** (Verdantpeak) - Poison Resist +5%, Healing +5%
+4. **Celestis Arcanum** (Crystal Barrens) - Energy Resist +5%, Mana Regen +2
+5. **Oceana's Covenant** (ShadowVoid) - Physical Resist +3%, Stealth +5
+6. **Cogsmith Creed** (Ironclad) - Armor +5, Crafting +5
 
 ### Piety Tiers
 
@@ -803,3 +803,4 @@ For questions, issues, or contributions, see project documentation.
 **Build Status:** ✅ CLEAN (0 errors, 0 warnings)
 **Current Phase:** Content Expansion (crafting, housing, zones)
 **Next Steps:** Regional crafting recipes, housing system, zone control
+

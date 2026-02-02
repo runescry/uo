@@ -1,8 +1,13 @@
 # Vystia GM Commands Reference
 
+> Source of Truth: Command availability is defined by ServUO/Scripts/ command registrations.
+
+Last Updated: 2026-01-23
+
+
 Complete list of GM commands for testing and administration.
 
-**Last Updated:** 2026-01-02
+**Legacy Updated:** 2026-01-02
 
 ---
 
@@ -358,6 +363,9 @@ Common types: Mage, Blacksmith, Merchant, Guard, Healer, Innkeeper, Farmer, Sail
 ---
 
 ## Quest Management Commands
+
+**Note:** These commands target **Vystia Dynamic Quests** (QuestNPC/Chronicler).  
+The **Mondain/BaseQuest** system uses classic quest givers (MondainQuester/LLMQuester).
 
 ### Quest Editor & Creation
 

@@ -4,6 +4,9 @@
 **Scope:** Generate **DynamicQuests** and **questlines** via LLM with **temporary spawns** and **per-player/per-party instances**.  
 **Source of truth:** The LLM is trained on Vystia lore; the server provides **hard constraints + POI mapping** to ensure outputs are spawnable and non-hallucinated.
 
+**Note:** This document covers **Vystia Dynamic Quests** only.  
+The **Mondain/BaseQuest** system (MondainQuester/LLMQuester) is separate and uses classic quest chains.
+
 ---
 
 ## Quick Status Summary

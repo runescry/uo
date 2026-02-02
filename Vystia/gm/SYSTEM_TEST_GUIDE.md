@@ -80,7 +80,7 @@ Test at least one class per category:
 
 ---
 
-## Test 3: Magic System (12 Schools, 384 Spells)
+## Test 3: Magic System (12 Spellbooks + Songbook)
 
 ### 3.1 Spellbooks
 ```
@@ -117,7 +117,7 @@ Test at least one class per category:
 - Cast spell
 - [ ] Verify reagents consumed from pack
 
-### 3.4 Test All 12 Schools
+### 3.4 Test All Schools (12 spellbooks + Songweaving)
 | School | Command | Quick Test Spell |
 |--------|---------|------------------|
 | Ice Magic | `[sb ice` | Frost Bolt |
@@ -129,7 +129,7 @@ Test at least one class per category:
 | Necromancy | `[sb necro` | Raise Dead |
 | Summoning | `[sb summoner` | Summon Elemental |
 | Shamanic | `[sb shaman` | Spirit Link |
-| Bardic | `[sb bard` | Inspire |
+| Songweaving | `[sb songweaving` | Provocation |
 | Enchanting | `[sb enchanter` | Enchant Weapon |
 | Illusion | `[sb illusionist` | Mirror Image |
 
@@ -492,6 +492,9 @@ Test at least one class per category:
 
 ## Test 15: Quest System
 
+**Note:** This test covers **Vystia Dynamic Quests** (QuestNPC/Chronicler).  
+The **Mondain/BaseQuest** system is separate and uses classic quest givers.
+
 ### 15.1 Quest Editor
 ```
 [QE                               # Open quest editor
@@ -649,7 +652,7 @@ Test at least one class per category:
 ### Core Systems
 - [ ] Class assignment/removal
 - [ ] 26 custom skills
-- [ ] 384 spells across 12 schools
+- [ ] 352 spells across 11 schools + 15 Songweaving (IDs 1384-1398)
 - [ ] 224 martial abilities
 - [ ] 15 secondary resources
 - [ ] Buff/debuff system

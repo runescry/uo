@@ -1,0 +1,36 @@
+# Makefile for Intel Pin Tool
+# Copy this to: D:\Tools\IntelPin\source\tools\pin_extract_key\Makefile
+
+TARGET = pin_extract_key
+TARGET_LIB = $(TARGET).dll
+
+# Pin paths (adjust based on your Pin installation)
+PIN_ROOT = D:/Tools/IntelPin
+PIN_KIT = $(PIN_ROOT)
+
+# Include paths
+INCLUDES = -I$(PIN_KIT)/source/include/pin -I$(PIN_KIT)/source/include/pin/gen
+
+# Libraries
+LIBS = $(PIN_KIT)/ia32/lib/pin.lib $(PIN_KIT)/ia32/lib-ext/pinvm.lib
+
+# Compiler flags
+CXXFLAGS = /MD /EHsc /O2 /Zi /D "WIN32" /D "_WINDOWS" /D "_USRDLL" /D "_WINDLL"
+
+# Linker flags
+LDFLAGS = /DLL /EXPORT:main /OUT:$(TARGET_LIB)
+
+# Source files
+SOURCES = pin_extract_key.cpp
+
+# Default target
+all: $(TARGET_LIB)
+
+$(TARGET_LIB): $(SOURCES)
+	cl $(CXXFLAGS) $(INCLUDES) /c $(SOURCES)
+	link $(LDFLAGS) pin_extract_key.obj $(LIBS)
+
+clean:
+	del /Q *.obj *.dll *.exp *.lib *.pdb 2>nul
+
+.PHONY: all clean

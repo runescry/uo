@@ -23,11 +23,11 @@
 | `[ClassInfoV2` | View current class details |
 | `[ListClassesV2` | List all 25 classes |
 
-**Classes:** Barbarian, Beastmaster, IceMage, Sorcerer, Ranger, Illusionist, Witch, Warlock, Necromancer, Druid, Alchemist, Wizard, Oracle, Artificer, Fighter, Monk, Templar, Summoner, BountyHunter, Knight, Shaman, Cleric, Paladin, Bard, Enchanter
+**Classes:** Barbarian, Beastmaster, IceMage, Sorcerer, Ranger, Illusionist, Witch, Warlock, Necromancer, Druid, Alchemist, Wizard, Oracle, Artificer, Fighter, Monk, Templar, Summoner, BountyHunter, Knight, Shaman, Cleric, Paladin, Bard (Songweaving), Enchanter
 
 ---
 
-## Magic System (12 Schools)
+## Magic System (11 Spellbooks + Songweaving)
 | Command | Purpose | Spell IDs |
 |---------|---------|-----------|
 | `[sb ice` | Ice Magic spellbook | 1000-1031 |
@@ -39,7 +39,8 @@
 | `[sb necro` | Necromancy spellbook | 1192-1223 |
 | `[sb summoning` | Summoning spellbook | 1224-1255 |
 | `[sb shamanic` | Shamanic spellbook | 1256-1287 |
-| `[sb bardic` | Bardic spellbook | 1288-1319 |
+| `[sb songweaving` | Songweaving songbook | songs list |
+| `[song` | Songweaving song command | provocation/peacemaking/discordance/requiem/mending/courage/swiftness/light/fortune |
 | `[sb enchanting` | Enchanting spellbook | 1320-1351 |
 | `[sb illusion` | Illusion spellbook | 1352-1383 |
 
@@ -53,7 +54,7 @@
 | `[SetResource <Type> <Value>` | Set resource value |
 | `[ResetResources` | Reset all resources to 0 |
 
-**Resources:** Fury, Chi, Combo, Energy, Focus, Essence, Mana, Nature, Shadow, Soul, Spirit, Rage, Heat, Chill, Harmony
+**Resources:** Fury, Chi, Combo, Energy, Focus, Essence, Mana, Nature, Shadow, Soul, Spirit, Rage, Heat, Chill, Crescendo
 
 ### Buffs & Debuffs
 | Command | Purpose |
@@ -117,7 +118,7 @@
 | `[SetPiety <Value>` | Set piety level |
 | `[ShrineStones` | Get shrine spawn stones |
 
-**Religions:** FrostfatherCult, EmberheartOrder, GreenwardCircle, CrystallineAscendancy, VoidWalkerPath, ForgePact
+**Religions:** FrosthelmFaith, SuryasSandscript, LunarasCovenant, CelestisArcanum, OceanasCovenant, CogsmithCreed
 
 ### Zones
 | Command | Purpose |
@@ -205,3 +206,4 @@
 ---
 
 *Last Updated: 2026-01-06*
+
