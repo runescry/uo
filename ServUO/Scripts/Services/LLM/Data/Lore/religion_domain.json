@@ -1,0 +1,286 @@
+[
+  {
+    "id": "cogsmith_creed",
+    "title": "Cogsmith Creed",
+    "category": "History",
+    "content": "The Cogsmith Creed is the dominant religion in the Ironclad Empire and Emberlands. Followers believe in a clockwork god called The Great Machinist who maintains cosmic order through precision and innovation. The religion emphasizes technological progress, craftsmanship, and the belief that the universe operates like a vast machine. Temples feature intricate clockwork mechanisms and steam-powered organs.",
+    "tags": [
+      "cogsmith",
+      "creed",
+      "religion",
+      "technology",
+      "ironclad",
+      "emberlands",
+      "innovation"
+    ],
+    "importance": 9,
+    "relatedEntries": [
+      "great_machinist",
+      "forgemaster"
+    ]
+  },
+  {
+    "id": "lunara_covenant",
+    "title": "Lunara's Covenant",
+    "category": "History",
+    "content": "Lunara's Covenant is practiced in Verdantpeak, Shadowfen, and the Hollow Forests. Followers worship Lunara, the Mother of the Grove, who embodies the forest's life force. The religion emphasizes the cycles of growth, death, and renewal, living in harmony with nature. Druids serve as priests, conducting rituals in sacred groves under moonlight.",
+    "tags": [
+      "lunara",
+      "covenant",
+      "religion",
+      "nature",
+      "forest",
+      "verdantpeak",
+      "cycles"
+    ],
+    "importance": 9,
+    "relatedEntries": [
+      "lunara",
+      "teron"
+    ]
+  },
+  {
+    "id": "surya_sandscript",
+    "title": "Surya's Sandscript",
+    "category": "History",
+    "content": "Surya's Sandscript is the ancient religion of the Whispering Sands and Blazing Frontier. Followers worship the sun god Surya and believe truth is written in the shifting sands. The religion emphasizes endurance, survival, and finding wisdom in harsh conditions. Temples are built to align with solar events, and priests interpret patterns in sand.",
+    "tags": [
+      "surya",
+      "sandscript",
+      "religion",
+      "sun",
+      "desert",
+      "sand",
+      "ancient"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "surya",
+      "mirage_mother"
+    ]
+  },
+  {
+    "id": "frosthelm_faith",
+    "title": "Frosthelm Faith",
+    "category": "History",
+    "content": "The Frosthelm Faith reveres the elemental spirits of ice and snow in Frosthold and Winterguard. The Frost Father is the ruler of winter's harshness, while the Snow Maiden represents snow's beauty. Followers believe the frozen wastes test one's strength and that surviving winter proves worthiness. Shamans conduct ice rituals and ice sculptors create sacred art.",
+    "tags": [
+      "frosthelm",
+      "faith",
+      "religion",
+      "ice",
+      "frost",
+      "frosthold",
+      "winter"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "frost_father",
+      "snow_maiden"
+    ]
+  },
+  {
+    "id": "oceana_covenant",
+    "title": "Oceana's Covenant",
+    "category": "History",
+    "content": "Oceana's Covenant is practiced in the Sunken Isles, Glimmering Archipelago, and Forgotten Depths. Followers worship Oceana, goddess of the seas, and her court of ocean spirits. The religion emphasizes respecting the ocean's power, protecting marine life, and honoring drowned ancestors. Temples are built on shorelines and underwater grottos.",
+    "tags": [
+      "oceana",
+      "covenant",
+      "religion",
+      "ocean",
+      "sea",
+      "water",
+      "islands"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "oceana",
+      "tidecaller",
+      "abyss_keeper"
+    ]
+  },
+  {
+    "id": "celestis_arcanum",
+    "title": "Celestis Arcanum",
+    "category": "History",
+    "content": "Celestis Arcanum is the mystical faith of the Mystic Canyons and Eternal Twilight. Followers believe magic is a divine force flowing from celestial sources. The religion emphasizes magical study as spiritual practice and cosmic alignment. Archmages serve as priests, conducting rituals involving star patterns and arcane geometry.",
+    "tags": [
+      "celestis",
+      "arcanum",
+      "religion",
+      "magic",
+      "arcane",
+      "stars",
+      "celestial"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "star_weaver",
+      "void_sage"
+    ]
+  },
+  {
+    "id": "dogoth_forge",
+    "title": "Dogoth's Forge",
+    "category": "History",
+    "content": "Dogoth's Forge is the dwarven religion of Deepforge. Followers believe their patron god Dogoth was forged from the fires of the earth by the Wielder of the Hammer. The religion emphasizes craftsmanship, metalworking, and honoring the stone. Every dwarf must craft a masterwork item as a religious rite of passage. Temples are built around sacred forges.",
+    "tags": [
+      "dogoth",
+      "forge",
+      "religion",
+      "dwarves",
+      "crafting",
+      "deepforge",
+      "metal"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "dogoth",
+      "selara"
+    ]
+  },
+  {
+    "id": "great_machinist",
+    "title": "The Great Machinist",
+    "category": "NPC",
+    "content": "The Great Machinist is the supreme deity of the Cogsmith Creed, patron god of engineers, inventors, and artificers. Depicted as a massive clockwork titan, he is believed to maintain the universe's cosmic machinery. His holy symbol is a golden gear. Prayers are offered before beginning new inventions or repairs.",
+    "tags": [
+      "great machinist",
+      "deity",
+      "god",
+      "cogsmith",
+      "technology",
+      "invention"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "forgemaster",
+    "title": "The Forgemaster",
+    "category": "NPC",
+    "content": "The Forgemaster is the god of smiths and metallurgists in the Cogsmith Creed. He teaches the sacred art of metalworking and blesses those who create with fire and forge. His temples house sacred anvils where legendary weapons are crafted. Blacksmiths pray to him before major projects.",
+    "tags": [
+      "forgemaster",
+      "deity",
+      "god",
+      "smith",
+      "forge",
+      "metal",
+      "fire"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "lunara",
+    "title": "Lunara, Mother of the Grove",
+    "category": "NPC",
+    "content": "Lunara is the primary goddess of Lunara's Covenant, embodying the forest's life force and the cycles of nature. She appears as a beautiful elf maiden crowned with flowers or as a ancient dryad. Druids are her priests, and sacred groves are her temples. She teaches balance, growth, and renewal.",
+    "tags": [
+      "lunara",
+      "deity",
+      "goddess",
+      "nature",
+      "forest",
+      "druid",
+      "growth"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "teron",
+    "title": "Teron, The Stag Protector",
+    "category": "NPC",
+    "content": "Teron is the male consort of Lunara, depicted as a massive white stag or a muscular elf hunter. He is the protector of wild animals and guardian of the deep forest. Rangers and hunters pray to him for success and to honor their prey. He teaches respect for nature's predators.",
+    "tags": [
+      "teron",
+      "deity",
+      "god",
+      "stag",
+      "hunter",
+      "protector",
+      "animals"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "frost_father",
+    "title": "The Frost Father",
+    "category": "NPC",
+    "content": "The Frost Father is the harsh god of winter and ice in the Frosthelm Faith. He appears as an ancient orc covered in ice, or as a massive frost giant. He tests mortals with brutal cold to prove their strength. Barbarians and Ice Mages both revere him. His blessing grants resistance to cold.",
+    "tags": [
+      "frost father",
+      "deity",
+      "god",
+      "ice",
+      "winter",
+      "cold",
+      "frosthold"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "snow_maiden",
+    "title": "The Snow Maiden",
+    "category": "NPC",
+    "content": "The Snow Maiden is the gentler goddess of snow beauty and winter's quiet moments. She appears as a beautiful woman made of snow and ice, leaving no footprints. She teaches that winter can be beautiful as well as deadly. Artists and poets pray to her for inspiration. Her blessing grants clarity of thought.",
+    "tags": [
+      "snow maiden",
+      "deity",
+      "goddess",
+      "snow",
+      "beauty",
+      "winter",
+      "ice"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "oceana",
+    "title": "Oceana, Goddess of the Seas",
+    "category": "NPC",
+    "content": "Oceana is the supreme goddess of all oceans, seas, and waters in Oceana's Covenant. She appears as a beautiful mermaid or as a massive sea serpent. She controls tides, storms, and marine life. Sailors pray to her for safe passage, and summoners call upon her for water magic. She is both nurturing and vengeful.",
+    "tags": [
+      "oceana",
+      "deity",
+      "goddess",
+      "ocean",
+      "sea",
+      "water",
+      "storms"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "surya",
+    "title": "Surya, God of the Sun",
+    "category": "NPC",
+    "content": "Surya is the solar deity of the desert regions, representing truth, endurance, and the harsh light that reveals all. He appears as a figure of pure sunlight or as a golden lion. He teaches that truth is found through surviving hardship. His temples align with solar events, and his priests read omens in sand patterns.",
+    "tags": [
+      "surya",
+      "deity",
+      "god",
+      "sun",
+      "desert",
+      "light",
+      "truth"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "dogoth",
+    "title": "Dogoth, The Forge God",
+    "category": "NPC",
+    "content": "Dogoth is the dwarven god of the forge, patron of all dwarven craftsmen. He was forged from the fires of creation and teaches that every dwarf must create to find purpose. His sacred forges never go cold. Master crafters receive visions from him showing perfect designs. His blessing grants skill in crafting.",
+    "tags": [
+      "dogoth",
+      "deity",
+      "god",
+      "dwarf",
+      "forge",
+      "crafting",
+      "creation"
+    ],
+    "importance": 8
+  }
+]

@@ -1,0 +1,333 @@
+[
+  {
+    "id": "froststeel_longsword",
+    "title": "Froststeel Longsword",
+    "category": "Crafting",
+    "content": "Longsword forged from Frosthold's Frozen Ore, enchanted with ice magic. Deals cold damage and can freeze enemies. Popular among Frosthold Berserkers. Crafted in Frosthold using regional materials.",
+    "tags": [
+      "froststeel longsword",
+      "frosthold",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "glacial_battleaxe",
+    "title": "Glacial Battleaxe",
+    "category": "Crafting",
+    "content": "Heavy battleaxe made from Glacial Ingots. Cleaves through armor while chilling foes. Favored by Barbarians. Crafted in Frosthold using regional materials.",
+    "tags": [
+      "glacial battleaxe",
+      "frosthold",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "icebound_war_mace",
+    "title": "Icebound War Mace",
+    "category": "Crafting",
+    "content": "Mace embedded with permafrost shards. Crushes enemies and slows their movement. Crafted in Frosthold using regional materials.",
+    "tags": [
+      "icebound war mace",
+      "frosthold",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "molten_longsword",
+    "title": "Molten Longsword",
+    "category": "Crafting",
+    "content": "Sword forged in volcanic heat from Molten Ore. Burns with inner fire and deals fire damage. Preferred by Sorcerers. Crafted in Emberlands using regional materials.",
+    "tags": [
+      "molten longsword",
+      "emberlands",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "emberforged_greatsword",
+    "title": "Emberforged Greatsword",
+    "category": "Crafting",
+    "content": "Massive two-handed blade that glows red-hot. Leaves trails of flame with each swing. Crafted in Emberlands using regional materials.",
+    "tags": [
+      "emberforged greatsword",
+      "emberlands",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "lava_mace",
+    "title": "Lava Mace",
+    "category": "Crafting",
+    "content": "Mace crafted from cooled lava rock and Emberforged Ingots. Ignites enemies on impact. Crafted in Emberlands using regional materials.",
+    "tags": [
+      "lava mace",
+      "emberlands",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "living_wood_staff",
+    "title": "Living Wood Staff",
+    "category": "Crafting",
+    "content": "Staff carved from living trees that continues to grow. Channels nature magic and can entangle enemies. Crafted in Verdantpeak using regional materials.",
+    "tags": [
+      "living wood staff",
+      "verdantpeak",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "thornbound_spear",
+    "title": "Thornbound Spear",
+    "category": "Crafting",
+    "content": "Spear wrapped in enchanted thorns. Poisons enemies and can be used by Druids. Crafted in Verdantpeak using regional materials.",
+    "tags": [
+      "thornbound spear",
+      "verdantpeak",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "natureforged_bow",
+    "title": "Natureforged Bow",
+    "category": "Crafting",
+    "content": "Bow crafted from Livingwood with magical properties. Arrows seek their target. Crafted in Verdantpeak using regional materials.",
+    "tags": [
+      "natureforged bow",
+      "verdantpeak",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "steamwork_longsword",
+    "title": "Steamwork Longsword",
+    "category": "Crafting",
+    "content": "Mechanical sword powered by steam pressure. Can be charged for explosive strikes. Crafted in Ironclad using regional materials.",
+    "tags": [
+      "steamwork longsword",
+      "ironclad",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "ironclad"
+    ]
+  },
+  {
+    "id": "clockwork_mace",
+    "title": "Clockwork Mace",
+    "category": "Crafting",
+    "content": "Mace with internal gears that increase impact force. Favored by Artificers. Crafted in Ironclad using regional materials.",
+    "tags": [
+      "clockwork mace",
+      "ironclad",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "ironclad"
+    ]
+  },
+  {
+    "id": "gear-linked_warhammer",
+    "title": "Gear-Linked Warhammer",
+    "category": "Crafting",
+    "content": "Massive hammer with clockwork mechanisms. Used by Fighters and Templars. Crafted in Ironclad using regional materials.",
+    "tags": [
+      "gear-linked warhammer",
+      "ironclad",
+      "weapon",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "ironclad"
+    ]
+  },
+  {
+    "id": "the_eternal_winter",
+    "title": "The Eternal Winter",
+    "category": "Crafting",
+    "content": "Legendary greatsword forged by the Frost Father himself. This massive blade radiates absolute cold and can freeze entire battlefields. Wielded by the greatest champions of Frosthold. Said to have been used to slay a fire dragon during the ancient wars. Grants immunity to cold and massive frost damage bonuses.",
+    "tags": [
+      "eternal winter",
+      "legendary",
+      "weapon",
+      "frosthold",
+      "ice",
+      "greatsword"
+    ],
+    "importance": 9
+  },
+  {
+    "id": "phoenix_ascension",
+    "title": "Phoenix Ascension",
+    "category": "Crafting",
+    "content": "Legendary staff carved from the heartwood of the eternal flame tree. This staff channels the power of a captured Phoenix and grants the wielder incredible fire magic. Used by the Archmage Pyrus Ashborn. Can resurrect the wielder once per day. Grants immunity to fire and summons fire elementals.",
+    "tags": [
+      "phoenix ascension",
+      "legendary",
+      "weapon",
+      "emberlands",
+      "fire",
+      "staff"
+    ],
+    "importance": 9
+  },
+  {
+    "id": "frostforged_plate",
+    "title": "Frostforged Plate",
+    "category": "Crafting",
+    "content": "Heavy plate armor forged from Frozen Ore in Frosthold. Provides excellent protection against cold and physical damage. Worn by elite Barbarian warriors. Ice blue coloring with frost patterns.",
+    "tags": [
+      "frostforged plate",
+      "armor",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5
+  },
+  {
+    "id": "emberforged_plate",
+    "title": "Emberforged Plate",
+    "category": "Crafting",
+    "content": "Plate armor forged in the volcanic forges of the Emberlands. Glows with inner heat and provides fire resistance. Favored by Emberlands warriors. Orange-red coloring.",
+    "tags": [
+      "emberforged plate",
+      "armor",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5
+  },
+  {
+    "id": "steamwork_plate",
+    "title": "Steamwork Plate",
+    "category": "Crafting",
+    "content": "Mechanical plate armor powered by steam. Includes clockwork joints for enhanced mobility. Created by Ironclad artificers. Metallic silver with brass fittings.",
+    "tags": [
+      "steamwork plate",
+      "armor",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5
+  },
+  {
+    "id": "natureforged_leather",
+    "title": "Natureforged Leather",
+    "category": "Crafting",
+    "content": "Leather armor created from living bark and enchanted hides. Provides nature magic bonuses and camouflage in forests. Worn by Verdantpeak Rangers and Druids. Forest green coloring.",
+    "tags": [
+      "natureforged leather",
+      "armor",
+      "equipment",
+      "crafting"
+    ],
+    "importance": 5
+  },
+  {
+    "id": "frozen_ore",
+    "title": "Frozen Ore",
+    "category": "Crafting",
+    "content": "Rare ore found only in the deepest ice caves of Frosthold. Never melts and radiates cold. Used to forge ice-enchanted weapons and armor. Miners must use special insulated tools to extract it. Key ingredient in Frostforged equipment.",
+    "tags": [
+      "frozen ore",
+      "ore",
+      "mining",
+      "frosthold",
+      "material",
+      "crafting"
+    ],
+    "importance": 6
+  },
+  {
+    "id": "molten_ore",
+    "title": "Molten Ore",
+    "category": "Crafting",
+    "content": "Ore extracted from volcanic vents in the Emberlands. Remains hot to the touch even after cooling. Used to forge fire-enchanted weapons and armor. Must be cooled in lava to maintain properties. Key ingredient in Emberforged equipment.",
+    "tags": [
+      "molten ore",
+      "ore",
+      "mining",
+      "emberlands",
+      "material",
+      "crafting"
+    ],
+    "importance": 6
+  },
+  {
+    "id": "steamwork_ore",
+    "title": "Steamwork Ore",
+    "category": "Crafting",
+    "content": "Mechanical ore found in the Ironclad Empire's deep mines. Contains natural clockwork formations. Used to create steam-powered equipment and constructs. Extracted by mining engineers. Key ingredient in Clockwork equipment.",
+    "tags": [
+      "steamwork ore",
+      "ore",
+      "mining",
+      "ironclad",
+      "material",
+      "crafting"
+    ],
+    "importance": 6
+  }
+]

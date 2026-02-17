@@ -1,0 +1,29 @@
+[
+  {
+    "id": "vystia_mining",
+    "title": "Vystia Mining",
+    "category": "Resource",
+    "content": "Mining in Vystia yields regional ores with magical properties. Frosthold has Frozen Ore that never melts. Emberlands has Molten Ore that stays hot. Ironclad has Steamwork Ore with clockwork formations. Crystal Barrens has Crystal Ore that glows. Each ore type is used for specific crafting purposes and requires specialized mining techniques.",
+    "tags": [
+      "mining",
+      "ore",
+      "resources",
+      "minerals"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "vystia_lumberjacking",
+    "title": "Vystia Lumberjacking",
+    "category": "Resource",
+    "content": "Lumberjacking in Vystia harvests magical woods. Verdantpeak has Livingwood that continues growing after harvest. Frosthold has Frostwillow that resists fire. Emberlands has Flamewood that burns eternally. Each wood type has unique properties for crafting, construction, and magic item creation. Verdantpeak Druids carefully regulate logging to maintain forest balance.",
+    "tags": [
+      "lumberjacking",
+      "wood",
+      "lumber",
+      "resources",
+      "trees"
+    ],
+    "importance": 6
+  }
+]

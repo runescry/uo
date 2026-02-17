@@ -1,0 +1,41 @@
+[
+  {
+    "id": "vystia_blacksmithing",
+    "title": "Vystia Blacksmithing",
+    "category": "Crafting",
+    "content": "Blacksmithing in Vystia uses regional ores to create specialized equipment. Frosthold uses Frozen Ore for ice weapons, Emberlands uses Molten Ore for fire weapons, Ironclad uses Steamwork Ore for mechanical armor, and Verdantpeak uses Livingwood for nature-themed equipment. Each region requires different forges and techniques.",
+    "tags": [
+      "blacksmithing",
+      "crafting",
+      "smithing",
+      "forging"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "vystia_alchemy",
+    "title": "Vystia Alchemy",
+    "category": "Crafting",
+    "content": "Alchemy in Vystia involves brewing potions from regional ingredients. Verdant Isles Alchemists are the most skilled, using rare tropical herbs. Shadowfen Witches brew powerful hexing potions. Each region has unique alchemical ingredients and recipes.",
+    "tags": [
+      "alchemy",
+      "potions",
+      "brewing",
+      "crafting"
+    ],
+    "importance": 6
+  },
+  {
+    "id": "vystia_carpentry",
+    "title": "Vystia Carpentry",
+    "category": "Crafting",
+    "content": "Carpentry in Vystia uses regional woods including Frostwillow from Frosthold, Flamewood from Emberlands, and Livingwood from Verdantpeak. Each wood type has unique properties and is used for different purposes from building to crafting magical staves.",
+    "tags": [
+      "carpentry",
+      "woodworking",
+      "crafting",
+      "lumber"
+    ],
+    "importance": 5
+  }
+]

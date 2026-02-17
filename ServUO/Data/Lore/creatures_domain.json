@@ -1,0 +1,952 @@
+[
+  {
+    "id": "frost_giant",
+    "title": "Frost Giant",
+    "category": "Monster",
+    "content": "Massive humanoid made of ice and snow, wielding frozen weapons. Can freeze enemies and summon blizzards. Found in Frosthold. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "frost giant",
+      "frosthold",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "ice_elemental",
+    "title": "Ice Elemental",
+    "category": "Monster",
+    "content": "Pure cold energy given form. Deals cold damage and slows attackers. Found in Frosthold. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "ice elemental",
+      "frosthold",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "white_dragon",
+    "title": "White Dragon",
+    "category": "Monster",
+    "content": "Ancient dragon of the frozen wastes. Breathes ice and guards frozen treasures. Found in Frosthold. Cannot be tamed. Difficulty: Boss.",
+    "tags": [
+      "white dragon",
+      "frosthold",
+      "creature",
+      "monster",
+      "boss"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "winter_wolf",
+    "title": "Winter Wolf",
+    "category": "Monster",
+    "content": "Large wolf with frost-white fur. Pack hunter with ice breath. Found in Frosthold. Can be tamed by skilled animal trainers. Difficulty: Medium.",
+    "tags": [
+      "winter wolf",
+      "frosthold",
+      "creature",
+      "monster",
+      "medium",
+      "tameable"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "glacial_stalker",
+    "title": "Glacial Stalker",
+    "category": "Monster",
+    "content": "Invisible predator made of living ice. Ambushes prey in frozen terrain. Found in Frosthold. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "glacial stalker",
+      "frosthold",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "boreal_serpent",
+    "title": "Boreal Serpent",
+    "category": "Monster",
+    "content": "Massive ice snake that burrows through glaciers. Found in Frosthold. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "boreal serpent",
+      "frosthold",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "ice_troll",
+    "title": "Ice Troll",
+    "category": "Monster",
+    "content": "Regenerating troll adapted to frozen environments. Found in Frosthold. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "ice troll",
+      "frosthold",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "frost_wraith",
+    "title": "Frost Wraith",
+    "category": "Monster",
+    "content": "Undead spirit of those who froze to death. Drains warmth. Found in Frosthold. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "frost wraith",
+      "frosthold",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "frosthold"
+    ]
+  },
+  {
+    "id": "fire_elemental",
+    "title": "Fire Elemental",
+    "category": "Monster",
+    "content": "Living flame that burns everything it touches. Immune to fire. Found in Emberlands. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "fire elemental",
+      "emberlands",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "lava_golem",
+    "title": "Lava Golem",
+    "category": "Monster",
+    "content": "Construct made of cooled lava and obsidian. Extremely tough. Found in Emberlands. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "lava golem",
+      "emberlands",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "phoenix",
+    "title": "Phoenix",
+    "category": "Monster",
+    "content": "Mythical fire bird that resurrects from its ashes. Burns with eternal flame. Found in Emberlands. Cannot be tamed. Difficulty: Boss.",
+    "tags": [
+      "phoenix",
+      "emberlands",
+      "creature",
+      "monster",
+      "boss"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "salamander",
+    "title": "Salamander",
+    "category": "Monster",
+    "content": "Fire-breathing lizard that lives in lava. Highly dangerous. Found in Emberlands. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "salamander",
+      "emberlands",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "cinder_drake",
+    "title": "Cinder Drake",
+    "category": "Monster",
+    "content": "Young dragon adapted to volcanic environments. Found in Emberlands. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "cinder drake",
+      "emberlands",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "magma_crawler",
+    "title": "Magma Crawler",
+    "category": "Monster",
+    "content": "Insect-like creature that swims through molten rock. Found in Emberlands. Cannot be tamed. Difficulty: Low.",
+    "tags": [
+      "magma crawler",
+      "emberlands",
+      "creature",
+      "monster",
+      "low"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "emberlands"
+    ]
+  },
+  {
+    "id": "treant",
+    "title": "Treant",
+    "category": "Monster",
+    "content": "Ancient walking tree that guards the forest. Incredibly strong and wise. Found in Verdantpeak. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "treant",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "dryad",
+    "title": "Dryad",
+    "category": "Monster",
+    "content": "Beautiful tree spirit bound to sacred groves. Can control plants. Found in Verdantpeak. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "dryad",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "dire_wolf",
+    "title": "Dire Wolf",
+    "category": "Monster",
+    "content": "Massive wolf pack hunter. Loyal companion when tamed. Found in Verdantpeak. Can be tamed by skilled animal trainers. Difficulty: Medium.",
+    "tags": [
+      "dire wolf",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "medium",
+      "tameable"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "giant_spider",
+    "title": "Giant Spider",
+    "category": "Monster",
+    "content": "Web-spinning predator of the deep forest. Venomous bite. Found in Verdantpeak. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "giant spider",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "sprite",
+    "title": "Sprite",
+    "category": "Monster",
+    "content": "Tiny fey creature with nature magic. Playful but powerful. Found in Verdantpeak. Cannot be tamed. Difficulty: Low.",
+    "tags": [
+      "sprite",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "low"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "owlbear",
+    "title": "Owlbear",
+    "category": "Monster",
+    "content": "Magical hybrid of owl and bear. Fierce territorial guardian. Found in Verdantpeak. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "owlbear",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "green_dragon",
+    "title": "Green Dragon",
+    "category": "Monster",
+    "content": "Forest dragon with poison breath. Cunning and deceptive. Found in Verdantpeak. Cannot be tamed. Difficulty: Boss.",
+    "tags": [
+      "green dragon",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "boss"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "unicorn",
+    "title": "Unicorn",
+    "category": "Monster",
+    "content": "Pure white horse with healing magic. Only approaches the pure-hearted. Found in Verdantpeak. Can be tamed by skilled animal trainers. Difficulty: Medium.",
+    "tags": [
+      "unicorn",
+      "verdantpeak",
+      "creature",
+      "monster",
+      "medium",
+      "tameable"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "verdantpeak"
+    ]
+  },
+  {
+    "id": "sand_elemental",
+    "title": "Sand Elemental",
+    "category": "Monster",
+    "content": "Whirling vortex of sand that can blind and suffocate. Found in Whispering Sands. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "sand elemental",
+      "whispering sands",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "whispering_sands"
+    ]
+  },
+  {
+    "id": "mummy",
+    "title": "Mummy",
+    "category": "Monster",
+    "content": "Undead guardian of ancient tombs. Curse of disease. Found in Whispering Sands. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "mummy",
+      "whispering sands",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "whispering_sands"
+    ]
+  },
+  {
+    "id": "giant_scorpion",
+    "title": "Giant Scorpion",
+    "category": "Monster",
+    "content": "Massive desert scorpion with deadly venom. Found in Whispering Sands. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "giant scorpion",
+      "whispering sands",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "whispering_sands"
+    ]
+  },
+  {
+    "id": "sand_dragon",
+    "title": "Sand Dragon",
+    "category": "Monster",
+    "content": "Dragon that burrows through sand. Lightning breath. Found in Whispering Sands. Cannot be tamed. Difficulty: Boss.",
+    "tags": [
+      "sand dragon",
+      "whispering sands",
+      "creature",
+      "monster",
+      "boss"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "whispering_sands"
+    ]
+  },
+  {
+    "id": "sphinx",
+    "title": "Sphinx",
+    "category": "Monster",
+    "content": "Intelligent creature with riddles and ancient knowledge. Found in Whispering Sands. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "sphinx",
+      "whispering sands",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "whispering_sands"
+    ]
+  },
+  {
+    "id": "harpy",
+    "title": "Harpy",
+    "category": "Monster",
+    "content": "Bird-woman hybrid that snatches prey from above. Found in Whispering Sands. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "harpy",
+      "whispering sands",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "whispering_sands"
+    ]
+  },
+  {
+    "id": "ankheg",
+    "title": "Ankheg",
+    "category": "Monster",
+    "content": "Giant insect that burrows beneath the desert. Found in Whispering Sands. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "ankheg",
+      "whispering sands",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "whispering_sands"
+    ]
+  },
+  {
+    "id": "bog_hag",
+    "title": "Bog Hag",
+    "category": "Monster",
+    "content": "Corrupted witch of the swamp. Brews deadly potions. Found in Shadowfen. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "bog hag",
+      "shadowfen",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "shadowfen"
+    ]
+  },
+  {
+    "id": "swamp_thing",
+    "title": "Swamp Thing",
+    "category": "Monster",
+    "content": "Animated mass of vegetation and decay. Found in Shadowfen. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "swamp thing",
+      "shadowfen",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "shadowfen"
+    ]
+  },
+  {
+    "id": "poison_drake",
+    "title": "Poison Drake",
+    "category": "Monster",
+    "content": "Dragon adapted to toxic environments. Venom breath. Found in Shadowfen. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "poison drake",
+      "shadowfen",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "shadowfen"
+    ]
+  },
+  {
+    "id": "will_o_wisp",
+    "title": "Will-o'-Wisp",
+    "category": "Monster",
+    "content": "Ghostly light that lures travelers into danger. Found in Shadowfen. Cannot be tamed. Difficulty: Low.",
+    "tags": [
+      "will-o'-wisp",
+      "shadowfen",
+      "creature",
+      "monster",
+      "low"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "shadowfen"
+    ]
+  },
+  {
+    "id": "giant_frog",
+    "title": "Giant Frog",
+    "category": "Monster",
+    "content": "Massive amphibian that swallows prey whole. Found in Shadowfen. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "giant frog",
+      "shadowfen",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "shadowfen"
+    ]
+  },
+  {
+    "id": "iron_golem",
+    "title": "Iron Golem",
+    "category": "Monster",
+    "content": "Clockwork construct programmed to guard. Nearly indestructible. Found in Ironclad Empire. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "iron golem",
+      "ironclad empire",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "ironclad_empire"
+    ]
+  },
+  {
+    "id": "automaton",
+    "title": "Automaton",
+    "category": "Monster",
+    "content": "Steam-powered mechanical soldier. Follows orders precisely. Found in Ironclad Empire. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "automaton",
+      "ironclad empire",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "ironclad_empire"
+    ]
+  },
+  {
+    "id": "clockwork_beast",
+    "title": "Clockwork Beast",
+    "category": "Monster",
+    "content": "Mechanical predator with gears and springs. Found in Ironclad Empire. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "clockwork beast",
+      "ironclad empire",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "ironclad_empire"
+    ]
+  },
+  {
+    "id": "steam_mephit",
+    "title": "Steam Mephit",
+    "category": "Monster",
+    "content": "Imp-like creature made of steam and heat. Found in Ironclad Empire. Cannot be tamed. Difficulty: Low.",
+    "tags": [
+      "steam mephit",
+      "ironclad empire",
+      "creature",
+      "monster",
+      "low"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "ironclad_empire"
+    ]
+  },
+  {
+    "id": "wyvern",
+    "title": "Wyvern",
+    "category": "Monster",
+    "content": "Two-legged dragon used as aerial mount. Found in Ironclad Empire. Can be tamed by skilled animal trainers. Difficulty: High.",
+    "tags": [
+      "wyvern",
+      "ironclad empire",
+      "creature",
+      "monster",
+      "high",
+      "tameable"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "ironclad_empire"
+    ]
+  },
+  {
+    "id": "griffon",
+    "title": "Griffon",
+    "category": "Monster",
+    "content": "Half eagle, half lion. Noble aerial guardian. Found in Ironclad Empire. Can be tamed by skilled animal trainers. Difficulty: High.",
+    "tags": [
+      "griffon",
+      "ironclad empire",
+      "creature",
+      "monster",
+      "high",
+      "tameable"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "ironclad_empire"
+    ]
+  },
+  {
+    "id": "shadow_beast",
+    "title": "Shadow Beast",
+    "category": "Monster",
+    "content": "Living shadow that hunts in darkness. Found in ShadowVoid. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "shadow beast",
+      "shadowvoid",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "shadowvoid"
+    ]
+  },
+  {
+    "id": "void_horror",
+    "title": "Void Horror",
+    "category": "Monster",
+    "content": "Creature from beyond reality. Sanity-destroying. Found in ShadowVoid. Cannot be tamed. Difficulty: Boss.",
+    "tags": [
+      "void horror",
+      "shadowvoid",
+      "creature",
+      "monster",
+      "boss"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "shadowvoid"
+    ]
+  },
+  {
+    "id": "wraith",
+    "title": "Wraith",
+    "category": "Monster",
+    "content": "Incorporeal undead that drains life force. Found in ShadowVoid. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "wraith",
+      "shadowvoid",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "shadowvoid"
+    ]
+  },
+  {
+    "id": "nightmare",
+    "title": "Nightmare",
+    "category": "Monster",
+    "content": "Fiery horse from the shadow plane. Burns with dark flames. Found in ShadowVoid. Can be tamed by skilled animal trainers. Difficulty: High.",
+    "tags": [
+      "nightmare",
+      "shadowvoid",
+      "creature",
+      "monster",
+      "high",
+      "tameable"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "shadowvoid"
+    ]
+  },
+  {
+    "id": "crystal_elemental",
+    "title": "Crystal Elemental",
+    "category": "Monster",
+    "content": "Living crystal that refracts light into lasers. Found in Crystal Barrens. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "crystal elemental",
+      "crystal barrens",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "crystal_barrens"
+    ]
+  },
+  {
+    "id": "prism_dragon",
+    "title": "Prism Dragon",
+    "category": "Monster",
+    "content": "Dragon made of crystal with rainbow breath. Found in Crystal Barrens. Cannot be tamed. Difficulty: Boss.",
+    "tags": [
+      "prism dragon",
+      "crystal barrens",
+      "creature",
+      "monster",
+      "boss"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "crystal_barrens"
+    ]
+  },
+  {
+    "id": "kraken",
+    "title": "Kraken",
+    "category": "Monster",
+    "content": "Legendary sea monster with massive tentacles. Found in Underwater. Cannot be tamed. Difficulty: Boss.",
+    "tags": [
+      "kraken",
+      "underwater",
+      "creature",
+      "monster",
+      "boss"
+    ],
+    "importance": 8,
+    "relatedEntries": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "sea_serpent",
+    "title": "Sea Serpent",
+    "category": "Monster",
+    "content": "Giant ocean snake that attacks ships. Found in Underwater. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "sea serpent",
+      "underwater",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "merrow",
+    "title": "Merrow",
+    "category": "Monster",
+    "content": "Evil merman warrior with trident. Found in Underwater. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "merrow",
+      "underwater",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "giant_crab",
+    "title": "Giant Crab",
+    "category": "Monster",
+    "content": "Massive crustacean with crushing claws. Found in Underwater. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "giant crab",
+      "underwater",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "underwater"
+    ]
+  },
+  {
+    "id": "air_elemental",
+    "title": "Air Elemental",
+    "category": "Monster",
+    "content": "Living wind that throws enemies with gales. Found in Skyreach. Cannot be tamed. Difficulty: Medium.",
+    "tags": [
+      "air elemental",
+      "skyreach",
+      "creature",
+      "monster",
+      "medium"
+    ],
+    "importance": 5,
+    "relatedEntries": [
+      "skyreach"
+    ]
+  },
+  {
+    "id": "storm_eagle",
+    "title": "Storm Eagle",
+    "category": "Monster",
+    "content": "Massive bird that calls lightning. Found in Skyreach. Can be tamed by skilled animal trainers. Difficulty: High.",
+    "tags": [
+      "storm eagle",
+      "skyreach",
+      "creature",
+      "monster",
+      "high",
+      "tameable"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "skyreach"
+    ]
+  },
+  {
+    "id": "cloud_giant",
+    "title": "Cloud Giant",
+    "category": "Monster",
+    "content": "Giant that lives on sky islands. Found in Skyreach. Cannot be tamed. Difficulty: High.",
+    "tags": [
+      "cloud giant",
+      "skyreach",
+      "creature",
+      "monster",
+      "high"
+    ],
+    "importance": 6,
+    "relatedEntries": [
+      "skyreach"
+    ]
+  },
+  {
+    "id": "frosthold_bestiary",
+    "title": "Frosthold Bestiary",
+    "category": "Monster",
+    "content": "The frozen wastes of Frosthold are home to ice-adapted creatures including Frost Giants, Ice Elementals, White Dragons, Winter Wolves, and Glacial Stalkers. Most creatures here deal cold damage and can freeze or slow their prey. The harsh environment produces incredibly tough monsters.",
+    "tags": [
+      "frosthold",
+      "bestiary",
+      "creatures",
+      "ice",
+      "cold"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "verdantpeak_bestiary",
+    "title": "Verdantpeak Bestiary",
+    "category": "Monster",
+    "content": "The ancient forests of Verdantpeak shelter Treants, Dryads, Dire Wolves, Giant Spiders, Owlbears, and Green Dragons. Many creatures here can control plants or use nature magic. The forest is protected by ancient guardians who attack those who harm the trees.",
+    "tags": [
+      "verdantpeak",
+      "bestiary",
+      "creatures",
+      "forest",
+      "nature"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "emberlands_bestiary",
+    "title": "Emberlands Bestiary",
+    "category": "Monster",
+    "content": "The volcanic Emberlands are inhabited by Fire Elementals, Lava Golems, Phoenixes, Salamanders, and Cinder Drakes. All creatures here are immune to fire and many deal fire damage. The extreme heat makes this one of the most dangerous regions.",
+    "tags": [
+      "emberlands",
+      "bestiary",
+      "creatures",
+      "fire",
+      "volcano"
+    ],
+    "importance": 7
+  }
+]

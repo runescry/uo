@@ -1,0 +1,15 @@
+[
+  {
+    "id": "vystia_cuisine",
+    "title": "Vystia Regional Cuisine",
+    "category": "Food",
+    "content": "Vystia cuisine varies dramatically by region. Frosthold serves preserved meats, ice fish, and hot stews. Emberlands offers spicy fire-roasted dishes and volcanic peppers. Verdantpeak has vegetarian feasts with forest fruits and nuts. Whispering Sands features spiced meats, dates, and flatbreads. Ironclad has mechanically-prepared meals in automated cafeterias.",
+    "tags": [
+      "food",
+      "cooking",
+      "cuisine",
+      "meals"
+    ],
+    "importance": 5
+  }
+]

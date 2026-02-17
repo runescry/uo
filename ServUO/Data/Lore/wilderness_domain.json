@@ -1,0 +1,85 @@
+[
+  {
+    "id": "ranger_tracking",
+    "title": "Tracking and Survival Skills",
+    "category": "Wilderness",
+    "summary": "Tracking skill, wilderness navigation, survival techniques",
+    "content": "Rangers excel at tracking and wilderness survival. Tracking skill (0-100) allows rangers to follow creature trails and locate targets. Higher tracking skill reveals more information about tracked targets including direction, distance, and creature type. Rangers understand wilderness navigation using landmarks, stars, and terrain features. Survival techniques include finding food, water, and shelter in the wild. Rangers know how to read animal signs, weather patterns, and natural indicators. They understand wilderness dangers including predators, terrain hazards, and weather threats. Rangers can guide travelers through dangerous wilderness areas safely.",
+    "tags": [
+      "ranger",
+      "tracking",
+      "survival",
+      "wilderness",
+      "navigation",
+      "skill",
+      "trail",
+      "hunting"
+    ],
+    "importance": 9,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Ranger": "Expert",
+      "AnimalTrainer": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Nature",
+    "primaryReferralTarget": "Ranger",
+    "secondaryReferralTarget": "AnimalTrainer"
+  },
+  {
+    "id": "ranger_wilderness_creatures",
+    "title": "Wilderness Creature Knowledge",
+    "category": "Wilderness",
+    "summary": "Wild animals, predators, creature behavior, hunting",
+    "content": "Rangers have extensive knowledge of wilderness creatures. They know which creatures are dangerous predators and which are harmless. Wild animals include deer, rabbits, and birds that can be hunted for food. Predators include wolves, bears, and mountain lions that pose threats to travelers. Rangers understand creature behavior patterns including feeding times, territorial ranges, and aggression triggers. They know creature habitats and where to find specific types. Hunting techniques include stalking, trapping, and tracking. Rangers can identify creature tracks, droppings, and other signs. They understand creature ecology and how animals interact with their environment.",
+    "tags": [
+      "ranger",
+      "wilderness",
+      "creature",
+      "animal",
+      "predator",
+      "hunting",
+      "behavior",
+      "habitat"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Ranger": "Expert",
+      "AnimalTrainer": "Proficient",
+      "Hunter": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Nature",
+    "primaryReferralTarget": "Ranger",
+    "secondaryReferralTarget": "AnimalTrainer"
+  },
+  {
+    "id": "ranger_camping_foraging",
+    "title": "Camping and Foraging",
+    "category": "Wilderness",
+    "summary": "Camping techniques, foraging for resources, wilderness supplies",
+    "content": "Rangers understand camping and foraging in the wilderness. Camping provides rest and shelter when traveling through remote areas. Rangers know how to select safe camping locations away from dangers. Foraging skills allow rangers to find edible plants, berries, and mushrooms in the wild. They know which plants are safe to eat and which are poisonous. Rangers can identify medicinal herbs and useful materials. They understand how to prepare wilderness meals and preserve food. Rangers know techniques for purifying water and finding water sources. They understand weather patterns and how to prepare for storms. Camping equipment includes tents, bedrolls, and cooking supplies.",
+    "tags": [
+      "ranger",
+      "camping",
+      "foraging",
+      "wilderness",
+      "survival",
+      "plants",
+      "food",
+      "shelter"
+    ],
+    "importance": 7,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Ranger": "Expert",
+      "Herbalist": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Nature",
+    "primaryReferralTarget": "Ranger",
+    "secondaryReferralTarget": "Herbalist"
+  }
+]
+

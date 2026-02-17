@@ -1,0 +1,193 @@
+using System;
+using System.Collections.Generic;
+using Server.Items;
+
+namespace Server.Mobiles
+{
+    /// <summary>
+    /// Vystia Reagent Vendor - Sells all Vystia magic reagents
+    /// Temporary vendor until creature drop tables are configured
+    /// </summary>
+    public class VystiaReagentVendor : BaseVendor
+    {
+        private List<SBInfo> m_SBInfos = new List<SBInfo>();
+        protected override List<SBInfo> SBInfos { get { return m_SBInfos; } }
+
+        [Constructable]
+        public VystiaReagentVendor() : base("the reagent merchant")
+        {
+            SetSkill(SkillName.Alchemy, 90.0, 100.0);
+            SetSkill(SkillName.Magery, 90.0, 100.0);
+            SetSkill(SkillName.Inscribe, 80.0, 100.0);
+        }
+
+        public override void InitSBInfo()
+        {
+            m_SBInfos.Add(new SBVystiaReagents());
+        }
+
+        public VystiaReagentVendor(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+
+    /// <summary>
+    /// Sell/Buy info for Vystia Reagents
+    /// </summary>
+    public class SBVystiaReagents : SBInfo
+    {
+        private List<GenericBuyInfo> m_BuyInfo = new List<GenericBuyInfo>();
+        private IShopSellInfo m_SellInfo = new InternalSellInfo();
+
+        public SBVystiaReagents()
+        {
+            // ============================================
+            // ICE MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Frostbloom", typeof(Frostbloom), 5, 999, 0x18E9, 0x481));
+            m_BuyInfo.Add(new GenericBuyInfo("Glacier Crystal", typeof(GlacierCrystal), 8, 999, 0x1F19, 0x481));
+            m_BuyInfo.Add(new GenericBuyInfo("Winterleaf", typeof(Winterleaf), 6, 999, 0x18E1, 0x481));
+            m_BuyInfo.Add(new GenericBuyInfo("Permafrost Essence", typeof(PermafrostEssence), 15, 999, 0x1F1C, 0x481));
+            m_BuyInfo.Add(new GenericBuyInfo("Arctic Pearl", typeof(ArcticPearl), 25, 999, 0x1F47, 0x481));
+            m_BuyInfo.Add(new GenericBuyInfo("Frozen Soul", typeof(FrozenSoul), 40, 999, 0x1F13, 0x481));
+            m_BuyInfo.Add(new GenericBuyInfo("Frost Essence", typeof(FrostEssence), 60, 999, 0x1F9D, 0x481));
+            m_BuyInfo.Add(new GenericBuyInfo("Heart of Winter", typeof(HeartOfWinter), 100, 999, 0x1F19, 0x481));
+
+            // ============================================
+            // NATURE MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Wild Moss", typeof(WildMoss), 5, 999, 0x1AA2, 0x7D6));
+            m_BuyInfo.Add(new GenericBuyInfo("Moonpetal", typeof(Moonpetal), 8, 999, 0x18E9, 0x7D6));
+            m_BuyInfo.Add(new GenericBuyInfo("Druid Bark", typeof(DruidBark), 6, 999, 0x1BD7, 0x7D6));
+            m_BuyInfo.Add(new GenericBuyInfo("Treant Sap", typeof(TreantSap), 15, 999, 0x1F9D, 0x7D6));
+            m_BuyInfo.Add(new GenericBuyInfo("Elderwood Seed", typeof(ElderwoodSeed), 25, 999, 0x1F2C, 0x7D6));
+            m_BuyInfo.Add(new GenericBuyInfo("Primal Vine", typeof(PrimalVine), 40, 999, 0x1AA3, 0x7D6));
+            m_BuyInfo.Add(new GenericBuyInfo("Living Bark", typeof(LivingBark), 100, 999, 0x1BD7, 0x7D6));
+
+            // ============================================
+            // HEX MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Bog Moss", typeof(BogMoss), 5, 999, 0x1AA2, 0x81D));
+            m_BuyInfo.Add(new GenericBuyInfo("Viper Fang", typeof(ViperFang), 8, 999, 0x1F26, 0x81D));
+            m_BuyInfo.Add(new GenericBuyInfo("Witchweed", typeof(Witchweed), 6, 999, 0x18E1, 0x81D));
+            m_BuyInfo.Add(new GenericBuyInfo("Toad's Eye", typeof(ToadsEye), 15, 999, 0x1F2F, 0x81D));
+            m_BuyInfo.Add(new GenericBuyInfo("Swamp Lotus", typeof(SwampLotus), 25, 999, 0x18E9, 0x81D));
+            m_BuyInfo.Add(new GenericBuyInfo("Hag's Hair", typeof(HagsHair), 40, 999, 0x1AA4, 0x81D));
+            m_BuyInfo.Add(new GenericBuyInfo("Cursed Pearl", typeof(CursedPearl), 100, 999, 0x1F47, 0x81D));
+
+            // ============================================
+            // ELEMENTAL MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Ash Petal", typeof(AshPetal), 5, 999, 0x18E9, 0x54E));
+            m_BuyInfo.Add(new GenericBuyInfo("Lava Glass", typeof(LavaGlass), 8, 999, 0x1F19, 0x54E));
+            m_BuyInfo.Add(new GenericBuyInfo("Flameweed", typeof(Flameweed), 6, 999, 0x18E1, 0x54E));
+            m_BuyInfo.Add(new GenericBuyInfo("Magma Essence", typeof(MagmaEssence), 15, 999, 0x1F9D, 0x54E));
+            m_BuyInfo.Add(new GenericBuyInfo("Phoenix Feather", typeof(PhoenixFeather), 25, 999, 0x1CFF, 0x54E));
+            m_BuyInfo.Add(new GenericBuyInfo("Primordial Ember", typeof(PrimordialEmber), 60, 999, 0x19AC, 0x54E));
+
+            // ============================================
+            // DARK MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Shadow Moss", typeof(ShadowMoss), 5, 999, 0x1AA2, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Void Crystal", typeof(VoidCrystal), 8, 999, 0x1F19, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Void Weed", typeof(VoidWeed), 6, 999, 0x18E1, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Shadow Petal", typeof(ShadowPetal), 15, 999, 0x18E9, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Void Dust", typeof(VoidDust), 40, 999, 0x26B8, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Void Silk", typeof(VoidSilk), 60, 999, 0x1AA4, 0x455));
+
+            // ============================================
+            // DIVINATION MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Time Sand", typeof(TimeSand), 8, 999, 0x11EA, 0x482));
+            m_BuyInfo.Add(new GenericBuyInfo("Time Dust", typeof(TimeDust), 15, 999, 0x26B8, 0x482));
+            m_BuyInfo.Add(new GenericBuyInfo("Divination Dust", typeof(DivinationDust), 25, 999, 0x26B8, 0x482));
+            m_BuyInfo.Add(new GenericBuyInfo("Fate Crystal", typeof(FateCrystal), 40, 999, 0x1F19, 0x482));
+            m_BuyInfo.Add(new GenericBuyInfo("Starlight Crystal", typeof(StarlightCrystal), 60, 999, 0x1F19, 0x482));
+
+            // ============================================
+            // NECROMANCY REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Grave Moss", typeof(GraveMoss), 5, 999, 0x1AA2, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Bone Dust", typeof(BoneDust), 8, 999, 0x26B8, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Corpse Ash", typeof(CorpseAsh), 15, 999, 0x26B8, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Soul Fragment", typeof(SoulFragment), 25, 999, 0x1F1C, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Necrotic Shroud", typeof(NecroticShroud), 40, 999, 0x1AA4, 0x455));
+            m_BuyInfo.Add(new GenericBuyInfo("Lich Dust", typeof(LichDust), 60, 999, 0x26B8, 0x455));
+
+            // ============================================
+            // SUMMONING MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Rune Fragment", typeof(RuneFragment), 5, 999, 0x1F14, 0x555));
+            m_BuyInfo.Add(new GenericBuyInfo("Runic Powder", typeof(RunicPowder), 8, 999, 0x26B8, 0x555));
+            m_BuyInfo.Add(new GenericBuyInfo("Void Weed", typeof(VoidWeed), 6, 999, 0x18E1, 0x555));
+            m_BuyInfo.Add(new GenericBuyInfo("Aether Shard", typeof(AetherShard), 15, 999, 0x1F1C, 0x555));
+            m_BuyInfo.Add(new GenericBuyInfo("Mana Crystal", typeof(ManaCrystal), 25, 999, 0x1F19, 0x555));
+            m_BuyInfo.Add(new GenericBuyInfo("Chaos Shard", typeof(ChaosShard), 40, 999, 0x1F1C, 0x555));
+
+            // ============================================
+            // SHAMANIC MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Lightning Root", typeof(LightningRoot), 5, 999, 0x18E1, 0x501));
+            m_BuyInfo.Add(new GenericBuyInfo("Thunder Moss", typeof(ThunderMoss), 8, 999, 0x1AA2, 0x501));
+            m_BuyInfo.Add(new GenericBuyInfo("Storm Crystal", typeof(StormCrystal), 6, 999, 0x1F19, 0x501));
+            m_BuyInfo.Add(new GenericBuyInfo("Storm Essence", typeof(StormEssence), 15, 999, 0x1F9D, 0x501));
+            m_BuyInfo.Add(new GenericBuyInfo("Spirit Feather", typeof(SpiritFeather), 25, 999, 0x1CFF, 0x501));
+            m_BuyInfo.Add(new GenericBuyInfo("Primal Thunder", typeof(PrimalThunder), 40, 999, 0x1F13, 0x501));
+            m_BuyInfo.Add(new GenericBuyInfo("Totem Carving", typeof(TotemCarving), 60, 999, 0x1BD7, 0x501));
+
+            // ============================================
+            // BARDIC MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Song Petal", typeof(SongPetal), 5, 999, 0x18E9, 0x8A5));
+            m_BuyInfo.Add(new GenericBuyInfo("Echo Dust", typeof(EchoDust), 8, 999, 0x26B8, 0x8A5));
+            m_BuyInfo.Add(new GenericBuyInfo("Voice Crystal", typeof(VoiceCrystal), 15, 999, 0x1F19, 0x8A5));
+            m_BuyInfo.Add(new GenericBuyInfo("Muse Essence", typeof(MuseEssence), 25, 999, 0x1F9D, 0x8A5));
+            m_BuyInfo.Add(new GenericBuyInfo("Harmony Gem", typeof(HarmonyGem), 40, 999, 0x1F19, 0x8A5));
+            m_BuyInfo.Add(new GenericBuyInfo("Eternal Note", typeof(EternalNote), 60, 999, 0x1AA4, 0x8A5));
+            m_BuyInfo.Add(new GenericBuyInfo("Golden String", typeof(GoldenString), 100, 999, 0x1AA4, 0x8A5));
+
+            // ============================================
+            // ENCHANTING MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Arcane Dust", typeof(ArcaneDust), 5, 999, 0x26B8, 0x8FD));
+            m_BuyInfo.Add(new GenericBuyInfo("Essence of Magic", typeof(EssenceOfMagic), 15, 999, 0x1F9D, 0x8FD));
+            m_BuyInfo.Add(new GenericBuyInfo("Mana Crystal", typeof(ManaCrystal), 25, 999, 0x1F19, 0x8FD));
+            m_BuyInfo.Add(new GenericBuyInfo("Ley Line Essence", typeof(LeyLineEssence), 40, 999, 0x1F9D, 0x8FD));
+            m_BuyInfo.Add(new GenericBuyInfo("Ley Line Shard", typeof(LeyLineShard), 60, 999, 0x1F1C, 0x8FD));
+
+            // ============================================
+            // ILLUSION MAGIC REAGENTS (8 reagents)
+            // ============================================
+            m_BuyInfo.Add(new GenericBuyInfo("Mirror Dust", typeof(MirrorDust), 5, 999, 0x26B8, 0x47E));
+            m_BuyInfo.Add(new GenericBuyInfo("Phantom Silk", typeof(PhantomSilk), 8, 999, 0x1AA4, 0x47E));
+            m_BuyInfo.Add(new GenericBuyInfo("Mirage Essence", typeof(MirageEssence), 15, 999, 0x1F9D, 0x47E));
+            m_BuyInfo.Add(new GenericBuyInfo("Dream Crystal", typeof(DreamCrystal), 25, 999, 0x1F19, 0x47E));
+            m_BuyInfo.Add(new GenericBuyInfo("Reality Splinter", typeof(RealitySplinter), 40, 999, 0x1F1C, 0x47E));
+            m_BuyInfo.Add(new GenericBuyInfo("Void Mirror", typeof(VoidMirror), 60, 999, 0x1F47, 0x47E));
+        }
+
+        public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+        public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
+
+        public class InternalSellInfo : GenericSellInfo
+        {
+            public InternalSellInfo()
+            {
+                // Vendors buy reagents back at 50% price
+                // (All reagents are sellable back to vendor)
+            }
+        }
+    }
+}

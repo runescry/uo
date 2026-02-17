@@ -1,0 +1,86 @@
+[
+  {
+    "id": "mapmaker_cartography",
+    "title": "Cartography and Map Making",
+    "category": "Geography",
+    "summary": "Map creation, cartography, location knowledge, navigation",
+    "content": "Mapmakers specialize in cartography and map creation. They create accurate maps of locations, regions, and territories. Mapmakers understand geographic features including terrain, landmarks, and natural formations. They know how to represent locations accurately on maps. Cartography requires surveying skills and knowledge of geography. Mapmakers document new locations and update existing maps. They understand map reading and navigation techniques. Maps vary in detail from simple sketches to detailed cartographic works. Mapmakers coordinate with explorers to document new discoveries.",
+    "tags": [
+      "mapmaker",
+      "map",
+      "cartography",
+      "location",
+      "geography",
+      "navigation",
+      "surveying",
+      "territory"
+    ],
+    "importance": 9,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Mapmaker": "Expert",
+      "Ranger": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Geography",
+    "primaryReferralTarget": "Mapmaker",
+    "secondaryReferralTarget": "Ranger"
+  },
+  {
+    "id": "mapmaker_locations",
+    "title": "Location Knowledge and Geography",
+    "category": "Geography",
+    "summary": "Geographic knowledge, location details, regional information",
+    "content": "Mapmakers have extensive knowledge of locations and geography throughout Britannia. They know major cities, towns, and settlements. They understand geographic features including mountains, rivers, forests, and coastlines. Mapmakers know travel routes and distances between locations. They understand regional characteristics and how geography affects travel. Mapmakers document landmarks, dungeons, and points of interest. They know which locations are safe and which are dangerous. Geographic knowledge helps travelers navigate and plan journeys.",
+    "tags": [
+      "mapmaker",
+      "location",
+      "geography",
+      "city",
+      "route",
+      "landmark",
+      "region",
+      "territory"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Mapmaker": "Expert",
+      "Ranger": "Proficient",
+      "Merchant": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Geography",
+    "primaryReferralTarget": "Mapmaker",
+    "secondaryReferralTarget": "Ranger"
+  },
+  {
+    "id": "realestate_properties",
+    "title": "Properties and Real Estate",
+    "category": "Geography",
+    "summary": "Property ownership, housing, locations, real estate transactions",
+    "content": "Real estate brokers understand properties and housing throughout Britannia. They know available properties, their locations, and characteristics. Brokers understand property values and market conditions. They facilitate property transactions and ownership transfers. Real estate includes houses, shops, and special properties. Brokers know property requirements and restrictions. They understand location advantages and disadvantages. Property ownership provides security and storage for players. Brokers coordinate with mapmakers to understand property locations.",
+    "tags": [
+      "real estate",
+      "property",
+      "housing",
+      "location",
+      "ownership",
+      "transaction",
+      "house",
+      "shop"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "RealEstateBroker": "Expert",
+      "Mapmaker": "Proficient",
+      "Merchant": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Geography",
+    "primaryReferralTarget": "RealEstateBroker",
+    "secondaryReferralTarget": "Mapmaker"
+  }
+]
+

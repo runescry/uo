@@ -1,0 +1,209 @@
+[
+  {
+    "id": "ice_magic",
+    "title": "Ice Magic School",
+    "category": "Magic",
+    "content": "Ice Magic is the school of frost and cold practiced by Ice Mages in Winterguard. This school focuses on slowing, freezing, and shattering enemies with devastating cold damage. Ice Mages can create ice barriers, summon blizzards, and freeze enemies solid. The school has 32 spells across 8 circles and uses 8 ice-themed reagents including Frozen Heartstone and Glacial Essence.",
+    "tags": [
+      "ice",
+      "magic",
+      "cold",
+      "frost",
+      "freeze",
+      "winterguard",
+      "ice mage"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "nature_magic",
+    "title": "Nature Magic School",
+    "category": "Magic",
+    "content": "Nature Magic is the school of plants, animals, and natural forces practiced by Druids in Verdantpeak. This school focuses on healing, shapeshifting, and controlling plants. Druids can entangle enemies in vines, transform into animals, summon nature spirits, and cause earthquakes. The school has 32 spells and uses 8 nature reagents including Living Bark and Moonpetal.",
+    "tags": [
+      "nature",
+      "magic",
+      "druid",
+      "plants",
+      "animals",
+      "verdantpeak",
+      "healing"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "hex_magic",
+    "title": "Hex Magic School",
+    "category": "Magic",
+    "content": "Hex Magic is the school of curses, hexes, and dark enchantments practiced by Witches in Shadowfen. This school focuses on debuffing enemies, brewing potions, and inflicting status effects. Witches can curse targets, create voodoo dolls, summon familiars, and create swamp hazards. The school has 32 spells and uses 8 hex reagents including Nightshade Essence and Bog Lotus.",
+    "tags": [
+      "hex",
+      "magic",
+      "curse",
+      "witch",
+      "shadowfen",
+      "debuff",
+      "poison"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "elemental_magic",
+    "title": "Elemental Magic School",
+    "category": "Magic",
+    "content": "Elemental Magic is the school of fire, lightning, and raw elemental forces practiced by Sorcerers in the Emberlands. This school focuses on devastating damage through fireballs, lightning bolts, and elemental summons. Sorcerers channel chaotic elemental energy with incredible power. The school has 32 spells and uses 8 elemental reagents including Embercore Crystal and Stormglass Shard.",
+    "tags": [
+      "elemental",
+      "magic",
+      "fire",
+      "lightning",
+      "sorcerer",
+      "emberlands",
+      "chaos"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "dark_magic",
+    "title": "Dark Magic School",
+    "category": "Magic",
+    "content": "Dark Magic is the school of shadow, void, and demonic powers practiced by Warlocks in the ShadowVoid. This school focuses on life drain, curses, void shields, and summoning fiends. Warlocks gain power through pacts with otherworldly beings. The school has 32 spells and uses 8 dark reagents including Voidstone Dust and Shadow Wisp Essence.",
+    "tags": [
+      "dark",
+      "magic",
+      "shadow",
+      "void",
+      "warlock",
+      "shadowvoid",
+      "demon"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "divination_magic",
+    "title": "Divination Magic School",
+    "category": "Magic",
+    "content": "Divination Magic is the school of prophecy, revelation, and fate practiced by Oracles in the Crystal Barrens. This school focuses on revealing hidden things, predicting the future, and manipulating probability. Oracles can detect enemies, foresee attacks, and even reverse time. The school has 32 spells and uses 8 divination reagents including Crystal Shard and Starlight Dust.",
+    "tags": [
+      "divination",
+      "magic",
+      "prophecy",
+      "oracle",
+      "crystal barrens",
+      "future",
+      "vision"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "necromancy",
+    "title": "Necromancy School",
+    "category": "Magic",
+    "content": "Necromancy is the school of death, undead, and life force manipulation practiced by Necromancers in Eternal Twilight. This school focuses on raising undead, draining life, causing fear, and instant death spells. Necromancers can command skeletal armies and communicate with spirits. The school has 32 spells and uses 8 necromancy reagents including Bone Dust and Spirit Essence.",
+    "tags": [
+      "necromancy",
+      "magic",
+      "death",
+      "undead",
+      "necromancer",
+      "shadowvoid",
+      "spirits"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "summoning_magic",
+    "title": "Summoning Magic School",
+    "category": "Magic",
+    "content": "Summoning Magic is the school of conjuration, binding, and dimensional travel practiced by Summoners in the Forgotten Depths. This school focuses on summoning creatures from other planes, binding entities, and opening portals. Summoners can call elementals, fuse summons, and banish enemies. The school has 32 spells and uses 8 summoning reagents including Portal Stone and Binding Rune.",
+    "tags": [
+      "summoning",
+      "magic",
+      "conjuration",
+      "portal",
+      "summoner",
+      "forgotten depths",
+      "elemental"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "shamanic_magic",
+    "title": "Shamanic Magic School",
+    "category": "Magic",
+    "content": "Shamanic Magic is the school of spirits, totems, and primal forces practiced by Shamans in the Wilderlands. This school focuses on spirit communion, totem summoning, ancestral guidance, and elemental bursts. Shamans bridge the physical and spiritual realms. The school has 32 spells and uses 8 shamanic reagents including Spirit Stone and Totem Wood.",
+    "tags": [
+      "shamanic",
+      "magic",
+      "spirits",
+      "totems",
+      "shaman",
+      "wilderlands",
+      "primal"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "bardic_magic",
+    "title": "Bardic Magic School",
+    "category": "Magic",
+    "content": "Bardic Magic is the school of sound, music, and sonic manipulation practiced by Bards in the Ironclad Empire. This school focuses on buffs, crowd control, healing, and sonic damage through magical music. Bards can inspire allies, confuse enemies, and reveal secrets. The school has 32 spells and uses 8 bardic reagents including Harmonic Crystal and Echo Stone.",
+    "tags": [
+      "bardic",
+      "magic",
+      "music",
+      "sonic",
+      "bard",
+      "ironclad",
+      "support"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "enchanting_magic",
+    "title": "Enchanting Magic School",
+    "category": "Magic",
+    "content": "Enchanting Magic is the school of sigils, wards, and magical enhancement practiced by Enchanters in the Mystic Canyons. This school focuses on imbuing items with magic, creating protective wards, enhancing weapons/armor, and binding enemies. Enchanters use arcane symbols and runes. The school has 32 spells and uses 8 enchanting reagents including Rune Dust and Sigil Ink.",
+    "tags": [
+      "enchanting",
+      "magic",
+      "runes",
+      "sigils",
+      "enchanter",
+      "mystic canyons",
+      "enhancement"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "illusion_magic",
+    "title": "Illusion Magic School",
+    "category": "Magic",
+    "content": "Illusion Magic is the school of deception, invisibility, and phantasms practiced by Illusionists in the Whispering Sands. This school focuses on creating false images, turning invisible, altering terrain appearance, and crafting terrifying illusions. Illusionists can confuse and mislead enemies. The school has 32 spells and uses 8 illusion reagents including Mirage Dust and Phantom Veil.",
+    "tags": [
+      "illusion",
+      "magic",
+      "deception",
+      "invisibility",
+      "illusionist",
+      "whispering sands",
+      "mirages"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "vystia_magic_theory",
+    "title": "Vystia Magic Theory",
+    "category": "Magic",
+    "content": "Magic in Vystia is divided into 12 distinct schools, each tied to regional culture and philosophy. Unlike traditional magic systems, Vystia's magic requires specialized reagents unique to each school. Every magic school has 32 spells organized into 8 circles of increasing power. Spellbooks can hold all 32 spells of a school. Magic is taught in regional academies and by specialized trainers.",
+    "tags": [
+      "magic",
+      "theory",
+      "spells",
+      "schools",
+      "reagents",
+      "spellbooks"
+    ],
+    "importance": 10
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "poiId": "IRONCLAD_BRITAIN_CENTER",
+    "poiName": "Ironclad Empire - Britain Commons",
+    "map": "Felucca",
+    "x": 1368,
+    "y": 1575,
+    "z": 20,
+    "radius": 20,
+    "tags": ["ironclad", "britain", "town", "hub", "industrial"]
+  },
+  {
+    "poiId": "IRONCLAD_BRITAIN_BANK",
+    "poiName": "Ironclad Empire - Britain Bank",
+    "map": "Felucca",
+    "x": 1427,
+    "y": 1685,
+    "z": 0,
+    "radius": 15,
+    "tags": ["ironclad", "britain", "bank", "commerce"]
+  },
+  {
+    "poiId": "FROSTHOLD_MINOC",
+    "poiName": "Frosthold - Minoc",
+    "map": "Felucca",
+    "x": 2503,
+    "y": 554,
+    "z": 0,
+    "radius": 25,
+    "tags": ["frosthold", "minoc", "mountains", "frozen", "mining"]
+  },
+  {
+    "poiId": "CRYSTAL_BARRENS_MOONGLOW",
+    "poiName": "Crystal Barrens - Moonglow",
+    "map": "Felucca",
+    "x": 4543,
+    "y": 1318,
+    "z": 0,
+    "radius": 25,
+    "tags": ["crystal", "moonglow", "magic", "island", "academy"]
+  },
+  {
+    "poiId": "LEAGUE_SANDS_TRINSIC",
+    "poiName": "League of Sands - Trinsic",
+    "map": "Felucca",
+    "x": 1896,
+    "y": 2687,
+    "z": 0,
+    "radius": 25,
+    "tags": ["desert", "sands", "trinsic", "paladin", "honor"]
+  },
+  {
+    "poiId": "VERDANTPEAK_YEW",
+    "poiName": "Verdantpeak - Yew Forest",
+    "map": "Felucca",
+    "x": 542,
+    "y": 984,
+    "z": 0,
+    "radius": 30,
+    "tags": ["verdantpeak", "yew", "forest", "nature", "druid"]
+  },
+  {
+    "poiId": "SKYREACH_VESPER",
+    "poiName": "Skyreach Peaks - Vesper",
+    "map": "Felucca",
+    "x": 2880,
+    "y": 683,
+    "z": 0,
+    "radius": 20,
+    "tags": ["skyreach", "vesper", "bridges", "wind", "mountain"]
+  },
+  {
+    "poiId": "MARITIME_JHELOM",
+    "poiName": "Maritime Sovereignty - Jhelom",
+    "map": "Felucca",
+    "x": 1319,
+    "y": 3775,
+    "z": 0,
+    "radius": 25,
+    "tags": ["maritime", "jhelom", "island", "warriors", "naval"]
+  },
+  {
+    "poiId": "NEWHAVEN_TRAINING",
+    "poiName": "New Haven - Training Grounds",
+    "map": "Trammel",
+    "x": 3450,
+    "y": 2677,
+    "z": 0,
+    "radius": 30,
+    "tags": ["newhaven", "training", "starter", "tutorial", "safe"]
+  },
+  {
+    "poiId": "EMBERLANDS_VOLCANO",
+    "poiName": "Emberlands - Volcanic Region",
+    "map": "Felucca",
+    "x": 2900,
+    "y": 3700,
+    "z": 0,
+    "radius": 35,
+    "tags": ["emberlands", "volcano", "fire", "lava", "danger"]
+  },
+  {
+    "poiId": "SHADOWFEN_SWAMP",
+    "poiName": "Shadowfen - Swamp Depths",
+    "map": "Felucca",
+    "x": 900,
+    "y": 2200,
+    "z": 0,
+    "radius": 30,
+    "tags": ["shadowfen", "swamp", "poison", "witch", "dark"]
+  },
+  {
+    "poiId": "UNDERWATER_DEPTHS",
+    "poiName": "Deepwater Trench - Underwater City",
+    "map": "Felucca",
+    "x": 4200,
+    "y": 2100,
+    "z": 0,
+    "radius": 40,
+    "tags": ["underwater", "depths", "ocean", "kraken", "ancient"]
+  },
+  {
+    "poiId": "SHADOWVOID_DUNGEON",
+    "poiName": "ShadowVoid - Planar Rift",
+    "map": "Felucca",
+    "x": 1500,
+    "y": 1500,
+    "z": 0,
+    "radius": 25,
+    "tags": ["shadowvoid", "void", "planar", "dark", "necromancy"]
+  },
+  {
+    "poiId": "IRONCLAD_FORGE",
+    "poiName": "Ironclad Empire - The Great Forge",
+    "map": "Felucca",
+    "x": 1400,
+    "y": 1600,
+    "z": 0,
+    "radius": 20,
+    "tags": ["ironclad", "forge", "steam", "engineering", "artificer"]
+  },
+  {
+    "poiId": "VERDANTPEAK_GROVE",
+    "poiName": "Verdantpeak - Sacred Grove",
+    "map": "Felucca",
+    "x": 600,
+    "y": 1000,
+    "z": 0,
+    "radius": 25,
+    "tags": ["verdantpeak", "grove", "sacred", "treant", "ancient"]
+  },
+  {
+    "poiId": "CRYSTAL_BARRENS_FIELDS",
+    "poiName": "Crystal Barrens - Crystal Fields",
+    "map": "Felucca",
+    "x": 4500,
+    "y": 1400,
+    "z": 0,
+    "radius": 30,
+    "tags": ["crystal", "fields", "energy", "magic", "oracle"]
+  },
+  {
+    "poiId": "FROSTHOLD_GLACIER",
+    "poiName": "Frosthold - Eternal Glacier",
+    "map": "Felucca",
+    "x": 2600,
+    "y": 500,
+    "z": 0,
+    "radius": 35,
+    "tags": ["frosthold", "glacier", "ice", "frozen", "boss"]
+  },
+  {
+    "poiId": "DESERT_RUINS",
+    "poiName": "Desert of Surya - Ancient Ruins",
+    "map": "Felucca",
+    "x": 2000,
+    "y": 2800,
+    "z": 0,
+    "radius": 30,
+    "tags": ["desert", "ruins", "ancient", "sphinx", "mystery"]
+  },
+  {
+    "poiId": "SKYREACH_FLOATING_ISLE",
+    "poiName": "Skyreach Peaks - Floating Isle",
+    "map": "Felucca",
+    "x": 3000,
+    "y": 700,
+    "z": 50,
+    "radius": 25,
+    "tags": ["skyreach", "floating", "wind", "griffon", "sky"]
+  },
+  {
+    "poiId": "MARITIME_HARBOR",
+    "poiName": "Maritime Sovereignty - Grand Harbor",
+    "map": "Felucca",
+    "x": 1350,
+    "y": 3800,
+    "z": 0,
+    "radius": 30,
+    "tags": ["maritime", "harbor", "ships", "trade", "naval"]
+  }
+]

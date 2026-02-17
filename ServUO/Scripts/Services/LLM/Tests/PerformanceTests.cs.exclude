@@ -1,0 +1,391 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Server;
+using Server.Mobiles;
+using Server.Commands;
+using Server.Services.LLM;
+
+namespace Server.Services.LLM.Tests
+{
+    /// <summary>
+    /// Performance testing commands for LLM system
+    /// </summary>
+    public class PerformanceTests
+    {
+        [Usage("TestLLMResponse <message>")]
+        [Description("Test full LLM response pipeline with timing breakdown")]
+        public static void TestLLMResponse_OnCommand(CommandEventArgs e)
+        {
+            if (e.Arguments.Length < 1)
+            {
+                e.Mobile.SendMessage("Usage: [TestLLMResponse \"message\"");
+                return;
+            }
+
+            string message = e.GetString(0);
+            Mobile player = e.Mobile;
+
+            // Find nearest LLM NPC
+            LLMNpc npc = null;
+            foreach (var mobile in player.GetMobilesInRange(10))
+            {
+                if (mobile is LLMNpc llmNpc)
+                {
+                    npc = llmNpc;
+                    break;
+                }
+            }
+
+            if (npc == null)
+            {
+                e.Mobile.SendMessage("No LLM NPC found within 10 tiles. Spawn one first.");
+                return;
+            }
+
+            e.Mobile.SendMessage($"Testing LLM response for: '{message}'");
+            e.Mobile.SendMessage($"NPC: {npc.Name}");
+            e.Mobile.SendMessage("Starting test...");
+
+            Stopwatch totalStopwatch = Stopwatch.StartNew();
+            DateTime startTime = DateTime.UtcNow;
+
+            // Test the full pipeline
+            Task.Run(async () =>
+            {
+                try
+                {
+                    // Get conversation history
+                    List<ConversationMessage> history = ConversationContext.GetHistory(npc, player);
+                    bool isFirstConversation = history == null || history.Count == 0;
+
+                    // Build personality prompt
+                    string personalityPrompt = NPCPersonalities.GetPersonalityPrompt(npc.PersonalityType, npc.SpeechPattern);
+                    personalityPrompt += NPCPersonalities.GetContextualInfo(npc, player);
+
+                    // Get knowledge base (access private field via reflection or use public property if available)
+                    string knowledge = "";
+                    try
+                    {
+                        // Try to get formatted knowledge - this is a workaround since it's private
+                        // In production, you might want to add a public property
+                        var knowledgeField = typeof(LLMNpc).GetField("m_FormattedKnowledge", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                        if (knowledgeField != null)
+                        {
+                            knowledge = knowledgeField.GetValue(npc) as string ?? "";
+                        }
+                    }
+                    catch
+                    {
+                        knowledge = "";
+                    }
+
+                    // Test vendor query detection (use reflection to access private method)
+                    Stopwatch vendorStopwatch = Stopwatch.StartNew();
+                    bool isVendorQuery = false;
+                    try
+                    {
+                        if (isFirstConversation)
+                        {
+                            var method = typeof(LocalLLMService).GetMethod("IsVendorQueryByKeywords", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+                            if (method != null)
+                            {
+                                isVendorQuery = (bool)method.Invoke(null, new object[] { message.ToLower() });
+                            }
+                        }
+                        else
+                        {
+                            isVendorQuery = await LocalLLMService.IsVendorQueryAsync(message);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"[PerformanceTests] Error testing vendor query: {ex.Message}");
+                    }
+                    vendorStopwatch.Stop();
+
+                    // Test cache lookup
+                    Stopwatch cacheStopwatch = Stopwatch.StartNew();
+                    string cachedResponse = null;
+                    if (isFirstConversation)
+                    {
+                        cachedResponse = LLMResponseCache.GetCachedResponse(message, npc.Name, player.Name, isVendorQuery);
+                    }
+                    else
+                    {
+                        cachedResponse = await LLMResponseCache.GetCachedResponseAsync(message, npc.Name, player.Name, isVendorQuery, isFirstConversation);
+                    }
+                    cacheStopwatch.Stop();
+
+                    // Test LLM call (if not cached)
+                    string response = cachedResponse;
+                    Stopwatch llmStopwatch = Stopwatch.StartNew();
+                    if (response == null)
+                    {
+                        response = await UnifiedLLMService.GetResponseAsync(
+                            npc.Name,
+                            personalityPrompt,
+                            history,
+                            message,
+                            player.Name,
+                            knowledge,
+                            UnifiedLLMService.RequestType.PlayerConversation,
+                            UnifiedLLMService.LLMProvider.Auto,
+                            npc is BaseVendor,
+                            isFirstConversation
+                        );
+                    }
+                    llmStopwatch.Stop();
+                    totalStopwatch.Stop();
+
+                    // Report results
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine("PERFORMANCE TEST RESULTS");
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine($"Message: '{message}'");
+                    Console.WriteLine($"NPC: {npc.Name}");
+                    Console.WriteLine($"Is First Conversation: {isFirstConversation}");
+                    Console.WriteLine($"Is Vendor Query: {isVendorQuery}");
+                    Console.WriteLine($"Cached: {cachedResponse != null}");
+                    Console.WriteLine();
+                    Console.WriteLine("TIMING BREAKDOWN:");
+                    Console.WriteLine($"  Vendor Query Check: {vendorStopwatch.ElapsedMilliseconds}ms");
+                    Console.WriteLine($"  Cache Lookup: {cacheStopwatch.ElapsedMilliseconds}ms");
+                    Console.WriteLine($"  LLM API Call: {llmStopwatch.ElapsedMilliseconds}ms");
+                    Console.WriteLine($"  TOTAL: {totalStopwatch.ElapsedMilliseconds}ms");
+                    Console.WriteLine();
+                    Console.WriteLine($"Response: '{response}'");
+                    Console.WriteLine("==========================================");
+
+                    player.SendMessage($"Test complete! Total time: {totalStopwatch.ElapsedMilliseconds}ms");
+                    player.SendMessage($"Response: {response}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[PerformanceTests] Error: {ex.Message}");
+                    Console.WriteLine($"[PerformanceTests] Stack trace: {ex.StackTrace}");
+                    player.SendMessage($"Error: {ex.Message}");
+                }
+            });
+        }
+
+        [Usage("TestEmbeddingGeneration <text>")]
+        [Description("Test embedding generation time")]
+        public static void TestEmbeddingGeneration_OnCommand(CommandEventArgs e)
+        {
+            if (e.Arguments.Length < 1)
+            {
+                e.Mobile.SendMessage("Usage: [TestEmbeddingGeneration \"text\"");
+                return;
+            }
+
+            string text = e.GetString(0);
+            e.Mobile.SendMessage($"Testing embedding generation for: '{text}'");
+
+            Task.Run(async () =>
+            {
+                try
+                {
+                    Stopwatch stopwatch = Stopwatch.StartNew();
+                    float[] embedding = await EmbeddingService.GenerateEmbeddingAsync(text);
+                    stopwatch.Stop();
+
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine("EMBEDDING GENERATION TEST");
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine($"Text: '{text}'");
+                    Console.WriteLine($"Time: {stopwatch.ElapsedMilliseconds}ms");
+                    Console.WriteLine($"Dimensions: {embedding?.Length ?? 0}");
+                    Console.WriteLine("==========================================");
+
+                    e.Mobile.SendMessage($"Embedding generated in {stopwatch.ElapsedMilliseconds}ms ({embedding?.Length ?? 0} dimensions)");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[PerformanceTests] Error: {ex.Message}");
+                    e.Mobile.SendMessage($"Error: {ex.Message}");
+                }
+            });
+        }
+
+        [Usage("TestVendorQuery <text>")]
+        [Description("Test vendor query detection (keyword vs semantic)")]
+        public static void TestVendorQuery_OnCommand(CommandEventArgs e)
+        {
+            if (e.Arguments.Length < 1)
+            {
+                e.Mobile.SendMessage("Usage: [TestVendorQuery \"text\"");
+                return;
+            }
+
+            string text = e.GetString(0);
+            e.Mobile.SendMessage($"Testing vendor query detection for: '{text}'");
+
+            Task.Run(async () =>
+            {
+                try
+                {
+                    // Test keyword-only (use reflection to access private method)
+                    Stopwatch keywordStopwatch = Stopwatch.StartNew();
+                    bool keywordResult = false;
+                    try
+                    {
+                        var method = typeof(LocalLLMService).GetMethod("IsVendorQueryByKeywords", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+                        if (method != null)
+                        {
+                            keywordResult = (bool)method.Invoke(null, new object[] { text.ToLower() });
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"[PerformanceTests] Error testing keyword check: {ex.Message}");
+                    }
+                    keywordStopwatch.Stop();
+
+                    // Test full (semantic)
+                    Stopwatch semanticStopwatch = Stopwatch.StartNew();
+                    bool semanticResult = await LocalLLMService.IsVendorQueryAsync(text);
+                    semanticStopwatch.Stop();
+
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine("VENDOR QUERY DETECTION TEST");
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine($"Text: '{text}'");
+                    Console.WriteLine($"Keyword Check: {keywordResult} ({keywordStopwatch.ElapsedMilliseconds}ms)");
+                    Console.WriteLine($"Semantic Check: {semanticResult} ({semanticStopwatch.ElapsedMilliseconds}ms)");
+                    Console.WriteLine("==========================================");
+
+                    e.Mobile.SendMessage($"Keyword: {keywordResult} ({keywordStopwatch.ElapsedMilliseconds}ms)");
+                    e.Mobile.SendMessage($"Semantic: {semanticResult} ({semanticStopwatch.ElapsedMilliseconds}ms)");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[PerformanceTests] Error: {ex.Message}");
+                    e.Mobile.SendMessage($"Error: {ex.Message}");
+                }
+            });
+        }
+
+        [Usage("TestKnowledgeBase <NPCName>")]
+        [Description("Test knowledge base loading time for an NPC")]
+        public static void TestKnowledgeBase_OnCommand(CommandEventArgs e)
+        {
+            if (e.Arguments.Length < 1)
+            {
+                e.Mobile.SendMessage("Usage: [TestKnowledgeBase \"NPCName\"");
+                return;
+            }
+
+            string npcName = e.GetString(0);
+            Mobile player = e.Mobile;
+
+            // Find NPC
+            Mobile npc = null;
+            foreach (var mobile in player.GetMobilesInRange(20))
+            {
+                if (mobile.Name != null && mobile.Name.IndexOf(npcName, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    npc = mobile;
+                    break;
+                }
+            }
+
+            if (npc == null)
+            {
+                e.Mobile.SendMessage($"NPC '{npcName}' not found within 20 tiles.");
+                return;
+            }
+
+            var llmNpc = npc as ILLMConversational;
+            if (llmNpc == null)
+            {
+                e.Mobile.SendMessage($"NPC '{npcName}' is not LLM-enabled.");
+                return;
+            }
+
+            e.Mobile.SendMessage($"Testing knowledge base loading for: {npc.Name}");
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    Stopwatch stopwatch = Stopwatch.StartNew();
+
+                    // Infer role
+                    NPCKnowledgeSystem.NPCRole role = NPCKnowledgeSystem.InferRoleFromPersonality(llmNpc.PersonalityType);
+                    string locationName = NPCPersonalities.GetLocationName(npc);
+
+                    // Load knowledge base
+                    List<LoreEntry> knowledgeBase = NPCKnowledgeSystem.GetNPCKnowledge(role, locationName, npc.Location, npc.Map);
+
+                    // Format knowledge
+                    string formattedKnowledge = NPCKnowledgeSystem.FormatKnowledgeForPrompt(knowledgeBase);
+
+                    stopwatch.Stop();
+
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine("KNOWLEDGE BASE LOADING TEST");
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine($"NPC: {npc.Name}");
+                    Console.WriteLine($"Role: {role}");
+                    Console.WriteLine($"Location: {locationName}");
+                    Console.WriteLine($"Time: {stopwatch.ElapsedMilliseconds}ms");
+                    Console.WriteLine($"Entries: {knowledgeBase.Count}");
+                    Console.WriteLine($"Formatted Size: {formattedKnowledge.Length} chars");
+                    Console.WriteLine("==========================================");
+
+                    e.Mobile.SendMessage($"Knowledge loaded in {stopwatch.ElapsedMilliseconds}ms");
+                    e.Mobile.SendMessage($"Entries: {knowledgeBase.Count}, Size: {formattedKnowledge.Length} chars");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[PerformanceTests] Error: {ex.Message}");
+                    e.Mobile.SendMessage($"Error: {ex.Message}");
+                }
+            });
+        }
+
+        [Usage("TestMemoryLoad <NPCName> <PlayerName>")]
+        [Description("Test memory loading time from Redis/PostgreSQL")]
+        public static void TestMemoryLoad_OnCommand(CommandEventArgs e)
+        {
+            if (e.Arguments.Length < 2)
+            {
+                e.Mobile.SendMessage("Usage: [TestMemoryLoad \"NPCName\" \"PlayerName\"");
+                return;
+            }
+
+            string npcName = e.GetString(0);
+            string playerName = e.GetString(1);
+            e.Mobile.SendMessage($"Testing memory loading for: {npcName} -> {playerName}");
+
+            Task.Run(async () =>
+            {
+                try
+                {
+                    Stopwatch stopwatch = Stopwatch.StartNew();
+                    List<Memory> memories = await LLMMemoryService.GetMemoriesAsync(npcName, playerName, 10);
+                    stopwatch.Stop();
+
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine("MEMORY LOADING TEST");
+                    Console.WriteLine("==========================================");
+                    Console.WriteLine($"NPC: {npcName}");
+                    Console.WriteLine($"Player: {playerName}");
+                    Console.WriteLine($"Time: {stopwatch.ElapsedMilliseconds}ms");
+                    Console.WriteLine($"Memories Loaded: {memories.Count}");
+                    Console.WriteLine("==========================================");
+
+                    e.Mobile.SendMessage($"Memories loaded in {stopwatch.ElapsedMilliseconds}ms ({memories.Count} memories)");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[PerformanceTests] Error: {ex.Message}");
+                    e.Mobile.SendMessage($"Error: {ex.Message}");
+                }
+            });
+        }
+    }
+}
+

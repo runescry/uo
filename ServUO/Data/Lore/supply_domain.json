@@ -1,0 +1,58 @@
+[
+  {
+    "id": "provisioner_travel_gear",
+    "title": "Travel Gear and Adventuring Supplies",
+    "category": "Supply",
+    "summary": "Travel equipment, adventuring supplies, backpacks, containers",
+    "content": "Provisioners supply travelers and adventurers with essential gear. They stock backpacks, bags, and containers for carrying supplies. Travel gear includes bedrolls, tents, and camping equipment for wilderness travel. Adventuring supplies include ropes, torches, and tools for exploration. Provisioners understand what adventurers need for different types of journeys. They stock supplies for dungeon exploration, wilderness travel, and long-distance journeys. Provisioners know quality equipment and can recommend appropriate gear. They coordinate with other vendors to provide comprehensive supply services. Travel gear quality affects durability and usefulness.",
+    "tags": [
+      "provisioner",
+      "travel",
+      "gear",
+      "supply",
+      "adventuring",
+      "backpack",
+      "container",
+      "equipment"
+    ],
+    "importance": 9,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Provisioner": "Expert",
+      "Merchant": "Proficient",
+      "Ranger": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Trade",
+    "primaryReferralTarget": "Provisioner",
+    "secondaryReferralTarget": "Merchant"
+  },
+  {
+    "id": "provisioner_equipment",
+    "title": "Equipment and Supplies",
+    "category": "Supply",
+    "summary": "Equipment types, supply management, inventory organization",
+    "content": "Provisioners manage extensive inventories of equipment and supplies. They stock various item categories including tools, containers, and travel essentials. Equipment includes shovels, pickaxes, and other tools for different professions. Containers range from small pouches to large chests for storage. Provisioners understand supply management and inventory organization. They know which supplies are in high demand and which are specialty items. Provisioners can advise on equipment selection for specific activities. They coordinate with crafters to provide quality equipment. Supply availability varies by location and demand.",
+    "tags": [
+      "provisioner",
+      "equipment",
+      "supply",
+      "inventory",
+      "tool",
+      "container",
+      "management",
+      "organization"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Provisioner": "Expert",
+      "Merchant": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Trade",
+    "primaryReferralTarget": "Provisioner",
+    "secondaryReferralTarget": "Merchant"
+  }
+]
+

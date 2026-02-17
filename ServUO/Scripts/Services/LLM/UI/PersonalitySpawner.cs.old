@@ -1,0 +1,255 @@
+using System;
+using System.Collections.Generic;
+using Server;
+using Server.Commands;
+using Server.Mobiles;
+using Server.Items;
+
+namespace Server.Services.LLM
+{
+    /// <summary>
+    /// Commands to spawn LLM NPCs with predefined personalities
+    /// </summary>
+    public class PersonalitySpawner
+    {
+        public static void Initialize()
+        {
+            CommandSystem.Register("SpawnLLMPersonality", AccessLevel.GameMaster, SpawnPersonality_OnCommand);
+            CommandSystem.Register("SpawnTownNPCs", AccessLevel.GameMaster, SpawnTownNPCs_OnCommand);
+            CommandSystem.Register("SpawnMagicNPCs", AccessLevel.GameMaster, SpawnMagicNPCs_OnCommand);
+            CommandSystem.Register("SpawnAdventurerNPCs", AccessLevel.GameMaster, SpawnAdventurerNPCs_OnCommand);
+            CommandSystem.Register("SpawnRandomLLMNpc", AccessLevel.GameMaster, SpawnRandomNpc_OnCommand);
+        }
+
+        [Usage("SpawnLLMPersonality <type>")]
+        [Description("Spawns an LLM NPC with a specific personality. Use 'list' to see available types.")]
+        private static void SpawnPersonality_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            if (e.Length < 1)
+            {
+                from.SendMessage("Usage: [SpawnLLMPersonality <type>");
+                from.SendMessage("Example: [SpawnLLMPersonality Blacksmith");
+                from.SendMessage("Use: [SpawnLLMPersonality list - to see all available types");
+                return;
+            }
+
+            string type = e.GetString(0);
+
+            if (type.ToLower() == "list")
+            {
+                from.SendMessage("=== Available NPC Personalities ===");
+                from.SendMessage("Town NPCs: Blacksmith, Tavernkeeper, Town Guard, Herbalist, Librarian, Fisherman");
+                from.SendMessage("Magic: Archmage, Mystic Fortune Teller, Necromancer, Druid");
+                from.SendMessage("Adventurers: Veteran Warrior, Treasure Hunter, Bard, Ranger");
+                from.SendMessage("Merchants: Silk Trader, Jeweler");
+                from.SendMessage("Underworld: Thief, Assassin, Smuggler");
+                from.SendMessage("Special: Crazy Hermit, Ship Captain, Alchemist, Monk, Tinker, Noble, Beggar");
+                return;
+            }
+
+            NPCPersonality personality = NPCPersonalities.GetPersonality(type);
+
+            if (personality == null)
+            {
+                from.SendMessage($"Personality '{type}' not found. Use 'list' to see available types.");
+                return;
+            }
+
+            LLMNpc npc = SpawnNPCWithPersonality(from, from.Location, from.Map, personality);
+            from.SendMessage($"Spawned: {npc.Name}");
+        }
+
+        [Usage("SpawnTownNPCs")]
+        [Description("Spawns a set of town NPCs around your location.")]
+        private static void SpawnTownNPCs_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+            Map map = from.Map;
+            Point3D baseLocation = from.Location;
+
+            if (map == null || map == Map.Internal)
+            {
+                from.SendMessage("You must be in a valid location.");
+                return;
+            }
+
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X + 2, baseLocation.Y + 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Blacksmith"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X - 2, baseLocation.Y + 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Tavernkeeper"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X + 2, baseLocation.Y - 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Town Guard"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X - 2, baseLocation.Y - 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Herbalist"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X, baseLocation.Y + 4, baseLocation.Z), map, NPCPersonalities.GetPersonality("Librarian"));
+
+            from.SendMessage("Spawned 5 town NPCs!");
+        }
+
+        [Usage("SpawnMagicNPCs")]
+        [Description("Spawns a set of magic-themed NPCs around your location.")]
+        private static void SpawnMagicNPCs_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+            Map map = from.Map;
+            Point3D baseLocation = from.Location;
+
+            if (map == null || map == Map.Internal)
+            {
+                from.SendMessage("You must be in a valid location.");
+                return;
+            }
+
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X + 2, baseLocation.Y + 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Archmage"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X - 2, baseLocation.Y + 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Mystic Fortune Teller"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X + 2, baseLocation.Y - 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Necromancer"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X - 2, baseLocation.Y - 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Druid"));
+
+            from.SendMessage("Spawned 4 magic NPCs!");
+        }
+
+        [Usage("SpawnAdventurerNPCs")]
+        [Description("Spawns a set of adventurer NPCs around your location.")]
+        private static void SpawnAdventurerNPCs_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+            Map map = from.Map;
+            Point3D baseLocation = from.Location;
+
+            if (map == null || map == Map.Internal)
+            {
+                from.SendMessage("You must be in a valid location.");
+                return;
+            }
+
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X + 2, baseLocation.Y + 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Veteran Warrior"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X - 2, baseLocation.Y + 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Treasure Hunter"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X + 2, baseLocation.Y - 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Bard"));
+            SpawnNPCWithPersonality(from, new Point3D(baseLocation.X - 2, baseLocation.Y - 2, baseLocation.Z), map, NPCPersonalities.GetPersonality("Ranger"));
+
+            from.SendMessage("Spawned 4 adventurer NPCs!");
+        }
+
+        [Usage("SpawnRandomLLMNpc")]
+        [Description("Spawns a random LLM NPC at your location.")]
+        private static void SpawnRandomNpc_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            if (from.Map == null || from.Map == Map.Internal)
+            {
+                from.SendMessage("You must be in a valid location.");
+                return;
+            }
+
+            // DEPRECATED - Use [SpawnPersonalityNPC command instead
+            from.SendMessage("This command is deprecated. Use [SpawnPersonalityNPC instead");
+            // NPCPersonality personality = NPCPersonalities.GetRandomPersonality();
+            // LLMNpc npc = SpawnNPCWithPersonality(from, from.Location, from.Map, personality);
+            // from.SendMessage($"Spawned random NPC: {npc.Name}");
+        }
+
+        /* DEPRECATED - Use [SpawnPersonalityNPC command instead
+        private static LLMNpc SpawnNPCWithPersonality(Mobile from, Point3D location, Map map, NPCPersonality personality)
+        {
+            // Create the LLM NPC with a random generated name and vendor inventory
+            string fullName = personality.GenerateFullName();
+            Console.WriteLine($"[PersonalitySpawner] Creating NPC: {fullName}");
+            Console.WriteLine($"[PersonalitySpawner] VendorInventory: {(personality.VendorInventory != null ? personality.VendorInventory.Length.ToString() : "null")}");
+            LLMNpc npc = new LLMNpc(fullName, personality.Personality, personality.VendorInventory);
+            Console.WriteLine($"[PersonalitySpawner] NPC created successfully");
+
+            // Set body type
+            npc.Body = personality.BodyType;
+            npc.Hue = Utility.RandomSkinHue();
+
+            // Remove default items
+            List<Item> toDelete = new List<Item>();
+            foreach (Item item in npc.Items)
+            {
+                toDelete.Add(item);
+            }
+            foreach (Item item in toDelete)
+            {
+                item.Delete();
+            }
+
+            // Add personality-specific items
+            foreach (string itemName in personality.Items)
+            {
+                Item item = CreateItem(itemName);
+                if (item != null)
+                {
+                    npc.AddItem(item);
+                }
+            }
+
+            // Move to world
+            npc.MoveToWorld(location, map);
+
+            return npc;
+        }
+        */
+
+        private static Item CreateItem(string itemName)
+        {
+            try
+            {
+                switch (itemName)
+                {
+                    // Armor
+                    case "PlateChest": return new PlateChest();
+                    case "PlateLegs": return new PlateLegs();
+                    case "PlateArms": return new PlateArms();
+                    case "PlateGloves": return new PlateGloves();
+                    case "ChainLegs": return new ChainLegs();
+                    case "StuddedChest": return new StuddedChest();
+                    case "StuddedLegs": return new StuddedLegs();
+                    case "LeatherChest": return new LeatherChest();
+                    case "LeatherLegs": return new LeatherLegs();
+                    case "LeatherGloves": return new LeatherGloves();
+
+                    // Helmets
+                    case "CloseHelm": return new CloseHelm();
+                    case "LeatherCap": return new LeatherCap();
+
+                    // Clothing
+                    case "Robe": return new Robe(Utility.RandomNeutralHue());
+                    case "MonkRobe": return new MonkRobe();
+                    case "FancyShirt": return new FancyShirt();
+                    case "Shirt": return new Shirt();
+                    case "Doublet": return new Doublet();
+                    case "LongPants": return new LongPants();
+                    case "ShortPants": return new ShortPants();
+                    case "FancyDress": return new FancyDress();
+                    case "GildedDress": return new GildedDress();
+                    case "Cloak": return new Cloak();
+
+                    // Footwear
+                    case "Boots": return new Boots();
+                    case "Sandals": return new Sandals();
+
+                    // Hats
+                    case "WizardsHat": return new WizardsHat(Utility.RandomBlueHue());
+                    case "FeatheredHat": return new FeatheredHat();
+                    case "FloppyHat": return new FloppyHat();
+                    case "SkullCap": return new SkullCap();
+                    case "TricorneHat": return new TricorneHat();
+                    case "Bandana": return new Bandana();
+                    case "Circlet": return new Circlet();
+
+                    // Accessories
+                    case "FullApron": return new FullApron();
+                    case "HalfApron": return new HalfApron();
+
+                    default:
+                        Console.WriteLine($"[PersonalitySpawner] Unknown item: {itemName}");
+                        return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[PersonalitySpawner] Error creating item {itemName}: {ex.Message}");
+                return null;
+            }
+        }
+    }
+}

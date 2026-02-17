@@ -1,0 +1,194 @@
+[
+  {
+    "id": "commoner_daily_life",
+    "title": "Daily Life and Local Knowledge",
+    "category": "Social",
+    "summary": "Daily routines, local customs, community life, practical knowledge",
+    "content": "Commoners understand daily life and local customs throughout Britannia. They know practical skills for everyday living including basic crafts, trade, and community activities. Commoners understand local customs, traditions, and social norms. They know community resources and where to find essential services. Commoners share local gossip and neighborhood information. They understand practical survival skills and resource gathering. Commoners know basic market activities and simple trade. They understand community relationships and social dynamics.",
+    "tags": [
+      "commoner",
+      "daily life",
+      "local",
+      "custom",
+      "community",
+      "practical",
+      "gossip",
+      "survival"
+    ],
+    "importance": 7,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Commoner": "Expert",
+      "Peasant": "Expert",
+      "Merchant": "Proficient",
+      "Noble": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Commoner",
+    "secondaryReferralTarget": "Merchant"
+  },
+  {
+    "id": "peasant_agriculture_life",
+    "title": "Peasant Life and Agriculture",
+    "category": "Social",
+    "summary": "Rural life, farming, agriculture, simple living",
+    "content": "Peasants live simple rural lives focused on agriculture and basic survival. They understand farming, crop cultivation, and animal husbandry. Peasants know practical skills for rural living including basic crafts and resource management. They understand seasonal cycles and agricultural timing. Peasants know local resources and how to make the most of available materials. They understand community cooperation and mutual support. Peasant life emphasizes hard work, simplicity, and connection to the land.",
+    "tags": [
+      "peasant",
+      "rural",
+      "agriculture",
+      "farming",
+      "simple",
+      "survival",
+      "community",
+      "land"
+    ],
+    "importance": 7,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Peasant": "Expert",
+      "Farmer": "Proficient",
+      "Commoner": "Proficient",
+      "Noble": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Peasant",
+    "secondaryReferralTarget": "Farmer"
+  },
+  {
+    "id": "noble_social_hierarchy",
+    "title": "Social Hierarchy and Nobility",
+    "category": "Social",
+    "summary": "Noble ranks, court etiquette, social status, political knowledge",
+    "content": "Nobles understand social hierarchy and noble ranks throughout Britannia. They know court etiquette, protocol, and social obligations. Nobles understand political structures and governance systems. They know about noble families, lineages, and inheritance. Nobles understand social status and how it affects interactions. They know about Lord British's court and major political figures. Nobles understand cultural knowledge including art, literature, and fashion. They coordinate with other nobles and understand diplomatic relations.",
+    "tags": [
+      "noble",
+      "nobility",
+      "hierarchy",
+      "court",
+      "etiquette",
+      "political",
+      "status",
+      "culture"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Noble": "Expert",
+      "Scholar": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Noble",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "towncrier_news",
+    "title": "News and Announcements",
+    "category": "Social",
+    "summary": "Public announcements, news delivery, community information",
+    "content": "Town criers deliver news and public announcements throughout Britannia. They know current events, official proclamations, and community information. Town criers understand how to communicate information effectively to the public. They know which news is important and how to prioritize announcements. Town criers coordinate with officials and authorities to deliver official messages. They understand public communication and audience engagement. News delivery includes both official announcements and general community information.",
+    "tags": [
+      "town crier",
+      "news",
+      "announcement",
+      "public",
+      "information",
+      "community",
+      "communication",
+      "proclamation"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "TownCrier": "Expert",
+      "Barkeeper": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "TownCrier",
+    "secondaryReferralTarget": "Barkeeper"
+  },
+  {
+    "id": "gypsy_fortune",
+    "title": "Fortune Telling and Mysticism",
+    "category": "Social",
+    "summary": "Fortune telling, mystical knowledge, divination, mysterious arts",
+    "content": "Gypsies practice fortune telling and mystical arts. They use various divination methods including tarot cards, crystal balls, and palm reading. Gypsies understand mystical knowledge and esoteric practices. They provide guidance and predictions based on mystical insights. Gypsies know about omens, signs, and mystical phenomena. They understand the mysterious and supernatural aspects of the world. Fortune telling combines intuition, knowledge, and mystical arts. Gypsies maintain a mysterious and free-spirited lifestyle.",
+    "tags": [
+      "gypsy",
+      "fortune",
+      "mystical",
+      "divination",
+      "prediction",
+      "mystery",
+      "supernatural",
+      "guidance"
+    ],
+    "importance": 7,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Gypsy": "Expert",
+      "Mage": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Gypsy",
+    "secondaryReferralTarget": "Mage"
+  },
+  {
+    "id": "hairstylist_appearance",
+    "title": "Hair Styling and Appearance",
+    "category": "Social",
+    "summary": "Hair styling, appearance customization, fashion, personal grooming",
+    "content": "Hair stylists specialize in hair styling and appearance customization. They create various hairstyles and hair colors for clients. Hair stylists understand fashion trends and personal appearance. They know how to customize appearance to match client preferences. Hair styling includes cutting, coloring, and styling techniques. Stylists understand how appearance affects social interactions. They coordinate with tailors and other fashion professionals. Personal grooming and appearance care are important social skills.",
+    "tags": [
+      "hair stylist",
+      "hair",
+      "styling",
+      "appearance",
+      "fashion",
+      "grooming",
+      "customization",
+      "personal"
+    ],
+    "importance": 7,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "HairStylist": "Expert",
+      "Tailor": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "HairStylist",
+    "secondaryReferralTarget": "Tailor"
+  },
+  {
+    "id": "shipwright_ships",
+    "title": "Ship Building and Maritime Knowledge",
+    "category": "Social",
+    "summary": "Ship construction, maritime knowledge, sailing, naval architecture",
+    "content": "Shipwrights build ships and understand maritime knowledge. They construct various ship types including small boats and large vessels. Shipwrights understand naval architecture and ship construction techniques. They know materials required for ship building including wood, cloth, and metal components. Shipwrights understand sailing principles and ship performance. They know how to maintain and repair ships. Maritime knowledge includes navigation, sea conditions, and sailing techniques. Shipwrights coordinate with sailors and maritime professionals.",
+    "tags": [
+      "shipwright",
+      "ship",
+      "maritime",
+      "sailing",
+      "construction",
+      "naval",
+      "boat",
+      "vessel"
+    ],
+    "importance": 7,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Shipwright": "Expert",
+      "Carpenter": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Shipwright",
+    "secondaryReferralTarget": "Carpenter"
+  }
+]
+

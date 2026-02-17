@@ -1,0 +1,1397 @@
+[
+  {
+    "id": "britain_001",
+    "category": "Location",
+    "title": "Britain - Capital of Britannia",
+    "content": "Britain is the largest and most prosperous city in Britannia, founded by Lord British in the Age of Enlightenment. The city serves as the political and economic heart of the realm, home to the majestic Castle British where Lord British holds court. Its stone walls have withstood countless sieges, and its markets bustle with traders from across the land. Britain represents the virtue of Compassion and is known for its welcoming atmosphere and charitable citizens.",
+    "tags": ["britain", "city", "capital", "lord british", "castle", "compassion", "virtue"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "trinsic_001",
+    "category": "Location",
+    "title": "Trinsic - City of Honor",
+    "content": "Trinsic is a fortified city in southern Britannia, home to the Paladins and representing the virtue of Honor. The city is known for its strict code of conduct and its famous Paladin order. Trinsic's thick walls and vigilant guards make it one of the safest cities in the realm. The city has weathered many attacks, including a devastating plague that once threatened all of Britannia.",
+    "tags": ["trinsic", "city", "paladins", "honor", "virtue", "fortified"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "vesper_001",
+    "category": "Location",
+    "title": "Vesper - Mining Town",
+    "content": "Vesper is a prosperous mining town in northeastern Britannia, built on rich mineral deposits. The city is known for its large museum and its practical, hardworking citizens. Vesper serves as a major trading hub for ore and crafted goods. The nearby mountains provide abundant resources, making Vesper essential to Britannia's economy.",
+    "tags": ["vesper", "city", "mining", "ore", "trade", "museum"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "moonglow_001",
+    "category": "Location",
+    "title": "Moonglow - City of Mages",
+    "content": "Moonglow is an island city and the center of magical learning in Britannia, representing the virtue of Honesty. Home to the Lycaeum, the great library of Britannia, Moonglow attracts scholars and mages from across the realm. The city's streets are lined with magic shops and the air crackles with arcane energy. The Lycaeum contains thousands of tomes on magic, history, and philosophy.",
+    "tags": ["moonglow", "city", "magic", "mages", "lycaeum", "honesty", "virtue", "island", "library"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "yew_001",
+    "category": "Location",
+    "title": "Yew - Forest Town of Justice",
+    "content": "Yew is a peaceful town nestled in the deep forests west of Britain, representing the virtue of Justice. The town is home to the Court of Justice and the Empath Abbey. Yew's citizens value fairness and the rule of law above all else. The surrounding forests are home to skilled rangers and druids who protect the wilderness.",
+    "tags": ["yew", "city", "forest", "justice", "virtue", "court", "abbey", "rangers"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "minoc_001",
+    "category": "Location",
+    "title": "Minoc - City of Artisans",
+    "content": "Minoc is a humble mining town in northern Britannia, representing the virtue of Sacrifice. The city is known for its hardworking artisans, blacksmiths, and miners who toil in the nearby mountains. Minoc's citizens pride themselves on their work ethic and their willingness to sacrifice personal comfort for the greater good. The city's forges burn day and night.",
+    "tags": ["minoc", "city", "mining", "artisans", "sacrifice", "virtue", "blacksmiths"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "skara_brae_001",
+    "category": "Location",
+    "title": "Skara Brae - Island of Spirituality",
+    "content": "Skara Brae is an island city northwest of Britannia, representing the virtue of Spirituality. The city is home to rangers, druids, and those who seek spiritual enlightenment. The sacred Chaos Shrine lies within the city. Skara Brae's peaceful atmosphere attracts contemplative souls and those seeking inner peace. The city was once destroyed but has been rebuilt by its devoted inhabitants.",
+    "tags": ["skara brae", "island", "spirituality", "virtue", "rangers", "druids", "chaos shrine"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "magincia_001",
+    "category": "Location",
+    "title": "Magincia - Humbled City",
+    "content": "Magincia was once a wealthy island city whose citizens grew proud and arrogant. As punishment for their hubris, the city was destroyed by demons. It has since been rebuilt and now represents the virtue of Humility. The rebuilt Magincia serves as a reminder that pride comes before the fall, and its citizens now embrace humility and modesty.",
+    "tags": ["magincia", "island", "humility", "virtue", "demons", "rebuilt", "pride"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "jhelom_001",
+    "category": "Location",
+    "title": "Jhelom - Warrior's Isle",
+    "content": "Jhelom is an island city south of Britannia, representing the virtue of Valor. The city is home to fierce warriors, gladiators, and those who live for combat. Jhelom's fighting pits attract warriors from across the realm seeking to prove their worth. The city values strength, courage, and martial prowess above all else.",
+    "tags": ["jhelom", "island", "warriors", "valor", "virtue", "combat", "gladiators"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "cove_001",
+    "category": "Location",
+    "title": "Cove - Coastal Village",
+    "content": "Cove is a small coastal village north of Britain, known for its peaceful atmosphere and skilled craftsmen. The village is home to orc fighters who have learned to coexist with humans. Cove's docks see regular trade from passing ships, and the village serves as a quiet retreat from the busier cities of Britannia.",
+    "tags": ["cove", "village", "coastal", "orcs", "peaceful", "crafts"],
+    "importance": 5,
+    "source": "Official Lore"
+  },
+  {
+    "id": "serpents_hold_001",
+    "category": "Location",
+    "title": "Serpent's Hold - Fortress Island",
+    "content": "Serpent's Hold is a massive fortress on an island east of Britannia. The fortress is home to warriors and guards who train rigorously in combat. The Silver Serpent venom, a powerful reagent, is found on this island. Serpent's Hold has been the site of many important battles throughout Britannia's history and serves as a strategic military outpost.",
+    "tags": ["serpents hold", "fortress", "island", "warriors", "military", "silver serpent"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "nujel_m_001",
+    "category": "Location",
+    "title": "Nujel'm - Desert City",
+    "content": "Nujel'm is an exotic desert city on a small island, known for its Sultan's palace and Middle Eastern architecture. The city is a center of trade for exotic goods, spices, and fine textiles. Nujel'm's culture is distinct from mainland Britannia, featuring bazaars, dancing, and ornate decorations. The city welcomes traders but maintains its own unique customs and laws.",
+    "tags": ["nujel'm", "desert", "sultan", "exotic", "trade", "island", "bazaar"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "shame_001",
+    "category": "Location",
+    "title": "Shame - Dungeon of Humility",
+    "content": "Shame is one of the eight great dungeons of Britannia, located in the northern forests near Yew. The dungeon tests the virtue of Humility and is filled with earth elementals, gazers, and other dangerous creatures. Deep within lies a shrine to Humility. Many proud adventurers have entered Shame seeking glory, only to learn harsh lessons about their own mortality and limitations.",
+    "tags": ["shame", "dungeon", "humility", "elementals", "gazers", "shrine", "virtue"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "despise_001",
+    "category": "Location",
+    "title": "Despise - Dungeon of Contempt",
+    "content": "Despise is a dungeon west of Britain, once a prison for the most despised criminals of Britannia. The dungeon is infested with vermin, lizardmen, and other foul creatures. The deeper levels contain more dangerous foes including ettins and earth elementals. Despise serves as a grim reminder of justice served and the price of contempt.",
+    "tags": ["despise", "dungeon", "prison", "lizardmen", "ettins", "vermin"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "destard_001",
+    "category": "Location",
+    "title": "Destard - Dragon Lair",
+    "content": "Destard is the most dangerous dungeon in Britannia, home to dragons and drakes of all kinds. Located in the mountains, this volcanic lair is filled with rivers of lava and intense heat. Only the bravest and most skilled adventurers dare enter Destard, seeking dragon hoard treasures. Many have perished in the flames, their bones adding to the dragons' collections.",
+    "tags": ["destard", "dungeon", "dragons", "drakes", "lava", "dangerous", "treasure"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "deceit_001",
+    "category": "Location",
+    "title": "Deceit - Dungeon of Illusions",
+    "content": "Deceit is a dungeon on an island north of Moonglow, filled with undead creatures and practitioners of dark magic. The dungeon is known for its confusing passages and illusory walls that deceive adventurers. Necromancers and liches make their homes in the deeper levels. Deceit represents the corruption of truth and the dangers of lies.",
+    "tags": ["deceit", "dungeon", "undead", "illusions", "necromancers", "liches", "island"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "covetous_001",
+    "category": "Location",
+    "title": "Covetous - Dungeon of Greed",
+    "content": "Covetous is a dungeon in the mountains north of Minoc, home to greedy harpies and those consumed by avarice. The dungeon's treasures attract adventurers, but many fall prey to their own greed and the dungeon's guardians. Deeper levels contain powerful elementals and earth-dwelling creatures guarding hoards of gold.",
+    "tags": ["covetous", "dungeon", "harpies", "greed", "treasure", "elementals"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "wrong_001",
+    "category": "Location",
+    "title": "Wrong - Dungeon of Criminals",
+    "content": "Wrong is a dungeon that once served as a prison for Britannia's worst criminals. The prisoners eventually took over and now the dungeon is filled with brigands, thieves, and worse. The deeper you go, the more dangerous the inhabitants become. Wrong represents injustice and the failure of the prison system.",
+    "tags": ["wrong", "dungeon", "prison", "brigands", "criminals", "thieves"],
+    "importance": 5,
+    "source": "Official Lore"
+  },
+  {
+    "id": "hythloth_001",
+    "category": "Location",
+    "title": "Hythloth - Dungeon of Daemons",
+    "content": "Hythloth is a dangerous dungeon on the island of Skara Brae, serving as a gateway to the realm of daemons. The dungeon descends deep into the earth where demons, gargoyles, and other hellish creatures dwell. The deeper levels connect to the Abyss itself. Few adventurers who reach the lowest depths ever return.",
+    "tags": ["hythloth", "dungeon", "demons", "daemons", "abyss", "gargoyles", "hell"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_compassion_001",
+    "category": "Virtue",
+    "title": "Virtue of Compassion",
+    "content": "Compassion is one of the eight virtues, represented by the city of Britain and the color yellow. It teaches kindness, empathy, and care for others regardless of their station. Those who embody Compassion show mercy to the weak and help those in need without expectation of reward. The Shrine of Compassion is located on the Isle of Compassion.",
+    "tags": ["virtue", "compassion", "britain", "kindness", "empathy", "shrine"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_honor_001",
+    "category": "Virtue",
+    "title": "Virtue of Honor",
+    "content": "Honor is one of the eight virtues, represented by the city of Trinsic and the color orange. It teaches adherence to a code of conduct, keeping one's word, and facing challenges with courage. The Paladins of Trinsic exemplify this virtue through their unwavering dedication to justice and their code. The Shrine of Honor is located on the Isle of Honor.",
+    "tags": ["virtue", "honor", "trinsic", "paladins", "code", "courage", "shrine"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_valor_001",
+    "category": "Virtue",
+    "title": "Virtue of Valor",
+    "content": "Valor is one of the eight virtues, represented by the city of Jhelom and the color red. It teaches bravery in the face of danger and the willingness to fight for what is right. True valor is not recklessness but courage tempered with wisdom. The warriors of Jhelom train constantly to embody this virtue. The Shrine of Valor is located on the Isle of Valor.",
+    "tags": ["virtue", "valor", "jhelom", "bravery", "courage", "warriors", "shrine"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_justice_001",
+    "category": "Virtue",
+    "title": "Virtue of Justice",
+    "content": "Justice is one of the eight virtues, represented by the city of Yew and the color blue. It teaches fairness, truth, and the proper application of law. The Court of Justice in Yew serves as Britannia's highest legal authority. Justice demands that the innocent be protected and the guilty be punished appropriately. The Shrine of Justice is located on the Isle of Justice.",
+    "tags": ["virtue", "justice", "yew", "fairness", "law", "court", "truth", "shrine"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_sacrifice_001",
+    "category": "Virtue",
+    "title": "Virtue of Sacrifice",
+    "content": "Sacrifice is one of the eight virtues, represented by the city of Minoc and the color purple. It teaches the willingness to give up personal comfort and desires for the greater good. The miners and artisans of Minoc embody this virtue through their tireless work providing for Britannia. True sacrifice asks nothing in return. The Shrine of Sacrifice is located on the Isle of Sacrifice.",
+    "tags": ["virtue", "sacrifice", "minoc", "greater good", "selflessness", "shrine"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_honesty_001",
+    "category": "Virtue",
+    "title": "Virtue of Honesty",
+    "content": "Honesty is one of the eight virtues, represented by the city of Moonglow and the color indigo. It teaches truth in word and deed, and the rejection of deception. The scholars of Moonglow pursue truth through study and research. Honesty demands that one face reality and speak truth even when difficult. The Shrine of Honesty is located on the Isle of Honesty.",
+    "tags": ["virtue", "honesty", "moonglow", "truth", "scholars", "integrity", "shrine"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_spirituality_001",
+    "category": "Virtue",
+    "title": "Virtue of Spirituality",
+    "content": "Spirituality is one of the eight virtues, represented by the city of Skara Brae and the color white. It teaches connection to the greater cosmos and understanding one's place in the grand design. Spirituality is the virtue that encompasses and transcends all others. The Shrine of Spirituality is located on the Isle of Skara Brae.",
+    "tags": ["virtue", "spirituality", "skara brae", "cosmos", "enlightenment", "shrine"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "virtue_humility_001",
+    "category": "Virtue",
+    "title": "Virtue of Humility",
+    "content": "Humility is one of the eight virtues, represented by the city of Magincia and the color black. It teaches modesty and the recognition of one's limitations. Magincia was destroyed as punishment for pride, teaching that humility is essential to avoid arrogance. Humility does not mean weakness, but rather honest self-assessment. The Shrine of Humility is located in the dungeon Shame.",
+    "tags": ["virtue", "humility", "magincia", "modesty", "pride", "shrine", "shame"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "lord_british_001",
+    "category": "NPC",
+    "title": "Lord British - Ruler of Britannia",
+    "content": "Lord British is the benevolent ruler of Britannia and founder of Britain. He established the eight virtues as the foundation of Britannian society. Lord British rules from Castle British and is known for his wisdom, justice, and care for his subjects. He is immortal and cannot be killed by conventional means. Despite his power, he values all life and seeks to create a just and prosperous realm.",
+    "tags": ["lord british", "ruler", "king", "virtues", "castle british", "immortal"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "lord_blackthorn_001",
+    "category": "NPC",
+    "title": "Lord Blackthorn - The Dark Lord",
+    "content": "Lord Blackthorn was once a trusted advisor to Lord British but fell from grace, believing that Chaos must balance Order. He rules from Castle Blackthorn in the northwest and surrounds himself with those who share his dark philosophy. Despite his reputation, Blackthorn maintains a twisted sense of honor and believes his way will strengthen Britannia. His conflict with Lord British has shaped much of Britannian history.",
+    "tags": ["blackthorn", "dark lord", "chaos", "villain", "castle blackthorn", "order"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "mondain_001",
+    "category": "NPC",
+    "title": "Mondain - The Evil Wizard",
+    "content": "Mondain was an ancient evil wizard who sought to conquer Britannia through dark magic. He created the Gem of Immortality, making himself nearly invincible. Mondain was eventually defeated, but his influence echoes through the ages. His apprentice was Minax, who would continue his legacy of evil. The defeat of Mondain marked the end of the Age of Darkness.",
+    "tags": ["mondain", "wizard", "evil", "gem of immortality", "age of darkness", "villain"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "minax_001",
+    "category": "NPC",
+    "title": "Minax - The Enchantress",
+    "content": "Minax was Mondain's apprentice and lover who sought revenge for his death. She wielded powerful time-bending magic and nearly destroyed Britannia by manipulating time itself. Minax was eventually defeated, but her machinations caused lasting damage to the timeline. She represents the dangers of unchecked magical power and revenge.",
+    "tags": ["minax", "enchantress", "evil", "time magic", "mondain", "villain"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "exodus_001",
+    "category": "NPC",
+    "title": "Exodus - Creation of Evil",
+    "content": "Exodus was created by Mondain and Minax as their ultimate weapon - a fusion of magic and machine intelligence. This creation threatened to destroy all of Britannia before being defeated. Exodus represents the danger of combining magic and technology without wisdom or morality. Its defeat marked the end of the Age of Darkness and the beginning of the Age of Enlightenment.",
+    "tags": ["exodus", "creation", "mondain", "minax", "machine", "magic", "villain"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "moongates_001",
+    "category": "Magic",
+    "title": "Moongates - Magical Portals",
+    "content": "Moongates are magical portals that appear at specific times based on the phases of the moons Trammel and Felucca. These shimmering gates allow instant travel between cities and landmarks across Britannia. The moongate system is ancient and its true origins are unknown. Skilled mages can predict when moongates will appear and where they lead based on lunar cycles.",
+    "tags": ["moongates", "portals", "teleportation", "travel", "moons", "trammel", "felucca"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "reagents_001",
+    "category": "Magic",
+    "title": "Reagents - Components of Magic",
+    "content": "Magic in Britannia requires physical reagents to cast spells. The eight basic reagents are: Black Pearl, Bloodmoss, Garlic, Ginseng, Mandrake Root, Nightshade, Spider's Silk, and Sulfurous Ash. Each reagent is associated with different magical effects, and combining them in specific ways produces different spells. Reagents can be purchased from alchemists and herbalists throughout Britannia.",
+    "tags": ["reagents", "magic", "spells", "black pearl", "bloodmoss", "garlic", "ginseng", "mandrake", "nightshade", "spiders silk", "sulfurous ash"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "magic_circles_001",
+    "category": "Magic",
+    "title": "The Eight Circles of Magic",
+    "content": "Magic in Britannia is divided into eight circles of increasing power. First Circle spells are simple cantrips, while Eighth Circle spells can reshape reality itself. Each circle requires more skill and more powerful reagents. Mastering all eight circles takes years of dedicated study. The Lycaeum in Moonglow is the premier institution for magical learning.",
+    "tags": ["magic", "circles", "spells", "power", "lycaeum", "mages"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "trammel_felucca_001",
+    "category": "History",
+    "title": "The Two Moons - Trammel and Felucca",
+    "content": "Britannia is illuminated by two moons: Trammel and Felucca. These celestial bodies govern the moongate cycles and are said to influence magic and fate. Trammel is the larger, brighter moon, while Felucca is smaller and darker. Ancient prophecies speak of the moons' alignment bringing great change to the realm.",
+    "tags": ["trammel", "felucca", "moons", "moongates", "prophecy", "celestial"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "britannia_001",
+    "category": "Location",
+    "title": "Britannia - The Realm",
+    "content": "Britannia is a realm founded on the principles of the eight virtues. The land consists of multiple continents and islands, each with unique cultures and challenges. Lord British rules Britannia from Castle British in the capital city of Britain. The realm has endured many threats from evil wizards, invasions, and internal strife, but the virtues have helped it survive and prosper.",
+    "tags": ["britannia", "realm", "virtues", "lord british", "kingdom"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "gargoyles_001",
+    "category": "Faction",
+    "title": "Gargoyles - The Winged Race",
+    "content": "Gargoyles are a winged race from the realm of the Gargoyle homeland. They were once enemies of Britannia but have since found peace and coexistence with humans. Gargoyles have their own culture, language, and virtues (Principles of Control, Passion, and Diligence). They are skilled craftsmen and powerful warriors. The False Prophet Exodus once manipulated them into war against Britannia.",
+    "tags": ["gargoyles", "race", "wings", "principles", "exodus", "craftsmen"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "paladins_001",
+    "category": "Faction",
+    "title": "The Paladins - Warriors of Honor",
+    "content": "The Paladins are an order of holy warriors based in Trinsic who dedicate their lives to upholding honor and justice. They follow a strict code of conduct and are renowned for their combat prowess and unwavering integrity. Paladins swear oaths to protect the innocent and fight evil wherever it appears. They can channel divine power to aid in battle and healing.",
+    "tags": ["paladins", "trinsic", "honor", "warriors", "holy", "code", "justice"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "thieves_guild_001",
+    "category": "Faction",
+    "title": "Thieves Guild - Shadows and Secrets",
+    "content": "The Thieves Guild operates in the shadows of Britannia's cities, particularly in Buccaneer's Den. While officially outlawed, the guild maintains a code of honor among thieves. Members learn the arts of stealth, lockpicking, and sleight of hand. The guild sees itself as redistributing wealth from the greedy rich, though many simply pursue personal gain.",
+    "tags": ["thieves guild", "thieves", "buccaneers den", "stealth", "crime", "shadows"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "rangers_001",
+    "category": "Faction",
+    "title": "Rangers - Guardians of the Wild",
+    "content": "Rangers are skilled woodsmen and protectors of Britannia's forests and wilderness. They are expert trackers, archers, and survivalists. Many rangers make their home in Yew, living in harmony with nature. Rangers track dangerous beasts, guide travelers through wilderness, and protect the forests from those who would exploit them. They have a deep respect for the natural world.",
+    "tags": ["rangers", "wilderness", "forest", "yew", "tracking", "nature", "archers"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dragons_001",
+    "category": "Monster",
+    "title": "Dragons - Ancient Terror",
+    "content": "Dragons are among the most dangerous creatures in Britannia. These massive, intelligent reptiles breathe fire and possess near-impenetrable scales. Dragons hoard treasure in their lairs, particularly in the dungeon Destard. They are ancient beings with long memories and great cunning. A fully grown dragon can level a village and few warriors can stand against one alone.",
+    "tags": ["dragons", "monster", "fire", "destard", "treasure", "dangerous", "ancient"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "liches_001",
+    "category": "Monster",
+    "title": "Liches - Undead Mages",
+    "content": "Liches are powerful undead spellcasters who have traded their mortality for magical power. These skeletal mages command devastating spells and often lead armies of lesser undead. Liches are found in the deepest dungeons, particularly Deceit and Hythloth. They guard ancient tomes and artifacts jealously. Destroying a lich often requires both martial and magical prowess.",
+    "tags": ["liches", "undead", "magic", "necromancy", "deceit", "powerful", "skeletal"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "daemons_001",
+    "category": "Monster",
+    "title": "Daemons - Hellish Entities",
+    "content": "Daemons are powerful demons summoned from hellish realms. They possess immense strength, can cast devastating spells, and are highly intelligent. Daemons often serve evil mages or inhabit the deepest dungeons like Hythloth. They can be summoned through dark magic but are difficult to control. A daemon's true name grants power over it, but few know such secrets.",
+    "tags": ["daemons", "demons", "hell", "magic", "summoning", "hythloth", "powerful"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "orcs_001",
+    "category": "Monster",
+    "title": "Orcs - Savage Warriors",
+    "content": "Orcs are brutish humanoids known for their strength and savage nature. They form tribal societies and often raid human settlements for supplies and glory. Orcs speak their own guttural language and value strength above all. Some orcs, particularly in Cove, have learned to coexist peacefully with humans. Orc forts dot the wilderness, serving as bases for raids.",
+    "tags": ["orcs", "savage", "tribal", "warriors", "raids", "cove", "strength"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "buccaneers_den_001",
+    "category": "Location",
+    "title": "Buccaneer's Den - Haven of Pirates",
+    "content": "Buccaneer's Den is a lawless island town serving as haven for pirates, thieves, and outlaws. The town has no guards and no laws, operating purely on the principle of might makes right. Despite its dangers, the Den serves as a trading post for stolen goods and a gathering place for criminals. The Thieves Guild maintains a strong presence here.",
+    "tags": ["buccaneers den", "pirates", "thieves", "lawless", "island", "criminals", "thieves guild"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "wind_001",
+    "category": "Location",
+    "title": "Wind - City of Rangers",
+    "content": "Wind is a small city located in a remote area, known for being home to skilled rangers and woodsmen. The city is peaceful and its inhabitants prefer to live in harmony with nature. Wind serves as a training ground for those learning the ways of the ranger. The surrounding forests are carefully protected by the city's inhabitants.",
+    "tags": ["wind", "city", "rangers", "forest", "nature", "peaceful", "woodsmen"],
+    "importance": 5,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_gem_immortality_001",
+    "category": "Artifact",
+    "title": "The Gem of Immortality",
+    "content": "The Gem of Immortality was created by the evil wizard Mondain to grant himself eternal life. This powerful artifact made him nearly invincible until it was shattered by brave heroes. The destruction of the Gem created countless shards that scattered across the realm, each containing a fraction of its power. Some say the shards can still grant glimpses into other worlds and timelines.",
+    "tags": ["gem of immortality", "artifact", "mondain", "immortality", "shards", "magic"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_codex_wisdom_001",
+    "category": "Artifact",
+    "title": "The Codex of Ultimate Wisdom",
+    "content": "The Codex of Ultimate Wisdom is the most sacred book in Britannia, containing the fundamental truths of the eight virtues. It resides in the Void, accessible only to those who have mastered all virtues. The Codex holds answers to the deepest questions of existence and morality. Lord British used its wisdom to establish the virtue system that governs Britannian society.",
+    "tags": ["codex", "wisdom", "virtues", "sacred", "void", "knowledge"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_ankh_001",
+    "category": "Artifact",
+    "title": "The Silver Ankh",
+    "content": "The Silver Ankh is a holy symbol representing the eight virtues united as one. It is worn by those who seek to master the path of the Avatar. The ankh provides protection against evil and can channel the power of virtue. Many temples and shrines display the ankh as a symbol of enlightenment and spiritual perfection.",
+    "tags": ["ankh", "silver", "virtues", "avatar", "holy", "symbol", "protection"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_blackrock_001",
+    "category": "Artifact",
+    "title": "Blackrock - Chaos Material",
+    "content": "Blackrock is a mysterious black stone associated with chaos and dark magic. It appears during catastrophic events and has been used by evil forces throughout history. The material seems to exist partially outside normal reality and resists conventional magic. Large blackrock formations are dangerous, often spawning demons and disrupting the natural order.",
+    "tags": ["blackrock", "chaos", "dark magic", "demons", "mysterious", "catastrophe"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_ararat_001",
+    "category": "Artifact",
+    "title": "The Ararat Artifact",
+    "content": "The Ararat is a powerful artifact from ancient times, said to have the power to reshape reality itself. Little is known about its true origins or capabilities, as it has been lost for centuries. Legends speak of the Ararat being used to create or destroy entire civilizations. Scholars debate whether it even exists or is merely myth.",
+    "tags": ["ararat", "artifact", "ancient", "reality", "power", "legendary", "mysterious"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_shadowlord_gems_001",
+    "category": "Artifact",
+    "title": "Gems of the Shadowlords",
+    "content": "Three gems once housed the essences of the Shadowlords - Hatred, Cowardice, and Falsehood. These artifacts amplified negative emotions and corrupted those nearby. The gems were destroyed to banish the Shadowlords, but fragments may still exist. Even shards of these gems can spread corruption and despair.",
+    "tags": ["shadowlords", "gems", "hatred", "cowardice", "falsehood", "corruption", "evil"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_lens_001",
+    "category": "Artifact",
+    "title": "The Vortex Lens",
+    "content": "The Vortex Lens is a magical artifact that allows one to peer across dimensions and realities. It was created by the Time Lord to navigate the streams of time. The Lens reveals truths hidden from normal sight and can expose illusions. However, looking too deeply into other realities can drive the viewer mad.",
+    "tags": ["vortex lens", "artifact", "dimension", "time", "vision", "magic", "madness"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_serpent_sword_001",
+    "category": "Artifact",
+    "title": "The Sword of Chaos",
+    "content": "The Sword of Chaos is a legendary blade forged in the fires of disorder. The weapon grows stronger in the hands of those who embrace chaos and unpredictability. Its black blade can cut through magical defenses. The sword whispers to its wielder, tempting them toward increasingly chaotic acts.",
+    "tags": ["chaos sword", "weapon", "artifact", "blade", "magic", "corruption"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_serpent_crown_001",
+    "category": "Artifact",
+    "title": "The Serpent Crown",
+    "content": "The Serpent Crown grants its wearer command over serpents and reptilian creatures. Ancient ophidian kings wore this artifact to rule their people. The crown enhances magical power but slowly corrupts the wearer, turning them cold-blooded and merciless. It was lost during the fall of the Ophidian civilization.",
+    "tags": ["serpent crown", "artifact", "ophidian", "snakes", "magic", "corruption", "ancient"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_ring_invisibility_001",
+    "category": "Artifact",
+    "title": "Rings of Invisibility",
+    "content": "Rings of Invisibility are rare magical artifacts that render the wearer completely invisible. These powerful items are highly prized by thieves, spies, and assassins. The enchantment requires constant magical energy to maintain. Prolonged use can cause the wearer to fade partially from reality itself.",
+    "tags": ["ring", "invisibility", "artifact", "magic", "stealth", "thieves"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_daemon_bone_001",
+    "category": "Artifact",
+    "title": "Daemon Bone Armor",
+    "content": "Daemon Bone Armor is crafted from the bones of powerful demons. This black armor provides exceptional protection and magical resistance. However, wearing it for extended periods can corrupt the wearer's soul. The armor whispers dark thoughts and feeds on negative emotions. Only the strong-willed can wear it without succumbing to evil.",
+    "tags": ["daemon bone", "armor", "artifact", "demons", "protection", "corruption", "dark"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_spellbook_necromancy_001",
+    "category": "Artifact",
+    "title": "The Necromancer's Tome",
+    "content": "The Necromancer's Tome is an ancient spellbook containing the darkest secrets of death magic. It teaches how to raise and command the undead, drain life force, and communicate with the dead. The book is bound in human skin and written in blood. Reading it slowly corrupts the reader's soul, but grants terrible power over death itself.",
+    "tags": ["necromancy", "spellbook", "artifact", "undead", "death magic", "dark", "corruption"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_age_darkness_001",
+    "category": "History",
+    "title": "The Age of Darkness",
+    "content": "The Age of Darkness was a terrible period when the wizard Mondain terrorized Britannia with his Gem of Immortality. This dark age saw untold suffering as Mondain's forces conquered cities and enslaved populations. The age ended when brave heroes shattered the Gem of Immortality, destroying Mondain. This event marked the beginning of recorded Britannian history.",
+    "tags": ["age of darkness", "history", "mondain", "gem of immortality", "war", "heroes"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_minax_revenge_001",
+    "category": "History",
+    "title": "The Revenge of Minax",
+    "content": "After Mondain's defeat, his apprentice Minax sought revenge by manipulating time itself. She created temporal paradoxes that threatened to unravel reality. Cities appeared and disappeared from different eras. Heroes traveled through time to stop her, eventually defeating Minax and restoring the timeline. However, some temporal scars remain.",
+    "tags": ["minax", "history", "time", "revenge", "mondain", "paradox", "temporal"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_exodus_war_001",
+    "category": "History",
+    "title": "The War Against Exodus",
+    "content": "Exodus, the creation of Mondain and Minax, nearly destroyed Britannia through its combination of magic and machine intelligence. This fusion of sorcery and technology proved nearly unstoppable. The war devastated entire regions before heroes discovered Exodus could be destroyed by bringing it four sacred cards. The defeat of Exodus ended the Age of Darkness permanently.",
+    "tags": ["exodus", "history", "war", "mondain", "minax", "technology", "magic"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_founding_virtues_001",
+    "category": "History",
+    "title": "The Founding of the Virtues",
+    "content": "After the Age of Darkness ended, Lord British established the eight virtues as the foundation of a new society. He sought to create a realm based on moral principles rather than simple law. The virtue system was derived from the three principles: Truth, Love, and Courage. This marked the beginning of the Age of Enlightenment.",
+    "tags": ["virtues", "history", "lord british", "founding", "enlightenment", "principles"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_destruction_magincia_001",
+    "category": "History",
+    "title": "The Fall of Magincia",
+    "content": "Magincia was once Britannia's wealthiest city, but its citizens grew proud and arrogant. As punishment for their hubris, demons destroyed the city completely. The destruction of Magincia served as a harsh lesson about the virtue of Humility. The city was eventually rebuilt, and its new inhabitants embrace humility and modesty.",
+    "tags": ["magincia", "history", "destruction", "demons", "pride", "humility", "punishment"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_gargoyle_war_001",
+    "category": "History",
+    "title": "The Gargoyle-Human War",
+    "content": "The Gargoyles and humans fought a devastating war based on mutual misunderstanding. The False Prophet (Exodus) manipulated both sides into conflict. The war ended when the truth was revealed and leaders from both races made peace. This conflict taught both civilizations the importance of understanding different perspectives and cultures.",
+    "tags": ["gargoyles", "history", "war", "exodus", "peace", "misunderstanding", "conflict"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_blackthorn_rise_001",
+    "category": "History",
+    "title": "The Rise of Blackthorn",
+    "content": "Lord Blackthorn was once a trusted advisor to Lord British. However, philosophical differences about Order and Chaos led to a schism. Blackthorn established his own castle and gathered followers who believed Chaos must balance Order. This split has defined much of Britannian politics, though direct conflict has been avoided.",
+    "tags": ["blackthorn", "history", "chaos", "order", "lord british", "schism", "politics"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_ophidian_fall_001",
+    "category": "History",
+    "title": "The Fall of the Ophidian Empire",
+    "content": "The Ophidians were an ancient race of serpent people who ruled a vast empire before humans came to dominance. Their civilization was highly advanced in both magic and architecture. Internal strife and civil war led to their downfall. Today, only ruins remain of their once-great cities. Some Ophidians still survive in remote regions.",
+    "tags": ["ophidian", "history", "serpent", "ancient", "empire", "civilization", "ruins"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_trinsic_plague_001",
+    "category": "History",
+    "title": "The Trinsic Plague",
+    "content": "Trinsic once suffered a terrible plague that threatened to spread across all of Britannia. The city was quarantined and the Paladins held firm despite fear and death surrounding them. Heroes eventually discovered the plague was magical in nature and found a cure. The event demonstrated the virtue of Honor as Trinsic's defenders never abandoned their posts.",
+    "tags": ["trinsic", "history", "plague", "disease", "paladins", "honor", "quarantine"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_skara_brae_destruction_001",
+    "category": "History",
+    "title": "The Destruction and Rebirth of Skara Brae",
+    "content": "Skara Brae was completely destroyed in a cataclysm, its buildings reduced to rubble and many inhabitants killed. The survivors, rather than abandon the island, rebuilt their city from the ruins. This act of dedication and faith exemplified the virtue of Spirituality. The rebuilt Skara Brae stands as testament to the power of belief and perseverance.",
+    "tags": ["skara brae", "history", "destruction", "rebuild", "spirituality", "cataclysm", "faith"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_shadowlord_crisis_001",
+    "category": "History",
+    "title": "The Shadowlord Crisis",
+    "content": "The three Shadowlords - Hatred, Cowardice, and Falsehood - once threatened to corrupt all of Britannia. These entities were antithetical to the virtues and fed on negative emotions. They were created from shards of Mondain's Gem of Immortality. Heroes had to destroy the gems housing their essences to banish them. Their influence left lasting scars on the realm.",
+    "tags": ["shadowlords", "history", "hatred", "cowardice", "falsehood", "gems", "crisis", "mondain"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_britannian_colony_001",
+    "category": "History",
+    "title": "The Lost Britannian Colonies",
+    "content": "Lord British once sponsored expeditions to explore and colonize distant lands. Several colonies were established but lost contact with Britannia. Some colonies failed due to monsters or harsh conditions. Others may have survived and developed their own cultures in isolation. Occasionally, explorers discover ruins of these lost settlements.",
+    "tags": ["colonies", "history", "exploration", "lost", "lord british", "settlements", "ruins"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_lost_lands_001",
+    "category": "Geography",
+    "title": "The Lost Lands - Mysterious Continent",
+    "content": "The Lost Lands is a dangerous continent discovered relatively recently. It is home to ancient dinosaurs, primitive tribes, and ruins of forgotten civilizations. The land is wild and untamed, with fewer human settlements than Britannia proper. The Lost Lands contain resources not found elsewhere, attracting brave or foolhardy explorers.",
+    "tags": ["lost lands", "continent", "dinosaurs", "exploration", "wilderness", "ancient", "dangerous"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_sea_britannia_001",
+    "category": "Geography",
+    "title": "The Britannian Sea",
+    "content": "The Britannian Sea surrounds the main continent and its islands. These waters are traveled by merchants, fishermen, and sometimes pirates. Sea serpents and other dangerous creatures lurk in the depths. Ships sail between cities carrying goods and passengers. The sea has claimed many vessels over the centuries, their treasures resting on the ocean floor.",
+    "tags": ["sea", "ocean", "ships", "pirates", "serpents", "trade", "travel"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_fire_island_001",
+    "category": "Geography",
+    "title": "Fire Island - Volcanic Domain",
+    "content": "Fire Island is a volcanic island southwest of Britannia, home to fire elementals and heat-resistant creatures. The island's volcano is perpetually active, spewing lava and ash. Ancient fire temples dot the landscape, built by forgotten civilizations that worshiped flame. The island is dangerous but contains rare minerals found nowhere else.",
+    "tags": ["fire island", "volcano", "lava", "elementals", "fire", "dangerous", "minerals"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_ice_island_001",
+    "category": "Geography",
+    "title": "Ice Island - Frozen Wasteland",
+    "content": "Ice Island lies in the frozen north, covered in perpetual ice and snow. Polar bears, ice elementals, and frost wyrms inhabit this harsh environment. The island contains ice dungeons carved into glaciers. Few brave the extreme cold to explore this land, but it holds secrets from the Age of Darkness.",
+    "tags": ["ice island", "frozen", "snow", "ice", "elementals", "frost", "north", "cold"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_compassion_desert_001",
+    "category": "Geography",
+    "title": "The Compassion Desert",
+    "content": "The Compassion Desert is a vast arid region in southern Britannia. Despite the harsh environment, desert nomads make their home here. Oases provide rare water sources. The desert is home to giant scorpions, sand vortexes, and occasional undead. Ancient ruins buried in the sands hint at civilizations that thrived before the desert formed.",
+    "tags": ["desert", "compassion", "nomads", "oasis", "scorpions", "sand", "ruins", "arid"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_deep_forest_001",
+    "category": "Geography",
+    "title": "The Deep Forest",
+    "content": "The Deep Forest covers much of western Britannia, particularly around Yew. These ancient woods are home to rangers, druids, and woodland creatures. The forest contains hidden groves, fairy rings, and sacred trees. Deeper into the woods, the trees grow dark and twisted, harboring dangerous beasts and darker things.",
+    "tags": ["forest", "woods", "yew", "rangers", "druids", "trees", "sacred", "wilderness"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_ethereal_void_001",
+    "category": "Geography",
+    "title": "The Ethereal Void",
+    "content": "The Ethereal Void exists between the physical world and other planes of existence. Mages can access this realm through powerful magic. In the Void, physical laws work differently and spirits dwell. The Codex of Ultimate Wisdom resides in the Void's heart. Spending too long in the Void can cause one to lose connection to physical reality.",
+    "tags": ["void", "ethereal", "realm", "magic", "codex", "spirits", "otherworldly"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_underworld_001",
+    "category": "Geography",
+    "title": "The Underworld - Realm Below",
+    "content": "The Underworld is a vast network of caverns and tunnels beneath Britannia. This subterranean realm is home to the Gargoyles and many dangerous creatures. Entire cities exist underground, including the gargoyle capital. The Underworld connects to surface dungeons and contains ancient secrets. Traveling the Underworld is dangerous for those unfamiliar with its passages.",
+    "tags": ["underworld", "underground", "caverns", "gargoyles", "tunnels", "subterranean"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_shrine_isles_001",
+    "category": "Geography",
+    "title": "The Shrine Islands",
+    "content": "Eight small islands surround Britannia, each containing a shrine to one of the eight virtues. These sacred islands are places of meditation and spiritual pilgrimage. Each shrine tests visitors on their understanding of its associated virtue. The shrines are protected by magical barriers and virtuous guardians. Reaching the shrines often requires solving moral puzzles.",
+    "tags": ["shrines", "islands", "virtues", "sacred", "pilgrimage", "meditation", "moral"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "geography_serpent_isle_001",
+    "category": "Geography",
+    "title": "The Serpent Isle",
+    "content": "Serpent Isle is a distant land with its own complex history and philosophy. The island was once inhabited by Ophidians who followed different principles than Britannian virtues. Chaos and Order struggle for balance here. The island contains ancient ruins, sleeping gods, and powerful artifacts. Serpent Isle was cut off from Britannia for centuries before being rediscovered.",
+    "tags": ["serpent isle", "island", "ophidians", "chaos", "order", "ancient", "distant"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_doom_001",
+    "category": "Location",
+    "title": "Doom - Dungeon of Dark Knights",
+    "content": "Doom is one of the most challenging dungeons in all of Britannia, filled with powerful dark knights, bone demons, and other elite creatures. The dungeon's depths contain legendary artifacts but demand great skill to obtain. Doom represents the ultimate test of combat prowess. Many adventuring parties have been wiped out within its halls.",
+    "tags": ["doom", "dungeon", "dark knights", "demons", "artifacts", "dangerous", "elite"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_wind_001",
+    "category": "Location",
+    "title": "Wind Dungeon - Passages of Air",
+    "content": "Wind Dungeon is a maze of passages filled with air elementals and creatures of flight. The dungeon's corridors seem to shift with invisible currents. Harpies nest in the upper levels while more dangerous foes lurk below. The dungeon tests one's ability to adapt to changing conditions and find paths through apparent dead ends.",
+    "tags": ["wind", "dungeon", "air elementals", "harpies", "maze", "air", "flight"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_terathan_keep_001",
+    "category": "Location",
+    "title": "Terathan Keep - Spider Lair",
+    "content": "Terathan Keep is an ancient fortress taken over by the spider-like Teratans. These intelligent arachnids have created a complex society within the keep. The lower levels are filled with webs, trapped victims, and Terathan warriors. The keep's original purpose has been lost to time, but Terathan culture now dominates every chamber.",
+    "tags": ["terathan", "spiders", "keep", "fortress", "arachnid", "webs", "ancient"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_blood_001",
+    "category": "Location",
+    "title": "Blood Dungeon - Crimson Depths",
+    "content": "Blood Dungeon is named for the red stone that makes up its walls and the blood of countless fallen adventurers. The dungeon is home to blood elementals, vampires, and creatures that feed on life force. Dark rituals were once performed in its deepest chambers. The air itself feels heavy with malevolence and ancient evil.",
+    "tags": ["blood", "dungeon", "vampires", "elementals", "dark", "evil", "crimson"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_ophidian_lair_001",
+    "category": "Location",
+    "title": "Ophidian Lair - Serpent Temple",
+    "content": "The Ophidian Lair is a temple complex built by the ancient serpent people. The architecture is alien to human eyes, with passages sized for serpentine bodies. Ophidian guards still protect the sacred chambers. The lair contains knowledge of the lost Ophidian civilization and artifacts of great power. Snake motifs decorate every surface.",
+    "tags": ["ophidian", "serpent", "temple", "ancient", "lair", "civilization", "snakes"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_sanctuary_001",
+    "category": "Location",
+    "title": "Sanctuary - Hidden Refuge",
+    "content": "Sanctuary is a hidden dungeon that serves as a refuge for those fleeing persecution or danger. The entrance is secret and protected by powerful magic. Within, refugees from across Britannia have created a small underground community. Sanctuary represents hope for the desperate, though it attracts both those in genuine need and criminals seeking to hide.",
+    "tags": ["sanctuary", "refuge", "hidden", "secret", "protection", "refugees", "underground"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_dupre_001",
+    "category": "NPC",
+    "title": "Sir Dupre - Knight of Honor",
+    "content": "Sir Dupre is one of the most famous knights in Britannia and a champion of the virtue of Honor. He has accompanied the Avatar on many quests and is known for his unwavering courage and loyalty. Dupre enjoys good ale and fellowship but never shirks his duty. His skill with sword and shield is legendary throughout the realm.",
+    "tags": ["dupre", "knight", "honor", "avatar", "companion", "warrior", "loyal"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_iolo_001",
+    "category": "NPC",
+    "title": "Iolo - Master Bard",
+    "content": "Iolo is Britannia's most renowned bard and a trusted companion of the Avatar. He wields a crossbow with deadly accuracy and can inspire allies with his music. Iolo runs a music shop with his wife Gwenno. His songs preserve the history and legends of Britannia. Despite his peaceful profession, Iolo has proven himself in countless battles.",
+    "tags": ["iolo", "bard", "music", "companion", "avatar", "crossbow", "songs"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_shamino_001",
+    "category": "NPC",
+    "title": "Shamino - The Ranger Lord",
+    "content": "Shamino is a ranger of noble birth and a longtime companion of the Avatar. He is skilled in tracking, wilderness survival, and combat. Shamino has traveled between worlds and possesses knowledge of lands beyond Britannia. His loyalty and wisdom make him an invaluable ally. He prefers the wilderness to cities and court politics.",
+    "tags": ["shamino", "ranger", "noble", "companion", "avatar", "tracking", "wilderness"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_jaana_001",
+    "category": "NPC",
+    "title": "Jaana - Druid Healer",
+    "content": "Jaana is a powerful druid and healer who has aided the Avatar many times. She combines natural magic with healing arts to tend the wounded. Jaana lives in harmony with nature and protects the forests of Britannia. Her magical abilities focus on life and growth rather than destruction. She is patient and wise, offering counsel as well as healing.",
+    "tags": ["jaana", "druid", "healer", "companion", "avatar", "magic", "nature", "healing"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_katrina_001",
+    "category": "NPC",
+    "title": "Katrina - The Shepherdess Mage",
+    "content": "Katrina is a powerful mage who was once a simple shepherdess. She discovered her magical talents and trained at the Lycaeum in Moonglow. Despite her great power, she remains humble and kind. Katrina has accompanied the Avatar on several quests, providing crucial magical support. She represents the virtue of Humility through her modest demeanor despite great abilities.",
+    "tags": ["katrina", "mage", "shepherdess", "magic", "humility", "lycaeum", "companion"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_geoffrey_001",
+    "category": "NPC",
+    "title": "Geoffrey - Fighter of Valor",
+    "content": "Geoffrey is a mighty warrior from Jhelom who embodies the virtue of Valor. His strength and fighting skill are legendary, and he has served as the Avatar's companion in many dangerous quests. Geoffrey believes in facing challenges head-on and never backing down from a fight. His courage inspires others to stand firm against evil.",
+    "tags": ["geoffrey", "fighter", "warrior", "valor", "jhelom", "courage", "companion"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_mariah_001",
+    "category": "NPC",
+    "title": "Mariah - Mage of Honesty",
+    "content": "Mariah is a mage from Moonglow dedicated to the virtue of Honesty. She seeks truth through magical research and honest inquiry. Mariah has accompanied the Avatar as both scholar and spellcaster. Her knowledge of arcane lore is extensive, and she never hesitates to speak truth even when inconvenient. She balances intellectual pursuit with moral integrity.",
+    "tags": ["mariah", "mage", "honesty", "moonglow", "truth", "scholar", "magic", "companion"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_sentri_001",
+    "category": "NPC",
+    "title": "Sentri - Guardian of Justice",
+    "content": "Sentri is a fighter from Yew who upholds the virtue of Justice. He serves as a guard and has fought alongside the Avatar to protect the innocent. Sentri believes strongly in the rule of law and fair treatment for all. His dedication to justice makes him incorruptible, though sometimes his strict adherence to rules can seem inflexible.",
+    "tags": ["sentri", "fighter", "justice", "yew", "guard", "law", "protector", "companion"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "location_ilshenar_001",
+    "category": "Location",
+    "title": "Ilshenar - The Shattered Land",
+    "content": "Ilshenar is a fragmented realm accessible through special moongates. This ancient land was once whole but was shattered by powerful magic. The terrain is diverse, ranging from volcanic regions to frozen tundra. Ilshenar is home to unique creatures and contains shrines to both the virtues and their darker counterparts. The land has no cities, only ruins and monster lairs.",
+    "tags": ["ilshenar", "realm", "shattered", "moongates", "ancient", "diverse", "ruins"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "location_tokuno_001",
+    "category": "Location",
+    "title": "Tokuno Islands - Eastern Empire",
+    "content": "The Tokuno Islands are a distant eastern empire with their own culture and traditions. The islands feature oriental architecture, samurai warriors, and ninjas. Three major cities exist: Zento, Makoto-Jima, and Homare-Jima. The Tokuno people follow different customs than Britannia and have their own honor system. The islands were plagued by evil creatures called Yomotsu that emerged from the underworld.",
+    "tags": ["tokuno", "islands", "oriental", "samurai", "ninja", "zento", "eastern", "honor"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "location_ter_mur_001",
+    "category": "Location",
+    "title": "Ter Mur - Gargoyle Homeland",
+    "content": "Ter Mur is the gargoyle homeland, a realm that was long separated from Britannia. The city of Royal City serves as the gargoyle capital, featuring impressive architecture suited to a winged race. Ter Mur contains the Sacred City, the Stygian Abyss dungeon, and various gargoyle settlements. The land reunited with Britannia after centuries of separation, allowing gargoyles and humans to interact peacefully.",
+    "tags": ["ter mur", "gargoyles", "homeland", "royal city", "wings", "stygian abyss", "sacred"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "location_malas_001",
+    "category": "Location",
+    "title": "Malas - The Realm of Darkness",
+    "content": "Malas is a dark realm featuring the necromancer city of Umbra and the paladin stronghold of Luna. This land represents the eternal struggle between light and darkness. Malas contains the Labyrinth, a massive maze filled with dangerous minotaurs. The realm was discovered relatively recently and offers both great danger and opportunity to adventurers.",
+    "tags": ["malas", "darkness", "umbra", "luna", "necromancy", "paladins", "labyrinth", "minotaurs"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "location_umbra_001",
+    "category": "Location",
+    "title": "Umbra - City of Necromancers",
+    "content": "Umbra is a dark city in the realm of Malas, home to necromancers and practitioners of death magic. The city is shrouded in perpetual twilight and surrounded by undead. Despite its dark nature, Umbra has laws and a functioning society. The city serves as a gathering place for those who embrace necromancy and study the dark arts.",
+    "tags": ["umbra", "necromancy", "dark", "malas", "death magic", "undead", "twilight"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "location_luna_001",
+    "category": "Location",
+    "title": "Luna - City of Paladins",
+    "content": "Luna is a shining white city in Malas, home to paladins and holy warriors. The city represents light and purity, standing in contrast to dark Umbra. Luna's architecture features white marble and gold, and the city is heavily defended by righteous warriors. The city serves as a bastion against the darkness that threatens Malas.",
+    "tags": ["luna", "paladins", "light", "malas", "holy", "purity", "white", "marble"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_stygian_abyss_001",
+    "category": "Location",
+    "title": "Stygian Abyss - Ancient Depths",
+    "content": "The Stygian Abyss is a massive dungeon beneath Ter Mur, going deeper than any other known dungeon. Ancient secrets lie in its depths, including the Codex Shrine. The Abyss contains multiple levels, each more dangerous than the last. Demons, dragons, and worse lurk in the darkness. The dungeon has connections to the very foundations of the world.",
+    "tags": ["stygian abyss", "dungeon", "ter mur", "deep", "ancient", "codex", "demons", "dangerous"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_labyrinth_001",
+    "category": "Location",
+    "title": "The Labyrinth - Maze of Malas",
+    "content": "The Labyrinth is a vast maze in Malas inhabited by minotaurs and other creatures. The maze constantly shifts and changes, making navigation extremely difficult. At the center lies the lair of the Minotaur Lord. The Labyrinth tests both combat skill and puzzle-solving ability. Many have entered seeking treasure but became lost forever in its twisting passages.",
+    "tags": ["labyrinth", "maze", "malas", "minotaurs", "shifting", "puzzle", "lost"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_twisted_weald_001",
+    "category": "Location",
+    "title": "Twisted Weald - Corrupted Forest",
+    "content": "Twisted Weald is a corrupted forest dungeon in Ilshenar where nature has been twisted by dark magic. The trees are alive and malevolent, and plant creatures attack intruders. The dungeon is home to corrupted dryads and twisted treants. At its heart lies a powerful evil that corrupts all natural life around it.",
+    "tags": ["twisted weald", "forest", "dungeon", "ilshenar", "corruption", "dryads", "treants", "nature"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_balron_001",
+    "category": "Monster",
+    "title": "Balrons - Greater Demons",
+    "content": "Balrons are the most powerful type of demon, towering beings of flame and fury. They wield massive weapons and can cast devastating spells. Balrons are highly intelligent and often lead demon armies. Their presence alone can terrify lesser creatures. Only the most skilled warriors and mages can hope to defeat a Balron in combat.",
+    "tags": ["balron", "demon", "powerful", "fire", "magic", "intelligent", "dangerous"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_ancient_wyrm_001",
+    "category": "Monster",
+    "title": "Ancient Wyrms - Elder Dragons",
+    "content": "Ancient Wyrms are the oldest and most powerful dragons in existence. These massive creatures have accumulated vast hoards over millennia. Their scales are nearly impenetrable and their breath can melt steel. Ancient Wyrms possess intelligence rivaling the greatest scholars and speak multiple languages. They are extremely territorial and ruthlessly defend their lairs.",
+    "tags": ["ancient wyrm", "dragon", "elder", "powerful", "intelligent", "hoard", "breath"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_titan_001",
+    "category": "Monster",
+    "title": "Titans - Giant Warriors",
+    "content": "Titans are massive humanoid giants with incredible strength and magical power. These ancient beings can crush warriors with their bare hands and cast powerful lightning spells. Titans are remnants of an earlier age when giants ruled the world. They are rare but extremely dangerous when encountered.",
+    "tags": ["titan", "giant", "powerful", "strength", "lightning", "magic", "ancient"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_shadow_lord_001",
+    "category": "Monster",
+    "title": "Shadow Lords - Embodiments of Vice",
+    "content": "The Shadow Lords were three powerful entities representing Hatred, Cowardice, and Falsehood. These beings were created from shards of Mondain's Gem of Immortality. They fed on negative emotions and could corrupt entire cities. The Shadow Lords could possess people and turn them evil. They were eventually banished by destroying the gems that housed their essences.",
+    "tags": ["shadow lords", "hatred", "cowardice", "falsehood", "mondain", "corruption", "possession"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_bone_knight_001",
+    "category": "Monster",
+    "title": "Bone Knights - Undead Warriors",
+    "content": "Bone Knights are skeletal warriors animated by dark magic, retaining combat skills from their mortal lives. These undead wear ancient armor and wield powerful weapons. Unlike mindless skeletons, Bone Knights possess tactical intelligence. They often serve liches or necromancers as elite guards. Their bones are harder than normal, making them difficult to destroy.",
+    "tags": ["bone knight", "undead", "skeleton", "warrior", "intelligent", "armor", "necromancy"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_ethereal_warrior_001",
+    "category": "Monster",
+    "title": "Ethereal Warriors - Ghost Soldiers",
+    "content": "Ethereal Warriors are ghostly beings that exist partially between the physical and ethereal planes. These spectral fighters can phase in and out of reality, making them difficult to hit. They drain life force with their touch and are immune to non-magical weapons. Ethereal Warriors are often the spirits of ancient warriors cursed to fight eternally.",
+    "tags": ["ethereal", "ghost", "spirit", "warrior", "phase", "cursed", "life drain"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_drake_001",
+    "category": "Monster",
+    "title": "Drakes - Lesser Dragons",
+    "content": "Drakes are smaller cousins of dragons, still formidable but less powerful than their larger kin. They come in several varieties including fire, cold, and poison drakes. Drakes are aggressive and territorial, often found in groups. While not as intelligent as true dragons, they are cunning hunters and dangerous foes.",
+    "tags": ["drake", "dragon", "fire", "cold", "poison", "aggressive", "lesser"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_gazer_001",
+    "category": "Monster",
+    "title": "Gazers - Floating Aberrations",
+    "content": "Gazers are strange floating creatures with a central eye and multiple eye stalks. Each eye can cast different magical spells, making them versatile opponents. Gazers are intelligent aberrations from another realm. They often inhabit dungeons and can be found guarding treasure or magical artifacts. Their appearance alone is disturbing to behold.",
+    "tags": ["gazer", "aberration", "eyes", "floating", "magic", "spells", "strange"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_blood_elemental_001",
+    "category": "Monster",
+    "title": "Blood Elementals - Life Force Creatures",
+    "content": "Blood Elementals are sentient masses of blood given form through dark magic. These creatures feed on the life force of living beings and can regenerate damage quickly. Blood Elementals are often found in places where great violence occurred or where dark rituals were performed. They leave trails of blood wherever they move.",
+    "tags": ["blood elemental", "elemental", "blood", "life force", "dark magic", "regeneration"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_slayer_weapons_001",
+    "category": "Artifact",
+    "title": "Slayer Weapons - Bane of Creatures",
+    "content": "Slayer weapons are enchanted to deal extra damage to specific creature types. Dragon Slayers harm dragons and drakes, Daemon Slayers devastate demons, and so on. These weapons are highly prized by hunters and adventurers. The enchantment process is difficult and requires rare materials. A weapon with the right slayer property can turn a difficult battle into a manageable one.",
+    "tags": ["slayer", "weapons", "enchanted", "dragon slayer", "daemon slayer", "magic", "hunting"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_virtue_armor_001",
+    "category": "Artifact",
+    "title": "Virtue Armor - Sacred Protection",
+    "content": "Virtue Armor is legendary equipment blessed by the shrines of the eight virtues. Each piece provides both physical protection and spiritual strength. The armor glows with a soft light and can protect against corruption and dark magic. Only those who have proven themselves in the virtues can wear this armor effectively. The armor is said to strengthen the wearer's resolve.",
+    "tags": ["virtue armor", "armor", "blessed", "virtues", "sacred", "protection", "light"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_runebook_001",
+    "category": "Artifact",
+    "title": "Runebooks - Magical Travel Guides",
+    "content": "Runebooks are magical items that store recall runes, allowing instant teleportation to marked locations. Mages use runebooks to travel quickly across vast distances. Each runebook can hold multiple rune locations. The creation of runebooks revolutionized magical travel in Britannia. Most mages carry at least one runebook with them at all times.",
+    "tags": ["runebook", "runes", "teleportation", "travel", "magic", "recall", "instant"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_spellbook_magery_001",
+    "category": "Artifact",
+    "title": "Spellbooks of Power",
+    "content": "Magical spellbooks allow mages to inscribe and store spells for later casting. These books come in various types: standard magery spellbooks, necromancy spellbooks, mysticism tomes, and more. Powerful spellbooks with special properties are rare and valuable. A well-stocked spellbook is a mage's most important possession.",
+    "tags": ["spellbook", "magic", "mage", "spells", "inscribe", "necromancy", "mysticism"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_crystals_power_001",
+    "category": "Artifact",
+    "title": "Crystals of Power",
+    "content": "Crystals of Power are rare magical gems that can enhance spells and store magical energy. These crystals come in different colors, each associated with different magical schools. Ancient civilizations used these crystals to power great magical works. In modern times, they are used to craft powerful magical items and enhance existing enchantments.",
+    "tags": ["crystals", "power", "gems", "magic", "energy", "enhancement", "rare"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_mages_guild_001",
+    "category": "Faction",
+    "title": "The Mages Guild - Order of Mystics",
+    "content": "The Mages Guild is an organization of spellcasters dedicated to the study and advancement of magic. The guild maintains shops in major cities where they sell reagents and magical items. Guild members share knowledge and conduct magical research together. The guild also regulates the practice of magic and trains new mages.",
+    "tags": ["mages guild", "magic", "guild", "spellcasters", "reagents", "research", "training"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_warriors_guild_001",
+    "category": "Faction",
+    "title": "The Warriors Guild - Brotherhood of Arms",
+    "content": "The Warriors Guild trains fighters and provides employment for mercenaries. The guild has chapters in most major cities and offers training in various weapons and combat techniques. Members can find work as guards, soldiers, or adventurers. The guild maintains strict codes of combat honor and martial discipline.",
+    "tags": ["warriors guild", "fighters", "combat", "training", "mercenaries", "weapons", "honor"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_merchants_guild_001",
+    "category": "Faction",
+    "title": "The Merchants Guild - Commerce Council",
+    "content": "The Merchants Guild controls much of Britannia's trade and commerce. Guild members receive preferential trading rates and access to exclusive goods. The guild maintains warehouses, ships, and caravans throughout the realm. They also provide banking services and enforce fair trading practices.",
+    "tags": ["merchants guild", "trade", "commerce", "business", "banking", "goods", "ships"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_tinkers_guild_001",
+    "category": "Faction",
+    "title": "The Tinkers Guild - Society of Artificers",
+    "content": "The Tinkers Guild consists of craftsmen who create tools, traps, and mechanical devices. These skilled artisans can repair equipment and create useful gadgets. The guild jealously guards its technical secrets and trains apprentices in the craft. Tinkers are essential for maintaining the realm's infrastructure.",
+    "tags": ["tinkers guild", "craftsmen", "tools", "traps", "devices", "repair", "gadgets"],
+    "importance": 5,
+    "source": "Official Lore"
+  },
+  {
+    "id": "profession_blacksmith_001",
+    "category": "Profession",
+    "title": "Blacksmithing - The Forge",
+    "content": "Blacksmiths forge weapons, armor, and tools from metal. This essential profession requires skill with hammer and anvil. Master blacksmiths can create exceptional quality items and repair damaged equipment. The profession requires mining ore and smelting it into ingots. Blacksmiths are found in every city, their forges burning day and night.",
+    "tags": ["blacksmith", "forge", "weapons", "armor", "metal", "crafting", "smelting"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "profession_tailoring_001",
+    "category": "Profession",
+    "title": "Tailoring - Cloth and Leather",
+    "content": "Tailors create clothing, cloth armor, and decorative items from fabric and leather. The profession involves spinning thread, weaving cloth, and cutting patterns. Master tailors can create magical robes and exceptional quality garments. Tailors work closely with tanners who prepare leather hides. Their goods range from simple clothes to elaborate formal wear.",
+    "tags": ["tailor", "clothing", "cloth", "leather", "robes", "crafting", "weaving"],
+    "importance": 5,
+    "source": "Official Lore"
+  },
+  {
+    "id": "profession_carpentry_001",
+    "category": "Profession",
+    "title": "Carpentry - Woodworking",
+    "content": "Carpenters work with wood to create furniture, containers, and wooden structures. The profession requires lumber from trees and skill with saw and plane. Master carpenters can build houses, ships, and intricate wooden items. Carpentry is essential for construction and provides many useful items for adventurers.",
+    "tags": ["carpenter", "wood", "furniture", "lumber", "building", "crafting", "construction"],
+    "importance": 5,
+    "source": "Official Lore"
+  },
+  {
+    "id": "profession_alchemy_001",
+    "category": "Profession",
+    "title": "Alchemy - Art of Potions",
+    "content": "Alchemists create potions, elixirs, and magical substances through the combination of reagents and ingredients. The profession requires knowledge of magical properties and careful measurement. Alchemists can create healing potions, explosive mixtures, and transformation elixirs. Their work is essential for adventurers and mages alike.",
+    "tags": ["alchemy", "potions", "reagents", "magic", "elixirs", "healing", "crafting"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "profession_inscription_001",
+    "category": "Profession",
+    "title": "Inscription - Scribing Magic",
+    "content": "Scribes practice the art of inscription, creating magical scrolls and recording spells in spellbooks. The profession requires blank scrolls, reagents, and magical knowledge. Master scribes can create powerful spell scrolls that anyone can use. Inscription is closely tied to the study of magic and is practiced mainly by mages.",
+    "tags": ["inscription", "scribe", "scrolls", "spells", "magic", "writing", "spellbooks"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "profession_taming_001",
+    "category": "Profession",
+    "title": "Animal Taming - Beast Mastery",
+    "content": "Animal tamers bond with creatures and train them as companions and guardians. The profession requires patience, understanding of animal behavior, and natural empathy. Master tamers can control dragons, nightmares, and other powerful beasts. Tamed creatures fight alongside their masters and can be trained to follow commands.",
+    "tags": ["taming", "animals", "beasts", "dragons", "companions", "training", "bonding"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "magic_necromancy_001",
+    "category": "Magic",
+    "title": "Necromancy - Death Magic",
+    "content": "Necromancy is the magic of death and undeath, allowing practitioners to raise and command the dead. Necromancers can drain life force, communicate with spirits, and transform into lich form. The practice is controversial but not outlawed. Necromancy requires special reagents like grave dust and daemon blood. The city of Umbra welcomes necromancers.",
+    "tags": ["necromancy", "death", "undead", "spirits", "dark magic", "lich", "umbra"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "magic_spellweaving_001",
+    "category": "Magic",
+    "title": "Spellweaving - Arcane Focus",
+    "content": "Spellweaving is an ancient form of magic practiced by elves and arcanists. Practitioners weave threads of magic into powerful spells. Spellweaving is enhanced when multiple casters work together in an arcane focus. The magic can summon fey creatures, create protective wards, and manipulate magical energy. It requires special items called arcane focuses.",
+    "tags": ["spellweaving", "arcane", "elves", "focus", "weaving", "fey", "ancient"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "magic_mysticism_001",
+    "category": "Magic",
+    "title": "Mysticism - Realm Magic",
+    "content": "Mysticism is the magic of gargoyles, focusing on manipulating the fundamental forces of reality. Mystics can teleport, heal wounds, and raise protective barriers. The magic draws from understanding the connections between all things. Mysticism is widely practiced in Ter Mur but less common in Britannia. It offers both offensive and defensive capabilities.",
+    "tags": ["mysticism", "gargoyles", "ter mur", "teleport", "healing", "reality", "barriers"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "ship_sailing_001",
+    "category": "Profession",
+    "title": "Sailing - Maritime Travel",
+    "content": "Sailing allows travel across the seas of Britannia aboard ships. Sailors must navigate using the stars and landmarks, avoid sea serpents and pirates, and manage their vessel. Ships range from small boats to massive galleons. Maritime trade is essential to Britannia's economy. Skilled captains can navigate even the most dangerous waters.",
+    "tags": ["sailing", "ships", "sea", "navigation", "maritime", "trade", "ocean", "captain"],
+    "importance": 6,
+    "source": "Official Lore"
+  },
+  {
+    "id": "creature_nightmare_001",
+    "category": "Monster",
+    "title": "Nightmares - Hellish Steeds",
+    "content": "Nightmares are demonic horses wreathed in flames. These powerful creatures can be tamed by skilled beast masters and serve as fearsome mounts. Nightmares are intelligent and evil by nature. Their hooves leave trails of fire and their eyes glow with infernal light. Riding a nightmare marks one as either very brave or touched by darkness.",
+    "tags": ["nightmare", "horse", "mount", "fire", "demon", "steed", "taming"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "history_juo_nar_001",
+    "category": "History",
+    "title": "Juo'nar the Liche",
+    "content": "Juo'nar was a powerful liche who threatened Britannia by attempting to spread undeath across the realm. This ancient necromancer commanded vast armies of undead and sought to transform all living beings into his servants. Heroes eventually destroyed Juo'nar, but his phylactery may still exist, meaning he could return. His legacy influenced the acceptance of necromancy as a legitimate magical discipline.",
+    "tags": ["juo nar", "liche", "undead", "necromancy", "history", "villain", "phylactery"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_nystul_001",
+    "category": "NPC",
+    "title": "Nystul - Royal Mage",
+    "content": "Nystul serves as Lord British's court mage and advisor on magical matters. This powerful wizard is responsible for maintaining magical wards around Castle British and advising on arcane threats. Nystul is wise and knowledgeable about ancient magic. He has aided the Avatar on numerous occasions with magical expertise and powerful spells.",
+    "tags": ["nystul", "mage", "wizard", "lord british", "court", "advisor", "magic"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "npc_clainin_001",
+    "category": "NPC",
+    "title": "Clainin - The Healer",
+    "content": "Clainin is a renowned healer and companion of the Avatar. She dedicated her life to healing the sick and wounded. Clainin embodies the virtue of Compassion through her tireless work helping others. She travels with the Avatar to provide medical aid to those in need. Her healing magic has saved countless lives.",
+    "tags": ["clainin", "healer", "compassion", "companion", "avatar", "healing", "medical"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_shadowlords_faction_001",
+    "category": "Faction",
+    "title": "The Shadowlords Faction",
+    "content": "The Shadowlords faction serves the three dark entities of Hatred, Cowardice, and Falsehood. This faction opposes the virtues and seeks to spread corruption throughout Britannia. Members wear dark robes and serve in the name of chaos and vice. The faction controls Shadowlord strongholds and wages war against virtue-aligned forces. They are one of the four major factions in the eternal struggle for control of Britannia.",
+    "tags": ["shadowlords", "faction", "hatred", "cowardice", "falsehood", "vice", "chaos", "war"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_council_mages_001",
+    "category": "Faction",
+    "title": "Council of Mages Faction",
+    "content": "The Council of Mages is a faction of powerful spellcasters who believe mages should rule Britannia. Based in Moonglow, they argue that magical knowledge and wisdom make them best suited to govern. The Council seeks to expand magical influence and protect the interests of spellcasters. They control Moonglow and compete with other factions for power and territory.",
+    "tags": ["council of mages", "faction", "mages", "moonglow", "magic", "power", "governance", "war"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_true_britannians_001",
+    "category": "Faction",
+    "title": "True Britannians Faction",
+    "content": "The True Britannians are the faction loyal to Lord British and the traditional virtues. Based in Britain, they seek to maintain order and uphold the virtue system. The True Britannians believe in Lord British's vision of a virtue-based society. They defend Britain and wage war to spread virtuous rule across Britannia. This faction represents tradition and stability.",
+    "tags": ["true britannians", "faction", "lord british", "britain", "virtues", "order", "tradition", "war"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_minax_faction_001",
+    "category": "Faction",
+    "title": "Minax Faction",
+    "content": "The Minax faction serves the memory of the evil enchantress Minax and seeks revenge against those who defeated her. This dark faction embraces power through any means and rejects virtue as weakness. Based in locations associated with Minax's legacy, they wage eternal war against the True Britannians. The faction attracts those who seek power without moral constraints.",
+    "tags": ["minax", "faction", "evil", "revenge", "power", "dark", "war", "enchantress"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_order_chaos_001",
+    "category": "Faction",
+    "title": "Order versus Chaos",
+    "content": "The eternal struggle between Order and Chaos defines much of Britannian conflict. Order seeks structure, law, and stability, represented by forces aligned with Lord British. Chaos embraces freedom, change, and disruption, represented by Lord Blackthorn's philosophy. Neither is purely good or evil - both believe their way will strengthen Britannia. This philosophical divide has led to countless battles and shaped the realm's history.",
+    "tags": ["order", "chaos", "lord british", "lord blackthorn", "philosophy", "conflict", "balance", "war"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "faction_war_001",
+    "category": "History",
+    "title": "The Faction Wars",
+    "content": "The Faction Wars are ongoing conflicts between the four major factions: True Britannians, Council of Mages, Minax, and Shadowlords. These factions battle for control of towns and resources across Britannia. Faction members can capture towns, engage in battles, and earn special rewards. The wars have raged for years with no side gaining permanent victory. The conflict shapes politics and power throughout the realm.",
+    "tags": ["faction wars", "conflict", "war", "true britannians", "council of mages", "minax", "shadowlords", "politics"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "champion_spawn_001",
+    "category": "Location",
+    "title": "Champion Spawns - Altars of Evil",
+    "content": "Champion Spawns are powerful altars where evil forces gather in increasing waves. As adventurers defeat the waves, stronger creatures emerge until a Champion appears. These champions are among the most dangerous beings in Britannia. Defeating a champion yields powerful artifacts and treasures. Champion spawns exist in dungeons and remote locations, drawing brave or foolhardy heroes.",
+    "tags": ["champion spawn", "altar", "waves", "champion", "artifacts", "dangerous", "dungeon"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "champion_harrower_001",
+    "category": "Monster",
+    "title": "The Harrower - True Harrower",
+    "content": "The Harrower is the ultimate champion spawn boss, summoned by combining skulls from other champion spawns. This massive demon lord commands reality-warping powers and can summon lesser demons. The Harrower represents the pinnacle of evil power in Britannia. Defeating it requires multiple skilled adventurers working together. The rewards for victory are legendary artifacts found nowhere else.",
+    "tags": ["harrower", "champion", "demon lord", "boss", "ultimate", "artifacts", "powerful"],
+    "importance": 10,
+    "source": "Official Lore"
+  },
+  {
+    "id": "peerless_chief_paroxysmus_001",
+    "category": "Monster",
+    "title": "Chief Paroxysmus - Poison Lord",
+    "content": "Chief Paroxysmus is a massive poison elemental peerless boss found deep in the swamps. This bloated creature drains life and spews toxic clouds that can kill even armored warriors. Chief Paroxysmus guards powerful artifacts and rare resources. The battle requires poison resistance and strong healing. Only the bravest adventurers dare face this toxic monstrosity.",
+    "tags": ["chief paroxysmus", "peerless", "boss", "poison", "elemental", "swamp", "toxic"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "peerless_lady_melisande_001",
+    "category": "Monster",
+    "title": "Lady Melisande - Vampire Queen",
+    "content": "Lady Melisande is an ancient vampire peerless boss who rules over the undead. This cunning and powerful creature can charm minds and drain life with a touch. She commands lesser vampires and bats to overwhelm her foes. Melisande guards her lair jealously and has accumulated treasure over centuries. Defeating her requires both strength and resistance to her dark powers.",
+    "tags": ["lady melisande", "peerless", "boss", "vampire", "undead", "charm", "life drain"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "peerless_monstrous_interred_grizzle_001",
+    "category": "Monster",
+    "title": "Monstrous Interred Grizzle - Undead Bear",
+    "content": "The Monstrous Interred Grizzle is a massive undead bear peerless boss, a mockery of nature animated by dark magic. This creature possesses incredible strength and can shrug off devastating blows. The Grizzle guards ancient burial grounds and attacks with both claws and necrotic magic. Its roar alone can strike terror into the hearts of warriors.",
+    "tags": ["grizzle", "peerless", "boss", "undead", "bear", "strength", "necrotic"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "peerless_shimmering_effusion_001",
+    "category": "Monster",
+    "title": "Shimmering Effusion - Slime Lord",
+    "content": "The Shimmering Effusion is a massive acidic slime peerless boss that constantly divides and reforms. This creature absorbs attacks and grows stronger as it consumes matter. The Effusion can engulf warriors and dissolve armor with its corrosive body. Fighting it requires area attacks and careful positioning. It guards treasures dissolved from countless victims.",
+    "tags": ["shimmering effusion", "peerless", "boss", "slime", "acid", "corrosive", "divide"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_felucca_001",
+    "category": "Geography",
+    "title": "Felucca - The Dark Facet",
+    "content": "Felucca is the dark reflection of Britannia, a dangerous realm where might makes right. In this facet, player versus player combat is unrestricted and resources are more plentiful but harder to defend. Felucca represents the harsh reality of survival without law. Many treasure hunters brave Felucca for champion spawns and rare resources, but the dangers are extreme.",
+    "tags": ["felucca", "facet", "pvp", "dangerous", "dark", "combat", "resources"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "dungeon_trammel_001",
+    "category": "Geography",
+    "title": "Trammel - The Safe Facet",
+    "content": "Trammel is a mirror of Britannia where Lord British's law protects citizens from unwanted combat. This facet offers safety from player killers, allowing peaceful crafting and adventuring. Resources are less abundant than Felucca but more safely gathered. Trammel represents civilization and order. Most citizens live in Trammel, venturing to Felucca only when necessary.",
+    "tags": ["trammel", "facet", "safe", "law", "peace", "civilization", "protected"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_power_scrolls_001",
+    "category": "Artifact",
+    "title": "Power Scrolls - Skill Enhancement",
+    "content": "Power Scrolls are magical documents that allow one to transcend normal skill limits. These rare scrolls are dropped by champion spawn bosses and allow skills to reach 105, 110, 115, or 120 instead of the normal 100 cap. Power scrolls are highly valued and traded throughout Britannia. Obtaining them requires defeating powerful champions in dangerous locations.",
+    "tags": ["power scrolls", "scrolls", "skills", "enhancement", "champion", "rare", "valuable"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "artifact_stat_scrolls_001",
+    "category": "Artifact",
+    "title": "Stat Scrolls - Physical Enhancement",
+    "content": "Stat Scrolls increase one's strength, dexterity, or intelligence beyond natural limits. These scrolls are found on powerful champions and peerless bosses. Like power scrolls, they are rare and valuable. Stat scrolls allow warriors to become stronger, rogues faster, and mages more intelligent than thought possible. The scrolls permanently enhance one's capabilities.",
+    "tags": ["stat scrolls", "scrolls", "strength", "dexterity", "intelligence", "enhancement", "rare"],
+    "importance": 8,
+    "source": "Official Lore"
+  },
+  {
+    "id": "location_yomotsu_mines_001",
+    "category": "Location",
+    "title": "Yomotsu Mines - Underworld Entrance",
+    "content": "The Yomotsu Mines in Tokuno serve as an entrance to the underworld where evil spirits called Yomotsu emerge. These dark tunnels are filled with undead and demonic creatures from below. The mines represent the thin barrier between the living world and the realm of the dead. Brave adventurers explore the mines seeking treasures but risk being dragged to the underworld.",
+    "tags": ["yomotsu", "mines", "tokuno", "underworld", "spirits", "undead", "demons"],
+    "importance": 7,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_ancient_liche_001",
+    "category": "Monster",
+    "title": "Ancient Liches - Elder Necromancers",
+    "content": "Ancient Liches are the most powerful undead spellcasters in existence. These beings have practiced necromancy for centuries and command devastating magic. Ancient Liches can raise armies of undead and cast spells that drain the life from entire groups. They guard phylacteries that make them nearly immortal. Destroying an Ancient Liche requires both martial prowess and magical power.",
+    "tags": ["ancient liche", "liche", "undead", "necromancy", "powerful", "magic", "phylactery"],
+    "importance": 9,
+    "source": "Official Lore"
+  },
+  {
+    "id": "monster_silver_serpent_001",
+    "category": "Monster",
+    "title": "Silver Serpents - Venomous Giants",
+    "content": "Silver Serpents are massive serpents found on Serpent's Hold island. Their venom is among the most deadly in Britannia and is used as a powerful reagent. These creatures are aggressive and territorial. Silver Serpent venom is harvested for use in advanced alchemy and poison crafting. The serpents guard their territory fiercely and attack any who approach.",
+    "tags": ["silver serpent", "serpent", "venom", "poison", "serpents hold", "deadly", "reagent"],
+    "importance": 7,
+    "source": "Official Lore"
+  }
+]

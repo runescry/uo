@@ -1,0 +1,121 @@
+[
+  {
+    "id": "emperor_garrick",
+    "title": "Emperor Garrick Steelarm",
+    "category": "NPC",
+    "content": "Emperor of the Ironclad Empire, co-founder of the Ironclad Alliance. Garrick is a visionary leader who signed the historic pact with Warlord Flamefist during the Siege of Ironhold. He believes technology and magic together will bring prosperity to all Vystia. Rules from the Iron Throne in Ironhaven. Known for his strategic genius and pragmatic approach to governance. Follower of the Cogsmith Creed and patron of the Great Machinist.",
+    "tags": [
+      "garrick",
+      "emperor",
+      "ironclad",
+      "leader",
+      "alliance",
+      "ironhaven"
+    ],
+    "importance": 10
+  },
+  {
+    "id": "chieftain_bjorn",
+    "title": "Chieftain Bjorn Frostbeard",
+    "category": "NPC",
+    "content": "Chieftain of Frosthold and leader of the northern clans. Bjorn rules from the Frost Palace in Frostholm. He is a legendary warrior who has survived countless battles against frost giants and ice dragons. Leads the Polar Alliance defensive pact. Known for his strength, honor, and fierce protection of his people. Follows the Frosthelm Faith and reveres the Frost Father.",
+    "tags": [
+      "bjorn",
+      "chieftain",
+      "frosthold",
+      "leader",
+      "barbarian",
+      "frostholm"
+    ],
+    "importance": 10
+  },
+  {
+    "id": "elder_seraphina",
+    "title": "Elder Seraphina Leafwhisper",
+    "category": "NPC",
+    "content": "Leader of the Tree Council in Verdantpeak's capital Verdantheart. Seraphina is an ancient elf who has lived for over 500 years. She governs from the Heart Tree and maintains the sacred groves. Leads the Sylvan Concord faction opposing industrial expansion. Master druid who can communicate with all forest creatures. Devoted follower of Lunara's Covenant.",
+    "tags": [
+      "seraphina",
+      "elder",
+      "verdantpeak",
+      "leader",
+      "druid",
+      "elf",
+      "verdantheart"
+    ],
+    "importance": 10
+  },
+  {
+    "id": "sultan_azir",
+    "title": "Sultan Azir al-Rashid",
+    "category": "NPC",
+    "content": "Sultan of Sunspire and leader of the League of Sands trade confederation. Azir controls the vital trade routes across the desert and maintains neutrality in most conflicts, profiting from trade with all factions. Rules from the Palace of Sun and Sand. Known as the wealthiest merchant prince in Vystia. Shrewd negotiator and master of desert politics. Follows Surya's Sandscript religion.",
+    "tags": [
+      "azir",
+      "sultan",
+      "sunspire",
+      "leader",
+      "merchant",
+      "desert",
+      "league"
+    ],
+    "importance": 9
+  },
+  {
+    "id": "archmage_pyrus",
+    "title": "Archmage Pyrus Ashborn",
+    "category": "NPC",
+    "content": "Archmage of the Emberlands and master of elemental fire magic. Pyrus rules from the Magma Citadel in Emberforge. He is the most powerful fire sorcerer in Vystia and wields the legendary staff Phoenix Ascension. Co-founder of the Ironclad Alliance alongside Emperor Garrick. His city's forges produce fire-enchanted weapons of legendary quality. Worships the Forgemaster deity.",
+    "tags": [
+      "pyrus",
+      "archmage",
+      "emberlands",
+      "sorcerer",
+      "fire",
+      "emberforge"
+    ],
+    "importance": 9
+  },
+  {
+    "id": "vystia_blacksmith",
+    "title": "Vystia Blacksmith",
+    "category": "NPC",
+    "content": "Regional blacksmiths in Vystia specialize in crafting equipment from local ores. Frosthold blacksmiths forge ice-enchanted weapons, Emberlands smiths create fire weapons, Ironclad smiths build mechanical armor, and Verdantpeak smiths work with living wood. Each region's blacksmiths have unique techniques passed down through generations.",
+    "tags": [
+      "blacksmith",
+      "crafting",
+      "vendor",
+      "weapons",
+      "armor"
+    ],
+    "importance": 6
+  },
+  {
+    "id": "vystia_mage_vendor",
+    "title": "Vystia Magic School Vendor",
+    "category": "NPC",
+    "content": "Each magic school in Vystia has specialized vendors who sell reagents, scrolls, and spellbooks. There are 12 magic school vendors: Ice Mage, Druid, Witch, Sorcerer, Warlock, Oracle, Necromancer, Summoner, Shaman, Bard, Enchanter, and Illusionist vendors. Each sells 8 unique reagents, 32 spell scrolls, and one empty spellbook for their school.",
+    "tags": [
+      "vendor",
+      "magic",
+      "spells",
+      "reagents",
+      "scrolls",
+      "spellbook"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "vystia_reagent_vendor",
+    "title": "Vystia Reagent Vendor",
+    "category": "NPC",
+    "content": "General reagent vendor who sells all 96 Vystia magic reagents from all 12 magic schools. This vendor provides access to the complete set of spell components needed for all magic users in Vystia. Found in major cities like Ironhaven, Frostholm, and Verdantheart. Essential for stocking up on magical supplies.",
+    "tags": [
+      "vendor",
+      "reagent",
+      "magic",
+      "supplies"
+    ],
+    "importance": 7
+  }
+]

@@ -1,0 +1,865 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Server;
+using Server.Commands;
+
+namespace Server.Services.LLM.Tests
+{
+    /// <summary>
+    /// Test suite for the LLM Memory System
+    /// Tests all components without requiring in-game interaction
+    /// </summary>
+    public class MemorySystemTests
+    {
+        public static void Initialize()
+        {
+            CommandSystem.Register("TestMemorySystem", AccessLevel.Administrator, TestMemorySystem_OnCommand);
+            CommandSystem.Register("TestMemoryStandalone", AccessLevel.Administrator, TestMemoryStandalone_OnCommand);
+
+            // Register 3-month simulation
+            ThreeMonthSimulation.Initialize();
+        }
+
+        [Usage("TestMemorySystem")]
+        [Description("Run comprehensive memory system tests")]
+        private static void TestMemorySystem_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            from.SendMessage("=== LLM Memory System Test Suite ===");
+            from.SendMessage("Starting tests...");
+            from.SendMessage("");
+
+            // Run all tests
+            RunAllTests(from);
+        }
+
+        [Usage("TestMemoryStandalone")]
+        [Description("Run detailed standalone memory tests with simulated conversations")]
+        private static void TestMemoryStandalone_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            from.SendMessage("=== Running Standalone Memory Tests ===");
+            from.SendMessage("This will run comprehensive tests with detailed console output.");
+            from.SendMessage("Check your server console for full results!");
+            from.SendMessage("");
+
+            // Run standalone tests asynchronously
+            RunStandaloneTests();
+
+            from.SendMessage("Tests started! Check console for detailed output.");
+        }
+
+        private static async void RunStandaloneTests()
+        {
+            try
+            {
+                await StandaloneMemoryTest.RunAllTests();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[MemoryTests] Error running standalone tests: {ex.Message}");
+                Console.WriteLine($"[MemoryTests] Stack trace: {ex.StackTrace}");
+            }
+        }
+
+        private static async void RunAllTests(Mobile from)
+        {
+            int passed = 0;
+            int failed = 0;
+            int total = 0;
+
+            // Test 1: System Initialization
+            total++;
+            from.SendMessage($"[Test {total}] System Initialization...");
+            if (await TestSystemInitialization(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: System initialized correctly");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: System initialization failed");
+            }
+
+            // Test 2: In-Memory Fallback Store
+            total++;
+            from.SendMessage($"[Test {total}] In-Memory Fallback Store...");
+            if (await TestInMemoryFallback(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Fallback store working");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Fallback store failed");
+            }
+
+            // Test 3: Memory Importance Scoring
+            total++;
+            from.SendMessage($"[Test {total}] Memory Importance Scoring...");
+            if (TestMemoryImportanceScoring(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Importance scoring correct");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Importance scoring failed");
+            }
+
+            // Test 4: Memory Helpers
+            total++;
+            from.SendMessage($"[Test {total}] Memory Helpers...");
+            if (TestMemoryHelpers(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Memory helpers working");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Memory helpers failed");
+            }
+
+            // Test 5: Relationship Creation
+            total++;
+            from.SendMessage($"[Test {total}] Relationship Creation...");
+            if (await TestRelationshipCreation(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Relationships created correctly");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Relationship creation failed");
+            }
+
+            // Test 6: Relationship Updates
+            total++;
+            from.SendMessage($"[Test {total}] Relationship Updates...");
+            if (await TestRelationshipUpdates(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Relationships update correctly");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Relationship updates failed");
+            }
+
+            // Test 7: Memory Storage and Retrieval
+            total++;
+            from.SendMessage($"[Test {total}] Memory Storage and Retrieval...");
+            if (await TestMemoryStorageRetrieval(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Memory storage/retrieval working");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Memory storage/retrieval failed");
+            }
+
+            // Test 8: Memory Pruning
+            total++;
+            from.SendMessage($"[Test {total}] Memory Pruning (max 50 per NPC/player)...");
+            if (await TestMemoryPruning(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Memory pruning working");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Memory pruning failed");
+            }
+
+            // Test 9: Conversation History
+            total++;
+            from.SendMessage($"[Test {total}] Conversation History...");
+            if (await TestConversationHistory(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Conversation history working");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Conversation history failed");
+            }
+
+            // Test 10: Simulated Conversation Flow
+            total++;
+            from.SendMessage($"[Test {total}] Simulated Conversation Flow...");
+            if (await TestSimulatedConversation(from))
+            {
+                passed++;
+                from.SendMessage("  PASS: Conversation flow working");
+            }
+            else
+            {
+                failed++;
+                from.SendMessage("  FAIL: Conversation flow failed");
+            }
+
+            // Summary
+            from.SendMessage("");
+            from.SendMessage("=== Test Results ===");
+            from.SendMessage($"Total Tests: {total}");
+            from.SendMessage($"Passed: {passed}");
+            from.SendMessage($"Failed: {failed}");
+            from.SendMessage($"Success Rate: {(passed * 100 / total)}%");
+
+            if (failed == 0)
+            {
+                from.SendMessage("");
+                from.SendMessage("SUCCESS: All tests passed!");
+            }
+            else
+            {
+                from.SendMessage("");
+                from.SendMessage($"WARNING: {failed} test(s) failed. Check console for details.");
+            }
+        }
+
+        #region Test 1: System Initialization
+
+        private static async Task<bool> TestSystemInitialization(Mobile from)
+        {
+            try
+            {
+                // Check if memory service is available
+                bool available = LLMMemoryService.IsAvailable();
+                from.SendMessage($"  - Memory service available: {available}");
+
+                if (!available)
+                {
+                    from.SendMessage("  - ERROR: Memory service not available");
+                    return false;
+                }
+
+                // Check fallback status
+                bool usingFallback = LLMMemoryService.IsUsingFallback();
+                from.SendMessage($"  - Using fallback: {usingFallback}");
+
+                // Check in-memory store
+                bool fallbackActive = InMemoryFallbackStore.IsActive;
+                from.SendMessage($"  - Fallback store active: {fallbackActive}");
+
+                return available;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 2: In-Memory Fallback Store
+
+        private static async Task<bool> TestInMemoryFallback(Mobile from)
+        {
+            try
+            {
+                string testNpc = "TestNPC_Fallback";
+                string testPlayer = "TestPlayer_Fallback";
+
+                // Create test memory
+                var memory = new Memory
+                {
+                    NpcName = testNpc,
+                    PlayerName = testPlayer,
+                    Type = MemoryType.Fact,
+                    Content = "Test memory content",
+                    Importance = 8,
+                    CreatedAt = DateTime.UtcNow,
+                    LastAccessed = DateTime.UtcNow
+                };
+
+                // Save memory
+                await InMemoryFallbackStore.SaveMemoryAsync(memory);
+                from.SendMessage($"  - Saved test memory");
+
+                // Retrieve memory
+                var memories = await InMemoryFallbackStore.GetMemoriesAsync(testNpc, testPlayer, 10);
+                from.SendMessage($"  - Retrieved {memories.Count} memories");
+
+                if (memories.Count == 0)
+                {
+                    from.SendMessage("  - ERROR: No memories retrieved");
+                    return false;
+                }
+
+                if (memories[0].Content != "Test memory content")
+                {
+                    from.SendMessage("  - ERROR: Memory content mismatch");
+                    return false;
+                }
+
+                from.SendMessage($"  - Memory content verified: '{memories[0].Content}'");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 3: Memory Importance Scoring
+
+        private static bool TestMemoryImportanceScoring(Mobile from)
+        {
+            try
+            {
+                // Test various message types
+                var tests = new[]
+                {
+                    new { Message = "Remember this important fact!", ExpectedMin = 9, Description = "Explicit remember" },
+                    new { Message = "My name is Runescry", ExpectedMin = 8, Description = "Identity" },
+                    new { Message = "I need a quest", ExpectedMin = 7, Description = "Quest" },
+                    new { Message = "I hate spiders", ExpectedMin = 6, Description = "Strong dislike" },
+                    new { Message = "I like swords", ExpectedMin = 5, Description = "Preference" },
+                    new { Message = "Hello", ExpectedMin = 0, Description = "Greeting (not saved)" }
+                };
+
+                int passed = 0;
+                int failed = 0;
+
+                foreach (var test in tests)
+                {
+                    bool shouldSave = MemoryHelpers.ShouldSaveMemory(test.Message, "", out int importance);
+
+                    if (test.ExpectedMin == 0)
+                    {
+                        if (!shouldSave)
+                        {
+                            from.SendMessage($"  - {test.Description}: Correctly not saved");
+                            passed++;
+                        }
+                        else
+                        {
+                            from.SendMessage($"  - {test.Description}: ERROR - Should not save but did (importance: {importance})");
+                            failed++;
+                        }
+                    }
+                    else
+                    {
+                        if (shouldSave && importance >= test.ExpectedMin)
+                        {
+                            from.SendMessage($"  - {test.Description}: Score {importance} >= {test.ExpectedMin} ✓");
+                            passed++;
+                        }
+                        else
+                        {
+                            from.SendMessage($"  - {test.Description}: ERROR - Expected >={test.ExpectedMin}, got {importance}");
+                            failed++;
+                        }
+                    }
+                }
+
+                from.SendMessage($"  - Scoring tests: {passed} passed, {failed} failed");
+                return failed == 0;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 4: Memory Helpers
+
+        private static bool TestMemoryHelpers(Mobile from)
+        {
+            try
+            {
+                // Test memory formatting
+                var testMemories = new List<Memory>
+                {
+                    new Memory
+                    {
+                        Type = MemoryType.Fact,
+                        Content = "Player name is Runescry",
+                        Importance = 8,
+                        LastAccessed = DateTime.UtcNow
+                    },
+                    new Memory
+                    {
+                        Type = MemoryType.Preference,
+                        Content = "Loves exploring dungeons",
+                        Importance = 5,
+                        LastAccessed = DateTime.UtcNow
+                    }
+                };
+
+                string formatted = MemoryHelpers.FormatMemoriesForPrompt(testMemories, 5);
+
+                if (string.IsNullOrEmpty(formatted))
+                {
+                    from.SendMessage("  - ERROR: Memory formatting returned empty");
+                    return false;
+                }
+
+                if (!formatted.Contains("[Fact]") || !formatted.Contains("[Preference]"))
+                {
+                    from.SendMessage("  - ERROR: Memory formatting missing types");
+                    return false;
+                }
+
+                from.SendMessage("  - Memory formatting: OK");
+
+                // Test relationship formatting
+                var testRelationship = new Relationship
+                {
+                    Type = RelationshipType.Friend,
+                    Score = 55,
+                    InteractionCount = 10,
+                    FirstMet = DateTime.UtcNow.AddDays(-5)
+                };
+
+                string relationFormatted = MemoryHelpers.FormatRelationshipForPrompt(testRelationship);
+
+                if (string.IsNullOrEmpty(relationFormatted))
+                {
+                    from.SendMessage("  - ERROR: Relationship formatting returned empty");
+                    return false;
+                }
+
+                if (!relationFormatted.Contains("Friend") || !relationFormatted.Contains("55/100"))
+                {
+                    from.SendMessage("  - ERROR: Relationship formatting missing data");
+                    return false;
+                }
+
+                from.SendMessage("  - Relationship formatting: OK");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 5: Relationship Creation
+
+        private static async Task<bool> TestRelationshipCreation(Mobile from)
+        {
+            try
+            {
+                string testNpc = "TestNPC_RelCreate";
+                string testPlayer = "TestPlayer_RelCreate";
+
+                // Create new relationship
+                await LLMMemoryService.UpdateRelationshipAsync(testNpc, testPlayer, 5);
+                from.SendMessage($"  - Created relationship with +5 score");
+
+                // Retrieve relationship
+                var relationship = await LLMMemoryService.GetRelationshipAsync(testNpc, testPlayer);
+
+                if (relationship == null)
+                {
+                    from.SendMessage("  - ERROR: Relationship not found");
+                    return false;
+                }
+
+                from.SendMessage($"  - Retrieved relationship: {relationship.Type}, Score: {relationship.Score}");
+
+                if (relationship.Score != 5)
+                {
+                    from.SendMessage($"  - ERROR: Expected score 5, got {relationship.Score}");
+                    return false;
+                }
+
+                if (relationship.InteractionCount != 1)
+                {
+                    from.SendMessage($"  - ERROR: Expected 1 interaction, got {relationship.InteractionCount}");
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 6: Relationship Updates
+
+        private static async Task<bool> TestRelationshipUpdates(Mobile from)
+        {
+            try
+            {
+                string testNpc = "TestNPC_RelUpdate";
+                string testPlayer = "TestPlayer_RelUpdate";
+
+                // Create initial relationship
+                await LLMMemoryService.UpdateRelationshipAsync(testNpc, testPlayer, 10);
+                from.SendMessage($"  - Initial score: 10");
+
+                // Update multiple times
+                for (int i = 0; i < 5; i++)
+                {
+                    await LLMMemoryService.UpdateRelationshipAsync(testNpc, testPlayer, 5);
+                }
+                from.SendMessage($"  - Added 5 points x5 times");
+
+                // Retrieve and verify
+                var relationship = await LLMMemoryService.GetRelationshipAsync(testNpc, testPlayer);
+
+                if (relationship == null)
+                {
+                    from.SendMessage("  - ERROR: Relationship not found");
+                    return false;
+                }
+
+                int expectedScore = 10 + (5 * 5); // 35
+                from.SendMessage($"  - Final score: {relationship.Score} (expected: {expectedScore})");
+                from.SendMessage($"  - Interactions: {relationship.InteractionCount} (expected: 6)");
+                from.SendMessage($"  - Type: {relationship.Type}");
+
+                if (relationship.Score != expectedScore)
+                {
+                    from.SendMessage($"  - ERROR: Score mismatch");
+                    return false;
+                }
+
+                if (relationship.InteractionCount != 6)
+                {
+                    from.SendMessage($"  - ERROR: Interaction count mismatch");
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 7: Memory Storage and Retrieval
+
+        private static async Task<bool> TestMemoryStorageRetrieval(Mobile from)
+        {
+            try
+            {
+                string testNpc = "TestNPC_MemStore";
+                string testPlayer = "TestPlayer_MemStore";
+
+                // Create multiple memories
+                var memories = new[]
+                {
+                    new Memory { NpcName = testNpc, PlayerName = testPlayer, Type = MemoryType.Fact, Content = "Name is Bob", Importance = 8 },
+                    new Memory { NpcName = testNpc, PlayerName = testPlayer, Type = MemoryType.Preference, Content = "Likes swords", Importance = 5 },
+                    new Memory { NpcName = testNpc, PlayerName = testPlayer, Type = MemoryType.Event, Content = "Completed quest", Importance = 7 },
+                    new Memory { NpcName = testNpc, PlayerName = testPlayer, Type = MemoryType.Conversation, Content = "Small talk", Importance = 2 }
+                };
+
+                foreach (var mem in memories)
+                {
+                    mem.CreatedAt = DateTime.UtcNow;
+                    mem.LastAccessed = DateTime.UtcNow;
+                    await LLMMemoryService.SaveMemoryAsync(testNpc, testPlayer, mem);
+                }
+
+                from.SendMessage($"  - Saved {memories.Length} memories");
+
+                // Retrieve memories
+                var retrieved = await LLMMemoryService.GetMemoriesAsync(testNpc, testPlayer, 10);
+                from.SendMessage($"  - Retrieved {retrieved.Count} memories");
+
+                if (retrieved.Count != memories.Length)
+                {
+                    from.SendMessage($"  - ERROR: Expected {memories.Length}, got {retrieved.Count}");
+                    return false;
+                }
+
+                // Verify they're sorted by importance
+                for (int i = 0; i < retrieved.Count - 1; i++)
+                {
+                    if (retrieved[i].Importance < retrieved[i + 1].Importance)
+                    {
+                        from.SendMessage($"  - ERROR: Memories not sorted by importance");
+                        return false;
+                    }
+                }
+
+                from.SendMessage($"  - Memories correctly sorted by importance");
+
+                // Verify top memory is the most important
+                if (retrieved[0].Importance != 8)
+                {
+                    from.SendMessage($"  - ERROR: Top memory should have importance 8, got {retrieved[0].Importance}");
+                    return false;
+                }
+
+                from.SendMessage($"  - Top memory: '{retrieved[0].Content}' (importance: {retrieved[0].Importance})");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 8: Memory Pruning
+
+        private static async Task<bool> TestMemoryPruning(Mobile from)
+        {
+            try
+            {
+                string testNpc = "TestNPC_Prune";
+                string testPlayer = "TestPlayer_Prune";
+
+                // Create 60 memories (should prune to 50)
+                from.SendMessage($"  - Creating 60 memories...");
+
+                for (int i = 0; i < 60; i++)
+                {
+                    var memory = new Memory
+                    {
+                        NpcName = testNpc,
+                        PlayerName = testPlayer,
+                        Type = MemoryType.Conversation,
+                        Content = $"Memory {i}",
+                        Importance = i % 10, // Varied importance
+                        CreatedAt = DateTime.UtcNow,
+                        LastAccessed = DateTime.UtcNow
+                    };
+
+                    await LLMMemoryService.SaveMemoryAsync(testNpc, testPlayer, memory);
+                }
+
+                // Retrieve memories
+                var retrieved = await LLMMemoryService.GetMemoriesAsync(testNpc, testPlayer, 100);
+                from.SendMessage($"  - After pruning: {retrieved.Count} memories (expected: ≤50)");
+
+                if (retrieved.Count > 50)
+                {
+                    from.SendMessage($"  - ERROR: Pruning failed, got {retrieved.Count} memories");
+                    return false;
+                }
+
+                from.SendMessage($"  - Pruning successful");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 9: Conversation History
+
+        private static async Task<bool> TestConversationHistory(Mobile from)
+        {
+            try
+            {
+                string testNpc = "TestNPC_ConvHist";
+                string testPlayer = "TestPlayer_ConvHist";
+                string sessionId = Guid.NewGuid().ToString();
+
+                // Create conversation messages
+                var messages = new List<ConversationMessage>
+                {
+                    new ConversationMessage(true, "Hello NPC!"),
+                    new ConversationMessage(false, "Greetings, traveler!"),
+                    new ConversationMessage(true, "How are you?"),
+                    new ConversationMessage(false, "I am well, thank you!")
+                };
+
+                // Save conversation
+                await LLMMemoryService.SaveConversationAsync(testNpc, testPlayer, sessionId, messages);
+                from.SendMessage($"  - Saved {messages.Count} conversation messages");
+
+                // Retrieve conversation
+                var retrieved = await LLMMemoryService.LoadRecentConversationAsync(testNpc, testPlayer, 10);
+                from.SendMessage($"  - Retrieved {retrieved.Count} messages");
+
+                if (retrieved.Count != messages.Count)
+                {
+                    from.SendMessage($"  - ERROR: Expected {messages.Count}, got {retrieved.Count}");
+                    return false;
+                }
+
+                // Verify message content
+                if (retrieved[0].Message != "Hello NPC!")
+                {
+                    from.SendMessage($"  - ERROR: Message content mismatch");
+                    return false;
+                }
+
+                from.SendMessage($"  - Conversation history verified");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Test 10: Simulated Conversation Flow
+
+        private static async Task<bool> TestSimulatedConversation(Mobile from)
+        {
+            try
+            {
+                string npcName = "Aldric the Blacksmith";
+                string playerName = "SimulatedPlayer";
+
+                from.SendMessage("  - Simulating multi-turn conversation...");
+                from.SendMessage("");
+
+                // Turn 1: First meeting
+                from.SendMessage("  Turn 1: Player introduces themselves");
+                string msg1 = "Hello! My name is SimulatedPlayer";
+                await ProcessSimulatedMessage(from, npcName, playerName, msg1);
+
+                // Turn 2: Express preference
+                from.SendMessage("  Turn 2: Player expresses preference");
+                string msg2 = "I love crafting weapons";
+                await ProcessSimulatedMessage(from, npcName, playerName, msg2);
+
+                // Turn 3: Ask about quest
+                from.SendMessage("  Turn 3: Player asks about quest");
+                string msg3 = "Do you have any quests for me?";
+                await ProcessSimulatedMessage(from, npcName, playerName, msg3);
+
+                // Turn 4: Casual chat
+                from.SendMessage("  Turn 4: Casual conversation");
+                string msg4 = "Nice weather today";
+                await ProcessSimulatedMessage(from, npcName, playerName, msg4);
+
+                // Verify final state
+                from.SendMessage("");
+                from.SendMessage("  - Checking final state...");
+
+                var memories = await LLMMemoryService.GetMemoriesAsync(npcName, playerName, 10);
+                from.SendMessage($"  - Total memories saved: {memories.Count}");
+
+                var relationship = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+                if (relationship != null)
+                {
+                    from.SendMessage($"  - Relationship: {relationship.Type} (Score: {relationship.Score})");
+                    from.SendMessage($"  - Interactions: {relationship.InteractionCount}");
+                }
+
+                // Verify we have at least the important memories
+                int expectedMinMemories = 2; // Name and preference at minimum
+                if (memories.Count < expectedMinMemories)
+                {
+                    from.SendMessage($"  - ERROR: Expected at least {expectedMinMemories} memories, got {memories.Count}");
+                    return false;
+                }
+
+                if (relationship == null)
+                {
+                    from.SendMessage($"  - ERROR: No relationship created");
+                    return false;
+                }
+
+                if (relationship.InteractionCount != 4)
+                {
+                    from.SendMessage($"  - ERROR: Expected 4 interactions, got {relationship.InteractionCount}");
+                    return false;
+                }
+
+                from.SendMessage("");
+                from.SendMessage("  - Conversation simulation successful!");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"  - EXCEPTION: {ex.Message}");
+                Console.WriteLine($"[MemoryTests] Exception: {ex}");
+                return false;
+            }
+        }
+
+        private static async Task ProcessSimulatedMessage(Mobile from, string npcName, string playerName, string message)
+        {
+            // Determine if message should be saved as memory
+            if (MemoryHelpers.ShouldSaveMemory(message, "", out int importance))
+            {
+                var memory = new Memory
+                {
+                    NpcName = npcName,
+                    PlayerName = playerName,
+                    Type = DetermineMemoryType(message),
+                    Content = $"{playerName} said: \"{message}\"",
+                    Importance = importance,
+                    CreatedAt = DateTime.UtcNow,
+                    LastAccessed = DateTime.UtcNow
+                };
+
+                await LLMMemoryService.SaveMemoryAsync(npcName, playerName, memory);
+                from.SendMessage($"    → Saved memory (importance: {importance}): \"{message}\"");
+            }
+            else
+            {
+                from.SendMessage($"    → Not saved (low importance): \"{message}\"");
+            }
+
+            // Update relationship
+            await LLMMemoryService.UpdateRelationshipAsync(npcName, playerName, 1);
+        }
+
+        private static MemoryType DetermineMemoryType(string message)
+        {
+            var lower = message.ToLower();
+
+            if (lower.Contains("name") || lower.Contains("i am") || lower.Contains("i'm"))
+                return MemoryType.Fact;
+
+            if (lower.Contains("like") || lower.Contains("prefer") || lower.Contains("favorite") || lower.Contains("hate") || lower.Contains("love"))
+                return MemoryType.Preference;
+
+            if (lower.Contains("quest") || lower.Contains("mission") || lower.Contains("task") || lower.Contains("job"))
+                return MemoryType.Event;
+
+            if (lower.Contains("friend") || lower.Contains("enemy") || lower.Contains("ally") || lower.Contains("trust"))
+                return MemoryType.Relationship;
+
+            return MemoryType.Conversation;
+        }
+
+        #endregion
+    }
+}

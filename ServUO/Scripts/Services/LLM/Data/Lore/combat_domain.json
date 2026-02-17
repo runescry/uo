@@ -1,0 +1,28 @@
+[
+  {
+    "id": "vystia_combat_basics",
+    "title": "Vystia Combat Basics",
+    "category": "Combat",
+    "content": "Combat in Vystia follows traditional Ultima Online mechanics with Vystia enhancements. Each of the 25 classes has unique combat styles. Barbarians excel at melee DPS, Ice Mages control with freezing spells, Rangers use ranged attacks, and Artificers deploy mechanical constructs. Regional equipment provides bonuses suited to each combat style.",
+    "tags": [
+      "combat",
+      "fighting",
+      "battle",
+      "tactics"
+    ],
+    "importance": 8
+  },
+  {
+    "id": "vystia_magic_combat",
+    "title": "Vystia Magic Combat",
+    "category": "Combat",
+    "content": "Magical combat in Vystia uses 12 distinct spell schools. Each school has 32 spells across 8 circles of increasing power. Ice Magic slows and freezes, Fire Magic burns, Nature Magic heals and entangles, Dark Magic drains life, and Necromancy raises undead. Proper reagent management is essential as each school requires 8 unique reagents.",
+    "tags": [
+      "magic",
+      "combat",
+      "spells",
+      "casting"
+    ],
+    "importance": 8
+  }
+]

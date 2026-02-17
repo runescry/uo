@@ -1,0 +1,28 @@
+﻿  Determining projects to restore...
+  Restored D:\UO\ServUO\Scripts\Scripts.csproj (in 1.42 sec).
+  2 of 3 projects are up-to-date for restore.
+  Ultima -> D:\UO\ServUO\Ultima\bin\Debug\Ultima.dll
+  Server -> D:\UO\ServUO\Server\bin\Debug\ServUO.exe
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Gumps\VystiaClassSelectionGump.cs(177,35): error CS8370: Feature 'not pattern' is not available in C# 7.3. Please use language version 9.0 or greater. [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Gumps\VystiaClassConfirmationGump.cs(128,35): error CS8370: Feature 'not pattern' is not available in C# 7.3. Please use language version 9.0 or greater. [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Core\VystiaClassApplicator.cs(49,17): error CS0103: The name 'EffectItem' does not exist in the current context [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Core\VystiaClassApplicator.cs(49,56): error CS0103: The name 'EffectItem' does not exist in the current context [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Core\VystiaClassApplicator.cs(54,13): error CS0103: The name 'CommandLogging' does not exist in the current context [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Classes\WarlockClass.cs(54,37): error CS0246: The type or namespace name 'VoidstoneOre' could not be found (are you missing a using directive or an assembly reference?) [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Classes\SummonerClass.cs(54,37): error CS0246: The type or namespace name 'DeepwaterOre' could not be found (are you missing a using directive or an assembly reference?) [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Classes\NecromancerClass.cs(54,37): error CS0246: The type or namespace name 'VoidstoneOre' could not be found (are you missing a using directive or an assembly reference?) [D:\UO\ServUO\Scripts\Scripts.csproj]
+
+Build FAILED.
+
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Gumps\VystiaClassSelectionGump.cs(177,35): error CS8370: Feature 'not pattern' is not available in C# 7.3. Please use language version 9.0 or greater. [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Gumps\VystiaClassConfirmationGump.cs(128,35): error CS8370: Feature 'not pattern' is not available in C# 7.3. Please use language version 9.0 or greater. [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Core\VystiaClassApplicator.cs(49,17): error CS0103: The name 'EffectItem' does not exist in the current context [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Core\VystiaClassApplicator.cs(49,56): error CS0103: The name 'EffectItem' does not exist in the current context [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Core\VystiaClassApplicator.cs(54,13): error CS0103: The name 'CommandLogging' does not exist in the current context [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Classes\WarlockClass.cs(54,37): error CS0246: The type or namespace name 'VoidstoneOre' could not be found (are you missing a using directive or an assembly reference?) [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Classes\SummonerClass.cs(54,37): error CS0246: The type or namespace name 'DeepwaterOre' could not be found (are you missing a using directive or an assembly reference?) [D:\UO\ServUO\Scripts\Scripts.csproj]
+D:\UO\ServUO\Scripts\Custom\VystiaClasses\Classes\NecromancerClass.cs(54,37): error CS0246: The type or namespace name 'VoidstoneOre' could not be found (are you missing a using directive or an assembly reference?) [D:\UO\ServUO\Scripts\Scripts.csproj]
+    0 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:14.97

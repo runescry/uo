@@ -6,6 +6,17 @@
 
 # Explicitly include these four directories
 !/ServUO/
+/ServUO/*
+!/ServUO/Scripts/
+!/ServUO/Scripts/**
+!/ServUO/Server/
+!/ServUO/Server/**
+!/ServUO/Config/
+!/ServUO/Config/**
+!/ServUO/*.sln
+!/ServUO/*.csproj
+!/ServUO/*.config
+!/ServUO/*.md
 !/Vystia/
 !/VystiaTerrainGeneration/
 !/VystiaTownDeployment/
@@ -61,6 +72,7 @@
 **/output/maps/
 
 ServUO/Accounts/
+ServUO/Data/
 ServUO/Saves/
 ServUO/Save.bad_*/
 ServUO/Saves.bak_*/

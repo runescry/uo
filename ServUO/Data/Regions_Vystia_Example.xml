@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Vystia Map (Map 9) - Region Definitions
+
+  This file contains region definitions for the merged Vystia map.
+  To use: Copy these region entries into your main Data/Regions.xml file
+
+  Region Types:
+  - TownRegion: Player towns with guards, banking, etc.
+  - DungeonRegion: Dungeons with special rules
+  - GuardedRegion: Protected areas
+  - Region: Generic regions
+-->
+
+<ServerRegions>
+
+  <!-- ============================================== -->
+  <!-- VYSTIA MAP 9 - MAJOR CITIES                    -->
+  <!-- ============================================== -->
+
+  <!-- Example: Major City 1 at (2976, 2976) -->
+  <!-- This is the largest settlement - likely a capital city -->
+  <Region name="Unknown City 1" type="TownRegion" priority="50" map="9">
+    <go name="City1Center" location="2976, 2976, 0" />
+
+    <!-- Define rectangular boundary around the city -->
+    <!-- Adjust these coordinates based on actual city extent -->
+    <rect x1="2880" y1="2880" x2="3072" y2="3136" />
+
+    <!-- City features -->
+    <music name="Britain1" />
+
+    <!-- Optional: Define guard spawns -->
+    <!-- <guards>
+      <guard type="WarriorGuard" x="2976" y="2976" z="0" />
+    </guards> -->
+  </Region>
+
+  <!-- Example: Eastern City at (7072, 3104) -->
+  <Region name="Unknown City 2" type="TownRegion" priority="50" map="9">
+    <go name="City2Center" location="7072, 3104, 0" />
+    <rect x1="6944" y1="3008" x2="7200" y2="3200" />
+    <music name="Britain2" />
+  </Region>
+
+  <!-- Example: Mid-Eastern City at (6048, 3104) -->
+  <Region name="Unknown City 3" type="TownRegion" priority="50" map="9">
+    <go name="City3Center" location="6048, 3104, 0" />
+    <rect x1="5920" y1="3008" x2="6176" y2="3200" />
+    <music name="Magincia" />
+  </Region>
+
+  <!-- Example: Inn District at (1952, 3040) -->
+  <!-- High concentration of inns - could be a trading hub -->
+  <Region name="Trading Hub" type="TownRegion" priority="50" map="9">
+    <go name="TradingHubCenter" location="1952, 3040, 0" />
+    <rect x1="1824" y1="2944" x2="2080" y2="3136" />
+    <music name="Serpents" />
+  </Region>
+
+  <!-- ============================================== -->
+  <!-- VYSTIA MAP 9 - MEDIUM TOWNS                    -->
+  <!-- ============================================== -->
+
+  <!-- Northern Settlement at (1696, 1760) -->
+  <Region name="Northern Town" type="TownRegion" priority="50" map="9">
+    <go name="NorthTown" location="1696, 1760, 0" />
+    <rect x1="1600" y1="1664" x2="1792" y2="1856" />
+    <music name="Yew" />
+  </Region>
+
+  <!-- Central Settlement with Bank at (4064, 2976) -->
+  <Region name="Central Bank Town" type="TownRegion" priority="50" map="9">
+    <go name="CentralTown" location="4064, 2976, 0" />
+    <rect x1="3968" y1="2880" x2="4160" y2="3072" />
+    <music name="Vesper" />
+  </Region>
+
+  <!-- ============================================== -->
+  <!-- REGIONAL AREAS (Optional - for lore mapping)  -->
+  <!-- ============================================== -->
+
+  <!-- Example: Map entire Vystia regions from lore -->
+  <!-- These would be large parent regions containing multiple towns -->
+  <!--
+  <Region name="Ironclad Empire" type="Region" priority="25" map="9">
+    <go name="IroncladCenter" location="4000, 2000, 0" />
+    <rect x1="3500" y1="1500" x2="4500" y2="2500" />
+    <music name="Britain1" />
+  </Region>
+
+  <Region name="Frosthold" type="Region" priority="25" map="9">
+    <go name="FrostholdCenter" location="1500, 1000, 0" />
+    <rect x1="1000" y1="500" x2="2000" y2="1500" />
+    <music name="Cove" />
+  </Region>
+  -->
+
+  <!-- ============================================== -->
+  <!-- DUNGEON REGIONS                                -->
+  <!-- ============================================== -->
+
+  <!--
+  <Region name="Vystia Dungeon 1" type="DungeonRegion" priority="75" map="9">
+    <go name="VystiaDungeon1" location="3000, 1500, 0" />
+    <rect x1="2900" y1="1400" x2="3100" y2="1600" />
+    <music name="Dungeon9" />
+  </Region>
+  -->
+
+</ServerRegions>
