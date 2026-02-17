@@ -82,8 +82,8 @@ namespace Server.Services.LLM
                 return expertise == KnowledgeExpertise.Expert || expertise == KnowledgeExpertise.Proficient;
             }).ToList();
 
-            Console.WriteLine($"[NPCKnowledge] Loaded {knowledge.Count} total entries, {filteredKnowledge.Count} after expertise filtering");
-            Console.WriteLine($"[NPCKnowledge] Expert/Proficient only for {role}");
+            LLMLoggingConfig.LogDebug($"Loaded {knowledge.Count} total entries, {filteredKnowledge.Count} after expertise filtering");
+            LLMLoggingConfig.LogDebug($"Expert/Proficient only for {role}");
 
             return filteredKnowledge;
         }
@@ -247,7 +247,7 @@ namespace Server.Services.LLM
             // Remove duplicates (historical knowledge might overlap with role-specific)
             relevant = relevant.GroupBy(l => l.ID).Select(g => g.First()).ToList();
             
-            Console.WriteLine($"[NPCKnowledge] Role {role} knowledge: {relevant.Count} entries (including historical knowledge)");
+            LLMLoggingConfig.LogDebug($"Role {role} knowledge: {relevant.Count} entries (including historical knowledge)");
             
             return relevant;
         }
@@ -270,7 +270,7 @@ namespace Server.Services.LLM
                     l.Content.IndexOf(cityName, StringComparison.OrdinalIgnoreCase) >= 0
                 ).ToList();
 
-                Console.WriteLine($"[NPCKnowledge] Found {relevant.Count} entries for location '{cityName}'");
+                LLMLoggingConfig.LogDebug($"Found {relevant.Count} entries for location '{cityName}'");
             }
 
             // Also add nearby dungeons and important locations (NPCs should know about major places)
@@ -281,20 +281,15 @@ namespace Server.Services.LLM
             ).ToList();
 
             relevant.AddRange(dungeonAndLocationKnowledge);
-            Console.WriteLine($"[NPCKnowledge] Added {dungeonAndLocationKnowledge.Count} dungeon/location entries");
+            LLMLoggingConfig.LogDebug($"Added {dungeonAndLocationKnowledge.Count} dungeon/location entries");
 
             // Add important NPCs and characters (everyone should know about major figures like Blackthorn)
             var importantNPCs = allLore.Where(l =>
-                (l.Category == "NPC" && l.Importance >= 8) || // Important characters
-                (l.Category == "History" && l.Importance >= 9) || // Major historical events
-                l.Importance >= 10 || // Critical lore (Dark Lord = Blackthorn, etc.)
-                l.Tags.Any(t => t.Contains("blackthorn") || t.Contains("dark lord") ||
-                               t.Contains("lord british") || t.Contains("virtue") ||
-                               t.Contains("chaos") || t.Contains("order"))
+                l.Category == "NPC" && l.Importance >= 8
             ).ToList();
 
             relevant.AddRange(importantNPCs);
-            Console.WriteLine($"[NPCKnowledge] Added {importantNPCs.Count} important NPC/character entries");
+            LLMLoggingConfig.LogDebug($"Added {importantNPCs.Count} important NPC/character entries");
 
             return relevant;
         }

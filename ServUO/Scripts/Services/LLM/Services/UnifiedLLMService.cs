@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ServUO.Scripts.Services.LLM;
 using Server;
 
 namespace Server.Services.LLM
@@ -30,21 +31,21 @@ namespace Server.Services.LLM
         
         static UnifiedLLMService()
         {
-            Console.WriteLine("[UnifiedLLM] Static constructor START");
+            LLMLoggingConfig.LogStartup("[UnifiedLLM] Static constructor START");
             
             // Simplified: OpenAI-only architecture
             defaultProvider = LLMProvider.Auto;
             preferLocal = false; // Deprecated - OpenAI only
             
-            Console.WriteLine($"[UnifiedLLM] Static constructor set defaults: defaultProvider={defaultProvider}");
+            LLMLoggingConfig.LogStartup($"[UnifiedLLM] Static constructor set defaults: defaultProvider={defaultProvider}");
             
             // Log configuration
-            Console.WriteLine($"[UnifiedLLM] ========================================");
-            Console.WriteLine($"[UnifiedLLM] LLM Provider Configuration:");
-            Console.WriteLine($"[UnifiedLLM]   Provider: OpenAI-only (simplified architecture)");
-            Console.WriteLine($"[UnifiedLLM]   RAG Strategy: Proactive only (no reactive)");
-            Console.WriteLine($"[UnifiedLLM] ========================================");
-            Console.WriteLine("[UnifiedLLM] Static constructor END");
+            LLMLoggingConfig.LogStartup("[UnifiedLLM] ========================================");
+            LLMLoggingConfig.LogStartup("[UnifiedLLM] LLM Provider Configuration:");
+            LLMLoggingConfig.LogStartup("[UnifiedLLM]   Provider: OpenAI-only (simplified architecture)");
+            LLMLoggingConfig.LogStartup("[UnifiedLLM]   RAG Strategy: Proactive only (no reactive)");
+            LLMLoggingConfig.LogStartup("[UnifiedLLM] ========================================");
+            LLMLoggingConfig.LogStartup("[UnifiedLLM] Static constructor END");
         }
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Server.Services.LLM
         public static void SetDefaultProvider(LLMProvider provider)
         {
             defaultProvider = provider;
-            Console.WriteLine($"[UnifiedLLM] Default provider set to: {provider}");
+            LLMLoggingConfig.LogDebug($"[UnifiedLLM] Default provider set to: {provider}");
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Server.Services.LLM
         public static void SetPreferLocal(bool prefer)
         {
             preferLocal = prefer;
-            Console.WriteLine($"[UnifiedLLM] Prefer local LLM: {prefer}");
+            LLMLoggingConfig.LogDebug($"[UnifiedLLM] Prefer local LLM: {prefer}");
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Server.Services.LLM
         {
             LLMProvider selectedProvider = ChooseProvider(requestType, providerOverride);
 
-            Console.WriteLine($"[UnifiedLLM] Request type: {requestType}, Using provider: {selectedProvider} (Proactive RAG)");
+            LLMLoggingConfig.LogDebug($"[UnifiedLLM] Request type: {requestType}, Using provider: {selectedProvider} (Proactive RAG)");
 
             try
             {
@@ -121,7 +122,7 @@ namespace Server.Services.LLM
             // All providers route to OpenAI now - simplified architecture
             LLMProvider selectedProvider = providerOverride == LLMProvider.Auto ? LLMProvider.Auto : providerOverride;
             
-            Console.WriteLine($"[UnifiedLLM] Routing to OpenAI (provider: {selectedProvider})");
+            LLMLoggingConfig.LogDebug($"[UnifiedLLM] Routing to OpenAI (provider: {selectedProvider})");
             return LLMProvider.OpenAI;
         }
 
