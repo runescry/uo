@@ -31,17 +31,22 @@ namespace Server.Services.LLM
         
         static UnifiedLLMService()
         {
+            Console.WriteLine("[UnifiedLLM] Static constructor START");
+            
             // Ensure Auto + preferLocal is the default (explicitly set, not just initialized)
             defaultProvider = LLMProvider.Auto;
             preferLocal = true;
             
+            Console.WriteLine($"[UnifiedLLM] Static constructor set defaults: defaultProvider={defaultProvider}, preferLocal={preferLocal}");
+            
             // Log default configuration on first access
             Console.WriteLine($"[UnifiedLLM] ========================================");
             Console.WriteLine($"[UnifiedLLM] LLM Provider Configuration:");
-            Console.WriteLine($"[UnifiedLLM]   Default Provider: Auto (smart routing)");
-            Console.WriteLine($"[UnifiedLLM]   Prefer Local: True (Ollama-first for player conversations)");
-            Console.WriteLine($"[UnifiedLLM]   Quest Dialogue: OpenAI preferred (fallback to Local on error)");
+            Console.WriteLine($"[UnifiedLLM]   Default Provider: {defaultProvider} (Auto=smart routing)");
+            Console.WriteLine($"[UnifiedLLM]   Prefer Local: {preferLocal}");
+            Console.WriteLine($"[UnifiedLLM]   Local LLM: Available as fallback only");
             Console.WriteLine($"[UnifiedLLM] ========================================");
+            Console.WriteLine("[UnifiedLLM] Static constructor END");
         }
 
         /// <summary>
