@@ -295,14 +295,14 @@ namespace Server.Services.LLM
                 {
                     long queueCheckTime = (long)(DateTime.UtcNow - beforeQueueCheck).TotalMilliseconds;
                     LLMLoggingConfig.LogDebug($"EnqueueSpeechRequest - Queue check took {queueCheckTime}ms, player already in queue");
-                    npc.PrivateOverheadMessage(MessageType.Regular, 0x3B2, false, "*is already listening to you*", player.NetState);
+                    npc.PrivateOverheadMessage(MessageType.Regular, npc.SpeechHue, false, "*is already listening to you*", player.NetState);
                     return;
                 }
 
                 // Check queue size limit
                 if (state.RequestQueue.Count >= MaxQueueSize)
                 {
-                    npc.PrivateOverheadMessage(MessageType.Regular, 0x3B2, false, "*is busy with others, please wait*", player.NetState);
+                    npc.PrivateOverheadMessage(MessageType.Regular, npc.SpeechHue, false, "*is busy with others, please wait*", player.NetState);
                     return;
                 }
 
@@ -313,12 +313,12 @@ namespace Server.Services.LLM
                 // Show feedback based on queue position
                 if (state.RequestQueue.Count == 1 && !state.IsProcessingRequest)
                 {
-                    npc.PrivateOverheadMessage(MessageType.Regular, 0x3B2, false, "*ponders*", player.NetState);
+                    npc.PrivateOverheadMessage(MessageType.Regular, npc.SpeechHue, false, "*ponders*", player.NetState);
                 }
                 else
                 {
                     int position = state.RequestQueue.Count;
-                    npc.PrivateOverheadMessage(MessageType.Regular, 0x3B2, false, $"*acknowledges you ({position} in line)*", player.NetState);
+                    npc.PrivateOverheadMessage(MessageType.Regular, npc.SpeechHue, false, $"*acknowledges you ({position} in line)*", player.NetState);
                 }
             }
 
@@ -391,7 +391,7 @@ namespace Server.Services.LLM
                 {
                     if (!request.Player.Deleted && request.Player.Alive)
                     {
-                        npc.PrivateOverheadMessage(MessageType.Regular, 0x3B2, false, "*seems to have lost track of your question*", request.Player.NetState);
+                        npc.PrivateOverheadMessage(MessageType.Regular, npc.SpeechHue, false, "*seems to have lost track of your question*", request.Player.NetState);
                     }
                     continue;
                 }
@@ -717,7 +717,7 @@ namespace Server.Services.LLM
 
                     if (!player.Deleted && player.Alive && player.InRange(npc.Location, llmNpc.HearingRange))
                     {
-                        npc.SayTo(player, "I apologize, but my mind seems clouded at the moment.", 0x3B2);
+                        npc.SayTo(player, "I apologize, but my mind seems clouded at the moment.", player.SpeechHue);
                     }
 
                     // Process next request in queue
@@ -898,7 +898,7 @@ namespace Server.Services.LLM
             // If response is short enough, send it all at once
             if (response.Length <= maxChunkLength)
             {
-                npc.SayTo(player, response, 0x3B2);
+                npc.SayTo(player, response, player.SpeechHue);
                 return;
             }
 
@@ -954,7 +954,7 @@ namespace Server.Services.LLM
                 {
                     if (!player.Deleted && player.Alive && player.InRange(npc.Location, llmNpc.HearingRange))
                     {
-                        npc.SayTo(player, chunk, 0x3B2);
+                        npc.SayTo(player, chunk, player.SpeechHue);
                     }
                 });
 

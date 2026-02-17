@@ -148,6 +148,7 @@ namespace Server.Mobiles
             // Default appearance
             Body = Utility.RandomBool() ? 0x190 : 0x191; // Male or female
             Hue = Utility.RandomSkinHue();
+            SpeechHue = 0; // Use default speech hue like players
 
             // Add personality-appropriate clothing
             NPCPersonalities.AddPersonalityClothing(this, personalityType);
@@ -302,6 +303,7 @@ namespace Server.Mobiles
             // Default appearance - can be customized
             Body = 0x190; // Male body
             Hue = Utility.RandomSkinHue();
+            SpeechHue = 0; // Use default speech hue like players
 
             // Give them a distinctive look
             AddItem(new Server.Items.Robe(Utility.RandomBlueHue()));
@@ -356,6 +358,7 @@ namespace Server.Mobiles
             // Default appearance - can be customized
             Body = 0x190;
             Hue = Utility.RandomSkinHue();
+            SpeechHue = 0; // Use default speech hue like players
 
             // Give them a distinctive look
             AddItem(new Server.Items.Robe(Utility.RandomBlueHue()));
@@ -796,7 +799,7 @@ namespace Server.Mobiles
             else
             {
                 // Regular players - just greet them
-                this.SayTo(from, "Greetings, traveler. Speak to me if you wish to converse.", 0x3B2);
+                this.SayTo(from, "Greetings, traveler. Speak to me if you wish to converse.", from.SpeechHue);
             }
         }
 
@@ -831,7 +834,7 @@ namespace Server.Mobiles
             public override void OnClick()
             {
                 ConversationContext.ClearHistory(m_NPC, m_Player);
-                m_NPC.SayTo(m_Player, "Let us start our conversation anew.", 0x3B2);
+                m_NPC.SayTo(m_Player, "Let us start our conversation anew.", m_Player.SpeechHue);
             }
         }
 
