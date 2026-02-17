@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ServUO.Scripts.Services.LLM;
 
 namespace Server.Services.LLM
 {
@@ -1754,14 +1755,14 @@ namespace Server.Services.LLM
                 m.Map == npc.Map &&
                 !m.Player);
 
-            Console.WriteLine($"[NPCPersonalities] FindNPCInRegion: Searching for {targetRole} in region {regionNameForLog}, found {mobiles.Count} total mobiles");
+            LLMLoggingConfig.LogDebug($"FindNPCInRegion: Searching for {targetRole} in region {regionNameForLog}, found {mobiles.Count} total mobiles");
 
             // If we're in a small sub-region (like a building), also search the parent region
             // This handles cases where NPCs are in building interiors but need to find NPCs in the town
             Region searchRegion = currentRegion;
             if (mobiles.Count < 50 && currentRegion.Parent != null)
             {
-                Console.WriteLine($"[NPCPersonalities] FindNPCInRegion: Small region detected ({mobiles.Count} mobiles), also searching parent region {currentRegion.Parent.Name}");
+                LLMLoggingConfig.LogDebug($"FindNPCInRegion: Small region detected ({mobiles.Count} mobiles), also searching parent region {currentRegion.Parent.Name}");
                 // Search parent region instead (or in addition)
                 searchRegion = currentRegion.Parent;
                 mobiles = searchRegion.GetMobiles(m => 
@@ -1769,7 +1770,7 @@ namespace Server.Services.LLM
                     m.Alive && 
                     m.Map == npc.Map &&
                     !m.Player);
-                Console.WriteLine($"[NPCPersonalities] FindNPCInRegion: Parent region {searchRegion.Name} has {mobiles.Count} total mobiles");
+                LLMLoggingConfig.LogDebug($"FindNPCInRegion: Parent region {searchRegion.Name} has {mobiles.Count} total mobiles");
             }
 
             foreach (Mobile m in mobiles)
@@ -1820,11 +1821,11 @@ namespace Server.Services.LLM
                 }
             }
 
-            Console.WriteLine($"[NPCPersonalities] FindNPCInRegion: Checked {checkedCount} mobiles, {conversationalCount} conversational, {roleMatchCount} matched role {targetRole}");
+            LLMLoggingConfig.LogDebug($"FindNPCInRegion: Checked {checkedCount} mobiles, {conversationalCount} conversational, {roleMatchCount} matched role {targetRole}");
 
             if (nearestNPC == null)
             {
-                Console.WriteLine($"[NPCPersonalities] FindNPCInRegion: No {targetRole} found in region {regionNameForLog}");
+                LLMLoggingConfig.LogDebug($"FindNPCInRegion: No {targetRole} found in region {regionNameForLog}");
                 return null;
             }
 
@@ -1832,7 +1833,7 @@ namespace Server.Services.LLM
             var npcs = FindNPCsInRegion(npc, targetRole, regionName, maxResults: 1);
             if (npcs.Count == 0)
             {
-                Console.WriteLine($"[NPCPersonalities] FindNPCInRegion: No {targetRole} found in region {regionNameForLog}");
+                LLMLoggingConfig.LogDebug($"FindNPCInRegion: No {targetRole} found in region {regionNameForLog}");
                 return null;
             }
 

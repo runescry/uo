@@ -631,11 +631,11 @@ namespace Server.Services.LLM
 
                         if (memories.Count > 0)
                         {
-                            LLMLoggingConfig.LogMemory($"Extracted {memories.Count} memories from conversation with {player.Name}");
+                            LLMLoggingConfig.LogMemory($"[LLMConversationHelper] Extracted {memories.Count} memories from conversation with {player.Name}");
                             foreach (var memory in memories)
                             {
                                 await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory);
-                                LLMLoggingConfig.LogMemory($"Saved memory: {memory.Content.Substring(0, Math.Min(50, memory.Content.Length))}... (Importance: {memory.Importance})");
+                                LLMLoggingConfig.LogMemory($"[LLMConversationHelper] Saved memory: {memory.Content.Substring(0, Math.Min(50, memory.Content.Length))}... (Importance: {memory.Importance})");
                             }
 
                             // Update relationship based on conversation

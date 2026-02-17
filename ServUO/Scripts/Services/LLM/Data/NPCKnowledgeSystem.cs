@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Server;
+using ServUO.Scripts.Services.LLM;
 
 namespace Server.Services.LLM
 {
@@ -53,8 +54,8 @@ namespace Server.Services.LLM
             var knowledge = new List<LoreEntry>();
             var allLore = SimpleLoreSystem.GetAllLore();
 
-            Console.WriteLine($"[NPCKnowledge] Building knowledge base for {role} at {locationName}");
-            Console.WriteLine($"[NPCKnowledge] Total lore entries available: {allLore.Count}");
+            LLMLoggingConfig.LogDebug($"Building knowledge base for {role} at {locationName}");
+            LLMLoggingConfig.LogDebug($"Total lore entries available: {allLore.Count}");
 
             if (allLore.Count == 0)
             {
@@ -64,12 +65,12 @@ namespace Server.Services.LLM
             // 1. Add role-specific knowledge (NOW FILTERED BY EXPERTISE)
             var roleKnowledge = GetRoleKnowledge(role, allLore);
             knowledge.AddRange(roleKnowledge);
-            Console.WriteLine($"[NPCKnowledge] Role-specific knowledge: {roleKnowledge.Count} entries");
+            LLMLoggingConfig.LogDebug($"Role-specific knowledge: {roleKnowledge.Count} entries");
 
             // 2. Add location-specific knowledge
             var locationKnowledge = GetLocationKnowledge(locationName, location, map, allLore);
             knowledge.AddRange(locationKnowledge);
-            Console.WriteLine($"[NPCKnowledge] Location-specific knowledge: {locationKnowledge.Count} entries");
+            LLMLoggingConfig.LogDebug($"Location-specific knowledge: {locationKnowledge.Count} entries");
 
             // 3. Remove duplicates
             knowledge = knowledge.GroupBy(l => l.ID).Select(g => g.First()).ToList();
