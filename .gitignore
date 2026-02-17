@@ -72,6 +72,7 @@
 **/output/maps/
 
 ServUO/Accounts/
+ServUO/Data/
 ServUO/Saves/
 ServUO/Save.bad_*/
 ServUO/Saves.bak_*/
