@@ -380,7 +380,7 @@ namespace Server.Services.LLM
                     string llmResponse = ExtractOllamaResponse(responseBody);
 
                     // Strip any hallucinated player dialogue that appears after NPC response
-                    llmResponse = StripHallucinatedDialogue(llmResponse, playerName);
+                    llmResponse = StripHallucinatedDialogue(llmResponse, playerName, npcName);
                     
                     // Fix player name variations (e.g., "Runescrary" -> "Runescry")
                     llmResponse = FixPlayerName(llmResponse, playerName);
@@ -634,7 +634,7 @@ namespace Server.Services.LLM
                     string llmResponse = ExtractOllamaResponse(responseBody);
 
                     // Strip any hallucinated player dialogue that appears after NPC response
-                    llmResponse = StripHallucinatedDialogue(llmResponse, playerName);
+                    llmResponse = StripHallucinatedDialogue(llmResponse, playerName, npcName);
                     
                     // Fix player name variations (e.g., "Runescrary" -> "Runescry")
                     llmResponse = FixPlayerName(llmResponse, playerName);
@@ -806,7 +806,7 @@ namespace Server.Services.LLM
         /// Strip hallucinated player dialogue from LLM response
         /// phi3:mini tends to continue conversations - cut it off
         /// </summary>
-        private static string StripHallucinatedDialogue(string response, string playerName)
+        private static string StripHallucinatedDialogue(string response, string playerName, string npcName)
         {
             if (string.IsNullOrEmpty(response))
                 return response;
@@ -819,11 +819,26 @@ namespace Server.Services.LLM
             {
                 string trimmed = line.Trim();
 
-                // Stop if we hit player dialogue
+                // Stop if we hit player dialogue (at start of line)
                 if (trimmed.StartsWith(playerName + ":", StringComparison.OrdinalIgnoreCase) ||
                     trimmed.StartsWith("Player:", StringComparison.OrdinalIgnoreCase))
                 {
                     break; // Cut off everything after this
+                }
+
+                // Also check for embedded conversation format within the line
+                int playerDialogIndex = trimmed.IndexOf(playerName + ":", StringComparison.OrdinalIgnoreCase);
+                int npcDialogIndex = trimmed.IndexOf(npcName + ":", StringComparison.OrdinalIgnoreCase);
+                
+                if (playerDialogIndex >= 0)
+                {
+                    // Cut off at the player dialogue, keep only the part before it
+                    trimmed = trimmed.Substring(0, playerDialogIndex).Trim();
+                }
+                else if (npcDialogIndex > 0) // NPC name appearing mid-line is also bad
+                {
+                    // Cut off at the NPC dialogue, keep only the part before it
+                    trimmed = trimmed.Substring(0, npcDialogIndex).Trim();
                 }
 
                 // Also stop if we see obvious continuation markers
@@ -832,7 +847,10 @@ namespace Server.Services.LLM
                     continue; // Skip this line but keep going
                 }
 
-                validLines.Add(line);
+                if (!string.IsNullOrEmpty(trimmed))
+                {
+                    validLines.Add(trimmed);
+                }
             }
 
             return string.Join("\n", validLines).Trim();
