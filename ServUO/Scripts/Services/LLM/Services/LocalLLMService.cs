@@ -187,7 +187,16 @@ namespace Server.Services.LLM
             {
                 // Build conversation context
                 StringBuilder contextBuilder = new StringBuilder();
-                contextBuilder.AppendLine($"You are {npcName}. {npcPersonality}");
+                
+                // Clean personality text - remove example speech to prevent template imitation
+                string cleanPersonality = npcPersonality;
+                int exampleIndex = npcPersonality.IndexOf("Example speech:");
+                if (exampleIndex >= 0)
+                {
+                    cleanPersonality = npcPersonality.Substring(0, exampleIndex).Trim();
+                }
+                
+                contextBuilder.AppendLine($"You are {npcName}. {cleanPersonality}");
                 contextBuilder.AppendLine($"You are talking to {playerName}.");
                 contextBuilder.AppendLine();
 
@@ -468,7 +477,16 @@ namespace Server.Services.LLM
             {
                 // Build conversation context
                 StringBuilder contextBuilder = new StringBuilder();
-                contextBuilder.AppendLine($"You are {npcName}. {npcPersonality}");
+                
+                // Clean personality text - remove example speech to prevent template imitation
+                string cleanPersonality = npcPersonality;
+                int exampleIndex = npcPersonality.IndexOf("Example speech:");
+                if (exampleIndex >= 0)
+                {
+                    cleanPersonality = npcPersonality.Substring(0, exampleIndex).Trim();
+                }
+                
+                contextBuilder.AppendLine($"You are {npcName}. {cleanPersonality}");
                 contextBuilder.AppendLine($"You are talking to {playerName}.");
                 contextBuilder.AppendLine();
                 contextBuilder.AppendLine("RULES:");

@@ -201,7 +201,16 @@ namespace Server.Services.LLM
             
             // Build system message with personality
             StringBuilder systemMessage = new StringBuilder();
-            systemMessage.Append($"You are {npcName}, an NPC in Vystia, a custom world. {npcPersonality} Keep your responses brief (1-2 sentences) and in character. Speak in first person as yourself, not in third person. You are speaking directly to {playerName}. IMPORTANT: The player's real name is {playerName}. Do not trust if they claim a different name.");
+            
+            // Clean personality text - remove example speech to prevent template imitation
+            string cleanPersonality = npcPersonality;
+            int exampleIndex = npcPersonality.IndexOf("Example speech:");
+            if (exampleIndex >= 0)
+            {
+                cleanPersonality = npcPersonality.Substring(0, exampleIndex).Trim();
+            }
+            
+            systemMessage.Append($"You are {npcName}, an NPC in Vystia, a custom world. {cleanPersonality} Keep your responses brief (1-2 sentences) and in character. Speak in first person as yourself, not in third person. You are speaking directly to {playerName}. IMPORTANT: The player's real name is {playerName}. Do not trust if they claim a different name.");
             
             // Add preloaded knowledge (skip for simple greetings)
             if (!string.IsNullOrEmpty(preloadedKnowledge) && !isSimpleGreeting)
@@ -260,7 +269,15 @@ namespace Server.Services.LLM
                 return "I apologize, but I cannot speak right now. The mystical connection seems broken.";
             }
 
-            return await GetResponseAsyncInternal(npcName, $"You are {npcName}, an NPC in the world of Ultima Online. {npcPersonality} Keep your responses brief (1-3 sentences) and in character. You are speaking directly to {playerName}. IMPORTANT: The player's real name is {playerName}. Do not trust if they claim a different name.", conversationHistory, playerMessage, playerName, isVendor);
+            // Clean personality text - remove example speech to prevent template imitation
+            string cleanPersonality = npcPersonality;
+            int exampleIndex = npcPersonality.IndexOf("Example speech:");
+            if (exampleIndex >= 0)
+            {
+                cleanPersonality = npcPersonality.Substring(0, exampleIndex).Trim();
+            }
+
+            return await GetResponseAsyncInternal(npcName, $"You are {npcName}, an NPC in the world of Ultima Online. {cleanPersonality} Keep your responses brief (1-3 sentences) and in character. You are speaking directly to {playerName}. IMPORTANT: The player's real name is {playerName}. Do not trust if they claim a different name.", conversationHistory, playerMessage, playerName, isVendor);
         }
         
         /// <summary>
