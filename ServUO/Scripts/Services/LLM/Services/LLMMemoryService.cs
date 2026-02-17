@@ -74,14 +74,15 @@ namespace Server.Services.LLM
 
             try
             {
-                // Load from SQLite database
+                // Try SQLite database first (if available)
                 if (SQLiteMemoryDatabase.IsAvailable())
                 {
-                    var memories = await SQLiteMemoryDatabase.LoadMemoriesAsync(npcSerial, playerName, limit);
-                    return memories;
+                    var memories = await SQLiteMemoryDatabase.GetMemoriesAsync(npcSerial, playerName, limit);
+                    if (memories.Count > 0)
+                        return memories;
                 }
-                
-                // Fallback to in-memory store if SQLite not available
+
+                // Fallback to in-memory store
                 if (IsUsingFallback())
                 {
                     if (!InMemoryFallbackStore.IsActive)
@@ -93,7 +94,40 @@ namespace Server.Services.LLM
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[LLMMemoryService] Error loading memories: {ex.Message}");
+                Console.WriteLine($"[LLMMemoryService] Error getting memories: {ex.Message}");
+            }
+
+            return new List<Memory>();
+        }
+
+        /// <summary>
+        /// Fallback method to get memories by NPC name when serial changes after server restart
+        /// </summary>
+        public static async Task<List<Memory>> GetMemoriesByNameAsync(string npcName, string playerName, int limit = 10)
+        {
+            if (!LLMMemoryConfig.Enabled)
+                return new List<Memory>();
+
+            try
+            {
+                Console.WriteLine($"[LLMMemoryService] Fallback: Searching memories for NPC '{npcName}' and player '{playerName}'");
+                
+                // Try SQLite database first (if available)
+                if (SQLiteMemoryDatabase.IsAvailable())
+                {
+                    var memories = await SQLiteMemoryDatabase.GetMemoriesByNameAsync(npcName, playerName, limit);
+                    if (memories.Count > 0)
+                    {
+                        Console.WriteLine($"[LLMMemoryService] Fallback: Found {memories.Count} memories for NPC '{npcName}' by name lookup");
+                        return memories;
+                    }
+                }
+
+                Console.WriteLine($"[LLMMemoryService] Fallback: No memories found for NPC '{npcName}' by name lookup");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[LLMMemoryService] Error getting memories by name: {ex.Message}");
             }
 
             return new List<Memory>();

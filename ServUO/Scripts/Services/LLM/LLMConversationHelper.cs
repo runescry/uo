@@ -447,6 +447,40 @@ namespace Server.Services.LLM
                         long memoryLoadTime = (long)(DateTime.UtcNow - memoryLoadStart).TotalMilliseconds;
 
                         LLMLoggingConfig.LogMemory($"Memory query result: {memories.Count} memories found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
+                        
+                        // Debug: Check if any memories exist for this NPC name with different serials
+                        if (memories.Count == 0 && !isFirstConversation)
+                        {
+                            Console.WriteLine($"[LLMConversationHelper] DEBUG: No memories found for NPC {npc.Name} with serial {npc.Serial}. This suggests NPC serial changed after server restart.");
+                            Console.WriteLine($"[LLMConversationHelper] DEBUG: Attempting fallback lookup by NPC name '{npc.Name}' for player '{player.Name}'");
+                            
+                            // Fallback: Try to find memories by NPC name (handles serial changes after server restart)
+                            try
+                            {
+                                var fallbackMemories = await LLMMemoryService.GetMemoriesByNameAsync(npc.Name, player.Name, limit: 5);
+                                if (fallbackMemories.Count > 0)
+                                {
+                                    Console.WriteLine($"[LLMConversationHelper] SUCCESS: Found {fallbackMemories.Count} memories for NPC '{npc.Name}' by name lookup");
+                                    memories = fallbackMemories;
+                                    
+                                    // Update the memories with the new serial for future lookups
+                                    foreach (var memory in memories)
+                                    {
+                                        memory.NpcSerial = npc.Serial;
+                                        await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory);
+                                    }
+                                    Console.WriteLine($"[LLMConversationHelper] Migrated {memories.Count} memories to new serial {npc.Serial}");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"[LLMConversationHelper] Fallback: No memories found for NPC '{npc.Name}' by name lookup");
+                                }
+                            }
+                            catch (Exception fallbackEx)
+                            {
+                                Console.WriteLine($"[LLMConversationHelper] Fallback lookup failed: {fallbackEx.Message}");
+                            }
+                        }
 
                         // Verify all loaded memories belong to this NPC (defensive check)
                         foreach (var mem in memories)

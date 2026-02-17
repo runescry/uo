@@ -181,12 +181,10 @@ namespace Server.Services.LLM
             return m_Available && m_Initialized;
         }
 
-        public static async Task<List<Memory>> LoadMemoriesAsync(int npcSerial, string playerName, int limit = 10)
+        public static async Task<List<Memory>> GetMemoriesAsync(int npcSerial, string playerName, int limit = 10)
         {
             if (!IsAvailable())
                 return new List<Memory>();
-
-            var memories = new List<Memory>();
 
             try
             {
@@ -194,18 +192,20 @@ namespace Server.Services.LLM
                 {
                     await conn.OpenAsync();
 
-                    var sql = @"SELECT id, npc_serial, npc_name, player_name, memory_type, content, importance,
-                                       created_at, last_accessed, context, expires_at
-                                FROM llm_npc_memories
-                                WHERE npc_serial = @npcSerial AND player_name = @playerName
-                                ORDER BY importance DESC, last_accessed DESC
-                                LIMIT @limit";
+                    var sql = @"SELECT id, npc_serial, npc_name, player_name, memory_type, content, importance, 
+                                     created_at, last_accessed, context, expires_at
+                              FROM llm_npc_memories
+                              WHERE npc_serial = @npcSerial AND player_name = @playerName
+                              ORDER BY importance DESC, last_accessed DESC
+                              LIMIT @limit";
 
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@npcSerial", npcSerial);
                         cmd.Parameters.AddWithValue("@playerName", playerName);
                         cmd.Parameters.AddWithValue("@limit", limit);
+
+                        var memories = new List<Memory>();
 
                         using (var reader = await cmd.ExecuteReaderAsync())
                         {
@@ -217,22 +217,25 @@ namespace Server.Services.LLM
                                     NpcSerial = reader.GetInt32(1),
                                     NpcName = reader.GetString(2),
                                     PlayerName = reader.GetString(3),
-                                    Type = (MemoryType)Enum.Parse(typeof(MemoryType), reader.GetString(4)),
+                                    Type = Enum.TryParse<MemoryType>(reader.GetString(4), out var memType) ? memType : MemoryType.Conversation,
                                     Content = reader.GetString(5),
                                     Importance = reader.GetInt32(6),
                                     CreatedAt = DateTime.Parse(reader.GetString(7)),
                                     LastAccessed = DateTime.Parse(reader.GetString(8))
                                 };
 
-                                // Parse context JSON if not null
-                                if (!reader.IsDBNull(9) && !string.IsNullOrEmpty(reader.GetString(9)))
+                                // Parse context if present
+                                if (!reader.IsDBNull(9))
                                 {
-                                    var contextJson = reader.GetString(9);
-                                    memory.Context = JsonConvert.DeserializeObject<Dictionary<string, object>>(contextJson);
+                                    string contextJson = reader.GetString(9);
+                                    if (!string.IsNullOrEmpty(contextJson))
+                                    {
+                                        memory.Context = JsonConvert.DeserializeObject<Dictionary<string, object>>(contextJson);
+                                    }
                                 }
 
-                                // Parse expires_at if not null
-                                if (!reader.IsDBNull(10) && !string.IsNullOrEmpty(reader.GetString(10)))
+                                // Parse expiry if present
+                                if (!reader.IsDBNull(10))
                                 {
                                     memory.ExpiresAt = DateTime.Parse(reader.GetString(10));
                                 }
@@ -240,15 +243,93 @@ namespace Server.Services.LLM
                                 memories.Add(memory);
                             }
                         }
+
+                        return memories;
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"[SQLiteMemoryDatabase] Error loading memories: {ex.Message}");
+                return new List<Memory>();
             }
+        }
 
-            return memories;
+        /// <summary>
+        /// Fallback method to get memories by NPC name when serial changes after server restart
+        /// </summary>
+        public static async Task<List<Memory>> GetMemoriesByNameAsync(string npcName, string playerName, int limit = 10)
+        {
+            if (!IsAvailable())
+                return new List<Memory>();
+
+            try
+            {
+                using (var conn = new SQLiteConnection(m_ConnectionString))
+                {
+                    await conn.OpenAsync();
+
+                    var sql = @"SELECT id, npc_serial, npc_name, player_name, memory_type, content, importance, 
+                                     created_at, last_accessed, context, expires_at
+                              FROM llm_npc_memories
+                              WHERE npc_name = @npcName AND player_name = @playerName
+                              ORDER BY importance DESC, last_accessed DESC
+                              LIMIT @limit";
+
+                    using (var cmd = new SQLiteCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@npcName", npcName);
+                        cmd.Parameters.AddWithValue("@playerName", playerName);
+                        cmd.Parameters.AddWithValue("@limit", limit);
+
+                        var memories = new List<Memory>();
+
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                var memory = new Memory
+                                {
+                                    Id = reader.GetInt32(0),
+                                    NpcSerial = reader.GetInt32(1),
+                                    NpcName = reader.GetString(2),
+                                    PlayerName = reader.GetString(3),
+                                    Type = Enum.TryParse<MemoryType>(reader.GetString(4), out var memType) ? memType : MemoryType.Conversation,
+                                    Content = reader.GetString(5),
+                                    Importance = reader.GetInt32(6),
+                                    CreatedAt = DateTime.Parse(reader.GetString(7)),
+                                    LastAccessed = DateTime.Parse(reader.GetString(8))
+                                };
+
+                                // Parse context if present
+                                if (!reader.IsDBNull(9))
+                                {
+                                    string contextJson = reader.GetString(9);
+                                    if (!string.IsNullOrEmpty(contextJson))
+                                    {
+                                        memory.Context = JsonConvert.DeserializeObject<Dictionary<string, object>>(contextJson);
+                                    }
+                                }
+
+                                // Parse expiry if present
+                                if (!reader.IsDBNull(10))
+                                {
+                                    memory.ExpiresAt = DateTime.Parse(reader.GetString(10));
+                                }
+
+                                memories.Add(memory);
+                            }
+                        }
+
+                        return memories;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[SQLiteMemoryDatabase] Error loading memories by name: {ex.Message}");
+                return new List<Memory>();
+            }
         }
 
         public static async Task SaveMemoryAsync(Memory memory)
