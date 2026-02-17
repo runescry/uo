@@ -26,21 +26,21 @@ namespace Server.Services.LLM
             AutonomousBehavior     // Fast needed - use Local
         }
 
-        private static LLMProvider defaultProvider = LLMProvider.OpenAI; // Default to OpenAI for better quality
-        private static bool preferLocal = false; // Prefer OpenAI for quality
+        private static LLMProvider defaultProvider = LLMProvider.Auto; // Smart routing by default
+        private static bool preferLocal = true; // Prefer Local for player conversations when using Auto
         
         static UnifiedLLMService()
         {
-            // Ensure OpenAI is the default (explicitly set, not just initialized)
-            defaultProvider = LLMProvider.OpenAI;
-            preferLocal = false;
+            // Ensure Auto + preferLocal is the default (explicitly set, not just initialized)
+            defaultProvider = LLMProvider.Auto;
+            preferLocal = true;
             
             // Log default configuration on first access
             Console.WriteLine($"[UnifiedLLM] ========================================");
             Console.WriteLine($"[UnifiedLLM] LLM Provider Configuration:");
-            Console.WriteLine($"[UnifiedLLM]   Default Provider: OpenAI (gpt-4o-mini)");
-            Console.WriteLine($"[UnifiedLLM]   Prefer Local: False");
-            Console.WriteLine($"[UnifiedLLM]   Local LLM: Available as fallback only");
+            Console.WriteLine($"[UnifiedLLM]   Default Provider: Auto (smart routing)");
+            Console.WriteLine($"[UnifiedLLM]   Prefer Local: True (Ollama-first for player conversations)");
+            Console.WriteLine($"[UnifiedLLM]   Quest Dialogue: OpenAI preferred (fallback to Local on error)");
             Console.WriteLine($"[UnifiedLLM] ========================================");
         }
 
@@ -107,8 +107,31 @@ namespace Server.Services.LLM
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[UnifiedLLM] Error in GetResponseAsync (Proactive): {ex.Message}");
-                return "I seem to be having trouble thinking right now...";
+                Console.WriteLine($"[UnifiedLLM] Error with {selectedProvider} in GetResponseAsync (Proactive): {ex.Message}");
+
+                // Fallback to other provider if one fails (parity with legacy overload)
+                try
+                {
+                    if (selectedProvider == LLMProvider.Local)
+                    {
+                        Console.WriteLine("[UnifiedLLM] Falling back to OpenAI (Proactive)...");
+
+                        if (requestType == RequestType.QuestDialogue)
+                        {
+                            return await LLMService.GetResponseAsyncForQuest(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge);
+                        }
+
+                        return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
+                    }
+
+                    Console.WriteLine("[UnifiedLLM] Falling back to Local LLM (Proactive)...");
+                    return await LocalLLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
+                }
+                catch (Exception fallbackEx)
+                {
+                    Console.WriteLine($"[UnifiedLLM] Fallback failed in GetResponseAsync (Proactive): {fallbackEx.Message}");
+                    return "I seem to be having trouble thinking right now...";
+                }
             }
         }
 
