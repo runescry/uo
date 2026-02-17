@@ -165,7 +165,7 @@ namespace Server.Services.LLM
             DateTime beforeInterfaceCheck = DateTime.UtcNow;
             var llmNpc = npc as ILLMConversational;
             long interfaceCheckTime = (long)(DateTime.UtcNow - beforeInterfaceCheck).TotalMilliseconds;
-            Console.WriteLine($"[LLMConversationHelper] ProcessConversation - Interface check took {interfaceCheckTime}ms");
+            LLMLoggingConfig.LogConversationHelper($"ProcessConversation - Interface check took {interfaceCheckTime}ms");
             
             if (llmNpc == null || !llmNpc.LLMConversationEnabled)
             {
@@ -173,12 +173,12 @@ namespace Server.Services.LLM
                 return;
             }
 
-            Console.WriteLine($"[LLMConversationHelper] ProcessConversation: Processing conversation for {npc.Name} from {player.Name}: '{message}'");
+            LLMLoggingConfig.LogConversationHelper($"ProcessConversation: Processing conversation for {npc.Name} from {player.Name}: '{message}'");
 
             DateTime beforeGetState = DateTime.UtcNow;
             var state = GetOrCreateState(npc);
             long getStateTime = (long)(DateTime.UtcNow - beforeGetState).TotalMilliseconds;
-            Console.WriteLine($"[LLMConversationHelper] ProcessConversation - GetOrCreateState took {getStateTime}ms");
+            LLMLoggingConfig.LogTiming($"ProcessConversation - GetOrCreateState took {getStateTime}ms");
 
             // Update active conversation timestamp
             state.ActiveConversations[player] = DateTime.UtcNow;
@@ -193,10 +193,10 @@ namespace Server.Services.LLM
             // Enqueue the request
             EnqueueSpeechRequest(npc, llmNpc, state, player, message);
             long enqueueTime = (long)(DateTime.UtcNow - beforeEnqueue).TotalMilliseconds;
-            Console.WriteLine($"[LLMConversationHelper] ProcessConversation - EnqueueSpeechRequest took {enqueueTime}ms");
+            LLMLoggingConfig.LogTiming($"ProcessConversation - EnqueueSpeechRequest took {enqueueTime}ms");
             
             long totalTime = (long)(DateTime.UtcNow - processStart).TotalMilliseconds;
-            Console.WriteLine($"[LLMConversationHelper] ProcessConversation END - Total time: {totalTime}ms");
+            LLMLoggingConfig.LogTiming($"ProcessConversation END - Total time: {totalTime}ms");
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Server.Services.LLM
         private static void EnqueueSpeechRequest(Mobile npc, ILLMConversational llmNpc, ConversationState state, Mobile player, string message)
         {
             DateTime enqueueStart = DateTime.UtcNow;
-            Console.WriteLine($"[LLMConversationHelper] EnqueueSpeechRequest START - NPC: {npc?.Name}, Player: {player?.Name}, Time: {enqueueStart:HH:mm:ss.fff}");
+            LLMLoggingConfig.LogDebug($"EnqueueSpeechRequest START - NPC: {npc?.Name}, Player: {player?.Name}, Time: {enqueueStart:HH:mm:ss.fff}");
             
             DateTime beforeLock = DateTime.UtcNow;
             lock (state.QueueLock)
@@ -286,7 +286,7 @@ namespace Server.Services.LLM
                 long lockWaitTime = (long)(DateTime.UtcNow - beforeLock).TotalMilliseconds;
                 if (lockWaitTime > 0)
                 {
-                    Console.WriteLine($"[LLMConversationHelper] EnqueueSpeechRequest - Lock wait: {lockWaitTime}ms");
+                    LLMLoggingConfig.LogDebug($"EnqueueSpeechRequest - Lock wait: {lockWaitTime}ms");
                 }
                 
                 DateTime beforeQueueCheck = DateTime.UtcNow;
@@ -294,7 +294,7 @@ namespace Server.Services.LLM
                 if (state.RequestQueue.Any(r => r.Player == player) || state.ProcessingPlayers.Contains(player))
                 {
                     long queueCheckTime = (long)(DateTime.UtcNow - beforeQueueCheck).TotalMilliseconds;
-                    Console.WriteLine($"[LLMConversationHelper] EnqueueSpeechRequest - Queue check took {queueCheckTime}ms, player already in queue");
+                    LLMLoggingConfig.LogDebug($"EnqueueSpeechRequest - Queue check took {queueCheckTime}ms, player already in queue");
                     npc.PrivateOverheadMessage(MessageType.Regular, 0x3B2, false, "*is already listening to you*", player.NetState);
                     return;
                 }
@@ -323,16 +323,16 @@ namespace Server.Services.LLM
             }
 
             long enqueueTime = (long)(DateTime.UtcNow - enqueueStart).TotalMilliseconds;
-            Console.WriteLine($"[LLMConversationHelper] EnqueueSpeechRequest - Enqueue took {enqueueTime}ms");
+            LLMLoggingConfig.LogDebug($"EnqueueSpeechRequest - Enqueue took {enqueueTime}ms");
 
             // Try to process the queue
             DateTime beforeProcessNext = DateTime.UtcNow;
             ProcessNextRequest(npc, llmNpc, state);
             long processNextTime = (long)(DateTime.UtcNow - beforeProcessNext).TotalMilliseconds;
-            Console.WriteLine($"[LLMConversationHelper] EnqueueSpeechRequest - ProcessNextRequest took {processNextTime}ms");
+            LLMLoggingConfig.LogDebug($"EnqueueSpeechRequest - ProcessNextRequest took {processNextTime}ms");
             
             long totalEnqueueTime = (long)(DateTime.UtcNow - enqueueStart).TotalMilliseconds;
-            Console.WriteLine($"[LLMConversationHelper] EnqueueSpeechRequest END - Total time: {totalEnqueueTime}ms");
+            LLMLoggingConfig.LogDebug($"EnqueueSpeechRequest END - Total time: {totalEnqueueTime}ms");
         }
 
         /// <summary>
