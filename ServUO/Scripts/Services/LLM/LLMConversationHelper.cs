@@ -591,6 +591,12 @@ namespace Server.Services.LLM
 
                     if (!player.Deleted && player.Alive && player.InRange(npc.Location, llmNpc.HearingRange))
                     {
+                        if (vendorAction == VendorAction.Sell && npc is BaseVendor vendorForSellCheck && !PlayerHasItemsToSell(vendorForSellCheck, player))
+                        {
+                            ExecuteVendorAction(vendorForSellCheck, player, vendorAction);
+                            return;
+                        }
+
                         // Strip vendor command markers from response before displaying
                         string displayResponse = StripVendorCommands(response);
 
@@ -764,6 +770,31 @@ namespace Server.Services.LLM
             {
                 vendor.VendorSell(player);
             }
+        }
+
+        private static bool PlayerHasItemsToSell(BaseVendor vendor, Mobile player)
+        {
+            Container pack = player.Backpack;
+            if (pack == null)
+                return false;
+
+            var info = vendor.GetSellInfo();
+
+            foreach (IShopSellInfo ssi in info)
+            {
+                var items = pack.FindItemsByType(ssi.Types);
+
+                foreach (Item item in items)
+                {
+                    if (item is Container container && container.Items.Count != 0)
+                        continue;
+
+                    if (item.IsStandardLoot() && item.Movable && ssi.IsSellable(item))
+                        return true;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
