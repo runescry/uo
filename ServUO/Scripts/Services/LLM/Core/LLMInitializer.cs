@@ -23,6 +23,12 @@ namespace Server.Services.LLM
             // Phase 1: LLM Providers
             LLMService.Initialize();
             LocalLLMService.Initialize();
+            
+            // Phase 1.5: Ensure UnifiedLLMService static constructor runs
+            // This sets the Ollama-first defaults (preferLocal=true)
+            Console.WriteLine("[LLM Service] Initializing UnifiedLLMService...");
+            var _ = typeof(Server.Services.LLM.UnifiedLLMService);
+            Console.WriteLine("[LLM Service] UnifiedLLMService initialized");
 
             // Phase 2: Knowledge Base (RAG)
             VectorLoreSystem.Initialize();
