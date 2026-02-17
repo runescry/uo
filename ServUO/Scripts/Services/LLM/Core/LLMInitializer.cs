@@ -27,7 +27,8 @@ namespace Server.Services.LLM
             // Phase 1.5: Ensure UnifiedLLMService static constructor runs
             // This sets the Ollama-first defaults (preferLocal=true)
             Console.WriteLine("[LLM Service] Initializing UnifiedLLMService...");
-            var _ = typeof(Server.Services.LLM.UnifiedLLMService);
+            // Force static constructor to run by accessing a static property
+            var _ = Server.Services.LLM.UnifiedLLMService.GetUsageStats();
             Console.WriteLine("[LLM Service] UnifiedLLMService initialized");
 
             // Phase 2: Knowledge Base (RAG)
