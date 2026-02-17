@@ -104,7 +104,24 @@ namespace Server.Services.LLM
                         return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
 
                     case LLMProvider.Local:
-                        return await LocalLLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
+                        // Add timeout for LocalLLM to prevent long waits
+                        var localTask = LocalLLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
+                        var timeoutTask = Task.Delay(TimeSpan.FromSeconds(5)); // 5 second timeout
+                        
+                        var completedTask = await Task.WhenAny(localTask, timeoutTask);
+                        
+                        if (completedTask == timeoutTask)
+                        {
+                            Console.WriteLine("[UnifiedLLM] LocalLLM timeout (5s) - falling back to OpenAI");
+                            // Fall back to OpenAI for faster response
+                            if (requestType == RequestType.QuestDialogue)
+                            {
+                                return await LLMService.GetResponseAsyncForQuest(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge);
+                            }
+                            return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
+                        }
+                        
+                        return await localTask;
 
                     default:
                         return "Error: Invalid provider selection.";
