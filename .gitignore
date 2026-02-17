@@ -59,3 +59,11 @@
 **/backups/
 **/patched_client/
 **/output/maps/
+
+ServUO/Accounts/
+ServUO/Saves/
+ServUO/Save.bad_*/
+ServUO/Saves.bak_*/
+ServUO/Saves_Backup_*/
+ServUO/Logs/
+ServUO/centredsharp/
