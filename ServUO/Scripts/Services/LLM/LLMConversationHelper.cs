@@ -10,6 +10,7 @@ using Server.Mobiles;
 using Server.Network;
 using Server.Custom.VystiaClasses.Quests;
 using Server.Services.LLM.Core;
+using ServUO.Scripts.Services.LLM;
 
 namespace Server.Services.LLM
 {
