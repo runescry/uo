@@ -554,6 +554,17 @@ namespace Server.Services.LLM
                             if (relationship != null && relationship.NpcSerial == npc.Serial)
                             {
                                 memoriesText += MemoryHelpers.FormatRelationshipForPrompt(relationship);
+                                
+                                // Add relationship-based greeting hint for the LLM
+                                if (npc is ILLMConversational conversationalNpc)
+                                {
+                                    string relationshipGreeting = NPCPersonalities.GetRelationshipBasedGreeting(
+                                        conversationalNpc.PersonalityType, 
+                                        relationship.Type, 
+                                        relationship.Score
+                                    );
+                                    memoriesText += $"\n## Suggested Greeting Style:\n{relationshipGreeting}";
+                                }
                             }
                             else if (relationship != null && relationship.NpcSerial != npc.Serial)
                             {

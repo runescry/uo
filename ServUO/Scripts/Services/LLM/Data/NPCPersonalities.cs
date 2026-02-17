@@ -2205,6 +2205,394 @@ namespace Server.Services.LLM
                     break;
             }
         }
+
+        #region Relationship-Based Greetings
+
+        /// <summary>
+        /// Gets a relationship-based greeting for an NPC based on their personality and relationship level
+        /// </summary>
+        public static string GetRelationshipBasedGreeting(PersonalityType personality, RelationshipType relationshipType, int relationshipScore)
+        {
+            // Determine relationship level from score
+            string relationshipLevel = GetRelationshipLevel(relationshipScore);
+            
+            if (personality == PersonalityType.Healer)
+                return GetHealerGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.InnKeeper)
+                return GetInnkeeperGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Merchant)
+                return GetMerchantGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Guard)
+                return GetGuardGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Sage)
+                return GetScholarGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Blacksmith)
+                return GetBlacksmithGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Alchemist)
+                return GetAlchemistGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Bard)
+                return GetBardGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Villain)
+                return GetVillainGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Noble)
+                return GetNobleGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Commoner)
+                return GetPeasantGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Warrior)
+                return GetWarriorGreeting(relationshipLevel, relationshipType);
+            else if (personality == PersonalityType.Hermit)
+                return GetHermitGreeting(relationshipLevel, relationshipType);
+            else
+                return GetCommonerGreeting(relationshipLevel, relationshipType);
+        }
+
+        private static string GetRelationshipLevel(int score)
+        {
+            if (score >= 80) return "Best Friend";
+            if (score >= 60) return "Good Friend";
+            if (score >= 40) return "Friend";
+            if (score >= 20) return "Acquaintance";
+            if (score >= 0) return "Stranger";
+            return "Disliked";
+        }
+
+        private static string GetHealerGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "My dear friend! It's wonderful to see you again. How are you feeling today?";
+                case "Good Friend":
+                    return "Hello there! Always good to see a friendly face. Are you keeping well?";
+                case "Friend":
+                    return "Greetings! Come, let me check if you need any healing.";
+                case "Acquaintance":
+                    return "Hello. If you need healing or remedies, I'm here to help.";
+                case "Stranger":
+                    return "Welcome. If you're injured or unwell, I can tend to your wounds.";
+                case "Disliked":
+                    return "What do you want? If you're hurt, make it quick.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetInnkeeperGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Hey! Your usual spot's waiting for you! Good to see you back!";
+                case "Good Friend":
+                    return "Welcome back! The usual today, or something special?";
+                case "Friend":
+                    return "Hello! Come on in, have a seat. What can I get for you?";
+                case "Acquaintance":
+                    return "Welcome to my inn. What can I get you today?";
+                case "Stranger":
+                    return "Greetings, traveler. Welcome to my establishment.";
+                case "Disliked":
+                    return "What do you want? If you're not buying, don't block the entrance.";
+                default:
+                    return "Welcome.";
+            }
+        }
+
+        private static string GetMerchantGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Ah, my favorite customer! I have some new items just for you!";
+                case "Good Friend":
+                    return "Welcome back! I've got some fine wares for you today.";
+                case "Friend":
+                    return "Hello! Come browse my wares, I think you'll find something good.";
+                case "Acquaintance":
+                    return "Greetings! Feel free to browse my selection.";
+                case "Stranger":
+                    return "Welcome, customer. Let me know if you need anything.";
+                case "Disliked":
+                    return "If you're not buying, don't touch the merchandise.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetGuardGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Good to see you! Everything's quiet on my watch today.";
+                case "Good Friend":
+                    return "Hello! Keeping the peace, as always. All well with you?";
+                case "Friend":
+                    return "Greetings! Stay safe out there.";
+                case "Acquaintance":
+                    return "Hello. Move along, nothing to see here.";
+                case "Stranger":
+                    return "State your business. No trouble, I hope.";
+                case "Disliked":
+                    return "What do you want? Don't cause any trouble.";
+                default:
+                    return "Halt, citizen.";
+            }
+        }
+
+        private static string GetScholarGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Ah, my friend! Come to discuss some fascinating topic, I hope?";
+                case "Good Friend":
+                    return "Greetings! I was just reading something interesting you might enjoy.";
+                case "Friend":
+                    return "Hello! Always good to see an eager mind.";
+                case "Acquaintance":
+                    return "Greetings. Seek knowledge, do you?";
+                case "Stranger":
+                    return "Welcome. The pursuit of knowledge is noble.";
+                case "Disliked":
+                    return "If you're here to disturb my studies, think again.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetBlacksmithGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Hey! Your gear's looking good. Need any repairs or upgrades?";
+                case "Good Friend":
+                    return "Welcome back! Got your equipment ready for you.";
+                case "Friend":
+                    return "Hello! Need some metalwork done?";
+                case "Acquaintance":
+                    return "Greetings. Need weapons or armor?";
+                case "Stranger":
+                    return "Welcome to my forge. What do you need?";
+                case "Disliked":
+                    return "If you're not here to buy, don't waste my time.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetAlchemistGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Ah, my friend! Come to try some new concoctions?";
+                case "Good Friend":
+                    return "Welcome! I have some fresh potions ready for you.";
+                case "Friend":
+                    return "Greetings! Need some magical assistance?";
+                case "Acquaintance":
+                    return "Hello. Potions and reagents available.";
+                case "Stranger":
+                    return "Welcome. The arcane arts require precision.";
+                case "Disliked":
+                    return "If you break anything, you buy it.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetBardGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "My friend! Come to hear a new song I've composed?";
+                case "Good Friend":
+                    return "Welcome! I have a tale just for you today.";
+                case "Friend":
+                    return "Greetings! Care to hear some music?";
+                case "Acquaintance":
+                    return "Hello. Music soothes the soul, does it not?";
+                case "Stranger":
+                    return "Welcome! A song for a coin?";
+                case "Disliked":
+                    return "If you don't appreciate art, move along.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetCriminalGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Hey! Got something good for you today, if you're interested.";
+                case "Good Friend":
+                    return "Psst... over here. Got something special.";
+                case "Friend":
+                    return "Hey there. Looking for something... unusual?";
+                case "Acquaintance":
+                    return "What do you want? Keep your voice down.";
+                case "Stranger":
+                    return "Who are you? What do you want?";
+                case "Disliked":
+                    return "Get lost before I get angry.";
+                default:
+                    return "What do you want?";
+            }
+        }
+
+        private static string GetNobleGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "My dear friend! So good to see you again. Do join me.";
+                case "Good Friend":
+                    return "Ah, welcome! It's always a pleasure to see you.";
+                case "Friend":
+                    return "Greetings! Fine weather we're having, isn't it?";
+                case "Acquaintance":
+                    return "Welcome. I hope you find what you seek.";
+                case "Stranger":
+                    return "Greetings. State your purpose, if you please.";
+                case "Disliked":
+                    return "I don't believe we have anything to discuss.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetPeasantGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Hey there! Good to see ya! Need any help with the crops?";
+                case "Good Friend":
+                    return "Hello! Nice day for working, eh?";
+                case "Friend":
+                    return "Greetings! How's the harvest treating you?";
+                case "Acquaintance":
+                    return "Hello there. Working hard?";
+                case "Stranger":
+                    return "Greetings. Just trying to make a living.";
+                case "Disliked":
+                    return "What do you want? I'm busy.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetChildGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Yay! You're back! Wanna play?";
+                case "Good Friend":
+                    return "Hello! Want to hear a secret?";
+                case "Friend":
+                    return "Hi! What are you doing?";
+                case "Acquaintance":
+                    return "Hello! Are you nice?";
+                case "Stranger":
+                    return "Hi! Who are you?";
+                case "Disliked":
+                    return "I don't like you. Go away.";
+                default:
+                    return "Hello!";
+            }
+        }
+
+        private static string GetWarriorGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "My friend! Good to see you in one piece. Been in any good fights?";
+                case "Good Friend":
+                    return "Welcome! Keeping your skills sharp, I hope.";
+                case "Friend":
+                    return "Greetings! Stay strong out there.";
+                case "Acquaintance":
+                    return "Hello. Training today?";
+                case "Stranger":
+                    return "State your business. Are you a warrior?";
+                case "Disliked":
+                    return "What do you want? Don't waste my time.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        private static string GetVillainGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Ah, my ally! Come, we have much to discuss...";
+                case "Good Friend":
+                    return "Welcome. Your... talents... are always appreciated.";
+                case "Friend":
+                    return "Greetings. You understand the way things truly work.";
+                case "Acquaintance":
+                    return "What do you want? Make it quick.";
+                case "Stranger":
+                    return "Who dares approach me? State your purpose.";
+                case "Disliked":
+                    return "Fool! You waste my valuable time.";
+                default:
+                    return "What do you want?";
+            }
+        }
+
+        private static string GetHermitGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Ah... you're back. The woods have been quiet without you.";
+                case "Good Friend":
+                    return "Hello. Not many come to visit. What brings you?";
+                case "Friend":
+                    return "Greetings. The wilderness suits you, I think.";
+                case "Acquaintance":
+                    return "Hello. Don't touch anything.";
+                case "Stranger":
+                    return "Who are you? Why are you here?";
+                case "Disliked":
+                    return "Leave me be. I want no company.";
+                default:
+                    return "What do you want?";
+            }
+        }
+
+        private static string GetCommonerGreeting(string level, RelationshipType type)
+        {
+            switch (level)
+            {
+                case "Best Friend":
+                    return "Hey! Good to see you again! How have you been?";
+                case "Good Friend":
+                    return "Hello! Nice to see a friendly face.";
+                case "Friend":
+                    return "Greetings! How are you today?";
+                case "Acquaintance":
+                    return "Hello. Can I help you with something?";
+                case "Stranger":
+                    return "Greetings. Welcome to our town.";
+                case "Disliked":
+                    return "What do you want? I'm busy.";
+                default:
+                    return "Greetings.";
+            }
+        }
+
+        #endregion
     }
 }
 
