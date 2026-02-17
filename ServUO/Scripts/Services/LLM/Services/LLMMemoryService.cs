@@ -101,33 +101,33 @@ namespace Server.Services.LLM
         }
 
         /// <summary>
-        /// Fallback method to get memories by NPC name when serial changes after server restart
+        /// Fallback method to get memories by NPC name and location when serial changes after server restart
         /// </summary>
-        public static async Task<List<Memory>> GetMemoriesByNameAsync(string npcName, string playerName, int limit = 10)
+        public static async Task<List<Memory>> GetMemoriesByNameAndLocationAsync(string npcName, string playerName, Point3D location, Map map, int limit = 10)
         {
             if (!LLMMemoryConfig.Enabled)
                 return new List<Memory>();
 
             try
             {
-                Console.WriteLine($"[LLMMemoryService] Fallback: Searching memories for NPC '{npcName}' and player '{playerName}'");
+                Console.WriteLine($"[LLMMemoryService] Fallback: Searching memories for NPC '{npcName}' at {location} on {map.Name} for player '{playerName}'");
                 
                 // Try SQLite database first (if available)
                 if (SQLiteMemoryDatabase.IsAvailable())
                 {
-                    var memories = await SQLiteMemoryDatabase.GetMemoriesByNameAsync(npcName, playerName, limit);
+                    var memories = await SQLiteMemoryDatabase.GetMemoriesByNameAndLocationAsync(npcName, playerName, location, map, limit);
                     if (memories.Count > 0)
                     {
-                        Console.WriteLine($"[LLMMemoryService] Fallback: Found {memories.Count} memories for NPC '{npcName}' by name lookup");
+                        Console.WriteLine($"[LLMMemoryService] Fallback: Found {memories.Count} memories for NPC '{npcName}' by name+location lookup");
                         return memories;
                     }
                 }
 
-                Console.WriteLine($"[LLMMemoryService] Fallback: No memories found for NPC '{npcName}' by name lookup");
+                Console.WriteLine($"[LLMMemoryService] Fallback: No memories found for NPC '{npcName}' by name+location lookup");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[LLMMemoryService] Error getting memories by name: {ex.Message}");
+                Console.WriteLine($"[LLMMemoryService] Error getting memories by name and location: {ex.Message}");
             }
 
             return new List<Memory>();
@@ -136,7 +136,7 @@ namespace Server.Services.LLM
         /// <summary>
         /// Saves a memory (writes to cache and database, or fallback store)
         /// </summary>
-        public static async Task SaveMemoryAsync(int npcSerial, string npcName, string playerName, Memory memory)
+        public static async Task SaveMemoryAsync(int npcSerial, string npcName, string playerName, Memory memory, Point3D location, Map map)
         {
             if (!LLMMemoryConfig.Enabled)
                 return;
@@ -152,7 +152,7 @@ namespace Server.Services.LLM
                 {
                     _ = Task.Run(async () =>
                     {
-                        await SQLiteMemoryDatabase.SaveMemoryAsync(memory);
+                        await SQLiteMemoryDatabase.SaveMemoryAsync(memory, location, map);
                     });
                 }
                 

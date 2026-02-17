@@ -454,26 +454,26 @@ namespace Server.Services.LLM
                             Console.WriteLine($"[LLMConversationHelper] DEBUG: No memories found for NPC {npc.Name} with serial {npc.Serial}. This suggests NPC serial changed after server restart.");
                             Console.WriteLine($"[LLMConversationHelper] DEBUG: Attempting fallback lookup by NPC name '{npc.Name}' for player '{player.Name}'");
                             
-                            // Fallback: Try to find memories by NPC name (handles serial changes after server restart)
+                            // Fallback: Try to find memories by NPC name and location (handles serial changes after server restart)
                             try
                             {
-                                var fallbackMemories = await LLMMemoryService.GetMemoriesByNameAsync(npc.Name, player.Name, limit: 5);
+                                var fallbackMemories = await LLMMemoryService.GetMemoriesByNameAndLocationAsync(npc.Name, player.Name, npc.Location, npc.Map, limit: 5);
                                 if (fallbackMemories.Count > 0)
                                 {
-                                    Console.WriteLine($"[LLMConversationHelper] SUCCESS: Found {fallbackMemories.Count} memories for NPC '{npc.Name}' by name lookup");
+                                    Console.WriteLine($"[LLMConversationHelper] SUCCESS: Found {fallbackMemories.Count} memories for NPC '{npc.Name}' by name+location lookup");
                                     memories = fallbackMemories;
                                     
                                     // Update the memories with the new serial for future lookups
                                     foreach (var memory in memories)
                                     {
                                         memory.NpcSerial = npc.Serial;
-                                        await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory);
+                                        await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory, npc.Location, npc.Map);
                                     }
                                     Console.WriteLine($"[LLMConversationHelper] Migrated {memories.Count} memories to new serial {npc.Serial}");
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"[LLMConversationHelper] Fallback: No memories found for NPC '{npc.Name}' by name lookup");
+                                    Console.WriteLine($"[LLMConversationHelper] Fallback: No memories found for NPC '{npc.Name}' by name+location lookup");
                                 }
                             }
                             catch (Exception fallbackEx)
@@ -684,7 +684,7 @@ namespace Server.Services.LLM
                             LLMLoggingConfig.LogMemory($"[LLMConversationHelper] Extracted {memories.Count} memories from conversation with {player.Name}");
                             foreach (var memory in memories)
                             {
-                                await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory);
+                                await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory, npc.Location, npc.Map);
                                 LLMLoggingConfig.LogMemory($"[LLMConversationHelper] Saved memory: {memory.Content.Substring(0, Math.Min(50, memory.Content.Length))}... (Importance: {memory.Importance})");
                             }
 

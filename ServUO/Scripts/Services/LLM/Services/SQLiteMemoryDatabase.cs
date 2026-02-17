@@ -108,7 +108,11 @@ namespace Server.Services.LLM
                             context TEXT,
                             created_at TEXT NOT NULL,
                             last_accessed TEXT NOT NULL,
-                            expires_at TEXT
+                            expires_at TEXT,
+                            location_x INTEGER,
+                            location_y INTEGER,
+                            location_z INTEGER,
+                            map_name TEXT
                         )";
 
                     using (var cmd = new SQLiteCommand(createMemoriesTable, conn))
@@ -121,6 +125,7 @@ namespace Server.Services.LLM
                         CREATE INDEX IF NOT EXISTS idx_memories_npc_player ON llm_npc_memories(npc_serial, player_name);
                         CREATE INDEX IF NOT EXISTS idx_memories_importance ON llm_npc_memories(importance DESC);
                         CREATE INDEX IF NOT EXISTS idx_memories_last_accessed ON llm_npc_memories(last_accessed DESC);
+                        CREATE INDEX IF NOT EXISTS idx_memories_name_location ON llm_npc_memories(npc_name, location_x, location_y, location_z, map_name);
                     ";
 
                     using (var cmd = new SQLiteCommand(createIndexes, conn))
@@ -256,9 +261,9 @@ namespace Server.Services.LLM
         }
 
         /// <summary>
-        /// Fallback method to get memories by NPC name when serial changes after server restart
+        /// Fallback method to get memories by NPC name and location when serial changes after server restart
         /// </summary>
-        public static async Task<List<Memory>> GetMemoriesByNameAsync(string npcName, string playerName, int limit = 10)
+        public static async Task<List<Memory>> GetMemoriesByNameAndLocationAsync(string npcName, string playerName, Point3D location, Map map, int limit = 10)
         {
             if (!IsAvailable())
                 return new List<Memory>();
@@ -269,10 +274,14 @@ namespace Server.Services.LLM
                 {
                     await conn.OpenAsync();
 
+                    // Search for memories with same name and nearby location (within 50 tiles)
                     var sql = @"SELECT id, npc_serial, npc_name, player_name, memory_type, content, importance, 
                                      created_at, last_accessed, context, expires_at
                               FROM llm_npc_memories
-                              WHERE npc_name = @npcName AND player_name = @playerName
+                              WHERE npc_name = @npcName AND player_name = @playerName 
+                                AND map_name = @mapName
+                                AND ABS(location_x - @locationX) <= 50 
+                                AND ABS(location_y - @locationY) <= 50
                               ORDER BY importance DESC, last_accessed DESC
                               LIMIT @limit";
 
@@ -280,6 +289,9 @@ namespace Server.Services.LLM
                     {
                         cmd.Parameters.AddWithValue("@npcName", npcName);
                         cmd.Parameters.AddWithValue("@playerName", playerName);
+                        cmd.Parameters.AddWithValue("@locationX", location.X);
+                        cmd.Parameters.AddWithValue("@locationY", location.Y);
+                        cmd.Parameters.AddWithValue("@mapName", map?.Name ?? "");
                         cmd.Parameters.AddWithValue("@limit", limit);
 
                         var memories = new List<Memory>();
@@ -327,12 +339,12 @@ namespace Server.Services.LLM
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[SQLiteMemoryDatabase] Error loading memories by name: {ex.Message}");
+                Console.WriteLine($"[SQLiteMemoryDatabase] Error loading memories by name and location: {ex.Message}");
                 return new List<Memory>();
             }
         }
 
-        public static async Task SaveMemoryAsync(Memory memory)
+        public static async Task SaveMemoryAsync(Memory memory, Point3D location, Map map)
         {
             if (!IsAvailable())
                 return;
@@ -344,8 +356,8 @@ namespace Server.Services.LLM
                     await conn.OpenAsync();
 
                     var sql = @"INSERT INTO llm_npc_memories
-                                (npc_serial, npc_name, player_name, memory_type, content, importance, created_at, last_accessed, context, expires_at)
-                                VALUES (@npcSerial, @npcName, @playerName, @memoryType, @content, @importance, @createdAt, @lastAccessed, @context, @expiresAt)";
+                                (npc_serial, npc_name, player_name, memory_type, content, importance, created_at, last_accessed, context, expires_at, location_x, location_y, location_z, map_name)
+                                VALUES (@npcSerial, @npcName, @playerName, @memoryType, @content, @importance, @createdAt, @lastAccessed, @context, @expiresAt, @locationX, @locationY, @locationZ, @mapName)";
 
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
@@ -359,6 +371,10 @@ namespace Server.Services.LLM
                         cmd.Parameters.AddWithValue("@lastAccessed", memory.LastAccessed.ToString("yyyy-MM-dd HH:mm:ss"));
                         cmd.Parameters.AddWithValue("@context", memory.Context != null ? JsonConvert.SerializeObject(memory.Context) : (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@expiresAt", memory.ExpiresAt.HasValue ? memory.ExpiresAt.Value.ToString("yyyy-MM-dd HH:mm:ss") : (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@locationX", location.X);
+                        cmd.Parameters.AddWithValue("@locationY", location.Y);
+                        cmd.Parameters.AddWithValue("@locationZ", location.Z);
+                        cmd.Parameters.AddWithValue("@mapName", map?.Name ?? "");
 
                         await cmd.ExecuteNonQueryAsync();
                     }
