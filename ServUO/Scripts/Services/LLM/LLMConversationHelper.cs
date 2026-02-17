@@ -451,6 +451,82 @@ namespace Server.Services.LLM
                     }
                 }
 
+                // Load memories and relationship (if memory system is available)
+                string memoriesText = "";
+                if (LLMMemoryService.IsAvailable() && !isFirstConversation)
+                {
+                    try
+                    {
+                        DateTime memoryLoadStart = DateTime.UtcNow;
+                        // CRITICAL: Always use npc.Serial to ensure memories are NPC-specific
+                        // Memories are keyed by (npc_serial, player_name) - each NPC instance has a unique serial
+                        var memories = await LLMMemoryService.GetMemoriesAsync(npc.Serial, player.Name, limit: 5);
+                        var relationship = await LLMMemoryService.GetRelationshipAsync(npc.Serial, player.Name);
+                        long memoryLoadTime = (long)(DateTime.UtcNow - memoryLoadStart).TotalMilliseconds;
+
+                        // Verify all loaded memories belong to this NPC (defensive check)
+                        foreach (var mem in memories)
+                        {
+                            if (mem.NpcSerial != npc.Serial)
+                            {
+                                Console.WriteLine($"[LLMConversationHelper] ERROR: Memory with serial {mem.NpcSerial} loaded for NPC {npc.Serial} - memory belongs to different NPC!");
+                            }
+                        }
+
+                        // Only load relationship if we have memories - prevents stale relationships from previous NPC instances
+                        // A relationship without memories suggests the NPC was respawned/recreated
+                        if (memories.Count > 0)
+                        {
+                            Console.WriteLine($"[LLMConversationHelper] Loaded {memories.Count} memories for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
+
+                            memoriesText = MemoryHelpers.FormatMemoriesForPrompt(memories, maxMemories: 5);
+
+                            // Only include relationship if we have actual memories (prevents stale data from previous NPC instances)
+                            // Also verify relationship belongs to this NPC
+                            if (relationship != null && relationship.NpcSerial == npc.Serial)
+                            {
+                                memoriesText += MemoryHelpers.FormatRelationshipForPrompt(relationship);
+                            }
+                            else if (relationship != null && relationship.NpcSerial != npc.Serial)
+                            {
+                                Console.WriteLine($"[LLMConversationHelper] ERROR: Relationship with serial {relationship.NpcSerial} loaded for NPC {npc.Serial} - relationship belongs to different NPC!");
+                            }
+                        }
+                        else if (relationship != null)
+                        {
+                            // Relationship exists but no memories - this is likely a stale relationship from a previous NPC instance
+                            // Don't load it for a freshly spawned NPC
+                            // Also verify it's not from a different NPC serial
+                            if (relationship.NpcSerial != npc.Serial)
+                            {
+                                Console.WriteLine($"[LLMConversationHelper] ERROR: Relationship with serial {relationship.NpcSerial} found for NPC {npc.Serial} - ignoring (belongs to different NPC)");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"[LLMConversationHelper] Found relationship but no memories for NPC {npc.Serial} - ignoring stale relationship (NPC may have been respawned)");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"[LLMConversationHelper] No memories found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} (load time: {memoryLoadTime}ms)");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"[LLMConversationHelper] Error loading memories: {ex.Message}");
+                    }
+                }
+                else if (!LLMMemoryService.IsAvailable())
+                {
+                    Console.WriteLine($"[LLMConversationHelper] Memory system not available");
+                }
+
+                // Append memories to personality prompt if we have any
+                if (!string.IsNullOrEmpty(memoriesText))
+                {
+                    personalityPrompt += memoriesText;
+                }
+
                 // Call unified LLM service (pass isFirstConversation to optimize)
                 string response = await UnifiedLLMService.GetResponseAsync(
                     npc.Name,
@@ -472,27 +548,27 @@ namespace Server.Services.LLM
                 ConversationContext.AddNpcMessage(npc, player, response);
 
                 // Extract and save memories from this conversation (async, non-blocking)
-#pragma warning disable CS1998 // Async method lacks 'await' - TODO: Uncomment await calls when memory service API is fixed
-                _ = Task.Run(async () => // Fire-and-forget: intentionally not awaited
+                _ = Task.Run(async () =>
                 {
                     try
                     {
+                        if (!LLMMemoryService.IsAvailable())
+                            return;
+
                         List<ConversationMessage> fullHistory = ConversationContext.GetHistory(npc, player);
                         List<Memory> memories = MemoryHelpers.ExtractMemoriesFromConversation(npc.Name, player.Name, fullHistory);
-                        
+
                         if (memories.Count > 0)
                         {
                             Console.WriteLine($"[LLMConversationHelper] Extracted {memories.Count} memories from conversation with {player.Name}");
                             foreach (var memory in memories)
                             {
-                                // TODO: Fix memory service API
-                                // await LLMMemoryService.SaveMemoryAsync(npc.Name, player.Name, memory);
+                                await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory);
                                 Console.WriteLine($"[LLMConversationHelper] Saved memory: {memory.Content.Substring(0, Math.Min(50, memory.Content.Length))}... (Importance: {memory.Importance})");
                             }
 
                             // Update relationship based on conversation
-                            // TODO: Fix memory service API
-                            // await LLMMemoryService.UpdateRelationshipAsync(npc.Name, player.Name, 1);
+                            await LLMMemoryService.UpdateRelationshipAsync(npc.Serial, npc.Name, player.Name, 1);
                         }
                     }
                     catch (Exception ex)
@@ -500,7 +576,6 @@ namespace Server.Services.LLM
                         Console.WriteLine($"[LLMConversationHelper] Error saving memories: {ex.Message}");
                     }
                 });
-#pragma warning restore CS1998
 
                 // Schedule the response to be said on the main server thread
                 Timer.DelayCall(TimeSpan.Zero, () =>
