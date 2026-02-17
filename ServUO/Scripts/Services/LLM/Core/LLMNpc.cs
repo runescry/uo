@@ -34,10 +34,6 @@ namespace Server.Mobiles
         private static readonly int MaxQueueSize = 5; // Maximum requests in queue per NPC
         private static readonly TimeSpan QueueTimeout = TimeSpan.FromSeconds(30); // Timeout for queued requests
 
-        // Proactive RAG: Pre-loaded knowledge base (loaded once at spawn, not per query)
-        private List<LoreEntry> m_KnowledgeBase;
-        private string m_FormattedKnowledge;
-
         private List<SBInfo> m_SBInfos = new List<SBInfo>();
         protected override List<SBInfo> SBInfos => m_SBInfos;
 
@@ -163,9 +159,9 @@ namespace Server.Mobiles
             SetDex(100);
             SetInt(100);
 
-            // PROACTIVE RAG: Load knowledge base at spawn time (not per query!)
+            // PROACTIVE RAG: Load knowledge base at spawn time using shared helper
             // Note: Will reload when placed in world if location is invalid now
-            LoadKnowledgeBase();
+            LLMConversationHelper.ProactivelyLoadKnowledgeBase(this, this);
         }
 
         /// <summary>
@@ -179,14 +175,10 @@ namespace Server.Mobiles
             base.MoveToWorld(loc, map);
             
             // Reload knowledge base now that we have a valid location
-            // Only reload if we're moving from Internal map (initial spawn) or if knowledge is empty
+            // Only reload if we're moving from Internal map (initial spawn)
             if (oldMap == Map.Internal && map != null && map != Map.Internal)
             {
-                LoadKnowledgeBase();
-            }
-            else if ((m_KnowledgeBase == null || m_KnowledgeBase.Count == 0) && map != null && map != Map.Internal)
-            {
-                LoadKnowledgeBase();
+                LLMConversationHelper.ProactivelyLoadKnowledgeBase(this, this);
             }
 
             // Update location database and invalidate cache if NPC moved within the same map
@@ -251,54 +243,7 @@ namespace Server.Mobiles
             }
         }
 
-        /// <summary>
-        /// PROACTIVE RAG: Load NPC's knowledge base at spawn time
-        /// This replaces per-query embedding searches with pre-loaded role-based knowledge
-        /// </summary>
-        private void LoadKnowledgeBase()
-        {
-            try
-            {
-                // Infer role from personality
-                NPCKnowledgeSystem.NPCRole role = NPCKnowledgeSystem.InferRoleFromPersonality(m_PersonalityType);
-
-                // Get location name for context
-                string locationName = NPCPersonalities.GetLocationName(this);
-
-                // Check if we have a valid location (not Internal map)
-                if (this.Map == null || this.Map == Map.Internal)
-                {
-                    // Load only role-based knowledge for now, will reload when placed
-                    var allLore = SimpleLoreSystem.GetAllLore();
-                    var roleKnowledge = NPCKnowledgeSystem.GetRoleKnowledge(role, allLore);
-                    // Also add dungeons and important locations
-                    var locationKnowledge = allLore.Where(l =>
-                        l.Category == "Dungeon" ||
-                        (l.Category == "Location" && l.Importance >= 8)
-                    ).ToList();
-                    m_KnowledgeBase = new List<LoreEntry>();
-                    m_KnowledgeBase.AddRange(roleKnowledge);
-                    m_KnowledgeBase.AddRange(locationKnowledge);
-                    m_KnowledgeBase = m_KnowledgeBase.GroupBy(l => l.ID).Select(g => g.First()).ToList();
-                }
-                else
-                {
-                // Load knowledge base (role + location specific)
-                m_KnowledgeBase = NPCKnowledgeSystem.GetNPCKnowledge(role, locationName, this.Location, this.Map);
-                }
-
-                // Pre-format for prompts (cache it so we don't rebuild every conversation)
-                m_FormattedKnowledge = NPCKnowledgeSystem.FormatKnowledgeForPrompt(m_KnowledgeBase);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"[LLMNpc] Error loading knowledge base for {Name}: {ex.Message}");
-                Console.WriteLine($"[LLMNpc] Stack trace: {ex.StackTrace}");
-                m_KnowledgeBase = new List<LoreEntry>();
-                m_FormattedKnowledge = "";
-            }
-        }
-
+        
         /// <summary>
         /// Get vendor inventory types based on personality
         /// </summary>
@@ -1107,11 +1052,12 @@ namespace Server.Mobiles
                     NPCPersonalities.PersonalityType oldPersonality = m_PersonalityType;
                     
                     // Only update and log if personality actually changed
-                    if (suggestedPersonality != oldPersonality)
+                    if (m_PersonalityType != suggestedPersonality)
                     {
+                        Console.WriteLine($"[LLMNpc] Re-inferred personality for {Name} from {m_PersonalityType} to {suggestedPersonality}");
                         m_PersonalityType = suggestedPersonality;
                         System.Threading.Interlocked.Increment(ref m_ReInferredCount);
-                        LoadKnowledgeBase();
+                        LLMConversationHelper.ProactivelyLoadKnowledgeBase(this, this);
                     }
                 }
             }

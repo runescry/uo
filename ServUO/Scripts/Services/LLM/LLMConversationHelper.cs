@@ -81,6 +81,73 @@ namespace Server.Services.LLM
         }
 
         /// <summary>
+        /// Proactively load knowledge base for an NPC at spawn time (same as LLMNpc does)
+        /// This allows all ILLMConversational NPCs to benefit from proactive loading
+        /// </summary>
+        public static void ProactivelyLoadKnowledgeBase(Mobile npc, ILLMConversational llmNpc)
+        {
+            if (npc == null || llmNpc == null)
+                return;
+
+            lock (m_KnowledgeBaseCacheLock)
+            {
+                // Skip if already cached
+                if (m_KnowledgeBaseCache.ContainsKey(npc))
+                    return;
+
+                DateTime knowledgeStart = DateTime.UtcNow;
+                string formattedKnowledge = "";
+
+                try
+                {
+                    // Infer role from personality type
+                    NPCKnowledgeSystem.NPCRole role = NPCKnowledgeSystem.InferRoleFromPersonality(llmNpc.PersonalityType);
+
+                    // Get location name for context
+                    string locationName = NPCPersonalities.GetLocationName(npc);
+
+                    // Check if we have a valid location (not Internal map)
+                    List<LoreEntry> knowledgeBase;
+                    if (npc.Map == null || npc.Map == Map.Internal)
+                    {
+                        // Load only role-based knowledge for now, will reload when placed
+                        var allLore = SimpleLoreSystem.GetAllLore();
+                        var roleKnowledge = NPCKnowledgeSystem.GetRoleKnowledge(role, allLore);
+                        // Also add dungeons and important locations
+                        var locationKnowledge = allLore.Where(l =>
+                            l.Category == "Dungeon" ||
+                            (l.Category == "Location" && l.Importance >= 8)
+                        ).ToList();
+                        knowledgeBase = new List<LoreEntry>();
+                        knowledgeBase.AddRange(roleKnowledge);
+                        knowledgeBase.AddRange(locationKnowledge);
+                        knowledgeBase = knowledgeBase.GroupBy(l => l.ID).Select(g => g.First()).ToList();
+                    }
+                    else
+                    {
+                        // Load knowledge base (role + location specific)
+                        knowledgeBase = NPCKnowledgeSystem.GetNPCKnowledge(role, locationName, npc.Location, npc.Map);
+                    }
+
+                    // Pre-format for prompts (cache it so we don't rebuild every conversation)
+                    formattedKnowledge = NPCKnowledgeSystem.FormatKnowledgeForPrompt(knowledgeBase);
+
+                    // Cache it for this NPC
+                    m_KnowledgeBaseCache[npc] = formattedKnowledge;
+
+                    long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
+                    Console.WriteLine($"[LLMConversationHelper] [PROACTIVE] Knowledge base loaded for {npc.Name} ({role}): {knowledgeBase.Count} entries in {knowledgeTime}ms");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[LLMConversationHelper] Error in proactive knowledge base loading for {npc.Name}: {ex.Message}");
+                    formattedKnowledge = ""; // Use empty to avoid retrying
+                    m_KnowledgeBaseCache[npc] = "";
+                }
+            }
+        }
+
+        /// <summary>
         /// Processes a conversation request for an NPC
         /// </summary>
         public static void ProcessConversation(Mobile npc, Mobile player, string message)
