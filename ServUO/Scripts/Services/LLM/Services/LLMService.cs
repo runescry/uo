@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Server;
+using ServUO.Scripts.Services.LLM;
 
 namespace Server.Services.LLM
 {
@@ -287,7 +288,7 @@ namespace Server.Services.LLM
         {
             try
             {
-                Console.WriteLine($"[LLMService] Building request for NPC: {npcName}");
+                LLMLoggingConfig.LogDebug($"[LLMService] Building request for NPC: {npcName}");
                 // Build the messages array for the API
                 StringBuilder messagesJson = new StringBuilder();
                 messagesJson.Append("[");
@@ -325,20 +326,20 @@ namespace Server.Services.LLM
 
                 var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
-                Console.WriteLine($"[LLMService] Sending request to OpenAI API...");
+                LLMLoggingConfig.LogDebug($"[LLMService] Sending request to OpenAI API...");
 
                 // Make the API call
                 HttpResponseMessage response = await client.PostAsync(ApiEndpoint, content);
                 string responseBody = await response.Content.ReadAsStringAsync();
 
-                Console.WriteLine($"[LLMService] Response status: {response.StatusCode}");
+                LLMLoggingConfig.LogDebug($"[LLMService] Response status: {response.StatusCode}");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine($"[LLMService] Response body: {responseBody.Substring(0, Math.Min(200, responseBody.Length))}...");
+                    LLMLoggingConfig.LogDebug($"[LLMService] Response body: {responseBody.Substring(0, Math.Min(200, responseBody.Length))}...");
                     // Parse the response
                     string npcResponse = ExtractResponseContent(responseBody);
-                    Console.WriteLine($"[LLMService] Extracted NPC response: '{npcResponse}'");
+                    LLMLoggingConfig.LogDebug($"[LLMService] Extracted NPC response: '{npcResponse}'");
                     
                     // Log coordinates if response contains location information
                     if (npcResponse.Contains("coords:") || npcResponse.Contains("north") || npcResponse.Contains("south") || 

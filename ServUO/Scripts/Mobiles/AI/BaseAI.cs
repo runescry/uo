@@ -13,6 +13,7 @@ using Server.Regions;
 using Server.Services.LLM;
 using Server.Spells;
 using Server.Targets;
+using ServUO.Scripts.Services.LLM;
 
 using MoveImpl = Server.Movement.MovementImpl;
 #endregion
@@ -432,7 +433,7 @@ namespace Server.Mobiles
 		public virtual void OnSpeech(SpeechEventArgs e)
 		{
 			DateTime onSpeechStart = DateTime.UtcNow;
-			Console.WriteLine($"[BaseAI] OnSpeech START - NPC: {m_Mobile?.Name ?? "null"}, Player: {e.Mobile?.Name ?? "null"}, Speech: '{e.Speech?.Substring(0, Math.Min(50, e.Speech?.Length ?? 0)) ?? "null"}...', Time: {onSpeechStart:HH:mm:ss.fff}");
+			LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech START - NPC: {m_Mobile?.Name ?? "null"}, Player: {e.Mobile?.Name ?? "null"}, Speech: '{e.Speech?.Substring(0, Math.Min(50, e.Speech?.Length ?? 0)) ?? "null"}...', Time: {onSpeechStart:HH:mm:ss.fff}");
 			
 			// Check for LLM conversation capability (plugin integration)
 			// IMPORTANT: Do NOT mark e.Handled here - let speech display first
@@ -443,7 +444,7 @@ namespace Server.Mobiles
 			{
 				DateTime beforeDelayCall = DateTime.UtcNow;
 				long elapsedBeforeDelay = (long)(beforeDelayCall - onSpeechStart).TotalMilliseconds;
-				Console.WriteLine($"[BaseAI] OnSpeech - Before DelayCall: {elapsedBeforeDelay}ms elapsed");
+				LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - Before DelayCall: {elapsedBeforeDelay}ms elapsed");
 				
 				// Store reference for async processing
 				Mobile npc = m_Mobile;
@@ -458,13 +459,13 @@ namespace Server.Mobiles
 				{
 					DateTime delayCallExecuted = DateTime.UtcNow;
 					long delayFromStart = (long)(delayCallExecuted - onSpeechStart).TotalMilliseconds;
-					Console.WriteLine($"[BaseAI] OnSpeech - DelayCall EXECUTED after {delayFromStart}ms");
+					LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - DelayCall EXECUTED after {delayFromStart}ms");
 					
 					// Now do the LLM check (all deferred to avoid blocking speech display)
 					DateTime beforePluginCheck = DateTime.UtcNow;
 					bool pluginEnabled = Server.Services.LLM.LLMConversationPlugin.IsEnabled();
 					long pluginCheckTime = (long)(DateTime.UtcNow - beforePluginCheck).TotalMilliseconds;
-					Console.WriteLine($"[BaseAI] OnSpeech - Plugin check took {pluginCheckTime}ms, enabled: {pluginEnabled}");
+					LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - Plugin check took {pluginCheckTime}ms, enabled: {pluginEnabled}");
 					
 					if (pluginEnabled)
 					{
@@ -472,7 +473,7 @@ namespace Server.Mobiles
 						Server.Services.LLM.ILLMConversational llmNpc = npc as Server.Services.LLM.ILLMConversational;
 						bool isLLMNpc = llmNpc != null && llmNpc.LLMConversationEnabled;
 						long interfaceCheckTime = (long)(DateTime.UtcNow - beforeInterfaceCheck).TotalMilliseconds;
-						Console.WriteLine($"[BaseAI] OnSpeech - Interface check took {interfaceCheckTime}ms, isLLMNpc: {isLLMNpc}");
+						LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - Interface check took {interfaceCheckTime}ms, isLLMNpc: {isLLMNpc}");
 						
 						if (isLLMNpc && llmNpc != null)
 						{
@@ -482,11 +483,11 @@ namespace Server.Mobiles
 								DateTime beforeShouldHandle = DateTime.UtcNow;
 								bool shouldHandle = Server.Services.LLM.LLMConversationHelper.ShouldHandleConversation(npc, player, speech);
 								long shouldHandleTime = (long)(DateTime.UtcNow - beforeShouldHandle).TotalMilliseconds;
-								Console.WriteLine($"[BaseAI] OnSpeech - ShouldHandleConversation took {shouldHandleTime}ms, result: {shouldHandle}");
+								LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - ShouldHandleConversation took {shouldHandleTime}ms, result: {shouldHandle}");
 								
 								if (shouldHandle)
 								{
-									Console.WriteLine($"[BaseAI] OnSpeech: LLM NPC {npc.Name} handling conversation from {player.Name}: '{speech}'");
+									LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech: LLM NPC {npc.Name} handling conversation from {player.Name}: '{speech}'");
 									
 									DateTime beforeHandleConversation = DateTime.UtcNow;
 									// Create a new SpeechEventArgs for handling (since original is already processed)
@@ -494,22 +495,22 @@ namespace Server.Mobiles
 									newArgs.Handled = true; // Mark as handled to prevent traditional AI
 									llmNpc.HandleConversation(newArgs);
 									long handleConversationTime = (long)(DateTime.UtcNow - beforeHandleConversation).TotalMilliseconds;
-									Console.WriteLine($"[BaseAI] OnSpeech - HandleConversation took {handleConversationTime}ms");
+									LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - HandleConversation took {handleConversationTime}ms");
 								}
 							}
 						}
 					}
 					
 					long totalDelayCallTime = (long)(DateTime.UtcNow - delayCallExecuted).TotalMilliseconds;
-					Console.WriteLine($"[BaseAI] OnSpeech - DelayCall callback total time: {totalDelayCallTime}ms");
+					LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - DelayCall callback total time: {totalDelayCallTime}ms");
 				});
 				
 				long elapsedAfterDelayCall = (long)(DateTime.UtcNow - beforeDelayCall).TotalMilliseconds;
-				Console.WriteLine($"[BaseAI] OnSpeech - After DelayCall setup: {elapsedAfterDelayCall}ms elapsed");
+				LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech - After DelayCall setup: {elapsedAfterDelayCall}ms elapsed");
 			}
 			
 			long totalOnSpeechTime = (long)(DateTime.UtcNow - onSpeechStart).TotalMilliseconds;
-			Console.WriteLine($"[BaseAI] OnSpeech END - Total time: {totalOnSpeechTime}ms");
+			LLMLoggingConfig.LogDebug($"[BaseAI] OnSpeech END - Total time: {totalOnSpeechTime}ms");
 
 			if (e.Mobile.Alive && e.Mobile.InRange(m_Mobile.Location, 3) && m_Mobile.IsHumanInTown())
 			{
