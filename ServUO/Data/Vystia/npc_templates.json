@@ -1,0 +1,1942 @@
+[
+  {
+    "templateId": "FACTION_LEADER_IRONCLAD",
+    "displayName": "Emperor Garrick Steelarm",
+    "mobileTypeName": "EmperorGarrickSteelarm",
+    "name": "Emperor Garrick Steelarm",
+    "title": "Emperor of the Ironclad Empire",
+    "defaultPersonality": "Authoritative",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["ironclad", "empire", "leadership", "britain", "steam", "engineering", "war"]
+  },
+  {
+    "templateId": "FACTION_LEADER_FROSTHOLD",
+    "displayName": "Chieftain Bjorn Frostbeard",
+    "mobileTypeName": "ChieftainBjornFrostbeard",
+    "name": "Chieftain Bjorn Frostbeard",
+    "title": "Chieftain of Frosthold",
+    "defaultPersonality": "Chieftain",
+    "defaultSpeechPattern": "Gruff",
+    "knowledgeTags": ["frosthold", "ice", "polar_alliance", "minoc", "barbarian", "frozen"]
+  },
+  {
+    "templateId": "FACTION_LEADER_VERDANTPEAK",
+    "displayName": "Elder Seraphina Leafwhisper",
+    "mobileTypeName": "ElderSeraphinaLeafwhisper",
+    "name": "Elder Seraphina Leafwhisper",
+    "title": "Leader of the Tree Council",
+    "defaultPersonality": "Elder",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["verdantpeak", "nature", "forest", "sylvan_concord", "druid", "yew"]
+  },
+  {
+    "templateId": "FACTION_LEADER_DESERT",
+    "displayName": "Sultan Azir al-Rashid",
+    "mobileTypeName": "SultanAziralRashid",
+    "name": "Sultan Azir al-Rashid",
+    "title": "Sultan of Sunspire",
+    "defaultPersonality": "Sultan",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["desert", "sands", "sultan", "sunspire", "league_of_sands", "trinsic"]
+  },
+  {
+    "templateId": "FACTION_LEADER_EMBERLANDS",
+    "displayName": "Archmage Pyrus Ashborn",
+    "mobileTypeName": "ArchmagePyrusAshborn",
+    "name": "Archmage Pyrus Ashborn",
+    "title": "Archmage of the Emberlands",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["emberlands", "fire", "volcano", "magic", "archmage", "ironclad_alliance"]
+  },
+  {
+    "templateId": "ANCIENT_DEPTH_KING",
+    "displayName": "Abyssus the Depth King",
+    "mobileTypeName": "AbyssusDepthKing",
+    "name": "Abyssus",
+    "title": "the Depth King",
+    "defaultPersonality": "Ancient",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["underwater", "ocean", "sea_dragon", "ancient", "depths", "kraken", "maritime"]
+  },
+  {
+    "templateId": "ANCIENT_TREANT_ELDER",
+    "displayName": "Elder Oakbark",
+    "mobileTypeName": "ElderOakbark",
+    "name": "Elder Oakbark",
+    "title": "Ancient Treant",
+    "defaultPersonality": "Elder",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["verdantpeak", "treant", "forest", "ancient", "nature", "guardian"]
+  },
+  {
+    "templateId": "ANCIENT_MACHINIST_CONSTRUCT",
+    "displayName": "The Great Machinist's Construct",
+    "mobileTypeName": "GreatMachinistConstruct",
+    "name": "The Great Machinist's Construct",
+    "title": "Divine Clockwork Avatar",
+    "defaultPersonality": "Analytical",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["ironclad", "construct", "clockwork", "divine", "engineering", "immortal"]
+  },
+  {
+    "templateId": "ANCIENT_WAR_TREANT",
+    "displayName": "Ironbark the War-Ancient",
+    "mobileTypeName": "IronbarkWarAncient",
+    "name": "Ironbark",
+    "title": "the War-Ancient",
+    "defaultPersonality": "Warrior",
+    "defaultSpeechPattern": "Gruff",
+    "knowledgeTags": ["verdantpeak", "treant", "war", "ancient", "guardian", "forest"]
+  },
+  {
+    "templateId": "ANCIENT_CRYSTAL_DRAGON",
+    "displayName": "Crystalwing the Prismatic Oracle",
+    "mobileTypeName": "CrystalwingPrismaticOracle",
+    "name": "Crystalwing",
+    "title": "the Prismatic Oracle",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["crystal_barrens", "dragon", "oracle", "ancient", "magic", "moonglow"]
+  },
+  {
+    "templateId": "ANCIENT_FIRE_DRAGON",
+    "displayName": "Emberflame the Ashen Tyrant",
+    "mobileTypeName": "EmberflameAshenTyrant",
+    "name": "Emberflame",
+    "title": "the Ashen Tyrant",
+    "defaultPersonality": "Tyrant",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["emberlands", "dragon", "fire", "volcano", "ancient", "tyrant"]
+  },
+  {
+    "templateId": "ANCIENT_FROST_AVATAR",
+    "displayName": "The Frost Father's Avatar",
+    "mobileTypeName": "FrostFatherAvatar",
+    "name": "The Frost Father's Avatar",
+    "title": "Divine Ice Spirit",
+    "defaultPersonality": "Divine",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["frosthold", "ice", "divine", "avatar", "immortal", "frozen"]
+  },
+  {
+    "templateId": "ANCIENT_NATURE_HERALD",
+    "displayName": "Lunara's Dryad Herald",
+    "mobileTypeName": "LunaraDryadHerald",
+    "name": "Lunara's Dryad Herald",
+    "title": "Divine Nature Spirit",
+    "defaultPersonality": "Divine",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["verdantpeak", "nature", "divine", "herald", "immortal", "dryad"]
+  },
+  {
+    "templateId": "ANCIENT_CRYSTAL_SPHINX",
+    "displayName": "The Crystal Sphinx",
+    "mobileTypeName": "TheCrystalSphinx",
+    "name": "The Crystal Sphinx",
+    "title": "Crystalline Riddle Master",
+    "defaultPersonality": "Riddler",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["crystal_barrens", "sphinx", "riddles", "ancient", "magic", "mystery"]
+  },
+  {
+    "templateId": "ANCIENT_FROSTHELM",
+    "displayName": "Frosthelm the Eternal Winter",
+    "mobileTypeName": "FrosthelmEternalWinter",
+    "name": "Frosthelm",
+    "title": "the Eternal Winter",
+    "defaultPersonality": "Ancient",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["frosthold", "dragon", "ice", "ancient", "eternal", "winter"]
+  },
+  {
+    "templateId": "ANCIENT_SPHINX_EMBERLANDS",
+    "displayName": "Sphynx of Emberlands",
+    "mobileTypeName": "SphynxOfEmberlands",
+    "name": "Sphynx of Emberlands",
+    "title": "Desert Riddle Master",
+    "defaultPersonality": "Riddler",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["emberlands", "sphinx", "riddles", "fire", "ancient"]
+  },
+  {
+    "templateId": "ANCIENT_VERDANTPEAK_GUARDIAN",
+    "displayName": "Verdantheart Forest Guardian",
+    "mobileTypeName": "VerdantheartForestGuardian",
+    "name": "Verdantheart Forest Guardian",
+    "title": "Forest Guardian",
+    "defaultPersonality": "Guardian",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["verdantpeak", "forest", "guardian", "nature", "ancient"]
+  },
+  {
+    "templateId": "BOSS_FROST_FATHER",
+    "displayName": "Frost Father",
+    "mobileTypeName": "FrostFather",
+    "name": "The Frost Father",
+    "title": "Eternal Winter",
+    "defaultPersonality": "Ancient",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["frosthold", "boss", "ice", "legendary", "glacier", "eternal"]
+  },
+  {
+    "templateId": "BOSS_FORGE_MASTER",
+    "displayName": "Forge Master",
+    "mobileTypeName": "ForgeMaster",
+    "name": "The Forge Master",
+    "title": "Master of the Great Forge",
+    "defaultPersonality": "Warrior",
+    "defaultSpeechPattern": "Gruff",
+    "knowledgeTags": ["ironclad", "boss", "forge", "steam", "legendary", "fire"]
+  },
+  {
+    "templateId": "BOSS_COVEN_MATRIARCH",
+    "displayName": "Coven Matriarch",
+    "mobileTypeName": "CovenMatriarch",
+    "name": "The Coven Matriarch",
+    "title": "Witch Queen of Shadowfen",
+    "defaultPersonality": "Witch",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["shadowfen", "boss", "witch", "swamp", "legendary", "dark"]
+  },
+  {
+    "templateId": "BOSS_VOLCANO_WYRM",
+    "displayName": "Volcano Wyrm",
+    "mobileTypeName": "VolcanoWyrm",
+    "name": "The Volcano Wyrm",
+    "title": "Guardian of the Ember Core",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "boss", "fire", "volcano", "legendary", "wyrm"]
+  },
+  {
+    "templateId": "BOSS_TIMEWORN_LICH",
+    "displayName": "Timeworn Lich",
+    "mobileTypeName": "TimewornLich",
+    "name": "The Timeworn Lich",
+    "title": "Ancient Necromancer",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["shadowvoid", "boss", "necromancy", "undead", "legendary", "ancient"]
+  },
+  {
+    "templateId": "BOSS_ANCIENT_TREANT",
+    "displayName": "Ancient Treant",
+    "mobileTypeName": "AncientTreant",
+    "name": "The Ancient Treant",
+    "title": "Forest Guardian",
+    "defaultPersonality": "Elder",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["verdantpeak", "boss", "treant", "forest", "legendary", "nature"]
+  },
+  {
+    "templateId": "BOSS_CRYSTAL_DRAKE",
+    "displayName": "Crystal Drake Alpha",
+    "mobileTypeName": "CrystalDrakeAlpha",
+    "name": "Crystal Drake Alpha",
+    "title": "Prismatic Guardian",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["crystal_barrens", "boss", "drake", "crystal", "legendary", "magic"]
+  },
+  {
+    "templateId": "BOSS_SPHINX_SURYA",
+    "displayName": "Sphinx of Surya",
+    "mobileTypeName": "SphinxOfSurya",
+    "name": "The Sphinx of Surya",
+    "title": "Desert Riddle Master",
+    "defaultPersonality": "Riddler",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["desert", "boss", "sphinx", "riddles", "legendary", "ancient"]
+  },
+  {
+    "templateId": "BOSS_ANCIENT_KRAKEN",
+    "displayName": "Ancient Kraken",
+    "mobileTypeName": "AncientKraken",
+    "name": "The Ancient Kraken",
+    "title": "Terror of the Depths",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "boss", "kraken", "ocean", "legendary", "depths"]
+  },
+  {
+    "templateId": "BOSS_GRIFFIN_LORD",
+    "displayName": "Griffin Lord",
+    "mobileTypeName": "GriffinLord",
+    "name": "The Griffin Lord",
+    "title": "Sky Sovereign",
+    "defaultPersonality": "Noble",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["skyreach", "boss", "griffin", "sky", "legendary", "wind"]
+  },
+  {
+    "templateId": "QUEST_QUARTERMASTER",
+    "displayName": "Quartermaster Grimwald",
+    "mobileTypeName": "QuartermasterGrimwald",
+    "name": "Quartermaster Grimwald",
+    "title": "Quest Giver",
+    "defaultPersonality": "Gruff",
+    "defaultSpeechPattern": "Gruff",
+    "knowledgeTags": ["ironclad", "quest", "supplies", "military", "britain"]
+  },
+  {
+    "templateId": "QUEST_SAGE_THERON",
+    "displayName": "Sage Theron",
+    "mobileTypeName": "SageTheron",
+    "name": "Sage Theron",
+    "title": "Quest Giver",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["arcane", "quest", "knowledge", "texts", "scholar"]
+  },
+  {
+    "templateId": "VENDOR_FROSTHOLM_HEALER",
+    "displayName": "Frostholm Healer",
+    "mobileTypeName": "FrostholmHealer",
+    "name": "Frostholm Healer",
+    "title": "Healer",
+    "defaultPersonality": "Friendly",
+    "defaultSpeechPattern": "Casual",
+    "knowledgeTags": ["frosthold", "healer", "vendor", "healing", "resurrection"]
+  },
+  {
+    "templateId": "VENDOR_IRONHAVEN_BANKER",
+    "displayName": "Ironhaven Banker",
+    "mobileTypeName": "IronhavenBanker",
+    "name": "Ironhaven Banker",
+    "title": "Banker",
+    "defaultPersonality": "Commoner",
+    "defaultSpeechPattern": "Modern",
+    "knowledgeTags": ["ironclad", "banker", "vendor", "banking", "gold"]
+  },
+  {
+    "templateId": "VENDOR_IRONHAVEN_GUARD",
+    "displayName": "Ironhaven Guard Captain",
+    "mobileTypeName": "IronhavenGuardCaptain",
+    "name": "Ironhaven Guard Captain",
+    "title": "Guard Captain",
+    "defaultPersonality": "Guard",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["ironclad", "guard", "vendor", "protection", "law"]
+  },
+  {
+    "templateId": "CREATURE_FROST_ELEMENTAL",
+    "displayName": "Frost Elemental",
+    "mobileTypeName": "FrostElemental",
+    "name": "a frost elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "ice", "elemental", "cold"]
+  },
+  {
+    "templateId": "CREATURE_FROST_GIANT",
+    "displayName": "Frost Giant",
+    "mobileTypeName": "FrostGiant",
+    "name": "a frost giant",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "giant", "ice", "frozen"]
+  },
+  {
+    "templateId": "CREATURE_FROST_WRAITH",
+    "displayName": "Frost Wraith",
+    "mobileTypeName": "FrostWraith",
+    "name": "a frost wraith",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "wraith", "ice", "undead"]
+  },
+  {
+    "templateId": "CREATURE_FROZEN_HORROR",
+    "displayName": "Frozen Horror",
+    "mobileTypeName": "FrozenHorror",
+    "name": "a frozen horror",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "horror", "ice", "beast"]
+  },
+  {
+    "templateId": "CREATURE_GLACIAL_BEAR",
+    "displayName": "Glacial Bear",
+    "mobileTypeName": "GlacialBear",
+    "name": "a glacial bear",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "bear", "ice", "arctic"]
+  },
+  {
+    "templateId": "CREATURE_ICE_GOLEM",
+    "displayName": "Ice Golem",
+    "mobileTypeName": "IceGolem",
+    "name": "an ice golem",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "golem", "ice", "construct"]
+  },
+  {
+    "templateId": "CREATURE_ICE_SPRITE",
+    "displayName": "Ice Sprite",
+    "mobileTypeName": "IceSprite",
+    "name": "an ice sprite",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "sprite", "ice", "small"]
+  },
+  {
+    "templateId": "CREATURE_ICE_TROLL",
+    "displayName": "Ice Troll",
+    "mobileTypeName": "IceTroll",
+    "name": "an ice troll",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "troll", "ice", "frozen"]
+  },
+  {
+    "templateId": "CREATURE_SNOWDRIFTER",
+    "displayName": "Snowdrifter",
+    "mobileTypeName": "Snowdrifter",
+    "name": "a snowdrifter",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "snow", "ice", "drift"]
+  },
+  {
+    "templateId": "CREATURE_ARCTIC_OGRE",
+    "displayName": "Vystia Arctic Ogre",
+    "mobileTypeName": "VystiaArcticOgre",
+    "name": "an arctic ogre",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "ogre", "arctic", "frozen"]
+  },
+  {
+    "templateId": "CREATURE_FROST_DRAGON",
+    "displayName": "Vystia Frost Dragon",
+    "mobileTypeName": "VystiaFrostDragon",
+    "name": "a frost dragon",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "dragon", "ice", "frozen"]
+  },
+  {
+    "templateId": "CREATURE_WINTER_WOLF",
+    "displayName": "Winter Wolf",
+    "mobileTypeName": "WinterWolf",
+    "name": "a winter wolf",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["frosthold", "creature", "wolf", "winter", "ice"]
+  },
+  {
+    "templateId": "CREATURE_FOREST_BEAR",
+    "displayName": "Forest Bear",
+    "mobileTypeName": "ForestBear",
+    "name": "a forest bear",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "bear", "forest", "nature"]
+  },
+  {
+    "templateId": "CREATURE_FOREST_GUARDIAN",
+    "displayName": "Forest Guardian",
+    "mobileTypeName": "ForestGuardian",
+    "name": "a forest guardian",
+    "title": "",
+    "defaultPersonality": "Guardian",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["verdantpeak", "creature", "guardian", "forest", "nature"]
+  },
+  {
+    "templateId": "CREATURE_FOREST_SERPENT",
+    "displayName": "Forest Serpent",
+    "mobileTypeName": "ForestSerpent",
+    "name": "a forest serpent",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "serpent", "forest", "snake"]
+  },
+  {
+    "templateId": "CREATURE_FOREST_SPRITE",
+    "displayName": "Forest Sprite",
+    "mobileTypeName": "ForestSprite",
+    "name": "a forest sprite",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "sprite", "forest", "nature"]
+  },
+  {
+    "templateId": "CREATURE_GIANT_STAG",
+    "displayName": "Giant Stag",
+    "mobileTypeName": "GiantStag",
+    "name": "a giant stag",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "stag", "deer", "forest"]
+  },
+  {
+    "templateId": "CREATURE_MOSS_GOLEM",
+    "displayName": "Moss Golem",
+    "mobileTypeName": "MossGolem",
+    "name": "a moss golem",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "golem", "moss", "forest"]
+  },
+  {
+    "templateId": "CREATURE_NATURE_ELEMENTAL",
+    "displayName": "Nature Elemental",
+    "mobileTypeName": "NatureElemental",
+    "name": "a nature elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "elemental", "nature", "forest"]
+  },
+  {
+    "templateId": "CREATURE_THORN_VINE",
+    "displayName": "Thorn Vine",
+    "mobileTypeName": "ThornVine",
+    "name": "a thorn vine",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "vine", "thorn", "plant"]
+  },
+  {
+    "templateId": "CREATURE_TREANT_SAPLING",
+    "displayName": "Treant Sapling",
+    "mobileTypeName": "TreantSapling",
+    "name": "a treant sapling",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "treant", "sapling", "young"]
+  },
+  {
+    "templateId": "CREATURE_VINE_CREEPER",
+    "displayName": "Vine Creeper",
+    "mobileTypeName": "VineCreeper",
+    "name": "a vine creeper",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "vine", "creeper", "plant"]
+  },
+  {
+    "templateId": "CREATURE_WOODLAND_DRAKE",
+    "displayName": "Vystia Woodland Drake",
+    "mobileTypeName": "VystiaWoodlandDrake",
+    "name": "a woodland drake",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "drake", "woodland", "forest"]
+  },
+  {
+    "templateId": "CREATURE_WILD_BOAR",
+    "displayName": "Wild Boar",
+    "mobileTypeName": "WildBoar",
+    "name": "a wild boar",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "boar", "wild", "forest"]
+  },
+  {
+    "templateId": "CREATURE_WILDCAT_ALPHA",
+    "displayName": "Wildcat Alpha",
+    "mobileTypeName": "WildcatAlpha",
+    "name": "a wildcat alpha",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["verdantpeak", "creature", "wildcat", "alpha", "cat"]
+  },
+  {
+    "templateId": "CREATURE_ANKHEG",
+    "displayName": "Ankheg",
+    "mobileTypeName": "Ankheg",
+    "name": "an ankheg",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "ankheg", "insect", "burrowing"]
+  },
+  {
+    "templateId": "CREATURE_DESERT_HARPY",
+    "displayName": "Desert Harpy",
+    "mobileTypeName": "DesertHarpy",
+    "name": "a desert harpy",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "harpy", "desert", "winged"]
+  },
+  {
+    "templateId": "CREATURE_DESERT_MUMMY",
+    "displayName": "Desert Mummy",
+    "mobileTypeName": "DesertMummy",
+    "name": "a desert mummy",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "mummy", "undead", "desert"]
+  },
+  {
+    "templateId": "CREATURE_DUNE_REAPER",
+    "displayName": "Dune Reaper",
+    "mobileTypeName": "DuneReaper",
+    "name": "a dune reaper",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "reaper", "dune", "desert"]
+  },
+  {
+    "templateId": "CREATURE_OASIS_GUARDIAN",
+    "displayName": "Oasis Guardian",
+    "mobileTypeName": "OasisGuardian",
+    "name": "an oasis guardian",
+    "title": "",
+    "defaultPersonality": "Guardian",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["desert", "creature", "guardian", "oasis", "desert"]
+  },
+  {
+    "templateId": "CREATURE_SAND_ELEMENTAL",
+    "displayName": "Sand Elemental",
+    "mobileTypeName": "SandElemental",
+    "name": "a sand elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "elemental", "sand", "desert"]
+  },
+  {
+    "templateId": "CREATURE_SCARAB_BEETLE",
+    "displayName": "Scarab Beetle",
+    "mobileTypeName": "ScarabBeetle",
+    "name": "a scarab beetle",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "beetle", "scarab", "insect"]
+  },
+  {
+    "templateId": "CREATURE_SUNLIT_SERPENT",
+    "displayName": "Sunlit Serpent",
+    "mobileTypeName": "SunlitSerpent",
+    "name": "a sunlit serpent",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "serpent", "sun", "desert"]
+  },
+  {
+    "templateId": "CREATURE_DESERT_SCORPION",
+    "displayName": "Vystia Desert Scorpion",
+    "mobileTypeName": "VystiaDesertScorpion",
+    "name": "a desert scorpion",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "scorpion", "desert", "venomous"]
+  },
+  {
+    "templateId": "CREATURE_DESERT_WYRM",
+    "displayName": "Vystia Desert Wyrm",
+    "mobileTypeName": "VystiaDesertWyrm",
+    "name": "a desert wyrm",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "wyrm", "desert", "serpent"]
+  },
+  {
+    "templateId": "CREATURE_SAND_VORTEX",
+    "displayName": "Vystia Sand Vortex",
+    "mobileTypeName": "VystiaSandVortex",
+    "name": "a sand vortex",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["desert", "creature", "vortex", "sand", "wind"]
+  },
+  {
+    "templateId": "CREATURE_ASH_GOLEM",
+    "displayName": "Ash Golem",
+    "mobileTypeName": "AshGolem",
+    "name": "an ash golem",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "golem", "ash", "fire"]
+  },
+  {
+    "templateId": "CREATURE_EMBER_BAT",
+    "displayName": "Ember Bat",
+    "mobileTypeName": "EmberBat",
+    "name": "an ember bat",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "bat", "ember", "fire"]
+  },
+  {
+    "templateId": "CREATURE_FLAME_SPRITE",
+    "displayName": "Flame Sprite",
+    "mobileTypeName": "FlameSprite",
+    "name": "a flame sprite",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "sprite", "flame", "fire"]
+  },
+  {
+    "templateId": "CREATURE_LAVA_HOUND",
+    "displayName": "Lava Hound",
+    "mobileTypeName": "LavaHound",
+    "name": "a lava hound",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "hound", "lava", "fire"]
+  },
+  {
+    "templateId": "CREATURE_MAGMA_TROLL",
+    "displayName": "Magma Troll",
+    "mobileTypeName": "MagmaTroll",
+    "name": "a magma troll",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "troll", "magma", "fire"]
+  },
+  {
+    "templateId": "CREATURE_EMBER_PHOENIX",
+    "displayName": "Vystia Ember Phoenix",
+    "mobileTypeName": "VystiaEmberPhoenix",
+    "name": "an ember phoenix",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "phoenix", "ember", "fire"]
+  },
+  {
+    "templateId": "CREATURE_FIRE_ANT",
+    "displayName": "Vystia Fire Ant",
+    "mobileTypeName": "VystiaFireAnt",
+    "name": "a fire ant",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "ant", "fire", "insect"]
+  },
+  {
+    "templateId": "CREATURE_LAVA_ELEMENTAL",
+    "displayName": "Vystia Lava Elemental",
+    "mobileTypeName": "VystiaLavaElemental",
+    "name": "a lava elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["emberlands", "creature", "elemental", "lava", "fire"]
+  },
+  {
+    "templateId": "CREATURE_BRASS_AUTOMATON",
+    "displayName": "Brass Automaton",
+    "mobileTypeName": "BrassAutomaton",
+    "name": "a brass automaton",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "automaton", "brass", "mechanical"]
+  },
+  {
+    "templateId": "CREATURE_CLOCKWORK_SPIDER",
+    "displayName": "Clockwork Spider",
+    "mobileTypeName": "ClockworkSpider",
+    "name": "a clockwork spider",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "spider", "clockwork", "mechanical"]
+  },
+  {
+    "templateId": "CREATURE_COPPER_SENTINEL",
+    "displayName": "Copper Sentinel",
+    "mobileTypeName": "CopperSentinel",
+    "name": "a copper sentinel",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "sentinel", "copper", "mechanical"]
+  },
+  {
+    "templateId": "CREATURE_GEAR_WOLF",
+    "displayName": "Gear Wolf",
+    "mobileTypeName": "GearWolf",
+    "name": "a gear wolf",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "wolf", "gear", "mechanical"]
+  },
+  {
+    "templateId": "CREATURE_IRON_ELEMENTAL",
+    "displayName": "Iron Elemental",
+    "mobileTypeName": "IronElemental",
+    "name": "an iron elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "elemental", "iron", "metal"]
+  },
+  {
+    "templateId": "CREATURE_OIL_SLIME",
+    "displayName": "Oil Slime",
+    "mobileTypeName": "OilSlime",
+    "name": "an oil slime",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "slime", "oil", "mechanical"]
+  },
+  {
+    "templateId": "CREATURE_STEAM_ELEMENTAL",
+    "displayName": "Steam Elemental",
+    "mobileTypeName": "SteamElemental",
+    "name": "a steam elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "elemental", "steam", "mechanical"]
+  },
+  {
+    "templateId": "CREATURE_STEAM_GOLEM",
+    "displayName": "Steam Golem",
+    "mobileTypeName": "SteamGolem",
+    "name": "a steam golem",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "golem", "steam", "mechanical"]
+  },
+  {
+    "templateId": "CREATURE_MECHANICAL_DRAKE",
+    "displayName": "Vystia Mechanical Drake",
+    "mobileTypeName": "VystiaMechanicalDrake",
+    "name": "a mechanical drake",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["ironclad", "creature", "drake", "mechanical", "steam"]
+  },
+  {
+    "templateId": "CREATURE_BOG_BEAST",
+    "displayName": "Bog Beast",
+    "mobileTypeName": "BogBeast",
+    "name": "a bog beast",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "beast", "bog", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_BOG_WITCH",
+    "displayName": "Bog Witch",
+    "mobileTypeName": "BogWitch",
+    "name": "a bog witch",
+    "title": "",
+    "defaultPersonality": "Witch",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["shadowfen", "creature", "witch", "bog", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_FEN_STALKER",
+    "displayName": "Fen Stalker",
+    "mobileTypeName": "FenStalker",
+    "name": "a fen stalker",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "stalker", "fen", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_MIRE_LEECH",
+    "displayName": "Mire Leech",
+    "mobileTypeName": "MireLeech",
+    "name": "a mire leech",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "leech", "mire", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_MISTWALKER",
+    "displayName": "Mistwalker",
+    "mobileTypeName": "Mistwalker",
+    "name": "a mistwalker",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "mistwalker", "mist", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_SHADOW_WOLF",
+    "displayName": "Shadow Wolf",
+    "mobileTypeName": "ShadowWolf",
+    "name": "a shadow wolf",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "wolf", "shadow", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_SWAMP_HORROR",
+    "displayName": "Swamp Horror",
+    "mobileTypeName": "SwampHorror",
+    "name": "a swamp horror",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "horror", "swamp", "dark"]
+  },
+  {
+    "templateId": "CREATURE_SWAMP_TROLL",
+    "displayName": "Swamp Troll",
+    "mobileTypeName": "SwampTroll",
+    "name": "a swamp troll",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "troll", "swamp", "bog"]
+  },
+  {
+    "templateId": "CREATURE_SWAMP_WISP",
+    "displayName": "Swamp Wisp",
+    "mobileTypeName": "SwampWisp",
+    "name": "a swamp wisp",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "wisp", "swamp", "spirit"]
+  },
+  {
+    "templateId": "CREATURE_TOXIC_TOAD",
+    "displayName": "Toxic Toad",
+    "mobileTypeName": "ToxicToad",
+    "name": "a toxic toad",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "toad", "toxic", "poison"]
+  },
+  {
+    "templateId": "CREATURE_MIRE_ELEMENTAL",
+    "displayName": "Vystia Mire Elemental",
+    "mobileTypeName": "VystiaMireElemental",
+    "name": "a mire elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "elemental", "mire", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_SHADOW_BOGLING",
+    "displayName": "Vystia Shadow Bogling",
+    "mobileTypeName": "VystiaShadowBogling",
+    "name": "a shadow bogling",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "bogling", "shadow", "swamp"]
+  },
+  {
+    "templateId": "CREATURE_SWAMP_DRAKE",
+    "displayName": "Vystia Swamp Drake",
+    "mobileTypeName": "VystiaSwampDrake",
+    "name": "a swamp drake",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowfen", "creature", "drake", "swamp", "bog"]
+  },
+  {
+    "templateId": "CREATURE_AIR_SPRITE",
+    "displayName": "Air Sprite",
+    "mobileTypeName": "AirSprite",
+    "name": "an air sprite",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "sprite", "air", "wind"]
+  },
+  {
+    "templateId": "CREATURE_GALE_RIDER",
+    "displayName": "Gale Rider",
+    "mobileTypeName": "GaleRider",
+    "name": "a gale rider",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "rider", "gale", "wind"]
+  },
+  {
+    "templateId": "CREATURE_NIMBUS_WRAITH",
+    "displayName": "Nimbus Wraith",
+    "mobileTypeName": "NimbusWraith",
+    "name": "a nimbus wraith",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "wraith", "nimbus", "cloud"]
+  },
+  {
+    "templateId": "CREATURE_SKY_EAGLE",
+    "displayName": "Sky Eagle",
+    "mobileTypeName": "SkyEagle",
+    "name": "a sky eagle",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "eagle", "sky", "bird"]
+  },
+  {
+    "templateId": "CREATURE_SKY_GOLEM",
+    "displayName": "Sky Golem",
+    "mobileTypeName": "SkyGolem",
+    "name": "a sky golem",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "golem", "sky", "cloud"]
+  },
+  {
+    "templateId": "CREATURE_STORM_GIANT",
+    "displayName": "Storm Giant",
+    "mobileTypeName": "StormGiant",
+    "name": "a storm giant",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "giant", "storm", "wind"]
+  },
+  {
+    "templateId": "CREATURE_STORM_HARPY",
+    "displayName": "Storm Harpy",
+    "mobileTypeName": "StormHarpy",
+    "name": "a storm harpy",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "harpy", "storm", "wind"]
+  },
+  {
+    "templateId": "CREATURE_STORM_ROC",
+    "displayName": "Storm Roc",
+    "mobileTypeName": "StormRoc",
+    "name": "a storm roc",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "roc", "storm", "bird"]
+  },
+  {
+    "templateId": "CREATURE_STORM_WISP",
+    "displayName": "Storm Wisp",
+    "mobileTypeName": "StormWisp",
+    "name": "a storm wisp",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "wisp", "storm", "wind"]
+  },
+  {
+    "templateId": "CREATURE_THUNDER_BIRD",
+    "displayName": "Thunder Bird",
+    "mobileTypeName": "ThunderBird",
+    "name": "a thunder bird",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "bird", "thunder", "storm"]
+  },
+  {
+    "templateId": "CREATURE_CLOUD_DRAKE",
+    "displayName": "Vystia Cloud Drake",
+    "mobileTypeName": "VystiaCloudDrake",
+    "name": "a cloud drake",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "drake", "cloud", "sky"]
+  },
+  {
+    "templateId": "CREATURE_CLOUD_SERPENT",
+    "displayName": "Vystia Cloud Serpent",
+    "mobileTypeName": "VystiaCloudSerpent",
+    "name": "a cloud serpent",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "serpent", "cloud", "sky"]
+  },
+  {
+    "templateId": "CREATURE_GALE_ELEMENTAL",
+    "displayName": "Vystia Gale Elemental",
+    "mobileTypeName": "VystiaGaleElemental",
+    "name": "a gale elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "elemental", "gale", "wind"]
+  },
+  {
+    "templateId": "CREATURE_LIGHTNING_DRAKE",
+    "displayName": "Vystia Lightning Drake",
+    "mobileTypeName": "VystiaLightningDrake",
+    "name": "a lightning drake",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "drake", "lightning", "storm"]
+  },
+  {
+    "templateId": "CREATURE_ZEPHYR",
+    "displayName": "Zephyr",
+    "mobileTypeName": "Zephyr",
+    "name": "a zephyr",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["skyreach", "creature", "zephyr", "wind", "spirit"]
+  },
+  {
+    "templateId": "CREATURE_CRYSTAL_GOLEM",
+    "displayName": "Crystal Golem",
+    "mobileTypeName": "CrystalGolem",
+    "name": "a crystal golem",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["crystal_barrens", "creature", "golem", "crystal", "gem"]
+  },
+  {
+    "templateId": "CREATURE_CRYSTAL_SERPENT",
+    "displayName": "Crystal Serpent",
+    "mobileTypeName": "CrystalSerpent",
+    "name": "a crystal serpent",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["crystal_barrens", "creature", "serpent", "crystal", "gem"]
+  },
+  {
+    "templateId": "CREATURE_PRISMATIC_WISP",
+    "displayName": "Prismatic Wisp",
+    "mobileTypeName": "PrismaticWisp",
+    "name": "a prismatic wisp",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["crystal_barrens", "creature", "wisp", "prismatic", "crystal"]
+  },
+  {
+    "templateId": "CREATURE_CRYSTAL_ELEMENTAL",
+    "displayName": "Vystia Crystal Elemental",
+    "mobileTypeName": "VystiaCrystalElemental",
+    "name": "a crystal elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["crystal_barrens", "creature", "elemental", "crystal", "gem"]
+  },
+  {
+    "templateId": "CREATURE_ABYSSAL_CRAB",
+    "displayName": "Abyssal Crab",
+    "mobileTypeName": "AbyssalCrab",
+    "name": "an abyssal crab",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "crab", "abyssal", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_ABYSSAL_JELLYFISH",
+    "displayName": "Abyssal Jellyfish",
+    "mobileTypeName": "AbyssalJellyfish",
+    "name": "an abyssal jellyfish",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "jellyfish", "abyssal", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_ABYSSAL_SQUID",
+    "displayName": "Abyssal Squid",
+    "mobileTypeName": "AbyssalSquid",
+    "name": "an abyssal squid",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "squid", "abyssal", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_CORAL_GOLEM",
+    "displayName": "Coral Golem",
+    "mobileTypeName": "CoralGolem",
+    "name": "a coral golem",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "golem", "coral", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_DEEPWATER_SHARK",
+    "displayName": "Deepwater Shark",
+    "mobileTypeName": "DeepwaterShark",
+    "name": "a deepwater shark",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "shark", "deepwater", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_KELP_HORROR",
+    "displayName": "Kelp Horror",
+    "mobileTypeName": "KelpHorror",
+    "name": "a kelp horror",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "horror", "kelp", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_MERFOLK",
+    "displayName": "Merfolk",
+    "mobileTypeName": "Merfolk",
+    "name": "a merfolk",
+    "title": "",
+    "defaultPersonality": "Friendly",
+    "defaultSpeechPattern": "Casual",
+    "knowledgeTags": ["underwater", "creature", "merfolk", "humanoid", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_SEA_HAG",
+    "displayName": "Sea Hag",
+    "mobileTypeName": "SeaHag",
+    "name": "a sea hag",
+    "title": "",
+    "defaultPersonality": "Witch",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["underwater", "creature", "hag", "sea", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_SIREN_WRAITH",
+    "displayName": "Siren Wraith",
+    "mobileTypeName": "SirenWraith",
+    "name": "a siren wraith",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "wraith", "siren", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_TIDAL_ELEMENTAL",
+    "displayName": "Tidal Elemental",
+    "mobileTypeName": "TidalElemental",
+    "name": "a tidal elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "elemental", "tidal", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_DEEP_SEA_SERPENT",
+    "displayName": "Vystia Deep Sea Serpent",
+    "mobileTypeName": "VystiaDeepSeaSerpent",
+    "name": "a deep sea serpent",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "serpent", "deep_sea", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_SEA_WYRM",
+    "displayName": "Vystia Sea Wyrm",
+    "mobileTypeName": "VystiaSeaWyrm",
+    "name": "a sea wyrm",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["underwater", "creature", "wyrm", "sea", "ocean"]
+  },
+  {
+    "templateId": "CREATURE_ABYSSAL_HORROR",
+    "displayName": "Abyssal Horror",
+    "mobileTypeName": "AbyssalHorror",
+    "name": "an abyssal horror",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "horror", "abyssal", "void"]
+  },
+  {
+    "templateId": "CREATURE_NIGHTMARE_HOUND",
+    "displayName": "Nightmare Hound",
+    "mobileTypeName": "NightmareHound",
+    "name": "a nightmare hound",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "hound", "nightmare", "void"]
+  },
+  {
+    "templateId": "CREATURE_SHADOW_ELEMENTAL",
+    "displayName": "Shadow Elemental",
+    "mobileTypeName": "ShadowElemental",
+    "name": "a shadow elemental",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "elemental", "shadow", "void"]
+  },
+  {
+    "templateId": "CREATURE_VOID_STALKER",
+    "displayName": "Void Stalker",
+    "mobileTypeName": "VoidStalker",
+    "name": "a void stalker",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "stalker", "void", "shadow"]
+  },
+  {
+    "templateId": "CREATURE_VOID_TENTACLE",
+    "displayName": "Void Tentacle",
+    "mobileTypeName": "VoidTentacle",
+    "name": "a void tentacle",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "tentacle", "void", "shadow"]
+  },
+  {
+    "templateId": "CREATURE_VOID_WRAITH",
+    "displayName": "Void Wraith",
+    "mobileTypeName": "VoidWraith",
+    "name": "a void wraith",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "wraith", "void", "undead"]
+  },
+  {
+    "templateId": "CREATURE_DARK_WISP",
+    "displayName": "Vystia Dark Wisp",
+    "mobileTypeName": "VystiaDarkWisp",
+    "name": "a dark wisp",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "wisp", "dark", "shadow"]
+  },
+  {
+    "templateId": "CREATURE_SHADOW_DEMON",
+    "displayName": "Vystia Shadow Demon",
+    "mobileTypeName": "VystiaShadowDemon",
+    "name": "a shadow demon",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "demon", "shadow", "void"]
+  },
+  {
+    "templateId": "CREATURE_VOID_DRAKE",
+    "displayName": "Vystia Void Drake",
+    "mobileTypeName": "VystiaVoidDrake",
+    "name": "a void drake",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["shadowvoid", "creature", "drake", "void", "shadow"]
+  },
+  {
+    "templateId": "CREATURE_BANDIT",
+    "displayName": "Vystia Bandit",
+    "mobileTypeName": "VystiaBandit",
+    "name": "a bandit",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "bandit", "humanoid", "hostile"]
+  },
+  {
+    "templateId": "CREATURE_ETTIN",
+    "displayName": "Vystia Ettin",
+    "mobileTypeName": "VystiaEttin",
+    "name": "an ettin",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "ettin", "giant", "two_headed"]
+  },
+  {
+    "templateId": "CREATURE_GHOUL",
+    "displayName": "Vystia Ghoul",
+    "mobileTypeName": "VystiaGhoul",
+    "name": "a ghoul",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "ghoul", "undead", "corpse"]
+  },
+  {
+    "templateId": "CREATURE_GIANT_SPIDER",
+    "displayName": "Vystia Giant Spider",
+    "mobileTypeName": "VystiaGiantSpider",
+    "name": "a giant spider",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "spider", "giant", "arachnid"]
+  },
+  {
+    "templateId": "CREATURE_GOBLIN",
+    "displayName": "Vystia Goblin",
+    "mobileTypeName": "VystiaGoblin",
+    "name": "a goblin",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "goblin", "humanoid", "small"]
+  },
+  {
+    "templateId": "CREATURE_OGRE",
+    "displayName": "Vystia Ogre",
+    "mobileTypeName": "VystiaOgre",
+    "name": "an ogre",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "ogre", "giant", "humanoid"]
+  },
+  {
+    "templateId": "CREATURE_ORC",
+    "displayName": "Vystia Orc",
+    "mobileTypeName": "VystiaOrc",
+    "name": "an orc",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "orc", "humanoid", "hostile"]
+  },
+  {
+    "templateId": "CREATURE_ORC_CAPTAIN",
+    "displayName": "Vystia Orc Captain",
+    "mobileTypeName": "VystiaOrcCaptain",
+    "name": "an orc captain",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "orc", "captain", "leader"]
+  },
+  {
+    "templateId": "CREATURE_SKELETON",
+    "displayName": "Vystia Skeleton",
+    "mobileTypeName": "VystiaSkeleton",
+    "name": "a skeleton",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "skeleton", "undead", "bone"]
+  },
+  {
+    "templateId": "CREATURE_SPECTRE",
+    "displayName": "Vystia Spectre",
+    "mobileTypeName": "VystiaSpectre",
+    "name": "a spectre",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "spectre", "undead", "ghost"]
+  },
+  {
+    "templateId": "CREATURE_SPIDER",
+    "displayName": "Vystia Spider",
+    "mobileTypeName": "VystiaSpider",
+    "name": "a spider",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "spider", "arachnid", "small"]
+  },
+  {
+    "templateId": "CREATURE_TROLL",
+    "displayName": "Vystia Troll",
+    "mobileTypeName": "VystiaTroll",
+    "name": "a troll",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "troll", "humanoid", "regenerating"]
+  },
+  {
+    "templateId": "CREATURE_WOLF",
+    "displayName": "Vystia Wolf",
+    "mobileTypeName": "VystiaWolf",
+    "name": "a wolf",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "wolf", "canine", "pack"]
+  },
+  {
+    "templateId": "CREATURE_ZOMBIE",
+    "displayName": "Vystia Zombie",
+    "mobileTypeName": "VystiaZombie",
+    "name": "a zombie",
+    "title": "",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "zombie", "undead", "corpse"]
+  },
+  {
+    "templateId": "CREATURE_WILD_HORSE",
+    "displayName": "Wild Horse",
+    "mobileTypeName": "WildHorse",
+    "name": "a wild horse",
+    "title": "",
+    "defaultPersonality": "Beast",
+    "defaultSpeechPattern": "Growls",
+    "knowledgeTags": ["misc", "creature", "horse", "mount", "tamable"]
+  },
+  {
+    "templateId": "VENDOR_RESOURCE",
+    "displayName": "Vystia Resource Vendor",
+    "mobileTypeName": "VystiaResourceVendor",
+    "name": "Resource Vendor",
+    "title": "Merchant",
+    "defaultPersonality": "Commoner",
+    "defaultSpeechPattern": "Modern",
+    "knowledgeTags": ["vendor", "resources", "materials", "general"]
+  },
+  {
+    "templateId": "VENDOR_CLASS_ITEM",
+    "displayName": "Vystia Class Item Vendor",
+    "mobileTypeName": "VystiaClassItemVendor",
+    "name": "Class Item Vendor",
+    "title": "Merchant",
+    "defaultPersonality": "Commoner",
+    "defaultSpeechPattern": "Modern",
+    "knowledgeTags": ["vendor", "class_items", "equipment", "gear"]
+  },
+  {
+    "templateId": "VENDOR_REAGENT",
+    "displayName": "Vystia Reagent Vendor",
+    "mobileTypeName": "VystiaReagentVendor",
+    "name": "Reagent Vendor",
+    "title": "Merchant",
+    "defaultPersonality": "Commoner",
+    "defaultSpeechPattern": "Modern",
+    "knowledgeTags": ["vendor", "reagents", "magic", "spellcasting"]
+  },
+  {
+    "templateId": "VENDOR_ICE_MAGE",
+    "displayName": "Ice Mage Vendor",
+    "mobileTypeName": "IceMageVendor",
+    "name": "Ice Mage Vendor",
+    "title": "the ice mage vendor",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["vendor", "ice_mage", "frost", "magic", "winterguard"]
+  },
+  {
+    "templateId": "VENDOR_DRUID",
+    "displayName": "Druid Vendor",
+    "mobileTypeName": "DruidVendor",
+    "name": "Druid Vendor",
+    "title": "the druid vendor",
+    "defaultPersonality": "Elder",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["vendor", "druid", "nature", "verdantpeak"]
+  },
+  {
+    "templateId": "VENDOR_WITCH",
+    "displayName": "Witch Vendor",
+    "mobileTypeName": "WitchVendor",
+    "name": "Witch Vendor",
+    "title": "the witch vendor",
+    "defaultPersonality": "Witch",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["vendor", "witch", "shadowfen", "hex", "swamp"]
+  },
+  {
+    "templateId": "VENDOR_SORCERER",
+    "displayName": "Sorcerer Vendor",
+    "mobileTypeName": "SorcererVendor",
+    "name": "Sorcerer Vendor",
+    "title": "the sorcerer vendor",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["vendor", "sorcerer", "emberlands", "fire", "elemental"]
+  },
+  {
+    "templateId": "VENDOR_WARLOCK",
+    "displayName": "Warlock Vendor",
+    "mobileTypeName": "WarlockVendor",
+    "name": "Warlock Vendor",
+    "title": "the warlock vendor",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["vendor", "warlock", "covenant", "hidden_eye"]
+  },
+  {
+    "templateId": "VENDOR_ORACLE",
+    "displayName": "Oracle Vendor",
+    "mobileTypeName": "OracleVendor",
+    "name": "Oracle Vendor",
+    "title": "the oracle vendor",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["vendor", "oracle", "crystal_barrens", "divination"]
+  },
+  {
+    "templateId": "VENDOR_NECROMANCER",
+    "displayName": "Necromancer Vendor",
+    "mobileTypeName": "NecromancerVendor",
+    "name": "Necromancer Vendor",
+    "title": "the necromancer vendor",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["vendor", "necromancer", "shadowvoid", "death"]
+  },
+  {
+    "templateId": "VENDOR_SUMMONER",
+    "displayName": "Summoner Vendor",
+    "mobileTypeName": "SummonerVendor",
+    "name": "Summoner Vendor",
+    "title": "the summoner vendor",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["vendor", "summoner", "forgotten_depths", "summons"]
+  },
+  {
+    "templateId": "VENDOR_SHAMAN",
+    "displayName": "Shaman Vendor",
+    "mobileTypeName": "ShamanVendor",
+    "name": "Shaman Vendor",
+    "title": "the shaman vendor",
+    "defaultPersonality": "Elder",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["vendor", "shaman", "wilderlands", "spirit"]
+  },
+  {
+    "templateId": "VENDOR_BARD",
+    "displayName": "Bard Vendor",
+    "mobileTypeName": "BardVendor",
+    "name": "Bard Vendor",
+    "title": "the bard vendor",
+    "defaultPersonality": "Friendly",
+    "defaultSpeechPattern": "Casual",
+    "knowledgeTags": ["vendor", "bard", "steam", "harmonic"]
+  },
+  {
+    "templateId": "VENDOR_ENCHANTER",
+    "displayName": "Enchanter Vendor",
+    "mobileTypeName": "EnchanterVendor",
+    "name": "Enchanter Vendor",
+    "title": "the enchanter vendor",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["vendor", "enchanter", "mystic_canyons", "sigil"]
+  },
+  {
+    "templateId": "VENDOR_ILLUSIONIST",
+    "displayName": "Illusionist Vendor",
+    "mobileTypeName": "IllusionistVendor",
+    "name": "Illusionist Vendor",
+    "title": "the illusionist vendor",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["vendor", "illusionist", "whispering_sands", "mirage"]
+  },
+  {
+    "templateId": "TRAINER_BARBARIAN",
+    "displayName": "Barbarian Trainer",
+    "mobileTypeName": "BarbarianTrainer",
+    "name": "Barbarian Trainer",
+    "title": "Battlemaster",
+    "defaultPersonality": "Warrior",
+    "defaultSpeechPattern": "Gruff",
+    "knowledgeTags": ["trainer", "barbarian", "frosthold", "combat", "berserker"]
+  },
+  {
+    "templateId": "TRAINER_BEASTMASTER",
+    "displayName": "Beastmaster Trainer",
+    "mobileTypeName": "BeastmasterTrainer",
+    "name": "Beastmaster Trainer",
+    "title": "Beastmaster",
+    "defaultPersonality": "Friendly",
+    "defaultSpeechPattern": "Casual",
+    "knowledgeTags": ["trainer", "beastmaster", "wilderlands", "animals", "taming"]
+  },
+  {
+    "templateId": "TRAINER_ICE_MAGE",
+    "displayName": "Ice Mage Trainer",
+    "mobileTypeName": "IceMageTrainer",
+    "name": "Ice Mage Trainer",
+    "title": "Frostweaver",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "ice_mage", "frosthold", "magic", "frost"]
+  },
+  {
+    "templateId": "TRAINER_SORCERER",
+    "displayName": "Sorcerer Trainer",
+    "mobileTypeName": "SorcererTrainer",
+    "name": "Sorcerer Trainer",
+    "title": "Flameweaver",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "sorcerer", "emberlands", "elemental", "fire"]
+  },
+  {
+    "templateId": "TRAINER_RANGER",
+    "displayName": "Ranger Trainer",
+    "mobileTypeName": "RangerTrainer",
+    "name": "Ranger Trainer",
+    "title": "Ranger",
+    "defaultPersonality": "Friendly",
+    "defaultSpeechPattern": "Casual",
+    "knowledgeTags": ["trainer", "ranger", "verdantpeak", "archery", "tracking"]
+  },
+  {
+    "templateId": "TRAINER_ILLUSIONIST",
+    "displayName": "Illusionist Trainer",
+    "mobileTypeName": "IllusionistTrainer",
+    "name": "Illusionist Trainer",
+    "title": "Mirage Weaver",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["trainer", "illusionist", "whispering_sands", "mirage", "deception"]
+  },
+  {
+    "templateId": "TRAINER_WITCH",
+    "displayName": "Witch Trainer",
+    "mobileTypeName": "WitchTrainer",
+    "name": "Witch Trainer",
+    "title": "Hexweaver",
+    "defaultPersonality": "Witch",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["trainer", "witch", "shadowfen", "hex", "swamp"]
+  },
+  {
+    "templateId": "TRAINER_WARLOCK",
+    "displayName": "Warlock Trainer",
+    "mobileTypeName": "WarlockTrainer",
+    "name": "Warlock Trainer",
+    "title": "Warlock",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["trainer", "warlock", "covenant", "hidden_eye", "dark"]
+  },
+  {
+    "templateId": "TRAINER_NECROMANCER",
+    "displayName": "Necromancer Trainer",
+    "mobileTypeName": "NecromancerTrainer",
+    "name": "Necromancer Trainer",
+    "title": "Shadowbinder",
+    "defaultPersonality": "Undead",
+    "defaultSpeechPattern": "OldEnglish",
+    "knowledgeTags": ["trainer", "necromancer", "shadowvoid", "death", "undead"]
+  },
+  {
+    "templateId": "TRAINER_DRUID",
+    "displayName": "Druid Trainer",
+    "mobileTypeName": "DruidTrainer",
+    "name": "Druid Trainer",
+    "title": "Elder Grove",
+    "defaultPersonality": "Elder",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "druid", "verdantpeak", "nature", "shapeshifting"]
+  },
+  {
+    "templateId": "TRAINER_ALCHEMIST",
+    "displayName": "Alchemist Trainer",
+    "mobileTypeName": "AlchemistTrainer",
+    "name": "Alchemist Trainer",
+    "title": "Alchemist",
+    "defaultPersonality": "Analytical",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "alchemist", "ironclad", "potion", "chemistry"]
+  },
+  {
+    "templateId": "TRAINER_ORACLE",
+    "displayName": "Oracle Trainer",
+    "mobileTypeName": "OracleTrainer",
+    "name": "Oracle Trainer",
+    "title": "Crystalseer",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Cryptic",
+    "knowledgeTags": ["trainer", "oracle", "crystal_barrens", "divination", "prophecy"]
+  },
+  {
+    "templateId": "TRAINER_WIZARD",
+    "displayName": "Wizard Trainer",
+    "mobileTypeName": "WizardTrainer",
+    "name": "Wizard Trainer",
+    "title": "Wizard",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "wizard", "arcane", "magic", "spellcasting"]
+  },
+  {
+    "templateId": "TRAINER_ARTIFICER",
+    "displayName": "Artificer Trainer",
+    "mobileTypeName": "ArtificerTrainer",
+    "name": "Artificer Trainer",
+    "title": "Gearsmith",
+    "defaultPersonality": "Analytical",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "artificer", "ironclad", "clockwork", "engineering"]
+  },
+  {
+    "templateId": "TRAINER_FIGHTER",
+    "displayName": "Fighter Trainer",
+    "mobileTypeName": "FighterTrainer",
+    "name": "Fighter Trainer",
+    "title": "Fighter",
+    "defaultPersonality": "Warrior",
+    "defaultSpeechPattern": "Gruff",
+    "knowledgeTags": ["trainer", "fighter", "combat", "melee", "warrior"]
+  },
+  {
+    "templateId": "TRAINER_MONK",
+    "displayName": "Monk Trainer",
+    "mobileTypeName": "MonkTrainer",
+    "name": "Monk Trainer",
+    "title": "Monk",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "monk", "martial_arts", "discipline", "meditation"]
+  },
+  {
+    "templateId": "TRAINER_TEMPLAR",
+    "displayName": "Templar Trainer",
+    "mobileTypeName": "TemplarTrainer",
+    "name": "Templar Trainer",
+    "title": "Templar",
+    "defaultPersonality": "Warrior",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "templar", "holy", "crusader", "divine"]
+  },
+  {
+    "templateId": "TRAINER_SUMMONER",
+    "displayName": "Summoner Trainer",
+    "mobileTypeName": "SummonerTrainer",
+    "name": "Summoner Trainer",
+    "title": "Depthcaller",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "summoner", "forgotten_depths", "summons", "ocean"]
+  },
+  {
+    "templateId": "TRAINER_BOUNTY_HUNTER",
+    "displayName": "Bounty Hunter Trainer",
+    "mobileTypeName": "BountyHunterTrainer",
+    "name": "Bounty Hunter Trainer",
+    "title": "Bounty Hunter",
+    "defaultPersonality": "Warrior",
+    "defaultSpeechPattern": "Gruff",
+    "knowledgeTags": ["trainer", "bounty_hunter", "tracking", "hunting", "mercenary"]
+  },
+  {
+    "templateId": "TRAINER_KNIGHT",
+    "displayName": "Knight Trainer",
+    "mobileTypeName": "KnightTrainer",
+    "name": "Knight Trainer",
+    "title": "Knight",
+    "defaultPersonality": "Noble",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "knight", "chivalry", "honor", "noble"]
+  },
+  {
+    "templateId": "TRAINER_SHAMAN",
+    "displayName": "Shaman Trainer",
+    "mobileTypeName": "ShamanTrainer",
+    "name": "Shaman Trainer",
+    "title": "Spiritcaller",
+    "defaultPersonality": "Elder",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "shaman", "wilderlands", "spirit", "tribal"]
+  },
+  {
+    "templateId": "TRAINER_CLERIC",
+    "displayName": "Cleric Trainer",
+    "mobileTypeName": "ClericTrainer",
+    "name": "Cleric Trainer",
+    "title": "Cleric",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "cleric", "healing", "divine", "holy"]
+  },
+  {
+    "templateId": "TRAINER_PALADIN",
+    "displayName": "Paladin Trainer",
+    "mobileTypeName": "PaladinTrainer",
+    "name": "Paladin Trainer",
+    "title": "Paladin",
+    "defaultPersonality": "Noble",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "paladin", "holy", "divine", "crusader"]
+  },
+  {
+    "templateId": "TRAINER_BARD",
+    "displayName": "Bard Trainer",
+    "mobileTypeName": "BardTrainer",
+    "name": "Bard Trainer",
+    "title": "Virtuoso",
+    "defaultPersonality": "Friendly",
+    "defaultSpeechPattern": "Casual",
+    "knowledgeTags": ["trainer", "bard", "steam", "harmonic", "music"]
+  },
+  {
+    "templateId": "TRAINER_ENCHANTER",
+    "displayName": "Enchanter Trainer",
+    "mobileTypeName": "EnchanterTrainer",
+    "name": "Enchanter Trainer",
+    "title": "Sigilmaster",
+    "defaultPersonality": "Sage",
+    "defaultSpeechPattern": "Formal",
+    "knowledgeTags": ["trainer", "enchanter", "mystic_canyons", "sigil", "enchantment"]
+  },
+  {
+    "templateId": "GENERIC_QUEST_NPC",
+    "displayName": "Quest NPC",
+    "mobileTypeName": "QuestNPC",
+    "name": "Quest Giver",
+    "title": "Adventurer",
+    "defaultPersonality": "Friendly",
+    "defaultSpeechPattern": "Casual",
+    "knowledgeTags": ["generic", "quest", "adventure"]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "vystia_inns",
+    "title": "Vystia Inns and Taverns",
+    "category": "Hospitality",
+    "content": "Inns and taverns in Vystia reflect regional culture. Frosthold's Ice Hall serves hot mead and roasted meats. Ironhaven's Steam Pub features clockwork entertainment. Verdantheart's Grove Inn offers vegetarian fare in tree-house rooms. Sunspire's Desert Rose has belly dancers and spiced wines. Each provides lodging, food, and local gossip.",
+    "tags": [
+      "inn",
+      "tavern",
+      "lodging",
+      "hospitality",
+      "food"
+    ],
+    "importance": 6
+  }
+]

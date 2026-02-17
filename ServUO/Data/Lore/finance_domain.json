@@ -1,0 +1,15 @@
+[
+  {
+    "id": "vystia_banking",
+    "title": "Vystia Banking System",
+    "category": "Finance",
+    "content": "Banks in Vystia operate in all major cities. The Iron Bank of Ironhaven is the largest, using clockwork vaults. Frostholm's Ice Vault stores wealth in frozen chambers. Banks provide deposits, withdrawals, and currency exchange. Bankers are trusted members of society and often have knowledge of local economies and trade.",
+    "tags": [
+      "bank",
+      "banking",
+      "finance",
+      "vault"
+    ],
+    "importance": 6
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "vystia_healing",
+    "title": "Vystia Healing Arts",
+    "category": "Healing",
+    "content": "Healing in Vystia is performed by Clerics, Druids, Paladins, and Shamans. Clerics use divine magic to restore health and cure ailments. Druids channel nature's healing power. Paladins lay hands on wounded allies. Shamans summon healing totems. Alchemists brew healing potions from regional herbs.",
+    "tags": [
+      "healing",
+      "medicine",
+      "restoration",
+      "health"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "vystia_bandages",
+    "title": "Vystia Bandaging",
+    "category": "Healing",
+    "content": "Bandaging works the same as traditional methods but Vystia healers often infuse bandages with regional ingredients. Frosthold bandages contain frost moss to numb pain. Verdantpeak bandages use healing leaves. Shadowfen bandages include antivenoms for poison treatment.",
+    "tags": [
+      "bandages",
+      "healing",
+      "first aid"
+    ],
+    "importance": 5
+  }
+]

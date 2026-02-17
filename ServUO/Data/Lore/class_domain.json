@@ -1,0 +1,426 @@
+[
+  {
+    "id": "barbarian",
+    "title": "Barbarian - Frosthold Berserkers",
+    "category": "NPC",
+    "content": "Barbarians from Frosthold are known as Frosthold Berserkers who channel the icy ferocity of their frozen homeland. They are formidable melee warriors who embrace the relentless survival spirit of the tundra. Using ice-enhanced attacks and incredible physical strength, they dominate in close combat. Starting equipment includes fur armor and a greataxe.",
+    "tags": [
+      "barbarian",
+      "frosthold",
+      "berserker",
+      "melee",
+      "ice",
+      "warrior",
+      "dps"
+    ],
+    "importance": 7,
+    "source": "STR:45 DEX:20 INT:15 (Total:80)"
+  },
+  {
+    "id": "beastmaster",
+    "title": "Beastmaster - Pack Leaders of Frosthold",
+    "category": "NPC",
+    "content": "Beastmasters from Frosthold are Pack Leaders who form bonds with ice wolves and arctic creatures. They command animal companions in battle and use nature magic to enhance their pets. Their special item is the Beast Whistle which summons animal companions. They excel at pet-based combat and tracking.",
+    "tags": [
+      "beastmaster",
+      "frosthold",
+      "pets",
+      "animals",
+      "ranger",
+      "companion"
+    ],
+    "importance": 7,
+    "source": "STR:25 DEX:35 INT:20 (Total:80)"
+  },
+  {
+    "id": "ice_mage",
+    "title": "Ice Mage - Frostweavers of Winterguard",
+    "category": "NPC",
+    "content": "Ice Mages from Winterguard are called Frostweavers who specialize in ice and snow magic. They control the battlefield with freezing spells, ice barriers, and devastating cold damage. Their spellbook contains 32 ice spells across 8 circles. They can slow, freeze, and shatter enemies with their mastery of cold magic.",
+    "tags": [
+      "ice mage",
+      "winterguard",
+      "frost",
+      "caster",
+      "ice",
+      "magic",
+      "cold"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:20 INT:45 (Total:80)"
+  },
+  {
+    "id": "sorcerer",
+    "title": "Sorcerer - Elemental Savants of the Emberlands",
+    "category": "NPC",
+    "content": "Sorcerers from the Emberlands are Elemental Savants who channel raw elemental chaos, especially fire magic. They wield devastating elemental spells with little need for study, drawing power directly from their volcanic homeland. Their spellbook contains 32 elemental spells focusing on fire, lightning, and pure energy.",
+    "tags": [
+      "sorcerer",
+      "emberlands",
+      "fire",
+      "elemental",
+      "caster",
+      "chaos",
+      "dps"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:20 INT:45 (Total:80)"
+  },
+  {
+    "id": "ranger",
+    "title": "Ranger - Dune Striders of the Whispering Sands",
+    "category": "NPC",
+    "content": "Rangers from the Whispering Sands are Dune Striders, expert survivalists and trackers who navigate the desert with ease. They excel at ranged combat with bows, trap-setting, and animal companionship. They can camouflage in desert terrain and track enemies across vast distances. They protect desert caravans from raiders.",
+    "tags": [
+      "ranger",
+      "desert",
+      "whispering sands",
+      "ranged",
+      "bow",
+      "tracker",
+      "survival"
+    ],
+    "importance": 7,
+    "source": "STR:25 DEX:45 INT:10 (Total:80)"
+  },
+  {
+    "id": "illusionist",
+    "title": "Illusionist - Mirage Weavers of the Whispering Sands",
+    "category": "NPC",
+    "content": "Illusionists from the Whispering Sands are Mirage Weavers who create illusions to protect settlements and confuse enemies. They can create mirror images, turn invisible, alter terrain appearance, and craft terrifying phantasms. Their spellbook contains 32 illusion spells focused on deception and misdirection. They make indispensable scouts.",
+    "tags": [
+      "illusionist",
+      "desert",
+      "whispering sands",
+      "illusion",
+      "magic",
+      "deception",
+      "mirages"
+    ],
+    "importance": 7,
+    "source": "STR:10 DEX:25 INT:45 (Total:80)"
+  },
+  {
+    "id": "witch",
+    "title": "Witch - Covens of Shadowfen",
+    "category": "NPC",
+    "content": "Witches from Shadowfen form secretive covens that delve into dark magic, curses, and herbal potions. They use the swamp's flora and fauna to craft powerful hexes and protective charms. Their spellbook contains 32 hex spells for debuffing and cursing enemies. They can brew potions, summon familiars, and control poison.",
+    "tags": [
+      "witch",
+      "shadowfen",
+      "hex",
+      "curse",
+      "swamp",
+      "poison",
+      "dark"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:20 INT:45 (Total:80)"
+  },
+  {
+    "id": "warlock",
+    "title": "Warlock - Covenant of the Hidden Eye",
+    "category": "NPC",
+    "content": "Warlocks are members of the Covenant of the Hidden Eye who gain powers through pacts with otherworldly beings. They wield dark magic carefully, walking the line between control and corruption. Their spellbook contains 32 dark magic spells including soul magic, void energy, and demonic summoning. They can drain life and curse enemies.",
+    "tags": [
+      "warlock",
+      "shadowvoid",
+      "dark magic",
+      "pact",
+      "void",
+      "demon",
+      "curse"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:20 INT:45 (Total:80)"
+  },
+  {
+    "id": "druid",
+    "title": "Druid - Guardians of Verdantpeak",
+    "category": "NPC",
+    "content": "Druids from Verdantpeak are revered Guardians who wield nature's power to protect the forest. They can shapeshift into animals, control plants, summon nature spirits, and heal allies. Their spellbook contains 32 nature spells including entangle, wildshape, and earthquake. They maintain balance between civilization and wilderness.",
+    "tags": [
+      "druid",
+      "verdantpeak",
+      "nature",
+      "shapeshift",
+      "forest",
+      "healing",
+      "balance"
+    ],
+    "importance": 7,
+    "source": "STR:20 DEX:25 INT:35 (Total:80)"
+  },
+  {
+    "id": "alchemist",
+    "title": "Alchemist - Brewmasters of the Verdant Isles",
+    "category": "NPC",
+    "content": "Alchemists from the Verdant Isles are Brewmasters who concoct potent elixirs from rare tropical herbs. They can throw healing or damage potions, create explosive concoctions, deploy gas clouds, and transmute materials. Their Alchemist's Kit serves as a portable crafting station. They create potions of legendary quality.",
+    "tags": [
+      "alchemist",
+      "verdant isles",
+      "potions",
+      "brewing",
+      "crafting",
+      "support",
+      "herbs"
+    ],
+    "importance": 7,
+    "source": "STR:20 DEX:30 INT:30 (Total:80)"
+  },
+  {
+    "id": "oracle",
+    "title": "Oracle - Seers of the Crystal Barrens",
+    "category": "NPC",
+    "content": "Oracles from the Crystal Barrens are Seers who utilize crystal energies to foresee futures and guide their people. Their spellbook contains 32 divination spells for revealing hidden things, predicting attacks, and manipulating fate. They can detect intentions, recall used abilities, and even reverse time. Their visions are crucial for navigation.",
+    "tags": [
+      "oracle",
+      "crystal barrens",
+      "divination",
+      "seer",
+      "future",
+      "vision",
+      "fate"
+    ],
+    "importance": 7,
+    "source": "STR:10 DEX:20 INT:50 (Total:80)"
+  },
+  {
+    "id": "artificer",
+    "title": "Artificer - Technoguild Artisans",
+    "category": "NPC",
+    "content": "Artificers from the Ironclad Empire are Technoguild Artisans who craft magical gadgets and mechanical contraptions. They can summon clockwork constructs, deploy turrets, enhance weapons, create shields, and throw bombs. Their Construct Control Device summons scouts (rat, sprite, spider). They blend engineering with magic.",
+    "tags": [
+      "artificer",
+      "ironclad",
+      "technology",
+      "constructs",
+      "gadgets",
+      "mechanical",
+      "invention"
+    ],
+    "importance": 7,
+    "source": "STR:25 DEX:30 INT:25 (Total:80)"
+  },
+  {
+    "id": "fighter",
+    "title": "Fighter - Ironclad Legionnaires",
+    "category": "NPC",
+    "content": "Fighters from the Ironclad Empire are Ironclad Legionnaires, the backbone of the imperial military. Equipped with heavy armor and advanced weapons, they excel at melee combat, defense, and battlefield tactics. They can form shield walls, execute power strikes, rally allies, and lead charges. They are disciplined warriors.",
+    "tags": [
+      "fighter",
+      "ironclad",
+      "warrior",
+      "tank",
+      "melee",
+      "soldier",
+      "legionnaire"
+    ],
+    "importance": 7,
+    "source": "STR:40 DEX:25 INT:15 (Total:80)"
+  },
+  {
+    "id": "monk",
+    "title": "Monk - Gearwheel Monastery's Monks",
+    "category": "NPC",
+    "content": "Monks from the Gearwheel Monastery integrate spiritual practice with mechanical precision. They focus on unarmed combat, incredible agility, and chi manipulation. They can deliver flurries of blows, enhance accuracy, increase movement speed, and heal themselves. Monk's Prayer Beads aid their meditation. They are martial artists.",
+    "tags": [
+      "monk",
+      "skyreach",
+      "martial arts",
+      "chi",
+      "monastery",
+      "unarmed",
+      "agility"
+    ],
+    "importance": 7,
+    "source": "STR:30 DEX:35 INT:15 (Total:80)"
+  },
+  {
+    "id": "templar",
+    "title": "Templar - Justicars of the Ironclad Empire",
+    "category": "NPC",
+    "content": "Templars from the Ironclad Empire are Justicars who blend devotion to law with mechanical prowess. They are holy warriors serving as judge and executioner. They can deliver divine justice, create holy shields, sanctify ground, blind enemies, and revive fallen allies. The Templar's Cross is their holy symbol.",
+    "tags": [
+      "templar",
+      "ironclad",
+      "holy",
+      "justice",
+      "paladin",
+      "divine",
+      "law"
+    ],
+    "importance": 7,
+    "source": "STR:35 DEX:25 INT:20 (Total:80)"
+  },
+  {
+    "id": "necromancer",
+    "title": "Necromancer - Shadowbinders of Eternal Twilight",
+    "category": "NPC",
+    "content": "Necromancers from Eternal Twilight are Shadowbinders who manipulate life and death energies. Their spellbook contains 32 necromancy spells for raising undead, draining life, causing fear, and instant death. They can create skeletal armies, curse enemies with weakness, and communicate with spirits. They walk the line between life and death.",
+    "tags": [
+      "necromancer",
+      "shadowvoid",
+      "undead",
+      "death",
+      "necromancy",
+      "dark",
+      "spirits"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:15 INT:50 (Total:80)"
+  },
+  {
+    "id": "summoner",
+    "title": "Summoner - Arcane Summoners of the Forgotten Depths",
+    "category": "NPC",
+    "content": "Summoners from the Forgotten Depths explore esoteric magic by calling forth entities from other dimensions. Their spellbook contains 32 summoning spells for conjuring elementals, opening portals, binding creatures, and fusing summons. Their Summoning Circle serves as a focus. They can banish enemies and empower familiars.",
+    "tags": [
+      "summoner",
+      "forgotten depths",
+      "summoning",
+      "portal",
+      "elemental",
+      "binding",
+      "dimensional"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:20 INT:45 (Total:80)"
+  },
+  {
+    "id": "bounty_hunter",
+    "title": "Bounty Hunter - Crypt Trackers of the Sunken Isles",
+    "category": "NPC",
+    "content": "Bounty Hunters from the Sunken Isles are Crypt Trackers who hunt treasures and fugitives. They combine sea magic with tracking skills, using nets, harpoons, and grappling hooks. They can mark targets for double damage, track invisibly, and execute low-health enemies. The Bounty Ledger tracks their targets.",
+    "tags": [
+      "bounty hunter",
+      "sunken isles",
+      "tracker",
+      "ranged",
+      "hunter",
+      "sea",
+      "mercenary"
+    ],
+    "importance": 7,
+    "source": "STR:30 DEX:35 INT:15 (Total:80)"
+  },
+  {
+    "id": "knight",
+    "title": "Knight - Guardians of the Glimmering Archipelago",
+    "category": "NPC",
+    "content": "Knights from the Glimmering Archipelago are Guardians who protect islands from pirates and sea monsters. They are trained in naval combat and knightly virtues, wielding sword and sorcery. They can charge enemies, block attacks, rally allies, and fight with honor. The Knight's Banner represents their code.",
+    "tags": [
+      "knight",
+      "glimmering archipelago",
+      "guardian",
+      "tank",
+      "naval",
+      "honor",
+      "warrior"
+    ],
+    "importance": 7,
+    "source": "STR:38 DEX:27 INT:15 (Total:80)"
+  },
+  {
+    "id": "shaman",
+    "title": "Shaman - Spiritcallers of the Wilderlands",
+    "category": "NPC",
+    "content": "Shamans from the Wilderlands are Spiritcallers who bridge the physical and spiritual realms. Their spellbook contains 32 shamanic spells for summoning totems, linking with spirits, revealing paths, and calling elemental bursts. They can heal with totems, see through illusions, and call lightning. The Spirit Totem channels spirit magic.",
+    "tags": [
+      "shaman",
+      "wilderlands",
+      "spirits",
+      "totems",
+      "primal",
+      "elemental",
+      "tribal"
+    ],
+    "importance": 7,
+    "source": "STR:20 DEX:20 INT:40 (Total:80)"
+  },
+  {
+    "id": "wizard",
+    "title": "Wizard - Scholars of the Arcane Academy",
+    "category": "NPC",
+    "content": "Wizards from the Arcane Academy dedicate themselves to mastering all forms of magic through study. They can cast magic missiles, shields, invisibility, teleportation, and area spells. They are versatile spellcasters with extensive magical knowledge. They can detect magic, summon familiars, and manipulate the fabric of reality.",
+    "tags": [
+      "wizard",
+      "arcane academy",
+      "magic",
+      "scholar",
+      "versatile",
+      "study",
+      "spells"
+    ],
+    "importance": 7,
+    "source": "STR:10 DEX:20 INT:50 (Total:80)"
+  },
+  {
+    "id": "cleric",
+    "title": "Cleric - Priests of the Elemental Balance",
+    "category": "NPC",
+    "content": "Clerics in Vystia are Priests of the Elemental Balance who uphold spiritual practices worshiping natural forces. They are healers and protectors using divine magic. They can heal wounds, bless allies, smite evil, prevent damage, and resurrect the fallen. The Holy Symbol channels their divine power. They maintain harmony.",
+    "tags": [
+      "cleric",
+      "priest",
+      "divine",
+      "healing",
+      "balance",
+      "holy",
+      "protection"
+    ],
+    "importance": 7,
+    "source": "STR:20 DEX:20 INT:40 (Total:80)"
+  },
+  {
+    "id": "paladin",
+    "title": "Paladin - Knights of the Forge Pact",
+    "category": "NPC",
+    "content": "Paladins are Knights of the Forge Pact, holy warriors dedicated to justice and righteousness. They wield faith and weapons to defend against evil. They can smite evil creatures, heal allies, protect with auras, charge into battle, and lay on hands. Their Shield of Faith absorbs damage. They are righteous defenders.",
+    "tags": [
+      "paladin",
+      "holy",
+      "knight",
+      "divine",
+      "justice",
+      "tank",
+      "healer"
+    ],
+    "importance": 7,
+    "source": "STR:35 DEX:20 INT:25 (Total:80)"
+  },
+  {
+    "id": "bard",
+    "title": "Bard - Steam Harmonic Virtuosos",
+    "category": "NPC",
+    "content": "Bards from the Ironclad Empire are Steam Harmonic Virtuosos who blend traditional music with steampunk sounds. Their spellbook contains 32 bardic spells for sonic damage, buffs, confusion, healing, and control. They can stun with cacophony, speed allies, put enemies to sleep, and reveal secrets. The Magic Lute is their instrument.",
+    "tags": [
+      "bard",
+      "ironclad",
+      "music",
+      "support",
+      "sonic",
+      "buffs",
+      "performance"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:35 INT:30 (Total:80)"
+  },
+  {
+    "id": "enchanter",
+    "title": "Enchanter - Sigilmasters of the Mystic Canyons",
+    "category": "NPC",
+    "content": "Enchanters from the Mystic Canyons are Sigilmasters who imbue objects with magic using arcane symbols. Their spellbook contains 32 enchanting spells for creating wards, enhancing weapons/armor, silencing casters, binding enemies, and marking targets. The Enchanting Crystal is their focus. They create magical items.",
+    "tags": [
+      "enchanter",
+      "mystic canyons",
+      "enchantment",
+      "runes",
+      "sigils",
+      "buff",
+      "enhancement"
+    ],
+    "importance": 7,
+    "source": "STR:15 DEX:25 INT:40 (Total:80)"
+  }
+]

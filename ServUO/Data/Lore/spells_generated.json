@@ -1,0 +1,2622 @@
+[
+  {
+    "id": "spell_clumsy",
+    "title": "Clumsy",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Bloodmoss, Nightshade",
+    "content": "The words of power are \"Uus Jux\". This spell requires the following reagents: Bloodmoss, Nightshade. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "clumsy",
+      "spell",
+      "magery (circle 1)",
+      "uus jux",
+      "bloodmoss",
+      "nightshade"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_create_food",
+    "title": "Create Food",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Garlic, Ginseng, Mandrake Root",
+    "content": "The words of power are \"In Mani Ylem\". This spell requires the following reagents: Garlic, Ginseng, Mandrake Root. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "create food",
+      "spell",
+      "magery (circle 1)",
+      "in mani ylem",
+      "garlic",
+      "ginseng",
+      "mandrake root"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_feeblemind",
+    "title": "Feeblemind",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Ginseng, Nightshade",
+    "content": "The words of power are \"Rel Wis\". This spell requires the following reagents: Ginseng, Nightshade. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "feeblemind",
+      "spell",
+      "magery (circle 1)",
+      "rel wis",
+      "ginseng",
+      "nightshade"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_heal",
+    "title": "Heal",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Garlic, Ginseng, Spider's Silk",
+    "content": "The words of power are \"In Mani\". This spell requires the following reagents: Garlic, Ginseng, Spider's Silk. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "heal",
+      "spell",
+      "magery (circle 1)",
+      "in mani",
+      "garlic",
+      "ginseng",
+      "spider's silk"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_magic_arrow",
+    "title": "Magic Arrow",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Sulfurous Ash",
+    "content": "The words of power are \"In Por Ylem\". This spell requires the following reagents: Sulfurous Ash. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "magic arrow",
+      "spell",
+      "magery (circle 1)",
+      "in por ylem",
+      "sulfurous ash"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_night_sight",
+    "title": "Night Sight",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Sulfurous Ash, Spider's Silk",
+    "content": "The words of power are \"In Lor\". This spell requires the following reagents: Sulfurous Ash, Spider's Silk. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "night sight",
+      "spell",
+      "magery (circle 1)",
+      "in lor",
+      "sulfurous ash",
+      "spider's silk"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_reactive_armor",
+    "title": "Reactive Armor",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Garlic, Spider's Silk, Sulfurous Ash",
+    "content": "The words of power are \"Flam Sanct\". This spell requires the following reagents: Garlic, Spider's Silk, Sulfurous Ash. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "reactive armor",
+      "spell",
+      "magery (circle 1)",
+      "flam sanct",
+      "garlic",
+      "spider's silk",
+      "sulfurous ash"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_weaken",
+    "title": "Weaken",
+    "category": "Magic",
+    "summary": "Magery (Circle 1) spell - Garlic, Nightshade",
+    "content": "The words of power are \"Des Mani\". This spell requires the following reagents: Garlic, Nightshade. This is a Magery (Circle 1) spell.",
+    "tags": [
+      "weaken",
+      "spell",
+      "magery (circle 1)",
+      "des mani",
+      "garlic",
+      "nightshade"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_agility",
+    "title": "Agility",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Ex Uus\". This spell requires the following reagents: Bloodmoss, Mandrake Root. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "agility",
+      "spell",
+      "magery (circle 2)",
+      "ex uus",
+      "bloodmoss",
+      "mandrake root"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_cunning",
+    "title": "Cunning",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Mandrake Root, Nightshade",
+    "content": "The words of power are \"Uus Wis\". This spell requires the following reagents: Mandrake Root, Nightshade. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "cunning",
+      "spell",
+      "magery (circle 2)",
+      "uus wis",
+      "mandrake root",
+      "nightshade"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_cure",
+    "title": "Cure",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Garlic, Ginseng",
+    "content": "The words of power are \"An Nox\". This spell requires the following reagents: Garlic, Ginseng. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "cure",
+      "spell",
+      "magery (circle 2)",
+      "an nox",
+      "garlic",
+      "ginseng"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_harm",
+    "title": "Harm",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Nightshade, Spider's Silk",
+    "content": "The words of power are \"An Mani\". This spell requires the following reagents: Nightshade, Spider's Silk. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "harm",
+      "spell",
+      "magery (circle 2)",
+      "an mani",
+      "nightshade",
+      "spider's silk"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_magic_trap",
+    "title": "Magic Trap",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Garlic, Spider's Silk, Sulfurous Ash",
+    "content": "The words of power are \"In Jux\". This spell requires the following reagents: Garlic, Spider's Silk, Sulfurous Ash. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "magic trap",
+      "spell",
+      "magery (circle 2)",
+      "in jux",
+      "garlic",
+      "spider's silk",
+      "sulfurous ash"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_protection",
+    "title": "Protection",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Garlic, Ginseng, Sulfurous Ash",
+    "content": "The words of power are \"Uus Sanct\". This spell requires the following reagents: Garlic, Ginseng, Sulfurous Ash. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "protection",
+      "spell",
+      "magery (circle 2)",
+      "uus sanct",
+      "garlic",
+      "ginseng",
+      "sulfurous ash"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_remove_trap",
+    "title": "Remove Trap",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Bloodmoss, Sulfurous Ash",
+    "content": "The words of power are \"An Jux\". This spell requires the following reagents: Bloodmoss, Sulfurous Ash. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "remove trap",
+      "spell",
+      "magery (circle 2)",
+      "an jux",
+      "bloodmoss",
+      "sulfurous ash"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_strength",
+    "title": "Strength",
+    "category": "Magic",
+    "summary": "Magery (Circle 2) spell - Mandrake Root, Nightshade",
+    "content": "The words of power are \"Uus Mani\". This spell requires the following reagents: Mandrake Root, Nightshade. This is a Magery (Circle 2) spell.",
+    "tags": [
+      "strength",
+      "spell",
+      "magery (circle 2)",
+      "uus mani",
+      "mandrake root",
+      "nightshade"
+    ],
+    "importance": 6,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_bless",
+    "title": "Bless",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Garlic, Mandrake Root",
+    "content": "The words of power are \"Rel Sanct\". This spell requires the following reagents: Garlic, Mandrake Root. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "bless",
+      "spell",
+      "magery (circle 3)",
+      "rel sanct",
+      "garlic",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_fireball",
+    "title": "Fireball",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Black Pearl",
+    "content": "The words of power are \"Vas Flam\". This spell requires the following reagents: Black Pearl. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "fireball",
+      "spell",
+      "magery (circle 3)",
+      "vas flam",
+      "black pearl"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_magic_lock",
+    "title": "Magic Lock",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Garlic, Bloodmoss, Sulfurous Ash",
+    "content": "The words of power are \"An Por\". This spell requires the following reagents: Garlic, Bloodmoss, Sulfurous Ash. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "magic lock",
+      "spell",
+      "magery (circle 3)",
+      "an por",
+      "garlic",
+      "bloodmoss",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_poison",
+    "title": "Poison",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Nightshade",
+    "content": "The words of power are \"In Nox\". This spell requires the following reagents: Nightshade. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "poison",
+      "spell",
+      "magery (circle 3)",
+      "in nox",
+      "nightshade"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_telekinesis",
+    "title": "Telekinesis",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Ort Por Ylem\". This spell requires the following reagents: Bloodmoss, Mandrake Root. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "telekinesis",
+      "spell",
+      "magery (circle 3)",
+      "ort por ylem",
+      "bloodmoss",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_teleport",
+    "title": "Teleport",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Rel Por\". This spell requires the following reagents: Bloodmoss, Mandrake Root. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "teleport",
+      "spell",
+      "magery (circle 3)",
+      "rel por",
+      "bloodmoss",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_unlock_spell",
+    "title": "Unlock Spell",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Bloodmoss, Sulfurous Ash",
+    "content": "The words of power are \"Ex Por\". This spell requires the following reagents: Bloodmoss, Sulfurous Ash. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "unlock spell",
+      "spell",
+      "magery (circle 3)",
+      "ex por",
+      "bloodmoss",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_wall_of_stone",
+    "title": "Wall of Stone",
+    "category": "Magic",
+    "summary": "Magery (Circle 3) spell - Bloodmoss, Garlic",
+    "content": "The words of power are \"In Sanct Ylem\". This spell requires the following reagents: Bloodmoss, Garlic. This is a Magery (Circle 3) spell.",
+    "tags": [
+      "wall of stone",
+      "spell",
+      "magery (circle 3)",
+      "in sanct ylem",
+      "bloodmoss",
+      "garlic"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_arch_cure",
+    "title": "Arch Cure",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Garlic, Ginseng, Mandrake Root",
+    "content": "The words of power are \"Vas An Nox\". This spell requires the following reagents: Garlic, Ginseng, Mandrake Root. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "arch cure",
+      "spell",
+      "magery (circle 4)",
+      "vas an nox",
+      "garlic",
+      "ginseng",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_arch_protection",
+    "title": "Arch Protection",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Garlic, Ginseng, Mandrake Root",
+    "content": "The words of power are \"Vas Uus Sanct\". This spell requires the following reagents: Garlic, Ginseng, Mandrake Root, Sulfurous Ash. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "arch protection",
+      "spell",
+      "magery (circle 4)",
+      "vas uus sanct",
+      "garlic",
+      "ginseng",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_curse",
+    "title": "Curse",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Nightshade, Garlic, Sulfurous Ash",
+    "content": "The words of power are \"Des Sanct\". This spell requires the following reagents: Nightshade, Garlic, Sulfurous Ash. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "curse",
+      "spell",
+      "magery (circle 4)",
+      "des sanct",
+      "nightshade",
+      "garlic",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_fire_field",
+    "title": "Fire Field",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Black Pearl, Spider's Silk, Sulfurous Ash",
+    "content": "The words of power are \"In Flam Grav\". This spell requires the following reagents: Black Pearl, Spider's Silk, Sulfurous Ash. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "fire field",
+      "spell",
+      "magery (circle 4)",
+      "in flam grav",
+      "black pearl",
+      "spider's silk",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_greater_heal",
+    "title": "Greater Heal",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Garlic, Ginseng, Mandrake Root",
+    "content": "The words of power are \"In Vas Mani\". This spell requires the following reagents: Garlic, Ginseng, Mandrake Root, Spider's Silk. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "greater heal",
+      "spell",
+      "magery (circle 4)",
+      "in vas mani",
+      "garlic",
+      "ginseng",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_lightning",
+    "title": "Lightning",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Mandrake Root, Sulfurous Ash",
+    "content": "The words of power are \"Por Ort Grav\". This spell requires the following reagents: Mandrake Root, Sulfurous Ash. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "lightning",
+      "spell",
+      "magery (circle 4)",
+      "por ort grav",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mana_drain",
+    "title": "Mana Drain",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Black Pearl, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"Ort Rel\". This spell requires the following reagents: Black Pearl, Mandrake Root, Spider's Silk. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "mana drain",
+      "spell",
+      "magery (circle 4)",
+      "ort rel",
+      "black pearl",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_recall",
+    "title": "Recall",
+    "category": "Magic",
+    "summary": "Magery (Circle 4) spell - Black Pearl, Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Kal Ort Por\". This spell requires the following reagents: Black Pearl, Bloodmoss, Mandrake Root. This is a Magery (Circle 4) spell.",
+    "tags": [
+      "recall",
+      "spell",
+      "magery (circle 4)",
+      "kal ort por",
+      "black pearl",
+      "bloodmoss",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_blade_spirits",
+    "title": "Blade Spirits",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Black Pearl, Mandrake Root, Nightshade",
+    "content": "The words of power are \"In Jux Hur Ylem\". This spell requires the following reagents: Black Pearl, Mandrake Root, Nightshade. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "blade spirits",
+      "spell",
+      "magery (circle 5)",
+      "in jux hur ylem",
+      "black pearl",
+      "mandrake root",
+      "nightshade"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_dispel_field",
+    "title": "Dispel Field",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Black Pearl, Spider's Silk, Sulfurous Ash",
+    "content": "The words of power are \"An Grav\". This spell requires the following reagents: Black Pearl, Spider's Silk, Sulfurous Ash, Garlic. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "dispel field",
+      "spell",
+      "magery (circle 5)",
+      "an grav",
+      "black pearl",
+      "spider's silk",
+      "sulfurous ash",
+      "garlic"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_incognito",
+    "title": "Incognito",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Bloodmoss, Garlic, Nightshade",
+    "content": "The words of power are \"Kal In Ex\". This spell requires the following reagents: Bloodmoss, Garlic, Nightshade. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "incognito",
+      "spell",
+      "magery (circle 5)",
+      "kal in ex",
+      "bloodmoss",
+      "garlic",
+      "nightshade"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_magic_reflection",
+    "title": "Magic Reflection",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Garlic, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"In Jux Sanct\". This spell requires the following reagents: Garlic, Mandrake Root, Spider's Silk. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "magic reflection",
+      "spell",
+      "magery (circle 5)",
+      "in jux sanct",
+      "garlic",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mind_blast",
+    "title": "Mind Blast",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Black Pearl, Mandrake Root, Nightshade",
+    "content": "The words of power are \"Por Corp Wis\". This spell requires the following reagents: Black Pearl, Mandrake Root, Nightshade, Sulfurous Ash. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "mind blast",
+      "spell",
+      "magery (circle 5)",
+      "por corp wis",
+      "black pearl",
+      "mandrake root",
+      "nightshade",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_paralyze",
+    "title": "Paralyze",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Garlic, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"An Ex Por\". This spell requires the following reagents: Garlic, Mandrake Root, Spider's Silk. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "paralyze",
+      "spell",
+      "magery (circle 5)",
+      "an ex por",
+      "garlic",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_poison_field",
+    "title": "Poison Field",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Black Pearl, Nightshade, Spider's Silk",
+    "content": "The words of power are \"In Nox Grav\". This spell requires the following reagents: Black Pearl, Nightshade, Spider's Silk. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "poison field",
+      "spell",
+      "magery (circle 5)",
+      "in nox grav",
+      "black pearl",
+      "nightshade",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_summon_creature",
+    "title": "Summon Creature",
+    "category": "Magic",
+    "summary": "Magery (Circle 5) spell - Bloodmoss, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"Kal Xen\". This spell requires the following reagents: Bloodmoss, Mandrake Root, Spider's Silk. This is a Magery (Circle 5) spell.",
+    "tags": [
+      "summon creature",
+      "spell",
+      "magery (circle 5)",
+      "kal xen",
+      "bloodmoss",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_dispel",
+    "title": "Dispel",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Garlic, Mandrake Root, Sulfurous Ash",
+    "content": "The words of power are \"An Ort\". This spell requires the following reagents: Garlic, Mandrake Root, Sulfurous Ash. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "dispel",
+      "spell",
+      "magery (circle 6)",
+      "an ort",
+      "garlic",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_energy_bolt",
+    "title": "Energy Bolt",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Black Pearl, Nightshade",
+    "content": "The words of power are \"Corp Por\". This spell requires the following reagents: Black Pearl, Nightshade. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "energy bolt",
+      "spell",
+      "magery (circle 6)",
+      "corp por",
+      "black pearl",
+      "nightshade"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_explosion",
+    "title": "Explosion",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Vas Ort Flam\". This spell requires the following reagents: Bloodmoss, Mandrake Root. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "explosion",
+      "spell",
+      "magery (circle 6)",
+      "vas ort flam",
+      "bloodmoss",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_invisibility",
+    "title": "Invisibility",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Bloodmoss, Nightshade",
+    "content": "The words of power are \"An Lor Xen\". This spell requires the following reagents: Bloodmoss, Nightshade. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "invisibility",
+      "spell",
+      "magery (circle 6)",
+      "an lor xen",
+      "bloodmoss",
+      "nightshade"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mark",
+    "title": "Mark",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Black Pearl, Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Kal Por Ylem\". This spell requires the following reagents: Black Pearl, Bloodmoss, Mandrake Root. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "mark",
+      "spell",
+      "magery (circle 6)",
+      "kal por ylem",
+      "black pearl",
+      "bloodmoss",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mass_curse",
+    "title": "Mass Curse",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Garlic, Nightshade, Mandrake Root",
+    "content": "The words of power are \"Vas Des Sanct\". This spell requires the following reagents: Garlic, Nightshade, Mandrake Root, Sulfurous Ash. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "mass curse",
+      "spell",
+      "magery (circle 6)",
+      "vas des sanct",
+      "garlic",
+      "nightshade",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_paralyze_field",
+    "title": "Paralyze Field",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Black Pearl, Ginseng, Spider's Silk",
+    "content": "The words of power are \"In Ex Grav\". This spell requires the following reagents: Black Pearl, Ginseng, Spider's Silk. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "paralyze field",
+      "spell",
+      "magery (circle 6)",
+      "in ex grav",
+      "black pearl",
+      "ginseng",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_reveal",
+    "title": "Reveal",
+    "category": "Magic",
+    "summary": "Magery (Circle 6) spell - Bloodmoss, Sulfurous Ash",
+    "content": "The words of power are \"Wis Quas\". This spell requires the following reagents: Bloodmoss, Sulfurous Ash. This is a Magery (Circle 6) spell.",
+    "tags": [
+      "reveal",
+      "spell",
+      "magery (circle 6)",
+      "wis quas",
+      "bloodmoss",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_chain_lightning",
+    "title": "Chain Lightning",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Black Pearl, Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Vas Ort Grav\". This spell requires the following reagents: Black Pearl, Bloodmoss, Mandrake Root, Sulfurous Ash. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "chain lightning",
+      "spell",
+      "magery (circle 7)",
+      "vas ort grav",
+      "black pearl",
+      "bloodmoss",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_energy_field",
+    "title": "Energy Field",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Black Pearl, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"In Sanct Grav\". This spell requires the following reagents: Black Pearl, Mandrake Root, Spider's Silk, Sulfurous Ash. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "energy field",
+      "spell",
+      "magery (circle 7)",
+      "in sanct grav",
+      "black pearl",
+      "mandrake root",
+      "spider's silk",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_flame_strike",
+    "title": "Flame Strike",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Spider's Silk, Sulfurous Ash",
+    "content": "The words of power are \"Kal Vas Flam\". This spell requires the following reagents: Spider's Silk, Sulfurous Ash. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "flame strike",
+      "spell",
+      "magery (circle 7)",
+      "kal vas flam",
+      "spider's silk",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_gate_travel",
+    "title": "Gate Travel",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Black Pearl, Mandrake Root, Sulfurous Ash",
+    "content": "The words of power are \"Vas Rel Por\". This spell requires the following reagents: Black Pearl, Mandrake Root, Sulfurous Ash. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "gate travel",
+      "spell",
+      "magery (circle 7)",
+      "vas rel por",
+      "black pearl",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mana_vampire",
+    "title": "Mana Vampire",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Black Pearl, Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Ort Sanct\". This spell requires the following reagents: Black Pearl, Bloodmoss, Mandrake Root, Spider's Silk. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "mana vampire",
+      "spell",
+      "magery (circle 7)",
+      "ort sanct",
+      "black pearl",
+      "bloodmoss",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mass_dispel",
+    "title": "Mass Dispel",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Garlic, Mandrake Root, Black Pearl",
+    "content": "The words of power are \"Vas An Ort\". This spell requires the following reagents: Garlic, Mandrake Root, Black Pearl, Sulfurous Ash. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "mass dispel",
+      "spell",
+      "magery (circle 7)",
+      "vas an ort",
+      "garlic",
+      "mandrake root",
+      "black pearl",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_meteor_swarm",
+    "title": "Meteor Swarm",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Bloodmoss, Mandrake Root, Sulfurous Ash",
+    "content": "The words of power are \"Flam Kal Des Ylem\". This spell requires the following reagents: Bloodmoss, Mandrake Root, Sulfurous Ash, Spider's Silk. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "meteor swarm",
+      "spell",
+      "magery (circle 7)",
+      "flam kal des ylem",
+      "bloodmoss",
+      "mandrake root",
+      "sulfurous ash",
+      "spider's silk"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_polymorph",
+    "title": "Polymorph",
+    "category": "Magic",
+    "summary": "Magery (Circle 7) spell - Bloodmoss, Spider's Silk, Mandrake Root",
+    "content": "The words of power are \"Vas Ylem Rel\". This spell requires the following reagents: Bloodmoss, Spider's Silk, Mandrake Root. This is a Magery (Circle 7) spell.",
+    "tags": [
+      "polymorph",
+      "spell",
+      "magery (circle 7)",
+      "vas ylem rel",
+      "bloodmoss",
+      "spider's silk",
+      "mandrake root"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_air_elemental",
+    "title": "Air Elemental",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"Kal Vas Xen Hur\". This spell requires the following reagents: Bloodmoss, Mandrake Root, Spider's Silk. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "air elemental",
+      "spell",
+      "magery (circle 8)",
+      "kal vas xen hur",
+      "bloodmoss",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_earth_elemental",
+    "title": "Earth Elemental",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"Kal Vas Xen Ylem\". This spell requires the following reagents: Bloodmoss, Mandrake Root, Spider's Silk. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "earth elemental",
+      "spell",
+      "magery (circle 8)",
+      "kal vas xen ylem",
+      "bloodmoss",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_earthquake",
+    "title": "Earthquake",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Ginseng, Mandrake Root",
+    "content": "The words of power are \"In Vas Por\". This spell requires the following reagents: Bloodmoss, Ginseng, Mandrake Root, Sulfurous Ash. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "earthquake",
+      "spell",
+      "magery (circle 8)",
+      "in vas por",
+      "bloodmoss",
+      "ginseng",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_energy_vortex",
+    "title": "Energy Vortex",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Black Pearl, Mandrake Root",
+    "content": "The words of power are \"Vas Corp Por\". This spell requires the following reagents: Bloodmoss, Black Pearl, Mandrake Root, Nightshade. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "energy vortex",
+      "spell",
+      "magery (circle 8)",
+      "vas corp por",
+      "bloodmoss",
+      "black pearl",
+      "mandrake root",
+      "nightshade"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_fire_elemental",
+    "title": "Fire Elemental",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"Kal Vas Xen Flam\". This spell requires the following reagents: Bloodmoss, Mandrake Root, Spider's Silk, Sulfurous Ash. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "fire elemental",
+      "spell",
+      "magery (circle 8)",
+      "kal vas xen flam",
+      "bloodmoss",
+      "mandrake root",
+      "spider's silk",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_resurrection",
+    "title": "Resurrection",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Garlic, Ginseng",
+    "content": "The words of power are \"An Corp\". This spell requires the following reagents: Bloodmoss, Garlic, Ginseng. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "resurrection",
+      "spell",
+      "magery (circle 8)",
+      "an corp",
+      "bloodmoss",
+      "garlic",
+      "ginseng"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_summon_daemon",
+    "title": "Summon Daemon",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"Kal Vas Xen Corp\". This spell requires the following reagents: Bloodmoss, Mandrake Root, Spider's Silk, Sulfurous Ash. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "summon daemon",
+      "spell",
+      "magery (circle 8)",
+      "kal vas xen corp",
+      "bloodmoss",
+      "mandrake root",
+      "spider's silk",
+      "sulfurous ash"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_water_elemental",
+    "title": "Water Elemental",
+    "category": "Magic",
+    "summary": "Magery (Circle 8) spell - Bloodmoss, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"Kal Vas Xen An Flam\". This spell requires the following reagents: Bloodmoss, Mandrake Root, Spider's Silk. This is a Magery (Circle 8) spell.",
+    "tags": [
+      "water elemental",
+      "spell",
+      "magery (circle 8)",
+      "kal vas xen an flam",
+      "bloodmoss",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 9,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient",
+      "Alchemist": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_animated_weapon",
+    "title": "Animated Weapon",
+    "category": "Magic",
+    "summary": "Mysticism spell - Black Pearl, Mandrake Root, Nightshade",
+    "content": "The words of power are \"In Jux Por Ylem\". This spell requires the following reagents: Black Pearl, Mandrake Root, Nightshade, Bone. This is a Mysticism spell.",
+    "tags": [
+      "animated weapon",
+      "spell",
+      "mysticism",
+      "in jux por ylem",
+      "black pearl",
+      "mandrake root",
+      "nightshade",
+      "bone"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_bombard",
+    "title": "Bombard",
+    "category": "Magic",
+    "summary": "Mysticism spell - Bloodmoss, Garlic, Sulfurous Ash",
+    "content": "The words of power are \"Corp Por Ylem\". This spell requires the following reagents: Bloodmoss, Garlic, Sulfurous Ash, Dragon Blood. This is a Mysticism spell.",
+    "tags": [
+      "bombard",
+      "spell",
+      "mysticism",
+      "corp por ylem",
+      "bloodmoss",
+      "garlic",
+      "sulfurous ash",
+      "dragon blood"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_cleansing_winds",
+    "title": "Cleansing Winds",
+    "category": "Magic",
+    "summary": "Mysticism spell - Garlic, Ginseng, Mandrake Root",
+    "content": "The words of power are \"In Vas Mani Hur\". This spell requires the following reagents: Garlic, Ginseng, Mandrake Root, Dragon Blood. This is a Mysticism spell.",
+    "tags": [
+      "cleansing winds",
+      "spell",
+      "mysticism",
+      "in vas mani hur",
+      "garlic",
+      "ginseng",
+      "mandrake root",
+      "dragon blood"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_eagle_strike",
+    "title": "Eagle Strike",
+    "category": "Magic",
+    "summary": "Mysticism spell - Bloodmoss, Bone, Mandrake Root",
+    "content": "The words of power are \"Kal Por Xen\". This spell requires the following reagents: Bloodmoss, Bone, Mandrake Root, Spider's Silk. This is a Mysticism spell.",
+    "tags": [
+      "eagle strike",
+      "spell",
+      "mysticism",
+      "kal por xen",
+      "bloodmoss",
+      "bone",
+      "mandrake root",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_enchant",
+    "title": "Enchant",
+    "category": "Magic",
+    "summary": "Mysticism spell - Spider's Silk, Mandrake Root, Sulfurous Ash",
+    "content": "The words of power are \"In Ort Ylem\". This spell requires the following reagents: Spider's Silk, Mandrake Root, Sulfurous Ash. This is a Mysticism spell.",
+    "tags": [
+      "enchant",
+      "spell",
+      "mysticism",
+      "in ort ylem",
+      "spider's silk",
+      "mandrake root",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_hail_storm",
+    "title": "Hail Storm",
+    "category": "Magic",
+    "summary": "Mysticism spell - Black Pearl, Bloodmoss, Mandrake Root",
+    "content": "The words of power are \"Kal Des Ylem\". This spell requires the following reagents: Black Pearl, Bloodmoss, Mandrake Root, Dragon Blood. This is a Mysticism spell.",
+    "tags": [
+      "hail storm",
+      "spell",
+      "mysticism",
+      "kal des ylem",
+      "black pearl",
+      "bloodmoss",
+      "mandrake root",
+      "dragon blood"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_healing_stone",
+    "title": "Healing Stone",
+    "category": "Magic",
+    "summary": "Mysticism spell - Bone, Garlic, Ginseng",
+    "content": "The words of power are \"Kal In Mani\". This spell requires the following reagents: Bone, Garlic, Ginseng, Spider's Silk. This is a Mysticism spell.",
+    "tags": [
+      "healing stone",
+      "spell",
+      "mysticism",
+      "kal in mani",
+      "bone",
+      "garlic",
+      "ginseng",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mass_sleep",
+    "title": "Mass Sleep",
+    "category": "Magic",
+    "summary": "Mysticism spell - Ginseng, Nightshade, Spider's Silk",
+    "content": "The words of power are \"Vas Zu\". This spell requires the following reagents: Ginseng, Nightshade, Spider's Silk. This is a Mysticism spell.",
+    "tags": [
+      "mass sleep",
+      "spell",
+      "mysticism",
+      "vas zu",
+      "ginseng",
+      "nightshade",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_nether_bolt",
+    "title": "Nether Bolt",
+    "category": "Magic",
+    "summary": "Mysticism spell - Black Pearl, Sulfurous Ash",
+    "content": "The words of power are \"In Corp Ylem\". This spell requires the following reagents: Black Pearl, Sulfurous Ash. This is a Mysticism spell.",
+    "tags": [
+      "nether bolt",
+      "spell",
+      "mysticism",
+      "in corp ylem",
+      "black pearl",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_nether_cyclone",
+    "title": "Nether Cyclone",
+    "category": "Magic",
+    "summary": "Mysticism spell - Mandrake Root, Nightshade, Sulfurous Ash",
+    "content": "The words of power are \"Grav Hur\". This spell requires the following reagents: Mandrake Root, Nightshade, Sulfurous Ash, Bloodmoss. This is a Mysticism spell.",
+    "tags": [
+      "nether cyclone",
+      "spell",
+      "mysticism",
+      "grav hur",
+      "mandrake root",
+      "nightshade",
+      "sulfurous ash",
+      "bloodmoss"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_purge",
+    "title": "Purge",
+    "category": "Magic",
+    "summary": "Mysticism spell - Garlic, Mandrake Root, Sulfurous Ash",
+    "content": "The words of power are \"An Ort Sanct \". This spell requires the following reagents: Garlic, Mandrake Root, Sulfurous Ash, Fertile Dirt. This is a Mysticism spell.",
+    "tags": [
+      "purge",
+      "spell",
+      "mysticism",
+      "an ort sanct ",
+      "garlic",
+      "mandrake root",
+      "sulfurous ash",
+      "fertile dirt"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_rising_colossus",
+    "title": "Rising Colossus",
+    "category": "Magic",
+    "summary": "Mysticism spell - Daemon Bone, Dragon Blood, Fertile Dirt",
+    "content": "The words of power are \"Kal Vas Xen Corp Ylem\". This spell requires the following reagents: Daemon Bone, Dragon Blood, Fertile Dirt, Nightshade. This is a Mysticism spell.",
+    "tags": [
+      "rising colossus",
+      "spell",
+      "mysticism",
+      "kal vas xen corp ylem",
+      "daemon bone",
+      "dragon blood",
+      "fertile dirt",
+      "nightshade"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_sleep",
+    "title": "Sleep",
+    "category": "Magic",
+    "summary": "Mysticism spell - Nightshade, Spider's Silk, Black Pearl",
+    "content": "The words of power are \"In Zu\". This spell requires the following reagents: Nightshade, Spider's Silk, Black Pearl. This is a Mysticism spell.",
+    "tags": [
+      "sleep",
+      "spell",
+      "mysticism",
+      "in zu",
+      "nightshade",
+      "spider's silk",
+      "black pearl"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_spell_plague",
+    "title": "Spell Plague",
+    "category": "Magic",
+    "summary": "Mysticism spell - Daemon Bone, Dragon Blood, Nightshade",
+    "content": "The words of power are \"Vas Rel Jux Ort\". This spell requires the following reagents: Daemon Bone, Dragon Blood, Nightshade, Sulfurous Ash. This is a Mysticism spell.",
+    "tags": [
+      "spell plague",
+      "spell",
+      "mysticism",
+      "vas rel jux ort",
+      "daemon bone",
+      "dragon blood",
+      "nightshade",
+      "sulfurous ash"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_spell_trigger",
+    "title": "Spell Trigger",
+    "category": "Magic",
+    "summary": "Mysticism spell - Garlic, Mandrake Root, Spider's Silk",
+    "content": "The words of power are \"In Vas Ort Ex \". This spell requires the following reagents: Garlic, Mandrake Root, Spider's Silk, Dragon Blood. This is a Mysticism spell.",
+    "tags": [
+      "spell trigger",
+      "spell",
+      "mysticism",
+      "in vas ort ex ",
+      "garlic",
+      "mandrake root",
+      "spider's silk",
+      "dragon blood"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_stone_form",
+    "title": "Stone Form",
+    "category": "Magic",
+    "summary": "Mysticism spell - Bloodmoss, Fertile Dirt, Garlic",
+    "content": "The words of power are \"In Rel Ylem\". This spell requires the following reagents: Bloodmoss, Fertile Dirt, Garlic. This is a Mysticism spell.",
+    "tags": [
+      "stone form",
+      "spell",
+      "mysticism",
+      "in rel ylem",
+      "bloodmoss",
+      "fertile dirt",
+      "garlic"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_animate_dead",
+    "title": "Animate Dead",
+    "category": "Magic",
+    "summary": "Necromancy spell - Grave Dust, Daemon Blood",
+    "content": "The words of power are \"Uus Corp\". This spell requires the following reagents: Grave Dust, Daemon Blood. This is a Necromancy spell.",
+    "tags": [
+      "animate dead",
+      "spell",
+      "necromancy",
+      "uus corp",
+      "grave dust",
+      "daemon blood"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_blood_oath",
+    "title": "Blood Oath",
+    "category": "Magic",
+    "summary": "Necromancy spell - Daemon Blood",
+    "content": "The words of power are \"In Jux Mani Xen\". This spell requires the following reagents: Daemon Blood. This is a Necromancy spell.",
+    "tags": [
+      "blood oath",
+      "spell",
+      "necromancy",
+      "in jux mani xen",
+      "daemon blood"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_corpse_skin",
+    "title": "Corpse Skin",
+    "category": "Magic",
+    "summary": "Necromancy spell - Bat Wing, Grave Dust",
+    "content": "The words of power are \"In Agle Corp Ylem\". This spell requires the following reagents: Bat Wing, Grave Dust. This is a Necromancy spell.",
+    "tags": [
+      "corpse skin",
+      "spell",
+      "necromancy",
+      "in agle corp ylem",
+      "bat wing",
+      "grave dust"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_curse_weapon",
+    "title": "Curse Weapon",
+    "category": "Magic",
+    "summary": "Necromancy spell - Pig Iron",
+    "content": "The words of power are \"An Sanct Gra Char\". This spell requires the following reagents: Pig Iron. This is a Necromancy spell.",
+    "tags": [
+      "curse weapon",
+      "spell",
+      "necromancy",
+      "an sanct gra char",
+      "pig iron"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_evil_omen",
+    "title": "Evil Omen",
+    "category": "Magic",
+    "summary": "Necromancy spell - Bat Wing, Nox Crystal",
+    "content": "The words of power are \"Pas Tym An Sanct\". This spell requires the following reagents: Bat Wing, Nox Crystal. This is a Necromancy spell.",
+    "tags": [
+      "evil omen",
+      "spell",
+      "necromancy",
+      "pas tym an sanct",
+      "bat wing",
+      "nox crystal"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_exorcism",
+    "title": "Exorcism",
+    "category": "Magic",
+    "summary": "Necromancy spell - Nox Crystal, Grave Dust",
+    "content": "The words of power are \"Ort Corp Grav\". This spell requires the following reagents: Nox Crystal, Grave Dust. This is a Necromancy spell.",
+    "tags": [
+      "exorcism",
+      "spell",
+      "necromancy",
+      "ort corp grav",
+      "nox crystal",
+      "grave dust"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_horrific_beast",
+    "title": "Horrific Beast",
+    "category": "Magic",
+    "summary": "Necromancy spell - Bat Wing, Daemon Blood",
+    "content": "The words of power are \"Rel Xen Vas Bal\". This spell requires the following reagents: Bat Wing, Daemon Blood. This is a Necromancy spell.",
+    "tags": [
+      "horrific beast",
+      "spell",
+      "necromancy",
+      "rel xen vas bal",
+      "bat wing",
+      "daemon blood"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_lich_form",
+    "title": "Lich Form",
+    "category": "Magic",
+    "summary": "Necromancy spell - Grave Dust, Daemon Blood, Nox Crystal",
+    "content": "The words of power are \"Rel Xen Corp Ort\". This spell requires the following reagents: Grave Dust, Daemon Blood, Nox Crystal. This is a Necromancy spell.",
+    "tags": [
+      "lich form",
+      "spell",
+      "necromancy",
+      "rel xen corp ort",
+      "grave dust",
+      "daemon blood",
+      "nox crystal"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mind_rot",
+    "title": "Mind Rot",
+    "category": "Magic",
+    "summary": "Necromancy spell - Bat Wing, Pig Iron, Daemon Blood",
+    "content": "The words of power are \"Wis An Ben\". This spell requires the following reagents: Bat Wing, Pig Iron, Daemon Blood. This is a Necromancy spell.",
+    "tags": [
+      "mind rot",
+      "spell",
+      "necromancy",
+      "wis an ben",
+      "bat wing",
+      "pig iron",
+      "daemon blood"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_pain_spike",
+    "title": "Pain Spike",
+    "category": "Magic",
+    "summary": "Necromancy spell - Grave Dust, Pig Iron",
+    "content": "The words of power are \"In Sar\". This spell requires the following reagents: Grave Dust, Pig Iron. This is a Necromancy spell.",
+    "tags": [
+      "pain spike",
+      "spell",
+      "necromancy",
+      "in sar",
+      "grave dust",
+      "pig iron"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_poison_strike",
+    "title": "Poison Strike",
+    "category": "Magic",
+    "summary": "Necromancy spell - Nox Crystal",
+    "content": "The words of power are \"In Vas Nox\". This spell requires the following reagents: Nox Crystal. This is a Necromancy spell.",
+    "tags": [
+      "poison strike",
+      "spell",
+      "necromancy",
+      "in vas nox",
+      "nox crystal"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_strangle",
+    "title": "Strangle",
+    "category": "Magic",
+    "summary": "Necromancy spell - Daemon Blood, Nox Crystal",
+    "content": "The words of power are \"In Bal Nox\". This spell requires the following reagents: Daemon Blood, Nox Crystal. This is a Necromancy spell.",
+    "tags": [
+      "strangle",
+      "spell",
+      "necromancy",
+      "in bal nox",
+      "daemon blood",
+      "nox crystal"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_summon_familiar",
+    "title": "Summon Familiar",
+    "category": "Magic",
+    "summary": "Necromancy spell - Bat Wing, Grave Dust, Daemon Blood",
+    "content": "The words of power are \"Kal Xen Bal\". This spell requires the following reagents: Bat Wing, Grave Dust, Daemon Blood. This is a Necromancy spell.",
+    "tags": [
+      "summon familiar",
+      "spell",
+      "necromancy",
+      "kal xen bal",
+      "bat wing",
+      "grave dust",
+      "daemon blood"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_vampiric_embrace",
+    "title": "Vampiric Embrace",
+    "category": "Magic",
+    "summary": "Necromancy spell - Bat Wing, Nox Crystal, Pig Iron",
+    "content": "The words of power are \"Rel Xen An Sanct\". This spell requires the following reagents: Bat Wing, Nox Crystal, Pig Iron. This is a Necromancy spell.",
+    "tags": [
+      "vampiric embrace",
+      "spell",
+      "necromancy",
+      "rel xen an sanct",
+      "bat wing",
+      "nox crystal",
+      "pig iron"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_vengeful_spirit",
+    "title": "Vengeful Spirit",
+    "category": "Magic",
+    "summary": "Necromancy spell - Bat Wing, Grave Dust, Pig Iron",
+    "content": "The words of power are \"Kal Xen Bal Beh\". This spell requires the following reagents: Bat Wing, Grave Dust, Pig Iron. This is a Necromancy spell.",
+    "tags": [
+      "vengeful spirit",
+      "spell",
+      "necromancy",
+      "kal xen bal beh",
+      "bat wing",
+      "grave dust",
+      "pig iron"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_wither",
+    "title": "Wither",
+    "category": "Magic",
+    "summary": "Necromancy spell - Nox Crystal, Grave Dust, Pig Iron",
+    "content": "The words of power are \"Kal Vas An Flam\". This spell requires the following reagents: Nox Crystal, Grave Dust, Pig Iron. This is a Necromancy spell.",
+    "tags": [
+      "wither",
+      "spell",
+      "necromancy",
+      "kal vas an flam",
+      "nox crystal",
+      "grave dust",
+      "pig iron"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_wraith_form",
+    "title": "Wraith Form",
+    "category": "Magic",
+    "summary": "Necromancy spell - Nox Crystal, Pig Iron",
+    "content": "The words of power are \"Rel Xen Um\". This spell requires the following reagents: Nox Crystal, Pig Iron. This is a Necromancy spell.",
+    "tags": [
+      "wraith form",
+      "spell",
+      "necromancy",
+      "rel xen um",
+      "nox crystal",
+      "pig iron"
+    ],
+    "importance": 8,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Expert",
+      "Scholar": "Proficient"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_command_undead",
+    "title": "Command Undead",
+    "category": "Magic",
+    "summary": "SkillMasteries spell - Daemon Blood, Pig Iron, Bat Wing",
+    "content": "The words of power are \"In Corp Xen Por\". This spell requires the following reagents: Daemon Blood, Pig Iron, Bat Wing. This is a SkillMasteries spell.",
+    "tags": [
+      "command undead",
+      "spell",
+      "skillmasteries",
+      "in corp xen por",
+      "daemon blood",
+      "pig iron",
+      "bat wing"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_conduit",
+    "title": "Conduit",
+    "category": "Magic",
+    "summary": "SkillMasteries spell - Nox Crystal, Bat Wing, Grave Dust",
+    "content": "The words of power are \"Uus Corp Grav\". This spell requires the following reagents: Nox Crystal, Bat Wing, Grave Dust. This is a SkillMasteries spell.",
+    "tags": [
+      "conduit",
+      "spell",
+      "skillmasteries",
+      "uus corp grav",
+      "nox crystal",
+      "bat wing",
+      "grave dust"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_death_ray",
+    "title": "Death Ray",
+    "category": "Magic",
+    "summary": "SkillMasteries spell - Black Pearl, Bloodmoss, Spider's Silk",
+    "content": "The words of power are \"In Grav Corp\". This spell requires the following reagents: Black Pearl, Bloodmoss, Spider's Silk. This is a SkillMasteries spell.",
+    "tags": [
+      "death ray",
+      "spell",
+      "skillmasteries",
+      "in grav corp",
+      "black pearl",
+      "bloodmoss",
+      "spider's silk"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_ethereal_blast",
+    "title": "Ethereal Blast",
+    "category": "Magic",
+    "summary": "SkillMasteries spell - Bloodmoss, Ginseng, Mandrake Root",
+    "content": "The words of power are \"Uus Ort Grav\". This spell requires the following reagents: Bloodmoss, Ginseng, Mandrake Root. This is a SkillMasteries spell.",
+    "tags": [
+      "ethereal blast",
+      "spell",
+      "skillmasteries",
+      "uus ort grav",
+      "bloodmoss",
+      "ginseng",
+      "mandrake root"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_mystic_weapon",
+    "title": "Mystic Weapon",
+    "category": "Magic",
+    "summary": "SkillMasteries spell - Fertile Dirt, Bone",
+    "content": "The words of power are \"Vas Ylem Wis\". This spell requires the following reagents: Fertile Dirt, Bone. This is a SkillMasteries spell.",
+    "tags": [
+      "mystic weapon",
+      "spell",
+      "skillmasteries",
+      "vas ylem wis",
+      "fertile dirt",
+      "bone"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "spell_nether_blast",
+    "title": "Nether Blast",
+    "category": "Magic",
+    "summary": "SkillMasteries spell - Dragon Blood, Daemon Bone",
+    "content": "The words of power are \"In Vas Por Grav\". This spell requires the following reagents: Dragon Blood, Daemon Bone. This is a SkillMasteries spell.",
+    "tags": [
+      "nether blast",
+      "spell",
+      "skillmasteries",
+      "in vas por grav",
+      "dragon blood",
+      "daemon bone"
+    ],
+    "importance": 7,
+    "source": "UO",
+    "domainExpertise": {
+      "Mage": "Proficient",
+      "Scholar": "Aware"
+    },
+    "questionCategory": "Magic",
+    "primaryReferralTarget": "Mage",
+    "secondaryReferralTarget": "Scholar"
+  }
+]

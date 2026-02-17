@@ -1,0 +1,575 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Server;
+using Server.Commands;
+
+namespace Server.Services.LLM.Tests
+{
+    /// <summary>
+    /// Detailed 3-month conversation simulation
+    /// Shows exactly how the memory system builds relationships over time
+    /// </summary>
+    public class ThreeMonthSimulation
+    {
+        public static void Initialize()
+        {
+            CommandSystem.Register("SimulateThreeMonths", AccessLevel.Administrator, SimulateThreeMonths_OnCommand);
+        }
+
+        [Usage("SimulateThreeMonths")]
+        [Description("Run a detailed 3-month relationship simulation with console output")]
+        private static void SimulateThreeMonths_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            from.SendMessage("=== 3-Month Relationship Simulation ===");
+            from.SendMessage("Running detailed simulation...");
+            from.SendMessage("Check console for full narrative output!");
+            from.SendMessage("");
+
+            RunSimulation();
+
+            from.SendMessage("Simulation started! Check server console.");
+        }
+
+        private static async void RunSimulation()
+        {
+            try
+            {
+                await RunDetailedSimulation();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Simulation] Error: {ex.Message}");
+                Console.WriteLine($"[Simulation] Stack: {ex.StackTrace}");
+            }
+        }
+
+        private static async Task RunDetailedSimulation()
+        {
+            Console.WriteLine();
+            Console.WriteLine("╔════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║          3-MONTH RELATIONSHIP SIMULATION                               ║");
+            Console.WriteLine("║      Gareth the Blacksmith & Adventurer Runescry                       ║");
+            Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine();
+
+            string npcName = "Gareth the Master Blacksmith";
+            string playerName = "Runescry";
+            DateTime now = DateTime.UtcNow;
+
+            // Initialize memory system
+            if (!InMemoryFallbackStore.IsActive)
+            {
+                InMemoryFallbackStore.Activate();
+            }
+
+            Console.WriteLine("Starting simulation from 90 days ago...");
+            Console.WriteLine();
+
+            // ═══════════════════════════════════════════════════════════
+            // MONTH 1: FIRST ENCOUNTERS
+            // ═══════════════════════════════════════════════════════════
+
+            PrintMonthHeader(1, "First Encounters - Stranger to Acquaintance");
+
+            // Day 1: First meeting
+            await SimulateDay(npcName, playerName, now.AddDays(-90), 1, "First Meeting", new[]
+            {
+                ($"Hello! My name is {playerName}.", "Player introduces themselves"),
+                ("I'm new to this town and looking for a good blacksmith.", "Seeking services"),
+                ("Do you craft custom weapons?", "Asking about services")
+            });
+
+            // Day 3: Second visit
+            await SimulateDay(npcName, playerName, now.AddDays(-87), 3, "Commission Request", new[]
+            {
+                ("Good morning Gareth!", "Friendly greeting"),
+                ("I'd like to commission a longsword.", "Business transaction"),
+                ("My favorite metal is steel, but I've heard good things about silver.", "Expressing preference")
+            });
+
+            // Day 7: Getting to know each other
+            await SimulateDay(npcName, playerName, now.AddDays(-83), 7, "Personal Questions", new[]
+            {
+                ("Gareth, can I ask you something personal?", "Building rapport"),
+                ("How long have you been a blacksmith?", "Showing interest"),
+                ("I really respect the craftsmanship I've seen around here.", "Compliment")
+            });
+
+            // Day 10: Discussing preferences
+            await SimulateDay(npcName, playerName, now.AddDays(-80), 10, "Weapon Preferences", new[]
+            {
+                ("I love two-handed swords more than anything.", "Strong preference"),
+                ("The reach and power are unmatched.", "Explaining preference"),
+                ("Do you specialize in any particular weapon type?", "Inquiry")
+            });
+
+            // Day 15: First quest
+            await SimulateDay(npcName, playerName, now.AddDays(-75), 15, "First Quest Offered", new[]
+            {
+                ("Do you have any work I could help with?", "Quest seeking"),
+                ("I need to gather some ore from the mines.", "Quest details"),
+                ("Remember, I'm particularly skilled with mining.", "Important skill")
+            });
+
+            // Day 20: Quest completion
+            await SimulateDay(npcName, playerName, now.AddDays(-70), 20, "Quest Completion", new[]
+            {
+                ("I've brought the ore you requested!", "Quest complete"),
+                ("The mines were dangerous, but I managed.", "Sharing experience"),
+                ("I encountered some orcs - I really hate those creatures.", "Strong emotion")
+            });
+
+            // Day 25: Building friendship
+            await SimulateDay(npcName, playerName, now.AddDays(-65), 25, "Friendship Declaration", new[]
+            {
+                ("Gareth, I consider you a friend now.", "Relationship statement"),
+                ("Your expertise has been invaluable to me.", "Appreciation"),
+                ("Thank you for all the help.", "Gratitude")
+            });
+
+            PrintRelationshipStatus(npcName, playerName, "End of Month 1");
+
+            // ═══════════════════════════════════════════════════════════
+            // MONTH 2: DEVELOPING FRIENDSHIP
+            // ═══════════════════════════════════════════════════════════
+
+            PrintMonthHeader(2, "Developing Friendship - Acquaintance to Friend");
+
+            // Day 32: Regular check-in
+            await SimulateDay(npcName, playerName, now.AddDays(-58), 32, "Regular Visit", new[]
+            {
+                ("How's business been?", "Checking in"),
+                ("I've been exploring the dungeons to the east.", "Sharing activities"),
+                ("Found some interesting materials you might like.", "Bringing gifts")
+            });
+
+            // Day 35: Sharing personal info
+            await SimulateDay(npcName, playerName, now.AddDays(-55), 35, "Important Personal Detail", new[]
+            {
+                ("I should tell you - I'm allergic to silver.", "Critical information"),
+                ("Remember that for any future commissions!", "Emphasizing importance"),
+                ("Steel or iron works best for me.", "Preference")
+            });
+
+            // Day 40: Major quest
+            await SimulateDay(npcName, playerName, now.AddDays(-50), 40, "Dragon Quest Begins", new[]
+            {
+                ("I need your help with something important.", "Seeking help"),
+                ("There's a dragon terrorizing the northern villages.", "Major quest"),
+                ("I need the best weapon you can forge - a dragonslayer blade.", "Critical request")
+            });
+
+            // Day 42: Quest preparation
+            await SimulateDay(npcName, playerName, now.AddDays(-48), 42, "Quest Preparation", new[]
+            {
+                ("I'm preparing for the dragon hunt.", "Quest progress"),
+                ("Your craftsmanship gives me confidence.", "Trust statement"),
+                ("I'll need enchanted armor as well.", "Additional request")
+            });
+
+            // Day 45: Personal revelation
+            await SimulateDay(npcName, playerName, now.AddDays(-45), 45, "Career Revelation", new[]
+            {
+                ("Gareth, my real profession is a monster hunter.", "Major reveal"),
+                ("I've been doing this for five years.", "Background info"),
+                ("Dragons are my specialty - I've slain three already.", "Expertise claim")
+            });
+
+            // Day 50: Quest success
+            await SimulateDay(npcName, playerName, now.AddDays(-40), 50, "Dragon Slain!", new[]
+            {
+                ("We did it! The dragon is slain!", "Victory"),
+                ("Your blade performed perfectly.", "Praise"),
+                ("I couldn't have done it without your help, friend.", "Deep gratitude")
+            });
+
+            // Day 55: Celebration
+            await SimulateDay(npcName, playerName, now.AddDays(-35), 55, "Victory Celebration", new[]
+            {
+                ("The whole village is celebrating!", "Shared joy"),
+                ("You should be proud of your contribution.", "Recognition"),
+                ("Let me buy you a drink at the tavern.", "Social invitation")
+            });
+
+            PrintRelationshipStatus(npcName, playerName, "End of Month 2");
+
+            // ═══════════════════════════════════════════════════════════
+            // MONTH 3: CLOSE FRIENDSHIP
+            // ═══════════════════════════════════════════════════════════
+
+            PrintMonthHeader(3, "Close Friendship - Friend to Ally");
+
+            // Day 62: Regular visits
+            await SimulateDay(npcName, playerName, now.AddDays(-28), 62, "Friendly Visit", new[]
+            {
+                ("Just stopping by to say hello.", "Social visit"),
+                ("It's good to see familiar faces.", "Comfort"),
+                ("How's your family doing?", "Personal interest")
+            });
+
+            // Day 65: Teaching moment
+            await SimulateDay(npcName, playerName, now.AddDays(-25), 65, "Learning Together", new[]
+            {
+                ("Could you teach me more about smithing?", "Seeking knowledge"),
+                ("I'd like to learn to repair my own equipment.", "Practical goal"),
+                ("Your knowledge is invaluable.", "Deep respect")
+            });
+
+            // Day 70: Shared memories
+            await SimulateDay(npcName, playerName, now.AddDays(-20), 70, "Reminiscing", new[]
+            {
+                ("Remember when we first met three months ago?", "Reflecting"),
+                ("I was just a stranger looking for a blacksmith.", "Acknowledging journey"),
+                ("Now we've faced dragons together!", "Shared history")
+            });
+
+            // Day 75: Personal favor
+            await SimulateDay(npcName, playerName, now.AddDays(-15), 75, "Family Favor", new[]
+            {
+                ("I need a favor, my friend.", "Asking for help"),
+                ("My sister is getting married next month.", "Personal info"),
+                ("Could you forge special wedding rings?", "Important request")
+            });
+
+            // Day 80: Deep conversation
+            await SimulateDay(npcName, playerName, now.AddDays(-10), 80, "Deep Trust", new[]
+            {
+                ("Gareth, you've become like family to me.", "Deep relationship"),
+                ("I trust you more than most people in my life.", "Ultimate trust"),
+                ("If I ever need help, you're the first person I'd ask.", "Dependence")
+            });
+
+            // Day 85: Future plans
+            await SimulateDay(npcName, playerName, now.AddDays(-5), 85, "Future Together", new[]
+            {
+                ("I'm thinking of settling down here permanently.", "Long-term plans"),
+                ("This town feels like home now.", "Belonging"),
+                ("Partly because of friends like you.", "Attribution")
+            });
+
+            // Day 88: Recent quest
+            await SimulateDay(npcName, playerName, now.AddDays(-2), 88, "Recent Adventure", new[]
+            {
+                ("Just got back from clearing out the goblin caves.", "Recent event"),
+                ("Used the sword you made - still perfect!", "Continued trust"),
+                ("I'll need some repairs soon though.", "Ongoing business")
+            });
+
+            // Day 90: Yesterday
+            await SimulateDay(npcName, playerName, now.AddDays(-1), 90, "Temporary Goodbye", new[]
+            {
+                ("Tomorrow I'm heading to the capital for a few days.", "Sharing plans"),
+                ("I'll miss our daily chats!", "Emotional connection"),
+                ("I'll bring you back some rare metals as a gift.", "Thoughtfulness")
+            });
+
+            PrintRelationshipStatus(npcName, playerName, "End of Month 3");
+
+            // ═══════════════════════════════════════════════════════════
+            // FINAL ANALYSIS
+            // ═══════════════════════════════════════════════════════════
+
+            await PrintFinalAnalysis(npcName, playerName);
+        }
+
+        private static async Task SimulateDay(string npcName, string playerName, DateTime timestamp, int dayNumber, string eventName, (string message, string note)[] messages)
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"═══ DAY {dayNumber}: {eventName} ═══");
+            Console.ResetColor();
+            Console.WriteLine($"Date: {timestamp:MMM dd, yyyy}");
+            Console.WriteLine();
+
+            foreach (var (message, note) in messages)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($"  {playerName}: ");
+                Console.ResetColor();
+                Console.WriteLine($"\"{message}\"");
+
+                // Check if this message should be saved as a memory
+                if (MemoryHelpers.ShouldSaveMemory(message, "", out int importance))
+                {
+                    var memory = new Memory
+                    {
+                        NpcName = npcName,
+                        PlayerName = playerName,
+                        Type = DetermineMemoryType(message),
+                        Content = $"{playerName} said: \"{message}\"",
+                        Importance = importance,
+                        CreatedAt = timestamp,
+                        LastAccessed = timestamp
+                    };
+
+                    await LLMMemoryService.SaveMemoryAsync(npcName, playerName, memory);
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"    → Memory saved: [{memory.Type}] Importance: {importance} - {note}");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine($"    → Not saved - {note}");
+                    Console.ResetColor();
+                }
+
+                // Update relationship
+                var relationship = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+                if (relationship == null)
+                {
+                    relationship = new Relationship
+                    {
+                        NpcName = npcName,
+                        PlayerName = playerName,
+                        Type = RelationshipType.Acquaintance,
+                        Score = 2,
+                        FirstMet = timestamp,
+                        LastInteraction = timestamp,
+                        InteractionCount = 1
+                    };
+                }
+                else
+                {
+                    relationship.Score += 2;
+                    relationship.InteractionCount++;
+                    relationship.LastInteraction = timestamp;
+                    relationship.Type = GetRelationshipTypeFromScore(relationship.Score);
+                }
+
+                await InMemoryFallbackStore.SaveRelationshipAsync(relationship);
+            }
+
+            // Show relationship after this conversation
+            var rel = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"  Current Relationship: {rel.Type} (Score: {rel.Score}/100, Interactions: {rel.InteractionCount})");
+            Console.ResetColor();
+        }
+
+        private static void PrintMonthHeader(int monthNumber, string description)
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine($"╔════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"║  MONTH {monthNumber}: {description,-61}║");
+            Console.WriteLine($"╚════════════════════════════════════════════════════════════════════════╝");
+            Console.ResetColor();
+        }
+
+        private static async void PrintRelationshipStatus(string npcName, string playerName, string label)
+        {
+            var relationship = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+            var memories = await LLMMemoryService.GetMemoriesAsync(npcName, playerName, 50);
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"╔═══ {label} ═══╗");
+            Console.ResetColor();
+
+            if (relationship != null)
+            {
+                Console.WriteLine($"  Relationship Type: {relationship.Type}");
+                Console.WriteLine($"  Score: {relationship.Score}/100");
+                Console.WriteLine($"  Total Interactions: {relationship.InteractionCount}");
+                Console.WriteLine($"  Days Since First Meeting: {(relationship.LastInteraction - relationship.FirstMet).Days}");
+            }
+
+            Console.WriteLine($"  Total Memories: {memories.Count}");
+
+            // Show breakdown by type
+            var byType = memories.GroupBy(m => m.Type).OrderByDescending(g => g.Count());
+            Console.WriteLine($"  Memories by Type:");
+            foreach (var group in byType)
+            {
+                Console.WriteLine($"    - {group.Key}: {group.Count()}");
+            }
+
+            Console.WriteLine();
+        }
+
+        private static async Task PrintFinalAnalysis(string npcName, string playerName)
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("╔════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                         FINAL ANALYSIS                                 ║");
+            Console.WriteLine("║                    What Gareth Remembers                               ║");
+            Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝");
+            Console.ResetColor();
+            Console.WriteLine();
+
+            var relationship = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+            var allMemories = await LLMMemoryService.GetMemoriesAsync(npcName, playerName, 100);
+
+            // Relationship summary
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("═══ RELATIONSHIP STATUS ═══");
+            Console.ResetColor();
+            Console.WriteLine($"  Type: {relationship.Type}");
+            Console.WriteLine($"  Score: {relationship.Score}/100");
+            Console.WriteLine($"  First Met: {relationship.FirstMet:MMM dd, yyyy} ({(DateTime.UtcNow - relationship.FirstMet).Days} days ago)");
+            Console.WriteLine($"  Last Interaction: {relationship.LastInteraction:MMM dd, yyyy}");
+            Console.WriteLine($"  Total Interactions: {relationship.InteractionCount}");
+            Console.WriteLine();
+
+            // Top memories
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"═══ TOP 15 MOST IMPORTANT MEMORIES ═══");
+            Console.ResetColor();
+
+            var topMemories = allMemories.OrderByDescending(m => m.Importance).ThenByDescending(m => m.CreatedAt).Take(15);
+            int rank = 1;
+            foreach (var mem in topMemories)
+            {
+                TimeSpan ago = DateTime.UtcNow - mem.CreatedAt;
+                string timeAgo = $"{ago.Days} days ago";
+
+                Console.ForegroundColor = GetImportanceColor(mem.Importance);
+                Console.Write($"  {rank,2}. [{mem.Type,-12}] ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"Importance {mem.Importance}/10 - ");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine($"{timeAgo}");
+                Console.ResetColor();
+                Console.WriteLine($"      \"{mem.Content.Replace($"{playerName} said: \"", "").TrimEnd('"')}\"");
+                Console.WriteLine();
+                rank++;
+            }
+
+            // Memory statistics
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("═══ MEMORY STATISTICS ═══");
+            Console.ResetColor();
+            Console.WriteLine($"  Total Memories: {allMemories.Count}");
+            Console.WriteLine($"  Average Importance: {allMemories.Average(m => m.Importance):F1}/10");
+            Console.WriteLine();
+            Console.WriteLine("  By Type:");
+            var byType = allMemories.GroupBy(m => m.Type).OrderByDescending(g => g.Count());
+            foreach (var group in byType)
+            {
+                Console.WriteLine($"    - {group.Key,-15}: {group.Count(),3} memories (avg importance: {group.Average(m => m.Importance):F1})");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("  By Importance:");
+            var byImportance = allMemories.GroupBy(m => m.Importance).OrderByDescending(g => g.Key);
+            foreach (var group in byImportance)
+            {
+                string bar = new string('█', group.Count());
+                Console.WriteLine($"    {group.Key,2}/10: {bar} ({group.Count()})");
+            }
+
+            // What would the NPC say?
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("═══ SAMPLE NPC GREETING (Based on Memories) ═══");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"  Gareth: \"Ah, {playerName}! My dear friend! How wonderful to see you");
+            Console.WriteLine($"  again! I still remember when you first walked into my forge 90 days");
+            Console.WriteLine($"  ago, just a stranger looking for a blacksmith. Now look at us -");
+            Console.WriteLine($"  we've slain dragons together! How was your trip to the capital?");
+            Console.WriteLine($"  I've been keeping your equipment ready for repairs. Oh, and I haven't");
+            Console.WriteLine($"  forgotten - steel or iron only, never silver due to your allergy.\"");
+            Console.ResetColor();
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("═══ KEY FACTS GARETH KNOWS ═══");
+            Console.ResetColor();
+
+            var keyFacts = allMemories.Where(m => m.Type == MemoryType.Fact).OrderByDescending(m => m.Importance).Take(10);
+            foreach (var fact in keyFacts)
+            {
+                Console.WriteLine($"  ✓ {fact.Content.Replace($"{playerName} said: \"", "").TrimEnd('"')}");
+            }
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("═══ SHARED EXPERIENCES ═══");
+            Console.ResetColor();
+
+            var events = allMemories.Where(m => m.Type == MemoryType.Event).OrderByDescending(m => m.CreatedAt).Take(5);
+            foreach (var evt in events)
+            {
+                TimeSpan ago = DateTime.UtcNow - evt.CreatedAt;
+                Console.WriteLine($"  • {ago.Days} days ago: {evt.Content.Replace($"{playerName} said: \"", "").TrimEnd('"')}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("✓ Simulation Complete!");
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine($"This demonstrates how {npcName} would remember a player");
+            Console.WriteLine("after 3 months of regular interactions. The NPC has built up:");
+            Console.WriteLine($"  - {allMemories.Count} detailed memories");
+            Console.WriteLine($"  - A {relationship.Type} relationship (score: {relationship.Score}/100)");
+            Console.WriteLine($"  - {relationship.InteractionCount} recorded interactions");
+            Console.WriteLine();
+            Console.WriteLine("The NPC can now have deeply contextual conversations referencing:");
+            Console.WriteLine("  ✓ Player's name and profession");
+            Console.WriteLine("  ✓ Player's preferences (weapons, materials)");
+            Console.WriteLine("  ✓ Player's allergies and important details");
+            Console.WriteLine("  ✓ Shared adventures (dragon slaying!)");
+            Console.WriteLine("  ✓ Relationship progression over time");
+            Console.WriteLine("  ✓ Recent and distant past events");
+            Console.WriteLine();
+        }
+
+        private static ConsoleColor GetImportanceColor(int importance)
+        {
+            if (importance >= 9) return ConsoleColor.Red;
+            if (importance >= 7) return ConsoleColor.Yellow;
+            if (importance >= 5) return ConsoleColor.Cyan;
+            return ConsoleColor.Gray;
+        }
+
+        private static MemoryType DetermineMemoryType(string message)
+        {
+            var lower = message.ToLower();
+
+            if (lower.Contains("name") || lower.Contains("i am") || lower.Contains("i'm") ||
+                lower.Contains("profession") || lower.Contains("real") || lower.Contains("allergic"))
+                return MemoryType.Fact;
+
+            if (lower.Contains("like") || lower.Contains("prefer") || lower.Contains("favorite") ||
+                lower.Contains("hate") || lower.Contains("love") || lower.Contains("respect"))
+                return MemoryType.Preference;
+
+            if (lower.Contains("quest") || lower.Contains("mission") || lower.Contains("task") ||
+                lower.Contains("work") || lower.Contains("help") || lower.Contains("dragon") ||
+                lower.Contains("slain") || lower.Contains("hunt"))
+                return MemoryType.Event;
+
+            if (lower.Contains("friend") || lower.Contains("enemy") || lower.Contains("ally") ||
+                lower.Contains("trust") || lower.Contains("family") || lower.Contains("consider"))
+                return MemoryType.Relationship;
+
+            return MemoryType.Conversation;
+        }
+
+        private static RelationshipType GetRelationshipTypeFromScore(int score)
+        {
+            if (score >= 81) return RelationshipType.Ally;
+            else if (score >= 61) return RelationshipType.CloseFriend;
+            else if (score >= 41) return RelationshipType.Friend;
+            else if (score >= 21) return RelationshipType.Acquaintance;
+            else if (score <= -10) return RelationshipType.Enemy;
+            else return RelationshipType.Stranger;
+        }
+    }
+}

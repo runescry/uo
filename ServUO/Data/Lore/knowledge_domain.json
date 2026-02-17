@@ -1,0 +1,87 @@
+[
+  {
+    "id": "scribe_writing",
+    "title": "Writing and Documentation",
+    "category": "Knowledge",
+    "summary": "Writing skills, books, documentation, knowledge preservation",
+    "content": "Scribes specialize in writing and documentation. They create books, scrolls, and written records preserving knowledge. Scribes understand writing techniques and how to organize information effectively. They create reference materials, guides, and educational texts. Scribes know how to transcribe information accurately and maintain records. They understand bookbinding and document preservation. Scribes coordinate with scholars to document research and discoveries. They create copies of important texts and maintain libraries. Writing skills include calligraphy, organization, and information management.",
+    "tags": [
+      "scribe",
+      "writing",
+      "book",
+      "documentation",
+      "knowledge",
+      "record",
+      "text",
+      "library"
+    ],
+    "importance": 9,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Scribe": "Expert",
+      "Scholar": "Proficient",
+      "Mage": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "History",
+    "primaryReferralTarget": "Scribe",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "scholar_lore_history",
+    "title": "Lore and Historical Knowledge",
+    "category": "Knowledge",
+    "summary": "Historical knowledge, lore, research, academic studies",
+    "content": "Scholars are experts in lore and historical knowledge. They study Britannia's history including major events, figures, and cultural developments. Scholars understand the Eight Virtues, major conflicts, and significant historical periods. They research ancient texts, artifacts, and historical records. Scholars know about famous historical figures like Lord British, Mondain, Minax, and Exodus. They understand the relationship between history and current events. Scholars coordinate with other knowledge-seekers to expand understanding. They document discoveries and share knowledge with others. Academic studies include philosophy, history, and cultural analysis.",
+    "tags": [
+      "scholar",
+      "lore",
+      "history",
+      "research",
+      "knowledge",
+      "academic",
+      "virtue",
+      "culture"
+    ],
+    "importance": 9,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Scholar": "Expert",
+      "Scribe": "Proficient",
+      "Mage": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "History",
+    "primaryReferralTarget": "Scholar",
+    "secondaryReferralTarget": "Scribe"
+  },
+  {
+    "id": "scholar_research",
+    "title": "Research and Knowledge Systems",
+    "category": "Knowledge",
+    "summary": "Research methods, knowledge organization, academic collaboration",
+    "content": "Scholars understand research methods and knowledge organization. They know how to investigate topics, verify information, and document findings. Research involves studying texts, examining artifacts, and consulting with experts. Scholars organize knowledge into categories and systems for easy reference. They understand how different fields of knowledge relate to each other. Academic collaboration allows scholars to share discoveries and build on each other's work. Scholars maintain libraries and knowledge repositories. They understand the importance of accurate information and fact-checking.",
+    "tags": [
+      "scholar",
+      "research",
+      "knowledge",
+      "organization",
+      "academic",
+      "collaboration",
+      "investigation",
+      "documentation"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Scholar": "Expert",
+      "Scribe": "Proficient",
+      "Mage": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "History",
+    "primaryReferralTarget": "Scholar",
+    "secondaryReferralTarget": "Scribe"
+  }
+]
+

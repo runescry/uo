@@ -1,0 +1,84 @@
+[
+  {
+    "id": "tinker_tinkering_skill",
+    "title": "Tinkering Skill and Mechanical Items",
+    "category": "Technology",
+    "summary": "Tinkering skill, gadgets, mechanical items, clockwork devices",
+    "content": "Tinkers master the Tinkering skill (0-100) to create mechanical items and gadgets. Basic tinkering (0-29 skill) creates simple tools and basic items. Intermediate tinkering (30-49 skill) produces more complex mechanical devices. Advanced tinkering (50-69 skill) creates sophisticated gadgets and clockwork mechanisms. Master tinkering (70-100 skill) produces exceptional mechanical items and complex devices. Tinkers craft tools, locks, keys, traps, and clockwork devices. They understand mechanical principles and how devices function. Tinkers know which materials work best for different mechanical items. They can repair damaged mechanical items and restore functionality.",
+    "tags": [
+      "tinker",
+      "tinkering",
+      "skill",
+      "mechanical",
+      "gadget",
+      "clockwork",
+      "device",
+      "tool"
+    ],
+    "importance": 9,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Tinker": "Expert",
+      "Blacksmith": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Technology",
+    "primaryReferralTarget": "Tinker",
+    "secondaryReferralTarget": "Blacksmith"
+  },
+  {
+    "id": "tinker_repairs",
+    "title": "Item Repair and Maintenance",
+    "category": "Technology",
+    "summary": "Repairing items, maintenance, restoration, durability",
+    "content": "Tinkers excel at repairing and maintaining items. They can repair damaged weapons, armor, and tools using repair kits and materials. Repair skill determines success rate and quality of repairs. Tinkers understand item durability and when items need maintenance. They know which items can be repaired and which are beyond repair. Repair costs vary based on item condition and material requirements. Tinkers can restore functionality to broken mechanical devices. They understand how to prevent damage through proper maintenance. Regular maintenance extends item lifespan and prevents costly repairs.",
+    "tags": [
+      "tinker",
+      "repair",
+      "maintenance",
+      "durability",
+      "restoration",
+      "item",
+      "tool",
+      "weapon"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Tinker": "Expert",
+      "Blacksmith": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "Technology",
+    "primaryReferralTarget": "Tinker",
+    "secondaryReferralTarget": "Blacksmith"
+  },
+  {
+    "id": "tinker_traps_devices",
+    "title": "Traps and Mechanical Devices",
+    "category": "Technology",
+    "summary": "Traps, locks, keys, security devices, mechanisms",
+    "content": "Tinkers create traps and mechanical security devices. Traps include dart traps, explosion traps, and poison traps for protection. Locks and keys provide security for containers and doors. Tinkers understand trap mechanics and how to disarm them. They know which traps are effective for different situations. Mechanical devices include clocks, gears, and complex mechanisms. Tinkers can create custom devices for specific purposes. They understand how to integrate mechanical components into larger systems. Security devices protect valuables and deter thieves.",
+    "tags": [
+      "tinker",
+      "trap",
+      "lock",
+      "key",
+      "security",
+      "device",
+      "mechanism",
+      "protection"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Tinker": "Expert",
+      "Thief": "Proficient",
+      "Guard": "Aware"
+    },
+    "questionCategory": "Technology",
+    "primaryReferralTarget": "Tinker",
+    "secondaryReferralTarget": "Thief"
+  }
+]
+

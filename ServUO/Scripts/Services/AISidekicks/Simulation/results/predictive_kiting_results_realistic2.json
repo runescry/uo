@@ -1,0 +1,2308 @@
+{
+  "timestamp": "2025-11-26T10:01:47.185201",
+  "total_simulations": 200,
+  "simulations_per_set": 20,
+  "duration_seconds": 116.661985,
+  "results": [
+    {
+      "parameter_set": 1,
+      "parameters": {
+        "MIN_SAFE_RANGE": 12,
+        "MAX_CAST_RANGE": 20,
+        "OPTIMAL_CAST_RANGE": 24,
+        "SPELL_RELEASE_RANGE_MIN": 8,
+        "SPELL_RELEASE_RANGE_MAX": 9,
+        "MEDITATION_FLEE_MIN": 32,
+        "MEDITATION_FLEE_MAX": 41,
+        "HEAL_SAFE_DISTANCE": 19,
+        "CRITICAL_HEALTH": 0.28,
+        "LOW_HEALTH": 0.47,
+        "LOW_MANA": 30,
+        "CRITICAL_MANA": 12,
+        "STUCK_THRESHOLD": 2,
+        "ENEMY_MOVE_SPEED": 1.07,
+        "CAST_TIME_EXPLOSION": 2.09,
+        "CAST_TIME_ENERGY_BOLT": 1.45
+      },
+      "simulations": [
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 10.73,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 11.866,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 18,
+          "avg_distance": 12.38888888888889,
+          "spells_cast": 3,
+          "final_health": 100,
+          "final_mana": 40,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 10.482,
+          "spells_cast": 2,
+          "final_health": 41,
+          "final_mana": 60,
+          "final_enemy_health": 160
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 10.188,
+          "spells_cast": 2,
+          "final_health": 13,
+          "final_mana": 16,
+          "final_enemy_health": 135
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 11.978,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 18,
+          "avg_distance": 16.666666666666668,
+          "spells_cast": 4,
+          "final_health": 100,
+          "final_mana": 20,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.1,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 451.8,
+        "avg_distance": 10.066277777777781,
+        "avg_spells_cast": 0.55
+      }
+    },
+    {
+      "parameter_set": 2,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 3,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 4,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 5,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 6,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 7,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 8,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 9,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    },
+    {
+      "parameter_set": 10,
+      "parameters": {
+        "MIN_SAFE_RANGE": 16,
+        "MAX_CAST_RANGE": 26,
+        "OPTIMAL_CAST_RANGE": 18,
+        "SPELL_RELEASE_RANGE_MIN": 6,
+        "SPELL_RELEASE_RANGE_MAX": 8,
+        "MEDITATION_FLEE_MIN": 28,
+        "MEDITATION_FLEE_MAX": 38,
+        "HEAL_SAFE_DISTANCE": 23,
+        "CRITICAL_HEALTH": 0.37,
+        "LOW_HEALTH": 0.59,
+        "LOW_MANA": 28,
+        "CRITICAL_MANA": 11,
+        "STUCK_THRESHOLD": 4,
+        "ENEMY_MOVE_SPEED": 1.04,
+        "CAST_TIME_EXPLOSION": 2.12,
+        "CAST_TIME_ENERGY_BOLT": 1.3
+      },
+      "simulations": [
+        {
+          "victory": true,
+          "death": false,
+          "ticks_survived": 148,
+          "avg_distance": 14.655405405405405,
+          "spells_cast": 5,
+          "final_health": 100,
+          "final_mana": 0,
+          "final_enemy_health": 0
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 6.006,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 150
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        },
+        {
+          "victory": false,
+          "death": false,
+          "ticks_survived": 500,
+          "avg_distance": 9.002,
+          "spells_cast": 0,
+          "final_health": 100,
+          "final_mana": 100,
+          "final_enemy_health": 100
+        }
+      ],
+      "summary": {
+        "victory_rate": 0.05,
+        "death_rate": 0.0,
+        "avg_survival_ticks": 482.4,
+        "avg_distance": 9.134870270270273,
+        "avg_spells_cast": 0.25
+      }
+    }
+  ]
+}

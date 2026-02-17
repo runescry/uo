@@ -1,0 +1,28 @@
+[
+  {
+    "id": "vystia_trade",
+    "title": "Vystia Trade Networks",
+    "category": "Trade",
+    "content": "Trade in Vystia is dominated by the League of Sands led by Sultan Azir al-Rashid. The desert trade routes connect all regions. The Maritime Sovereignty controls oceanic trade. Each region specializes in different goods: Ironclad exports machinery, Frosthold exports ice-enchanted weapons, Emberlands exports fire weapons, and Verdantpeak exports herbs.",
+    "tags": [
+      "trade",
+      "commerce",
+      "merchants",
+      "economy"
+    ],
+    "importance": 7
+  },
+  {
+    "id": "vystia_currency",
+    "title": "Vystia Currency",
+    "category": "Trade",
+    "content": "Vystia uses standard gold pieces but regional currencies exist. The Ironclad Empire mints Steam Crowns featuring clockwork designs. Frosthold uses Frost Marks with ice crystal inlays. The League of Sands uses Sun Discs. All currencies are exchangeable at banks in major cities.",
+    "tags": [
+      "currency",
+      "money",
+      "gold",
+      "coins"
+    ],
+    "importance": 5
+  }
+]

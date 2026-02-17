@@ -1,0 +1,378 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Server;
+using Server.Commands;
+using Server.Mobiles;
+
+namespace Server.Services.LLM
+{
+    /// <summary>
+    /// Command to spawn an NPC with pre-loaded 3-month conversation history
+    /// Demonstrates how the memory system works with long-term relationships
+    /// </summary>
+    public class SpawnNPCWithHistory
+    {
+        public static void Initialize()
+        {
+            CommandSystem.Register("SpawnNPCWithHistory", AccessLevel.GameMaster, SpawnNPCWithHistory_OnCommand);
+        }
+
+        [Usage("SpawnNPCWithHistory")]
+        [Description("Spawn an NPC with 3 months of pre-loaded conversation history")]
+        private static void SpawnNPCWithHistory_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            from.SendMessage("=== Spawning NPC with Historical Relationship ===");
+            from.SendMessage("Creating Gareth the Blacksmith with 3 months of history...");
+            from.SendMessage("");
+
+            // Create and load the NPC asynchronously
+            CreateNPCWithHistory(from);
+        }
+
+        private static async void CreateNPCWithHistory(Mobile player)
+        {
+            try
+            {
+                // Create the NPC
+                string npcName = "Gareth the Master Blacksmith";
+                string playerName = player.Name;
+
+                LLMNpc npc = new LLMNpc(
+                    npcName,
+                    NPCPersonalities.PersonalityType.Merchant,
+                    NPCPersonalities.SpeechPattern.Formal
+                );
+
+                // Set location near player
+                npc.MoveToWorld(player.Location, player.Map);
+
+                player.SendMessage($"Created {npcName}");
+                player.SendMessage("Loading 3 months of conversation history...");
+                player.SendMessage("");
+
+                // Simulate 3 months of interactions
+                await SimulateThreeMonthHistory(npc, player);
+
+                player.SendMessage("");
+                player.SendMessage("=== History Loaded Successfully! ===");
+                player.SendMessage("");
+                player.SendMessage($"Talk to {npcName} to see how they remember you!");
+                player.SendMessage($"Use [ViewMemories to see all memories");
+                player.SendMessage($"Use [ViewRelationship to see your relationship");
+            }
+            catch (Exception ex)
+            {
+                player.SendMessage($"Error creating NPC: {ex.Message}");
+                Console.WriteLine($"[SpawnNPCWithHistory] Error: {ex}");
+            }
+        }
+
+        private static async Task SimulateThreeMonthHistory(LLMNpc npc, Mobile player)
+        {
+            string npcName = npc.Name;
+            string playerName = player.Name;
+
+            // We'll simulate conversations over 90 days with varying frequency
+            DateTime now = DateTime.UtcNow;
+
+            player.SendMessage("Month 1: First Encounters (Days 1-30)...");
+
+            // MONTH 1: First encounters - Meeting and getting to know each other
+            // Day 1: First meeting
+            await SimulateConversation(npcName, playerName, now.AddDays(-90), new[]
+            {
+                $"Hello! My name is {playerName}.",
+                "I'm new to this town and looking for a good blacksmith.",
+                "Do you craft custom weapons?"
+            }, player);
+
+            // Day 3: Second visit
+            await SimulateConversation(npcName, playerName, now.AddDays(-87), new[]
+            {
+                "Good morning Gareth!",
+                "I'd like to commission a longsword.",
+                "My favorite metal is steel, but I've heard good things about silver."
+            }, player);
+
+            // Day 7: Getting to know each other
+            await SimulateConversation(npcName, playerName, now.AddDays(-83), new[]
+            {
+                "Gareth, can I ask you something personal?",
+                "How long have you been a blacksmith?",
+                "I really respect the craftsmanship I've seen around here."
+            }, player);
+
+            // Day 10: Discussing preferences
+            await SimulateConversation(npcName, playerName, now.AddDays(-80), new[]
+            {
+                "I love two-handed swords more than anything.",
+                "The reach and power are unmatched.",
+                "Do you specialize in any particular weapon type?"
+            }, player);
+
+            // Day 15: First quest
+            await SimulateConversation(npcName, playerName, now.AddDays(-75), new[]
+            {
+                "Do you have any work I could help with?",
+                "I need to gather some ore from the mines.",
+                "Remember, I'm particularly skilled with mining."
+            }, player);
+
+            // Day 20: Quest completion
+            await SimulateConversation(npcName, playerName, now.AddDays(-70), new[]
+            {
+                "I've brought the ore you requested!",
+                "The mines were dangerous, but I managed.",
+                "I encountered some orcs - I really hate those creatures."
+            }, player);
+
+            // Day 25: Building friendship
+            await SimulateConversation(npcName, playerName, now.AddDays(-65), new[]
+            {
+                "Gareth, I consider you a friend now.",
+                "Your expertise has been invaluable to me.",
+                "Thank you for all the help."
+            }, player);
+
+            player.SendMessage("Month 2: Developing Friendship (Days 31-60)...");
+
+            // MONTH 2: Developing friendship - Regular visits, shared experiences
+            // Day 32: Regular check-in
+            await SimulateConversation(npcName, playerName, now.AddDays(-58), new[]
+            {
+                "How's business been?",
+                "I've been exploring the dungeons to the east.",
+                "Found some interesting materials you might like."
+            }, player);
+
+            // Day 35: Sharing personal info
+            await SimulateConversation(npcName, playerName, now.AddDays(-55), new[]
+            {
+                "I should tell you - I'm allergic to silver.",
+                "Remember that for any future commissions!",
+                "Steel or iron works best for me."
+            }, player);
+
+            // Day 40: Major quest
+            await SimulateConversation(npcName, playerName, now.AddDays(-50), new[]
+            {
+                "I need your help with something important.",
+                "There's a dragon terrorizing the northern villages.",
+                "I need the best weapon you can forge - a dragonslayer blade."
+            }, player);
+
+            // Day 42: Quest preparation
+            await SimulateConversation(npcName, playerName, now.AddDays(-48), new[]
+            {
+                "I'm preparing for the dragon hunt.",
+                "Your craftsmanship gives me confidence.",
+                "I'll need enchanted armor as well."
+            }, player);
+
+            // Day 45: Personal revelation
+            await SimulateConversation(npcName, playerName, now.AddDays(-45), new[]
+            {
+                "Gareth, my real profession is a monster hunter.",
+                "I've been doing this for five years.",
+                "Dragons are my specialty - I've slain three already."
+            }, player);
+
+            // Day 50: Quest success
+            await SimulateConversation(npcName, playerName, now.AddDays(-40), new[]
+            {
+                "We did it! The dragon is slain!",
+                "Your blade performed perfectly.",
+                "I couldn't have done it without your help, friend."
+            }, player);
+
+            // Day 55: Celebration
+            await SimulateConversation(npcName, playerName, now.AddDays(-35), new[]
+            {
+                "The whole village is celebrating!",
+                "You should be proud of your contribution.",
+                "Let me buy you a drink at the tavern."
+            }, player);
+
+            player.SendMessage("Month 3: Close Friendship (Days 61-90)...");
+
+            // MONTH 3: Close friendship - Deep trust, shared history
+            // Day 62: Regular visits
+            await SimulateConversation(npcName, playerName, now.AddDays(-28), new[]
+            {
+                "Just stopping by to say hello.",
+                "It's good to see familiar faces.",
+                "How's your family doing?"
+            }, player);
+
+            // Day 65: Teaching moment
+            await SimulateConversation(npcName, playerName, now.AddDays(-25), new[]
+            {
+                "Could you teach me more about smithing?",
+                "I'd like to learn to repair my own equipment.",
+                "Your knowledge is invaluable."
+            }, player);
+
+            // Day 70: Shared memories
+            await SimulateConversation(npcName, playerName, now.AddDays(-20), new[]
+            {
+                "Remember when we first met three months ago?",
+                "I was just a stranger looking for a blacksmith.",
+                "Now we've faced dragons together!"
+            }, player);
+
+            // Day 75: Personal favor
+            await SimulateConversation(npcName, playerName, now.AddDays(-15), new[]
+            {
+                "I need a favor, my friend.",
+                "My sister is getting married next month.",
+                "Could you forge special wedding rings?"
+            }, player);
+
+            // Day 80: Deep conversation
+            await SimulateConversation(npcName, playerName, now.AddDays(-10), new[]
+            {
+                "Gareth, you've become like family to me.",
+                "I trust you more than most people in my life.",
+                "If I ever need help, you're the first person I'd ask."
+            }, player);
+
+            // Day 85: Future plans
+            await SimulateConversation(npcName, playerName, now.AddDays(-5), new[]
+            {
+                "I'm thinking of settling down here permanently.",
+                "This town feels like home now.",
+                "Partly because of friends like you."
+            }, player);
+
+            // Day 88: Recent quest
+            await SimulateConversation(npcName, playerName, now.AddDays(-2), new[]
+            {
+                "Just got back from clearing out the goblin caves.",
+                "Used the sword you made - still perfect!",
+                "I'll need some repairs soon though."
+            }, player);
+
+            // Day 90: Yesterday
+            await SimulateConversation(npcName, playerName, now.AddDays(-1), new[]
+            {
+                "Tomorrow I'm heading to the capital for a few days.",
+                "I'll miss our daily chats!",
+                "I'll bring you back some rare metals as a gift."
+            }, player);
+
+            // Print summary
+            var relationship = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+            var memories = await LLMMemoryService.GetMemoriesAsync(npcName, playerName, 10);
+
+            player.SendMessage("");
+            player.SendMessage("=== Relationship Summary ===");
+            if (relationship != null)
+            {
+                player.SendMessage($"Type: {relationship.Type}");
+                player.SendMessage($"Score: {relationship.Score}/100");
+                player.SendMessage($"Total Interactions: {relationship.InteractionCount}");
+                player.SendMessage($"First Met: {relationship.FirstMet:MMM dd} (90 days ago)");
+                player.SendMessage($"Last Interaction: {relationship.LastInteraction:MMM dd HH:mm}");
+            }
+
+            player.SendMessage("");
+            player.SendMessage($"=== Top {Math.Min(10, memories.Count)} Memories ===");
+            foreach (var mem in memories)
+            {
+                TimeSpan ago = DateTime.UtcNow - mem.CreatedAt;
+                string timeAgo = ago.Days > 0 ? $"{ago.Days} days ago" : $"{ago.Hours} hours ago";
+                player.SendMessage($"[{mem.Type}] {timeAgo}: {mem.Content}");
+            }
+        }
+
+        private static async Task SimulateConversation(string npcName, string playerName, DateTime timestamp, string[] messages, Mobile player)
+        {
+            foreach (string message in messages)
+            {
+                // Check if this message should be saved as a memory
+                if (MemoryHelpers.ShouldSaveMemory(message, "", out int importance))
+                {
+                    var memory = new Memory
+                    {
+                        NpcName = npcName,
+                        PlayerName = playerName,
+                        Type = DetermineMemoryType(message),
+                        Content = $"{playerName} said: \"{message}\"",
+                        Importance = importance,
+                        CreatedAt = timestamp,
+                        LastAccessed = timestamp
+                    };
+
+                    await LLMMemoryService.SaveMemoryAsync(npcName, playerName, memory);
+                }
+
+                // Update relationship
+                var relationship = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+                if (relationship == null)
+                {
+                    relationship = new Relationship
+                    {
+                        NpcName = npcName,
+                        PlayerName = playerName,
+                        Type = RelationshipType.Acquaintance,
+                        Score = 2, // Each conversation adds points
+                        FirstMet = timestamp,
+                        LastInteraction = timestamp,
+                        InteractionCount = 1
+                    };
+                }
+                else
+                {
+                    relationship.Score += 2; // More points per message for deeper conversations
+                    relationship.InteractionCount++;
+                    relationship.LastInteraction = timestamp;
+                    relationship.Type = GetRelationshipTypeFromScore(relationship.Score);
+                }
+
+                await InMemoryFallbackStore.SaveRelationshipAsync(relationship);
+            }
+
+            // Show progress
+            var rel = await LLMMemoryService.GetRelationshipAsync(npcName, playerName);
+            string date = timestamp.ToString("MMM dd");
+            player.SendMessage($"  {date}: Conversation logged ({messages.Length} messages) - {rel.Type} (Score: {rel.Score})");
+        }
+
+        private static MemoryType DetermineMemoryType(string message)
+        {
+            var lower = message.ToLower();
+
+            if (lower.Contains("name") || lower.Contains("i am") || lower.Contains("i'm") ||
+                lower.Contains("profession") || lower.Contains("real") || lower.Contains("allergic"))
+                return MemoryType.Fact;
+
+            if (lower.Contains("like") || lower.Contains("prefer") || lower.Contains("favorite") ||
+                lower.Contains("hate") || lower.Contains("love") || lower.Contains("respect"))
+                return MemoryType.Preference;
+
+            if (lower.Contains("quest") || lower.Contains("mission") || lower.Contains("task") ||
+                lower.Contains("work") || lower.Contains("help") || lower.Contains("dragon") ||
+                lower.Contains("slain") || lower.Contains("hunt"))
+                return MemoryType.Event;
+
+            if (lower.Contains("friend") || lower.Contains("enemy") || lower.Contains("ally") ||
+                lower.Contains("trust") || lower.Contains("family") || lower.Contains("consider"))
+                return MemoryType.Relationship;
+
+            return MemoryType.Conversation;
+        }
+
+        private static RelationshipType GetRelationshipTypeFromScore(int score)
+        {
+            if (score >= 81) return RelationshipType.Ally;
+            else if (score >= 61) return RelationshipType.CloseFriend;
+            else if (score >= 41) return RelationshipType.Friend;
+            else if (score >= 21) return RelationshipType.Acquaintance;
+            else if (score <= -10) return RelationshipType.Enemy;
+            else return RelationshipType.Stranger;
+        }
+    }
+}

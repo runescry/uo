@@ -1,0 +1,110 @@
+[
+  {
+    "id": "bard_music_performance",
+    "title": "Music and Performance",
+    "category": "Entertainment",
+    "summary": "Musical instruments, songs, ballads, performance techniques",
+    "content": "Bards master music and performance arts. They play various musical instruments including lutes, harps, drums, and tambourines. Bards know songs and ballads that entertain audiences and can provide magical effects. Musical performance requires skill and practice to achieve quality results. Bards understand different musical styles and when to use them. They know how to engage audiences and create memorable performances. Bards can compose new songs and adapt existing ones. Musical instruments vary in quality and sound characteristics. Performance techniques include timing, rhythm, and audience interaction.",
+    "tags": [
+      "bard",
+      "music",
+      "performance",
+      "instrument",
+      "song",
+      "ballad",
+      "entertainment",
+      "art"
+    ],
+    "importance": 9,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Bard": "Expert",
+      "Actor": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Bard",
+    "secondaryReferralTarget": "Actor"
+  },
+  {
+    "id": "bard_stories_ballads",
+    "title": "Stories and Ballads",
+    "category": "Entertainment",
+    "summary": "Storytelling, historical ballads, epic tales, narrative arts",
+    "content": "Bards are master storytellers who preserve and share tales through ballads and stories. They know historical ballads recounting major events and legendary figures. Epic tales describe heroic adventures and significant conflicts. Bards understand narrative structure and how to engage listeners. They adapt stories for different audiences and occasions. Storytelling techniques include pacing, emphasis, and dramatic presentation. Bards preserve oral traditions and cultural knowledge through performance. They can create new stories based on current events and adventures.",
+    "tags": [
+      "bard",
+      "story",
+      "ballad",
+      "tale",
+      "narrative",
+      "storytelling",
+      "history",
+      "culture"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Bard": "Expert",
+      "Scholar": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Bard",
+    "secondaryReferralTarget": "Scholar"
+  },
+  {
+    "id": "actor_performance",
+    "title": "Theatrical Performance",
+    "category": "Entertainment",
+    "summary": "Acting, theatrical arts, dramatic performance, stagecraft",
+    "content": "Actors specialize in theatrical performance and dramatic arts. They understand acting techniques including expression, movement, and voice projection. Theatrical performances include plays, skits, and dramatic presentations. Actors know how to portray characters and convey emotions effectively. They understand stagecraft including blocking, timing, and audience engagement. Actors coordinate with other performers for ensemble productions. They know different theatrical styles and genres. Performance quality affects audience reception and entertainment value.",
+    "tags": [
+      "actor",
+      "performance",
+      "theatrical",
+      "drama",
+      "acting",
+      "stage",
+      "entertainment",
+      "art"
+    ],
+    "importance": 8,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Actor": "Expert",
+      "Bard": "Proficient",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Actor",
+    "secondaryReferralTarget": "Bard"
+  },
+  {
+    "id": "artist_artistic_expression",
+    "title": "Artistic Expression",
+    "category": "Entertainment",
+    "summary": "Art creation, aesthetics, artistic techniques, visual arts",
+    "content": "Artists create visual art and artistic expressions. They understand artistic techniques including composition, color, and form. Artists create paintings, sculptures, and decorative items. They know how to capture subjects accurately and expressively. Artistic quality affects value and appreciation. Artists understand different artistic styles and movements. They know how to preserve and display artwork. Artistic expression includes both functional and decorative art.",
+    "tags": [
+      "artist",
+      "art",
+      "artistic",
+      "aesthetic",
+      "painting",
+      "sculpture",
+      "visual",
+      "creation"
+    ],
+    "importance": 7,
+    "source": "Game Mechanics",
+    "domainExpertise": {
+      "Artist": "Expert",
+      "Commoner": "Aware"
+    },
+    "questionCategory": "General",
+    "primaryReferralTarget": "Artist",
+    "secondaryReferralTarget": "Commoner"
+  }
+]
+

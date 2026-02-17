@@ -1,0 +1,358 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Server;
+using Server.Commands;
+using Server.Mobiles;
+using Server.Targeting;
+using Server.Prompts;
+
+namespace Server.Services.LLM
+{
+    /// <summary>
+    /// Commands for managing and viewing NPC memories
+    /// </summary>
+    public class MemoryCommands
+    {
+        public static void Initialize()
+        {
+            CommandSystem.Register("MemoryStats", AccessLevel.GameMaster, MemoryStats_OnCommand);
+            CommandSystem.Register("ViewMemories", AccessLevel.GameMaster, ViewMemories_OnCommand);
+            CommandSystem.Register("ViewRelationship", AccessLevel.GameMaster, ViewRelationship_OnCommand);
+            CommandSystem.Register("ClearMemories", AccessLevel.Administrator, ClearMemories_OnCommand);
+        }
+
+        #region MemoryStats Command
+
+        [Usage("MemoryStats")]
+        [Description("Display memory system statistics")]
+        private static void MemoryStats_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            from.SendMessage("=== LLM Memory System Statistics ===");
+            from.SendMessage($"System Available: {LLMMemoryService.IsAvailable()}");
+            from.SendMessage("");
+
+            // Component status
+            from.SendMessage("--- Component Status ---");
+            from.SendMessage($"PostgreSQL: {(PostgresMemoryDatabase.IsAvailable() ? "Connected" : "Not Available")}");
+            from.SendMessage($"Redis: {(RedisMemoryCache.IsAvailable() ? "Connected" : "Not Available")}");
+            from.SendMessage($"In-Memory Store: {(InMemoryFallbackStore.IsActive ? "Active" : "Inactive")}");
+            from.SendMessage($"Flush Service: {(MemoryFlushService.IsRunning() ? "Running" : "Not Running")}");
+
+            // In-memory statistics
+            if (InMemoryFallbackStore.IsActive)
+            {
+                from.SendMessage("");
+                from.SendMessage("--- In-Memory Store Statistics ---");
+                string stats = InMemoryFallbackStore.GetStatistics();
+                foreach (string line in stats.Split('\n'))
+                {
+                    if (!string.IsNullOrWhiteSpace(line))
+                        from.SendMessage(line);
+                }
+            }
+
+            // Redis statistics
+            if (RedisMemoryCache.IsAvailable())
+            {
+                from.SendMessage("");
+                from.SendMessage("--- Redis Statistics ---");
+                string redisStats = RedisMemoryCache.GetStatistics();
+                foreach (string line in redisStats.Split('\n'))
+                {
+                    if (!string.IsNullOrWhiteSpace(line))
+                        from.SendMessage(line);
+                }
+            }
+
+            // Flush service statistics
+            if (MemoryFlushService.IsRunning())
+            {
+                from.SendMessage("");
+                from.SendMessage("--- Flush Service Statistics ---");
+                string flushStats = MemoryFlushService.GetStatistics();
+                foreach (string line in flushStats.Split('\n'))
+                {
+                    if (!string.IsNullOrWhiteSpace(line))
+                        from.SendMessage(line);
+                }
+            }
+
+            // Architecture info
+            from.SendMessage("");
+            from.SendMessage("--- Architecture ---");
+            if (PostgresMemoryDatabase.IsAvailable() && RedisMemoryCache.IsAvailable())
+            {
+                from.SendMessage("Tiered Caching: InMemory → Redis Queue → PostgreSQL");
+                from.SendMessage("Reads: InMemory (fastest) → Redis → PostgreSQL");
+                from.SendMessage("Writes: InMemory (immediate) → Queue → PostgreSQL (batched)");
+            }
+            else if (LLMMemoryService.IsUsingFallback())
+            {
+                from.SendMessage("Mode: In-Memory Only");
+                from.SendMessage("WARNING: Data will be lost on server restart!");
+            }
+            else
+            {
+                from.SendMessage("Mode: Partial - Missing components");
+            }
+
+            from.SendMessage("");
+            from.SendMessage("Available Commands:");
+            from.SendMessage("  [MemoryStats - View this information");
+            from.SendMessage("  [ViewMemories - View NPC memories about a player");
+            from.SendMessage("  [ViewRelationship - View NPC/player relationship");
+            from.SendMessage("  [ClearMemories - Clear memories (Admin only)");
+        }
+
+        #endregion
+
+        #region ViewMemories Command
+
+        [Usage("ViewMemories")]
+        [Description("View an NPC's memories about a player. Prompts for NPC, then player name.")]
+        private static void ViewMemories_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            if (!LLMMemoryService.IsAvailable())
+            {
+                from.SendMessage("Memory system is not available.");
+                return;
+            }
+
+            from.SendMessage("Target an LLM NPC to view their memories...");
+            from.Target = new ViewMemoriesNPCTarget();
+        }
+
+        private class ViewMemoriesNPCTarget : Target
+        {
+            public ViewMemoriesNPCTarget() : base(15, false, TargetFlags.None)
+            {
+            }
+
+            protected override void OnTarget(Mobile from, object targeted)
+            {
+                if (targeted is LLMNpc npc)
+                {
+                    from.SendMessage($"Enter player name to view {npc.Name}'s memories about:");
+                    from.Prompt = new ViewMemoriesPlayerPrompt(npc);
+                }
+                else
+                {
+                    from.SendMessage("That is not an LLM NPC.");
+                }
+            }
+        }
+
+        private class ViewMemoriesPlayerPrompt : Prompt
+        {
+            private LLMNpc m_NPC;
+
+            public ViewMemoriesPlayerPrompt(LLMNpc npc)
+            {
+                m_NPC = npc;
+            }
+
+            public override void OnResponse(Mobile from, string text)
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                {
+                    from.SendMessage("Invalid player name.");
+                    return;
+                }
+
+                // Load memories asynchronously
+                LoadAndDisplayMemories(from, m_NPC, text);
+            }
+
+            private async void LoadAndDisplayMemories(Mobile from, LLMNpc npc, string playerName)
+            {
+                try
+                {
+                    var memories = await LLMMemoryService.GetMemoriesAsync(npc.Name, playerName, 20);
+
+                    from.SendMessage($"=== {npc.Name}'s Memories about {playerName} ===");
+
+                    if (memories.Count == 0)
+                    {
+                        from.SendMessage("No memories found.");
+                    }
+                    else
+                    {
+                        foreach (var memory in memories.OrderByDescending(m => m.Importance).ThenByDescending(m => m.LastAccessed))
+                        {
+                            from.SendMessage($"[{memory.Type}] Importance:{memory.Importance} - {memory.Content}");
+                            from.SendMessage($"  Created: {memory.CreatedAt:yyyy-MM-dd HH:mm} | Last accessed: {memory.LastAccessed:yyyy-MM-dd HH:mm}");
+                        }
+
+                        from.SendMessage($"Total: {memories.Count} memories");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    from.SendMessage($"Error loading memories: {ex.Message}");
+                }
+            }
+        }
+
+        #endregion
+
+        #region ViewRelationship Command
+
+        [Usage("ViewRelationship")]
+        [Description("View relationship between NPC and player. Prompts for NPC, then player name.")]
+        private static void ViewRelationship_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            if (!LLMMemoryService.IsAvailable())
+            {
+                from.SendMessage("Memory system is not available.");
+                return;
+            }
+
+            from.SendMessage("Target an LLM NPC to view their relationship...");
+            from.Target = new ViewRelationshipNPCTarget();
+        }
+
+        private class ViewRelationshipNPCTarget : Target
+        {
+            public ViewRelationshipNPCTarget() : base(15, false, TargetFlags.None)
+            {
+            }
+
+            protected override void OnTarget(Mobile from, object targeted)
+            {
+                if (targeted is LLMNpc npc)
+                {
+                    from.SendMessage($"Enter player name to view {npc.Name}'s relationship with:");
+                    from.Prompt = new ViewRelationshipPlayerPrompt(npc);
+                }
+                else
+                {
+                    from.SendMessage("That is not an LLM NPC.");
+                }
+            }
+        }
+
+        private class ViewRelationshipPlayerPrompt : Prompt
+        {
+            private LLMNpc m_NPC;
+
+            public ViewRelationshipPlayerPrompt(LLMNpc npc)
+            {
+                m_NPC = npc;
+            }
+
+            public override void OnResponse(Mobile from, string text)
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                {
+                    from.SendMessage("Invalid player name.");
+                    return;
+                }
+
+                // Load relationship asynchronously
+                LoadAndDisplayRelationship(from, m_NPC, text);
+            }
+
+            private async void LoadAndDisplayRelationship(Mobile from, LLMNpc npc, string playerName)
+            {
+                try
+                {
+                    var relationship = await LLMMemoryService.GetRelationshipAsync(npc.Name, playerName);
+
+                    from.SendMessage($"=== {npc.Name}'s Relationship with {playerName} ===");
+
+                    if (relationship == null)
+                    {
+                        from.SendMessage("No relationship found (never met).");
+                    }
+                    else
+                    {
+                        from.SendMessage($"Type: {relationship.Type}");
+                        from.SendMessage($"Score: {relationship.Score}/100");
+                        from.SendMessage($"Interactions: {relationship.InteractionCount}");
+                        from.SendMessage($"First Met: {relationship.FirstMet:yyyy-MM-dd HH:mm}");
+                        from.SendMessage($"Last Interaction: {relationship.LastInteraction:yyyy-MM-dd HH:mm}");
+
+                        if (!string.IsNullOrEmpty(relationship.Summary))
+                            from.SendMessage($"Summary: {relationship.Summary}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    from.SendMessage($"Error loading relationship: {ex.Message}");
+                }
+            }
+        }
+
+        #endregion
+
+        #region ClearMemories Command
+
+        [Usage("ClearMemories")]
+        [Description("Clear all memories for an NPC/player pair (Admin only). Prompts for NPC, then player name.")]
+        private static void ClearMemories_OnCommand(CommandEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            if (!LLMMemoryService.IsAvailable())
+            {
+                from.SendMessage("Memory system is not available.");
+                return;
+            }
+
+            from.SendMessage("WARNING: This will clear ALL memories and relationships!");
+            from.SendMessage("Target an LLM NPC...");
+            from.Target = new ClearMemoriesNPCTarget();
+        }
+
+        private class ClearMemoriesNPCTarget : Target
+        {
+            public ClearMemoriesNPCTarget() : base(15, false, TargetFlags.None)
+            {
+            }
+
+            protected override void OnTarget(Mobile from, object targeted)
+            {
+                if (targeted is LLMNpc npc)
+                {
+                    from.SendMessage($"Enter player name to clear {npc.Name}'s memories about (or 'all' for all players):");
+                    from.Prompt = new ClearMemoriesPlayerPrompt(npc);
+                }
+                else
+                {
+                    from.SendMessage("That is not an LLM NPC.");
+                }
+            }
+        }
+
+        private class ClearMemoriesPlayerPrompt : Prompt
+        {
+            private LLMNpc m_NPC;
+
+            public ClearMemoriesPlayerPrompt(LLMNpc npc)
+            {
+                m_NPC = npc;
+            }
+
+            public override void OnResponse(Mobile from, string text)
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                {
+                    from.SendMessage("Invalid input.");
+                    return;
+                }
+
+                from.SendMessage("Clear memories functionality not yet implemented (requires database implementation).");
+                from.SendMessage($"Would clear memories for: {m_NPC.Name} <-> {text}");
+            }
+        }
+
+        #endregion
+    }
+}

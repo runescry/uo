@@ -1,0 +1,506 @@
+[
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 14,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 38.733333333333334,
+    "lich_duration": 9.333333333333334,
+    "combined_score": 108.32666666666667
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 14,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 39.0,
+    "lich_duration": 9.383333333333333,
+    "combined_score": 108.10666666666667
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 14,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 39.86666666666667,
+    "lich_duration": 9.383333333333333,
+    "combined_score": 107.69333333333333
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 14,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 45.93333333333333,
+    "lich_duration": 9.65,
+    "combined_score": 106.67333333333333
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 14,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 45.666666666666664,
+    "lich_duration": 9.516666666666667,
+    "combined_score": 105.88
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 14,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 45.266666666666666,
+    "lich_duration": 9.2,
+    "combined_score": 105.78
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 14,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 47.8,
+    "lich_duration": 9.333333333333334,
+    "combined_score": 105.57333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 14,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 52.4,
+    "lich_duration": 9.116666666666667,
+    "combined_score": 103.94
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 14,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 52.333333333333336,
+    "lich_duration": 9.5,
+    "combined_score": 103.63333333333333
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 14,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 59.0,
+    "lich_duration": 9.583333333333334,
+    "combined_score": 102.41333333333333
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 14,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 58.93333333333333,
+    "lich_duration": 9.5,
+    "combined_score": 102.18
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 14,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 65.06666666666666,
+    "lich_duration": 9.366666666666667,
+    "combined_score": 100.29333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 12,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 93.93333333333334,
+    "lich_duration": 9.833333333333334,
+    "combined_score": 92.02666666666667
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 10,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 93.26666666666667,
+    "lich_duration": 9.666666666666666,
+    "combined_score": 92.02
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 12,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 91.4,
+    "lich_duration": 9.516666666666667,
+    "combined_score": 91.98666666666666
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 10,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 97.33333333333333,
+    "lich_duration": 9.7,
+    "combined_score": 91.24000000000001
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 12,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 97.8,
+    "lich_duration": 9.666666666666666,
+    "combined_score": 90.55333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 10,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 97.8,
+    "lich_duration": 9.75,
+    "combined_score": 90.43333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 12,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.93333333333334,
+    "lich_duration": 9.733333333333333,
+    "combined_score": 90.43333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 10,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 97.86666666666666,
+    "lich_duration": 9.7,
+    "combined_score": 90.42666666666668
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 12,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.0,
+    "lich_duration": 9.65,
+    "combined_score": 90.21333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 10,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 97.4,
+    "lich_duration": 9.683333333333334,
+    "combined_score": 90.16666666666667
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 10,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.0,
+    "lich_duration": 9.6,
+    "combined_score": 90.14666666666668
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 12,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 99.06666666666666,
+    "lich_duration": 9.366666666666667,
+    "combined_score": 90.12
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 12,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.13333333333334,
+    "lich_duration": 9.866666666666667,
+    "combined_score": 90.04666666666667
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 12,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.13333333333334,
+    "lich_duration": 9.4,
+    "combined_score": 90.0
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 10,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 97.93333333333334,
+    "lich_duration": 9.666666666666666,
+    "combined_score": 89.98666666666668
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 10,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.33333333333333,
+    "lich_duration": 9.716666666666667,
+    "combined_score": 89.9
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 3,
+      "casting_range": 10,
+      "health_heal_threshold": 0.5
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.73333333333333,
+    "lich_duration": 9.766666666666667,
+    "combined_score": 89.88666666666667
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 10,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.8,
+    "lich_duration": 9.883333333333333,
+    "combined_score": 89.85333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 12,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 100.33333333333333,
+    "lich_duration": 10.016666666666667,
+    "combined_score": 89.80000000000001
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 4,
+      "casting_range": 10,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 99.53333333333333,
+    "lich_duration": 9.433333333333334,
+    "combined_score": 89.79333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 12,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.66666666666667,
+    "lich_duration": 9.283333333333333,
+    "combined_score": 89.70666666666666
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 12,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 99.86666666666666,
+    "lich_duration": 9.866666666666667,
+    "combined_score": 89.61333333333334
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 5,
+      "casting_range": 12,
+      "health_heal_threshold": 0.62
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 98.33333333333333,
+    "lich_duration": 9.866666666666667,
+    "combined_score": 89.61333333333333
+  },
+  {
+    "param_combo": {
+      "min_retreat_distance": 6,
+      "casting_range": 10,
+      "health_heal_threshold": 0.7
+    },
+    "ogre_win_rate": 1.0,
+    "ogre_dmg_taken": 0.0,
+    "ogre_duration": 100.0,
+    "lich_win_rate": 1.0,
+    "lich_dmg_taken": 101.6,
+    "lich_duration": 9.966666666666667,
+    "combined_score": 89.18666666666667
+  }
+]
