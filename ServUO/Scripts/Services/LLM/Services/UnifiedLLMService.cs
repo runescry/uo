@@ -27,15 +27,15 @@ namespace Server.Services.LLM
         }
 
         private static LLMProvider defaultProvider = LLMProvider.Auto; // Smart routing by default
-        private static bool preferLocal = true; // Prefer Local for player conversations when using Auto
+        private static bool preferLocal = false; // Prefer OpenAI for better performance and natural responses
         
         static UnifiedLLMService()
         {
             Console.WriteLine("[UnifiedLLM] Static constructor START");
             
-            // Ensure Auto + preferLocal is the default (explicitly set, not just initialized)
+            // Default back to OpenAI for better performance and natural responses
             defaultProvider = LLMProvider.Auto;
-            preferLocal = true;
+            preferLocal = false; // Changed back to false - prefer OpenAI
             
             Console.WriteLine($"[UnifiedLLM] Static constructor set defaults: defaultProvider={defaultProvider}, preferLocal={preferLocal}");
             
@@ -43,7 +43,7 @@ namespace Server.Services.LLM
             Console.WriteLine($"[UnifiedLLM] ========================================");
             Console.WriteLine($"[UnifiedLLM] LLM Provider Configuration:");
             Console.WriteLine($"[UnifiedLLM]   Default Provider: {defaultProvider} (Auto=smart routing)");
-            Console.WriteLine($"[UnifiedLLM]   Prefer Local: {preferLocal}");
+            Console.WriteLine($"[UnifiedLLM]   Prefer Local: {preferLocal} (OpenAI preferred for performance)");
             Console.WriteLine($"[UnifiedLLM]   Local LLM: Available as fallback only");
             Console.WriteLine($"[UnifiedLLM] ========================================");
             Console.WriteLine("[UnifiedLLM] Static constructor END");
