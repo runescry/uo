@@ -433,93 +433,6 @@ namespace Server.Services.LLM
                 // Check if NPC is a vendor
                 bool isVendor = npc is BaseVendor;
 
-                // Build personality string
-                string personalityPrompt = NPCPersonalities.GetPersonalityPrompt(llmNpc.PersonalityType, llmNpc.SpeechPattern);
-
-                // Add contextual awareness
-                personalityPrompt += NPCPersonalities.GetContextualInfo(npc, player);
-
-                // Inject quest/waypoint context for QuestNPCs so each waypoint can guide the player properly.
-                // This is critical for step-by-step quest narration (Mentor -> Scout -> Captain -> Kill FrostGiant, etc).
-                if (npc is QuestNPC questNpc && player is PlayerMobile pm)
-                {
-                    string questContext = questNpc.BuildQuestAwareContext(pm);
-                    if (!string.IsNullOrWhiteSpace(questContext))
-                    {
-                        // QUEST CONTEXT OVERRIDES PERSONALITY - Make it the PRIMARY prompt
-                        personalityPrompt = "=== PRIMARY ROLE: QUEST NPC ===\n" + questContext;
-                        personalityPrompt += "\n\n=== CRITICAL INSTRUCTIONS ===";
-                        personalityPrompt += "\n1. You are a QUEST NPC. Your primary purpose is to guide the player through the quest.";
-                        personalityPrompt += "\n2. The quest context above defines WHO you are, WHAT you should say, and WHERE you should guide the player.";
-                        personalityPrompt += "\n3. Use the dialogue instructions in the quest context as your PRIMARY source for what to say.";
-                        personalityPrompt += "\n4. Do NOT use generic casual greetings like 'Hey there! What's up?' - instead, speak as the character described in the quest context.";
-                        personalityPrompt += "\n5. If the player has not started the quest, offer it. If they are on the quest, guide them to the next step.";
-                        personalityPrompt += "\n6. Your personality and speech pattern should match the quest context, not generic NPC behavior.";
-                        personalityPrompt += "\n7. MANDATORY LOCATION RULE: When the player asks ANY question about location ('where', 'where exactly', 'how do I find', etc.), you MUST provide the SPECIFIC location information from the quest context (direction, distance, coordinates, landmark). NEVER say 'I can't provide precise directions' - you HAVE the information, PROVIDE IT IMMEDIATELY.";
-                        personalityPrompt += "\n8. NEVER give vague poetic directions like 'follow the winding paths' or 'trust your instincts' - players need ACTIONABLE information with direction, distance, and coordinates.";
-                        personalityPrompt += "\n\n=== PERSONALITY (SECONDARY - ONLY IF NOT CONFLICTING WITH QUEST CONTEXT) ===";
-                        personalityPrompt += "\n" + NPCPersonalities.GetPersonalityPrompt(llmNpc.PersonalityType, llmNpc.SpeechPattern);
-                        personalityPrompt += "\n" + NPCPersonalities.GetContextualInfo(npc, player);
-                    }
-                }
-                // Also inject quest context for Chronicler so it can provide quest guidance
-                // BUT: If player is requesting a new quest, ignore existing quests
-                else if (npc is Chronicler chronicler && player is PlayerMobile pm2)
-                {
-                    string questContext = chronicler.BuildQuestAwareContext(pm2, message);
-                    if (!string.IsNullOrWhiteSpace(questContext))
-                    {
-                        personalityPrompt += "\n\n=== QUEST CONTEXT (PRIORITY) ===\n" + questContext;
-                        personalityPrompt += "\n\nIMPORTANT: When the player asks about where to go or what to do, provide guidance based on their current quest objective. Do NOT give generic advice about healers or other NPCs unless they are part of the quest.";
-                    }
-                }
-
-                // Load knowledge base for traditional NPCs (same as LLMNpc does)
-                // Cache it per NPC to avoid reloading on every conversation
-                // Load synchronously but quickly (limited knowledge base size now)
-                DateTime knowledgeStart = DateTime.UtcNow;
-                string formattedKnowledge = "";
-                lock (m_KnowledgeBaseCacheLock)
-                {
-                    if (!m_KnowledgeBaseCache.TryGetValue(npc, out formattedKnowledge))
-                    {
-                        // Load knowledge base synchronously but quickly (limited size now)
-                        // This is fast enough that it won't cause significant delay
-                        try
-                        {
-                            // Infer role from personality type
-                            NPCKnowledgeSystem.NPCRole role = NPCKnowledgeSystem.InferRoleFromPersonality(llmNpc.PersonalityType);
-
-                            // Get location name for context
-                            string locationName = NPCPersonalities.GetLocationName(npc);
-
-                            // Load knowledge base (role + location specific) - now limited to top entries
-                            List<LoreEntry> knowledgeBase = NPCKnowledgeSystem.GetNPCKnowledge(role, locationName, npc.Location, npc.Map);
-
-                            // Pre-format for prompts (cache it so we don't rebuild every conversation)
-                            formattedKnowledge = NPCKnowledgeSystem.FormatKnowledgeForPrompt(knowledgeBase);
-
-                            // Cache it for this NPC
-                            m_KnowledgeBaseCache[npc] = formattedKnowledge;
-
-                            long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
-                            LLMLoggingConfig.LogTiming($"Knowledge base loading: {knowledgeTime}ms");
-                            LLMLoggingConfig.LogConversationHelper($"{npc.Name} ({role}) knowledge base loaded: {knowledgeBase.Count} entries, formatted: {formattedKnowledge.Length} chars");
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"[LLMConversationHelper] Error loading knowledge base for {npc.Name}: {ex.Message}");
-                            formattedKnowledge = ""; // Use empty to avoid retrying
-                            m_KnowledgeBaseCache[npc] = "";
-                        }
-                    }
-                    else
-                    {
-                        long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
-                        LLMLoggingConfig.LogTiming($"Knowledge base (cached): {knowledgeTime}ms");
-                    }
-                }
-
                 // Load memories and relationship (if memory system is available)
                 string memoriesText = "";
                 if (LLMMemoryService.IsAvailable() && !isFirstConversation)
@@ -591,11 +504,111 @@ namespace Server.Services.LLM
                     Console.WriteLine($"[LLMConversationHelper] Memory system not available");
                 }
 
-                // Append memories to personality prompt if we have any
+                // Load knowledge base for traditional NPCs (same as LLMNpc does)
+                // Cache it per NPC to avoid reloading on every conversation
+                // Load synchronously but quickly (limited knowledge base size now)
+                DateTime knowledgeStart = DateTime.UtcNow;
+                string formattedKnowledge = "";
+                lock (m_KnowledgeBaseCacheLock)
+                {
+                    if (!m_KnowledgeBaseCache.TryGetValue(npc, out formattedKnowledge))
+                    {
+                        // Load knowledge base synchronously but quickly (limited size now)
+                        // This is fast enough that it won't cause significant delay
+                        try
+                        {
+                            // Infer role from personality type
+                            NPCKnowledgeSystem.NPCRole role = NPCKnowledgeSystem.InferRoleFromPersonality(llmNpc.PersonalityType);
+
+                            // Get location name for context
+                            string locationName = NPCPersonalities.GetLocationName(npc);
+
+                            // Load knowledge base (role + location specific) - now limited to top entries
+                            List<LoreEntry> knowledgeBase = NPCKnowledgeSystem.GetNPCKnowledge(role, locationName, npc.Location, npc.Map);
+
+                            // Pre-format for prompts (cache it so we don't rebuild every conversation)
+                            formattedKnowledge = NPCKnowledgeSystem.FormatKnowledgeForPrompt(knowledgeBase);
+
+                            // Cache it for this NPC
+                            m_KnowledgeBaseCache[npc] = formattedKnowledge;
+
+                            long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
+                            LLMLoggingConfig.LogTiming($"Knowledge base loading: {knowledgeTime}ms");
+                            LLMLoggingConfig.LogConversationHelper($"{npc.Name} ({role}) knowledge base loaded: {knowledgeBase.Count} entries, formatted: {formattedKnowledge.Length} chars");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"[LLMConversationHelper] Error loading knowledge base for {npc.Name}: {ex.Message}");
+                            formattedKnowledge = ""; // Use empty to avoid retrying
+                            m_KnowledgeBaseCache[npc] = "";
+                        }
+                    }
+                    else
+                    {
+                        long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
+                        LLMLoggingConfig.LogTiming($"Knowledge base (cached): {knowledgeTime}ms");
+                    }
+                }
+
+                // Build memory-context-first prompt for personality consistency
+                string personalityPrompt = "";
+                
+                // IMPORTANT: Memories come FIRST for conversation continuity
                 if (!string.IsNullOrEmpty(memoriesText))
                 {
+                    personalityPrompt += "=== CONVERSATION CONTEXT (PRIORITY) ===\n";
                     personalityPrompt += memoriesText;
+                    personalityPrompt += "\n\n";
+                    personalityPrompt += "CRITICAL: Maintain emotional continuity with the conversation above. ";
+                    personalityPrompt += "If the conversation is personal/emotional, stay engaged and empathetic. ";
+                    personalityPrompt += "Do NOT revert to generic innkeeper behavior mid-conversation. ";
+                    personalityPrompt += "Stay consistent with the emotional tone established.\n\n";
                 }
+                
+                // Add personality SECONDARY to conversation context
+                personalityPrompt += "=== YOUR PERSONALITY ===\n";
+                personalityPrompt += NPCPersonalities.GetPersonalityPrompt(llmNpc.PersonalityType, llmNpc.SpeechPattern);
+                
+                // Add contextual awareness
+                personalityPrompt += "\n\n=== CURRENT CONTEXT ===\n";
+                personalityPrompt += NPCPersonalities.GetContextualInfo(npc, player);
+
+                // Inject quest/waypoint context for QuestNPCs so each waypoint can guide the player properly.
+                // This is critical for step-by-step quest narration (Mentor -> Scout -> Captain -> Kill FrostGiant, etc).
+                if (npc is QuestNPC questNpc && player is PlayerMobile pm)
+                {
+                    string questContext = questNpc.BuildQuestAwareContext(pm);
+                    if (!string.IsNullOrWhiteSpace(questContext))
+                    {
+                        // QUEST CONTEXT OVERRIDES PERSONALITY - Make it the PRIMARY prompt
+                        personalityPrompt = "=== PRIMARY ROLE: QUEST NPC ===\n" + questContext;
+                        personalityPrompt += "\n\n=== CRITICAL INSTRUCTIONS ===";
+                        personalityPrompt += "\n1. You are a QUEST NPC. Your primary purpose is to guide the player through the quest.";
+                        personalityPrompt += "\n2. The quest context above defines WHO you are, WHAT you should say, and WHERE you should guide the player.";
+                        personalityPrompt += "\n3. Use the dialogue instructions in the quest context as your PRIMARY source for what to say.";
+                        personalityPrompt += "\n4. Do NOT use generic casual greetings like 'Hey there! What's up?' - instead, speak as the character described in the quest context.";
+                        personalityPrompt += "\n5. If the player has not started the quest, offer it. If they are on the quest, guide them to the next step.";
+                        personalityPrompt += "\n6. Your personality and speech pattern should match the quest context, not generic NPC behavior.";
+                        personalityPrompt += "\n7. MANDATORY LOCATION RULE: When the player asks ANY question about location ('where', 'where exactly', 'how do I find', etc.), you MUST provide the SPECIFIC location information from the quest context (direction, distance, coordinates, landmark). NEVER say 'I can't provide precise directions' - you HAVE the information, PROVIDE IT IMMEDIATELY.";
+                        personalityPrompt += "\n8. NEVER give vague poetic directions like 'follow the winding paths' or 'trust your instincts' - players need ACTIONABLE information with direction, distance, and coordinates.";
+                        personalityPrompt += "\n\n=== PERSONALITY (SECONDARY - ONLY IF NOT CONFLICTING WITH QUEST CONTEXT) ===";
+                        personalityPrompt += "\n" + NPCPersonalities.GetPersonalityPrompt(llmNpc.PersonalityType, llmNpc.SpeechPattern);
+                        personalityPrompt += "\n" + NPCPersonalities.GetContextualInfo(npc, player);
+                    }
+                }
+                // Also inject quest context for Chronicler so it can provide quest guidance
+                // BUT: If player is requesting a new quest, ignore existing quests
+                else if (npc is Chronicler chronicler && player is PlayerMobile pm2)
+                {
+                    string questContext = chronicler.BuildQuestAwareContext(pm2, message);
+                    if (!string.IsNullOrWhiteSpace(questContext))
+                    {
+                        personalityPrompt += "\n\n=== QUEST CONTEXT (PRIORITY) ===\n" + questContext;
+                        personalityPrompt += "\n\nIMPORTANT: When the player asks about where to go or what to do, provide guidance based on their current quest objective. Do NOT give generic advice about healers or other NPCs unless they are part of the quest.";
+                    }
+                }
+
+                // Memories are already added at the beginning for priority
 
                 // Call unified LLM service (pass isFirstConversation to optimize)
                 string response = await UnifiedLLMService.GetResponseAsync(

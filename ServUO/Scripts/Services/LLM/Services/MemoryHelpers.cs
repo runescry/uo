@@ -20,7 +20,9 @@ namespace Server.Services.LLM
                 return "";
 
             var sb = new StringBuilder();
-            sb.AppendLine("\n## Memories about this player:");
+            sb.AppendLine("## CONVERSATION HISTORY & EMOTIONAL CONTEXT:");
+            sb.AppendLine("CRITICAL: This conversation has emotional weight. Stay consistent with the established tone.");
+            sb.AppendLine();
             
             // Sort by importance and recency, take top N
             var topMemories = memories
@@ -30,9 +32,16 @@ namespace Server.Services.LLM
 
             foreach (var memory in topMemories)
             {
-                // Add importance indicator
+                // Add importance indicator with emotional context
                 string importanceIndicator = GetImportanceIndicator(memory.Importance);
+                string emotionalWeight = GetEmotionalWeight(memory.Importance);
+                
                 sb.AppendLine($"- {importanceIndicator} [{memory.Type}] {memory.Content}");
+                
+                if (memory.Importance >= 7)
+                {
+                    sb.AppendLine($"  EMOTIONAL WEIGHT: {emotionalWeight} - This is emotionally significant!");
+                }
                 
                 if (memory.Context != null && memory.Context.Count > 0)
                 {
@@ -63,6 +72,26 @@ namespace Server.Services.LLM
             if (importance >= 0.4f) return "📝"; // Moderately important
             if (importance >= 0.2f) return "💭"; // Slightly important
             return "•";       // Basic memory
+        }
+
+        /// <summary>
+        /// Gets emotional weight description for memory importance
+        /// </summary>
+        private static string GetEmotionalWeight(int importance)
+        {
+            switch (importance)
+            {
+                case 9: return "CRITICAL - Life/death situation or major quest";
+                case 8: return "URGENT - Serious matter requiring immediate attention";
+                case 7: return "HIGH - Emotionally significant personal matter";
+                case 6: return "IMPORTANT - Significant personal information";
+                case 5: return "MODERATE - Meaningful personal context";
+                case 4: return "NOTABLE - Worth remembering";
+                case 3: return "MINOR - Slightly interesting";
+                case 2: return "BASIC - Casual conversation";
+                case 1: return "TRIVIAL - Minimal importance";
+                default: return "UNKNOWN";
+            }
         }
 
         /// <summary>
