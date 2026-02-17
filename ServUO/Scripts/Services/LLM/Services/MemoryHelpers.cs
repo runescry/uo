@@ -227,13 +227,12 @@ namespace Server.Services.LLM
         }
 
         /// <summary>
-        /// Determines if a memory should be saved based on importance and content
+        /// Determines if a message should be saved as a memory based on importance and content
         /// </summary>
         public static bool ShouldSaveMemory(string message, string npcResponse, out int importance)
         {
             importance = 1; // Default low importance
 
-            // Check for important keywords/phrases
             var lowerMessage = message.ToLower();
             var lowerResponse = npcResponse.ToLower();
 
@@ -291,14 +290,22 @@ namespace Server.Services.LLM
                 return true;
             }
 
-            // Low importance - general conversation
-            if (message.Length > 20 && !lowerMessage.Contains("hello") && !lowerMessage.Contains("hi"))
+            // Low importance - basic interactions (but still save for relationship building)
+            if (lowerMessage.Contains("hello") || lowerMessage.Contains("hi") || lowerMessage.Contains("hey") ||
+                lowerMessage.Contains("goodbye") || lowerMessage.Contains("bye") || lowerMessage.Contains("thanks") ||
+                lowerMessage.Contains("thank you") || lowerMessage.Contains("please") || lowerMessage.Contains("help"))
             {
                 importance = 2;
                 return true;
             }
 
-            // Don't save very short or greeting messages
+            // Very low importance - any conversation (for relationship tracking)
+            if (message.Length > 5 && !lowerMessage.Contains("?") && !lowerMessage.Contains("!"))
+            {
+                importance = 1;
+                return true;
+            }
+
             return false;
         }
 
@@ -313,28 +320,39 @@ namespace Server.Services.LLM
             if (conversation == null || conversation.Count == 0)
                 return memories;
 
-            // Only process the last 10 player messages to avoid re-processing old conversations
+            // Only process the last 10 messages to avoid re-processing old conversations
             // This prevents duplicate memory extraction on every conversation
-            var recentPlayerMessages = conversation
-                .Where(msg => msg.IsPlayer)
+            var recentMessages = conversation
                 .OrderByDescending(msg => msg.Timestamp)
                 .Take(10)
                 .Reverse() // Process in chronological order
                 .ToList();
 
             // Analyze recent conversation for extractable memories
-            foreach (var msg in recentPlayerMessages)
+            // Look at pairs of player-NPC messages for better context
+            for (int i = 0; i < recentMessages.Count; i++)
             {
-                if (ShouldSaveMemory(msg.Message, "", out int importance))
+                var currentMsg = recentMessages[i];
+                var nextMsg = i < recentMessages.Count - 1 ? recentMessages[i + 1] : null;
+                
+                // Create context from current message and next message (if available)
+                string context = currentMsg.Message;
+                if (nextMsg != null)
+                {
+                    context += " [Response: " + nextMsg.Message + "]";
+                }
+
+                // Check if this should be saved as a memory
+                if (ShouldSaveMemory(context, currentMsg.IsPlayer ? "" : currentMsg.Message, out int importance))
                 {
                     var memory = new Memory
                     {
                         NpcName = npcName,
                         PlayerName = playerName,
-                        Type = DetermineMemoryType(msg.Message),
-                        Content = msg.Message,
+                        Type = DetermineMemoryType(context),
+                        Content = currentMsg.Message,
                         Importance = importance,
-                        CreatedAt = msg.Timestamp,
+                        CreatedAt = currentMsg.Timestamp,
                         LastAccessed = DateTime.UtcNow
                     };
 
