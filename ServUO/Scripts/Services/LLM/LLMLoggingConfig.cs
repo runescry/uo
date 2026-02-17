@@ -16,12 +16,12 @@ namespace ServUO.Scripts.Services.LLM
         public static bool EnableDebugLogs = false;   // Development only
         
         // Specific component logging
-        public static bool EnableUnifiedLLMLogs = false;
-        public static bool EnableLLMServiceLogs = false;
-        public static bool EnableLLMConversationHelperLogs = true;
-        public static bool EnableMemoryDatabaseLogs = false;
-        public static bool EnableNPCPersonalitiesLogs = false;
-        public static bool EnableVectorLoreSystemLogs = false;
+        public static bool EnableUnifiedLLMLogs = false;        // Provider routing (verbose)
+        public static bool EnableLLMServiceLogs = false;         // API calls (verbose)
+        public static bool EnableLLMConversationHelperLogs = false;  // Reduce to essential only
+        public static bool EnableMemoryDatabaseLogs = false;    // Database operations (verbose)
+        public static bool EnableNPCPersonalitiesLogs = false;   // Personality system (verbose)
+        public static bool EnableVectorLoreSystemLogs = false;   // Knowledge base search (verbose)
         
         /// <summary>
         /// Logs a message if the specified category is enabled

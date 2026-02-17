@@ -154,7 +154,7 @@ namespace Server.Services.LLM
         public static void ProcessConversation(Mobile npc, Mobile player, string message)
         {
             DateTime processStart = DateTime.UtcNow;
-            LLMLoggingConfig.LogConversationHelper($"ProcessConversation START - NPC: {npc?.Name ?? "null"}, Player: {player?.Name ?? "null"}, Time: {processStart:HH:mm:ss.fff}");
+            LLMLoggingConfig.LogDebug($"ProcessConversation START - NPC: {npc?.Name ?? "null"}, Player: {player?.Name ?? "null"}, Time: {processStart:HH:mm:ss.fff}");
             
             if (npc == null || player == null || string.IsNullOrWhiteSpace(message))
             {
@@ -165,7 +165,7 @@ namespace Server.Services.LLM
             DateTime beforeInterfaceCheck = DateTime.UtcNow;
             var llmNpc = npc as ILLMConversational;
             long interfaceCheckTime = (long)(DateTime.UtcNow - beforeInterfaceCheck).TotalMilliseconds;
-            LLMLoggingConfig.LogConversationHelper($"ProcessConversation - Interface check took {interfaceCheckTime}ms");
+            LLMLoggingConfig.LogTiming($"ProcessConversation - Interface check took {interfaceCheckTime}ms");
             
             if (llmNpc == null || !llmNpc.LLMConversationEnabled)
             {
@@ -173,7 +173,7 @@ namespace Server.Services.LLM
                 return;
             }
 
-            LLMLoggingConfig.LogConversationHelper($"ProcessConversation: Processing conversation for {npc.Name} from {player.Name}: '{message}'");
+            LLMLoggingConfig.LogDebug($"ProcessConversation: Processing conversation for {npc.Name} from {player.Name}: '{message}'");
 
             DateTime beforeGetState = DateTime.UtcNow;
             var state = GetOrCreateState(npc);
