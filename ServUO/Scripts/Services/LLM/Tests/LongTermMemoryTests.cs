@@ -1309,7 +1309,7 @@ namespace Server.Services.LLM.Tests
             try
             {
                 string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                string logDir = Path.Combine(Core.BaseDirectory, "Data", "LLM", "Tests");
+                string logDir = Path.Combine(Core.BaseDirectory.Directory, "Data", "LLM", "Tests");
                 Directory.CreateDirectory(logDir);
                 logFilePath = Path.Combine(logDir, $"MemoryTest_{timestamp}.log");
                 logWriter = new StreamWriter(logFilePath, false, Encoding.UTF8);

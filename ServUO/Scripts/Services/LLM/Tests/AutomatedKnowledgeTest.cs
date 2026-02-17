@@ -1681,7 +1681,7 @@ namespace Server.Services.LLM.Tests
         {
             try
             {
-                string logDir = Path.Combine(Core.BaseDirectory, "Data", "LLM", "Tests");
+                string logDir = Path.Combine(Core.BaseDirectory.Directory, "Data", "LLM", "Tests");
                 if (!Directory.Exists(logDir))
                 {
                     Directory.CreateDirectory(logDir);

@@ -18,7 +18,7 @@ namespace Server.Services.LLM
         private static Dictionary<string, LoreEntry> m_LoreByID;
         private static bool m_Initialized = false;
         private static bool m_VectorSearchEnabled = false;
-        private static readonly string EmbeddingCachePath = Path.Combine(Core.BaseDirectory, "Data", "Lore", "lore_embeddings.cache");
+        private static readonly string EmbeddingCachePath = Path.Combine(Core.BaseDirectory.Directory, "Data", "Lore", "lore_embeddings.cache");
 
         // Query embedding cache - speeds up repeated/similar queries
         private static Dictionary<string, CachedQueryEmbedding> m_QueryCache = new Dictionary<string, CachedQueryEmbedding>();

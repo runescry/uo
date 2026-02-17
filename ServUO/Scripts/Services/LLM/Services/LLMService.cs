@@ -19,7 +19,7 @@ namespace Server.Services.LLM
         private static bool initialized = false;
 
         // Configuration
-        private static readonly string ConfigPath = Path.Combine(Core.BaseDirectory, "Config", "LLM.cfg");
+        private static readonly string ConfigPath = Path.Combine(Core.BaseDirectory.Directory, "Config", "LLM.cfg");
         private static readonly string ApiEndpoint = "https://api.openai.com/v1/chat/completions";
         private static readonly string DefaultModel = "gpt-4o-mini"; // Cheaper and faster model
         private static readonly int MaxTokens = 150; // Keep responses concise

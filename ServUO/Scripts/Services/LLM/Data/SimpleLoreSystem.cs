@@ -30,7 +30,7 @@ namespace Server.Services.LLM
             try
             {
                 m_AllLore = new List<LoreEntry>();
-                string loreDir = Path.Combine(Core.BaseDirectory, "Data", "Lore");
+                string loreDir = Path.Combine(Core.BaseDirectory.Directory, "Data", "Lore");
 
                 // Load from multiple domain-specific JSON files for better organization
                 // Vystia custom world lore files

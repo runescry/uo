@@ -552,7 +552,7 @@ namespace Server.Services.LLM.Tests
 
         private static void InitializeLogFile()
         {
-            string logDir = Path.Combine(Core.BaseDirectory, "Data", "LLM", "Tests");
+            string logDir = Path.Combine(Core.BaseDirectory.Directory, "Data", "LLM", "Tests");
             Directory.CreateDirectory(logDir);
 
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");

@@ -39,7 +39,7 @@ namespace Server.Services.LLM
         public static void Configure()
         {
             // Load configuration file manually (matching LocalLLMService pattern)
-            string configPath = System.IO.Path.Combine(Core.BaseDirectory, "Config", "LLMMemory.cfg");
+            string configPath = System.IO.Path.Combine(Core.BaseDirectory.Directory, "Config", "LLMMemory.cfg");
             
             if (System.IO.File.Exists(configPath))
             {

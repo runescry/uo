@@ -21,7 +21,7 @@ namespace Server.Services.LLM
         private static string modelName = "phi3:mini";
 
         // Configuration
-        private static readonly string ConfigPath = Path.Combine(Core.BaseDirectory, "Config", "LocalLLM.cfg");
+        private static readonly string ConfigPath = Path.Combine(Core.BaseDirectory.Directory, "Config", "LocalLLM.cfg");
 
         public static void Initialize()
         {

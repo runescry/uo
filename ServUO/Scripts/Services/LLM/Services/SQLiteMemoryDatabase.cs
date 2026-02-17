@@ -40,7 +40,7 @@ namespace Server.Services.LLM
                 // Default database path if not specified
                 if (string.IsNullOrEmpty(LLMMemoryConfig.DatabaseConnectionString))
                 {
-                    var dataDir = Path.Combine(Core.BaseDirectory, "Data");
+                    var dataDir = Path.Combine(Core.BaseDirectory.Directory, "Data");
                     if (!Directory.Exists(dataDir))
                         Directory.CreateDirectory(dataDir);
                     
