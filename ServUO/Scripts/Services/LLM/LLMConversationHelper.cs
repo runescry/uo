@@ -9,6 +9,7 @@ using Server.Items;
 using Server.Mobiles;
 using Server.Network;
 using Server.Custom.VystiaClasses.Quests;
+using Server.Services.LLM.Core;
 
 namespace Server.Services.LLM
 {
@@ -541,8 +542,9 @@ namespace Server.Services.LLM
                     isFirstConversation // Pass flag to skip embeddings on first conversation
                 );
 
-                // Check for vendor intent commands in the response
-                VendorAction vendorAction = DetectVendorIntent(response);
+                // Check for vendor intent commands in the response using structured parser
+                VendorActionResponse vendorActionResponse = VendorActionParser.Parse(response);
+                VendorAction vendorAction = vendorActionResponse.Action;
 
                 // Add NPC response to history
                 ConversationContext.AddNpcMessage(npc, player, response);
@@ -642,41 +644,36 @@ namespace Server.Services.LLM
             }
         }
 
+        
         /// <summary>
-        /// Vendor action types
-        /// </summary>
-        private enum VendorAction
-        {
-            None,
-            Buy,
-            Sell
-        }
-
-        /// <summary>
-        /// Detects vendor intent commands in LLM response
-        /// </summary>
-        private static VendorAction DetectVendorIntent(string response)
-        {
-            if (string.IsNullOrEmpty(response))
-                return VendorAction.None;
-
-            string lower = response.ToLower();
-
-            if (lower.Contains("[vendor_buy]") || lower.Contains("(vendor_buy)"))
-                return VendorAction.Buy;
-            if (lower.Contains("[vendor_sell]") || lower.Contains("(vendor_sell)"))
-                return VendorAction.Sell;
-
-            return VendorAction.None;
-        }
-
-        /// <summary>
-        /// Strips vendor command markers and meta-commentary from response text
+        /// Strips vendor command markers, JSON blocks, and meta-commentary from response text
         /// </summary>
         private static string StripVendorCommands(string response)
         {
             if (string.IsNullOrEmpty(response))
                 return response;
+
+            // Strip structured JSON blocks (both fenced and bare)
+            string jsonBlock = VendorActionParser.ExtractJsonBlock(response);
+            if (jsonBlock != null)
+            {
+                // Remove the JSON block from the original response
+                // Try both fenced and bare patterns
+                var fencedMatch = System.Text.RegularExpressions.Regex.Match(
+                    response,
+                    @"```(?:json)?\s*\{.*?\}\s*```",
+                    System.Text.RegularExpressions.RegexOptions.Singleline);
+                
+                if (fencedMatch.Success)
+                {
+                    response = response.Replace(fencedMatch.Value, "").Trim();
+                }
+                else
+                {
+                    // Remove bare JSON object
+                    response = response.Replace(jsonBlock, "").Trim();
+                }
+            }
 
             // Strip markdown headers
             int markdownIndex = response.IndexOf("###", StringComparison.OrdinalIgnoreCase);
