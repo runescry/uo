@@ -6,15 +6,14 @@ using Server;
 namespace Server.Services.LLM
 {
     /// <summary>
-    /// Unified LLM service that routes requests to OpenAI or Local LLM
+    /// Unified LLM service that routes requests to OpenAI
     /// </summary>
     public static class UnifiedLLMService
     {
         public enum LLMProvider
         {
-            Auto,      // Automatically choose based on context
-            OpenAI,    // Always use OpenAI (cloud, high quality)
-            Local      // Always use local LLM (fast, free)
+            Auto,    // Smart routing (now OpenAI-only)
+            OpenAI   // Direct OpenAI
         }
 
         public enum RequestType
@@ -33,18 +32,17 @@ namespace Server.Services.LLM
         {
             Console.WriteLine("[UnifiedLLM] Static constructor START");
             
-            // Default back to OpenAI for better performance and natural responses
+            // Simplified: OpenAI-only architecture
             defaultProvider = LLMProvider.Auto;
-            preferLocal = false; // Changed back to false - prefer OpenAI
+            preferLocal = false; // Deprecated - OpenAI only
             
-            Console.WriteLine($"[UnifiedLLM] Static constructor set defaults: defaultProvider={defaultProvider}, preferLocal={preferLocal}");
+            Console.WriteLine($"[UnifiedLLM] Static constructor set defaults: defaultProvider={defaultProvider}");
             
-            // Log default configuration on first access
+            // Log configuration
             Console.WriteLine($"[UnifiedLLM] ========================================");
             Console.WriteLine($"[UnifiedLLM] LLM Provider Configuration:");
-            Console.WriteLine($"[UnifiedLLM]   Default Provider: {defaultProvider} (Auto=smart routing)");
-            Console.WriteLine($"[UnifiedLLM]   Prefer Local: {preferLocal} (OpenAI preferred for performance)");
-            Console.WriteLine($"[UnifiedLLM]   Local LLM: Available as fallback only");
+            Console.WriteLine($"[UnifiedLLM]   Provider: OpenAI-only (simplified architecture)");
+            Console.WriteLine($"[UnifiedLLM]   RAG Strategy: Proactive only (no reactive)");
             Console.WriteLine($"[UnifiedLLM] ========================================");
             Console.WriteLine("[UnifiedLLM] Static constructor END");
         }
@@ -94,6 +92,7 @@ namespace Server.Services.LLM
                 switch (selectedProvider)
                 {
                     case LLMProvider.OpenAI:
+                    case LLMProvider.Auto: // Auto now routes to OpenAI
                         // Use proactive RAG with OpenAI
                         // For quest generation, use higher token limit
                         if (requestType == RequestType.QuestDialogue)
@@ -103,106 +102,14 @@ namespace Server.Services.LLM
                         }
                         return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
 
-                    case LLMProvider.Local:
-                        // Add timeout for LocalLLM to prevent long waits
-                        var localTask = LocalLLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
-                        var timeoutTask = Task.Delay(TimeSpan.FromSeconds(5)); // 5 second timeout
-                        
-                        var completedTask = await Task.WhenAny(localTask, timeoutTask);
-                        
-                        if (completedTask == timeoutTask)
-                        {
-                            Console.WriteLine("[UnifiedLLM] LocalLLM timeout (5s) - falling back to OpenAI");
-                            // Fall back to OpenAI for faster response
-                            if (requestType == RequestType.QuestDialogue)
-                            {
-                                return await LLMService.GetResponseAsyncForQuest(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge);
-                            }
-                            return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
-                        }
-                        
-                        return await localTask;
-
                     default:
                         return "Error: Invalid provider selection.";
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[UnifiedLLM] Error with {selectedProvider} in GetResponseAsync (Proactive): {ex.Message}");
-
-                // Fallback to other provider if one fails (parity with legacy overload)
-                try
-                {
-                    if (selectedProvider == LLMProvider.Local)
-                    {
-                        Console.WriteLine("[UnifiedLLM] Falling back to OpenAI (Proactive)...");
-
-                        if (requestType == RequestType.QuestDialogue)
-                        {
-                            return await LLMService.GetResponseAsyncForQuest(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge);
-                        }
-
-                        return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
-                    }
-
-                    Console.WriteLine("[UnifiedLLM] Falling back to Local LLM (Proactive)...");
-                    return await LocalLLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
-                }
-                catch (Exception fallbackEx)
-                {
-                    Console.WriteLine($"[UnifiedLLM] Fallback failed in GetResponseAsync (Proactive): {fallbackEx.Message}");
-                    return "I seem to be having trouble thinking right now...";
-                }
-            }
-        }
-
-        /// <summary>
-        /// Get LLM response with REACTIVE RAG (legacy - per-query searches)
-        /// </summary>
-        public static async Task<string> GetResponseAsync(
-            string npcName,
-            string npcPersonality,
-            List<ConversationMessage> conversationHistory,
-            string playerMessage,
-            string playerName,
-            RequestType requestType = RequestType.PlayerConversation,
-            LLMProvider providerOverride = LLMProvider.Auto,
-            bool isVendor = false)
-        {
-            LLMProvider selectedProvider = ChooseProvider(requestType, providerOverride);
-
-            Console.WriteLine($"[UnifiedLLM] Request type: {requestType}, Using provider: {selectedProvider}");
-
-            try
-            {
-                switch (selectedProvider)
-                {
-                    case LLMProvider.OpenAI:
-                        return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, isVendor);
-
-                    case LLMProvider.Local:
-                        return await LocalLLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, isVendor);
-
-                    default:
-                        return "Error: Invalid provider selection.";
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"[UnifiedLLM] Error with {selectedProvider}: {ex.Message}");
-
-                // Fallback to other provider if one fails
-                if (selectedProvider == LLMProvider.Local)
-                {
-                    Console.WriteLine("[UnifiedLLM] Falling back to OpenAI...");
-                    return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, isVendor);
-                }
-                else
-                {
-                    Console.WriteLine("[UnifiedLLM] Falling back to Local LLM...");
-                    return await LocalLLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, isVendor);
-                }
+                Console.WriteLine($"[UnifiedLLM] Error with OpenAI in GetResponseAsync (Proactive): {ex.Message}");
+                return "I seem to be having trouble thinking right now...";
             }
         }
 
@@ -211,47 +118,11 @@ namespace Server.Services.LLM
         /// </summary>
         private static LLMProvider ChooseProvider(RequestType requestType, LLMProvider providerOverride)
         {
-            // Explicit override
-            if (providerOverride != LLMProvider.Auto)
-            {
-                Console.WriteLine($"[UnifiedLLM] Using explicit provider override: {providerOverride}");
-                return providerOverride;
-            }
-
-            // Use default if not auto (defaultProvider is OpenAI)
-            if (defaultProvider != LLMProvider.Auto)
-            {
-                Console.WriteLine($"[UnifiedLLM] Using default provider: {defaultProvider} (preferLocal={preferLocal})");
-                return defaultProvider;
-            }
-
-            // Smart routing based on request type (only if defaultProvider is Auto)
-            LLMProvider selected;
-            switch (requestType)
-            {
-                case RequestType.PlayerConversation:
-                    // Player conversations - use OpenAI for quality (unless preferLocal is true)
-                    selected = preferLocal ? LLMProvider.Local : LLMProvider.OpenAI;
-                    Console.WriteLine($"[UnifiedLLM] PlayerConversation routing: preferLocal={preferLocal}, selected={selected}");
-                    return selected;
-
-                case RequestType.QuestDialogue:
-                    // Important dialogue - use OpenAI for best quality
-                    Console.WriteLine($"[UnifiedLLM] QuestDialogue routing: Using OpenAI");
-                    return LLMProvider.OpenAI;
-
-                case RequestType.NPCDecision:
-                case RequestType.SimpleGreeting:
-                case RequestType.AutonomousBehavior:
-                    // Fast decisions - always use local
-                    Console.WriteLine($"[UnifiedLLM] {requestType} routing: Using Local for speed");
-                    return LLMProvider.Local;
-
-                default:
-                    selected = preferLocal ? LLMProvider.Local : LLMProvider.OpenAI;
-                    Console.WriteLine($"[UnifiedLLM] Default routing for {requestType}: preferLocal={preferLocal}, selected={selected}");
-                    return selected;
-            }
+            // All providers route to OpenAI now - simplified architecture
+            LLMProvider selectedProvider = providerOverride == LLMProvider.Auto ? LLMProvider.Auto : providerOverride;
+            
+            Console.WriteLine($"[UnifiedLLM] Routing to OpenAI (provider: {selectedProvider})");
+            return LLMProvider.OpenAI;
         }
 
         /// <summary>
@@ -280,18 +151,16 @@ namespace Server.Services.LLM
 
             if (e.Length == 0)
             {
-                from.SendMessage("=== LLM Configuration ===");
+                from.SendMessage("=== LLM Configuration (OpenAI Only) ===");
                 from.SendMessage("Usage: [LLMConfig <setting> <value>");
                 from.SendMessage("");
                 from.SendMessage("Settings:");
-                from.SendMessage("  provider <auto|openai|local> - Set default provider");
-                from.SendMessage("  preferlocal <true|false> - Prefer local LLM when auto");
-                from.SendMessage("  test <openai|local> - Test a provider");
+                from.SendMessage("  provider <auto|openai> - Set default provider");
+                from.SendMessage("  test - Test OpenAI provider");
                 from.SendMessage("");
                 from.SendMessage("Examples:");
-                from.SendMessage("  [LLMConfig provider local");
-                from.SendMessage("  [LLMConfig preferlocal true");
-                from.SendMessage("  [LLMConfig test local");
+                from.SendMessage("  [LLMConfig provider openai");
+                from.SendMessage("  [LLMConfig test");
                 return;
             }
 
@@ -302,7 +171,7 @@ namespace Server.Services.LLM
                 case "provider":
                     if (e.Length < 2)
                     {
-                        from.SendMessage("Usage: [LLMConfig provider <auto|openai|local>");
+                        from.SendMessage("Usage: [LLMConfig provider <auto|openai>");
                         return;
                     }
 
@@ -311,45 +180,21 @@ namespace Server.Services.LLM
                     {
                         case "auto":
                             UnifiedLLMService.SetDefaultProvider(UnifiedLLMService.LLMProvider.Auto);
-                            from.SendMessage("Default provider set to: Auto (smart routing)");
+                            from.SendMessage("Default provider set to: Auto (routes to OpenAI)");
                             break;
                         case "openai":
                             UnifiedLLMService.SetDefaultProvider(UnifiedLLMService.LLMProvider.OpenAI);
                             from.SendMessage("Default provider set to: OpenAI");
                             break;
-                        case "local":
-                            UnifiedLLMService.SetDefaultProvider(UnifiedLLMService.LLMProvider.Local);
-                            from.SendMessage("Default provider set to: Local LLM");
-                            break;
                         default:
-                            from.SendMessage("Invalid provider. Use: auto, openai, or local");
+                            from.SendMessage("Invalid provider. Use: auto or openai");
                             break;
                     }
-                    break;
-
-                case "preferlocal":
-                    if (e.Length < 2)
-                    {
-                        from.SendMessage("Usage: [LLMConfig preferlocal <true|false>");
-                        return;
-                    }
-
-                    string preferStr = e.GetString(1).ToLower();
-                    bool prefer = preferStr == "true" || preferStr == "1" || preferStr == "yes";
-                    UnifiedLLMService.SetPreferLocal(prefer);
-                    from.SendMessage($"Prefer local LLM set to: {prefer}");
                     break;
 
                 case "test":
-                    if (e.Length < 2)
-                    {
-                        from.SendMessage("Usage: [LLMConfig test <openai|local>");
-                        return;
-                    }
-
-                    string testProvider = e.GetString(1).ToLower();
-                    from.SendMessage($"Testing {testProvider} provider...");
-                    TestProvider(from, testProvider);
+                    from.SendMessage("Testing OpenAI provider...");
+                    TestProvider(from, "openai");
                     break;
 
                 default:
@@ -365,33 +210,15 @@ namespace Server.Services.LLM
             {
                 string testPrompt = "You are a test NPC.";
                 string testMessage = "Hello, please respond with a brief greeting.";
-                string response;
-
-                if (provider == "openai")
-                {
-                    response = await LLMService.GetResponseAsync(
-                        "Test NPC",
-                        testPrompt,
-                        new List<ConversationMessage>(),
-                        testMessage,
-                        from.Name
-                    );
-                }
-                else if (provider == "local")
-                {
-                    response = await LocalLLMService.GetResponseAsync(
-                        "Test NPC",
-                        testPrompt,
-                        new List<ConversationMessage>(),
-                        testMessage,
-                        from.Name
-                    );
-                }
-                else
-                {
-                    from.SendMessage("Invalid provider. Use: openai or local");
-                    return;
-                }
+                
+                from.SendMessage("Testing OpenAI provider...");
+                string response = await LLMService.GetResponseAsync(
+                    "Test NPC",
+                    testPrompt,
+                    new List<ConversationMessage>(),
+                    testMessage,
+                    from.Name
+                );
 
                 from.SendMessage($"Test successful! Response: {response}");
             }
