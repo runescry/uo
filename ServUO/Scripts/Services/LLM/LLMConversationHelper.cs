@@ -136,7 +136,7 @@ namespace Server.Services.LLM
                     m_KnowledgeBaseCache[npc] = formattedKnowledge;
 
                     long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
-                    Console.WriteLine($"[LLMConversationHelper] [PROACTIVE] Knowledge base loaded for {npc.Name} ({role}): {knowledgeBase.Count} entries in {knowledgeTime}ms");
+                    LLMLoggingConfig.LogConversationHelper($"[PROACTIVE] Knowledge base loaded for {npc.Name} ({role}): {knowledgeBase.Count} entries in {knowledgeTime}ms");
                 }
                 catch (Exception ex)
                 {
@@ -153,7 +153,7 @@ namespace Server.Services.LLM
         public static void ProcessConversation(Mobile npc, Mobile player, string message)
         {
             DateTime processStart = DateTime.UtcNow;
-            Console.WriteLine($"[LLMConversationHelper] ProcessConversation START - NPC: {npc?.Name ?? "null"}, Player: {player?.Name ?? "null"}, Time: {processStart:HH:mm:ss.fff}");
+            LLMLoggingConfig.LogConversationHelper($"ProcessConversation START - NPC: {npc?.Name ?? "null"}, Player: {player?.Name ?? "null"}, Time: {processStart:HH:mm:ss.fff}");
             
             if (npc == null || player == null || string.IsNullOrWhiteSpace(message))
             {
@@ -502,8 +502,8 @@ namespace Server.Services.LLM
                             m_KnowledgeBaseCache[npc] = formattedKnowledge;
 
                             long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
-                            Console.WriteLine($"[LLMConversationHelper] [TIMING] Knowledge base loading: {knowledgeTime}ms");
-                            Console.WriteLine($"[LLMConversationHelper] {npc.Name} ({role}) knowledge base loaded: {knowledgeBase.Count} entries, formatted: {formattedKnowledge.Length} chars");
+                            LLMLoggingConfig.LogTiming($"Knowledge base loading: {knowledgeTime}ms");
+                            LLMLoggingConfig.LogConversationHelper($"{npc.Name} ({role}) knowledge base loaded: {knowledgeBase.Count} entries, formatted: {formattedKnowledge.Length} chars");
                         }
                         catch (Exception ex)
                         {
@@ -515,7 +515,7 @@ namespace Server.Services.LLM
                     else
                     {
                         long knowledgeTime = (long)(DateTime.UtcNow - knowledgeStart).TotalMilliseconds;
-                        Console.WriteLine($"[LLMConversationHelper] [TIMING] Knowledge base (cached): {knowledgeTime}ms");
+                        LLMLoggingConfig.LogTiming($"Knowledge base (cached): {knowledgeTime}ms");
                     }
                 }
 
@@ -532,7 +532,7 @@ namespace Server.Services.LLM
                         var relationship = await LLMMemoryService.GetRelationshipAsync(npc.Serial, player.Name);
                         long memoryLoadTime = (long)(DateTime.UtcNow - memoryLoadStart).TotalMilliseconds;
 
-                        Console.WriteLine($"[LLMConversationHelper] Memory query result: {memories.Count} memories found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
+                        LLMLoggingConfig.LogMemory($"Memory query result: {memories.Count} memories found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
 
                         // Verify all loaded memories belong to this NPC (defensive check)
                         foreach (var mem in memories)
@@ -547,7 +547,7 @@ namespace Server.Services.LLM
                         // This allows relationship progression from the start
                         if (relationship != null && relationship.NpcSerial == npc.Serial)
                         {
-                            Console.WriteLine($"[LLMConversationHelper] Loading relationship for NPC {npc.Serial} and player {player.Name}");
+                            LLMLoggingConfig.LogMemory($"Loading relationship for NPC {npc.Serial} and player {player.Name}");
                             
                             memoriesText = MemoryHelpers.FormatMemoriesForPrompt(memories, maxMemories: 5);
                             memoriesText += MemoryHelpers.FormatRelationshipForPrompt(relationship);
@@ -563,7 +563,7 @@ namespace Server.Services.LLM
                                 memoriesText += $"\n## Suggested Greeting Style:\n{relationshipGreeting}";
                             }
                             
-                            Console.WriteLine($"[LLMConversationHelper] Loaded {memories.Count} memories + relationship for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
+                            LLMLoggingConfig.LogMemory($"Loaded {memories.Count} memories + relationship for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
                         }
                         else if (relationship != null && relationship.NpcSerial != npc.Serial)
                         {
@@ -572,12 +572,12 @@ namespace Server.Services.LLM
                         else if (memories.Count > 0)
                         {
                             // Only load memories if we have them but no relationship (edge case)
-                            Console.WriteLine($"[LLMConversationHelper] Loaded {memories.Count} memories (no relationship) for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
+                            LLMLoggingConfig.LogMemory($"Loaded {memories.Count} memories (no relationship) for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
                             memoriesText = MemoryHelpers.FormatMemoriesForPrompt(memories, maxMemories: 5);
                         }
                         else
                         {
-                            Console.WriteLine($"[LLMConversationHelper] No memories or relationship found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} (load time: {memoryLoadTime}ms)");
+                            LLMLoggingConfig.LogMemory($"No memories or relationship found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} (load time: {memoryLoadTime}ms)");
                         }
                     }
                     catch (Exception ex)
@@ -630,11 +630,11 @@ namespace Server.Services.LLM
 
                         if (memories.Count > 0)
                         {
-                            Console.WriteLine($"[LLMConversationHelper] Extracted {memories.Count} memories from conversation with {player.Name}");
+                            LLMLoggingConfig.LogMemory($"Extracted {memories.Count} memories from conversation with {player.Name}");
                             foreach (var memory in memories)
                             {
                                 await LLMMemoryService.SaveMemoryAsync(npc.Serial, npc.Name, player.Name, memory);
-                                Console.WriteLine($"[LLMConversationHelper] Saved memory: {memory.Content.Substring(0, Math.Min(50, memory.Content.Length))}... (Importance: {memory.Importance})");
+                                LLMLoggingConfig.LogMemory($"Saved memory: {memory.Content.Substring(0, Math.Min(50, memory.Content.Length))}... (Importance: {memory.Importance})");
                             }
 
                             // Update relationship based on conversation
