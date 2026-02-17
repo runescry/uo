@@ -563,6 +563,9 @@ namespace Server.Services.LLM
                     personalityPrompt += "If the conversation is personal/emotional, stay engaged and empathetic. ";
                     personalityPrompt += "Do NOT revert to generic innkeeper behavior mid-conversation. ";
                     personalityPrompt += "Stay consistent with the emotional tone established.\n\n";
+                    personalityPrompt += "CONTEXTUAL FOLLOW-UP: If player returns after discussing important matters (quests, missing family, dangerous enemies), ";
+                    personalityPrompt += "acknowledge the ongoing situation and ask about progress. Show continued interest and concern. ";
+                    personalityPrompt += "Example: 'Are you still pursuing the matter we discussed?' or 'Any news about your missing family?'\n\n";
                 }
                 
                 // Add personality SECONDARY to conversation context
