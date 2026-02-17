@@ -532,6 +532,8 @@ namespace Server.Services.LLM
                         var relationship = await LLMMemoryService.GetRelationshipAsync(npc.Serial, player.Name);
                         long memoryLoadTime = (long)(DateTime.UtcNow - memoryLoadStart).TotalMilliseconds;
 
+                        Console.WriteLine($"[LLMConversationHelper] Memory query result: {memories.Count} memories found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
+
                         // Verify all loaded memories belong to this NPC (defensive check)
                         foreach (var mem in memories)
                         {
@@ -541,53 +543,41 @@ namespace Server.Services.LLM
                             }
                         }
 
-                        // Only load relationship if we have memories - prevents stale relationships from previous NPC instances
-                        // A relationship without memories suggests the NPC was respawned/recreated
-                        if (memories.Count > 0)
+                        // Always load relationship if available, even if no memories yet
+                        // This allows relationship progression from the start
+                        if (relationship != null && relationship.NpcSerial == npc.Serial)
                         {
-                            Console.WriteLine($"[LLMConversationHelper] Loaded {memories.Count} memories for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
-
+                            Console.WriteLine($"[LLMConversationHelper] Loading relationship for NPC {npc.Serial} and player {player.Name}");
+                            
                             memoriesText = MemoryHelpers.FormatMemoriesForPrompt(memories, maxMemories: 5);
-
-                            // Only include relationship if we have actual memories (prevents stale data from previous NPC instances)
-                            // Also verify relationship belongs to this NPC
-                            if (relationship != null && relationship.NpcSerial == npc.Serial)
+                            memoriesText += MemoryHelpers.FormatRelationshipForPrompt(relationship);
+                            
+                            // Add relationship-based greeting hint for the LLM
+                            if (npc is ILLMConversational conversationalNpc)
                             {
-                                memoriesText += MemoryHelpers.FormatRelationshipForPrompt(relationship);
-                                
-                                // Add relationship-based greeting hint for the LLM
-                                if (npc is ILLMConversational conversationalNpc)
-                                {
-                                    string relationshipGreeting = NPCPersonalities.GetRelationshipBasedGreeting(
-                                        conversationalNpc.PersonalityType, 
-                                        relationship.Type, 
-                                        relationship.Score
-                                    );
-                                    memoriesText += $"\n## Suggested Greeting Style:\n{relationshipGreeting}";
-                                }
+                                string relationshipGreeting = NPCPersonalities.GetRelationshipBasedGreeting(
+                                    conversationalNpc.PersonalityType, 
+                                    relationship.Type, 
+                                    relationship.Score
+                                );
+                                memoriesText += $"\n## Suggested Greeting Style:\n{relationshipGreeting}";
                             }
-                            else if (relationship != null && relationship.NpcSerial != npc.Serial)
-                            {
-                                Console.WriteLine($"[LLMConversationHelper] ERROR: Relationship with serial {relationship.NpcSerial} loaded for NPC {npc.Serial} - relationship belongs to different NPC!");
-                            }
+                            
+                            Console.WriteLine($"[LLMConversationHelper] Loaded {memories.Count} memories + relationship for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
                         }
-                        else if (relationship != null)
+                        else if (relationship != null && relationship.NpcSerial != npc.Serial)
                         {
-                            // Relationship exists but no memories - this is likely a stale relationship from a previous NPC instance
-                            // Don't load it for a freshly spawned NPC
-                            // Also verify it's not from a different NPC serial
-                            if (relationship.NpcSerial != npc.Serial)
-                            {
-                                Console.WriteLine($"[LLMConversationHelper] ERROR: Relationship with serial {relationship.NpcSerial} found for NPC {npc.Serial} - ignoring (belongs to different NPC)");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"[LLMConversationHelper] Found relationship but no memories for NPC {npc.Serial} - ignoring stale relationship (NPC may have been respawned)");
-                            }
+                            Console.WriteLine($"[LLMConversationHelper] ERROR: Relationship with serial {relationship.NpcSerial} loaded for NPC {npc.Serial} - relationship belongs to different NPC!");
+                        }
+                        else if (memories.Count > 0)
+                        {
+                            // Only load memories if we have them but no relationship (edge case)
+                            Console.WriteLine($"[LLMConversationHelper] Loaded {memories.Count} memories (no relationship) for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} in {memoryLoadTime}ms");
+                            memoriesText = MemoryHelpers.FormatMemoriesForPrompt(memories, maxMemories: 5);
                         }
                         else
                         {
-                            Console.WriteLine($"[LLMConversationHelper] No memories found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} (load time: {memoryLoadTime}ms)");
+                            Console.WriteLine($"[LLMConversationHelper] No memories or relationship found for NPC {npc.Serial} (Name: {npc.Name}) and player {player.Name} (load time: {memoryLoadTime}ms)");
                         }
                     }
                     catch (Exception ex)
