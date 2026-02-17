@@ -428,7 +428,7 @@ namespace Server.Services.LLM
 
                 // Get conversation history (now includes the message we just added)
                 List<ConversationMessage> history = ConversationContext.GetHistory(npc, player);
-                Console.WriteLine($"[LLMConversationHelper] Conversation history length: {history.Count}, isFirstConversation: {isFirstConversation}");
+                LLMLoggingConfig.LogDebug($"[LLMConversationHelper] Conversation history length: {history.Count}, isFirstConversation: {isFirstConversation}");
 
                 // Check if NPC is a vendor
                 bool isVendor = npc is BaseVendor;

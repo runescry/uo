@@ -433,25 +433,25 @@ namespace Server.Services.LLM
         {
             try
             {
-                Console.WriteLine($"[LLMService] ExtractResponseContent - JSON length: {json.Length}");
+                LLMLoggingConfig.LogDebug($"[LLMService] ExtractResponseContent - JSON length: {json.Length}");
 
                 // Look for "content": "..." in the choices array (note the space after colon)
                 int contentIndex = json.IndexOf("\"content\":");
-                Console.WriteLine($"[LLMService] contentIndex: {contentIndex}");
+                LLMLoggingConfig.LogDebug($"[LLMService] contentIndex: {contentIndex}");
 
                 if (contentIndex == -1)
                 {
-                    Console.WriteLine($"[LLMService] Content field not found in JSON");
+                    LLMLoggingConfig.LogDebug($"[LLMService] Content field not found in JSON");
                     return "...";
                 }
 
                 // Find the opening quote after "content":
                 int quoteStart = json.IndexOf("\"", contentIndex + 10);
-                Console.WriteLine($"[LLMService] quoteStart: {quoteStart}");
+                LLMLoggingConfig.LogDebug($"[LLMService] quoteStart: {quoteStart}");
 
                 if (quoteStart == -1)
                 {
-                    Console.WriteLine($"[LLMService] Opening quote not found");
+                    LLMLoggingConfig.LogDebug($"[LLMService] Opening quote not found");
                     return "...";
                 }
 
@@ -532,16 +532,16 @@ namespace Server.Services.LLM
                     endIndex++;
                 }
 
-                Console.WriteLine($"[LLMService] startIndex: {startIndex}, endIndex: {endIndex}");
+                LLMLoggingConfig.LogDebug($"[LLMService] startIndex: {startIndex}, endIndex: {endIndex}");
 
                 if (endIndex <= startIndex)
                 {
-                    Console.WriteLine($"[LLMService] Invalid string bounds");
+                    LLMLoggingConfig.LogDebug($"[LLMService] Invalid string bounds");
                     return "...";
                 }
 
                 string content = json.Substring(startIndex, endIndex - startIndex);
-                Console.WriteLine($"[LLMService] Extracted raw content (length: {content.Length}): '{content.Substring(0, Math.Min(200, content.Length))}...'");
+                LLMLoggingConfig.LogDebug($"[LLMService] Extracted raw content (length: {content.Length}): '{content.Substring(0, Math.Min(200, content.Length))}...'");
 
                 // Unescape basic sequences
                 content = content.Replace("\\n", "\n");
@@ -551,13 +551,13 @@ namespace Server.Services.LLM
                 content = content.Replace("\\\\", "\\");
 
                 string trimmed = content.Trim();
-                Console.WriteLine($"[LLMService] Final trimmed content (length: {trimmed.Length})");
+                LLMLoggingConfig.LogDebug($"[LLMService] Final trimmed content (length: {trimmed.Length})");
 
                 return trimmed;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[LLMService] ExtractResponseContent exception: {ex.Message}");
+                LLMLoggingConfig.LogError($"[LLMService] ExtractResponseContent exception: {ex.Message}");
                 return "...";
             }
         }
