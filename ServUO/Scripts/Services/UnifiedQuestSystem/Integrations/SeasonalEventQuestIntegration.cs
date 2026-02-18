@@ -6,12 +6,38 @@ using Server.Items;
 using Server.Engines.SeasonalEvents;
 using Server.Services.UnifiedQuestSystem;
 
+/// <summary>
+/// Integration bridge between Unified Quest System and Seasonal Events System
+/// Connects quests with seasonal events and limited-time content
+/// 
+/// Features:
+/// - Automatic quest generation for active seasonal events
+/// - Limited-time quests with expiration handling
+/// - Collection, combat, and exploration quest types for events
+/// - Event-specific rewards and commemorative items
+/// - Support for all seasonal event types (Treasures of Tokuno, etc.)
+/// - Event lifecycle management (start, progress, end)
+/// - Real-time progress tracking during seasonal activities
+/// 
+/// Usage:
+/// - Automatically generates quests when seasonal events start
+/// - Tracks player participation and progress in seasonal activities
+/// - Provides appropriate rewards based on event type and participation
+/// - Handles quest expiration when events end
+/// - Integrates with unified quest progress tracking system
+/// 
+/// Dependencies:
+/// - Server.Engines.SeasonalEvents.SeasonalEventSystem
+/// - Server.Services.UnifiedQuestSystem.UnifiedProgressTracker
+/// - Server.Services.UnifiedQuestSystem.UnifiedQuestData
+/// 
+/// Events:
+/// - OnSeasonalEventStarted: Generates quests for new seasonal events
+/// - OnSeasonalEventEnded: Handles quest expiration and cleanup
+/// - OnSeasonalEventProgress: Updates quest progress for event activities
+/// </summary>
 namespace Server.Services.UnifiedQuestSystem.Integrations
 {
-    /// <summary>
-    /// Integration bridge between Unified Quest System and Seasonal Events System
-    /// Connects quests with seasonal events and limited-time content
-    /// </summary>
     public static class SeasonalEventQuestIntegration
     {
         private static readonly Dictionary<PlayerMobile, List<SeasonalEventQuestLink>> s_ActiveLinks;
