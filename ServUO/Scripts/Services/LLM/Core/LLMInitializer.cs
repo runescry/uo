@@ -3,6 +3,7 @@ using Server;
 using Server.Commands;
 using Server.Services.LLM.Tests;
 using Server.Services.LLM.Commands;
+using Server.Mobiles;
 
 namespace Server.Services.LLM
 {
@@ -60,6 +61,9 @@ namespace Server.Services.LLM
             MemoryTestCommand.Initialize();
             LocationTestCommand.Initialize();
             ClearMemoryCommand.Initialize();
+
+            // Phase 6: Quest System Initialization
+            ChroniclerInitializer.Initialize();
 
             // Log personality re-inference summary (if any occurred during world load)
             // Note: This count is accumulated during NPC deserialization (OnAfterLoad)
