@@ -1,12 +1,13 @@
 using System;
 using Server;
 using Server.Commands;
+using Server.Mobiles;
 using Server.Services.LLM.Tests;
 using Server.Services.LLM.Commands;
-using Server.Mobiles;
 using Server.Services.QuestPersistence;
 using Server.Services.QuestJournal;
 using Server.Services.QuestVariety;
+using Server.Services.MultiplayerQuests;
 
 namespace Server.Services.LLM
 {
@@ -69,8 +70,8 @@ namespace Server.Services.LLM
             // Phase 6: Quest System Initialization
             ChroniclerInitializer.Initialize();
 
-            // Phase 8: Quest Variety System
-            QuestVarietyInitializer.Initialize();
+            // Phase 9: Multiplayer Quest System
+            MultiplayerQuestInitializer.Initialize();
 
             // Phase 8: Quest Journal System
             QuestJournalInitializer.Initialize();
