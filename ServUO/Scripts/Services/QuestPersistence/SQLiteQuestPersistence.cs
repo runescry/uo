@@ -30,7 +30,7 @@ namespace Server.Services.QuestPersistence
 
             try
             {
-                var dataDir = Path.Combine(Core.BaseDirectory.Directory, "Data");
+                var dataDir = Path.Combine(Core.BaseDirectory, "Data");
                 m_DatabasePath = Path.Combine(dataDir, "unified_quests.db");
 
                 m_ConnectionString = $"Data Source={m_DatabasePath};Version=3;";
@@ -135,22 +135,22 @@ namespace Server.Services.QuestPersistence
                             {
                                 var questData = new QuestData
                                 {
-                                    QuestId = reader.GetInt32("quest_id"),
-                                    QuestType = reader.GetString("quest_type"),
-                                    Title = reader.GetString("title"),
-                                    Description = reader.GetString("description"),
-                                    RequiredClass = Enum.TryParse<PlayerClassTypeV2>(reader.GetString("required_class"), out var classType) ? classType : PlayerClassTypeV2.None,
-                                    Tier = Enum.TryParse<QuestTier>(reader.GetString("tier"), out var tier) ? tier : QuestTier.Initiation,
-                                    PrerequisiteQuestId = reader.GetInt32("prerequisite_quest_id"),
-                                    CreatedAt = DateTime.Parse(reader.GetString("created_at")),
-                                    LastAccessed = DateTime.Parse(reader.GetString("last_accessed")),
-                                    CompletedAt = reader.IsDBNull("completed_at") ? (DateTime?)null : DateTime.Parse(reader.GetString("completed_at")),
-                                    IsActive = reader.GetBoolean("is_active"),
-                                    IsCompleted = reader.GetBoolean("is_completed"),
-                                    Metadata = reader.IsDBNull("metadata") ? null : JsonConvert.DeserializeObject<Dictionary<string, object>>(reader.GetString("metadata")),
-                                    Objectives = reader.IsDBNull("objectives") ? null : JsonConvert.DeserializeObject<Dictionary<string, int>>(reader.GetString("objectives")),
-                                    Progress = reader.IsDBNull("progress") ? null : JsonConvert.DeserializeObject<Dictionary<string, object>>(reader.GetString("progress")),
-                                    Tags = reader.IsDBNull("tags") ? null : JsonConvert.DeserializeObject<List<string>>(reader.GetString("tags"))
+                                    QuestId = Convert.ToInt32(reader["quest_id"]),
+                                    QuestType = reader["quest_type"].ToString(),
+                                    Title = reader["title"].ToString(),
+                                    Description = reader["description"].ToString(),
+                                    RequiredClass = Enum.TryParse<PlayerClassTypeV2>(reader["required_class"].ToString(), out var classType) ? classType : PlayerClassTypeV2.None,
+                                    Tier = Enum.TryParse<QuestTier>(reader["tier"].ToString(), out var tier) ? tier : QuestTier.Initiation,
+                                    PrerequisiteQuestId = Convert.ToInt32(reader["prerequisite_quest_id"]),
+                                    CreatedAt = DateTime.Parse(reader["created_at"].ToString()),
+                                    LastAccessed = DateTime.Parse(reader["last_accessed"].ToString()),
+                                    CompletedAt = reader["completed_at"] == DBNull.Value ? (DateTime?)null : DateTime.Parse(reader["completed_at"].ToString()),
+                                    IsActive = Convert.ToBoolean(reader["is_active"]),
+                                    IsCompleted = Convert.ToBoolean(reader["is_completed"]),
+                                    Metadata = reader["metadata"] == DBNull.Value ? null : JsonConvert.DeserializeObject<Dictionary<string, object>>(reader["metadata"].ToString()),
+                                    Objectives = reader["objectives"] == DBNull.Value ? null : JsonConvert.DeserializeObject<Dictionary<string, int>>(reader["objectives"].ToString()),
+                                    Progress = reader["progress"] == DBNull.Value ? null : JsonConvert.DeserializeObject<Dictionary<string, object>>(reader["progress"].ToString()),
+                                    Tags = reader["tags"] == DBNull.Value ? null : JsonConvert.DeserializeObject<List<string>>(reader["tags"].ToString())
                                 };
 
                                 quests.Add(questData);
@@ -185,7 +185,7 @@ namespace Server.Services.QuestPersistence
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@playerSerial", player.Serial);
-                        cmd.Parameters.AddWithValue("@questId", questId);
+                        cmd.Parameters.AddWithValue("@questId", questId.ToString());
 
                         await cmd.ExecuteNonQueryAsync();
                     }
@@ -215,7 +215,7 @@ namespace Server.Services.QuestPersistence
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@playerSerial", player.Serial);
-                        cmd.Parameters.AddWithValue("@questId", questId);
+                        cmd.Parameters.AddWithValue("@questId", questId.ToString());
                         cmd.Parameters.AddWithValue("@progress", JsonConvert.SerializeObject(progress));
                         cmd.Parameters.AddWithValue("@lastAccessed", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -246,7 +246,7 @@ namespace Server.Services.QuestPersistence
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@playerSerial", player.Serial);
-                        cmd.Parameters.AddWithValue("@questId", questId);
+                        cmd.Parameters.AddWithValue("@questId", questId.ToString());
 
                         var result = await cmd.ExecuteScalarAsync();
                         if (result != null && result != DBNull.Value)
@@ -255,6 +255,7 @@ namespace Server.Services.QuestPersistence
                         }
                     }
                 }
+            return null;
             }
             catch (Exception ex)
             {
@@ -281,7 +282,7 @@ namespace Server.Services.QuestPersistence
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@playerSerial", player.Serial);
-                        cmd.Parameters.AddWithValue("@questId", questId);
+                        cmd.Parameters.AddWithValue("@questId", questId.ToString());
                         cmd.Parameters.AddWithValue("@completedAt", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
                         cmd.Parameters.AddWithValue("@lastAccessed", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -312,7 +313,7 @@ namespace Server.Services.QuestPersistence
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@playerSerial", player.Serial);
-                        cmd.Parameters.AddWithValue("@questId", questId);
+                        cmd.Parameters.AddWithValue("@questId", questId.ToString());
 
                         var result = await cmd.ExecuteScalarAsync();
                         return result != null && Convert.ToBoolean(result);
@@ -351,7 +352,7 @@ namespace Server.Services.QuestPersistence
                         {
                             while (await reader.ReadAsync())
                             {
-                                questIds.Add(reader.GetInt32("quest_id"));
+                                questIds.Add(Convert.ToInt32(reader["quest_id"]));
                             }
                         }
 
@@ -391,7 +392,7 @@ namespace Server.Services.QuestPersistence
                         {
                             while (await reader.ReadAsync())
                             {
-                                questIds.Add(reader.GetInt32("quest_id"));
+                                questIds.Add(Convert.ToInt32(reader["quest_id"]));
                             }
                         }
 

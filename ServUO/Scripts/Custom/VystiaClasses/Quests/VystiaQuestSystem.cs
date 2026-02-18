@@ -553,9 +553,9 @@ namespace Server.Custom.VystiaClasses.Quests
         /// <summary>
         /// Convert progress to dictionary for serialization
         /// </summary>
-        public Dictionary<string, int> ToDictionary()
+        public Dictionary<string, object> ToDictionary()
         {
-            return new Dictionary<string, int>(m_Progress);
+            return m_Progress.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value);
         }
 
         public void Serialize(GenericWriter writer)

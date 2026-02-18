@@ -6,7 +6,7 @@ using Server;
 using Server.Mobiles;
 using Server.Custom.VystiaClasses.Quests;
 using Server.Custom.VystiaClasses;
-using Server.Services.LLM;
+using Server.Custom.VystiaClasses.Quests.Generation;
 
 namespace Server.Services.QuestPersistence
 {
@@ -219,14 +219,14 @@ namespace Server.Services.QuestPersistence
         {
             try
             {
-                var attachment = GeneratedQuestInstanceAttachment.GetAttachment(player);
+                var attachment = GeneratedQuestInstanceAttachment.Get(player);
                 if (attachment == null)
                 {
                     result.AddWarning("No Dynamic quest instance attachment found");
                     return;
                 }
 
-                var instances = attachment.GetInstances();
+                var instances = attachment.Instances;
                 foreach (var instance in instances)
                 {
                     if (instance.QuestId <= 0)
@@ -256,22 +256,8 @@ namespace Server.Services.QuestPersistence
             {
                 // Traditional quests use ServUO's built-in quest system
                 // We can only do basic validation here
-                var questContext = Server.Engines.Quests.QuestSystem.GetQuestContext(player);
-                
-                if (questContext == null)
-                {
-                    result.AddWarning("No traditional quest context found");
-                    return;
-                }
-
-                // Check if traditional quests are tracked in unified persistence
-                var unifiedQuests = await QuestPersistenceManager.LoadQuestsAsync(player);
-                var traditionalQuests = unifiedQuests.Where(q => q.QuestType == "Traditional").ToList();
-
-                if (traditionalQuests.Count == 0)
-                {
-                    result.AddWarning("Traditional quests not found in unified persistence");
-                }
+                // TODO: Implement proper traditional quest validation when API is available
+                result.AddWarning("Traditional quest validation not yet implemented");
             }
             catch (Exception ex)
             {
@@ -429,7 +415,7 @@ namespace Server.Services.QuestPersistence
             try
             {
                 var attachment = GeneratedQuestInstanceAttachment.GetOrCreate(player);
-                var instances = attachment.GetInstances().ToList();
+                var instances = attachment.Instances;
                 var unifiedDynamicQuests = unifiedQuests.Where(q => q.QuestType == "Dynamic").ToList();
 
                 // Sync dynamic quest instances
