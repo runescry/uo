@@ -504,7 +504,7 @@ namespace Server.Services.MultiplayerQuests
                     TotalMessages = s_QuestCommunications.Values.Sum(list => list.Count),
                     TotalSubscriptions = s_PlayerSubscriptions.Values.Sum(list => list.Count),
                     MessageTypes = new Dictionary<QuestMessageType, int>(),
-                    AverageMessagesPerQuest = 0,
+                    AverageMessagesPerQuest = s_QuestCommunications.Count > 0 ? (double)s_QuestCommunications.Values.Sum(list => list.Count) / s_QuestCommunications.Count : 0.0,
                     LastMessage = DateTime.UtcNow
                 };
 
@@ -515,11 +515,6 @@ namespace Server.Services.MultiplayerQuests
                     {
                         stats.MessageTypes[message.Type] = stats.MessageTypes.GetValueOrDefault(message.Type, 0) + 1;
                     }
-                }
-
-                if (stats.TotalMessages > 0 && s_QuestCommunications.Count > 0)
-                {
-                    stats.AverageMessagesPerQuest = (double)stats.TotalMessages / s_QuestCommunications.Count;
                 }
 
                 return stats;

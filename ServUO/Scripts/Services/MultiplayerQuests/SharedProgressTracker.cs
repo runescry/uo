@@ -536,16 +536,27 @@ namespace Server.Services.MultiplayerQuests
                     TotalTrackedQuests = s_QuestProgress.Count,
                     ActiveQuests = s_QuestProgress.Values.Count(p => !p.IsCompleted),
                     CompletedQuests = s_QuestProgress.Values.Count(p => p.IsCompleted),
+                    CompletionRate = s_QuestProgress.Count > 0 ? (double)s_QuestProgress.Values.Count(p => p.IsCompleted) / s_QuestProgress.Count : 0.0,
                     TotalParticipants = s_PlayerQuestProgress.Values.Sum(list => list.Count),
                     LastActivity = DateTime.UtcNow
                 };
 
-                if (stats.TotalTrackedQuests > 0)
-                {
-                    stats.CompletionRate = (double)stats.CompletedQuests / stats.TotalTrackedQuests;
-                }
-
                 return stats;
+            }
+        }
+
+        /// <summary>
+        /// Reset progress statistics
+        /// </summary>
+        public static void ResetStatistics()
+        {
+            lock (s_Lock)
+            {
+                // Clear all progress tracking
+                s_QuestProgress.Clear();
+                s_PlayerQuestProgress.Clear();
+                
+                Console.WriteLine("[SharedProgressTracker] Statistics reset - all progress tracking cleared");
             }
         }
     }

@@ -4,12 +4,16 @@ using System.Linq;
 using Server.Mobiles;
 using Server.Custom.VystiaClasses.Quests;
 using Server.Custom.VystiaClasses.Quests.Generation;
+using Server.Services.UnifiedQuestSystem;
 
 namespace Server.Services.QuestVariety
 {
     /// <summary>
     /// Quest similarity metrics for content variety tracking
+    /// [OBSOLETE] Use UnifiedQuestData.SimilarityData instead
+    /// This class is maintained for backward compatibility during migration
     /// </summary>
+    [Obsolete("Use UnifiedQuestData.SimilarityData instead. This class will be removed in a future version.")]
     public class QuestSimilarityMetrics
     {
         public string QuestId { get; set; }
@@ -23,6 +27,39 @@ namespace Server.Services.QuestVariety
         public DateTime GeneratedAt { get; set; }
         public double SimilarityScore { get; set; }
         public Dictionary<string, double> FeatureVector { get; set; }
+
+        // Migration methods
+        /// <summary>
+        /// Convert to UnifiedQuestData format
+        /// </summary>
+        public UnifiedQuestData ToUnified()
+        {
+            return DataMigrationUtilities.MigrateToUnified(this);
+        }
+
+        /// <summary>
+        /// Create from UnifiedQuestData
+        /// </summary>
+        public static QuestSimilarityMetrics FromUnified(UnifiedQuestData unifiedData)
+        {
+            if (unifiedData?.SimilarityData == null)
+                return null;
+
+            return new QuestSimilarityMetrics
+            {
+                QuestId = unifiedData.QuestId.ToString(),
+                Title = unifiedData.Title,
+                Description = unifiedData.Description,
+                Theme = unifiedData.Theme,
+                Location = unifiedData.Location,
+                QuestType = unifiedData.Type.ToString(),
+                Objectives = unifiedData.CooperativeObjectives?.Select(o => o.Description).ToList() ?? new List<string>(),
+                Rewards = new List<string>(), // Would need to extract from unified data
+                GeneratedAt = unifiedData.CreatedAt,
+                SimilarityScore = unifiedData.SimilarityData.SimilarityScore,
+                FeatureVector = unifiedData.SimilarityData.FeatureVector
+            };
+        }
     }
 
     /// <summary>

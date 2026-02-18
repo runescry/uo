@@ -4,6 +4,7 @@ using System.Linq;
 using Server.Mobiles;
 using Server.Custom.VystiaClasses.Quests;
 using Server.Engines.PartySystem;
+using Server.Engines.Quests;
 
 namespace Server.Services.MultiplayerQuests
 {

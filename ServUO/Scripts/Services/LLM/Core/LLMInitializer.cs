@@ -8,6 +8,7 @@ using Server.Services.QuestPersistence;
 using Server.Services.QuestJournal;
 using Server.Services.QuestVariety;
 using Server.Services.MultiplayerQuests;
+using Server.Services.UnifiedQuestSystem;
 
 namespace Server.Services.LLM
 {
@@ -70,8 +71,8 @@ namespace Server.Services.LLM
             // Phase 6: Quest System Initialization
             ChroniclerInitializer.Initialize();
 
-            // Phase 9: Multiplayer Quest System
-            MultiplayerQuestInitializer.Initialize();
+            // Phase 10: Unified Quest System
+            UnifiedQuestInitializer.Initialize();
 
             // Phase 8: Quest Journal System
             QuestJournalInitializer.Initialize();

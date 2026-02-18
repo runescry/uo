@@ -4,12 +4,16 @@ using System.Linq;
 using Server.Mobiles;
 using Server.Custom.VystiaClasses.Quests;
 using Server.Engines.PartySystem;
+using Server.Services.UnifiedQuestSystem;
 
 namespace Server.Services.MultiplayerQuests
 {
     /// <summary>
     /// Quest objective information for validation
+    /// [OBSOLETE] Use UnifiedQuestData.CooperativeObjectives instead
+    /// This class is maintained for backward compatibility during migration
     /// </summary>
+    [Obsolete("Use UnifiedQuestData.CooperativeObjectives instead. This class will be removed in a future version.")]
     public class QuestObjectiveInfo
     {
         public string ObjectiveId { get; set; }
@@ -19,6 +23,63 @@ namespace Server.Services.MultiplayerQuests
         public bool RequiresSoloCompletion { get; set; }
         public string Type { get; set; }
         public Dictionary<string, object> Metadata { get; set; }
+
+        // Migration methods
+        /// <summary>
+        /// Convert to UnifiedQuestData CooperativeObjectiveData format
+        /// </summary>
+        public CooperativeObjectiveData ToCooperativeObjective()
+        {
+            return new CooperativeObjectiveData
+            {
+                ObjectiveId = this.ObjectiveId,
+                Description = this.Description,
+                RequiredCount = this.RequiredCount,
+                Type = ParseObjectiveType(this.Type),
+                CurrentProgress = 0,
+                IsCompleted = false
+            };
+        }
+
+        /// <summary>
+        /// Create from UnifiedQuestData CooperativeObjectiveData
+        /// </summary>
+        public static QuestObjectiveInfo FromCooperativeObjective(CooperativeObjectiveData cooperativeObjective)
+        {
+            if (cooperativeObjective == null)
+                return null;
+
+            return new QuestObjectiveInfo
+            {
+                ObjectiveId = cooperativeObjective.ObjectiveId,
+                Description = cooperativeObjective.Description,
+                RequiredCount = cooperativeObjective.RequiredCount,
+                Type = cooperativeObjective.Type.ToString(),
+                Metadata = cooperativeObjective.RoleContributions?.ToDictionary(kvp => kvp.Key, (object)kvp.Value) ?? new Dictionary<string, object>()
+            };
+        }
+
+        private static CooperativeObjectiveType ParseObjectiveType(string type)
+        {
+            if (string.IsNullOrEmpty(type))
+                return CooperativeObjectiveType.IndividualContribution;
+
+            switch (type.ToLower())
+            {
+                case "individual":
+                return CooperativeObjectiveType.IndividualContribution;
+                case "group":
+                    return CooperativeObjectiveType.GroupContribution;
+                case "role":
+                    return CooperativeObjectiveType.RoleBased;
+                case "all":
+                    return CooperativeObjectiveType.AllMembers;
+                case "leader":
+                    return CooperativeObjectiveType.LeaderOnly;
+                default:
+                    return CooperativeObjectiveType.IndividualContribution;
+            }
+        }
     }
 
     /// <summary>
@@ -37,7 +98,10 @@ namespace Server.Services.MultiplayerQuests
 
     /// <summary>
     /// Shared quest information for multiplayer parties
+    /// [OBSOLETE] Use UnifiedQuestData instead
+    /// This class is maintained for backward compatibility during migration
     /// </summary>
+    [Obsolete("Use UnifiedQuestData instead. This class will be removed in a future version.")]
     public class SharedQuestInfo
     {
         public int QuestId { get; set; }
@@ -52,6 +116,74 @@ namespace Server.Services.MultiplayerQuests
         public List<PartyMemberProgress> MemberProgress { get; set; }
         public List<CooperativeObjective> CooperativeObjectives { get; set; }
         public SharedQuestSettings Settings { get; set; }
+
+        // Migration methods
+        /// <summary>
+        /// Convert to UnifiedQuestData format
+        /// </summary>
+        public UnifiedQuestData ToUnified()
+        {
+            return DataMigrationUtilities.MigrateToUnified(this);
+        }
+
+        /// <summary>
+        /// Create from UnifiedQuestData
+        /// </summary>
+        public static SharedQuestInfo FromUnified(UnifiedQuestData unifiedData)
+        {
+            if (unifiedData?.MultiplayerData == null)
+                return null;
+
+            var sharedQuestInfo = new SharedQuestInfo
+            {
+                QuestId = unifiedData.QuestId,
+                QuestTitle = unifiedData.Title,
+                QuestDescription = unifiedData.Description,
+                SharedAt = unifiedData.CreatedAt,
+                SharedBy = unifiedData.Creator,
+                Party = unifiedData.Party,
+                IsActive = unifiedData.Status == QuestStatus.Active,
+                IsCompleted = unifiedData.Status == QuestStatus.Completed,
+                CompletedAt = unifiedData.ProgressData.CompletedAt ?? DateTime.MinValue,
+                Settings = unifiedData.MultiplayerData.Settings
+            };
+
+            // Convert cooperative objectives
+            if (unifiedData.CooperativeObjectives != null)
+            {
+                sharedQuestInfo.CooperativeObjectives = unifiedData.CooperativeObjectives.Select(obj => new CooperativeObjective
+                {
+                    ObjectiveId = obj.ObjectiveId,
+                    Description = obj.Description,
+                    Type = obj.Type,
+                    RequiredCount = obj.RequiredCount,
+                    CurrentProgress = obj.CurrentProgress,
+                    IsCompleted = obj.IsCompleted,
+                    CompletedAt = obj.CompletedAt,
+                    RequiredRoles = obj.RequiredRoles?.ToList() ?? new List<string>(),
+                    RoleContributions = obj.RoleContributions?.ToDictionary(kvp => kvp.Key, kvp => kvp.Value) ?? new Dictionary<string, int>()
+                }).ToList();
+            }
+
+            // Convert member progress
+            if (unifiedData.PlayerProgress != null)
+            {
+                sharedQuestInfo.MemberProgress = unifiedData.PlayerProgress.Values.Select(progress => new PartyMemberProgress
+                {
+                    Member = progress.Player,
+                    JoinedAt = progress.AcceptedAt,
+                    HasAccepted = progress.HasAccepted,
+                    AcceptedAt = progress.AcceptedAt,
+                    HasCompleted = progress.HasCompleted,
+                    CompletedAt = progress.CompletedAt,
+                    ContributionScore = progress.ContributionScore,
+                    ObjectiveProgress = progress.ObjectiveProgress?.ToDictionary(kvp => kvp.Key, kvp => kvp.Value) ?? new Dictionary<string, int>(),
+                    ActionsPerformed = progress.ActionsPerformed?.ToList() ?? new List<string>()
+                }).ToList();
+            }
+
+            return sharedQuestInfo;
+        }
     }
 
     /// <summary>

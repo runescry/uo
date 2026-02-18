@@ -569,15 +569,26 @@ namespace Server.Services.MultiplayerQuests
                     TotalSharedQuests = s_SharedQuests.Count,
                     CompletedQuests = s_SharedQuests.Values.Count(q => q.IsCompleted),
                     ActiveQuests = s_SharedQuests.Values.Count(q => q.IsActive),
+                    CompletionRate = s_SharedQuests.Count > 0 ? (double)s_SharedQuests.Values.Count(q => q.IsCompleted) / s_SharedQuests.Count : 0.0,
                     LastActivity = DateTime.UtcNow
                 };
 
-                if (stats.TotalSharedQuests > 0)
-                {
-                    stats.CompletionRate = (double)stats.CompletedQuests / stats.TotalSharedQuests;
-                }
-
                 return stats;
+            }
+        }
+
+        /// <summary>
+        /// Reset sharing statistics
+        /// </summary>
+        public static void ResetStatistics()
+        {
+            lock (s_Lock)
+            {
+                // Clear all shared quests
+                s_SharedQuests.Clear();
+                s_PlayerSharedQuests.Clear();
+                
+                Console.WriteLine("[PartyQuestSharing] Statistics reset - all shared quests cleared");
             }
         }
     }

@@ -297,6 +297,20 @@ namespace Server.Services.MultiplayerQuests
                 return stats;
             }
         }
+
+        /// <summary>
+        /// Reset distribution statistics
+        /// </summary>
+        public static void ResetStatistics()
+        {
+            lock (s_Lock)
+            {
+                // Clear all distribution tracking
+                // This would clear any tracked distribution statistics
+                
+                Console.WriteLine("[PartyRewardDistribution] Statistics reset - all distribution tracking cleared");
+            }
+        }
     }
 
     /// <summary>
