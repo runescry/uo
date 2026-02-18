@@ -33,6 +33,9 @@ namespace Server.Services.UnifiedQuestSystem
             // Initialize unified progress tracking system
             UnifiedProgressTracker.Initialize();
 
+            // Initialize LLM-Variety integration system
+            LLMVarietyIntegration.Initialize();
+
             // Register administrative commands
             CommandSystem.Register("UnifiedQuest", AccessLevel.Administrator, UnifiedQuest_OnCommand);
             CommandSystem.Register("UQ", AccessLevel.Administrator, UnifiedQuest_OnCommand);
@@ -109,6 +112,14 @@ namespace Server.Services.UnifiedQuestSystem
                     SynchronizeProgress(from, e);
                     break;
 
+                case "integrate":
+                    IntegrateQuest(from, e);
+                    break;
+
+                case "variety":
+                    ShowVarietyStats(from);
+                    break;
+
                 default:
                     ShowUnifiedQuestHelp(from);
                     break;
@@ -176,6 +187,8 @@ namespace Server.Services.UnifiedQuestSystem
             from.SendMessage("  validation - Show validation statistics");
             from.SendMessage("  progress  - Show progress tracking statistics");
             from.SendMessage("  sync      - Synchronize progress data");
+            from.SendMessage("  integrate - Integrate quest with variety system");
+            from.SendMessage("  variety   - Show variety system statistics");
             from.SendMessage("");
             from.SendMessage("Player commands:");
             from.SendMessage("  QuestInfo - Show unified quest information");
@@ -544,6 +557,114 @@ namespace Server.Services.UnifiedQuestSystem
                     break;
             }
         }
+        /// <summary>
+        /// Integrate quest with variety system
+        /// </summary>
+        private static void IntegrateQuest(Mobile from, CommandEventArgs e)
+        {
+            if (e.Length < 2)
+            {
+                from.SendMessage("Usage: [UnifiedQuest integrate <questId> [strategy]");
+                from.SendMessage("Strategies: automatic, manual, quality, variety");
+                return;
+            }
+
+            if (!int.TryParse(e.GetString(1), out int questId))
+            {
+                from.SendMessage("Invalid quest ID format.");
+                return;
+            }
+
+            string strategyName = e.Length > 2 ? e.GetString(2).ToLower() : "automatic";
+
+            try
+            {
+                from.SendMessage($"Integrating quest {questId} with variety system using {strategyName} strategy...");
+                
+                // Create a test quest for integration
+                var testQuest = new UnifiedQuestData
+                {
+                    QuestId = questId,
+                    Title = "Test Quest for Integration",
+                    Description = "A test quest to demonstrate LLM-Variety integration",
+                    Owner = from as PlayerMobile,
+                    Creator = from as PlayerMobile
+                };
+
+                var integrationContext = new IntegrationContext
+                {
+                    StrategyName = strategyName,
+                    Requester = from as PlayerMobile,
+                    AutoEnhance = true,
+                    Priority = IntegrationPriority.Normal
+                };
+
+                var result = LLMVarietyIntegration.ProcessGeneratedQuest(testQuest, integrationContext);
+                
+                if (result.Success)
+                {
+                    from.SendMessage($"Integration successful!");
+                    from.SendMessage($"Quality Improved: {result.QualityImproved}");
+                    from.SendMessage($"Variety Enhanced: {result.VarietyEnhanced}");
+                    
+                    if (result.Messages.Count > 0)
+                    {
+                        from.SendMessage("Integration Messages:");
+                        foreach (var message in result.Messages.Take(5))
+                        {
+                            from.SendMessage($"  {message}");
+                        }
+                    }
+                }
+                else
+                {
+                    from.SendMessage($"Integration failed: {result.Error}");
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Integration error: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Show variety system statistics
+        /// </summary>
+        private static void ShowVarietyStats(Mobile from)
+        {
+            try
+            {
+                var stats = LLMVarietyIntegration.GetStatistics();
+                
+                from.SendMessage("=== LLM-VARIETY INTEGRATION STATISTICS ===");
+                from.SendMessage($"Total Integrations: {stats.TotalIntegrations}");
+                from.SendMessage($"Quality Improvements: {stats.QualityImprovements}");
+                from.SendMessage($"Variety Enhancements: {stats.VarietyEnhancements}");
+                from.SendMessage($"Success Rate: {stats.SuccessRate:P1}");
+                from.SendMessage($"Registered Strategies: {stats.RegisteredStrategies}");
+                from.SendMessage($"Last Integration: {stats.LastIntegration:yyyy-MM-dd HH:mm:ss}");
+                from.SendMessage("");
+                from.SendMessage("Available Strategies:");
+                
+                var strategies = new[] { "automatic", "manual", "quality", "variety" };
+                foreach (var strategy in strategies)
+                {
+                    from.SendMessage($"  • {strategy}");
+                }
+                
+                from.SendMessage("");
+                from.SendMessage("Integration Benefits:");
+                from.SendMessage("  • Automatic quest quality improvement");
+                from.SendMessage("  • Enhanced variety and uniqueness");
+                from.SendMessage("  • Reduced quest repetition");
+                from.SendMessage("  • Seamless LLM-Variety system integration");
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Error retrieving variety stats: {ex.Message}");
+            }
+        }
+
         private static void ShowPlayerQuestInfo(PlayerMobile player)
         {
             player.SendMessage("=== UNIFIED QUEST INFORMATION ===");

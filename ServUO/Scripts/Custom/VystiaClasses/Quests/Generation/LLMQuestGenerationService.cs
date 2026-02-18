@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Server;
 using Server.Mobiles;
 using Server.Custom.VystiaClasses.Gumps;
 using Server.Services.LLM;
 using Server.Custom.VystiaClasses;
 using Server.Custom.VystiaClasses.Quests;
+using Server.Services.UnifiedQuestSystem;
 using Server.Engines.PartySystem;
 using Server.Services.QuestVariety;
+using Server.Services.LLMVarietyIntegration;
 
 namespace Server.Custom.VystiaClasses.Quests.Generation
 {
@@ -99,6 +99,45 @@ namespace Server.Custom.VystiaClasses.Quests.Generation
             if (quest != null)
             {
                 QuestVarietyTracker.TrackQuest(quest);
+
+                // Integrate with unified LLM-Variety system
+                try
+                {
+                    // Convert to UnifiedQuestData for integration
+                    var unifiedQuest = DataMigrationUtilities.MigrateToUnified(quest);
+                    if (unifiedQuest != null)
+                    {
+                        // Process through LLM-Variety integration
+                        var integrationContext = new IntegrationContext
+                        {
+                            StrategyName = "automatic",
+                            Requester = owner,
+                            AutoEnhance = true,
+                            Priority = IntegrationPriority.Normal
+                        };
+
+                        var integrationResult = LLMVarietyIntegration.ProcessGeneratedQuest(unifiedQuest, integrationContext);
+                        
+                        if (integrationResult.Success)
+                        {
+                            Console.WriteLine($"[LLMQuestGeneration] Quest {questId} successfully integrated with variety system");
+                            
+                            if (integrationResult.QualityImproved)
+                                Console.WriteLine($"[LLMQuestGeneration] Quest quality improved through integration");
+                            
+                            if (integrationResult.VarietyEnhanced)
+                                Console.WriteLine($"[LLMQuestGeneration] Quest variety enhanced through integration");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"[LLMQuestGeneration] Integration failed: {integrationResult.Error}");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[LLMQuestGeneration] Error during LLM-Variety integration: {ex.Message}");
+                }
             }
 
             // Track instance for cleanup (temporary spawns)
