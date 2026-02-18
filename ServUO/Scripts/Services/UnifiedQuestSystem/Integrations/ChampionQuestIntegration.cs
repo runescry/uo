@@ -6,12 +6,35 @@ using Server.Items;
 using Server.Engines.CannedEvil;
 using Server.Services.UnifiedQuestSystem;
 
-namespace Server.Services.UnifiedQuestSystem.Integrations
-{
-    /// <summary>
-    /// Integration bridge between Unified Quest System and Champion System
-    /// Connects quests with champion spawns and progression
-    /// </summary>
+/// <summary>
+/// Integration bridge between Unified Quest System and Champion System
+/// Connects quests with champion spawns and progression
+/// 
+/// Features:
+/// - Automatic quest generation for champion spawns
+/// - Real-time tracking of player participation and kills
+/// - Level progression quests for champion advancement
+/// - Champion-specific rewards based on type and difficulty
+/// - Support for all champion types (Abyss, Arachnid, Cold Blood, etc.)
+/// - Multi-player support for champion events
+/// - Event-driven architecture for real-time updates
+/// 
+/// Usage:
+/// - Automatically generates quests when champion spawns are created
+/// - Tracks player kills and level changes in real-time
+/// - Provides appropriate rewards based on champion type and level
+/// - Integrates with unified quest progress tracking system
+/// 
+/// Dependencies:
+/// - Server.Engines.CannedEvil.ChampionSystem
+/// - Server.Services.UnifiedQuestSystem.UnifiedProgressTracker
+/// - Server.Services.UnifiedQuestSystem.UnifiedQuestData
+/// 
+/// Events:
+/// - OnChampionSpawnCreated: Generates quests for new champion spawns
+/// - OnChampionSpawnKilled: Updates quest progress for champion kills
+/// - OnChampionLevelChanged: Updates level-based quest progress
+/// </summary>
     public static class ChampionQuestIntegration
     {
         private static readonly Dictionary<PlayerMobile, List<ChampionQuestLink>> s_ActiveLinks;
