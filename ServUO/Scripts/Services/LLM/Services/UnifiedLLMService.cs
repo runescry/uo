@@ -98,10 +98,17 @@ namespace Server.Services.LLM
                         // For quest generation, use higher token limit
                         if (requestType == RequestType.QuestDialogue)
                         {
-                            // Quest generation needs more tokens - use 2000 for complete JSON
-                            return await LLMService.GetResponseAsyncForQuest(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge);
+                            // Use retry logic for quest generation
+                            return await RetryPolicy.ExecuteAsync(
+                                async () => await LLMService.GetResponseAsyncForQuest(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge),
+                                () => GetFallbackResponse(requestType)
+                            );
                         }
-                        return await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation);
+                        
+                        return await RetryPolicy.ExecuteAsync(
+                            async () => await LLMService.GetResponseAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation),
+                            () => GetFallbackResponse(requestType)
+                        );
 
                     default:
                         return "Error: Invalid provider selection.";
@@ -109,8 +116,31 @@ namespace Server.Services.LLM
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[UnifiedLLM] Error with OpenAI in GetResponseAsync (Proactive): {ex.Message}");
-                return "I seem to be having trouble thinking right now...";
+                var errorType = ErrorClassifier.ClassifyError(ex);
+                Console.WriteLine($"[UnifiedLLM] {errorType} error with OpenAI in GetResponseAsync (Proactive): {ex.Message}");
+                return GetFallbackResponse(requestType);
+            }
+        }
+
+        /// <summary>
+        /// Get appropriate fallback response based on request type
+        /// </summary>
+        private static string GetFallbackResponse(RequestType requestType)
+        {
+            switch (requestType)
+            {
+                case RequestType.QuestDialogue:
+                    return "I'm having trouble accessing the grand archives at the moment. Let me craft you a tale from my memory instead.";
+                case RequestType.PlayerConversation:
+                    return "I seem to be having trouble connecting to my knowledge sources. Let me respond from my experience.";
+                case RequestType.NPCDecision:
+                    return "My decision-making process seems clouded. Let me choose the most reasonable option.";
+                case RequestType.SimpleGreeting:
+                    return "Greetings! I'm having a bit of trouble with my thoughts, but I'm pleased to meet you.";
+                case RequestType.AutonomousBehavior:
+                    return "I'm experiencing some confusion. Let me continue with my usual routine.";
+                default:
+                    return "I seem to be having trouble thinking right now. Let me try a different approach.";
             }
         }
 

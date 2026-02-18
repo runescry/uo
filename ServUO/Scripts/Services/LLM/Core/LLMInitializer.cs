@@ -61,6 +61,7 @@ namespace Server.Services.LLM
             MemoryTestCommand.Initialize();
             LocationTestCommand.Initialize();
             ClearMemoryCommand.Initialize();
+            LLMFallbackCommands.Initialize();
 
             // Phase 6: Quest System Initialization
             ChroniclerInitializer.Initialize();

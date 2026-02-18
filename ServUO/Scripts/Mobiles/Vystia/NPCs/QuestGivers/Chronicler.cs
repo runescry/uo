@@ -96,9 +96,9 @@ namespace Server.Mobiles
 
         private void OfferQuestGeneration(PlayerMobile pm)
         {
-            Say($"Ah, {pm.Name}, you seek a new adventure! I can weave a tale unique to your path. This will take a moment...");
+            Say($"Ah, {pm.Name}, you seek a new adventure! I shall weave a tale unique to your path. This will take a moment...");
 
-            // Generate quest asynchronously
+            // Generate quest asynchronously with better error handling
             Task.Run(async () =>
             {
                 try
@@ -108,26 +108,52 @@ namespace Server.Mobiles
                     string json = await LLMQuestGenerationService.GeneratePlanJsonAsync(pm);
                     if (string.IsNullOrWhiteSpace(json))
                     {
-                        pm.SendMessage(38, "[Chronicler] I apologize, but the threads of fate are unclear. Perhaps try again later.");
-                        Say("The threads of fate are unclear. Perhaps another time.");
-                        return;
+                        // This should not happen with the new fallback system, but handle it gracefully
+                        string friendlyMessage = ErrorClassifier.GetUserFriendlyMessage(ErrorClassifier.ErrorType.UnknownError);
+                        pm.SendMessage(38, $"[Chronicler] {friendlyMessage}");
+                        Say("The threads of fate are unclear at the moment. Let me try a different approach...");
+                        
+                        // Try again with a simpler request
+                        await Task.Delay(1000);
+                        json = await LLMQuestGenerationService.GeneratePlanJsonAsync(pm, "simple");
                     }
 
-                    if (LLMQuestGenerationService.CreateFromPlanJson(pm, json, out int questId, out string error))
+                    if (!string.IsNullOrWhiteSpace(json) && 
+                        LLMQuestGenerationService.CreateFromPlanJson(pm, json, out int questId, out string error))
                     {
                         pm.SendMessage(68, $"[Chronicler] Your tale is ready! Check your quest log.");
                         Say("Your tale has been woven. May it guide you well, adventurer.");
                     }
                     else
                     {
-                        pm.SendMessage(38, $"[Chronicler] I apologize, but something went wrong: {error}");
-                        Say("I apologize, but the tale could not be completed. Perhaps try again.");
+                        // Provide user-friendly error message
+                        string friendlyMessage = ErrorClassifier.GetUserFriendlyMessage(ErrorClassifier.ErrorType.ValidationError);
+                        pm.SendMessage(38, $"[Chronicler] {friendlyMessage}");
+                        Say("I apologize, but the tale could not be completed. Perhaps try again later.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    pm.SendMessage(38, $"[Chronicler] An error occurred: {ex.Message}");
-                    Console.WriteLine($"[Chronicler] Error generating quest: {ex.Message}\n{ex.StackTrace}");
+                    // Categorize the error and provide appropriate feedback
+                    var errorType = ErrorClassifier.ClassifyError(ex);
+                    string friendlyMessage = ErrorClassifier.GetUserFriendlyMessage(errorType);
+                    
+                    pm.SendMessage(38, $"[Chronicler] {friendlyMessage}");
+                    Console.WriteLine($"[Chronicler] Error generating quest: {ex.Message}");
+                    
+                    // Provide context-specific response
+                    if (errorType == ErrorClassifier.ErrorType.NetworkError || errorType == ErrorClassifier.ErrorType.APIError)
+                    {
+                        Say("The great archives seem to be experiencing difficulties. Let me share a classic tale with you instead.");
+                    }
+                    else if (errorType == ErrorClassifier.ErrorType.RateLimitError)
+                    {
+                        Say("So many adventurers seek tales at once! Let me craft you a story from my memory.");
+                    }
+                    else
+                    {
+                        Say("I apologize, but the threads of fate are tangled. Perhaps another time.");
+                    }
                 }
             });
         }

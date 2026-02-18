@@ -92,7 +92,7 @@ namespace Server.Custom.VystiaClasses.Quests.Generation
         }
 
         /// <summary>
-        /// Generate a quest plan using LLM based on player context and optional theme.
+        /// Generate a quest plan using LLM with fallback to templates when service fails
         /// </summary>
         public static async Task<string> GeneratePlanJsonAsync(PlayerMobile owner, string theme = null)
         {
@@ -105,52 +105,121 @@ namespace Server.Custom.VystiaClasses.Quests.Generation
             // Build context for LLM
             var context = BuildPlayerContext(owner, theme);
 
+            // Try LLM generation with fallback
+            return await CircuitBreaker.ExecuteAsync(
+                async () => await RetryPolicy.ExecuteAsync(
+                    async () => await GenerateLLMPlanAsync(owner, context),
+                    () => GenerateFallbackPlan(owner, theme)
+                ),
+                () => GenerateFallbackPlan(owner, theme)
+            );
+        }
+
+        /// <summary>
+        /// Generate quest plan using LLM service
+        /// </summary>
+        private static async Task<string> GenerateLLMPlanAsync(PlayerMobile owner, string context)
+        {
             // Build LLM prompt
             var prompt = BuildLLMPrompt(context);
 
+            // Call UnifiedLLMService to generate JSON plan
+            var conversationHistory = new List<ConversationMessage>();
+            var response = await UnifiedLLMService.GetResponseAsync(
+                npcName: "Quest Planner",
+                npcPersonality: "Analytical",
+                conversationHistory: conversationHistory,
+                playerMessage: prompt,
+                playerName: owner.Name,
+                preloadedKnowledge: context,
+                requestType: UnifiedLLMService.RequestType.QuestDialogue,
+                providerOverride: UnifiedLLMService.LLMProvider.OpenAI
+            );
+
+            // Extract JSON from response (may be wrapped in markdown code blocks)
+            Console.WriteLine($"[LLMQuestGeneration] Raw LLM response (length: {response?.Length ?? 0}): {response?.Substring(0, Math.Min(500, response?.Length ?? 0)) ?? "null"}...");
+            
+            string json = ExtractJsonFromResponse(response);
+            
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                Console.WriteLine($"[LLMQuestGeneration] ERROR: ExtractJsonFromResponse returned null or empty. Raw response was: {response?.Substring(0, Math.Min(1000, response?.Length ?? 0)) ?? "null"}");
+                throw new InvalidOperationException("Failed to extract JSON from LLM response");
+            }
+            
+            Console.WriteLine($"[LLMQuestGeneration] Extracted JSON (length: {json.Length}): {json.Substring(0, Math.Min(500, json.Length))}...");
+            
+            // Validate JSON structure before returning
+            if (!json.TrimStart().StartsWith("{"))
+            {
+                Console.WriteLine($"[LLMQuestGeneration] ERROR: Extracted JSON does not start with '{{'. First 200 chars: {json.Substring(0, Math.Min(200, json.Length))}");
+                throw new InvalidOperationException("Invalid JSON structure from LLM");
+            }
+            
+            return json;
+        }
+
+        /// <summary>
+        /// Generate fallback quest plan from templates when LLM fails
+        /// </summary>
+        private static string GenerateFallbackPlan(PlayerMobile owner, string theme)
+        {
+            Console.WriteLine($"[LLMQuestGeneration] Using fallback quest generation for {owner.Name}");
+            
             try
             {
-                // Call UnifiedLLMService to generate JSON plan
-                var conversationHistory = new List<ConversationMessage>();
-                var response = await UnifiedLLMService.GetResponseAsync(
-                    npcName: "Quest Planner",
-                    npcPersonality: "Analytical",
-                    conversationHistory: conversationHistory,
-                    playerMessage: prompt,
-                    playerName: owner.Name,
-                    preloadedKnowledge: context,
-                    requestType: UnifiedLLMService.RequestType.QuestDialogue,
-                    providerOverride: UnifiedLLMService.LLMProvider.OpenAI
-                );
-
-                // Extract JSON from response (may be wrapped in markdown code blocks)
-                Console.WriteLine($"[LLMQuestGeneration] Raw LLM response (length: {response?.Length ?? 0}): {response?.Substring(0, Math.Min(500, response?.Length ?? 0)) ?? "null"}...");
+                var template = QuestTemplateLibrary.GetRandomTemplate(owner, theme);
+                string json = template.ToJson();
                 
-                string json = ExtractJsonFromResponse(response);
-                
-                if (string.IsNullOrWhiteSpace(json))
-                {
-                    Console.WriteLine($"[LLMQuestGeneration] ERROR: ExtractJsonFromResponse returned null or empty. Raw response was: {response?.Substring(0, Math.Min(1000, response?.Length ?? 0)) ?? "null"}");
-                    return null;
-                }
-                
-                Console.WriteLine($"[LLMQuestGeneration] Extracted JSON (length: {json.Length}): {json.Substring(0, Math.Min(500, json.Length))}...");
-                
-                // Validate JSON structure before returning
-                if (!json.TrimStart().StartsWith("{"))
-                {
-                    Console.WriteLine($"[LLMQuestGeneration] ERROR: Extracted JSON does not start with '{{'. First 200 chars: {json.Substring(0, Math.Min(200, json.Length))}");
-                    return null;
-                }
+                Console.WriteLine($"[LLMQuestGeneration] Generated fallback quest: {template.Title}");
+                Console.WriteLine($"[LLMQuestGeneration] Fallback JSON (length: {json.Length}): {json.Substring(0, Math.Min(300, json.Length))}...");
                 
                 return json;
             }
             catch (Exception ex)
             {
-                owner.SendMessage(38, $"[LLMQuest] Failed to generate plan: {ex.Message}");
-                Console.WriteLine($"[LLMQuestGeneration] Error: {ex.Message}\n{ex.StackTrace}");
-                return null;
+                Console.WriteLine($"[LLMQuestGeneration] Error in fallback generation: {ex.Message}");
+                
+                // Ultimate fallback - return a very simple quest
+                return GetUltimateFallbackQuest();
             }
+        }
+
+        /// <summary>
+        /// Ultimate fallback when even template system fails
+        /// </summary>
+        private static string GetUltimateFallbackQuest()
+        {
+            Console.WriteLine("[LLMQuestGeneration] Using ultimate fallback quest");
+            
+            return @"{
+  ""schemaVersion"": 1,
+  ""title"": ""A Simple Errand"",
+  ""description"": ""The local merchant needs help with a simple task. Assist them to earn some gold and experience."",
+  ""tier"": ""Initiation"",
+  ""expiresMinutes"": 60,
+  ""waypoints"": [
+    {
+      ""type"": ""Origin"",
+      ""condition"": ""TalkToNPC"",
+      ""name"": ""Merchant's Request"",
+      ""description"": ""Speak with the local merchant who needs assistance.""
+    },
+    {
+      ""type"": ""Waypoint"",
+      ""condition"": ""ReachLocation"",
+      ""name"": ""Complete the Task"",
+      ""description"": ""Help the merchant with their request."",
+      ""poiId"": ""TOWN_CENTER""
+    },
+    {
+      ""type"": ""NPCCompletion"",
+      ""condition"": ""TalkToNPC"",
+      ""name"": ""Report Completion"",
+      ""description"": ""Return to the merchant and report your success.""
+    }
+  ]
+}";
         }
 
         private static string BuildPlayerContext(PlayerMobile owner, string theme)

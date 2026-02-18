@@ -89,6 +89,14 @@ namespace Server.Services.LLM
                 Console.WriteLine("[LLMService] ERROR: API key not configured. LLM NPCs will not function.");
             }
         }
+
+        /// <summary>
+        /// Check if LLM service is available and properly configured
+        /// </summary>
+        public static bool IsAvailable()
+        {
+            return initialized && !string.IsNullOrEmpty(apiKey) && apiKey != "YOUR_API_KEY_HERE";
+        }
         
         /// <summary>
         /// Test connection to OpenAI API
