@@ -326,35 +326,6 @@ namespace Server.Services.UnifiedQuestSystem
     }
 
     /// <summary>
-    /// Validation result
-    /// </summary>
-    public class ValidationResult
-    {
-        public ValidationStatus Result { get; set; }
-        public List<ValidationIssue> Issues { get; set; }
-        public DateTime ValidatedAt { get; set; }
-        public string ValidatorVersion { get; set; }
-        public int QuestId { get; set; }
-        public string QuestType { get; set; }
-        public Dictionary<string, object> Metadata { get; set; }
-
-        public ValidationResult()
-        {
-            Issues = new List<ValidationIssue>();
-            Metadata = new Dictionary<string, object>();
-            ValidatedAt = DateTime.UtcNow;
-            ValidatorVersion = "1.0";
-        }
-
-        public bool IsValid => Result == ValidationStatus.Valid || Result == ValidationStatus.ValidWithWarnings;
-        public bool HasWarnings => Result == ValidationStatus.ValidWithWarnings;
-        public bool HasErrors => Result == ValidationStatus.Invalid || Result == ValidationStatus.Critical;
-        public int IssueCount => Issues?.Count ?? 0;
-        public int CriticalIssues => Issues?.Count(i => i.Severity == "Critical") ?? 0;
-        public int WarningIssues => Issues?.Count(i => i.Severity == "Warning") ?? 0;
-    }
-
-    /// <summary>
     /// Validation context for validation operations
     /// </summary>
     public class ValidationContext

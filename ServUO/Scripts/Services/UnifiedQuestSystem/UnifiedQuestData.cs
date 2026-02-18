@@ -448,21 +448,6 @@ namespace Server.Services.UnifiedQuestSystem
         public int MaximumPartySize { get; set; } = 8;
     }
 
-    public class ProgressEvent
-    {
-        public DateTime Timestamp { get; set; }
-        public string EventType { get; set; }
-        public string Description { get; set; }
-        public PlayerMobile Player { get; set; }
-        public Dictionary<string, object> EventData { get; set; }
-
-        public ProgressEvent()
-        {
-            Timestamp = DateTime.UtcNow;
-            EventData = new Dictionary<string, object>();
-        }
-    }
-
     public class QuestJournalEntry
     {
         public DateTime Timestamp { get; set; }

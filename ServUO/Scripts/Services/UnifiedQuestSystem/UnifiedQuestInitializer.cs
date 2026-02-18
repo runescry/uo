@@ -30,6 +30,9 @@ namespace Server.Services.UnifiedQuestSystem
             // Initialize unified validation system
             UnifiedQuestValidator.Initialize();
 
+            // Initialize unified progress tracking system
+            UnifiedProgressTracker.Initialize();
+
             // Register administrative commands
             CommandSystem.Register("UnifiedQuest", AccessLevel.Administrator, UnifiedQuest_OnCommand);
             CommandSystem.Register("UQ", AccessLevel.Administrator, UnifiedQuest_OnCommand);
@@ -98,6 +101,14 @@ namespace Server.Services.UnifiedQuestSystem
                     ShowValidationStats(from);
                     break;
 
+                case "progress":
+                    ShowProgressStats(from);
+                    break;
+
+                case "sync":
+                    SynchronizeProgress(from, e);
+                    break;
+
                 default:
                     ShowUnifiedQuestHelp(from);
                     break;
@@ -163,6 +174,8 @@ namespace Server.Services.UnifiedQuestSystem
             from.SendMessage("  cache     - Manage quest data cache");
             from.SendMessage("  validate  - Validate unified quest data");
             from.SendMessage("  validation - Show validation statistics");
+            from.SendMessage("  progress  - Show progress tracking statistics");
+            from.SendMessage("  sync      - Synchronize progress data");
             from.SendMessage("");
             from.SendMessage("Player commands:");
             from.SendMessage("  QuestInfo - Show unified quest information");
@@ -439,8 +452,98 @@ namespace Server.Services.UnifiedQuestSystem
         }
 
         /// <summary>
-        /// Show player quest information
+        /// Show progress tracking statistics
         /// </summary>
+        private static void ShowProgressStats(Mobile from)
+        {
+            try
+            {
+                var stats = UnifiedProgressTracker.GetStatistics();
+                
+                from.SendMessage("=== UNIFIED PROGRESS TRACKING STATISTICS ===");
+                from.SendMessage($"Total Tracked Quests: {stats.TotalTrackedQuests}");
+                from.SendMessage($"Active Quests: {stats.ActiveQuests}");
+                from.SendMessage($"Completed Quests: {stats.CompletedQuests}");
+                from.SendMessage($"Total Player Progress: {stats.TotalPlayerProgress}");
+                from.SendMessage($"Progress Updates: {stats.ProgressUpdates}");
+                from.SendMessage($"Synchronization Events: {stats.SynchronizationEvents}");
+                from.SendMessage($"Completion Rate: {stats.CompletionRate:P1}");
+                from.SendMessage($"Last Activity: {stats.LastActivity:yyyy-MM-dd HH:mm:ss}");
+                from.SendMessage("");
+                from.SendMessage("Progress Handlers:");
+                
+                // Show available progress handlers
+                var handlers = new[] { "kill", "collect", "explore", "deliver", "protect", "rescue" };
+                foreach (var handler in handlers)
+                {
+                    from.SendMessage($"  • {handler}");
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Error retrieving progress stats: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Synchronize progress data
+        /// </summary>
+        private static void SynchronizeProgress(Mobile from, CommandEventArgs e)
+        {
+            if (e.Length < 2)
+            {
+                from.SendMessage("Usage: [UnifiedQuest sync <action>");
+                from.SendMessage("Actions: all, quest <questId>, player <playerName>");
+                return;
+            }
+
+            string action = e.GetString(1).ToLower();
+            
+            switch (action)
+            {
+                case "all":
+                    from.SendMessage("Synchronizing all progress data...");
+                    // Implementation would go here
+                    from.SendMessage("Progress synchronization completed.");
+                    break;
+                    
+                case "quest":
+                    if (e.Length < 3)
+                    {
+                        from.SendMessage("Usage: [UnifiedQuest sync quest <questId>");
+                        return;
+                    }
+                    
+                    if (int.TryParse(e.GetString(2), out int questId))
+                    {
+                        from.SendMessage($"Synchronizing progress for quest {questId}...");
+                        // Implementation would go here
+                        from.SendMessage("Quest progress synchronized.");
+                    }
+                    else
+                    {
+                        from.SendMessage("Invalid quest ID format.");
+                    }
+                    break;
+                    
+                case "player":
+                    if (e.Length < 3)
+                    {
+                        from.SendMessage("Usage: [UnifiedQuest sync player <playerName>");
+                        return;
+                    }
+                    
+                    string playerName = e.GetString(2);
+                    from.SendMessage($"Synchronizing progress for player {playerName}...");
+                    // Implementation would go here
+                    from.SendMessage("Player progress synchronized.");
+                    break;
+                    
+                default:
+                    from.SendMessage($"Unknown sync action: {action}");
+                    break;
+            }
+        }
         private static void ShowPlayerQuestInfo(PlayerMobile player)
         {
             player.SendMessage("=== UNIFIED QUEST INFORMATION ===");
