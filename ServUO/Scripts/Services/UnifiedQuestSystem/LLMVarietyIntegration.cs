@@ -655,7 +655,7 @@ namespace Server.Services.UnifiedQuestSystem
         /// </summary>
         public static bool NeedsVarietyEnhancement(this UnifiedQuestData quest)
         {
-            var feedback = LLMVarietyIntegration.GetGenerationFeedback(quest, null);
+            var feedback = quest.GetVarietyFeedback(null);
             return feedback.VarietyScore < 0.5 || feedback.SimilarityAlerts.Count > 0;
         }
 
@@ -664,7 +664,7 @@ namespace Server.Services.UnifiedQuestSystem
         /// </summary>
         public static bool NeedsQualityImprovement(this UnifiedQuestData quest)
         {
-            var feedback = LLMVarietyIntegration.GetGenerationFeedback(quest, null);
+            var feedback = quest.GetVarietyFeedback(null);
             return feedback.QualityScore < 0.5 || feedback.QualityIssues.Count > 0;
         }
     }

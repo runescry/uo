@@ -36,6 +36,9 @@ namespace Server.Services.UnifiedQuestSystem
             // Initialize LLM-Variety integration system
             LLMVarietyIntegration.Initialize();
 
+            // Initialize Multiplayer-Journal integration system
+            MultiplayerJournalIntegration.Initialize();
+
             // Register administrative commands
             CommandSystem.Register("UnifiedQuest", AccessLevel.Administrator, UnifiedQuest_OnCommand);
             CommandSystem.Register("UQ", AccessLevel.Administrator, UnifiedQuest_OnCommand);
@@ -120,6 +123,10 @@ namespace Server.Services.UnifiedQuestSystem
                     ShowVarietyStats(from);
                     break;
 
+                case "journal":
+                    ShowJournalStats(from);
+                    break;
+
                 default:
                     ShowUnifiedQuestHelp(from);
                     break;
@@ -189,6 +196,7 @@ namespace Server.Services.UnifiedQuestSystem
             from.SendMessage("  sync      - Synchronize progress data");
             from.SendMessage("  integrate - Integrate quest with variety system");
             from.SendMessage("  variety   - Show variety system statistics");
+            from.SendMessage("  journal   - Show journal system statistics");
             from.SendMessage("");
             from.SendMessage("Player commands:");
             from.SendMessage("  QuestInfo - Show unified quest information");

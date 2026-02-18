@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Server;
-using Server.Mobiles;
 using Server.Commands;
+using Server.Mobiles;
+using Server.Gumps;
+using Server.Services.UnifiedQuestSystem;
+using Server.Services.MultiplayerQuests;
 using Server.Services.LLM;
 using Server.Custom.VystiaClasses.Quests;
 
@@ -13,11 +17,17 @@ namespace Server.Services.QuestJournal
     public static class QuestJournalInitializer
     {
         /// <summary>
-        /// Initialize the quest journal system
+        /// Initialize the unified quest journal system
         /// </summary>
         public static void Initialize()
         {
             Console.WriteLine("[QuestJournal] Initializing unified quest journal system...");
+
+            // Initialize the unified journal system first
+            UnifiedQuestJournal.Initialize();
+
+            // Initialize multiplayer-journal integration
+            MultiplayerJournalIntegration.Initialize();
 
             // Register quest journal command
             CommandSystem.Register("QuestJournal", AccessLevel.Player, QuestJournal_OnCommand);
@@ -97,7 +107,15 @@ namespace Server.Services.QuestJournal
                     break;
 
                 case "clear":
-                    ClearQuestJournal(from);
+                    ClearQuestJournalCache(from);
+                    break;
+
+                case "sync":
+                    SyncMultiplayerJournal(from, e);
+                    break;
+
+                case "integration":
+                    ShowIntegrationStats(from);
                     break;
 
                 case "reload":
@@ -126,6 +144,8 @@ namespace Server.Services.QuestJournal
             from.SendMessage("  stats     - Show quest journal statistics");
             from.SendMessage("  validate  - Validate quest journal data");
             from.SendMessage("  clear     - Clear quest journal cache");
+            from.SendMessage("  sync      - Sync multiplayer quest journal");
+            from.SendMessage("  integration - Show integration statistics");
             from.SendMessage("  reload    - Reload quest journal system");
             from.SendMessage("  test      - Test quest journal functionality");
             from.SendMessage("");
@@ -295,6 +315,136 @@ namespace Server.Services.QuestJournal
             {
                 Console.WriteLine($"[QuestJournal] Error testing quest journal: {ex.Message}");
                 from.SendMessage("Error testing quest journal functionality.");
+            }
+        }
+
+        /// <summary>
+        /// Show integration statistics
+        /// </summary>
+        private static void ShowIntegrationStats(Mobile from)
+        {
+            try
+            {
+                var stats = MultiplayerJournalIntegration.GetStatistics();
+                
+                from.SendMessage("=== MULTIPLAYER-JOURNAL INTEGRATION STATISTICS ===");
+                from.SendMessage($"Total Sync Operations: {stats.TotalSyncOperations}");
+                from.SendMessage($"Journal Updates: {stats.JournalUpdates}");
+                from.SendMessage($"Multiplayer Updates: {stats.MultiplayerUpdates}");
+                from.SendMessage($"Active Sync Data: {stats.ActiveSyncData}");
+                from.SendMessage($"Registered Strategies: {stats.RegisteredStrategies}");
+                from.SendMessage($"Last Sync: {stats.LastSync:yyyy-MM-dd HH:mm:ss}");
+                from.SendMessage("");
+                from.SendMessage("Integration Benefits:");
+                from.SendMessage("  • Real-time multiplayer quest journal synchronization");
+                from.SendMessage("  • Automatic progress tracking for party members");
+                from.SendMessage("  • Configurable sync strategies and frequencies");
+                from.SendMessage("  • Comprehensive sync statistics and monitoring");
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Error retrieving integration stats: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Sync multiplayer quest journal
+        /// </summary>
+        private static void SyncMultiplayerJournal(Mobile from, CommandEventArgs e)
+        {
+            if (e.Length < 2)
+            {
+                from.SendMessage("Usage: [QuestJournalAdmin sync <questId> [strategy]");
+                from.SendMessage("Strategies: automatic, manual, realtime, batch");
+                return;
+            }
+
+            if (!int.TryParse(e.GetString(1), out int questId))
+            {
+                from.SendMessage("Invalid quest ID format.");
+                return;
+            }
+
+            string strategyName = e.Length > 2 ? e.GetString(2).ToLower() : "automatic";
+
+            try
+            {
+                from.SendMessage($"Syncing multiplayer quest journal for quest {questId} using {strategyName} strategy...");
+                
+                // Create a test quest for sync
+                var testQuest = new UnifiedQuestData
+                {
+                    QuestId = questId,
+                    Title = "Test Multiplayer Quest",
+                    Description = "A test quest for multiplayer-journal integration",
+                    Type = QuestType.Multiplayer,
+                    Owner = from as PlayerMobile,
+                    Creator = from as PlayerMobile,
+                    MultiplayerData = new SharedQuestData
+                    {
+                        QuestId = questId,
+                        QuestTitle = "Test Multiplayer Quest",
+                        QuestDescription = "A test quest for multiplayer-journal integration",
+                        Party = from.Party,
+                        IsActive = true,
+                        IsCompleted = false,
+                        Settings = new SharedQuestSettings
+                        {
+                            SyncProgress = true,
+                            RealtimeJournalSync = strategyName == "realtime"
+                        }
+                    },
+                    ProgressData = new QuestProgressData
+                    {
+                        StartedAt = DateTime.UtcNow,
+                        ProgressHistory = new List<ProgressEvent>
+                        {
+                            new ProgressEvent
+                            {
+                                Timestamp = DateTime.UtcNow,
+                                EventType = "test",
+                                Description = "Test progress event",
+                                PlayerSerial = from.Serial,
+                                Amount = 1
+                            }
+                        }
+                    }
+                };
+
+                var syncContext = new JournalSyncContext
+                {
+                    StrategyName = strategyName,
+                    Requester = from as PlayerMobile,
+                    Party = from.Party,
+                    ForceSync = true,
+                    Priority = JournalSyncPriority.Normal
+                };
+
+                var result = MultiplayerJournalIntegration.SyncQuestWithJournal(testQuest, syncContext);
+                
+                if (result.Success)
+                {
+                    from.SendMessage($"Sync successful!");
+                    from.SendMessage($"Journal Updates: {result.JournalUpdates}");
+                    from.SendMessage($"Multiplayer Updates: {result.MultiplayerUpdates}");
+                    
+                    if (result.Messages.Count > 0)
+                    {
+                        from.SendMessage("Sync Messages:");
+                        foreach (var message in result.Messages.Take(5))
+                        {
+                            from.SendMessage($"  {message}");
+                        }
+                    }
+                }
+                else
+                {
+                    from.SendMessage($"Sync failed: {result.Error}");
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Sync error: {ex.Message}");
             }
         }
     }
