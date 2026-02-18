@@ -475,6 +475,19 @@ namespace Server.Custom.VystiaClasses.Quests
         // Objectives dictionary: key -> required amount
         protected Dictionary<string, int> Objectives = new Dictionary<string, int>();
 
+        /// <summary>
+        /// Get the objectives dictionary for this quest
+        /// </summary>
+        public Dictionary<string, int> GetObjectives()
+        {
+            return Objectives;
+        }
+
+        /// <summary>
+        /// Get the objectives dictionary as a read-only dictionary
+        /// </summary>
+        public IReadOnlyDictionary<string, int> ObjectivesReadOnly => Objectives;
+
         public bool HasObjective(string key)
         {
             return Objectives.ContainsKey(key);
@@ -535,6 +548,14 @@ namespace Server.Custom.VystiaClasses.Quests
             if (!m_Progress.ContainsKey(key))
                 m_Progress[key] = 0;
             m_Progress[key] += amount;
+        }
+
+        /// <summary>
+        /// Convert progress to dictionary for serialization
+        /// </summary>
+        public Dictionary<string, int> ToDictionary()
+        {
+            return new Dictionary<string, int>(m_Progress);
         }
 
         public void Serialize(GenericWriter writer)
