@@ -4,9 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Server;
 using ServUO.Scripts.Services.LLM;
+using Newtonsoft.Json;
 
 namespace Server.Services.LLM
 {
@@ -15,12 +17,25 @@ namespace Server.Services.LLM
     /// </summary>
     public static class LLMService
     {
-        private static readonly HttpClient client = new HttpClient();
+        private static readonly HttpClientHandler s_HttpHandler = new HttpClientHandler()
+        {
+            // Configure connection pooling
+            MaxConnectionsPerServer = 100
+        };
+        
+        private static readonly HttpClient s_Client = new HttpClient(s_HttpHandler)
+        {
+            Timeout = TimeSpan.FromSeconds(30)
+        };
+        
         private static string apiKey = string.Empty;
         private static bool initialized = false;
 
+        // Connection pool for performance
+        private static readonly SemaphoreSlim s_ConnectionSemaphore = new SemaphoreSlim(10);
+
         // Configuration
-        private static readonly string ConfigPath = Path.Combine(Core.BaseDirectory.Directory, "Config", "LLM.cfg");
+        private static readonly string ConfigPath = Path.Combine(Core.BaseDirectory, "Config", "LLM.cfg");
         private static readonly string ApiEndpoint = "https://api.openai.com/v1/chat/completions";
         private static readonly string DefaultModel = "gpt-4o-mini"; // Cheaper and faster model
         private static readonly int MaxTokens = 150; // Keep responses concise
@@ -76,9 +91,9 @@ namespace Server.Services.LLM
 
             if (!string.IsNullOrEmpty(apiKey) && apiKey != "YOUR_API_KEY_HERE")
             {
-                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+                s_Client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
                 initialized = true;
-                // Console.WriteLine("[LLMService] Initialized successfully (OpenAI API: READY)");
+                // Console.WriteLine($"[LLMService] Initialized successfully (OpenAI API: READY)");
                 // Console.WriteLine($"[LLMService] Model: {DefaultModel}, Max Tokens: {MaxTokens}");
                 
                 // Test connection in background
@@ -185,19 +200,77 @@ namespace Server.Services.LLM
         /// </summary>
         public static async Task<string> GetResponseAsyncForQuest(string npcName, string npcPersonality, List<ConversationMessage> conversationHistory, string playerMessage, string playerName, string preloadedKnowledge)
         {
-            // Build system message
-            StringBuilder systemMessage = new StringBuilder();
-            systemMessage.Append($"You are {npcName}, an NPC in Vystia, a custom world. {npcPersonality}");
+            await s_ConnectionSemaphore.WaitAsync();
             
-            // Add preloaded knowledge (quest context)
-            if (!string.IsNullOrEmpty(preloadedKnowledge))
+            try
             {
-                systemMessage.Append("\n\n");
-                systemMessage.Append(preloadedKnowledge);
+                // Build system message
+                StringBuilder systemMessage = new StringBuilder();
+                systemMessage.AppendLine($"You are {npcName}, a {npcPersonality} in the world of Ultima Online.");
+                
+                if (!string.IsNullOrEmpty(preloadedKnowledge))
+                {
+                    systemMessage.AppendLine($"Relevant knowledge: {preloadedKnowledge}");
+                }
+                
+                systemMessage.AppendLine("Generate a quest dialogue response that:");
+                systemMessage.AppendLine("1. Is immersive and in character");
+                systemMessage.AppendLine("2. Provides clear quest objectives");
+                systemMessage.AppendLine("3. Includes appropriate rewards and challenges");
+                systemMessage.AppendLine("4. Is suitable for the player's level and class");
+                systemMessage.AppendLine("5. Uses Ultima Online terminology and lore");
+                systemMessage.AppendLine("6. Length: 200-300 tokens maximum");
+
+                // Build conversation context
+                var messages = new List<object>();
+                messages.Add(new { role = "system", content = systemMessage.ToString() });
+                
+                if (conversationHistory != null && conversationHistory.Count > 0)
+                {
+                    foreach (var msg in conversationHistory)
+                    {
+                        messages.Add(new { role = msg.IsPlayer ? "user" : "assistant", content = msg.Message });
+                    }
+                }
+                
+                messages.Add(new { role = "user", content = playerMessage });
+
+                // Build request body
+                var requestBody = new
+                {
+                    model = DefaultModel,
+                    messages = messages,
+                    max_tokens = 300, // Higher token limit for quests
+                    temperature = Temperature
+                };
+
+                var json = JsonConvert.SerializeObject(requestBody);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                // Make API call
+                DateTime startTime = DateTime.UtcNow;
+                var response = await s_Client.PostAsync(ApiEndpoint, content);
+                var elapsed = (long)(DateTime.UtcNow - startTime).TotalMilliseconds;
+                
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    
+                    // Log performance metrics
+                    Console.WriteLine($"[LLMService] Quest generation completed in {elapsed}ms for {npcName}");
+                    
+                    return responseBody;
+                }
+                else
+                {
+                    Console.WriteLine($"[LLMService] Quest generation failed with status code: {response.StatusCode}");
+                    return "I apologize, but I'm having trouble generating a quest at the moment. Please try again later.";
+                }
             }
-            
-            // Use higher token limit for quest generation (2000 tokens should be enough for complete JSON)
-            return await GetResponseAsyncInternal(npcName, systemMessage.ToString(), conversationHistory, playerMessage, playerName, false, maxTokensOverride: 2000);
+            finally
+            {
+                s_ConnectionSemaphore.Release();
+            }
         }
 
         /// <summary>
@@ -337,7 +410,7 @@ namespace Server.Services.LLM
                 LLMLoggingConfig.LogDebug($"[LLMService] Sending request to OpenAI API...");
 
                 // Make the API call
-                HttpResponseMessage response = await client.PostAsync(ApiEndpoint, content);
+                HttpResponseMessage response = await s_Client.PostAsync(ApiEndpoint, content);
                 string responseBody = await response.Content.ReadAsStringAsync();
 
                 LLMLoggingConfig.LogDebug($"[LLMService] Response status: {response.StatusCode}");

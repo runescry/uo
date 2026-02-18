@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ServUO.Scripts.Services.LLM;
 using Server;
+using Server.Mobiles;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Server.Services.LLM
 {
@@ -79,14 +82,84 @@ namespace Server.Services.LLM
             string playerMessage,
             string playerName,
             string preloadedKnowledge,
-            RequestType requestType = RequestType.PlayerConversation,
-            LLMProvider providerOverride = LLMProvider.Auto,
             bool isVendor = false,
-            bool isFirstConversation = false)
+            bool isFirstConversation = false,
+            RequestType requestType = RequestType.PlayerConversation)
         {
-            LLMProvider selectedProvider = ChooseProvider(requestType, providerOverride);
+            var stopwatch = Stopwatch.StartNew();
+            bool success = false;
+            bool fromCache = false;
+            string response = null;
 
-            LLMLoggingConfig.LogDebug($"[UnifiedLLM] Request type: {requestType}, Using provider: {selectedProvider} (Proactive RAG)");
+            try
+            {
+                // Generate cache key
+                var cacheKey = QuestCache.GenerateCacheKey(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge);
+
+                // Check cache first for non-quest requests
+                if (requestType != RequestType.QuestDialogue)
+                {
+                    response = await QuestCache.GetAsync(cacheKey);
+                    if (response != null)
+                    {
+                        fromCache = true;
+                        success = true;
+                        return response;
+                    }
+                }
+
+                // For quest generation, use the queue for load balancing
+                if (requestType == RequestType.QuestDialogue)
+                {
+                    var queueRequest = new QuestGenerationRequest
+                    {
+                        NpcName = npcName,
+                        NpcPersonality = npcPersonality,
+                        ConversationHistory = conversationHistory,
+                        PlayerMessage = playerMessage,
+                        PlayerName = playerName,
+                        PreloadedKnowledge = preloadedKnowledge,
+                        IsVendor = isVendor,
+                        IsFirstConversation = isFirstConversation
+                    };
+
+                    response = await QuestGenerationQueue.EnqueueAsync(queueRequest);
+                    success = true;
+
+                    // Cache the result for future requests
+                    await QuestCache.SetAsync(cacheKey, response, TimeSpan.FromMinutes(15));
+                }
+                else
+                {
+                    // For non-quest requests, use direct async call
+                    response = await GetResponseDirectAsync(npcName, npcPersonality, conversationHistory, playerMessage, playerName, preloadedKnowledge, isVendor, isFirstConversation, requestType);
+                    success = true;
+
+                    // Cache the result
+                    await QuestCache.SetAsync(cacheKey, response, TimeSpan.FromMinutes(30));
+                }
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[UnifiedLLMService] Error getting response for {npcName}: {ex.Message}");
+                return GetFallbackResponse(requestType);
+            }
+            finally
+            {
+                stopwatch.Stop();
+                QuestPerformanceMonitor.RecordPerformance(npcName, stopwatch.Elapsed, success, fromCache);
+            }
+        }
+
+        /// <summary>
+        /// Get response directly without queue (for non-quest requests)
+        /// </summary>
+        private static async Task<string> GetResponseDirectAsync(string npcName, string npcPersonality, List<ConversationMessage> conversationHistory, string playerMessage, string playerName, string preloadedKnowledge, bool isVendor, bool isFirstConversation, RequestType requestType)
+        {
+            // Select provider based on request type
+            var selectedProvider = SelectProvider(requestType);
 
             try
             {
@@ -95,7 +168,6 @@ namespace Server.Services.LLM
                     case LLMProvider.OpenAI:
                     case LLMProvider.Auto: // Auto now routes to OpenAI
                         // Use proactive RAG with OpenAI
-                        // For quest generation, use higher token limit
                         if (requestType == RequestType.QuestDialogue)
                         {
                             // Use retry logic for quest generation
@@ -120,6 +192,16 @@ namespace Server.Services.LLM
                 Console.WriteLine($"[UnifiedLLM] {errorType} error with OpenAI in GetResponseAsync (Proactive): {ex.Message}");
                 return GetFallbackResponse(requestType);
             }
+        }
+
+        /// <summary>
+        /// Select which provider to use based on request type
+        /// </summary>
+        private static LLMProvider SelectProvider(RequestType requestType)
+        {
+            // All providers route to OpenAI now - simplified architecture
+            LLMLoggingConfig.LogDebug($"[UnifiedLLM] Routing to OpenAI (request type: {requestType})");
+            return LLMProvider.OpenAI;
         }
 
         /// <summary>
