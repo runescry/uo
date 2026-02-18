@@ -5,12 +5,16 @@ using Server.Mobiles;
 using Server.Custom.VystiaClasses.Quests;
 using Server.Engines.PartySystem;
 using Server.Engines.Quests;
+using Server.Services.UnifiedQuestSystem;
 
 namespace Server.Services.MultiplayerQuests
 {
     /// <summary>
     /// Validates multiplayer quests for consistency and compliance
+    /// [OBSOLETE] Use UnifiedQuestValidator instead
+    /// This class is maintained for backward compatibility during migration
     /// </summary>
+    [Obsolete("Use UnifiedQuestValidator instead. This class will be removed in a future version.")]
     public static class MultiplayerQuestValidator
     {
         private static readonly Dictionary<string, IQuestValidator> s_Validators = new Dictionary<string, IQuestValidator>();
@@ -674,5 +678,47 @@ namespace Server.Services.MultiplayerQuests
             
             return warnings;
         }
+
+    // Migration methods for backward compatibility
+    /// <summary>
+    /// Convert to UnifiedQuestValidator format
+    /// </summary>
+    public static ValidationResult ToUnifiedValidation(QuestValidationResult oldResult)
+    {
+        var newResult = new ValidationResult
+        {
+            Result = MapValidationStatus(oldResult.IsValid),
+            ValidatedAt = DateTime.UtcNow,
+            ValidatorVersion = "1.0"
+        };
+
+        // Convert issues
+        if (oldResult.Issues != null)
+        {
+            newResult.Issues = oldResult.Issues.Select(issue => new ValidationIssue
+            {
+                Code = issue.Code,
+                Description = issue.Description,
+                Severity = issue.Severity,
+                Recommendation = issue.Recommendation,
+                Category = "Multiplayer"
+            }).ToList();
+        }
+
+        return newResult;
     }
+
+    /// <summary>
+    /// Validate using unified validator
+    /// </summary>
+    public static ValidationResult ValidateWithUnified(UnifiedQuestData quest, ValidationContext context = null)
+    {
+        return UnifiedQuestValidator.ValidateQuest(quest, context);
+    }
+
+    private static ValidationStatus MapValidationStatus(bool isValid)
+    {
+        return isValid ? ValidationStatus.Valid : ValidationStatus.Invalid;
+    }
+}
 }

@@ -27,6 +27,9 @@ namespace Server.Services.UnifiedQuestSystem
             // Initialize compatibility layer first
             CompatibilityLayer.Initialize();
 
+            // Initialize unified validation system
+            UnifiedQuestValidator.Initialize();
+
             // Register administrative commands
             CommandSystem.Register("UnifiedQuest", AccessLevel.Administrator, UnifiedQuest_OnCommand);
             CommandSystem.Register("UQ", AccessLevel.Administrator, UnifiedQuest_OnCommand);
@@ -89,6 +92,10 @@ namespace Server.Services.UnifiedQuestSystem
 
                 case "validate":
                     ValidateUnifiedData(from, e);
+                    break;
+
+                case "validation":
+                    ShowValidationStats(from);
                     break;
 
                 default:
@@ -155,6 +162,7 @@ namespace Server.Services.UnifiedQuestSystem
             from.SendMessage("  compatibility - Show compatibility layer information");
             from.SendMessage("  cache     - Manage quest data cache");
             from.SendMessage("  validate  - Validate unified quest data");
+            from.SendMessage("  validation - Show validation statistics");
             from.SendMessage("");
             from.SendMessage("Player commands:");
             from.SendMessage("  QuestInfo - Show unified quest information");
@@ -350,8 +358,84 @@ namespace Server.Services.UnifiedQuestSystem
             }
 
             from.SendMessage($"Validating unified quest data for quest {questId}...");
-            // Implementation would go here
-            from.SendMessage("Validation completed. Check logs for details.");
+            
+            try
+            {
+                // Create a test quest for validation
+                var testQuest = new UnifiedQuestData
+                {
+                    QuestId = questId,
+                    Title = "Test Quest",
+                    Description = "A test quest for validation",
+                    Owner = from as PlayerMobile,
+                    Creator = from as PlayerMobile
+                };
+
+                var result = UnifiedQuestValidator.ValidateQuest(testQuest);
+                
+                from.SendMessage($"Validation Result: {result.Result}");
+                from.SendMessage($"Issues Found: {result.IssueCount}");
+                from.SendMessage($"Critical Issues: {result.CriticalIssues}");
+                from.SendMessage($"Warnings: {result.WarningIssues}");
+                
+                if (result.HasIssues)
+                {
+                    from.SendMessage("Validation Issues:");
+                    foreach (var issue in result.Issues.Take(5)) // Show first 5 issues
+                    {
+                        from.SendMessage($"  [{issue.Severity}] {issue.Code}: {issue.Description}");
+                    }
+                    
+                    if (result.IssueCount > 5)
+                    {
+                        from.SendMessage($"  ... and {result.IssueCount - 5} more issues");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Validation error: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Show validation statistics
+        /// </summary>
+        private static void ShowValidationStats(Mobile from)
+        {
+            try
+            {
+                var stats = UnifiedQuestValidator.GetStatistics();
+                
+                from.SendMessage("=== UNIFIED VALIDATION STATISTICS ===");
+                from.SendMessage($"Validations Performed: {stats.ValidationsPerformed}");
+                from.SendMessage($"Validation Errors: {stats.ValidationErrors}");
+                from.SendMessage($"Success Rate: {stats.SuccessRate:P1}");
+                from.SendMessage($"Registered Strategies: {stats.RegisteredStrategies}");
+                from.SendMessage($"Registered Validators: {stats.RegisteredValidators}");
+                from.SendMessage($"Last Validation: {stats.LastValidation:yyyy-MM-dd HH:mm:ss}");
+                from.SendMessage("");
+                from.SendMessage("Available Strategies:");
+                
+                var strategies = UnifiedQuestValidator.GetAvailableStrategies();
+                foreach (var strategy in strategies)
+                {
+                    from.SendMessage($"  • {strategy}");
+                }
+                
+                from.SendMessage("");
+                from.SendMessage("Validator Types:");
+                
+                foreach (ValidationType type in Enum.GetValues(typeof(ValidationType)))
+                {
+                    var validators = UnifiedQuestValidator.GetValidators(type);
+                    from.SendMessage($"  {type}: {validators.Count} validators");
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Error retrieving validation stats: {ex.Message}");
+            }
         }
 
         /// <summary>
