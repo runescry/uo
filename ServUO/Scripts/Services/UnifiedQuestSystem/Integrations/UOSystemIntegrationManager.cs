@@ -4,12 +4,39 @@ using System.Linq;
 using Server.Mobiles;
 using Server.Services.UnifiedQuestSystem.Integrations;
 
+/// <summary>
+/// Integration manager for all UO system integrations
+/// Coordinates and manages all quest system integrations
+/// 
+/// Features:
+/// - Central coordination of all UO system integrations
+/// - Unified statistics and monitoring across all integrations
+/// - Automatic synchronization and cleanup operations
+/// - Administrative tools for managing integrations
+/// - Extensible framework for adding new integrations
+/// - Performance monitoring and health checks
+/// 
+/// Supported Integrations:
+/// - Bulk Order System: Crafting quest generation and tracking
+/// - Champion System: Champion spawn and combat quests
+/// - City Loyalty System: City reputation and loyalty quests
+/// - Seasonal Events: Limited-time event quests
+/// 
+/// Usage:
+/// - Initialize all integrations during system startup
+/// - Get available quests from all integrated systems
+/// - Monitor integration health and performance
+/// - Synchronize and clean up integration data
+/// - Reset statistics and manage integration lifecycle
+/// 
+/// Dependencies:
+/// - Server.Services.UnifiedQuestSystem.Integrations.BulkOrderQuestIntegration
+/// - Server.Services.UnifiedQuestSystem.Integrations.ChampionQuestIntegration
+/// - Server.Services.UnifiedQuestSystem.Integrations.CityLoyaltyQuestIntegration
+/// - Server.Services.UnifiedQuestSystem.Integrations.SeasonalEventQuestIntegration
+/// </summary>
 namespace Server.Services.UnifiedQuestSystem.Integrations
 {
-    /// <summary>
-    /// Integration manager for all UO system integrations
-    /// Coordinates and manages all quest system integrations
-    /// </summary>
     public static class UOSystemIntegrationManager
     {
         private static readonly Dictionary<string, IUOSystemIntegration> s_Integrations;
