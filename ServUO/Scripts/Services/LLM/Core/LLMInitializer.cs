@@ -6,6 +6,7 @@ using Server.Services.LLM.Commands;
 using Server.Mobiles;
 using Server.Services.QuestPersistence;
 using Server.Services.QuestJournal;
+using Server.Services.QuestVariety;
 
 namespace Server.Services.LLM
 {
@@ -68,8 +69,8 @@ namespace Server.Services.LLM
             // Phase 6: Quest System Initialization
             ChroniclerInitializer.Initialize();
 
-            // Phase 7: Quest Persistence System
-            QuestPersistenceInitializer.Initialize();
+            // Phase 8: Quest Variety System
+            QuestVarietyInitializer.Initialize();
 
             // Phase 8: Quest Journal System
             QuestJournalInitializer.Initialize();

@@ -10,6 +10,7 @@ using Server.Services.LLM;
 using Server.Custom.VystiaClasses;
 using Server.Custom.VystiaClasses.Quests;
 using Server.Engines.PartySystem;
+using Server.Services.QuestVariety;
 
 namespace Server.Custom.VystiaClasses.Quests.Generation
 {
@@ -73,6 +74,17 @@ namespace Server.Custom.VystiaClasses.Quests.Generation
                 return false;
             }
 
+            // Check for repetition before compiling
+            var tempQuest = new DynamicQuest();
+            tempQuest.Title = plan.Title;
+            tempQuest.Description = plan.Description;
+
+            if (QuestVarietyTracker.WouldBeRepetitive(tempQuest, 0.7))
+            {
+                error = "Quest would be too repetitive based on recent history.";
+                return false;
+            }
+
             var compiled = Compiler.CompileAndSpawn(owner, plan);
             if (compiled == null || compiled.QuestId <= 0)
             {
@@ -81,6 +93,13 @@ namespace Server.Custom.VystiaClasses.Quests.Generation
             }
 
             questId = compiled.QuestId;
+
+            // Track the quest in the variety system
+            var quest = DynamicQuestManager.GetQuest(questId);
+            if (quest != null)
+            {
+                QuestVarietyTracker.TrackQuest(quest);
+            }
 
             // Track instance for cleanup (temporary spawns)
             var attachment = GeneratedQuestInstanceAttachment.GetOrCreate(owner);
@@ -138,24 +157,24 @@ namespace Server.Custom.VystiaClasses.Quests.Generation
 
             // Extract JSON from response (may be wrapped in markdown code blocks)
             Console.WriteLine($"[LLMQuestGeneration] Raw LLM response (length: {response?.Length ?? 0}): {response?.Substring(0, Math.Min(500, response?.Length ?? 0)) ?? "null"}...");
-            
+
             string json = ExtractJsonFromResponse(response);
-            
+
             if (string.IsNullOrWhiteSpace(json))
             {
                 Console.WriteLine($"[LLMQuestGeneration] ERROR: ExtractJsonFromResponse returned null or empty. Raw response was: {response?.Substring(0, Math.Min(1000, response?.Length ?? 0)) ?? "null"}");
                 throw new InvalidOperationException("Failed to extract JSON from LLM response");
             }
-            
+
             Console.WriteLine($"[LLMQuestGeneration] Extracted JSON (length: {json.Length}): {json.Substring(0, Math.Min(500, json.Length))}...");
-            
+
             // Validate JSON structure before returning
             if (!json.TrimStart().StartsWith("{"))
             {
                 Console.WriteLine($"[LLMQuestGeneration] ERROR: Extracted JSON does not start with '{{'. First 200 chars: {json.Substring(0, Math.Min(200, json.Length))}");
                 throw new InvalidOperationException("Invalid JSON structure from LLM");
             }
-            
+
             return json;
         }
 
