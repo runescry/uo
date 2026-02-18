@@ -39,6 +39,9 @@ namespace Server.Services.UnifiedQuestSystem
             // Initialize Multiplayer-Journal integration system
             MultiplayerJournalIntegration.Initialize();
 
+            // Initialize unified quest system manager
+            UnifiedQuestSystemManager.Initialize();
+
             // Register administrative commands
             CommandSystem.Register("UnifiedQuest", AccessLevel.Administrator, UnifiedQuest_OnCommand);
             CommandSystem.Register("UQ", AccessLevel.Administrator, UnifiedQuest_OnCommand);
@@ -127,6 +130,22 @@ namespace Server.Services.UnifiedQuestSystem
                     ShowJournalStats(from);
                     break;
 
+                case "health":
+                    ShowSystemHealth(from);
+                    break;
+
+                case "optimize":
+                    OptimizeSystem(from);
+                    break;
+
+                case "backup":
+                    BackupSystem(from, e);
+                    break;
+
+                case "report":
+                    GenerateSystemReport(from);
+                    break;
+
                 default:
                     ShowUnifiedQuestHelp(from);
                     break;
@@ -197,6 +216,10 @@ namespace Server.Services.UnifiedQuestSystem
             from.SendMessage("  integrate - Integrate quest with variety system");
             from.SendMessage("  variety   - Show variety system statistics");
             from.SendMessage("  journal   - Show journal system statistics");
+            from.SendMessage("  health    - Show system health status");
+            from.SendMessage("  optimize  - Optimize system performance");
+            from.SendMessage("  backup    - Backup system data");
+            from.SendMessage("  report    - Generate comprehensive system report");
             from.SendMessage("");
             from.SendMessage("Player commands:");
             from.SendMessage("  QuestInfo - Show unified quest information");
@@ -670,6 +693,172 @@ namespace Server.Services.UnifiedQuestSystem
             catch (Exception ex)
             {
                 from.SendMessage($"Error retrieving variety stats: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Show system health status
+        /// </summary>
+        private static void ShowSystemHealth(Mobile from)
+        {
+            try
+            {
+                var healthReport = UnifiedQuestSystemManager.PerformHealthCheck();
+                
+                from.SendMessage("=== UNIFIED QUEST SYSTEM HEALTH ===");
+                from.SendMessage($"Overall Health: {healthReport.OverallHealth}");
+                from.SendMessage($"Check Time: {healthReport.CheckTime:yyyy-MM-dd HH:mm:ss}");
+                from.SendMessage("");
+                from.SendMessage("Component Health:");
+                
+                foreach (var component in healthReport.ComponentHealth)
+                {
+                    from.SendMessage($"  {component.Key}: {component.Value.Status} - {component.Value.Message}");
+                }
+                
+                if (healthReport.CriticalIssues.Count > 0)
+                {
+                    from.SendMessage("");
+                    from.SendMessage("CRITICAL ISSUES:");
+                    foreach (var issue in healthReport.CriticalIssues)
+                    {
+                        from.SendMessage($"  • {issue}");
+                    }
+                }
+                
+                if (healthReport.Recommendations.Count > 0)
+                {
+                    from.SendMessage("");
+                    from.SendMessage("RECOMMENDATIONS:");
+                    foreach (var recommendation in healthReport.Recommendations.Take(5))
+                    {
+                        from.SendMessage($"  • {recommendation}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"Error retrieving system health: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Optimize system performance
+        /// </summary>
+        private static void OptimizeSystem(Mobile from)
+        {
+            try
+            {
+                from.SendMessage("Optimizing unified quest system...");
+                
+                var result = UnifiedQuestSystemManager.OptimizeSystem();
+                
+                if (result.Success)
+                {
+                    from.SendMessage("System optimization completed successfully!");
+                    from.SendMessage($"Message: {result.Message}");
+                    
+                    if (result.Messages.Count > 0)
+                    {
+                        from.SendMessage("Optimization Details:");
+                        foreach (var message in result.Messages.Take(10))
+                        {
+                            from.SendMessage($"  • {message}");
+                        }
+                    }
+                }
+                else
+                {
+                    from.SendMessage($"System optimization failed: {result.Message}");
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"System optimization error: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Backup system data
+        /// </summary>
+        private static void BackupSystem(Mobile from, CommandEventArgs e)
+        {
+            string backupPath = e.Length > 1 ? e.GetString(1) : $"backups/quest_system_{DateTime.Now:yyyyMMdd_HHmmss}";
+            
+            try
+            {
+                from.SendMessage($"Backing up unified quest system to: {backupPath}");
+                
+                var result = UnifiedQuestSystemManager.BackupSystem(backupPath);
+                
+                if (result.Success)
+                {
+                    from.SendMessage("System backup completed successfully!");
+                    from.SendMessage($"Message: {result.Message}");
+                    from.SendMessage($"Components backed up: {result.BackedUpComponents.Count}");
+                    
+                    if (result.Messages.Count > 0)
+                    {
+                        from.SendMessage("Backup Details:");
+                        foreach (var message in result.Messages.Take(5))
+                        {
+                            from.SendMessage($"  • {message}");
+                        }
+                    }
+                }
+                else
+                {
+                    from.SendMessage($"System backup failed: {result.Message}");
+                }
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"System backup error: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Generate comprehensive system report
+        /// </summary>
+        private static void GenerateSystemReport(Mobile from)
+        {
+            try
+            {
+                from.SendMessage("Generating comprehensive system report...");
+                
+                var report = UnifiedQuestSystemManager.GenerateSystemReport();
+                
+                from.SendMessage("=== UNIFIED QUEST SYSTEM REPORT ===");
+                from.SendMessage($"Generated: {report.GeneratedAt:yyyy-MM-dd HH:mm:ss}");
+                from.SendMessage($"Version: {report.SystemVersion}");
+                from.SendMessage("");
+                from.SendMessage("System Overview:");
+                from.SendMessage($"  Total Integrations: {report.IntegrationStatus.TotalIntegrations}");
+                from.SendMessage($"  Active Integrations: {report.IntegrationStatus.ActiveIntegrations}");
+                from.SendMessage("");
+                from.SendMessage("Performance Analysis:");
+                from.SendMessage($"  Overall: {report.PerformanceAnalysis.OverallPerformance}");
+                from.SendMessage($"  Bottlenecks: {report.PerformanceAnalysis.Bottlenecks.Count}");
+                from.SendMessage($"  Optimizations: {report.PerformanceAnalysis.Optimizations.Count}");
+                from.SendMessage("");
+                from.SendMessage("Usage Statistics:");
+                from.SendMessage($"  Daily Quests: {report.UsageStatistics.DailyQuests}");
+                from.SendMessage($"  Active Users: {report.UsageStatistics.ActiveUsers}");
+                from.SendMessage($"  Completion Rate: {report.UsageStatistics.QuestCompletionRate:P1}");
+                from.SendMessage("");
+                from.SendMessage("Recommendations:");
+                foreach (var recommendation in report.Recommendations.Take(5))
+                {
+                    from.SendMessage($"  • {recommendation}");
+                }
+                
+                from.SendMessage("");
+                from.SendMessage("Report generated successfully!");
+                from.SendMessage("Use [UnifiedQuest backup <path>] to create a full system backup.");
+            }
+            catch (Exception ex)
+            {
+                from.SendMessage($"System report generation error: {ex.Message}");
             }
         }
 
