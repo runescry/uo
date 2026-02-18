@@ -7,12 +7,37 @@ using Server.Engines.CityLoyalty;
 using Server.Engines.Points;
 using Server.Services.UnifiedQuestSystem;
 
+/// <summary>
+/// Integration bridge between Unified Quest System and City Loyalty System
+/// Connects quests with city reputation and loyalty points
+/// 
+/// Features:
+/// - Daily, weekly, and monthly city loyalty quests
+/// - Real-time tracking of city loyalty changes and level progression
+/// - Service quests that benefit cities and build reputation
+/// - City-specific rewards including loyalty points, titles, and items
+/// - Support for all cities (Britain, Jhelom, Minoc, Moonglow, etc.)
+/// - Integration with city loyalty rating system
+/// - Event-driven architecture for loyalty changes
+/// 
+/// Usage:
+/// - Automatically generates quests based on city loyalty levels
+/// - Tracks loyalty point changes and rating progressions
+/// - Provides appropriate rewards based on city and loyalty level
+/// - Integrates with unified quest progress tracking system
+/// 
+/// Dependencies:
+/// - Server.Engines.CityLoyalty.CityLoyaltySystem
+/// - Server.Engines.Points.PointsSystem
+/// - Server.Services.UnifiedQuestSystem.UnifiedProgressTracker
+/// - Server.Services.UnifiedQuestSystem.UnifiedQuestData
+/// 
+/// Events:
+/// - OnCityLoyaltyChanged: Updates quest progress for loyalty changes
+/// - OnCityLoyaltyLevelChanged: Updates level-based quest progress
+/// </summary>
 namespace Server.Services.UnifiedQuestSystem.Integrations
 {
-    /// <summary>
-    /// Integration bridge between Unified Quest System and City Loyalty System
-    /// Connects quests with city reputation and loyalty points
-    /// </summary>
     public static class CityLoyaltyQuestIntegration
     {
         private static readonly Dictionary<PlayerMobile, List<CityLoyaltyQuestLink>> s_ActiveLinks;
