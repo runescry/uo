@@ -23,6 +23,8 @@
 !/.gitignore
 !/README.md
 !/AI_CORE_ARCHITECTURE.md
+!/STUDY_GUIDE.md
+!/study-app/
 
 # But ignore build outputs and temporary files within included directories
 **/bin/
